@@ -2,7 +2,7 @@
 title: The grammar of graphics
 slug: grammar-of-graphics
 author: Stéphane Caron
-date: '2017-11-23'
+date: '2018-09-01'
 type: post
 tags: 
   - vizualisation
@@ -31,7 +31,7 @@ Have you ever worked with someone making lot of synthax or grammatical mistakes?
 The following sections are going to explain the main components of this particular grammar. We'll go through the different layers (figure \@ref(fig:fig1)) of the grammar by illustrating it with a concrete example using [ggplot2](http://ggplot2.tidyverse.org), a graphical library developped by Hadley Wickham and which is basically an implementation of this grammar of graphics in R.
 
 <div class="figure" style="text-align: center">
-<img src="2017-11-23-grammar-of-graphics_files/figure-html/image_gg.png" alt="The different layers that constitutes the grammar of graphics framework" width="100%" />
+<img src="2018-09-01-grammar-of-graphics_files/figure-html/image_gg.png" alt="The different layers that constitutes the grammar of graphics framework" width="100%" />
 <p class="caption">The different layers that constitutes the grammar of graphics framework</p>
 </div>
 
@@ -72,7 +72,7 @@ ggplot(mtcars, aes(x = hp, y = mpg)) +
 ```
 
 <div class="figure" style="text-align: center">
-<img src="2017-11-23-grammar-of-graphics_files/figure-html/aes1-1.png" alt="Aesthetics (hp and mpg) define which scales are plotted."  />
+<img src="2018-09-01-grammar-of-graphics_files/figure-html/aes1-1.png" alt="Aesthetics (hp and mpg) define which scales are plotted."  />
 <p class="caption">Aesthetics (hp and mpg) define which scales are plotted.</p>
 </div>
 
@@ -92,7 +92,7 @@ mtcars %>%
 ```
 
 <div class="figure" style="text-align: center">
-<img src="2017-11-23-grammar-of-graphics_files/figure-html/geom-1.png" alt="Geometries (bars here) define mainly the type of plot"  />
+<img src="2018-09-01-grammar-of-graphics_files/figure-html/geom-1.png" alt="Geometries (bars here) define mainly the type of plot"  />
 <p class="caption">Geometries (bars here) define mainly the type of plot</p>
 </div>
 
@@ -120,7 +120,7 @@ ggplot(mtcars, aes(x = hp, y = mpg, color = as.factor(carb))) +
 ```
 
 <div class="figure" style="text-align: center">
-<img src="2017-11-23-grammar-of-graphics_files/figure-html/facet1-1.png" alt="It's difficult to see the true pattern in each group here"  />
+<img src="2018-09-01-grammar-of-graphics_files/figure-html/facet1-1.png" alt="It's difficult to see the true pattern in each group here"  />
 <p class="caption">It's difficult to see the true pattern in each group here</p>
 </div>
 
@@ -134,7 +134,7 @@ ggplot(mtcars, aes(x = hp, y = mpg, color = as.factor(carb))) +
 ```
 
 <div class="figure" style="text-align: center">
-<img src="2017-11-23-grammar-of-graphics_files/figure-html/facet2-1.png" alt="Factted plot are way more easier to detect pattern in each group"  />
+<img src="2018-09-01-grammar-of-graphics_files/figure-html/facet2-1.png" alt="Factted plot are way more easier to detect pattern in each group"  />
 <p class="caption">Factted plot are way more easier to detect pattern in each group</p>
 </div>
 
@@ -153,7 +153,7 @@ ggplot(mtcars, aes(x = as.factor(cyl), y = mpg)) +
 ```
 
 <div class="figure" style="text-align: center">
-<img src="2017-11-23-grammar-of-graphics_files/figure-html/boxplot1-1.png" alt="It's difficult to conclude something from non-summarized data"  />
+<img src="2018-09-01-grammar-of-graphics_files/figure-html/boxplot1-1.png" alt="It's difficult to conclude something from non-summarized data"  />
 <p class="caption">It's difficult to conclude something from non-summarized data</p>
 </div>
 
@@ -166,7 +166,7 @@ ggplot(mtcars, aes(x = as.factor(cyl), y = mpg)) +
 ```
 
 <div class="figure" style="text-align: center">
-<img src="2017-11-23-grammar-of-graphics_files/figure-html/boxplot2-1.png" alt="Boxplots kind of summarise the data and make the plot easier to understand our data"  />
+<img src="2018-09-01-grammar-of-graphics_files/figure-html/boxplot2-1.png" alt="Boxplots kind of summarise the data and make the plot easier to understand our data"  />
 <p class="caption">Boxplots kind of summarise the data and make the plot easier to understand our data</p>
 </div>
 
@@ -190,7 +190,7 @@ ggplot(mtcars, aes(x = mpg, y = qsec)) +
 ```
 
 <div class="figure" style="text-align: center">
-<img src="2017-11-23-grammar-of-graphics_files/figure-html/themes1-1.png" alt="Overuse of themes causes our mind to focus on non-related data elements"  />
+<img src="2018-09-01-grammar-of-graphics_files/figure-html/themes1-1.png" alt="Overuse of themes causes our mind to focus on non-related data elements"  />
 <p class="caption">Overuse of themes causes our mind to focus on non-related data elements</p>
 </div>
 
@@ -206,7 +206,7 @@ ggplot(mtcars, aes(x = mpg, y = qsec)) +
 ```
 
 <div class="figure" style="text-align: center">
-<img src="2017-11-23-grammar-of-graphics_files/figure-html/themes2-1.png" alt="Clear and simple themes aid to understand the data related elements, which contribute to makes our plot more meaningful"  />
+<img src="2018-09-01-grammar-of-graphics_files/figure-html/themes2-1.png" alt="Clear and simple themes aid to understand the data related elements, which contribute to makes our plot more meaningful"  />
 <p class="caption">Clear and simple themes aid to understand the data related elements, which contribute to makes our plot more meaningful</p>
 </div>
 
@@ -235,12 +235,12 @@ The audience is always a important aspect of every communications. It should be 
 The figure \@ref(fig:example1) is a example of graphic that basically meets all the requirements explained in the grammar of graphics part. However, if our objective is to compare the miles per gallon consommation (by the number of cylinders) of all models and focus on the relation between the given models rather than on the specific value of miles per gallon, it may be more appropriate to build the graphic showed in the figure \@ref(fig:example2). In the latter, the focus seems to be more on the models and their relative rather than on the value of gas consommation. Also, the models are probably easier to vizualise wihtin their particular groups (facet).
 
 <div class="figure" style="text-align: center">
-<img src="2017-11-23-grammar-of-graphics_files/figure-html/example1-1.png" alt="Example 1" width="100%" />
+<img src="2018-09-01-grammar-of-graphics_files/figure-html/example1-1.png" alt="Example 1" width="100%" />
 <p class="caption">Example 1</p>
 </div>
 
 <div class="figure" style="text-align: center">
-<img src="2017-11-23-grammar-of-graphics_files/figure-html/example2-1.png" alt="Example 2" width="100%" />
+<img src="2018-09-01-grammar-of-graphics_files/figure-html/example2-1.png" alt="Example 2" width="100%" />
 <p class="caption">Example 2</p>
 </div>
 
