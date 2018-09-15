@@ -10,7 +10,6 @@ featuredpath = "date"
 linktitle = ""
 title = "Creating a New Theme"
 type = "post"
-
 +++
 
 ## Introduction
