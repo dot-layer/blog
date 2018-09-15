@@ -3,7 +3,7 @@ title: The grammar of graphics
 slug: grammar-of-graphics
 author: Stéphane Caron
 date: '2017-11-23'
-categories: R
+type: post
 tags: 
   - vizualisation
   - plot
