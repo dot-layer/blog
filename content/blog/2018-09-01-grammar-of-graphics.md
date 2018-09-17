@@ -28,9 +28,9 @@ Have you ever worked with someone making lot of synthax or grammatical mistakes?
 
 [^datacamp]: Rick Scavetta, DataCamp course on `ggplot2`
 
-The following sections are going to explain the main components of this particular grammar. We'll go through the different layers (figure \@ref(fig:fig1)) of the grammar by illustrating it with a concrete example using [ggplot2](http://ggplot2.tidyverse.org), a graphical library developped by Hadley Wickham and which is basically an implementation of this grammar of graphics in R.
+The following sections are going to explain the main components of this particular grammar. We'll go through the different layers ([see figure below](#fig:fig1)) of the grammar by illustrating it with a concrete example using [ggplot2](http://ggplot2.tidyverse.org), a graphical library developped by Hadley Wickham and which is basically an implementation of this grammar of graphics in R.
 
-<div class="figure" style="text-align: center">
+<div id="fig:fig1" class="figure" style="text-align: center">
 <img src="2018-09-01-grammar-of-graphics_files/figure-html/image_gg.png" alt="The different layers that constitutes the grammar of graphics framework" width="100%" />
 <p class="caption">The different layers that constitutes the grammar of graphics framework</p>
 </div>
@@ -63,7 +63,7 @@ head(mtcars)
 
 #### Aesthetics
 
-We can see our data layer as a bank of words we could use to build our sentence. Once we have of available words, obviously, we need to pick up few of them and organize them in order to build a sentence. Aesthetics is somewhat similar to the action of "pick and organize"" as it defines the scales onto which the data selected is mapped. For example, we could decide to select horsepower and miles per gallon variables from our dataset and plot them onto y and axis respectively (figure \@ref(fig:aes1)).
+We can see our data layer as a bank of words we could use to build our sentence. Once we have of available words, obviously, we need to pick up few of them and organize them in order to build a sentence. Aesthetics is somewhat similar to the action of "pick and organize"" as it defines the scales onto which the data selected is mapped. For example, we could decide to select horsepower and miles per gallon variables from our dataset and plot them onto x and y axis respectively ([see figure below](#fig:aes)).
 
 
 ```r
@@ -71,7 +71,7 @@ ggplot(mtcars, aes(x = hp, y = mpg)) +
   geom_point()
 ```
 
-<div class="figure" style="text-align: center">
+<div id="fig:aes" class="figure" style="text-align: center">
 <img src="2018-09-01-grammar-of-graphics_files/figure-html/aes1-1.png" alt="Aesthetics (hp and mpg) define which scales are plotted."  />
 <p class="caption">Aesthetics (hp and mpg) define which scales are plotted.</p>
 </div>
@@ -80,7 +80,7 @@ In `ggplot2` framework, we define our aesthetics in the aes() argument.
 
 #### Geometries
 
-In the previous section, we use points through a scatter plot to vizualise our data. The use of points, or other visual elements known as geometries (lines, bars, text, etc) control the type of plot you wanna create. As a comparison, it can be seen as the type of sentence (declarative, imperative, interrogative, etc) you wanna build. It does not define your content, but rather the way you express your content. For example, instead of points, we could have showed bars (figure \@ref(fig:geom)).
+In the previous section, we use points through a scatter plot to vizualise our data. The use of points, or other visual elements known as geometries (lines, bars, text, etc) control the type of plot you wanna create. As a comparison, it can be seen as the type of sentence (declarative, imperative, interrogative, etc) you wanna build. It does not define your content, but rather the way you express your content. For example, instead of points, we could have showed bars ([see figure below](#fig:geom)).
 
 
 ```r
@@ -91,7 +91,7 @@ mtcars %>%
       geom_bar(stat = "identity")
 ```
 
-<div class="figure" style="text-align: center">
+<div id="fig:geom" class="figure" style="text-align: center">
 <img src="2018-09-01-grammar-of-graphics_files/figure-html/geom-1.png" alt="Geometries (bars here) define mainly the type of plot"  />
 <p class="caption">Geometries (bars here) define mainly the type of plot</p>
 </div>
@@ -111,7 +111,7 @@ In the real world, we usually doesn't communicate with simplest kind of sentence
 
 Facetting a graphic means to plot small different subsets of the data. Relating to grammar, I would compare the action of facetting with the idea of breaking a long sentence in some shorter (clearer) sentences. It's a powerfull tool when looking for some patterns in the data as it could help removing the noise of differents group plotted all togheter.
 
-For example, it's difficult to see the patterns inside each group in the figure \@ref(fig:facet1)
+For example, it's difficult to see the patterns inside each group in the [figure below](#fig:facet1):
 
 
 ```r
@@ -119,12 +119,12 @@ ggplot(mtcars, aes(x = hp, y = mpg, color = as.factor(carb))) +
   geom_point()
 ```
 
-<div class="figure" style="text-align: center">
+<div id="fig:facet1" class="figure" style="text-align: center">
 <img src="2018-09-01-grammar-of-graphics_files/figure-html/facet1-1.png" alt="It's difficult to see the true pattern in each group here"  />
 <p class="caption">It's difficult to see the true pattern in each group here</p>
 </div>
 
-while it's quite more clear in the figure \@ref(fig:facet2).
+while it's quite more clear in the [figure below](#fig:facet2).
 
 
 ```r
@@ -133,18 +133,18 @@ ggplot(mtcars, aes(x = hp, y = mpg, color = as.factor(carb))) +
   facet_grid(. ~ as.factor(carb))
 ```
 
-<div class="figure" style="text-align: center">
+<div id="fig:facet2" class="figure" style="text-align: center">
 <img src="2018-09-01-grammar-of-graphics_files/figure-html/facet2-1.png" alt="Factted plot are way more easier to detect pattern in each group"  />
 <p class="caption">Factted plot are way more easier to detect pattern in each group</p>
 </div>
 
-The facet_grid() or facet_wrap() specifications describe which variables are splitted and how they should be arranged in the plot.
+The `facet_grid()` or `facet_wrap()` specifications describe which variables are splitted and how they should be arranged in the plot.
 
 #### Statistics
 
 Statistics is a layer that generally summarizes the data in order to aid our understanding. To illustrate it, we could compare the objective of this layer with the idea of summarizing a long and complicated paragraph into essential summarised bullet points. For example, boxplots could be seen as a statistic as it calculates essential statistics of a given distribution.
 
-For example, it's by far more difficult to draw conclusions about the distributions of each number of cylinders from the figure \@ref(fig:boxplot1)
+For example, it's by far more difficult to draw conclusions about the distributions of each number of cylinders from the [figure](#fig:boxplot1)
 
 
 ```r
@@ -152,12 +152,12 @@ ggplot(mtcars, aes(x = as.factor(cyl), y = mpg)) +
   geom_point()
 ```
 
-<div class="figure" style="text-align: center">
+<div id="fig:boxplot1" class="figure" style="text-align: center">
 <img src="2018-09-01-grammar-of-graphics_files/figure-html/boxplot1-1.png" alt="It's difficult to conclude something from non-summarized data"  />
 <p class="caption">It's difficult to conclude something from non-summarized data</p>
 </div>
 
-compare to the figure \@ref(fig:boxplot2), where we can easily extract the median, the quartiles and so on ...
+compare to the [figure](#fig:bloxplot2), where we can easily extract the median, the quartiles and so on ...
 
 
 ```r
@@ -165,7 +165,7 @@ ggplot(mtcars, aes(x = as.factor(cyl), y = mpg)) +
   geom_boxplot()
 ```
 
-<div class="figure" style="text-align: center">
+<div id="fig:boxplot2" class="figure" style="text-align: center">
 <img src="2018-09-01-grammar-of-graphics_files/figure-html/boxplot2-1.png" alt="Boxplots kind of summarise the data and make the plot easier to understand our data"  />
 <p class="caption">Boxplots kind of summarise the data and make the plot easier to understand our data</p>
 </div>
@@ -176,7 +176,7 @@ Coordinates is the space defined to plot our data. Usually, the Cartesian coordi
 
 #### Themes
 
-Themes can be seen as evertything non-related to the data. In the grammar of graphics framework, themes aid to understand our plots, not necessarily to make them more beautiful. As a comparison, the font type and size, the spacing, the margins, and so on, help to make a text more understandable for a reader. In the same way, the size of geoms, the grid lines, the background color, etc, should be carefully chosen in order to help our audience to focus on the message we want to express with our plot. For example, the non-related data elements in the figure \@ref(fig:themes1) makes it difficult to see relevant patterns in the trend showed by the data:
+Themes can be seen as evertything non-related to the data. In the grammar of graphics framework, themes aid to understand our plots, not necessarily to make them more beautiful. In fact, the font type and size, the spacing, the margins, and so on, help to make a text more understandable for a reader. In the same way, the size of geoms, the grid lines or the background color should be carefully chosen in order to help our audience to focus on the message we want to express with our plot. For example, the non-related data elements in the [figure](#fig:themes1) makes it difficult to see relevant patterns in the trend showed by the data:
 
 
 ```r
@@ -189,12 +189,12 @@ ggplot(mtcars, aes(x = mpg, y = qsec)) +
         plot.background = element_rect(fill = "yellow"))
 ```
 
-<div class="figure" style="text-align: center">
+<div id="fig:themes1" class="figure" style="text-align: center">
 <img src="2018-09-01-grammar-of-graphics_files/figure-html/themes1-1.png" alt="Overuse of themes causes our mind to focus on non-related data elements"  />
 <p class="caption">Overuse of themes causes our mind to focus on non-related data elements</p>
 </div>
 
-In contrast, the figure \@ref(fig:themes2) is way more clear and nothing irrelevant have been added to the plot which makes it easy to focus on the data and the trend behind it:
+In contrast, the [figure](#fig:theme2) is way more clear and nothing irrelevant have been added to the plot which makes it easy to focus on the data and the trend behind it:
 
 
 ```r
@@ -205,12 +205,12 @@ ggplot(mtcars, aes(x = mpg, y = qsec)) +
   theme_classic()
 ```
 
-<div class="figure" style="text-align: center">
+<div id="fig:theme2" class="figure" style="text-align: center">
 <img src="2018-09-01-grammar-of-graphics_files/figure-html/themes2-1.png" alt="Clear and simple themes aid to understand the data related elements, which contribute to makes our plot more meaningful"  />
 <p class="caption">Clear and simple themes aid to understand the data related elements, which contribute to makes our plot more meaningful</p>
 </div>
 
-In `ggplot2` framework, some themes are prebuilt and can be used directly. However, everything can be customized in the theme() layer. The [ggthemes](https://cran.r-project.org/web/packages/ggthemes/vignettes/ggthemes.html) library also has some nice available themes.
+In `ggplot2` framework, some themes are prebuilt and can be used directly. However, everything can be customized in the `theme()` layer. The [ggthemes](https://cran.r-project.org/web/packages/ggthemes/vignettes/ggthemes.html) library also has some nice available themes.
 
 # Intuition for good graphics
 
@@ -232,14 +232,14 @@ The data is one of the first thing to take into account before working on a grap
 
 The audience is always a important aspect of every communications. It should be taken into account and should also guide our decisions regarding our graphic. For example, boxplots can be quite meaningful for a given audience such as data scientists or statisticians but mean nothing to someone else.
 
-The figure \@ref(fig:example1) is a example of graphic that basically meets all the requirements explained in the grammar of graphics part. However, if our objective is to compare the miles per gallon consommation (by the number of cylinders) of all models and focus on the relation between the given models rather than on the specific value of miles per gallon, it may be more appropriate to build the graphic showed in the figure \@ref(fig:example2). In the latter, the focus seems to be more on the models and their relative rather than on the value of gas consommation. Also, the models are probably easier to vizualise wihtin their particular groups (facet).
+The [figure](#fig:example1) is a example of graphic that basically meets all the requirements explained in the grammar of graphics part. However, if our objective is to compare the miles per gallon consommation (by the number of cylinders) of all models and focus on the relation between the given models rather than on the specific value of miles per gallon, it may be more appropriate to build the graphic showed in the [figure](#fig:example2). In the latter, the focus seems to be more on the models and their relative rather than on the value of gas consommation. Also, the models are probably easier to vizualise wihtin their particular groups (facet).
 
-<div class="figure" style="text-align: center">
+<div id="fig:example1" class="figure" style="text-align: center">
 <img src="2018-09-01-grammar-of-graphics_files/figure-html/example1-1.png" alt="Example 1" width="100%" />
 <p class="caption">Example 1</p>
 </div>
 
-<div class="figure" style="text-align: center">
+<div id="fig:example2" class="figure" style="text-align: center">
 <img src="2018-09-01-grammar-of-graphics_files/figure-html/example2-1.png" alt="Example 2" width="100%" />
 <p class="caption">Example 2</p>
 </div>
