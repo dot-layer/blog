@@ -15,7 +15,7 @@ output:
 
 
 
-Data science is a growing field that regroups talented and passionated people who generally show remarkable technical skills and outstanding ease to solve problems. However, from my personnal experience, one particular skill is often undervalued. **Communication**. In data science, as in many other fields, graphical vizualisation is an important tool that helps to simplify and clearly communicate results to others. For that reason, it's crucial to master this set of skills. Just like any other means of communcation, like speaking or writing, graphical vizualisation basically requires two main components: 
+Data science is a growing field that regroups talented and passionate people who generally show remarkable technical skills and outstanding ease to solve problems. However, from my personnal experience, one particular skill is often undervalued. **Communication**. In data science, as in many other fields, graphical vizualisation is an important tool that helps to simplify and clearly communicate results to others. For that reason, it's crucial to master this set of skills. Just like any other means of communcation, like speaking or writing, graphical vizualisation basically requires two main components: 
 
 - A synthax/grammar/set of rules that ensures everything is well organized and broadly correct.
 - A feeling/intuition to communicate the right things and present them in a way that will make people feel what you want them to feel.
@@ -76,7 +76,7 @@ ggplot(mtcars, aes(x = hp, y = mpg)) +
 <p class="caption">Aesthetics (hp and mpg) define which scales are plotted.</p>
 </div>
 
-In `ggplot2` framework, we define our aesthetics in the aes() argument. 
+In the `ggplot2` framework, we define our aesthetics in the aes() argument. 
 
 #### Geometries
 
