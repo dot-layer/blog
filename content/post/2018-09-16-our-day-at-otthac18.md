@@ -19,7 +19,7 @@ For any die-hard hockey fan, September 13th will be remembered as the day Erik K
 
 Tyrel Stokes' (McGill University) presentation, entitled *Estimating the Causal Effect of Injury on Performance* focused on the question: What would the world look like if someone wouldn't have gotten injured? And then what happens when someone gets injured? His prime example was Oscar Klefbom, who missed 52 games during the 2015-2016 season. Klefbom is a great example because he got injured during his second season in the NHL, here's why this is interesting. If you compare Klefbom's stats from before and after his injury, it seems clear that he got better. The injury made him better? Of course not. Any serious analysis needs to take into account that Klefbom got older, stronger, more confident, and so on. The real question is: how did the injury changed his progression? The conclusions are that injuries do indeed have a large short-term effect, but a small long-term effect. I will spare you the details about how these conclusions are reached, but the idea is that the progression of players is modeled using a random walk (with potential jumps).
 
-Speaking of *what ifs*, what if Lemieux didn't get injured? Tyrel doesn't answer that question, but has lots to say about the comparison between Lemieux and Gretzky. If your interested, check out his blog [Stats by Stokes](https://statsbystokes.wordpress.com).
+Speaking of *what ifs*, what if Lemieux didn't get injured? Tyrel doesn't answer that question, but has lots to say about the comparison between Lemieux and Gretzky. If you're interested, check out his blog [Stats by Stokes](https://statsbystokes.wordpress.com).
 
 ## The rise of artificial intelligence
 
