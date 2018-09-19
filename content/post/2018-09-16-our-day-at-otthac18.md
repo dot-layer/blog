@@ -13,7 +13,7 @@ featuredpath: ''
 linktitle: ''
 ---
 
-For any die-hard hockey fan, September 13th will be remembered as the day Erik Karlsson was traded by the Sens to the Sharks, and not without controversy, as it seems Ottawa got less for Karlsson than they gave to acquire Duchesne earlier this year. It turns out that the 4th Annual Ottawa International Hockey Analytics Conference (OTTHAC18), again held at Carleton University, was scheduled on the following weekend (September 14th and 15th, 2018). We couldn't get there for the workshop and activities of Friday, but made the trip on Saturday to get a glimpse of what is going on in the hockey analytics community and, of course, hear what the folks in Ottawa thought about the most recent trade activity in the NHL. The day was packed with presentations, interviews and panels. Notable speakers and attendees were, among others, Rob Vollman (author of the book *Stat Shot*), Micah Blake McCurdy (hockeyviz.com) and Elias Collette (consultant for the Ottawa Senators). You can see the full schedule by following this [link](http://statsportsconsulting.com/main/wp-content/uploads/OTTHAC18Schedule_0907.pdf). Here are the highlights of our day (in order of appearance on the schedule).
+For any die-hard hockey fan, September 13th will be remembered as the day Erik Karlsson was traded by the Sens to the Sharks, and not without controversy, as it seems Ottawa got less for Karlsson than they gave to acquire Duchesne earlier this year. It turns out that the 4th Annual Ottawa International Hockey Analytics Conference (OTTHAC18), again held at Carleton University, was scheduled on the following weekend (September 14th and 15th, 2018). We couldn't get there for the workshop and activities of Friday, but made the trip on Saturday to get a glimpse of what is going on in the hockey analytics community and, of course, hear what the folks in Ottawa thought about the most recent trade activity in the NHL. The day was packed with presentations, interviews and panels. Notable speakers and attendees were, among others, Rob Vollman (author of the book *Stat Shot*), Micah Blake McCurdy (hockeyviz.com) and Elias Collette (consultant for the Ottawa Senators). You can see the full schedule by following this [link](http://statsportsconsulting.com/main/wp-content/uploads/OTTHAC18Schedule_0907.pdf). Here are the highlights of our day (in no particular order).
 
 
 ## What if Oscar Klefbom didn't get injured?
@@ -30,8 +30,19 @@ It's hard to have a conversation about AI in hockey (and sports in general) with
 Campbell's now beginning a master's degree in artificial intelligence, so there's no guarantee that he will find the time to advance his project as much as he would like in the next year or so, but check out his github repo https://github.com/ccweaver1/bsi_vision to see how the project is evolving.
 
 
+## Speaking of SPORTLOGiQ...
+
+Yu's poster.
 
 
-SAY THAT THE DAY WAS NICE IN GENERAL.
+## Hockey in space?
+
+
+## Micah
+
+
+
+
+SAY THAT THE DAY WAS NICE IN GENERAL. Mention names of other presenters with very very brief description. Comeback on the trade and say that everyone seemed pretty sad: time to start a rebuilding phase in Ottawa. 
 
 
