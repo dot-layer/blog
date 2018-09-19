@@ -15,13 +15,20 @@ linktitle: ''
 
 For any die-hard hockey fan, September 13th will be remembered as the day Erik Karlsson was traded by the Sens to the Sharks, and not without controversy, as it seems Ottawa got less for Karlsson than they gave to acquire Duchesne earlier this year. It turns out that the 4th Annual Ottawa International Hockey Analytics Conference (OTTHAC18), again held at Carleton University, was scheduled on the following weekend (September 14th and 15th, 2018). We couldn't get there for the workshop and activities of Friday, but made the trip on Saturday to get a glimpse of what is going on in the hockey analytics community and, of course, hear what the folks in Ottawa thought about the most recent trade activity in the NHL. The day was packed with presentations, interviews and panels. Notable speakers and attendees were, among others, Rob Vollman (author of the book *Stat Shot*), Micah Blake McCurdy (hockeyviz.com) and Elias Collette (consultant for the Ottawa Senators). You can see the full schedule by following this [link](http://statsportsconsulting.com/main/wp-content/uploads/OTTHAC18Schedule_0907.pdf). Here are the highlights of our day (in order of appearance on the schedule).
 
+
 ## What if Oscar Klefbom didn't get injured?
 
 Tyrel Stokes' (McGill University) presentation, entitled *Estimating the Causal Effect of Injury on Performance* focused on the question: What would the world look like if someone wouldn't have gotten injured? And then what happens when someone gets injured? His prime example was Oscar Klefbom, who missed 52 games during the 2015-2016 season. Klefbom is a great example because he got injured during his second season in the NHL, here's why this is interesting. If you compare Klefbom's stats from before and after his injury, it seems clear that he got better. The injury made him better? Of course not. Any serious analysis needs to take into account that Klefbom got older, stronger, more confident, and so on. The real question is: how did the injury changed his progression? The conclusions are that injuries do indeed have a large short-term effect, but a small long-term effect. I will spare you the details about how these conclusions are reached, but the idea is that the progression of players is modeled using a random walk (with potential jumps).
 
 Speaking of *what ifs*, what if Lemieux didn't get injured? Tyrel doesn't answer that question, but has lots to say about the comparison between Lemieux and Gretzky. If you're interested, check out his blog [Stats by Stokes](https://statsbystokes.wordpress.com).
 
+
 ## The rise of artificial intelligence
+
+It's hard to have a conversation about AI in hockey (and sports in general) without mentionning the Montreal-based company SPORTLOGiQ. Well, now everytime someone will mention SPORTLOGiQ to us, we'll think about Campbell Weaver, who's building his own player tracking algorithm. Using *deep convolution neural networks* (with Keras), Campbell's objective is to track players' movements on the ice, so that others can compute more insightful stats and patterns: record time spent in each zone, analyze a player's tendencies on the ice, investigate the positioning at the time of goals for/against, assess the effectiveness of specific plays such as PP entries... I think you see the point. He's gotten quite far for someone saying he's just trying to learn. To his own admission, his algorithm wasn't exactly on point yet, but there's no doubt that the potential is there.
+
+Campbell's now beginning a master's degree in artificial intelligence, so there's no guarantee that he will find the time to advance his project as much as he would like in the next year or so, but check out his github repo https://github.com/ccweaver1/bsi_vision to see how the project is evolving.
+
 
 
 
