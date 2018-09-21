@@ -32,7 +32,14 @@ Campbell's now beginning a master's degree in artificial intelligence, so there'
 
 ## Speaking of SPORTLOGiQ...
 
-Yu's poster.
+There was (at least) one representative from SPORTLOGiQ, David Yu, who presented a very nice poster entitled *Analysis of team level pace of play in hockey using spatio-temporal data*. I don't think I can explain what this is about better the the poster itself so here it is:
+
+(POSTER)
+
+If you're interested in that kind of stuff, follow him on twitter: [@yuorme](https://twitter.com/yuorme).
+
+
+Yu's poster. (I will send him an email to ask if we can show his poster here).
 
 
 ## Hockey in space?
@@ -41,8 +48,8 @@ Yu's poster.
 ## Micah
 
 
+Of course, this was just a small part of what happened on Saturday, and we're sorry we couldn't summarize it all because most of it was pretty interesting. Omitted (but still worthy!) presentations treated the questions of how to best qualify the pace of play (Tim Swartz); how to identify exceptional players (Yejia Liu, Simon Fraser University); concussions and dementia (Lili Hazrati, The Hospital for Sick Children); and the hot hand theory in hockey (Likang Ding). There were also multiple panels/interviews with hockey experts. This is where the Karlsson saga popped all the time. Panelists/experts that identified themselves as Sens fans appeared quite disappointed (to say the least), but most of them seemed to agree on one thing: it's time for a rebuilding phase in Ottawa: invest in young players and show patience. The only problem is that Ottawa gave away their first-round pick for the 2019 draft in the Duchesne trade (to Colorado). Chances are that Joe Sakic was smiling when he heard about the Karlsson trade...
 
 
-SAY THAT THE DAY WAS NICE IN GENERAL. Mention names of other presenters with very very brief description. Comeback on the trade and say that everyone seemed pretty sad: time to start a rebuilding phase in Ottawa. 
 
 
