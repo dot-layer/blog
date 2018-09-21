@@ -244,7 +244,7 @@ The [example 1 figure](#fig:example1) is a example of graphic that basically mee
 <p class="caption">Example 2</p>
 </div>
 
-The last example shows that it exists multiple ways to build a given graphical representation. However, all those representations can be "sorted" by relevance in a **given situation**. That being said, I think that for each context, depending on different elements such as the objective, the data and the audience, there exists a particular representation that is the most appropriate for **that particular situation**. Then, there are multiple representations that are still good, which means that the objective is then to pratice and gain experience to ultimatly approach the most suited one.
+The last example shows that there exists multiple ways to build a given graphical representation. However, all those representations can be "sorted" by relevance in a **given situation**. That being said, I think that for each context, depending on different elements such as the objective, the data and the audience, there exists a particular representation that is the most appropriate for **that particular situation**. Then, there are multiple representations that are still good, which means that the objective is then to practice and gain experience to ultimately approach the most suited one.
 
 
 [^hadley]: Hadley Wickham
