@@ -4,6 +4,8 @@ slug: grammar-of-graphics
 author: Stéphane Caron
 date: '2018-09-01'
 type: post
+featured: "ggplot-cover.jpg"
+featuredpath: "date"
 tags: 
   - vizualisation
   - plot
