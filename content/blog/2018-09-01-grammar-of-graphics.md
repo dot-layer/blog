@@ -2,10 +2,12 @@
 title: The grammar of graphics
 slug: grammar-of-graphics
 author: Stéphane Caron
+description: "The art of communicate with graphics"
 date: '2018-09-01'
 type: post
 featured: "ggplot-cover.jpg"
-featuredpath: "date"
+featuredalt: "Pic 3"
+featuredpath: "img/headers/"
 tags: 
   - vizualisation
   - plot
@@ -136,7 +138,7 @@ ggplot(mtcars, aes(x = hp, y = mpg, color = as.factor(carb))) +
 ```
 
 <div id="fig:facet2" class="figure" style="text-align: center">
-<img src="2018-09-01-grammar-of-graphics_files/figure-html/facet2-1.png" alt="Factted plot are way more easier to detect pattern in each group"  />
+<img src="2018-09-01-grammar-of-graphics_files/figure-html/facet2-1.png" alt="Facetted plot are way more easier to detect pattern in each group"  />
 <p class="caption">Factted plot are way more easier to detect pattern in each group</p>
 </div>
 
@@ -256,3 +258,9 @@ The last example shows that there exists multiple ways to build a given graphica
 To conclude, it isn't a coincidence if I started with the grammatical part and then finished with the "feeling" part. A good grammar is the base of every communication, it allows you to clearly communicate something and encourages people to focus on your content rather than on the way you express it. Once you master the rules behind the grammar, you have the freedom to express it the way you want and let your creativity speak for itself. In brief, we must start by learning a set of rules that will ultimatly allow us to communicate convincing and, most importantly, **creative** graphics.
 
 The complete code of that article can be found through that [link](https://github.com/stecaron/dastat/blob/master/content/post/2017-11-23-grammar-of-graphics.Rmd).
+
+**Sources:**
+
+- https://thenextscoop.com/balance-visual-communication-relying-words/
+- https://skillgaze.com/2017/10/31/understanding-different-visualization-layers-of-ggplot/
+
