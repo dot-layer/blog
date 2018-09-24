@@ -6,7 +6,6 @@ description: "The art of communicate with graphics"
 date: '2018-09-01'
 type: post
 featured: "ggplot-cover.jpg"
-featuredalt: "Pic 3"
 featuredpath: "img/headers/"
 tags: 
   - vizualisation
