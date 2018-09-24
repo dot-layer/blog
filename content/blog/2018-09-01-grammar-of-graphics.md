@@ -252,3 +252,5 @@ The last example shows that there exists multiple ways to build a given graphica
 # Conclusion
 
 To conclude, it isn't a coincidence if I started with the grammatical part and then finished with the "feeling" part. A good grammar is the base of every communication, it allows you to clearly communicate something and encourages people to focus on your content rather than on the way you express it. Once you master the rules behind the grammar, you have the freedom to express it the way you want and let your creativity speak for itself. In brief, we must start by learning a set of rules that will ultimatly allow us to communicate convincing and, most importantly, **creative** graphics.
+
+The complete code of that article can be found through that [link](https://github.com/stecaron/dastat/blob/master/content/post/2017-11-23-grammar-of-graphics.Rmd).
