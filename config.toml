@@ -11,6 +11,9 @@ pluralizeListTitles = false
 enableRobotsTXT = true
 canonifyURLs = true
 
+# Enable Emoji emoticons support for page content; see emoji-cheat-sheet.com
+enableEmoji   = true
+
 [params]
   # Sets the meta tag description
   description          = "dot-layer community website"
