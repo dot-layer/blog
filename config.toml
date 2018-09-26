@@ -1,6 +1,6 @@
 baseurl = "/"
 languageCode = "en-us"
-title = "dot-layer"
+title = ".layer"
 theme = "hugo-future-imperfect"
 preserveTaxonomyNames = true
 paginate = 3
@@ -13,9 +13,9 @@ canonifyURLs = true
 
 [params]
   # Sets the meta tag description
-  description          = "dot-layer community website"
+  description          = ".layer community website"
   # Sets the navbarTitle that appears in the top left of the navigation bar
-  navbarTitle          = "dot-layer"
+  navbarTitle          = ".layer"
   # Sets where "View More Posts" links
   viewMorePostLink     = "/blog/"
 
@@ -46,7 +46,7 @@ canonifyURLs = true
   socialShareTwitter   = true
   socialShareGoogleplus = false
   socialShareFacebook  = true
-  socialShareReddit    = true
+  socialShareReddit    = false
   socialShareLinkedin  = true
   socialShareStumbleupon = false
   socialSharePinterest = false
@@ -87,11 +87,11 @@ canonifyURLs = true
   # These are optional params related to the sidebar. They are recommended, but not
   # required for proper functionality. HTML is supported within the params.
 [params.intro]
-  header    = "dot-layer"
+  header    = ".layer"
 
-  paragraph = "Another fine responsive site template by <a href=\"http://html5up.net\">HTML5 UP</a>. Ported by Julio Pescador with some extra goodies <i class='fa fa-hand-peace-o'></i>"
+  paragraph = ""
 
-  about     = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tellus lacus, auctor vehicula molestie quis, tempor quis velit. Quisque in quam ac leo efficitur vulputate. Phasellus ullamcorper aliquam sodales. Maecenas sit amet condimentum ipsum. Proin sit amet ligula elit. Mauris."
+  about     = ".layer is a data science oriented community that works on collaborative projects and spreads knowledge in order to promote and share a common passion. In Unix-like operating system, files or folders starting with a *dot* are treated as hidden. This name is intented to illustrate the fact that data science, machine learning and other related fields are often not enough recognised and well known by most of the people.<br><br>This blog aims to share ideas about this exciting field and also promote the work and the passion shared by all the people contributing to this community."
 
   # This appears at the top of the sidebar above params.intro.header.
   # A width of less than 100px is recommended from a design perspective.
