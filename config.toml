@@ -11,6 +11,9 @@ pluralizeListTitles = false
 enableRobotsTXT = true
 canonifyURLs = true
 
+[permalinks]
+    post = "/:slug/"
+
 [params]
   # Sets the meta tag description
   description          = ".layer community website"

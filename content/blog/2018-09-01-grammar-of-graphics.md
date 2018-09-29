@@ -4,6 +4,7 @@ slug: grammar-of-graphics
 author: Stéphane Caron
 description: "The art of communicate with graphics"
 date: '2018-09-01'
+categories: ["R"]
 type: post
 featured: "ggplot-cover.jpg"
 featuredpath: "img/headers/"
