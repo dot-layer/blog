@@ -62,14 +62,14 @@ To make your own comparisons, check out his very nice [Shiny app](https://dbecke
 
 In the new age of data, it's all about context! Indeed, we can now analyze the basic statistics collected such as shots, goals, assists, etc, focusing on very specific contexts. The idea of normalizing with respect to context was the basis of Micah Black McCurdy's talk: [Isolating Individual Skater Impact on Team Shot Quantity and Quality](http://hockeyviz.com/static/pdf/otthac18.pdf).
 
-To illustrate the idea, imagine you want to compare Evegni Malkin and Connor McDavid. The former had 1.21 pts/games in the last 2 NHL seasons while the latter had 1.27. Not a large difference... but what about the different linemates and teammates the two players had? What about the different players each have faced during the season? Could normalizing for these different factors tells us an alternative story about Malkin vs McDavid? Micah proposed to characterize the contexts in which the players are put using criteria such as:
+To illustrate the idea, imagine you want to compare Evegni Malkin and Connor McDavid. The former had 1.21 pts/games in the last 2 NHL seasons while the latter had 1.27. Not a large difference... but what about the different linemates and teammates the two players had? What about the different players each have faced during the season? Could normalizing for these different factors tell us an alternative story about Malkin vs McDavid? Micah proposed to characterize the contexts in which the players are put using criteria such as:
 
 - teammates: playing with good players or not?
 - competition (opposing players): playing against good players or not?
 - score impact: playing in a team that always trail or not?
 - zone impact: playing most of his time in offensive or defensive zones?
 
-We won't go into the technical details of his method; you can find them by following the (above) link to its presentation. I also stringly encourage you to take a glimpse at his results, really interresting to see which players look good and which look bad in each context described earlier. You may even be surprised to see that Sidney Crosby is not the best 5v5 net top performer in the league ... :anguished: :anguished: :anguished: 
+We won't go into the technical details of his method; you can find them by following the (above) link to its presentation. We also strongly encourage you to take a glimpse at his results (slides 22-23 and 32-37). You may also be surprised to see that Brendan Gallagher is rated quite well, and that Sidney Crosby is not the best 5v5 net performer in the league according to his metric... :anguished: :anguished: :anguished: 
 
 
 ## Final word
