@@ -46,12 +46,12 @@ There was one (or more) representative from SPORTLOGiQ, David Yu, who presented 
 Yu's poster. (I will send him an email to ask if we can show his poster here).
 
 
-## Hockey in space?
+## Hockey in space
 
 
-One thing I will remember from Devan Becker (University of Western Ontario) presentation called *Hockey in Space: Characterizing team-wise differences in shot locations with spatial point processes* is the fact that there is more and more data available from NHL APIs. By using shots taken locations, we saw the differences from where the NHL teams are mainly shooting on the ice. The speaker also showed us a nice [application](https://dbecker.shinyapps.io/LGCP_Results/) he built using the cool R package [Shiny](https://shiny.rstudio.com/).
+One thing we'll remember from Devan Becker's (University of Western Ontario) presentation, *Hockey in Space: Characterizing team-wise differences in shot locations with spatial point processes*, is that there is more and more data available from NHL APIs. By using shots taken locations, (MISSING THE MATH PART/OR SMOOTHING?) Devan compared some of the NHL teams with respect to where they are shooting from.
 
-Using that web application, we can have a quick idea of where the shots are coming for a specific, but also what is the variance for each spot densities. One may think that kind of viz could be very useful to get some quick insights about other teams strategies, weaknesses, etc .. Interesting ! :clap: :clap:
+To make your own comparisons, check out its very nice web [application](https://dbecker.shinyapps.io/LGCP_Results/) built using the more-than-cool R package [Shiny](https://shiny.rstudio.com/). You choose a team and the web app gives an idea of where the shots are going to coming from. In addition, you get --what is the variance for each spot densities--?. A nice viz tool, useful to get some quick insights about other teams strategies, weaknesses, etc .. Interesting! :clap: :clap:
 
 
 ## How fairly compare Malkin and McDavid?
