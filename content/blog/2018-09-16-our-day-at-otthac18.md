@@ -58,18 +58,18 @@ Yu's poster. (I will send him an email to ask if we can show his poster here).
 To make your own comparisons, check out his very nice [Shiny app](https://dbecker.shinyapps.io/LGCP_Results/) (built using the more-than-cool R package [Shiny](https://shiny.rstudio.com/)). To get the deviation from league average, choose the option S(x,y) in the Data scroll menu Choose the option. A nice viz tool, useful to get some quick insights about other teams tendencies, strategies, weaknesses, etc .. Interesting! :clap: :clap:
 
 
-## How fairly compare Malkin and McDavid?
+## Malkin vs McDavid
 
-It's no secret, we are in the age of data. In fact, we collect and treat more and more data everywhere. Now that we have access to more data, basic statistics in hockey such as shots, goals or assists could now be view treated in different contexts. The idea of adding more context around data is really exciting and it was nearly the main idea I kept from Micah Black McCurdy talk. The subject of his talk [Isolating Individual Skater Impact on Team Shot Quantity and Quality](http://hockeyviz.com/static/pdf/otthac18.pdf) talks for itself: we want to isolate the contribution of a player in a given team.
+In the new age of data, it's all about context! Indeed, we can now analyze the basic statistics collected such as shots, goals, assists, etc, focusing on very specific contexts. The idea of normalizing with respect to context was the basis of Micah Black McCurdy's talk: [Isolating Individual Skater Impact on Team Shot Quantity and Quality](http://hockeyviz.com/static/pdf/otthac18.pdf).
 
-To illustrate the idea, imagine you wanna compare Evegni Malkin and Connor McDavid. Broadly speaking, the former had 1.21 pts/games in the last 2 NHL seasons while the latter had 1.27. Not a large difference actually ... but what about the teammates both players had? What about the opposition both have faced? When we take into account all the different contexts around those two players, maybe the difference become much larger? In his work, Micah proposed different contexts such as :
+To illustrate the idea, imagine you want to compare Evegni Malkin and Connor McDavid. The former had 1.21 pts/games in the last 2 NHL seasons while the latter had 1.27. Not a large difference... but what about the different linemates and teammates the two players had? What about the different players each have faced during the season? Could normalizing for these different factors tells us an alternative story about Malkin vs McDavid? Micah proposed to characterize the contexts in which the players are put using criteria such as:
 
 - teammates: playing with good players or not?
 - competition (opposing players): playing against good players or not?
 - score impact: playing in a team that always trail or not?
 - zone impact: playing most of his time in offensive or defensive zones?
 
-I'll avoid the technical details about his method, but you can find some details by following the link (above) to the presentation. I also stringly encourage you to take a glimpse at his results, really interresting to see which players look good and which look bad in each context described earlier. You may even be surprised to see that Sidney Crosby is not the best 5v5 net top performer in the league ... :anguished: :anguished: :anguished: 
+We won't go into the technical details of his method; you can find them by following the (above) link to its presentation. I also stringly encourage you to take a glimpse at his results, really interresting to see which players look good and which look bad in each context described earlier. You may even be surprised to see that Sidney Crosby is not the best 5v5 net top performer in the league ... :anguished: :anguished: :anguished: 
 
 
 ## Final word
