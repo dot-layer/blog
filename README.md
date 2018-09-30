@@ -13,7 +13,7 @@ First, to be reproducible through the time, and mainly through all different use
 3. Create a new branch from `master`. You could use this naming convention: `post/your-initials_name-of-your-post`.
 4. Insert your post in the `content/blog/` directory. At this point, your post file should be a html or a markdown file. If you do not have any code to compile, you can simply create a new markdown file in that directory and start to write your post.
 5. If you have static files like graphics or externals images, add them in `static/blog/slug-of-your-post/`. The slug is a parameter included in your YAML header. We decided to use the slug based on a [suggestion](https://bookdown.org/yihui/blogdown/configuration.html#options) from Yihui Xie.
-6. If you wanna add a cover image for your post, add it to the `static/img/header/` directory and add those 2 parameters in your YAML header:
+6. If you want to add a cover image for your post, add it to the `static/img/header/` directory and add those 2 parameters in your YAML header:
 - `featured: "file.jpg"`
 - `featuredpath: "img/headers/"`
 7. Build and test the website locally by using commands `hugo` (build) and `hugo server` (create a local server) or by using the `blogdown` command for RStudio users `blogdown::build_site()`.
