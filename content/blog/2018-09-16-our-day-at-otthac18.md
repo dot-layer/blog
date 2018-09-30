@@ -48,10 +48,14 @@ Yu's poster. (I will send him an email to ask if we can show his poster here).
 
 ## Hockey in space
 
+<p style='text-align: justify;'>
+<img src="devan_league_average.png" width="150" align="right">One thing we'll remember from Devan Becker's (University of Western Ontario) presentation, *Hockey in Space: Characterizing team-wise differences in shot locations with spatial point processes*, is that there is more and more data available from NHL APIs. For each team individually, Devan got the locations of the shots taken, which he smoothed using a parametric model (Log-Gaussian Cox Process). For example, when we average over all shots taken, we get the density heatmap just beside this paragraph. To tell how much a given team deviates from the average, Devan then repeated the process for each team individually and subtracted the heatmaps obtained to the league average. We can then compare teams by placing their corresponding heatmaps side-by-side. Here's the comparison between the Wings and the Lightning.
+</p>
+<center>
+![Detroit vs Tampa Bay](devan_det_tb.png)
+</center>
 
-One thing we'll remember from Devan Becker's (University of Western Ontario) presentation, *Hockey in Space: Characterizing team-wise differences in shot locations with spatial point processes*, is that there is more and more data available from NHL APIs. By using shots taken locations, (MISSING THE MATH PART/OR SMOOTHING?) Devan compared some of the NHL teams with respect to where they are shooting from.
-
-To make your own comparisons, check out its very nice web [application](https://dbecker.shinyapps.io/LGCP_Results/) built using the more-than-cool R package [Shiny](https://shiny.rstudio.com/). You choose a team and the web app gives an idea of where the shots are going to coming from. In addition, you get --what is the variance for each spot densities--?. A nice viz tool, useful to get some quick insights about other teams strategies, weaknesses, etc .. Interesting! :clap: :clap:
+To make your own comparisons, check out his very nice [Shiny app](https://dbecker.shinyapps.io/LGCP_Results/) (built using the more-than-cool R package [Shiny](https://shiny.rstudio.com/)). To get the deviation from league average, choose the option S(x,y) in the Data scroll menu Choose the option. A nice viz tool, useful to get some quick insights about other teams tendencies, strategies, weaknesses, etc .. Interesting! :clap: :clap:
 
 
 ## How fairly compare Malkin and McDavid?
