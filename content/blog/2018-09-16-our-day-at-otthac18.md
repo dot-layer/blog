@@ -44,8 +44,21 @@ Yu's poster. (I will send him an email to ask if we can show his poster here).
 One thing I will remember from Devan Becker (University of Western Ontario) presentation called *Hockey in Space: Characterizing team-wise differences in shot locations with spatial point processes* is the fact that there is more and more data available from NHL APIs. By using shots taken locations, we saw the differences from where the NHL teams are mainly shooting on the ice. The speaker also showed us a nice [application](https://dbecker.shinyapps.io/LGCP_Results/) he built using the cool R package [Shiny](https://shiny.rstudio.com/).
 
 Using that web application, we can have a quick idea of where the shots are coming for a specific, but also what is the variance for each spot densities. One may think that kind of viz could be very useful to get some quick insights about other teams strategies, weaknesses, etc .. Interesting ! :clap: :clap:
-## Micah
 
+## How fairly compare Malkin and McDavid?
+
+It's no secret, we are in the age of data. In fact, we collect and treat more and more data everywhere. Now that we have access to more data, basic statistics in hockey such as shots, goals or assists could now be view treated in different contexts. The idea of adding more context around data is really exciting and it was nearly the main idea I kept from Micah Black McCurdy talk. The subject of his talk [Isolating Individual Skater Impact on Team Shot Quantity and Quality](http://hockeyviz.com/static/pdf/otthac18.pdf) talks for itself: we want to isolate the contribution of a player in a given team.
+
+To illustrate the idea, imagine you wanna compare Evegni Malkin and Connor McDavid. Broadly speaking, the former had 1.21 pts/games in the last 2 NHL seasons while the latter had 1.27. Not a large difference actually ... but what about the teammates both players had? What about the opposition both have faced? When we take into account all the different contexts around those two players, maybe the difference become much larger? In his work, Micah proposed different contexts such as :
+
+- teammates: playing with good players or not?
+- competition (opposing players): playing against good players or not?
+- score impact: playing in a team that always trail or not?
+- zone impact: playing most of his time in offensive or defensive zones?
+
+I'll avoid the technical details about his method, but you can find some details by following the link (above) to the presentation. I also stringly encourage you to take a glimpse at his results, really interresting to see which players look good and which look bad in each context described earlier. You may even be surprised to see that Sidney Crosby is not the best 5v5 net top performer in the league ... :anguished: :anguished: :anguished: 
+
+## Final word
 
 Of course, this was just a small part of what happened on Saturday, and we're sorry we couldn't summarize it all because most of it was pretty interesting. Omitted (but still worthy!) presentations treated the questions of how to best qualify the pace of play (Tim Swartz); how to identify exceptional players (Yejia Liu, Simon Fraser University); concussions and dementia (Lili Hazrati, The Hospital for Sick Children); and the hot hand theory in hockey (Likang Ding). There were also multiple panels/interviews with hockey experts. This is where the Karlsson saga popped all the time. Panelists/experts that identified themselves as Sens fans appeared quite disappointed (to say the least), but most of them seemed to agree on one thing: it's time for a rebuilding phase in Ottawa: invest in young players and show patience. The only problem is that Ottawa gave away their first-round pick for the 2019 draft in the Duchesne trade (to Colorado). Chances are that Joe Sakic was smiling when he heard about the Karlsson trade...
 
