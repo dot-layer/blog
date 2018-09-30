@@ -6,7 +6,7 @@ The objective behind this blog is to make it easy for the community members (and
 
 Here is a quick tutorial that explains few steps to follow in order to contribute to this blog.
 
-First, to be reproducible through the time, and mainly through all different users, this repo should be **independent** of any specific code compilations (R, Python, etc). For example, in a data analysis, the graphics, values and models should already have been calculated by the user and the results included in a compiled document such as a .md or .html extension.
+First, to maximize reproducibility through the time, and for all different users, the repo should be independent of any specific code compilations (R, Python, etc). For example, in a data analysis, the graphics, values and models should already have been calculated by the user and the results included in a compiled document such as a .md or .html extension.
 
 1. The very first step is to create your post and compile your code in order to have a markdown or a html document. The code compilation should be done as part of another project (repo). If your post does not include any code compilation, you can start directly at step 2.
 2. Clone this project: `git clone https://github.com/dot-layer/blog.git`.
