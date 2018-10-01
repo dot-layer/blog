@@ -11,13 +11,11 @@ pluralizeListTitles = false
 enableRobotsTXT = true
 canonifyURLs = true
 
-<<<<<<< HEAD
 # Enable Emoji emoticons support for page content; see emoji-cheat-sheet.com
 enableEmoji   = true
-=======
+
 [permalinks]
     post = "/:slug/"
->>>>>>> master
 
 [params]
   # Sets the meta tag description
