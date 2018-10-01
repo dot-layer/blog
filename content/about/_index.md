@@ -1,29 +1,8 @@
 +++
-title = "About Hugo"
-date = "2014-04-09"
+title = "About .layer"
+date = "2018-09-01"
 +++
 
-Hugo is a static site engine written in Go.
+.layer is a data science oriented community created for promoting collaboration and knowledge sharing among its members. In Unix-like operating system, files or folders starting with a *dot* are treated as hidden, invisible to the passerby. Most people don't even know their existence and purpose. Much like *dot* files, data scientists are the hidden layer between a world where people produce data and live the outcomes of many performing algorithms. For those data scientists, now is time to say: Hello World!
 
-
-It makes use of a variety of open source projects including:
-
-* [Cobra](https://github.com/spf13/cobra)
-* [Viper](https://github.com/spf13/viper)
-* [J Walter Weatherman](https://github.com/spf13/jWalterWeatherman)
-* [Cast](https://github.com/spf13/cast)
-
-Learn more and contribute on [GitHub](https://github.com/spf13).
-
-## Setup
-
-Some fun facts about [Hugo](http://gohugo.io/):
-
-* Built in [Go](http://golang.org/)
-* Loosely inspired by [Jekyll](http://jekyllrb.com/)
-* Primarily developed by [spf13](http://spf13.com/) on the train while commuting to and from Manhattan.
-* Coded in [Vim](http://vim.org) using [spf13-vim](http://vim.spf13.com/)
-
-Have questions or suggestions? Feel free to [open an issue on GitHub](https://github.com/spf13/hugo/issues/new) or [ask me on Twitter](https://twitter.com/spf13).
-
-Thanks for reading!
+The objective behind this blog is to make it easy for the community members (and anybody else) to promote their work and share their thoughts and ideas related to the field of data science/machine learning.

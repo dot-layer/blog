@@ -1,6 +1,6 @@
 baseurl = "/"
 languageCode = "en-us"
-title = "dot-layer"
+title = ".layer"
 theme = "hugo-future-imperfect"
 preserveTaxonomyNames = true
 paginate = 3
@@ -11,14 +11,19 @@ pluralizeListTitles = false
 enableRobotsTXT = true
 canonifyURLs = true
 
+<<<<<<< HEAD
 # Enable Emoji emoticons support for page content; see emoji-cheat-sheet.com
 enableEmoji   = true
+=======
+[permalinks]
+    post = "/:slug/"
+>>>>>>> master
 
 [params]
   # Sets the meta tag description
-  description          = "dot-layer community website"
+  description          = ".layer community website"
   # Sets the navbarTitle that appears in the top left of the navigation bar
-  navbarTitle          = "dot-layer"
+  navbarTitle          = ".layer"
   # Sets where "View More Posts" links
   viewMorePostLink     = "/blog/"
 
@@ -49,7 +54,7 @@ enableEmoji   = true
   socialShareTwitter   = true
   socialShareGoogleplus = false
   socialShareFacebook  = true
-  socialShareReddit    = true
+  socialShareReddit    = false
   socialShareLinkedin  = true
   socialShareStumbleupon = false
   socialSharePinterest = false
@@ -90,16 +95,16 @@ enableEmoji   = true
   # These are optional params related to the sidebar. They are recommended, but not
   # required for proper functionality. HTML is supported within the params.
 [params.intro]
-  header    = "dot-layer"
+  header    = ".layer"
 
-  paragraph = "Another fine responsive site template by <a href=\"http://html5up.net\">HTML5 UP</a>. Ported by Julio Pescador with some extra goodies <i class='fa fa-hand-peace-o'></i>"
+  paragraph = "Bloggers write.<br>The passionate people share."
 
-  about     = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tellus lacus, auctor vehicula molestie quis, tempor quis velit. Quisque in quam ac leo efficitur vulputate. Phasellus ullamcorper aliquam sodales. Maecenas sit amet condimentum ipsum. Proin sit amet ligula elit. Mauris."
+  about     = ".layer is a data science oriented community created for promoting collaboration and knowledge sharing among its members. In Unix-like operating system, files or folders starting with a dot are treated as hidden, invisible to the inattentive passerby. Much like dot files, data scientists at home, in their cubicle at work, or in a university basement often live in the shadows. Now is time to say: Hello World! lolk."
 
   # This appears at the top of the sidebar above params.intro.header.
   # A width of less than 100px is recommended from a design perspective.
   [params.intro.pic]
-    src       = "/img/main/logo.jpg"
+    # src       = "/img/main/logo.jpg"
     # Sets Image to be a cirlce
     circle    = false
     # Sets Image to be Future Imperfect's hexagon
