@@ -23,14 +23,14 @@ Speaking of *what ifs*, what if Lemieux didn't get injured? Tyrel doesn't answer
 
 ## The rise of artificial intelligence
 
-It's hard to have a conversation about AI in hockey (and sports in general) without mentionning the Montreal-based company SPORTLOGiQ. In their own words: ``our software is able to transform raw video data into advanced sports analytics by flagging specific game events—shots, passes and possessions—and recording their XY coordinates.''
+It's hard to have a conversation about AI in hockey (and sports in general) without mentionning the Montreal-based company SPORTLOGiQ. In their own words: "our software is able to transform raw video data into advanced sports analytics by flagging specific game events—shots, passes and possessions—and recording their XY coordinates."
 
-We were happy to see that the sixth presentation of the day was given by a guy, Campbell Weaver, who's building his own player tracking algorithm. He (or its algorithm) tracks the players' movements on the ice (from a broadcast video), using Keras and *deep convolution neural networks*. To circumvent the fact that it's hard get a ton of labeled video (to teach the algorithm), he took advantage of the famous ImageNet dataset: in short, he first trained his algorithm to recognize everyday life things and only then began to teach him some hockey stuff. Why would this help?
+We were happy to see that the sixth presentation of the day was given by someone, Campbell Weaver (Princeton University), who's building his own player tracking algorithm. He (or his algorithm) tracks the players' movements on the ice (from a broadcast video), using Keras and *deep convolution neural networks*. To circumvent the fact that it's hard to get a ton of labeled video (to teach the algorithm), he took advantage of the famous ImageNet dataset: in short, he first trained his algorithm to recognize everyday life things and only then began to teach him some hockey stuff. Why would this help?
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Campbell Weaver on transfer learning in hockey using ImageNet: &quot;the features of a person look a lot like a player and features of a person plus the features of a zebra look a lot like a referee&quot; 🤣🏒🥅🦓 <a href="https://twitter.com/hashtag/OTTHAC18?src=hash&amp;ref_src=twsrc%5Etfw">#OTTHAC18</a></p>&mdash; D. David Yu (@yuorme) <a href="https://twitter.com/yuorme/status/1040992518232403968?ref_src=twsrc%5Etfw">September 15, 2018</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-Apart from the actual tracking of the players, Campbell discussed other challenges that building a dashboard brings, an interesting one being that once you can identify where the players are on the screen, how do you know their exact position on the ice?
+Apart from the actual tracking of the players on the ice, Campbell also introduced us to the challenge that homography detection is: once we know where the players are, on the screen, how to place them a 2D representation of the ice (you know, the classic drawing of the ice on a board that coaches use).
 
 Campbell's now beginning a master's degree in artificial intelligence, so there's no guarantee that he will find the time to advance his project as much as he would like in the next year or so, but check out his github repo https://github.com/ccweaver1/bsi_vision to see how the project is evolving.
 
