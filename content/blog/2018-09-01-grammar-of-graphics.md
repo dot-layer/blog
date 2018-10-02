@@ -2,7 +2,7 @@
 title: The grammar of graphics
 slug: grammar-of-graphics
 author: Stéphane Caron
-description: "The art of communicate with graphics"
+description: "The art of communicating with graphics"
 date: '2018-09-01'
 type: post
 featured: "ggplot-cover.jpg"
