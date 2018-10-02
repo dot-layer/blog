@@ -38,12 +38,10 @@ Campbell's now beginning a master's degree in artificial intelligence, so there'
 
 ## Speaking of SPORTLOGiQ...
 
-There was one (or more) representative from SPORTLOGiQ, David Yu, who presented a very nice poster entitled *Analysis of team level pace of play in hockey using spatio-temporal data*. I don't think I can explain what this is about better the the poster itself so here it is:
+There was one (or more) representative from SPORTLOGiQ, David Yu, who presented a very nice poster titled *Analysis of team level pace of play in hockey using spatio-temporal data*. None of us have seen a clearer analysis of the pace of play in hockey than this. Have a look for yourself...
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">To wrap things up, here&#39;s my full poster for those interested and/or following at home. Curious what the broader <a href="https://twitter.com/hashtag/hockey?src=hash&amp;ref_src=twsrc%5Etfw">#hockey</a> <a href="https://twitter.com/hashtag/analytics?src=hash&amp;ref_src=twsrc%5Etfw">#analytics</a> community thinks of this work. <a href="https://twitter.com/hashtag/OTTHAC18?src=hash&amp;ref_src=twsrc%5Etfw">#OTTHAC18</a> 🏒🥅 <a href="https://twitter.com/SPORTLOGiQ?ref_src=twsrc%5Etfw">@SPORTLOGiQ</a> <a href="https://t.co/Bs24woHPZJ">pic.twitter.com/Bs24woHPZJ</a></p>&mdash; D. David Yu (@yuorme) <a href="https://twitter.com/yuorme/status/1041381948344557568?ref_src=twsrc%5Etfw">September 16, 2018</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-Yu's poster. (I will send him an email to ask if we can show his poster here).
 
 
 ## Hockey in space
