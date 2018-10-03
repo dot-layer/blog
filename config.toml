@@ -95,7 +95,7 @@ enableEmoji   = true
 [params.intro]
   header    = ".layer"
 
-  paragraph = "Bloggers write.<br>The passionate people share."
+  paragraph = "Bloggers write.<br>Passionated people share."
 
   about     = ".layer is a data science oriented community created for promoting collaboration and knowledge sharing among its members. In Unix-like operating system, files or folders starting with a dot are treated as hidden, invisible to the inattentive passerby. Much like dot files, data scientists at home, in their cubicle at work, or in a university basement often live in the shadows. Now is time to say: Hello World! lolk."
 
