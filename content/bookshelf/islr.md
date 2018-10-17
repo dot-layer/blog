@@ -1,5 +1,5 @@
 ---
-title: Book Review: An Introduction to Statistical Learning
+title: "Book Review: An Introduction to Statistical Learning"
 slug: islr
 author: "Christopher Blier-Wong"
 description: "With Applications in R"
