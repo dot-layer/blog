@@ -5,9 +5,7 @@ author: "Christopher Blier-Wong"
 description: "With Applications in R"
 date: '2018-10-16'
 categories: ["Book Review"]
-type: post
-featured: "islr.jpg"
-featuredpath: "img/headers/"
+type: page
 tags: 
 - Machine Learning
 - Statistics
