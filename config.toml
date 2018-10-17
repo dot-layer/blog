@@ -133,6 +133,12 @@ enableEmoji   = true
   url = "/contact/"
   identifier = "fa fa-envelope-o"
   weight = 3
+  
+[[menu.main]]
+  name = "Bookshelf"
+  url = "/bookshelf/"
+  identifier = "fa fa-book"
+  weight = 4
 
 # Sets Social Media icons to appear and link to your account. Value should be your
 # username unless otherwise noted. These are the icons affected by socialAppearAtTop
