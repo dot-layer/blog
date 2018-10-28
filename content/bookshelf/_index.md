@@ -3,15 +3,16 @@ title = "Bookshelf"
 date = "2018-10-16"
 +++
 
-This list of topic-centric book are a collective list in a effort of ansering question about the must read book in computer science, machine learning and statistics.
+This collective list of topic-centric books is made available in a effort to answer the most fundamental question of all: what are the must-read books in computer science, machine learning and statistics?
 
 # **Table of Contents**
-1. [Coding skill](#Coding_skill)
-2. [Machine learning](#ML)
-2. [Algorithm](#Algo)
+1. [Machine/statistical learning](#ML)
+2. [Coding skill](#Coding_skill)
+3. [Algorithm](#Algo)
 
 ## <a name="ML">Machine learning</a>
 - [An Introduction to Statistical Learning](/bookshelf/islr/) :book: [Link to pdf](https://www-bcf.usc.edu/~gareth/ISL/ISLR%20Seventh%20Printing.pdf)
+- [The Elements of Statistical Learning](/bookshelf/islr/) :book: [Link to pdf](https://web.stanford.edu/~hastie/Papers/ESLII.pdf)
 - Hands on machine learning with Scikit learn and Tensorflow
 - Speech and language processing
 - Understanding machine learning theory algorithms
