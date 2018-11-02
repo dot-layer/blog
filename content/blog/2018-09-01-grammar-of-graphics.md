@@ -28,7 +28,7 @@ We'll briefly get into those two elements and I hope this short blog post will h
 
 # The grammar of graphics
 
-Have you ever worked with someone making lot of synthax or grammatical mistakes? Pretty sure you do ... From my perspective, those people are generally tough to follow and poor at explaning their point of view. That's because communicating through speaking or writing requires us to follow different rules. In some way, graphical representations also require us to follow certain rules. The grammar of graphics, a plotting framework developped by Leland Wilkinson in the 90s, constitutes an example of building blocks onto which grammatical rules have been developped to create "solid, creative and meaningful vizualisations"[^datacamp].
+Have you ever worked with someone making lot of synthax or grammatical mistakes? Pretty sure you do... From my perspective, those people are generally tough to follow and poor at explaning their point of view. That's because communicating through speaking or writing requires us to follow different rules. In some way, graphical representations also require us to follow certain rules. The grammar of graphics, a plotting framework developped by Leland Wilkinson in the 90s, constitutes an example of building blocks onto which grammatical rules have been developped to create "solid, creative and meaningful vizualisations"[^datacamp].
 
 [^datacamp]: Rick Scavetta, DataCamp course on `ggplot2`
 
