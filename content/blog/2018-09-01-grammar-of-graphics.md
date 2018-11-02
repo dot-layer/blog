@@ -195,7 +195,7 @@ ggplot(mtcars, aes(x = mpg, y = qsec)) +
 <p class="caption">Overuse of themes causes our mind to focus on non-related data elements</p>
 </div>
 
-In contrast, the [figure](#fig:theme2) is way clearer when nothing irrelevant has been added to the plot, which leads the reader to focus on the data and the trend behind it:
+In contrast, the [figure](#fig:theme2) is way clearer as nothing irrelevant has been added to the plot. This leads the reader to focus on the data and the trend behind it:
 
 
 ```r
