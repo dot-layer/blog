@@ -28,7 +28,7 @@ We'll briefly get into those two elements and I hope this short blog post will h
 
 # The grammar of graphics
 
-Have you ever worked with someone making lot of synthax or grammatical mistakes? Pretty sure you do ... From my perspective, those people are generally tough to follow and poor at explaning their point of view. That's because communicating through speaking or writing requires us to follow different rules. In some way, graphical representations also require us to follow certain rules. The grammar of graphics, a plotting framework developped by Leland Wilkinson in the 90s, consitutes an example of building blocks onto which grammatical rules have been developped to create "solid, creative and meaningful vizualisations"[^datacamp].
+Have you ever worked with someone making lot of synthax or grammatical mistakes? Pretty sure you do ... From my perspective, those people are generally tough to follow and poor at explaning their point of view. That's because communicating through speaking or writing requires us to follow different rules. In some way, graphical representations also require us to follow certain rules. The grammar of graphics, a plotting framework developped by Leland Wilkinson in the 90s, constitutes an example of building blocks onto which grammatical rules have been developped to create "solid, creative and meaningful vizualisations"[^datacamp].
 
 [^datacamp]: Rick Scavetta, DataCamp course on `ggplot2`
 
@@ -102,7 +102,7 @@ mtcars %>%
 
 In the `ggplot2` framework, we add geometries with geom_xxxx to our plot.
 
-### Optionnal grammatical elements
+### Optional grammatical elements
 
 In the real world, we usually don't communicate with the simplest kind of sentences. In order to be more precise or more convincing, we usually add adverbs or adjectives around the essential grammatical elements. In the same way, we usually clarify our graphical vizualisations by adding some optional grammatical elements:
 
@@ -113,7 +113,7 @@ In the real world, we usually don't communicate with the simplest kind of senten
 
 #### Facets
 
-Facetting a graphic means to plot small different subsets of the data. Relating to grammar, I would compare the action of facetting with the idea of breaking a long sentence in some shorter (clearer) sentences. It's a powerfull tool when looking for some patterns in the data as it could help removing the noise of differents group plotted all togheter.
+Facetting a graphic means to plot small different subsets of the data. Relating to grammar, I would compare the action of facetting with the idea of breaking a long sentence in some shorter (clearer) sentences. It's a powerful tool when looking for some patterns in the data as it could help removing the noise of different groups plotted all togheter.
 
 For example, it's difficult to see the patterns inside each group in the [figure below](#fig:facet1):
 
@@ -125,11 +125,8 @@ ggplot(mtcars, aes(x = hp, y = mpg, color = as.factor(carb))) +
 
 <div id="fig:facet1" class="figure" style="text-align: center">
 <img src="2018-09-01-grammar-of-graphics_files/figure-html/facet1-1.png" alt="It's difficult to see the true pattern in each group here"  />
-<p class="caption">It's difficult to see the true pattern in each group here</p>
-</div>
 
-while it's quite clearer in the [figure below](#fig:facet2).
-
+It's difficult to see the true pattern of each group in the previous graphic while it's quite clearer in the [figure below](#fig:facet2).
 
 ```r
 ggplot(mtcars, aes(x = hp, y = mpg, color = as.factor(carb))) +
@@ -138,8 +135,8 @@ ggplot(mtcars, aes(x = hp, y = mpg, color = as.factor(carb))) +
 ```
 
 <div id="fig:facet2" class="figure" style="text-align: center">
-<img src="2018-09-01-grammar-of-graphics_files/figure-html/facet2-1.png" alt="Facetted plot are way more easier to detect pattern in each group"  />
-<p class="caption">Factted plot are way more easier to detect pattern in each group</p>
+<img src="2018-09-01-grammar-of-graphics_files/figure-html/facet2-1.png" alt="Facetted plot are way more easier to detect a pattern in each group"  />
+<p class="caption">Facetted plot are way more easier to detect a pattern in each group</p>
 </div>
 
 The `facet_grid()` or `facet_wrap()` specifications describe which variables are splitted and how they should be arranged in the plot.
@@ -161,7 +158,7 @@ ggplot(mtcars, aes(x = as.factor(cyl), y = mpg)) +
 <p class="caption">It's difficult to conclude something from non-summarized data</p>
 </div>
 
-compared to the [figure](#fig:bloxplot2), where we can easily extract the median, the quartiles and so on ...
+compared to the [figure below](#fig:bloxplot2), where we can easily extract the median, the quartiles and so on...
 
 
 ```r
@@ -170,17 +167,17 @@ ggplot(mtcars, aes(x = as.factor(cyl), y = mpg)) +
 ```
 
 <div id="fig:boxplot2" class="figure" style="text-align: center">
-<img src="2018-09-01-grammar-of-graphics_files/figure-html/boxplot2-1.png" alt="Boxplots kind of summarise the data and make the plot easier to understand our data"  />
-<p class="caption">Boxplots kind of summarise the data and make the plot easier to understand our data</p>
+<img src="2018-09-01-grammar-of-graphics_files/figure-html/boxplot2-1.png" alt="Boxplots kind of summarize the data and make the plot easier to understand our data"  />
+<p class="caption">Boxplots kind of summarize the data and make the plot easier to understand our data</p>
 </div>
 
 #### Coordinates
 
-Coordinates defines the spacein which we plot our data. Usually, the Cartesian coordinate system is used but we could also plot our data using a polar or semi-log coordinate system depending of the context.
+Coordinates define the space in which we plot our data. Usually, the Cartesian coordinate system is used but we could also plot our data using a polar or semi-log coordinate system depending on the context.
 
 #### Themes
 
-Themes can be seen as evertything non-related to the data. In the grammar of graphics framework, themes ease the understanding of our plots, not necessarily making them more beautiful. In fact, the font type and size, the spacing, the margins, and so on, help to make a text more understandable for the reader. In the same way, the size of geoms, the grid lines or the background color should be carefully chosen in order to direct the audience's focus on the message we want to express with our plot. For example, the non-related data elements in the [figure](#fig:themes1) makes it difficult to see relevant patterns in the trend shown by the data:
+Themes can be seen as evertything non-related to the data. In the grammar of graphics framework, themes ease the understanding of our plots, not necessarily making them more beautiful. In fact, the font type and size, the spacing, the margins, and so on, help to make a text more understandable for the reader. In the same way, the size of geoms, the grid lines or the background color should be carefully chosen in order to direct the audience's focus on the message we want to express with our plot. For example, the non-related data elements in the [figure](#fig:themes1) make it difficult to see relevant patterns in the trend shown by the data:
 
 
 ```r
@@ -198,7 +195,7 @@ ggplot(mtcars, aes(x = mpg, y = qsec)) +
 <p class="caption">Overuse of themes causes our mind to focus on non-related data elements</p>
 </div>
 
-In contrast, the [figure](#fig:theme2) is way clearer and nothing irrelevant has been added to the plot, which leads the reader to focus on the data and the trend behind it:
+In contrast, the [figure](#fig:theme2) is way clearer when nothing irrelevant has been added to the plot, which leads the reader to focus on the data and the trend behind it:
 
 
 ```r
@@ -210,8 +207,8 @@ ggplot(mtcars, aes(x = mpg, y = qsec)) +
 ```
 
 <div id="fig:theme2" class="figure" style="text-align: center">
-<img src="2018-09-01-grammar-of-graphics_files/figure-html/themes2-1.png" alt="Clear and simple themes aid to understand the data related elements, which contribute to makes our plot more meaningful"  />
-<p class="caption">Clear and simple themes aid to understand the data related elements, which contribute to makes our plot more meaningful</p>
+<img src="2018-09-01-grammar-of-graphics_files/figure-html/themes2-1.png" alt="Clear and simple themes aid to understand the data related elements, which contribute to make our plot more meaningful"  />
+<p class="caption">Clear and simple themes aid to understand the data related elements, which contribute to make our plot more meaningful</p>
 </div>
 
 In `ggplot2` framework, some themes are prebuilt and can be used directly. However, everything can be customized in the `theme()` layer. The [ggthemes](https://cran.r-project.org/web/packages/ggthemes/vignettes/ggthemes.html) library also has some nice available themes.
@@ -226,7 +223,7 @@ This part is probably the toughest to learn and certainly needs a lot of practic
 
 ## Our objective
 
-This is probably the most important thing to keep in mind while developping a graphical visualization. It should always guide our decisions (type of graphics, theme, aesthetics, etc) because at the end, the graphic should help people understand something specific.
+This is probably the most important thing to keep in mind while developping a graphical visualization. It should always guide our decisions (type of graphic, theme, aesthetics, etc.) because at the end, the graphic should help people understand something specific.
 
 ## Data
 
@@ -234,9 +231,9 @@ The data is one of the first thing to take into account before working on a grap
 
 ## Our audience
 
-The audience is always an important aspect of every communications. It should be taken into account and should also guide our decisions regarding our graphic. For example, boxplots can be quite meaningful for a given audience such as data scientists or statisticians but mean nothing to someone else.
+The audience is always an important aspect of every communication. It should be taken into account and should also guide our decisions regarding our graphic. For example, boxplots can be quite meaningful for a given audience such as data scientists or statisticians but mean nothing to someone else.
 
-The [example 1 figure](#fig:example1) is a example of graphic that basically meets all the requirements explained in the grammar of graphics part. However, if our objective is to compare the miles per gallon consommation of different car models within each cylinder category, this graph may not be the best one. In fact, the focus is more on the value of miles per gallon for each model rather than on the relation between different models. In contrast, the [example 2 figure](#fig:example2) focus seems to be more on the model names and their distances from each other rather than on the value of gas consommation. Also, the models are probably easier to vizualise wihtin their cylinder category groups by the usage of facets.
+The [example 1 figure](#fig:example1) is an example of graphic that basically meets all the requirements explained in the grammar of graphics part. However, if our objective is to compare the miles per gallon consommation of different car models within each cylinder category, this graph may not be the best one. In fact, the focus is more on the value of miles per gallon for each model rather than on the relation between different models. In contrast, the [example 2 figure](#fig:example2)'s focus seems to be more on the model names and their distances from each other rather than on the value of gas consumption. Also, the models are probably easier to vizualise wihtin their cylinder category groups by the usage of facets.
 
 <div id="fig:example1" class="figure" style="text-align: center">
 <img src="2018-09-01-grammar-of-graphics_files/figure-html/example1-1.png" alt="Example 1" width="100%" />
@@ -255,9 +252,9 @@ The last example shows that there exists multiple ways to build a given graphica
 
 # Conclusion
 
-To conclude, it isn't a coincidence if I started with the grammatical part and then finished with the "feeling" part. A good grammar is the base of every communication, it allows you to clearly communicate something and encourages people to focus on your content rather than on the way you express it. Once you master the rules behind the grammar, you have the freedom to express it the way you want and let your creativity speak for itself. In brief, we must start by learning a set of rules that will ultimatly allow us to communicate convincing and, most importantly, **creative** graphics.
+To conclude, it isn't a coincidence if I started with the grammatical part and then finished with the "feeling" part. A good grammar is the base of every communication, it allows you to clearly communicate something and encourages people to focus on your content rather than on the way you express it. Once you master the rules behind the grammar, you have the freedom to express it the way you want and let your creativity speak for itself. In brief, we must start by learning a set of rules that will ultimatly allow us to communicate with convincing and, most importantly, **creative** graphics.
 
-The complete code of that article can be found through that [link](https://github.com/stecaron/dastat/blob/master/content/post/2017-11-23-grammar-of-graphics.Rmd).
+The complete code of this article can be found through this [link](https://github.com/stecaron/dastat/blob/master/content/post/2017-11-23-grammar-of-graphics.Rmd).
 
 **Sources:**
 
