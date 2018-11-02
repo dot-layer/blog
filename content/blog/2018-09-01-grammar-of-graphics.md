@@ -115,7 +115,7 @@ In the real world, we usually don't communicate with the simplest kind of senten
 
 Facetting a graphic means to plot small different subsets of the data. Relating to grammar, I would compare the action of facetting with the idea of breaking a long sentence in some shorter (clearer) sentences. It's a powerful tool when looking for some patterns in the data as it could help removing the noise of different groups plotted all togheter.
 
-For example, it's difficult to see the patterns inside each group in the [figure below](#fig:facet1):
+For example, it's difficult to see the true pattern of each group in the [following graphic](#fig:facet1):
 
 
 ```r
