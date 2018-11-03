@@ -125,10 +125,9 @@ ggplot(mtcars, aes(x = hp, y = mpg, color = as.factor(carb))) +
 
 <div id="fig:facet1" class="figure" style="text-align: center">
 <img src="2018-09-01-grammar-of-graphics_files/figure-html/facet1-1.png" alt="It's difficult to see the true pattern in each group here"  />
-<p class="caption">It's difficult to see the true pattern in each group here</p>
 </div>
 
-while it's quite clear in the [figure below](#fig:facet2).
+It's difficult to see the true pattern in each group here while it's quite clear it in the [figure below](#fig:facet2).
 
 ```r
 ggplot(mtcars, aes(x = hp, y = mpg, color = as.factor(carb))) +
