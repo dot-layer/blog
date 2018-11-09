@@ -21,6 +21,8 @@ Félicitations à NOMDELEQUIPE, gagnants du prix Martin Luther King, remis au gr
 
 Sans plus tarder, nous nous entretenons avec ABC, DEF et XYZ, membres de l'équipe gagnante NOMDELEQUIPE.
 
+# INPUT DES MEMBRES DE L'ÉQUIPE RAMASSÉS LE JOUR MÊME
+
 ### C'était une présentation très courte et il fallait être efficace. Quel est le moment clé où vous pensez que vous avez réussi à convaincre les juges?
 
 Réponse :
@@ -48,3 +50,6 @@ Réponse :
 ### Aviez-vous ciblé la catégorie de prix Martin Luther King volontairement durant la compétition? Par exemple en faisant des compromis sur les autres dimensions (créativité, code) de l'évaluation?
 
 Réponse : 
+
+
+# INPUT DES JUGES RAMASSÉS LE JOUR MÊME
