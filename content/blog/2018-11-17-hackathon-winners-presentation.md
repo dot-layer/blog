@@ -17,37 +17,42 @@ Le 10 novembre 2018 avait lieu à Québec la [Journée hackathon en assurance](h
 
 Félicitations à *La revanche du perceptron*, gagnants du prix Martin Luther King Jr., remis à l'équipe qui a réalisé la meilleure présentation. Le tout, en respectant la limite de temps de 2 minutes. Les juges avaient notamment à l'oeil des critères tels que la clarté des propos et l'efficacité à présenter la méthodologie et les résultats. Pour plus de détails sur la problématique ou l'énoncé, rendez-vous sur le [dépôt officiel](https://github.com/dot-layer/meetup-ML-assurance-hackathon) de la compétition.
 
-Nous nous sommes entretenus avec Simon Bellemare et Étienne Buteau, membres de l'équipe gagnante.
+![Juges et La revanche du perceptron](MeetupMLQuebec2018_053.jpg)
+
+Nous nous sommes entretenus avec Simon Bellemare et Étienne Buteau, membres de l'équipe gagnante, que l'on voit ci-haut sur la droite, accompagnés des juges.
 
 #### Q: Commençons par discuter de votre expérience globale. Quelles sont vos premières impressions à propos de la Journée hackathon?
 
-R: Tout d'abord, c'était notre premier hackathon en tant qu'équipe, donc nous avons appris énormément. C'était notre première expérience avec une librairie de Deep Learning (keras) et avec une machine virtuelle Amazon, donc nous avons dû nous adapter rapidement à ces nouveaux outils. Bien que 6 heures peuvent paraître beaucoup, nous avons en fait été très serrés dans le temps dans ces circonstances.
+R: Tout d'abord, c'était notre premier hackathon en tant qu'équipe, donc nous avons appris énormément. C'était aussi notre première expérience avec une librairie de Deep Learning (keras) et avec une machine virtuelle Amazon, donc nous avons dû nous adapter rapidement à ces nouveaux outils. Cela dit, bien que 6 heures peuvent paraître beaucoup, nous avons en fait été très serrés dans le temps.
 
 #### Q: Discutons maintenant de ce qui vous a fait gagner le prix : votre présentation. Le temps limite était de 2 minutes donc vous deviez être efficaces. Quel est le moment clé où vous pensez que vous avez réussi à convaincre les juges?
 
-R: Nous croyons que la démonstration de la méthode utilisée est ce qui a charmé les juges. Nous avons utilisé une technique très semblable à ce qui est utilisé actuellement dans l'industrie et nous avons réussi à résumer clairement et efficacement cette méthode. Nous étions les seuls à entraîner les couches convolutives du réseau ResNet50 avec le jeu de données du problème. Contrairement aux autres équipes qui ont utilisé directement les features fournies pour les analyser avec un NN classique, nous avons utilisé le réseau ResNet50 pour extraire les nôtres. Nous avons mis l'accent sur ce point et avons construit la présentation autour de celui-ci.
+R: Nous croyons que la démonstration de la méthode utilisée est ce qui a charmé les juges. Nous avons utilisé une technique très semblable à ce qui est utilisé actuellement dans l'industrie et nous avons réussi à résumer clairement et efficacement cette méthode. Nous étions les seuls à entraîner les couches convolutives du réseau ResNet50 avec le jeu de données du problème. Contrairement aux autres équipes qui ont utilisé directement les features fournies pour les analyser avec un NN classique, nous avons ré-entraîné le réseau ResNet50 pour extraire les nôtres. Nous avons mis l'accent sur ce point et avons construit la présentation autour de celui-ci.
 
 #### Q: Pouvez-vous nous partager cette technique avec des extraits de votre présentation?
 
-R: Pour expliquer le réseau et présenter notre méthode, nous avons résumé [cet article](https://www.groundai.com/media/arxiv_projects/23387/), notamment en présentant cette image aux juges  :
+R: En résumé, nous avons ré-entraîné un modèle existant à l'aide des données de toits fournies. Plus précisément, nous avons affiné les poids des dernières couches convolutives du réseau. Puis, nous avons ajouté une couche de sortie à un neurone avec fonction d’activation sigmoïde pour classifier les images.
+
+Pour expliquer le réseau et présenter notre méthode, nous avons présenté aux juges l'image suivante, tiré de [cet article](https://www.groundai.com/media/arxiv_projects/23387/) :
 
 ![](https://www.groundai.com/media/arxiv_projects/23387/res50.svg)
 
-En résumé, nous avons entraîné un modèle existant avec les données des toits pour affiner les paramètres des dernières couches cachées convolutives du réseau. Puis, nous avons ajouté une couche de sortie à un neurone avec fonction d’activation sigmoïde pour classifier les images.
+Plus en détail, nous avons procédé ainsi : ResNet50 est un réseau pré-entraîné dans le cadre de [ImageNet](https://www.quora.com/What-is-the-ImageNet-competition) sur des milloins d'images.  Il a cependant été créé pour discriminer 1000 classes, alors que nous n'en avions que 2 dans le cadre de la compétition : toit vert, ou non.  Nous avons donc enlevé la couche de sortie originale
+et avons crée une fonction permettant d'ajouter quelques couches à la sortie, puis une neurone de sortie sigmoïde, donnant une interprétation probabiliste de notre sortie.  Par exemple, on peut voir avec la 
+sortie combien de chances l'image a d’appartenir à chacune des 2 classes, selon les informations qu'a réussi à collecter le réseau de neurone en entraînement.
 
-ResNet50 est un réseau pré-entraîné dans le cadre de imageNet sur des milloins d'images.  Il a cependant été créé pour discriminer 1000 classes, et nous n'en avions que 2.  Nous avons donc enlevé la couche de sortie 
-et avons crée une fonction permettant de rajouter quelques couches à la sortie, puis une neurone de sortie sigmoïde, donnant une interprétation probabiliste de notre sortie.  Par exemple, on peut voir avec la 
-sortie combien de chances l'image à d’appartenir à chacune des classes, selon les informations qu'a réussi à collecter le réseau de neurone en entraînement.  Au niveau de l'entraînement, notre système permettait 
-d'entraîner premièrement les/la couches ajoutées. Puis, un autre entraînement, incluant trois des couches de convolutions du réseau ResNet, était effectué.  Ce dernier permettait de personnaliser les features
-extraites par le réseau en fonction des résultats obtenus en sortie.  En effet, le réseau ResNet n'a pas été entraîné pour extraire des features spécifiques aux images que nous utilisions, les images et classe de 
-imagenet étant très différentes. C'est ainsi que nous nous distinguions principalement, soit en obtenant des features personnalisées au problème permettant ainsi une décision plus optimale, tout en obtenant un temps
-d'entraînement relativement court car on ne réentraînait que 3 couches de ResNet.  Également, nous avons divisé notre jeu de données en un jeu d'entraînement et un jeu de validation, permettant ainsi d'obtenir un jeu
+Pour ce qui est de l'entraînement, notre système permettait 
+d'entraîner premièrement les couches ajoutées. Puis, un autre entraînement, incluant trois des couches de convolution du réseau ResNet, était effectué.  Ce dernier permettait de personnaliser les features
+extraites par le réseau en fonction des résultats obtenus en sortie.  En effet, le réseau ResNet50 n'a pas été entraîné spécifiquement pour extraire des features relatives à des images de toits, étant donné que les images et classes de ImageNet sont bien plus variées. C'est ainsi que nous nous distinguions principalement, soit en obtenant des features personnalisées au problème permettant ainsi une décision plus optimale. Tout ça se faisait en un temps
+d'entraînement relativement court, car on ne réentraînait que 3 couches de ResNet.
+
+Également, nous avons divisé notre jeu de données en un jeu d'entraînement et un jeu de validation, permettant ainsi d'obtenir un jeu
 pour entraîner notre réseau et un autre pour obtenir une idée de nos performance en généralisation (avec des données avec lesquelles le réseau n'était pas entraîné).  Nous avons cependant manqué de temps et n'avons eu le 
 temps de tester notre réseau qu'avec une neurone sigmoïde en sortie et 5 époques d'entraînement.
 
 #### Q: Votre technique s'est évidemment distinguée de celles des autres équipes. Qu'en est-il de votre méthode de travail?
 
-R: Nous avons utilisé une méthode de programmation que nous appelons *co-programming*. Un programme, pendant que l'autre fournit des conseils et fouille dans les librairies. Nous interchangions fréquemment les rôles. Pour plus de détails, vous pouvez consulter une [page Wikipédia](https://fr.wikipedia.org/wiki/Programmation_en_bin%C3%B4me) dédiée au sujet.
+R: Nous avons utilisé une méthode de programmation que nous appelons *co-programming*. Un programme, pendant que l'autre fournit des conseils et fouille dans les librairies. Nous interchangions fréquemment les rôles. Pour plus de détails, vous pouvez consulter la [page Wikipédia](https://fr.wikipedia.org/wiki/Programmation_en_bin%C3%B4me) dédiée au sujet.
 
 #### Q: Quel est le background des membres de l'équipe? Croyez-vous que ce background vous favorisait dans la catégorie Martin Luther King Jr.?
 
@@ -82,11 +87,11 @@ R: Les ouvrages suivants:
 
 R: Voici leur réponse:
 
-**É** : C'était ma première participation à un événement de ce genre et j'ai apprécié mon expérience. Je compte bien répéter l'expérience ! Il me reste 1 an à mon baccalauréat et je compte faire une maîtrise probablement en traitement du signal ou en intelligence artificielle appliquée à la robotique.
+**É** : C'était ma première participation à un événement de ce genre et j'ai apprécié mon expérience. Je compte bien répéter l'expérience! Il me reste 1 an à mon baccalauréat et je compte faire une maîtrise, probablement en traitement du signal ou en intelligence artificielle appliquée à la robotique.
 
 **S** : Oui, il a définitivement contribué à augmenter mon intérêt pour l'intelligence artificielle.
 
 
 
-Merci pour votre participation, et rendez-vous au prochain hackathon de [MeetupMLQuebec](https://www.facebook.com/MeetupMLQuebec)!
+Merci pour votre participation, encore une fois félicitations, et rendez-vous au prochain hackathon de [MeetupMLQuebec](https://www.facebook.com/MeetupMLQuebec)!
 
