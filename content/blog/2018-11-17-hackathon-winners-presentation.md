@@ -1,15 +1,15 @@
 ---
 title: Entrevue avec les gagnants
-author: Laurent Caron avec la collaboration de Marc-André Bernier
-date: '2018-11-17'
+author: "Laurent Caron et <br> Marc-André Bernier"
+date: '2018-11-22'
 slug: hackathon-winners-presentation
 type: post
 tags:
   - interview
   - meetup
   - hackathon
-description: "prix Martin Luther King"
-featured: "hackathon-presentation-cover.jpg"
+description: "prix Martin Luther King Jr."
+featured: "hackathon-presentation-cover.png"
 featuredpath: "img/headers/"
 ---
 
