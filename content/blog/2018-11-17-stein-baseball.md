@@ -9,6 +9,8 @@ type: post
 tags: 
   - estimation
   - paradox
+featured: "stein-baseball.jpg"
+featuredpath: "img/headers/"
 ---
 
 <div style="text-align: right">
