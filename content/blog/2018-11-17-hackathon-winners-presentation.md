@@ -27,23 +27,23 @@ R: Tout d'abord, c'était notre premier hackathon en tant qu'équipe, donc nous 
 
 #### Q: Discutons maintenant de ce qui vous a fait gagner le prix : votre présentation. Le temps limite était de 2 minutes, donc vous deviez être efficaces. Quel est le moment clé où vous pensez que vous avez réussi à convaincre les juges?
 
-R: Nous croyons que la démonstration de la méthode utilisée est ce qui a charmé les juges. Nous avons utilisé une technique très semblable à ce qui est utilisé actuellement dans l'industrie et nous avons réussi à résumer clairement et efficacement cette méthode. Nous étions les seuls à entraîner les couches convolutives du réseau ResNet50 sur le jeu de données disponible pour résoudre la problématique. Contrairement aux autres équipes qui ont utilisé directement les *features* fournies pour les analyser avec un algorithme de classement classique, nous avons plutôt ré-entraîné le réseau ResNet50 pour extraire les nôtres. Nous avons mis l'accent sur ce point et avons construit la présentation autour de celui-ci.
+R: Nous croyons que la démonstration de la méthode utilisée est ce qui a charmé les juges. Nous avons utilisé une technique très semblable à ce qui est utilisé actuellement dans l'industrie et nous avons réussi à résumer clairement et efficacement cette méthode. Nous étions les seuls à entraîner les couches convolutives du réseau ResNet50 sur le jeu de données disponible pour résoudre la problématique. Contrairement aux autres équipes qui ont utilisé directement les *features* fournies pour les analyser avec un algorithme de classification classique, nous avons plutôt ré-entraîné le réseau ResNet50 pour extraire les nôtres. Nous avons mis l'accent sur ce point et avons construit la présentation autour de celui-ci.
 
 #### Q: Pouvez-vous nous partager cette technique avec des extraits de votre présentation?
 
-R: En résumé, nous avons ré-entraîné un modèle existant à l'aide des données de toits fournies. Plus précisément, nous avons affiné les poids des dernières couches convolutives du réseau. Puis, nous avons ajouté une couche de sortie à un neurone avec fonction d’activation sigmoïde pour classifier les images.
+R: En résumé, nous sommes partis d'un modèle existant pour bénéficier des poids appris par ce dernier. Nous l'avons ensuite modifié pour qu'il soit mieux adapté à la problématique à résoudre. Puis, nous l'avons ré-entraîné à l'aide des données de toits fournies.
 
 Pour expliquer le réseau et présenter notre méthode, nous avons présenté aux juges l'image suivante, tirée de [cet article](https://www.groundai.com/media/arxiv_projects/23387/) :
 
 ![](https://www.groundai.com/media/arxiv_projects/23387/res50.svg)
 
-Plus en détail, nous avons procédé ainsi : ResNet50 est un réseau pré-entraîné dans le cadre de la compétition [ImageNet](https://www.quora.com/What-is-the-ImageNet-competition) sur des millions d'images.  Cependant, l'objectif du réseau est de discriminer 1000 classes d'objets. Dans notre cas, nous n'en avions que 2 à discriminer : toit vert, ou non. Nous avons donc enlevé la couche de sortie originale
-et avons créé une fonction permettant d'ajouter quelques couches à la sortie, puis une neurone de sortie sigmoïde, donnant une interprétation probabiliste de notre résultat. De cette façon, on peut voir avec la 
-sortie la probabilité que l'image a d’appartenir à chacune des 2 classes, selon les informations qu'a réussi à collecter le réseau de neurones en entraînement.
+Pour les plus curieux, voici les détails de notre solution :  
+
+ResNet50 est un réseau pré-entraîné dans le cadre de la compétition [ImageNet](https://www.quora.com/What-is-the-ImageNet-competition) sur des millions d'images.  Cependant, l'objectif de ce réseau est de discriminer 1000 classes d'objets. Dans notre cas, nous n'en avions que 2 à discriminer : toit vert, ou non. Nous avons donc remplacé la couche de sortie originale par une neurone de sortie sigmoïde, donnant une interprétation probabiliste de notre résultat. De cette façon, on peut prédire avec la couche de sortie du réseau la probabilité que l'image a d’appartenir à chacune des 2 classes, selon les informations qu'a réussi à collecter le réseau de neurones en entraînement. Nous avons également ajouté quelques couches cachées avant la couche de sortie.
 
 Pour ce qui est de l'entraînement, notre système permettait 
-d'entraîner d'abord les couches ajoutées. Puis, un autre entraînement, incluant trois des couches de convolution du réseau ResNet, était effectué. Ce dernier permettait de personnaliser les *features*
-extraites par le réseau en fonction des résultats obtenus en sortie. En effet, le réseau ResNet50 n'a pas été entraîné spécifiquement pour extraire des *features* relatives à des images de toits, étant donné que les images et classes de ImageNet sont bien plus variées. C'est ainsi que nous nous distinguions principalement, soit en obtenant des *features* personnalisées au problème permettant ainsi une décision plus optimale. Tout ça se faisait en un temps
+d'entraîner d'abord les couches cachées ajoutées. Puis, un autre entraînement, incluant trois des couches de convolution du réseau ResNet, était effectué. Ce dernier permettait de personnaliser les *features*
+extraites par le réseau en fonction des résultats obtenus en sortie. En effet, le réseau ResNet50 n'a pas été entraîné spécifiquement pour extraire des *features* relatives à des images de toits, étant donné que les images et classes de ImageNet sont bien plus variées. C'est ainsi que nous nous distinguions principalement, soit en obtenant des *features* personnalisées au problème permettant donc une décision plus optimale. Tout ça se faisait en un temps
 d'entraînement relativement court, car on ne réentraînait que 3 couches de ResNet.
 
 Finalement, nous avons aussi divisé notre jeu de données en un jeu d'entraînement et un jeu de validation. Cela nous permettait d'obtenir un jeu pour entraîner notre réseau et un autre pour obtenir une idée de nos performances en généralisation (avec des données pour lesquelles le réseau n'était pas entraîné). Nous avons cependant manqué de temps et n'avons eu le temps de tester notre réseau qu'avec une neurone sigmoïde en sortie et 5 époques d'entraînement.
@@ -64,9 +64,9 @@ R: Non. Pour être bien honnête, nous avons été très surpris par notre victo
 
 R: Nous avons commencé par choisir la méthode à implémenter pour résoudre le problème ainsi que la librairie *Python* à utiliser pendant environ une heure. Ensuite, nous avons passé environ deux heures pour nous familiariser avec la librairie Keras, car nous n'avions pas d'expérience avec l'apprentissage profond en *Python*. Le reste de la journée a été utilisé pour implémenter la solution. En parallèle, Étienne a commencé la présentation lors de la dernière heure. Nous croyons que notre utilisation du temps était correcte.
 
-Si c'était à refaire, nous utiliserions une autre librairie, car nous avons perdu énormément de temps à reformater les données et à essayer de faire fonctionner notre solution. D'ailleurs, heureusement que nous avions des cartes graphiques à notre disposition. Également, nous aurions peut-être dû tester les librairies à utiliser d'avance, car nous avons eu beaucoup de problèmes avec le formatage des données.
+Si c'était à refaire, nous utiliserions une autre librairie, car nous avons perdu énormément de temps à reformater les données et à essayer de faire fonctionner notre solution. Également, nous aurions peut-être dû tester les librairies à utiliser d'avance, car nous avons eu beaucoup de problèmes avec le formatage des données.
 
-Concernant la complexité de la solution, par manque de temps, il ne nous a pas été possible d'étendre la sortie du réseau à plusieurs couches cachées non convolutives.
+Concernant la complexité de la solution, par manque de temps, il ne nous a pas été possible d'étendre la sortie du réseau à plusieurs couches cachées non convolutives. D'ailleurs, heureusement que nous avions des cartes graphiques à notre disposition pour accélérer l'entraînement.
 
 #### Q: Que conseillez-vous aux gens qui veulent commencer à participer à des compétitions de ce genre?
 
