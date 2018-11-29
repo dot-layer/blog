@@ -86,10 +86,12 @@ Pour améliorer les performances dans la résolution de problèmes de *Machine L
 
 R: Voici leur réponse:
 
-**M-A** : 
-**A** : 
-**T** : 
+**M-A** : De mon côté, j'ai commencé à en apprendre plus sur le *Machine Learning* l'été passé. Pour le moment, je travaille dans une entreprise où est-ce qu'on essaye de voir qu'est qu'il est possible de faire en recherche appliquée de ce côté et comment on peut tirer notre épingle du jeu dans ce champ d'expertise. L'événement me permet de continuer dans cette veine.
+
+**A** : Pour ma part, le hackathon m'a donné le goût de participer à d'autres événements similaires. Initialement j'étais vraiment stressé de ne pas bien performer, mais en voyant ça plus comme une situation d'apprentissage qu'une compétition, ça devenait beaucoup moins stressant.
+
+**T** : Pour ma part, la journée n'a pas vraiment changé mes plans pour les prochaines années.
 
 Merci pour votre participation, encore une fois félicitations, et rendez-vous au prochain événement de [MeetupMLQuebec](https://www.facebook.com/MeetupMLQuebec)!
 
-**La qualité des photos vous impressionne? Rendez-vous sur le site de [Pikur](http://www.pikur.ca) pour d'autres projets tout aussi fascinants**
+**La qualité des photos vous impressionne? Rendez-vous sur le site de [Pikur](http://www.pikur.ca) pour d'autres projets tout aussi fascinants.**
