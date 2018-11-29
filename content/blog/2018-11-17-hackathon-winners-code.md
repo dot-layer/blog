@@ -15,7 +15,7 @@ featuredpath: "img/headers/"
 
 Le 10 novembre 2018 avait lieu à Québec la [Journée hackathon en assurance](https://www.facebook.com/events/185652975580020/), organisée par [MeetupMLQuebec](https://www.facebook.com/MeetupMLQuebec) et présentée en collaboration par Intact Assurances et Co-operators.
 
-Félicitations à *Last but not furious*, gagnants du prix Linus Torvalds, remis à l'équipe qui a remis le code de meilleure qualité. Les juges avaient notamment à l'oeil les critères suivants:
+Félicitations à *Last but not furious*, gagnants du prix *Linus Torvalds*, remis à l'équipe qui a remis le code de meilleure qualité. Les juges avaient notamment à l'oeil les critères suivants:
 
 - La structure générale du projet
 - L'indentation utilisée dans les programmes
@@ -39,65 +39,56 @@ R: Nous avons principalement focusé sur des noms de variables représentatifs, 
 Les *SOLID principles*, l'architecture en couche, ainsi que les principes provenant de [*Clean Code*](https://www.oreilly.com/library/view/clean-code/9780136083238/) ont été nos règles de base. 
 Cependant, le manque de standards dans les structures de projets de *data science* nous rendait la tâche plus difficile, mais nous avons suivi notre intuition de ce côté-là.
 
-#### Q: Pouvez-vous nous partager cette technique avec des extraits de votre présentation?
+#### Q: Pouvez-vous nous partager les meilleurs extraits de votre solution?
 
-R: En résumé, nous sommes partis d'un modèle existant pour bénéficier des poids appris par ce dernier. Nous l'avons ensuite modifié pour qu'il soit mieux adapté à la problématique à résoudre. Puis, nous l'avons ré-entraîné à l'aide des données de toits fournies.
+R: Voici de quelle façon nous avons bâtit la structure générale de notre projet: 
 
-Pour expliquer le réseau et présenter notre méthode, nous avons présenté aux juges l'image suivante, tirée de [cet article](https://www.groundai.com/media/arxiv_projects/23387/) :
+![Structure générale de notre projet.](structure-projet.jpg)
 
-![](https://www.groundai.com/media/arxiv_projects/23387/res50.svg)
+De cette manière, nous croyons avoir bien séparer les différentes composantes de notre modèle. Aussi, voici un exemple de classe que nous avons créée pour encoder notre classifieur:
 
-Pour les plus curieux, voici les détails de notre solution :  
+![Exemple de classe nous permettant d'encoder notre classifieur de toits verts.](exemple-classe.jpg)
 
-ResNet50 est un réseau pré-entraîné dans le cadre de la compétition [ImageNet](https://www.quora.com/What-is-the-ImageNet-competition) sur des millions d'images.  Cependant, l'objectif de ce réseau est de discriminer 1000 classes d'objets. Dans notre cas, nous n'en avions que 2 à discriminer : toit vert, ou non. Nous avons donc remplacé la couche de sortie originale par une neurone de sortie sigmoïde, donnant une interprétation probabiliste de notre résultat. De cette façon, on peut prédire avec la couche de sortie du réseau la probabilité que l'image a d’appartenir à chacune des 2 classes, selon les informations qu'a réussi à collecter le réseau de neurones en entraînement. Nous avons également ajouté quelques couches cachées avant la couche de sortie.
+#### Q: Mettons de côté la qualité du code, de quelle manière avez-vous attaqué la problématique à résoudre?
 
-Pour ce qui est de l'entraînement, notre système permettait 
-d'entraîner d'abord les couches cachées ajoutées. Puis, un autre entraînement, incluant trois des couches de convolution du réseau ResNet, était effectué. Ce dernier permettait de personnaliser les *features*
-extraites par le réseau en fonction des résultats obtenus en sortie. En effet, le réseau ResNet50 n'a pas été entraîné spécifiquement pour extraire des *features* relatives à des images de toits, étant donné que les images et classes de ImageNet sont bien plus variées. C'est ainsi que nous nous distinguions principalement, soit en obtenant des *features* personnalisées au problème permettant donc une décision plus optimale. Tout ça se faisait en un temps
-d'entraînement relativement court, car on ne réentraînait que 3 couches de ResNet.
+R: On a commencé par faire une analyse des données brutes en déterminant les *features* les plus importantes. Ensuite, nous avons séparé les données en jeux de données d'entraînement et de tests avec une proportion 80/20. Nous avons d'abord tenté le coup avec une régression logistique. Cela nous a donné un rappel d’un peu plus que 65% pour les toits verts, ce qui n'était pas optimal à nous yeux. Ainsi, nous avons tenté d’améliorer nos données. Nous avions remarqué un débalancement des classes à prédire dans le jeu de données, alors nous avons fait une augmentation des données en faisant rotationner les images:
 
-Finalement, nous avons aussi divisé notre jeu de données en un jeu d'entraînement et un jeu de validation. Cela nous permettait d'obtenir un jeu pour entraîner notre réseau et un autre pour obtenir une idée de nos performances en généralisation (avec des données pour lesquelles le réseau n'était pas entraîné). Nous avons cependant manqué de temps et n'avons eu le temps de tester notre réseau qu'avec une neurone sigmoïde en sortie et 5 époques d'entraînement.
+![Exemple d'augmentation des donnnées.](augmentation-donnees.png)
 
-#### Q: Votre technique s'est évidemment distinguée de celles des autres équipes. Qu'en est-il de votre méthode de travail?
+Avec ces données augmentées, la proportion de toits verts était d'environ 50%, au lieu du 20% initial. Nous avons par la suite recréé les *features* pour ce nouveau jeu de données avec le modèle *ResNet50*. Ce pré-traitement sur les données nous a permis d’atteindre un rappel de près de 80% pour les toits verts, ce qui était plus satisfaisant pour nous en termes de performances.
 
-R: Nous avons utilisé une méthode de programmation que nous appelons *co-programming*. Un programme, pendant que l'autre fournit des conseils et cherche dans la documentation des librairies. Nous interchangions fréquemment ces rôles. Pour plus de détails, vous pouvez consulter la [page Wikipédia](https://fr.wikipedia.org/wiki/Programmation_en_bin%C3%B4me) dédiée à ce sujet.
+#### Q: Que conseillez-vous aux gens qui veulent commencer à participer à des hackathons?
 
-#### Q: Quel est votre *background* ? Croyez-vous que cela vous favorisait dans la catégorie Martin Luther King Jr.?
+R: Nous leur conseillerons surtout de ne pas avoir peur "perdre", l'expérience en soi est une victoire. De plus, il est important de bien lire l'énoncé et de bien allouer son temps pour finaliser son projet. C'est bien de passer du temps sur son algorithme pour avoir de meilleures performances, mais au final avoir un produit reproductible et bien construit a beaucoup plus de valeur à nos yeux. 
 
-R: Nous sommes tous les deux étudiants au baccalauréat en génie électrique. Nous ne pensons pas que notre *background* nous favorisait particulièrement dans cette catégorie, car nous n'avons pas souvent à faire des présentations devant un auditoire.
+#### Q: Quel est le background des membres de l'équipe? Croyez-vous que ce background vous favorisait dans la catégorie *Linus Torvalds*?
 
-#### Q: Aviez-vous ciblé la catégorie de prix Martin Luther King Jr. avant ou pendant la compétition en faisant des compromis sur les autres prix (créativité, code) ?
+R: Deux d'entres nous avons un parcours scolaire relié à l'informatique alors que le 3ème membre à étudié en administration des affaires. Nous ne pensons pas que nos backgrounds nous favorisaient en termes de *Machine Learning*, puisque le domaine est en quelque sorte un mélange d'informatique et de mathématiques. Toutefois, notre expérience en programmation nous a bien servit pour la catégorie de prix que nous avons gagné.
 
-R: Non. Pour être bien honnête, nous avons été très surpris par notre victoire, car le niveau des autres équipes était très élevé. 
+#### Q: Aviez-vous ciblé la catégorie de prix *Linus Torvalds* volontairement durant la compétition?
+
+R: Oui, sans aucun doute. Sachant que les critères d'évaluation n'incluaient pas explicitement la performance de l'algorithme, nous avions en tête de remettre la meilleure qualité du code possible. Ce n'est pas seulement pour le prix, nous considérons que c'est un point très important dans n'importe quel projet de programmation. Nous savions également que nous avions de l'expérience pour nous démarquer de ce côté.
 
 #### Q: De quelle façon votre équipe a-t-elle alloué les 6 heures à sa disposition? Avec du recul, les auriez-vous allouées de façon différente?
 
-R: Nous avons commencé par choisir la méthode à implémenter pour résoudre le problème ainsi que la librairie *Python* à utiliser pendant environ une heure. Ensuite, nous avons passé environ deux heures pour nous familiariser avec la librairie Keras, car nous n'avions pas d'expérience avec l'apprentissage profond en *Python*. Le reste de la journée a été utilisé pour implémenter la solution. En parallèle, Étienne a commencé la présentation lors de la dernière heure. Nous croyons que notre utilisation du temps était correcte.
+R: Nous avons divisé nos forces en trois, travaillant sur la même tâche pendant 6h! Marc-Alexandre s'occupait de l'approche utilisant des images pour les classifier. De mon côté (Alex), j'utilisais les données structurées pour classifier les images. Taha nous assistait dans nos démarches, dans la transformation des données, ainsi que la présentation. Ceci a permis un utilisation optimale de notre temps.
 
-Si c'était à refaire, nous utiliserions une autre librairie, car nous avons perdu énormément de temps à reformater les données et à essayer de faire fonctionner notre solution. Également, nous aurions peut-être dû tester les librairies à utiliser d'avance, car nous avons eu beaucoup de problèmes avec le formatage des données.
-
-Concernant la complexité de la solution, par manque de temps, il ne nous a pas été possible d'étendre la sortie du réseau à plusieurs couches cachées non convolutives. D'ailleurs, heureusement que nous avions des cartes graphiques à notre disposition pour accélérer l'entraînement.
-
-#### Q: Que conseillez-vous aux gens qui veulent commencer à participer à des compétitions de ce genre?
-
-R: Ne soyez pas effrayés par l'ampleur de la tâche. L'important est de séparer le problème en petites étapes et d'approcher l'événement comme une occasion d'apprendre sur un sujet. Si la compétition est très courte comme celle-ci : se préparer, se renseigner sur le sujet d'intérêt et se pratiquer avec les outils de programmation avant la journée de la compétition. Le faire nous aurait permis d'obtenir des résultats beaucoup plus convaincants.
 
 #### Q: Quels ouvrages conseillez-vous aux gens qui veulent améliorer leurs présentations? Et leur performance dans la résolution de ce genre de problématiques?
 
-R: Nous conseillons les ouvrages suivants:
+R: Comme ouvrage, nous recommandons définitivement *Clean Code* et Clean Architecture d'Uncle Bob, ainsi que GOOS (Growing Object-Oriented Software Guided by Tests). 
 
-- L'excellent [Comment se faire des amis et influencer les autres](http://www.editions-homme.com/comment-se-faire-amis-influencer-autres-nouvelle-edition/dale-carnegie/livre/9782764010310) de Dale Carnegie propose des moyens efficaces de construire une présentation claire qui saura convaincre un auditoire.
-- En ce qui concerne la résolution de problème, [How to Solve It](https://press.princeton.edu/titles/669.html) de George Pólya présente une méthode générale pour résoudre des problèmes de type mathématique.
-- Pour le *Machine Learning* en général, [Introduction to Machine Learning](https://mitpress.mit.edu/books/introduction-machine-learning), écrit par Ethem Alpaydin au MIT Press.
-- Finalement, [Deep Learning](https://www.deeplearningbook.org/) est la référence en matière de réseau de neurones.  
+Nous recommandons également aux étudiants de l'Université Laval de suivre le cours [GLO-4002](https://www.ulaval.ca/les-etudes/cours/repertoire/detailsCours/glo-4002-qualite-et-metriques-du-logiciel.html) (Qualité et métriques du logiciel). C'est l'un des cours les plus formateur (offert à ULaval) pour avoir des bases solides en programmation.
+
+Pour améliorer les performances dans la résolution de problèmes de *Machine Learning*, nous recommandons *Data mining : concepts and techniques* de Jiawei Han, *The Elements of Statistical Learning* de Hastie et *Hands-On Machine Learning with Scikit-Learn and TensorFlow* d'Aurélien Géron.
 
 #### Q: Est-ce que le hackathon a changé vos plans (études, participations à d'autres événements, cours en ligne, etc.) pour les prochains mois? Quelles sont les prochaines étapes pour vous?
 
 R: Voici leur réponse:
 
-**É** : C'était ma première participation à un événement de ce genre et j'ai apprécié mon expérience. Je compte bien répéter l'expérience! Il me reste 1 an à mon baccalauréat et je compte faire une maîtrise, probablement en traitement du signal ou en intelligence artificielle appliquée à la robotique.
-
-**S** : Oui, il a définitivement contribué à augmenter mon intérêt pour l'intelligence artificielle.
+**M-A** : 
+**A** : 
+**T** : 
 
 Merci pour votre participation, encore une fois félicitations, et rendez-vous au prochain événement de [MeetupMLQuebec](https://www.facebook.com/MeetupMLQuebec)!
 
