@@ -97,7 +97,7 @@ enableEmoji   = true
 
   paragraph = "Bloggers write.<br>Passionate people share."
 
-  about     = ".layer is a data science oriented community created for promoting collaboration and knowledge sharing among its members. In Unix-like operating system, files or folders starting with a dot are treated as hidden, invisible to the inattentive passerby. Much like dot files, data scientists at home, in their cubicle at work, or in a university basement often live in the shadows. Now is time to say: Hello World! lolk."
+  about     = ".layer is a data science oriented community created for promoting collaboration and knowledge sharing among its members. In Unix-like operating system, files or folders starting with a dot are treated as hidden, invisible to the passerby. Most people don’t even know their existence and purpose. Much like dot files, data scientists are the hidden layer between a world where people produce data and live the outcomes of many performing algorithms. For those data scientists, now is time to say: Hello World!"
 
   # This appears at the top of the sidebar above params.intro.header.
   # A width of less than 100px is recommended from a design perspective.
