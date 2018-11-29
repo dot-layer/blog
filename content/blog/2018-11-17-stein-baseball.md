@@ -24,7 +24,7 @@ Like Bradley Efron and Trevor Hastie, I think it's fair to say that maximum like
 
 The magic of maximum likelihood theory is that it provides (asymptotically, as `$n \to \infty$`) unbiased estimators attaining the Cramér-Rao bound. In other words, the MLE converges towards the most precise value one could hope. However, the story is quite different in the finite-sample situation and this is what Stein's paradox reminds us of: in some circumstance, the MLE is bound to be (potentially grossly) sub-optimal. Hence Hastie's and Efron's claim: "maximum likelihood estimation has shown itself to be an inadequate and dangerous tool in many twenty-first-century applications. [...] unbiasedness can be an unaffordable luxury when there are hundreds or thousands of parameters to estimate at the same time." So who is Stein and what exactly is Stein's paradox? Read on.
 
-Stein's paradox is attributed to Charles Stein (1920-2016), an American mathematical statistician who spent most of his carreer at Stanford University. His work is exceptional yes, but Stein is also remembered by his colleagues for his strong belief in basic human rights and passionate social activism. In an ![interview](http://www2.ims.nus.edu.sg/imprints/interviews/CharlesStein.pdf) by Y.K. Leong, the first question he is asked concerns his statistical work (verifying weather broadcasts for understanding how weather might affect wartime activities) for the Air Force during World War II; Stein's first words are unequivocal:
+Stein's paradox is attributed to Charles Stein (1920-2016), an American mathematical statistician who spent most of his carreer at Stanford University. His work is exceptional yes, but Stein is also remembered by his colleagues for his strong belief in basic human rights and passionate social activism. In an [interview](http://www2.ims.nus.edu.sg/imprints/interviews/CharlesStein.pdf) by Y.K. Leong, the first question he is asked concerns his statistical work (verifying weather broadcasts for understanding how weather might affect wartime activities) for the Air Force during World War II; Stein's first words are unequivocal:
 
 > First I should say that I am strongly opposed to war and
 to military work. Our participation in World War II was
@@ -35,7 +35,7 @@ cannot imagine any circumstances that would justify war
 by the United States at the present time, other than very
 limited defensive actions.
 
-According to ![Stanford News](https://news.stanford.edu/2016/12/01/charles-m-stein-extraordinary-statistician-anti-war-activist-dies-96/), the man who was called the “Einstein of the Statistics Department”, was also the first Stanford professor arrested for protesting apartheid and was often involved in anti-war protests.
+According to [Stanford News](https://news.stanford.edu/2016/12/01/charles-m-stein-extraordinary-statistician-anti-war-activist-dies-96/), the man who was called the “Einstein of the Statistics Department”, was also the first Stanford professor arrested for protesting apartheid and was often involved in anti-war protests.
 
 On the math-stat side, Stein is the author of a very influential/controversial paper entitled *Inadmissibility of the Usual Estimator for the Mean of a Multivariate Normal Distribution* (1956). Bradley Efron and Carl Morris, who were strong supporters of Stein's idea, pinned the term Stein's paradox in their 1977 paper *Stein's Paradox in Statistics*. In it, they give a pretty intuitive description of the paradox to which we will go back:
 
