@@ -19,7 +19,7 @@ Félicitations à *Last but not furious*, gagnants du prix *Linus Torvalds*, rem
 
 - La structure générale du projet
 - L'indentation utilisée dans les programmes
-- Le choix des noms utilisés pour les fonctions, les variables, les méthodes et les classe
+- Le choix des noms utilisés pour les fonctions, les variables, les méthodes et les classes
 - La constance dans le style de programmation
 - L'utilisation adéquate de commentaires
 
@@ -27,13 +27,13 @@ Pour plus de détails sur la problématique ou l'énoncé, rendez-vous sur le [d
 
 ![Les juges et les membres de l'équipe *Last but not furious*](MeetupMLQuebec2018_050.JPG)
 
-Nous nous sommes entretenus avec Marc-Alexandre Paquet, Taha Racicot et Alex St-Jean, membres de l'équipe gagnante, que l'on voit ci-haut sur la droite, accompagnés des juges.
+Nous nous sommes entretenus avec Alex St-Jean, Marc-Alexandre Paquet et Taha Racicot, membres de l'équipe gagnante, que l'on voit ci-haut sur la droite, accompagnés des juges.
 
 #### Q: Commençons par discuter de votre expérience globale. Quelles sont vos premières impressions à propos de la Journée hackathon?
 
 R: Certains d'entres nous avions déjà participé à des compétitions dans le même genre, mais nous avons bien aimé le côté détendu de la journée. L'ambiance collaborative favorisait l'entraide et le plaisir plutôt que la compétition et le stress. En bout de ligne, c'est quelque chose que nous avons beaucoup apprécié de la journée.
 
-#### Q: Discutons maintenant de ce qui vous a fait gagner le prix : la qualité de votre code. Quel principes de base ont guidés le design de votre code?
+#### Q: Discutons maintenant de ce qui vous a fait gagner le prix : la qualité de votre code. Quels principes de base ont guidés le design de votre code?
 
 R: Nous avons principalement focusé sur des noms de variables représentatifs, sur une indentation constante, mais surtout sur la structure du projet et sa maintenabilité. 
 Les *SOLID principles*, l'architecture en couche, ainsi que les principes provenant de [*Clean Code*](https://www.oreilly.com/library/view/clean-code/9780136083238/) ont été nos règles de base. 
@@ -45,7 +45,7 @@ R: Voici de quelle façon nous avons bâtit la structure générale de notre pro
 
 ![Structure générale de notre projet.](structure-projet.jpg)
 
-De cette manière, nous croyons avoir bien séparer les différentes composantes de notre modèle. Aussi, voici un exemple de classe que nous avons créée pour encoder notre classifieur:
+De cette manière, nous croyons avoir bien séparé les différentes composantes de notre modèle. Aussi, voici un exemple de classe que nous avons créée pour encoder notre classifieur:
 
 ![Exemple de classe nous permettant d'encoder notre classifieur de toits verts.](exemple-classe.jpg)
 
@@ -71,7 +71,7 @@ R: Oui, sans aucun doute. Sachant que les critères d'évaluation n'incluaient p
 
 #### Q: De quelle façon votre équipe a-t-elle alloué les 6 heures à sa disposition? Avec du recul, les auriez-vous allouées de façon différente?
 
-R: Nous avons divisé nos forces en trois, travaillant sur la même tâche pendant 6h! Marc-Alexandre s'occupait de l'approche utilisant des images pour les classifier. De mon côté (Alex), j'utilisais les données structurées pour classifier les images. Taha nous assistait dans nos démarches, dans la transformation des données, ainsi que la présentation. Ceci a permis un utilisation optimale de notre temps.
+R: Nous avons divisé nos forces en trois, travaillant sur la même tâche pendant 6h! Marc-Alexandre s'occupait de l'approche utilisant des images pour les classifier. De mon côté (Alex), j'utilisais les données structurées pour classifier les images. Taha nous assistait dans nos démarches, dans la transformation des données, ainsi que la présentation. Ceci a permis une utilisation optimale de notre temps.
 
 
 #### Q: Quels ouvrages conseillez-vous aux gens qui veulent améliorer leurs présentations? Et leur performance dans la résolution de ce genre de problématiques?
