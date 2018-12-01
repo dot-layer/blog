@@ -8,12 +8,10 @@ tags:
   - interview
   - meetup
   - hackathon
-description: "prix Leonardo da Vinci"
-featured: "hackathon-presentation-cover.png"
+description: "Meetup ML Québec | Prix Leonardo da Vinci"
+featured: "hackathon-creativity-cover.JPG"
 featuredpath: "img/headers/"
 ---
-
-# DEMANDER UNE PHOTO À JC POUR LE COVER
 
 Le 10 novembre 2018 avait lieu à Québec la [Journée hackathon en assurance](https://www.facebook.com/events/185652975580020/), organisée par [MeetupMLQuebec](https://www.facebook.com/MeetupMLQuebec) et présentée en collaboration par Intact Assurances et Co-operators.
 
@@ -21,7 +19,7 @@ Félicitations à *Les Beans*, gagnants du prix Leonardo da Vinci, remis à l'é
 
 ![Juges et Les Beans](MeetupMLQuebec2018_054.jpg)
 
-Nous nous sommes entretenus avec Philippe Blouin-Leclerc, Samuel Perreault et Jonathan Tremblay, membres de l'équipe gagnante, que l'on voit ci-haut sur la droite, accompagnés des juges.
+Nous nous sommes entretenus avec Jonathan Tremblay (JT), Samuel Perreault (SP) et Philippe Blouin-Leclerc (PBL), membres de l'équipe gagnante, que l'on voit ci-haut sur la droite, accompagnés des juges.
 
 #### Q: Sans nécessairement connaître la solution de toutes les autres équipes, en quoi croyez-vous que la vôtre est unique?
 
@@ -135,3 +133,7 @@ Réponse :
 **SP**: .layer 4 life. Lofstre.
 
 **PBL**: Spread love et allez porter vos restants de nourriture des événements coopératifs dans des endroits qui la redistribue aux plus démunis.
+
+Merci pour votre participation, encore une fois félicitations, et rendez-vous au prochain événement de [MeetupMLQuebec](https://www.facebook.com/MeetupMLQuebec)!
+
+**La qualité des photos vous impressionne? Rendez-vous sur le site de [Pikur](http://www.pikur.ca) pour d'autres projets tout aussi fascinants.**
