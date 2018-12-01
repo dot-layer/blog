@@ -17,7 +17,7 @@ Le 10 novembre 2018 avait lieu à Québec la [Journée hackathon en assurance](h
 
 Félicitations à *Les Beans*, gagnants du prix Leonardo da Vinci, remis à l'équipe qui a proposé la solution la plus créative. Les critères étaient à la discrétion des juges, mais ils nous ont partagé leur processus de décision ci-bas. Pour plus de détails sur la problématique ou l'énoncé, rendez-vous sur le [dépôt officiel](https://github.com/dot-layer/meetup-ML-assurance-hackathon) de la compétition.
 
-![Les juges et les membres de l'équipe *Les Beans*.](MeetupMLQuebec2018_054.jpg)
+![Les juges et les membres de l'équipe *Les Beans*.](MeetupMLQuebec2018_054.JPG)
 
 Nous nous sommes entretenus avec Jonathan Tremblay (**JT**), Samuel Perreault (**SP**) et Philippe Blouin-Leclerc (**PBL**), membres de l'équipe gagnante, que l'on voit ci-haut sur la droite, accompagnés des juges.
 
