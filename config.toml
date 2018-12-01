@@ -1,4 +1,4 @@
-baseurl = "/"
+baseurl = "https://dotlayer.org/"
 languageCode = "en-us"
 title = ".layer"
 theme = "hugo-future-imperfect"
