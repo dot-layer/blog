@@ -25,7 +25,7 @@ Félicitations à *Last but not furious*, gagnants du prix *Linus Torvalds*, rem
 
 Pour plus de détails sur la problématique ou l'énoncé, rendez-vous sur le [dépôt officiel](https://github.com/dot-layer/meetup-ML-assurance-hackathon) de la compétition.
 
-![Les juges et les membres de l'équipe *Last but not furious*](MeetupMLQuebec2018_050.jpg)
+![Les juges et les membres de l'équipe *Last but not furious*](MeetupMLQuebec2018_050.JPG)
 
 Nous nous sommes entretenus avec Marc-Alexandre Paquet, Taha Racicot et Alex St-Jean, membres de l'équipe gagnante, que l'on voit ci-haut sur la droite, accompagnés des juges.
 
@@ -59,7 +59,7 @@ Avec ces données augmentées, la proportion de toits verts était d'environ 50%
 
 #### Q: Que conseillez-vous aux gens qui veulent commencer à participer à des hackathons?
 
-R: Nous leur conseillerons surtout de ne pas avoir peur "perdre", l'expérience en soi est une victoire. De plus, il est important de bien lire l'énoncé et de bien allouer son temps pour finaliser son projet. C'est bien de passer du temps sur son algorithme pour avoir de meilleures performances, mais au final avoir un produit reproductible et bien construit a beaucoup plus de valeur à nos yeux. 
+R: Nous leur conseillerons surtout de ne pas avoir peur de "perdre", l'expérience en soi est une victoire. De plus, il est important de bien lire l'énoncé et de bien allouer son temps pour finaliser son projet. C'est bien de passer du temps sur son algorithme pour avoir de meilleures performances, mais au final avoir un produit reproductible et bien construit a beaucoup plus de valeur à nos yeux. 
 
 #### Q: Quel est le background des membres de l'équipe? Croyez-vous que ce background vous favorisait dans la catégorie *Linus Torvalds*?
 
@@ -76,21 +76,21 @@ R: Nous avons divisé nos forces en trois, travaillant sur la même tâche penda
 
 #### Q: Quels ouvrages conseillez-vous aux gens qui veulent améliorer leurs présentations? Et leur performance dans la résolution de ce genre de problématiques?
 
-R: Comme ouvrage, nous recommandons définitivement *Clean Code* et Clean Architecture d'Uncle Bob, ainsi que GOOS (Growing Object-Oriented Software Guided by Tests). 
+R: Comme ouvrage, nous recommandons définitivement *Clean Code* et [Clean Architecture](http://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) d'Uncle Bob, ainsi que [GOOS](http://www.growing-object-oriented-software.com/) (Growing Object-Oriented Software Guided by Tests). 
 
 Nous recommandons également aux étudiants de l'Université Laval de suivre le cours [GLO-4002](https://www.ulaval.ca/les-etudes/cours/repertoire/detailsCours/glo-4002-qualite-et-metriques-du-logiciel.html) (Qualité et métriques du logiciel). C'est l'un des cours les plus formateur (offert à ULaval) pour avoir des bases solides en programmation.
 
-Pour améliorer les performances dans la résolution de problèmes de *Machine Learning*, nous recommandons *Data mining : concepts and techniques* de Jiawei Han, *The Elements of Statistical Learning* de Hastie et *Hands-On Machine Learning with Scikit-Learn and TensorFlow* d'Aurélien Géron.
+Pour améliorer les performances dans la résolution de problèmes de *Machine Learning*, nous recommandons [Data mining : concepts and techniques](http://myweb.sabanciuniv.edu/rdehkharghani/files/2016/02/The-Morgan-Kaufmann-Series-in-Data-Management-Systems-Jiawei-Han-Micheline-Kamber-Jian-Pei-Data-Mining.-Concepts-and-Techniques-3rd-Edition-Morgan-Kaufmann-2011.pdf) de Jiawei Han, [The Elements of Statistical Learning](https://web.stanford.edu/~hastie/Papers/ESLII.pdf) de Hastie et [Hands-On Machine Learning with Scikit-Learn and TensorFlow](http://index-of.es/Varios-2/Hands%20on%20Machine%20Learning%20with%20Scikit%20Learn%20and%20Tensorflow.pdf) d'Aurélien Géron.
 
 #### Q: Est-ce que le hackathon a changé vos plans (études, participations à d'autres événements, cours en ligne, etc.) pour les prochains mois? Quelles sont les prochaines étapes pour vous?
 
-R: Voici leur réponse:
+Voici leur réponse:
 
-**M-A** : De mon côté, j'ai commencé à en apprendre plus sur le *Machine Learning* l'été passé. Pour le moment, je travaille dans une entreprise où est-ce qu'on essaye de voir qu'est qu'il est possible de faire en recherche appliquée de ce côté et comment on peut tirer notre épingle du jeu dans ce champ d'expertise. L'événement me permet de continuer dans cette veine.
+**M-A**: De mon côté, j'ai commencé à en apprendre plus sur le *Machine Learning* l'été passé. Pour le moment, je travaille dans une entreprise où est-ce qu'on essaye de voir qu'est qu'il est possible de faire en recherche appliquée de ce côté et comment on peut tirer notre épingle du jeu dans ce champ d'expertise. L'événement me permet de continuer dans cette veine.
 
-**A** : Pour ma part, le hackathon m'a donné le goût de participer à d'autres événements similaires. Initialement j'étais vraiment stressé de ne pas bien performer, mais en voyant ça plus comme une situation d'apprentissage qu'une compétition, ça devenait beaucoup moins stressant.
+**A**: Pour ma part, le hackathon m'a donné le goût de participer à d'autres événements similaires. Initialement j'étais vraiment stressé de ne pas bien performer, mais en voyant ça plus comme une situation d'apprentissage qu'une compétition, ça devenait beaucoup moins stressant.
 
-**T** : Pour ma part, la journée n'a pas vraiment changé mes plans pour les prochaines années.
+**T**: Pour ma part, la journée n'a pas vraiment changé mes plans pour les prochaines années.
 
 Merci pour votre participation, encore une fois félicitations, et rendez-vous au prochain événement de [MeetupMLQuebec](https://www.facebook.com/MeetupMLQuebec)!
 
