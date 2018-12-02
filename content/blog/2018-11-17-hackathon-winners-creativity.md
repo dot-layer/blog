@@ -57,7 +57,7 @@ Voici quelques exemples qui illustrent l'effet des filtres sur les images.
 
 **JT**: Simplement avoir de l'ouverture d'esprit, être créatif et vouloir en apprendre plus! Tout le monde sort gagnant de ces événements.
 
-**SP**: De ne pas se laisser intimider par l'aspect compétitif. Il y avait des gens de tous les niveaux et l'ambiance en était vraiment au partage de connaissances.
+**SP**: De ne pas se laisser intimider par l'aspect compétitif. Il y avait des gens de tous les niveaux et l'ambiance était à la collaboration.
 
 **PBL**: Combattre le syndrome de l'imposteur, je crois que tout le monde peut y trouver son compte si la motivation et le désir d'apprendre y sont.
 
@@ -79,14 +79,14 @@ En ce qui concerne les méthodes statistiques, ma bible c'est [The Elements of S
 
 **JT**: Domaine de l'actuariat, consultation internationale. Je crois que la créativité vient plus de mes intérêts personnels et de mon ouverture d'esprit. 
 
-**SP**: Les trois avons étudié, à un certain moment, en actuariat. Maintenant, on se concentre plus particulièrement en statistique et apprentissage machine, que ce soit dans d'autres facultés ou de manière autodidacte. Par rapport aux autres, ça ne nous a probablement pas aidé plus qu'il le faut en ce qui concerne la créativité. Pour être honnête, on visait directement cette catégorie en commençant. Et le fait que les autres équipes les plus créatives ont gagné les prix de la présentation et de la qualité du code nous a probablement aidé un peu!
+**SP**: Les trois avons étudié l'actuariat à un certain moment. Maintenant, on se concentre plus particulièrement en statistique et apprentissage machine, que ce soit dans d'autres facultés ou de manière autodidacte. Par rapport aux autres, ça ne nous a probablement pas aidé plus qu'il le faut en ce qui concerne la créativité. Pour être honnête, on visait directement cette catégorie en commençant.
 
 
 #### Q: De quelle façon votre équipe a-t-elle alloué les 6 heures à sa disposition? Avec du recul, les auriez-vous allouées de façon différente?
 
-**SP**: Après environ une heure, on avait déjà du code qui faisait l'essentiel du travail : un modèle linéaire généralisé, un réseau de neurones et une forêt aléatoire (*Random Forest*). Nos trois modèles étaient assez similaires en termes de performances. 
+**SP**: Après environ une heure, on avait déjà du code qui faisait l'essentiel du travail : un modèle linéaire généralisé, un réseau de neurones et un ensemble d'arbres de décisions. Merci au librairies R keras, glmnet et xgboost! On avait encore de petits bugs avec nos données par contre.
 
-Je crois que j'ai passé trop de temps à faire de la recherche en grille (*grid search*) pour trouver de meilleurs hyperparamètres. En rétrospective, j'aurais aimé passez plus de temps pour inclure dans la présentation certains aspects subtiles de nos modèles. Par exemple, on a utilisé des poids variables pour nos observations provenant de différentes classes, question de favoriser la détection des toits verts quitte à ajouter des faux positifs dans nos prédictions. J'ai l'impression que personne n'a fait ça aussi et ça aurait été intéressant de le partager. On a peut-être commencé à préparer notre présentation trop 
+Nous avons passé trop de temps à faire de la recherche en grille (*grid search*) pour trouver de meilleurs hyperparamètres. En rétrospective, j'aurais aimé passez plus de temps pour inclure dans la présentation certains aspects subtiles de nos modèles. On a aussi commencé à préparer notre présentation trop 
 tard dans la journée.
 
 Par contre, je crois qu'on a bien fait de s'activer pour appliquer des filtres aux photos. Phil a fait ça avec Photoshop directement et a ensuite passé les résultats dans ResNet50 en python. On voulait tout faire ça en python, et John avait même codé un algorithme qui le faisait. Cependant, les résultats en 
@@ -97,7 +97,6 @@ Photoshop semblaient meilleurs. Encore une fois, ça aurait été intéressant d
 
 **JT**: Lorsque j'ai rencontré Sam et Phil, ils avaient déjà l'objectif d'obtenir la solution la plus créative bien avant l'événement. Je crois que Phil était très motivé par le prix : des billets pour José Gonzalez.
 
-**SP**: Clairement! Notre code n'était pas laid, mais pas digne de gagner le prix remis à la meilleur qualité de code. De plus, notre présentation était plutôt simple et faite à la dernière minute (comme mentionné plus tôt) ...
 
 
 #### Q: Est-ce que le hackathon a changé vos plans (études, participations à d'autres événements, cours en ligne, etc.) pour les prochains mois? Quelles sont les prochaines étapes pour vous?
