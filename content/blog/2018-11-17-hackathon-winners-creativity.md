@@ -19,12 +19,12 @@ Félicitations à *Les Beans*, gagnants du prix Leonardo da Vinci, remis à l'é
 
 ![Les juges et les membres de l'équipe *Les Beans*.](MeetupMLQuebec2018_054.JPG)
 
-Nous nous sommes entretenus avec Jonathan Tremblay (**JT**), Samuel Perreault (**SP**) et Philippe Blouin-Leclerc (**PBL**), membres de l'équipe gagnante, que l'on voit ci-haut sur la droite, accompagnés des juges.
+Nous nous sommes entretenus avec Philippe Blouin-Leclerc (**PBL**), Samuel Perreault (**SP**) et Jonathan Tremblay (**JT**), membres de l'équipe gagnante, que l'on voit ci-haut sur la droite, accompagnés des juges.
 
 #### Q: Sans nécessairement connaître la solution de toutes les autres équipes, en quoi croyez-vous que la vôtre était unique?
 
 **JT**: Étant donné que les données utilisées étaient des images, Phil, par son esprit vif, a eu l'excellente idée de demander à son ami photographe --- aussi photographe de l'événement --- quel type de filtre pourrait être utilisé pour faire ressortir les toits verts sur une image satellite.
-Ainsi, au lieu de nous concentrer seulement sur les maths et la programmation pour résoudre le problème, nous nous sommes aussi attaqués à l'aspect photographique de la chose. Nous avons essayé différents filtres sur les photos satellites afin de voir lesquelles pourraient faire ressortir les toits verts des images.
+Ainsi, au lieu de nous concentrer seulement sur les maths et la programmation pour résoudre le problème, nous nous sommes aussi attaqués à l'aspect photographique de la chose. Nous avons essayé différents filtres sur les photos satellites afin de voir lesquels pourraient faire ressortir les toits verts des images.
 
 Au final, le filtre proposé par le photographe était le plus efficace. Nous croyons que le fait d'avoir pensé à modifier les images en utilisant des filtres a rendu notre solution unique comparativement aux autres.
 
@@ -59,7 +59,7 @@ Voici quelques exemples qui illustrent l'effet des filtres sur les images.
 
 **SP**: De ne pas se laisser intimider par l'aspect compétitif. Il y avait des gens de tous les niveaux et l'ambiance était à la collaboration.
 
-**PBL**: Combattre le syndrome de l'imposteur, je crois que tout le monde peut y trouver son compte si la motivation et le désir d'apprendre y sont.
+**PBL**: Combattre le syndrome de l'imposteur. Je crois que tout le monde peut y trouver son compte si la motivation et le désir d'apprendre y sont.
 
 
 #### Q: Que conseillez-vous aux gens qui veulent stimuler leur créativité?
@@ -72,31 +72,31 @@ Avoir en main plusieurs sources d'idées peut venir générer la créativité. C
 
 **SP**: En tant que grand fan du language R, je recommande [R for Data Science](https://r4ds.had.co.nz/) (qui est d'ailleurs disponible gratuitement sur le web) pour tous ceux et celles qui souhaitent améliorer leurs compétences en analyses de données. L'accent est principalement mis sur le nettoyage et la visualisation des données. 
 
-En ce qui concerne les méthodes statistiques, ma bible c'est [The Elements of Statistical Learning](https://web.stanford.edu/~hastie/Papers/ESLII.pdf), qui possède aussi un équivalent un peu plus facile à lire pour les plus débutants: [An Introduction to Statistical Learning](https://www.ime.unicamp.br/~dias/Intoduction%20to%20Statistical%20Learning.pdf). Ces deux références sont également disponibles gratuitement en ligne.
+En ce qui concerne les méthodes statistiques, ma bible est [The Elements of Statistical Learning](https://web.stanford.edu/~hastie/Papers/ESLII.pdf), qui possède aussi un équivalent un peu plus facile à lire pour les plus débutants: [An Introduction to Statistical Learning](https://www.ime.unicamp.br/~dias/Intoduction%20to%20Statistical%20Learning.pdf). Ces deux références sont également disponibles gratuitement en ligne.
 
 
 #### Q: Quel est le background des membres de l'équipe? Croyez-vous que ce background vous favorisait dans la catégorie Leonardo da Vinci?
 
 **JT**: Domaine de l'actuariat, consultation internationale. Je crois que la créativité vient plus de mes intérêts personnels et de mon ouverture d'esprit. 
 
-**SP**: Les trois avons étudié l'actuariat à un certain moment. Maintenant, on se concentre plus particulièrement en statistique et apprentissage machine, que ce soit dans d'autres facultés ou de manière autodidacte. Par rapport aux autres, ça ne nous a probablement pas aidé plus qu'il le faut en ce qui concerne la créativité. Pour être honnête, on visait directement cette catégorie en commençant.
+**SP**: Les trois avons étudié l'actuariat à un certain moment. Maintenant, on se concentre plus particulièrement en statistique et apprentissage machine, que ce soit dans d'autres facultés ou de manière autodidacte. Par rapport aux autres, ça ne nous a probablement pas aidé plus qu'il le faut en ce qui concerne la créativité.
+
+
+#### Q: Aviez-vous ciblé la catégorie de prix Leonardo da Vinci volontairement avant ou pendant la compétition en faisant des compromis sur les autres prix (présentation, code)?
+
+**JT**: Pour être honnête, on visait directement cette catégorie en commençant. Lorsque j'ai rencontré Sam et Phil, ils avaient déjà l'objectif d'obtenir la solution la plus créative bien avant l'événement. Je crois que Phil était très motivé par le prix : des billets pour José Gonzalez.
+
 
 
 #### Q: De quelle façon votre équipe a-t-elle alloué les 6 heures à sa disposition? Avec du recul, les auriez-vous allouées de façon différente?
 
 **SP**: Après environ une heure, on avait déjà du code qui faisait l'essentiel du travail : un modèle linéaire généralisé, un réseau de neurones et un ensemble d'arbres de décisions. Merci au librairies R keras, glmnet et xgboost! On avait encore de petits bugs avec nos données par contre.
 
-Nous avons passé trop de temps à faire de la recherche en grille (*grid search*) pour trouver de meilleurs hyperparamètres. En rétrospective, j'aurais aimé passez plus de temps pour inclure dans la présentation certains aspects subtiles de nos modèles. On a aussi commencé à préparer notre présentation trop 
+Avec le recul, nous avons passé trop de temps à faire de la recherche en grille (*grid search*) pour trouver de meilleurs hyperparamètres. En rétrospective, j'aurais aimé passez plus de temps pour inclure dans la présentation certains aspects subtiles de nos modèles. On a aussi commencé à préparer notre présentation trop 
 tard dans la journée.
 
 Par contre, je crois qu'on a bien fait de s'activer pour appliquer des filtres aux photos. Phil a fait ça avec Photoshop directement et a ensuite passé les résultats dans ResNet50 en python. On voulait tout faire ça en python, et John avait même codé un algorithme qui le faisait. Cependant, les résultats en 
 Photoshop semblaient meilleurs. Encore une fois, ça aurait été intéressant d'avoir le code de John dans notre présentation pour montrer ce qu'était notre but ultime.
-
-
-#### Q: Aviez-vous ciblé la catégorie de prix Leonardo da Vinci volontairement avant ou pendant la compétition en faisant des compromis sur les autres prix (présentation, code)?
-
-**JT**: Lorsque j'ai rencontré Sam et Phil, ils avaient déjà l'objectif d'obtenir la solution la plus créative bien avant l'événement. Je crois que Phil était très motivé par le prix : des billets pour José Gonzalez.
-
 
 
 #### Q: Est-ce que le hackathon a changé vos plans (études, participations à d'autres événements, cours en ligne, etc.) pour les prochains mois? Quelles sont les prochaines étapes pour vous?
@@ -108,13 +108,13 @@ Photoshop semblaient meilleurs. Encore une fois, ça aurait été intéressant d
 **PBL**: Ça n'a pas changé mes plans, mais ça confirme que je vais dans la bonne direction. 
 
 
-#### Q: Autre chose que vous voulez partager au monde entier? Lâchez-vous lousses, j'inventerai une question pour introduire votre réponse
+#### Q: Avez-vous autre chose à partager au monde entier après cette victoire?
 
-**JT**: Bien hâte au prochain event thanks aux organisateurs et participants, love.
+**JT**: J'ai bien hâte au prochain événement. Merci aux organisateurs et participants, love.
 
-**SP**: .layer 4 life. Lofstre.
+**SP**: .layer 4 life. Love.
 
-**PBL**: *Spread love* et allez porter vos restants de nourriture des événements coopératifs dans des endroits qui la redistribue aux plus démunis.
+**PBL**: *Spread love* et allez porter vos restants de nourriture des événements coopératifs dans des endroits qui les redistribuent aux plus démunis.
 
 Merci pour votre participation, encore une fois félicitations, et rendez-vous au prochain événement de [MeetupMLQuebec](https://www.facebook.com/MeetupMLQuebec)!
 
