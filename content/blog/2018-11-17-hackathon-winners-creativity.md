@@ -52,6 +52,8 @@ Voici quelques exemples qui illustrent l'effet des filtres sur les images.
 ![](image-7.png) | ![](image-7.jpg)
 ![](image-13.png) | ![](image-13.jpg)
 
+**PBL** :  On a voulu simplifier les images pour rendre la détection de toit vert plus facile à l'oeil. On s'est dit que de rajouter une "couche" de traitement de données qui était l'avis d'un expert en photographie pourrait aider le modèle a mieux performer. Par contre, comme le jeu de données passait jusqu'à la dernière couche cachée du réseau de neuronne ResNet50, le modèle n'était pas simplifier. Pour avoir de meilleurs résultats, avec le peu d'image disponible, il aurait surement fallu qu'on joue avec les couches de ResNet50 pour l'adapter à nos images simplifiées. Comme ça on aurait pu avoir un modèle relativement plus simple ce qui aurait mieux fitté avec nos images plus simples.
+
 
 #### Q: Que conseillez-vous aux gens qui veulent commencer à participer à des hackathons?
 
