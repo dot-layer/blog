@@ -15,8 +15,32 @@ output:
   html_document:
   keep_md: true
 ---
+
+  > Ranking: :star: :star: :star: :star: :star:
+
+  > Coding prerequisites : low
+  
+  > Math/stats prerequisites : low
+  
   > Level : easy
   
-  > Ranking: :star: :star: :star: 
-  
-This is a great place to start if you're new to machine learning. Without going in the whole R vs Python debate, R is a great language to learn if you're going to be analysing and modelling data. This book offers labs and 
+
+# Summary
+
+This book is mostly interested in supervised learning, the task of 
+using statistical models to predict the relationship between 
+predictors and a response. Given there is a function \[f\] that 
+provides a relationship between explanatory variables $X$ and a 
+response variable $Y$, what are statistical methods for estimating 
+$f$. 
+
+# Review
+
+There are two ways steps in the education of a data scientist :
+understanding statistical models, and putting them in practice. 
+This book definitely helps on the practice part, assuming little 
+mathematical or statistical knowledge from the reader. This book 
+is a great companion to it's big brother, The Elements of Statistical
+Learning. First of all, R is a great language to start with 
+statistical learning as it's really easy to manipulate data. 
+
