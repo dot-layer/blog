@@ -18,11 +18,11 @@ featuredpath: "img/headers/"
 Charles Stein, in an interview by Y.K. Leong.
 </div>
 
-Like Bradley Efron and Trevor Hastie, I think it's fair to say that maximum likelihood estimation (MLE) can arguably be considered as one the twentieth century’s most influential pieces of applied mathematics.  In their book **Computer Age Statistical Inference: Algorithms, Evidence, and Data Science** (Chapter 7), they write:
+I remember Prof. Asgharian describing maximum likelihood theory in my first statistics course: "I have seen what I should have seen." This idea of Ronald Fisher profoundly changed the field of statistics at a time when access to data wasn't at all like today. In their book **Computer Age Statistical Inference: Algorithms, Evidence, and Data Science** (Chapter 7), Bradley Efron and Trevor Hastie write:
 
 > If Fisher had lived in the era of “apps,” maximum likelihood estimation might have made him a billionaire.
 
-The magic of maximum likelihood theory is that it provides (asymptotically, as `$n \to \infty$`) unbiased estimators attaining the Cramér-Rao bound. In other words, the MLE converges towards the most precise value one could hope. However, the story is quite different in the finite-sample situation and this is what Stein's paradox reminds us of: in some circumstance, the MLE is bound to be (potentially grossly) sub-optimal. Hence Hastie's and Efron's claim: "maximum likelihood estimation has shown itself to be an inadequate and dangerous tool in many twenty-first-century applications. [...] unbiasedness can be an unaffordable luxury when there are hundreds or thousands of parameters to estimate at the same time." So who is Stein and what exactly is Stein's paradox? Read on.
+What makes the maximum likelihood estimator (MLE) so useful is that it is consistent (converges in probability to the value it estimates) and efficient (no other estimator has lower asymptotic mean squared error.) This is as `$n \to \infty$`. The story is quite different in the finite-sample situation and this is what Stein's paradox reminds us of: in some circumstance, the MLE is bound to be (potentially grossly) sub-optimal. Hence Hastie's and Efron's claim: "maximum likelihood estimation has shown itself to be an inadequate and dangerous tool in many twenty-first-century applications. [...] unbiasedness can be an unaffordable luxury when there are hundreds or thousands of parameters to estimate at the same time." So who is Stein and what exactly is Stein's paradox? Read on.
 
 Stein's paradox is attributed to Charles Stein (1920-2016), an American mathematical statistician who spent most of his carreer at Stanford University. His work is exceptional yes, but Stein is also remembered by his colleagues for his strong belief in basic human rights and passionate social activism. In an [interview](http://www2.ims.nus.edu.sg/imprints/interviews/CharlesStein.pdf) by Y.K. Leong, the very first question touched his statistical work (verifying weather broadcasts for understanding how weather might affect wartime activities) for the Air Force during World War II; Stein's first words are unequivocal:
 
@@ -37,11 +37,11 @@ limited defensive actions.
 
 According to [Stanford News](https://news.stanford.edu/2016/12/01/charles-m-stein-extraordinary-statistician-anti-war-activist-dies-96/), the man who was called the “Einstein of the Statistics Department”, was also the first Stanford professor arrested for protesting apartheid and was often involved in anti-war protests.
 
-On the math-stat side, Stein is the author of a very influential/controversial paper entitled *Inadmissibility of the Usual Estimator for the Mean of a Multivariate Normal Distribution* (1956). Bradley Efron and Carl Morris, who were strong supporters of Stein's idea, pinned the term Stein's paradox in their 1977 paper *Stein's Paradox in Statistics*. In it, they give a pretty intuitive description of the paradox to which we will go back:
+On the math-stat side, Stein is the author of a very influential/controversial paper entitled *Inadmissibility of the Usual Estimator for the Mean of a Multivariate Normal Distribution* (1956). Bradley Efron and Carl Morris, who were strong supporters of Stein's idea, pinned the term Stein's paradox in their 1977 paper *Stein's Paradox in Statistics*. They loosely described it as follows:
 
 > The best guess about the future is usually obtained by computing the average of past events. Stein's paradox defines circumstances in which there are estimators better than the arithmetic average.
 
-A few years after Stein's original paper, the point was reinforced by himself and his graduate student, Willard James, when they publised *Estimation with quadratic loss* in 1961. There, they construct an estimator better than the arithmetic average *aka* the MLE. Hastie and Efron mark this point as the beginning of something: "It begins the story of shrinkage estimation, in which deliberate biases are introduced to improve overall performance, at a possible danger to individual estimates." Suprisingly, Stein's example takes place in a dimension as low as three.
+The arithmetic average in question is indeed the maximum likelihood estimator. In 1961, a few years after the original paper, Stein and his graduate student, Willard James, reinforced their point with the paper *Estimation with quadratic loss*, wher they provide an explicit estimator out-performing the MLE in terms of mean squared error. Hastie and Efron mark this point as the beginning of something: "It begins the story of shrinkage estimation, in which deliberate biases are introduced to improve overall performance, at a possible danger to individual estimates." Suprisingly, Stein's example takes place in a dimension as low as three.
 
 For the rest of the post, I present the famous baseball example of Efron and Morris involving the batting averages (number of hits/number of times at bat) of 18 major-league baseball players. During the 1970 season, when top batter Roberto Clemente had appeared 45 times at bat, seventeen other players had 45 times at bat. The first column of the following table provides the batting averages for the eighteen players in question (reproduced with Professor Efron's permission, whom we would like to thank):
 
@@ -49,21 +49,21 @@ For the rest of the post, I present the famous baseball example of Efron and Mor
 <img src="JS-baseball2.PNG" alt="drawing" width="250"/>
 </div>
 
-Say we were at this exact time in 1970 when each of these players had 45 *at bats* and we wanted to predict the batting averages of each player for the remainder of the season. Without any more information, it seems natural to think that our best guess would have been their (then) present batting averages (the arithmetic averages given in the first column). Under a normal model, This is what the maximum likelihood estimation method would tell us. The second column provides the MLE for each player: this is just the first column expressed in decimal form. Let us define our "best guess" as the guess with smallest mean squared error, that is,
+Let us go back in 1970 when each of these players had 45 *at bats*. To predict the batting averages of each player for the remainder of the season, it seems natural to use their current batting averages, given as ratios in the column Hits/AB. Under a normal model (and with no other information), the resulting estimator coincides with the maximum likelihood estimator, expressed in decimal form in the column labeled `$\hat\mu_i^{(\mathrm{MLE})}$`. Since we are interested by an estimator with a small mean squared error, we define our "best guess" as
 
 `$$
-\mu_i^{(JS)} := {\rm argmin}_{\theta}\ \mathbb{E}_{\mathbf{X}}[(\mu_i - \theta)^2]
+\hat\mu_i^{(JS)} := {\rm argmin}_{\theta}\ \mathbb{E}_{\mathbf{X}}[(\mu_i - \theta)^2],
 $$`
 
-where `$\mathbf{X}$` is the available data (here the batting averages of the beginning of the season). Such loss function isn't crazy at all: we want `$\mu_i^{\rm (JS)}$` to be a formula of the past (`$\mathbf{X}$`) that would produce the best result (on average) if we were to reproduce that same experience every year (getting a new `$\mathbf{X}$` every time). In the above formula, `$\mu_i$` represents the *true/ideal* batting average of player `$i$` (may it exists), so we want our estimator to be close to it with high probability.
+where `$\mathbf{X}$` is the available data (here the batting averages of the beginning of the season). Such loss function isn't crazy at all: we want `$\hat\mu_i^{\rm (JS)}$` to be a formula of the past (`$\mathbf{X}$`) that would produce the best result (on average) if we were to reproduce that same experience every year (getting a new `$\mathbf{X}$` every time). In the above formula, `$\mu_i$` represents the *true/ideal* batting average of player `$i$` (may it exists), so we want our estimator to be close to it with high probability.
 
 **Note**: The initials `${\rm (JS)}$` stand for "James-Stein".
 
-What's nice about begin in 2018 is that we know what actually happened during the rest of the 1970 season. The bold column in the previous table provides the batting averages computed for the rest of the season. Let us say that those, which were often computed on more than 200 (new) times at bat, are good approximations of the *true/ideal* batting averages. Stein's method was used to produce the outmost right column. It consists of shrinking the individual batting average of each player towards their grand average: as Efron and Morris write,
+Something nice is that we know what actually happened during the remainder of the 1970 season. The bold column in the previous table provides the batting averages computed for the rest of the season. Let us say that those, which were often computed on more than 200 (new) times at bat, are good approximations of the *true/ideal* batting averages. Stein's method was used to produce the outmost right column. It consists of shrinking the individual batting average of each player towards their grand average: in Efron's and Morris' words,
 
 > if a player's hitting record is better than the grand average,  then it must be reduced; if he is not hitting as well as the grand average, then his hitting record must be increased.
 
-To do so, let `$\bar\mu = \sum_{i=1}^{18} \mu_i^{(\mathrm{MLE})}/18$` be the grand mean. One way to define a shrinkage estimator is
+To do so, let `$\bar\mu = \sum_{i=1}^{18} \hat\mu_i^{(\mathrm{MLE})}/18$` be the grand mean. One way to define a shrinkage estimator is
 `$$
 	\hat\mu_i^{(\mathrm{JS})} = \bar{\mu} + c(\hat\mu_i^{(\mathrm{MLE})} - \bar{\mu}),
 $$`
