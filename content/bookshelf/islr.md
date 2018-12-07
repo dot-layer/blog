@@ -15,5 +15,8 @@ output:
   html_document:
   keep_md: true
 ---
+  > Level : easy
   
-  This was a good book
+  > Ranking: :star: :star: :star: 
+  
+This is a great place to start if you're new to machine learning. Without going in the whole R vs Python debate, R is a great language to learn if you're going to be analysing and modelling data. This book offers labs and 
