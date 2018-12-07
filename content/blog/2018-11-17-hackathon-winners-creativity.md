@@ -28,7 +28,7 @@ Ainsi, au lieu de nous concentrer seulement sur les maths et la programmation po
 
 Au final, le filtre proposé par le photographe était le plus efficace. Nous croyons que le fait d'avoir pensé à modifier les images en utilisant des filtres a rendu notre solution unique comparativement aux autres.
 
-**SP**: Il faut quand même dire que d'autres équipes ont joué avec les photos, mais à ma connaissance c'était plus pour balancer le jeu de données que littéralement pour les modifier.
+**SP**: Il faut quand même dire que d'autres équipes ont joué avec les photos, mais à ma connaissance c'était plus pour balancer ou augmenter le jeu de données que littéralement pour les modifier.
 
 **PBL**: Étant donné le nombre restreint de données, on s'est dit que si on simplifiait les images, on pourrait se permettre d'avoir des modèles plus simples pour faire le classement.
 
@@ -88,6 +88,9 @@ En ce qui concerne les méthodes statistiques, ma bible est [The Elements of Sta
 
 **JT**: Pour être honnête, on visait directement cette catégorie en commençant. Lorsque j'ai rencontré Sam et Phil, ils avaient déjà l'objectif d'obtenir la solution la plus créative bien avant l'événement. Je crois que Phil était très motivé par le prix : des billets pour José Gonzalez.
 
+**SP**: Les juges ne le savaient pas, mais je pense qu'ils ont choisi le plus grand fan de José!
+
+***PBL***: Effectivement, je l'ai déjà vu en spectacle! Aussi, on sait qu'on aurait pu passer la journée à essayer d'optimiser les hyperparamètres pour obtenir les meilleures _metrics_, mais cette approche nous tentait un peu moins. On préférait essayer des nouvelles idées et voir ce qui fonctionne bien.
 
 
 #### Q: De quelle façon votre équipe a-t-elle alloué les 6 heures à sa disposition? Avec du recul, les auriez-vous allouées de façon différente?
