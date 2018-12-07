@@ -115,7 +115,7 @@ In the real world, we usually don't communicate with the simplest kind of senten
 
 Facetting a graphic means to plot small different subsets of the data. Relating to grammar, I would compare the action of facetting with the idea of breaking a long sentence in some shorter (clearer) sentences. It's a powerful tool when looking for some patterns in the data as it could help removing the noise of different groups plotted all togheter.
 
-For example, it's difficult to see the true pattern of each group in the [following graphic](#fig:facet1):
+For example, it's difficult to see the true pattern of each group in the following [graphic](#fig:facet1):
 
 
 ```r
@@ -125,10 +125,9 @@ ggplot(mtcars, aes(x = hp, y = mpg, color = as.factor(carb))) +
 
 <div id="fig:facet1" class="figure" style="text-align: center">
 <img src="2018-09-01-grammar-of-graphics_files/figure-html/facet1-1.png" alt="It's difficult to see the true pattern in each group here"  />
-<p class="caption">It's difficult to see the true pattern in each group here</p>
 </div>
 
-while it's quite clearer in the [figure below](#fig:facet2).
+It's quite clearer in the [figure below](#fig:facet2).
 
 ```r
 ggplot(mtcars, aes(x = hp, y = mpg, color = as.factor(carb))) +
@@ -197,7 +196,7 @@ ggplot(mtcars, aes(x = mpg, y = qsec)) +
 <p class="caption">Overuse of themes causes our mind to focus on non-related data elements</p>
 </div>
 
-In contrast, the [figure](#fig:theme2) is way clearer as nothing irrelevant has been added to the plot. This leads the reader to focus on the data and the trend behind it:
+In contrast, the next [figure](#fig:theme2) is way clearer as nothing irrelevant has been added to the plot. This leads the reader to focus on the data and the trend behind it:
 
 
 ```r
