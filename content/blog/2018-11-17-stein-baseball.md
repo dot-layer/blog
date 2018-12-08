@@ -18,7 +18,7 @@ featuredpath: "img/headers/"
 Charles Stein, in an interview by Y.K. Leong.
 </div>
 
-There is nothing from my first stats course that I remember more clearly than Prof. Asgharian repeating "I have seen what I should have seen" to describe the idea behind maximum likelihood theory. Given a family of models, the maximum likelihood estimator (MLE) indeed consists of the set of parameters that maximizes the probability of observing the dataset we have observed. This idea, generally associated to Sir Ronald A. Fisher, profoundly changed the field of statistics at a time when access to data wasn't at all like today. In their book [**Computer Age Statistical Inference: Algorithms, Evidence, and Data Science** (Chapter 7)](https://web.stanford.edu/~hastie/CASI_files/PDF/casi.pdf), Bradley Efron and Trevor Hastie write:
+There is nothing from my first stats course that I remember more clearly than Prof. Asgharian repeating "I have seen what I should have seen" to describe the idea behind maximum likelihood theory. Given a family of models, maximum likelihood estimation consists of finding which values of the parameters maximizes the probability of observing the dataset we have observed. This idea, popularized in part by Sir Ronald A. Fisher, profoundly changed the field of statistics at a time when access to data wasn't at all like today. In their book [**Computer Age Statistical Inference: Algorithms, Evidence, and Data Science** (Chapter 7)](https://web.stanford.edu/~hastie/CASI_files/PDF/casi.pdf), Bradley Efron and Trevor Hastie write:
 
 > If Fisher had lived in the era of “apps,” maximum likelihood estimation might have made him a billionaire.
 
