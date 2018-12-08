@@ -90,7 +90,7 @@ En ce qui concerne les méthodes statistiques, ma bible est [The Elements of Sta
 
 **SP**: Les juges ne le savaient pas, mais je pense qu'ils ont choisi le plus grand fan de José!
 
-***PBL***: Effectivement, je l'ai déjà vu en spectacle! Aussi, on sait qu'on aurait pu passer la journée à essayer d'optimiser les hyperparamètres pour obtenir les meilleures _metrics_, mais cette approche nous tentait un peu moins. On préférait essayer des nouvelles idées et voir ce qui fonctionne bien.
+**PBL**: Effectivement, je l'ai déjà vu en spectacle! Aussi, on sait qu'on aurait pu passer la journée à essayer d'optimiser les hyperparamètres pour obtenir les meilleures _metrics_, mais cette approche nous tentait un peu moins. On préférait essayer des nouvelles idées et voir ce qui fonctionne bien.
 
 
 #### Q: De quelle façon votre équipe a-t-elle alloué les 6 heures à sa disposition? Avec du recul, les auriez-vous allouées de façon différente?
