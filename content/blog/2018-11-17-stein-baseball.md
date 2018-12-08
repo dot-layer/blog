@@ -49,37 +49,41 @@ For the rest of the post, I present the famous baseball example of Efron and Mor
 <img src="JS-baseball2.PNG" alt="drawing" width="250"/>
 </div>
 
-Let us go back in time and suppose we are at this exact date in 1970. To predict the batting averages of each player for the remainder of the season, it seems natural to use their current batting averages, given as ratios in the column Hits/AB. Under a normal model (and with no other information), the resulting estimator coincides with the maximum likelihood estimator, expressed in decimal form in the column labeled `$\hat\mu_i^{(\mathrm{MLE})}$`. Since we are interested by an estimator with a small mean squared error, let us define our "best guess" as
+Let us go back in time and suppose we are at this exact date in 1970. To predict the batting averages of each player for the remainder of the season, it seems natural to use their current batting averages, given as ratios in the column Hits/AB. Under a normal model (and with no other information), the resulting estimator coincides with the maximum likelihood estimator, expressed in decimal form in the column labeled `$\hat\mu_i^{(\mathrm{MLE})}$`. This estimator isn't optimal in terms of MSE.
 
+To show that the MLE is sub-optimal is such circumstances, James and Stein defined a class of estimators `$\Theta := \{\hat\theta_c : c \in [0,1]\}$` with
 `$$
-\hat\mu_i^{(JS)} := {\rm argmin}_{\theta}\ \mathbb{E}_{\mathbf{X}}[(\mu_i - \theta)^2],
+	\hat\theta_{c,i} = \bar{\mu} + c(\hat\mu_i^{(\mathrm{MLE})} - \bar{\mu}).
 $$`
+where `$\bar{\mu}$` is average of all means, *i.e.* the grand mean. In our case,
+`$$
+  \bar{\mu} = \frac{1}{18} \sum_{i=1}^{18} \hat\mu_i^{(\mathrm{MLE})}
+$$`
+is the overall batting average of the 18 players. Since we are concerned by mean squared error, let us define our "best guess" as
+`$$
+\hat\mu_i^{(JS)} := {\rm argmin}_{\hat\theta_c \in \Theta}\ \sum_{i} \mathbb{E}_{\mathbf{X}}[(\mu_i - \hat\theta_{c,i})^2],
+$$`
+where `$\mathbf{X}$` is the available data (here the batting averages of the beginning of the season) and `$\mu_i$` represents the *true/ideal* batting average of player `$i$` (may it exists). Roughly speaking, if we were to reproduce that same experiment every year (getting a new `$\mathbf{X}$` every time), `$\hat\mu_i^{(JS)}$`would be the estimator, among the ones considered, with smallest mean squared error (on average! not necessarily every year).
 
-where `$\mathbf{X}$` is the available data (here the batting averages of the beginning of the season) and `$\mu_i$` represents the *true/ideal* batting average of player `$i$` (may it exists). Roughly speaking, if we were to reproduce that same experiment every year (getting a new `$\mathbf{X}$` every time), `$\hat\mu_i^{(JS)}$`would be the estimator with smallest mean squared error (on average! and not necessarily every year).
+**Note**: The initials `${\rm (JS)}$` stand for "James-Stein". It is iportant to note that `$\hat\mu_i^{(JS)}$` minimizes the MSE only when we restrict ourselves to the family of estimators defined. In fact, the James-Stein estimator is itself sub-optimal when we forget this restriction!
 
-**Note**: The initials `${\rm (JS)}$` stand for "James-Stein".
-
-Coming back to 2018, let us look at what actually happened during the remainder of the 1970 season. The bold column in the previous table provides the batting averages computed for the rest of the season. Let us say that those, which were often computed on more than 200 (new) times at bat, are good approximations of the *true/ideal* batting averages. Stein's method was used to produce the outmost right column. It consists of shrinking the individual batting average of each player towards their grand average: in Efron's and Morris' words,
+Stein's method was used to produce the outmost right column. As suggested by the definition of `$\hat\mu_i^{(JS)}$`, it consists of shrinking the individual batting average of each player towards their grand average: in Efron's and Morris' words,
 
 > if a player's hitting record is better than the grand average,  then it must be reduced; if he is not hitting as well as the grand average, then his hitting record must be increased.
 
-To do so, let `$\bar\mu = \sum_{i=1}^{18} \hat\mu_i^{(\mathrm{MLE})}/18$` be the grand mean. One way to define a shrinkage estimator is
-`$$
-	\hat\mu_i^{(\mathrm{JS})} = \bar{\mu} + c(\hat\mu_i^{(\mathrm{MLE})} - \bar{\mu}),
-$$`
-where `$c$` is a constant we need to learn/estimate. The *shrinking process* towards the grand average is clear from the formulation of `$\hat\mu_i^{(\mathrm{JS})}$`, as we can use `$c$` to move `$\hat\mu_i^{(\mathrm{JS})}$` between `$\hat\mu_i^{(\mathrm{MLE})}$` and the grand mean `$\bar\mu$`. If `$c=1$`, we end up with `$\hat\mu_i^{(\mathrm{JS})} = \hat\mu_i^{(\mathrm{MLE})}$` and no shrinkage is applied. So `$c=1$` corresponds to the arithmetic mean. Stein's Theorem states that if `$c$` is such that `$\hat\mu_i^{(\mathrm{JS})}$` minimizes the mean squared error, then it must be the case that `$c<1$` and so it cannot be the arithmetic mean `$\hat\mu_i^{(\mathrm{MLE})}$`. 
+The parameter `$c$` is used to move `$\hat\mu_i^{(\mathrm{JS})}$` between `$\hat\mu_i^{(\mathrm{MLE})}$` and the grand mean `$\bar\mu$`. If `$c=1$`, we end up with `$\hat\mu_i^{(\mathrm{JS})} = \hat\mu_i^{(\mathrm{MLE})}$` and no shrinkage is applied. So `$c=1$` corresponds to the arithmetic mean, which is the same as the MLE in this case. Stein's Theorem states that if `$c$` minimizes the mean squared error, then it must be the case that `$c<1$` and so it cannot be the arithmetic mean: `$\hat\mu_i^{(\mathrm{MLE})} \neq \hat\mu_i^{(\mathrm{MLE})}$`.
 
 The particular value of `$c$` obtained with the formulas of James and Stein is `$c=.212$`, and since in our example the grand average is `$\bar\mu = .265$` we get
 `$$
 	\hat\mu_i^{(\mathrm{JS})} = .265 + (.212)(\hat\mu_i^{(\mathrm{MLE})} - .265)
 $$`
-Efron and Morri, in their [1975 paper](http://www.medicine.mcgill.ca/epidemiology/hanley/bios602/MultilevelData/EfronMorrisJASA1975.pdf), provide a very intuitive illustration of the effect of shrinkage in this particular example.
+Efron and Morris, in their [1975 paper](http://www.medicine.mcgill.ca/epidemiology/hanley/bios602/MultilevelData/EfronMorrisJASA1975.pdf), provide a very intuitive illustration of the effect of shrinkage in this particular example.
 
 <div style="text-align: center">
 <img src="JS-baseball3.PNG" alt="drawing" width="400"/>
 </div>
 
-As we can see, everyone is pulled by the grand average of batting averages. It turns out that, for 16 of the 18 players, `$\hat\mu_i^{(\mathrm{JS})}$` actually does a better job than `$\hat\mu_i^{(\mathrm{MLE})}$` at predicting `$\mu_i$`, and a better job in terms of total squared error as well (see the table).
+As we can see, everyone is pulled by the grand average of batting averages. Coming back to 2018, let us look at what actually happened during the remainder of the 1970 season. The table's bold column provides the batting averages computed for the rest of the season. Let us say that those, which were often computed on more than 200 (new) times at bat, are good approximations of the *true/ideal* batting averages. It turns out that, for 16 of the 18 players, `$\hat\mu_i^{(\mathrm{JS})}$` actually does a better job than `$\hat\mu_i^{(\mathrm{MLE})}$` at predicting `$\mu_i$`, and a better job in terms of total squared error as well (see the table).
 
 It can seem puzzling that, to estimate Clemente's batting average (the highest), using Alvis's batting average (the lowest) should help. According to our formulas, if Alvis' batting average `$\hat\mu_{\mathrm{Alvis}}^{(\mathrm{MLE})}$` was different, then our guess `$\hat\mu_{\mathrm{Clemente}}^{(\mathrm{JS})}$` for Clemente would be different as well (because `$\bar\mu$` would be different).
 
