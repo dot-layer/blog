@@ -2,7 +2,7 @@
 title: Stein's paradox and batting averages
 slug: stein-baseball
 author: Samuel Perreault
-description: "A simple explanation of Stein's paradox throught the famous baseball example of Efron and Morris (1975)"
+description: "A simple explanation of Stein's paradox through the famous baseball example of Efron and Morris (1975)"
 date: '2018-11-17'
 categories: ["Statistics"]
 type: post
@@ -43,7 +43,7 @@ On the math-stat side, Stein is the author of a very influential/controversial p
 
 The arithmetic average in question is indeed the maximum likelihood estimator. In 1961, a few years after the publication of *Inadmissibility*, Stein and his graduate student, Willard James, strengthened the argument in the paper [*Estimation with quadratic loss*](http://www.stat.yale.edu/~hz68/619/Stein-1961.pdf). In the latter, James and Stein provide an explicit estimator out-performing the MLE in terms of mean squared error. [Hastie and Efron](https://web.stanford.edu/~hastie/CASI_files/PDF/casi.pdf) mark this point as the beginning of something: "It begins the story of shrinkage estimation, in which deliberate biases are introduced to improve overall performance, at a possible danger to individual estimates." Suprisingly, Stein's example takes place in a dimension as low as three.
 
-For the rest of the post, I present the famous baseball example of Efron and Morris who first appeared in their 1975 paper [*Data Analysis Using Stein's Estimator and its Generalizations*](http://www.medicine.mcgill.ca/epidemiology/hanley/bios602/MultilevelData/EfronMorrisJASA1975.pdf). The example involves the batting averages (number of hits/number of times at bat) of 18 major-league baseball players. During the 1970 season, when top batter Roberto Clemente had appeared 45 times at bat, seventeen other players had 45 times at bat. The first column of the following table provides the batting averages for the eighteen players in question (reproduced with Professor Efron's permission, whom we would like to thank):
+For the rest of this post, I present the famous baseball example of Efron and Morris who first appeared in their 1975 paper [*Data Analysis Using Stein's Estimator and its Generalizations*](http://www.medicine.mcgill.ca/epidemiology/hanley/bios602/MultilevelData/EfronMorrisJASA1975.pdf). The example involves the batting averages (number of hits/number of times at bat) of 18 major-league baseball players. During the 1970 season, when top batter Roberto Clemente had appeared 45 times at bat, seventeen other players had 45 times at bat. The first column of the following table provides the batting averages for the eighteen players in question (reproduced with Professor Efron's permission, whom we would like to thank):
 
 <div style="text-align: center">
 <img src="JS-baseball2.PNG" alt="drawing" width="250"/>
