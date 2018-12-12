@@ -95,7 +95,7 @@ enableEmoji   = true
 [params.intro]
   header    = ".layer"
 
-  paragraph = "Meet. Learn. Share."
+  paragraph = "Meet, Learn & Share."
 
   about     = ".layer is a data science oriented community created for promoting collaboration and knowledge sharing among its members. In Unix-like operating system, files or folders starting with a dot are treated as hidden, invisible to the passerby. Most people don’t even know their existence and purpose. Much like dot files, data scientists are the hidden layer between a world where people produce data and live the outcomes of many performing algorithms. For those data scientists, now is time to say: Hello, World!"
 
