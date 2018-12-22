@@ -37,13 +37,25 @@ limited defensive actions.
 
 According to [Stanford News](https://news.stanford.edu/2016/12/01/charles-m-stein-extraordinary-statistician-anti-war-activist-dies-96/), the man who was called the “Einstein of the Statistics Department”, was also the first Stanford professor arrested for protesting apartheid and was often involved in anti-war protests.
 
-On the math-stat side, Stein is the author of a very influential/controversial paper entitled [*Inadmissibility of the Usual Estimator for the Mean of a Multivariate Normal Distribution* (1956)](https://apps.dtic.mil/dtic/tr/fulltext/u2/1028390.pdf). Bradley Efron and Carl Morris, who were strong supporters of Stein's idea, pinned the term Stein's paradox in their 1977 paper [*Stein's Paradox in Statistics*](https://www.researchgate.net/profile/Carl_Morris/publication/247647698_Stein's_Paradox_in_Statistics/links/53da1fe60cf2631430c7f8ed.pdf). They loosely described it as follows:
+On the math-stat side, Stein is the author of a very influential/controversial paper entitled [*Inadmissibility of the Usual Estimator for the Mean of a Multivariate Normal Distribution* (1956)](https://apps.dtic.mil/dtic/tr/fulltext/u2/1028390.pdf). To understand what it is about, we need to understand what it means for an estimator to be admissible, which is a statement about the performance of an estimator. For the purpose, let us use Stein's setup where `$X = (X_1,X_2,X_3)$` is such that `$X_i \sim N(\theta_i,1)$`, with all three components being independent. Assessing the performance of `$\hat\theta(X) = \hat\theta = (\hat\theta_1,\hat\theta_2,\hat\theta_3)$` usually involves a loss function `$ L(\hat\theta, \theta) $`, whose purpose is to quantify how much `$\hat\theta$` differs from the true value `$\theta$` it estimates. The loss function Stein was interested by was the (then and still very popular!) squared error loss
+$$
+  L(\hat\theta, \theta) =  || \hat\theta(X) - \theta ||^2 = \sum_i (\hat\theta_i - \theta_i)^2.
+$$
+An overall performance assessment, one that does not depends on a single instantiation of `$X$`, is given by
+$$
+  R(\hat\theta, \theta) =  \mathbb{E}_X || \hat\theta(X) - \theta ||^2,
+$$
+the average loss of `$\hat\theta$` over all possible datasets. An estimator `$\hat\theta$` is deemed admissible only if there exists no other estimator `$\hat\vartheta$` for which `$R(\hat\theta, \theta) \leq R(\hat\vartheta, \theta)$` for all `$\theta$`.
+
+Hence, Stein showed that, for the normal model, the "usual estimator" isn't always the best. In their 1977 paper [*Stein's Paradox in Statistics*](https://www.researchgate.net/profile/Carl_Morris/publication/247647698_Stein's_Paradox_in_Statistics/links/53da1fe60cf2631430c7f8ed.pdf) (where the terms "Stein's paradox" seems to have appeared first), Bradley Efron and Carl Morris loosely described it as follows:
 
 > The best guess about the future is usually obtained by computing the average of past events. Stein's paradox defines circumstances in which there are estimators better than the arithmetic average.
 
-The arithmetic average in question is indeed the maximum likelihood estimator. In 1961, a few years after the publication of *Inadmissibility*, Stein and his graduate student, Willard James, strengthened the argument in the paper [*Estimation with quadratic loss*](http://www.stat.yale.edu/~hz68/619/Stein-1961.pdf). In the latter, James and Stein provide an explicit estimator out-performing the MLE in terms of mean squared error. [Hastie and Efron](https://web.stanford.edu/~hastie/CASI_files/PDF/casi.pdf) mark this point as the beginning of something: "It begins the story of shrinkage estimation, in which deliberate biases are introduced to improve overall performance, at a possible danger to individual estimates." Suprisingly, Stein's example takes place in a dimension as low as three.
+Remember that, in the normal model discussed, the arithmetic average coincides with the maximum likelihood estimator. In Stein's setup, each variable `$X_i$` has its own location parameter `$\theta_i$`, and so the maximum likelihood estimator of `$(\theta_1,\theta_2,\theta_3)$` simply is `$(X_1,X_2,X_3)$`. Now, since the variables are independent, it seems natural to think that `$(X_1,X_2,X_3)$` is the best estimator we can find. After all, the groups are totally unrelated. Well well, nope. Stein showed that, as long as we consider three groups or more, we can do better! In fact, the opposite is true when we consider only one or two groups.
 
-For the rest of this post, I present the famous baseball example of Efron and Morris who first appeared in their 1975 paper [*Data Analysis Using Stein's Estimator and its Generalizations*](http://www.medicine.mcgill.ca/epidemiology/hanley/bios602/MultilevelData/EfronMorrisJASA1975.pdf). The example involves the batting averages (number of hits/number of times at bat) of 18 major-league baseball players. During the 1970 season, when top batter Roberto Clemente had appeared 45 times at bat, seventeen other players had 45 times at bat. The first column of the following table provides the batting averages for the eighteen players in question (reproduced with Professor Efron's permission, whom we would like to thank):
+In 1961, a few years after the publication of *Inadmissibility*, Stein and his graduate student, Willard James, strengthened the argument in the paper [*Estimation with quadratic loss*](http://www.stat.yale.edu/~hz68/619/Stein-1961.pdf). James and Stein provided an explicit estimator out-performing the MLE in terms of mean squared error. [Hastie and Efron](https://web.stanford.edu/~hastie/CASI_files/PDF/casi.pdf) mark this point as a new era in the history of statistics: "It begins the story of shrinkage estimation, in which deliberate biases are introduced to improve overall performance, at a possible danger to individual estimates."
+
+For the rest of this post, I present the famous baseball example of Efron and Morris who first appeared in their 1975 paper [*Data Analysis Using Stein's Estimator and its Generalizations*](http://www.medicine.mcgill.ca/epidemiology/hanley/bios602/MultilevelData/EfronMorrisJASA1975.pdf). The example involves the batting averages (number of hits/number of times at bat) of 18 major-league baseball players. During the 1970 season, when top batter Roberto Clemente had appeared 45 times at bat, seventeen other players had `$n=45$` times at bat. The first column of the following table provides the batting averages for the eighteen players in question (reproduced with Professor Efron's permission, whom we would like to thank):
 
 <div style="text-align: center">
 <img src="JS-baseball2.PNG" alt="drawing" width="250"/>
@@ -59,7 +71,7 @@ where `$\bar{\mu}$` is average of all means, *i.e.* the grand mean. In our case,
 `$$
   \bar{\mu} = \frac{1}{18} \sum_{i=1}^{18} \hat\mu_i^{(\mathrm{MLE})}
 $$`
-is the overall batting average of the 18 players. Since we are concerned by mean squared error, let us define our "best guess" as
+is the overall batting average of the `$d=18$` players. Since we are concerned by mean squared error, let us define our "best guess" as
 `$$
 \hat\mu_i^{(JS)} := {\rm argmin}_{\hat\theta_c \in \Theta}\ \sum_{i} \mathbb{E}_{\mathbf{X}}[(\mu_i - \hat\theta_{c,i})^2],
 $$`
