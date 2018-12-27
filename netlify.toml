@@ -1,0 +1,2 @@
+[context.deploy-preview]
+  command = "HUGO_BASEURL=$DEPLOY_PRIME_URL hugo --i18n-warnings"
