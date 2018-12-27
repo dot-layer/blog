@@ -14,7 +14,7 @@
         <time class="published"
             datetime='{{ .Date }}'>
             {{ default (i18n "date_format") | .Date.Format }}</time>
-        <span class="author">{{ .Params.author }}</span>
+        <span class="author">{{ .Params.author | safeHTML }}</span>
         {{ if .Site.Params.includeReadingTime }}
             <p>{{ .ReadingTime }} {{ i18n "postreadingtime" }}</p>
         {{ end }}
