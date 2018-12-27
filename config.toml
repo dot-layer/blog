@@ -1,5 +1,6 @@
 baseurl = "https://dotlayer.org/"
 languageCode = "en-us"
+DefaultContentLanguage = "en"
 title = ".layer"
 theme = "hugo-future-imperfect"
 preserveTaxonomyNames = true
@@ -116,23 +117,57 @@ enableEmoji   = true
 
 # Sets the menu items in the navigation bar
 # Identifier prepends a Font Awesome icon to the menu item
-[[menu.main]]
-  name = "Home"
-  url = "/"
-  identifier = "fa fa-home"
-  weight = 1
+[Languages]
+    [Languages.en]
+        LanguageName = "English"
+        title = ".layer"
+        description = ".layer community website"
+        weight = 1
 
-[[menu.main]]
-  name = "About"
-  url = "/about/"
-  identifier = "fa fa-id-card-o"
-  weight = 2
+            # Sets the menu items in the navigation bar
+            # Identifier prepends a Font Awesome icon to the menu item
+            # Each language has its own menu.
+            [[Languages.en.menu.main]]
+                name = "Home"
+                url = "/"
+                identifier = "fa fa-home"
+                weight = 1
 
-[[menu.main]]
-  name = "Contact"
-  url = "/contact/"
-  identifier = "fa fa-envelope-o"
-  weight = 3
+            [[Languages.en.menu.main]]
+                name = "About"
+                url = "/about/"
+                identifier = "fa fa-id-card-o"
+                weight = 2
+
+            [[Languages.en.menu.main]]
+                name = "Contact"
+                url = "/contact/"
+                identifier = "fa fa-envelope-o"
+                weight = 3
+
+    [Languages.fr]
+        LanguageName = "Français"
+        title = ".layer"
+        description = "Site web de la communauté .layer"
+        weight = 2
+
+            [[Languages.fr.menu.main]]
+                name = "Accueil"
+                url = "/"
+                identifier = "fa fa-home"
+                weight = 1
+
+            [[Languages.fr.menu.main]]
+                name = "À propos"
+                url = "/about/"
+                identifier = "fa fa-id-card-o"
+                weight = 2
+
+            [[Languages.fr.menu.main]]
+                name = "Contact"
+                url = "/contact/"
+                identifier = "fa fa-envelope-o"
+                weight = 3
 
 # Sets Social Media icons to appear and link to your account. Value should be your
 # username unless otherwise noted. These are the icons affected by socialAppearAtTop
