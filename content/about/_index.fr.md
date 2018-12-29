@@ -1,5 +1,5 @@
 +++
-title = "About .layer"
+title = "À propos de .layer"
 date = "2018-09-01"
 +++
 
