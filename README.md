@@ -1,6 +1,6 @@
 # .layer blog
 
-The objective behind this blog is to make it easy for the community members (and anybody else) to promote their work and share their thoughts and ideas related to the field of data science/machine learning.
+The objective behind the blog is to make it easy for the community members (and anybody else) to promote their work and share their thoughts and ideas related to the field of data science/machine learning.
 
 ## Actual Hugo version
 
@@ -8,9 +8,9 @@ The website is currently using `HUGO_VERSION = 0.42`
 
 ## New post tutorial
 
-Here is a quick tutorial that explains few steps to follow in order to contribute to this blog.
+Here is a quick tutorial explaining the steps to follow in order to contribute to the blog.
 
-First, to maximize reproducibility through the time, and for all different users, **the repo should (and will) stay independent of any specific code compilations (R, Python, etc)**. For example, in a data analysis, the graphics, values and models should already have been calculated by the user and the results included in a compiled document such as a .md or .html extension.
+First, to assure reproducibility through time, and for all different users, **the repo should (and will) stay independent of any specific code compilations (R, Python, etc)**. For example, in a data analysis, the graphics, values and models should already have been calculated by the user and the results included in a compiled document such as a .md or .html extension.
 
 1. The very first step is to create your post and compile your code in order to have a markdown or a html document. The code compilation should be done as part of another project (repo). If your post does not include any code compilation, you can start directly at step 2.
 2. Fork the repository 
