@@ -3,6 +3,6 @@ title = "About .layer"
 date = "2018-09-01"
 +++
 
-.layer is a data science oriented community created for promoting collaboration and knowledge sharing among its members. In Unix-like operating system, files or folders starting with a *dot* are treated as hidden, invisible to the passerby. Most people don't even know their existence and purpose. Much like *dot* files, data scientists are the hidden layer between a world where people produce data and live the outcomes of many performing algorithms. For those data scientists, now is time to say: Hello World!
+.layer est une communauté ayant comme mission de promouvoir la collaboration et le partage de connaissances dans le domaine de la science des données. Dans les systèmes d'exploitation Unix, les fichiers ou les répertoires commençant par un *point* sont considérés comme cachés pour l'utilisateur. La plupart des personnes ignorent leur but et même leur existence. Comme les fichiers cachés, les scientifiques de données peuvent être vu comme la couche cachée dans un monde où la production et l'utilisation des données sont de plus en plus omniprésentes. Pour ces scientifiques de données, il est maintenant temps de dire : `Hello, World!`
 
-The objective behind this blog is to make it easy for the community members (and anybody else) to promote their work and share their thoughts and ideas related to the field of data science/machine learning.
+L'objectif de ce blog est d'offrir un médium simple et efficace pour cette communauté (et n'importe qui d'autre) de promouvoir leur travail et partager leurs idées en lien avec le domaine de la science des données et de l'apprentissage machine.
