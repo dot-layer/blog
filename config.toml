@@ -30,8 +30,8 @@ enableEmoji   = true
   # Sets navbarTitle to match the section of the website
   dynamicTitles        = true
   # Sets RSS icons to appear on the sidebar with the social media buttons
-  rssAppearAtTop       = false
-  rssAppearAtBottom    = false
+  rssAppearAtTop       = true
+  rssAppearAtBottom    = true
   # Sets Social Media icons to appear on the sidebar
   socialAppearAtTop    = true
   socialAppearAtBottom = true
