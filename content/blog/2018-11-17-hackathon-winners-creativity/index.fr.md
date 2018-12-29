@@ -13,7 +13,7 @@ featured: "hackathon-creativity-cover.JPG"
 featuredpath: "img/headers/"
 ---
 
-Le 10 novembre 2018 avait lieu à Québec la [Journée hackathon en assurance](https://www.facebook.com/events/185652975580020/), organisée par [MeetupMLQuebec](https://www.facebook.com/MeetupMLQuebec) et présentée en collaboration par Intact Assurances et Co-operators.
+Le 10 novembre 2018 avait lieu à Québec la [Journée hackathon en assurance](https://www.facebook.com/events/185652975580020/), organisée par [MeetupMLQuebec](https://www.facebook.com/MeetupMLQuebec) et présentée en collaboration avec Intact Assurances et Co-operators.
 
 Félicitations à *Les Beans*, gagnants du prix Leonardo da Vinci, remis à l'équipe qui a proposé la solution la plus créative. Les critères étaient à la discrétion des juges, mais ils nous ont partagé leur processus de décision ci-bas. Pour plus de détails sur la problématique ou l'énoncé, rendez-vous sur le [dépôt officiel](https://github.com/dot-layer/meetup-ML-assurance-hackathon) de la compétition.
 

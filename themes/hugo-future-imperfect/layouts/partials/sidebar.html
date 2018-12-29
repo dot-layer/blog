@@ -110,13 +110,31 @@
 
 
   <!-- About -->
-  {{ with .Site.Params.intro.about }}
+
+  <!--This is to use the About text in config.toml -->
+  <!--{{ with .Site.Params.intro.about }}
     <section id="mini-bio">
       <h3>{{ i18n "about" }}</h3>
       <p>{{ . | safeHTML }}</p>
       <a href="{{ "about" | relLangURL }}" class="button">{{ i18n "learn_more" }}</a>
     </section>
-  {{ end }}
+  {{ end }}-->
+  <!---->
+  
+  <!--This is a fix tu use html inline code element-->
+    <section id="mini-bio">
+      <h3>About</h3>
+      <p>.layer is a data science oriented community created for
+      promoting collaboration and knowledge sharing among its members. 
+      In Unix-like operating system, files or folders starting with a 
+      <em>dot</em> are treated as hidden, invisible to the passerby. Most 
+      people don’t even know their existence and purpose. Much like 
+      <em>dot</em> files, data scientists are the hidden layer between a 
+      world where people produce data and live the outcomes of many 
+      performing algorithms. For those data scientists, now is time to 
+      say: <code>Hello, World!</code></p>
+      <a href="/about/" class="button">Learn More</a>
+    </section>
 
   <!-- Footer -->
   <section id="footer">
