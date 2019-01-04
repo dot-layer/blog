@@ -69,10 +69,10 @@ enableEmoji   = true
   # options for highlight.js (version, additional languages, and theme)
   disable_highlight = false # set to true to disable Highlight
   highlightjsVersion = "9.11.0"
-  highlightjsCDN = "//cdn.bootcss.com"
+  highlightjsCDN = "//cdnjs.cloudflare.com/ajax/libs"
   highlightjsLang = ["r", "yaml", "css"]
   highlightjsTheme = "github"
-  MathJaxCDN = "//cdn.bootcss.com"
+  MathJaxCDN = "//cdnjs.cloudflare.com/ajax/libs"
   MathJaxVersion = "2.7.1"
 
 # Disqus will take priority over Staticman (github.com/eduardoboucas/staticman)
@@ -95,9 +95,9 @@ enableEmoji   = true
 [params.intro]
   header    = ".layer"
 
-  paragraph = "Bloggers write.<br>Passionate people share."
+  paragraph = "Meet, Learn & Share."
 
-  about     = ".layer is a data science oriented community created for promoting collaboration and knowledge sharing among its members. In Unix-like operating system, files or folders starting with a dot are treated as hidden, invisible to the passerby. Most people don’t even know their existence and purpose. Much like dot files, data scientists are the hidden layer between a world where people produce data and live the outcomes of many performing algorithms. For those data scientists, now is time to say: Hello World!"
+  about     = ".layer is a data science oriented community created for promoting collaboration and knowledge sharing among its members. In Unix-like operating system, files or folders starting with a dot are treated as hidden, invisible to the passerby. Most people don’t even know their existence and purpose. Much like dot files, data scientists are the hidden layer between a world where people produce data and live the outcomes of many performing algorithms. For those data scientists, now is time to say: Hello, World!"
 
   # This appears at the top of the sidebar above params.intro.header.
   # A width of less than 100px is recommended from a design perspective.
@@ -182,4 +182,4 @@ enableEmoji   = true
   orcid            = ""
   researchgate     = ""
   # Email
-  email            = "dotlayerorg@gmail.com"
+  email            = "info@dotlayer.org"
