@@ -79,7 +79,7 @@ where `$\mu = (\mu_1, \dots, \mu_{18})$` represents the *true/ideal* batting ave
 
 > if a player's hitting record is better than the grand average,  then it must be reduced; if he is not hitting as well as the grand average, then his hitting record must be increased.
 
-If the MLE were to minimize the mean squared error, then, by definition, it would necessarily follow that `$\hat\mu_i^{(\mathrm{MLE})} = \hat\mu_i^{(\mathrm{JS})}$`, and in particular that `$c^*=1$`. This is where Stein's result comes into play: it states that if `$c^*$` minimizes the mean squared error, then it must be the case that `$c^*<1$` and so `$\hat\mu^{(\mathrm{JS})} \neq \hat\mu^{(\mathrm{MLE})}$`.
+If the MLE were minimizing the mean squared error, then, by definition, it would necessarily follow that `$\hat\mu_i^{(\mathrm{MLE})} = \hat\mu_i^{(\mathrm{JS})}$`, and in particular that `$c^*=1$`. This is where Stein's result comes into play: it states that if `$c^*$` minimizes the mean squared error, then it must be the case that `$c^*<1$` and so `$\hat\mu^{(\mathrm{JS})} \neq \hat\mu^{(\mathrm{MLE})}$`.
 
 Using the method proposed by [James and Stein (1961)](http://www.stat.yale.edu/~hz68/619/Stein-1961.pdf) to estmimate `$c^*$` leads to the value `$c^*=.212$`, and since in our example the grand average is `$\bar\mu = .265$`, we get
 `$$
@@ -93,7 +93,7 @@ $$`
 
 As we can see, everyone is pulled by the grand average of batting averages. Coming back to 2018, let us look at what actually happened during the remainder of the 1970 season. The table's bold column provides the batting averages computed for the rest of the season. Let us say that those, which were often computed on more than 200 (new) times at bat, are good approximations of the *true/ideal* batting averages. It turns out that, for 16 of the 18 players,`$\hat\mu_i^{(\mathrm{JS})}$` actually does a better job than `$\hat\mu_i^{(\mathrm{MLE})}$` at predicting `$\mu_i$`. It does a better job in terms of total squared error as well.
 
-It can seem puzzling that, to estimate Clemente's batting average (the highest), using Alvis's batting average (the lowest) should help. According to our formulas, if Alvis' batting average `$\hat\mu_{\mathrm{Alvis}}^{(\mathrm{MLE})}$` was different, then our guess `$\hat\mu_{\mathrm{Clemente}}^{(\mathrm{JS})}$` for Clemente would be different as well (because `$\bar\mu$` would be different).
+It can seem puzzling that, to estimate Clemente's batting average (the highest), using Alvis' batting average (the lowest) should help. According to our formulas, if Alvis' batting average `$\hat\mu_{\mathrm{Alvis}}^{(\mathrm{MLE})}$` was different, then our guess `$\hat\mu_{\mathrm{Clemente}}^{(\mathrm{JS})}$` for Clemente would be different as well (because `$\bar\mu$` would be different).
 
 It becomes more intuitive when you realize that the value of `$c^*$` actually depends on `$n$`, the number of observations available to us (times at bat in our example). As `$n$` increases, the optimal value `$c^*$` gets closer to `$1$`, and so less shrinkage is applied. Stein's Theorem states that `$c^*<1$` no matter what; yet, it might be very close to one, and so `$\hat\mu_{i}^{(\mathrm{MLE})}$` and `$\hat\mu_{i}^{(\mathrm{JS})}$` might be extremely similar. 
 
