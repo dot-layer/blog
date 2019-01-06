@@ -5,7 +5,7 @@ author: "Christopher Blier-Wong"
 description: "Gareth James, Daniela Witten, Trevor Hastie and Robert Tibshirani"
 date: '2018-10-16'
 categories: ["Book Review"]
-type: page
+type: post
 tags: 
 - Machine Learning
 - Statistics
