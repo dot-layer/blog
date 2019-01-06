@@ -177,8 +177,8 @@ enableEmoji   = true
                 identifier = "fa fa-envelope-o"
                 weight = 3
                 
-            [[Languages.FR.menu.main]]
-                name = "Etagere a livres"
+            [[Languages.fr.menu.main]]
+                name = "Étagere à livres"
                 url = "/bookshelf/"
                 identifier = "fa fa-book"
                 weight = 4
