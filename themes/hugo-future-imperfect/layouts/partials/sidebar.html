@@ -6,11 +6,11 @@
     {{ $pic := .Site.Params.intro.pic }}
     {{ with $pic.src }}
       {{ if $pic.circle }}
-        <a href='{{"/" | relURL}}'><img src="{{ . | relURL }}" class="intro-circle" width="{{ $pic.width }}" alt="{{ $pic.alt }}" /></a>
+        <a href='{{ "/" | relLangURL}}'><img src="{{ . | relURL }}" class="intro-circle" width="{{ $pic.width }}" alt="{{ $pic.alt }}" /></a>
       {{ else if $pic.imperfect }}
-        <a href='{{"/" | relURL}}' class="logo"><img src="{{ . | relURL }}" alt="{{ $pic.alt }}" /></a>
+        <a href='{{ "/" | relLangURL }}' class="logo"><img src="{{ . | relURL }}" alt="{{ $pic.alt }}" /></a>
       {{ else }}
-        <a href='{{"/" | relURL}}'><img src="{{ . | relURL }}" width="{{ $pic.width }}" alt="{{ $pic.alt }}" /></a>
+        <a href='{{ "/" | relLangURL }}'><img src="{{ . | relURL }}" width="{{ $pic.width }}" alt="{{ $pic.alt }}" /></a>
       {{ end }}
     {{ end }}
     {{ with .Site.Params.intro }}
@@ -29,12 +29,12 @@
     {{ end }}
   </section>
 
-  <!-- Posts List 
+  <!-- Posts List -->
   <!--
-  <section class="recent-posts">
+  <section id="recent-posts">
     <div class="mini-posts">
       <header>
-        <h3>Recent Posts</h3>
+        <h3>{{ i18n "recent_posts" }}</h3>
       </header>
       <div class="posts-container">
         {{ $.Scratch.Set "recentPosts" .Site.Pages }}
@@ -52,9 +52,8 @@
                 <a href="{{ .RelPermalink }}">{{ .Title }}</a>
               </h3>
               {{ $.Scratch.Set "dateType" .Date }}
-              <time class="published" datetime='{{ ($.Scratch.Get "dateType").Format "2006-01-02" }}'>
-                {{ ($.Scratch.Get "dateType").Format "January 2, 2006" }}
-              </time>
+              <time class="published" datetime='{{ .Date }}'>
+              {{ default (i18n "date_format") | .Date.Format }}</time>
             </header>
             {{ .Render "featured" }}
           </article>
@@ -66,13 +65,13 @@
           {{ with .Site.Params.viewMorePostLink }}
             {{ . }}
           {{ else }}
-            "/post/"
+            "/{{ $.Site.Language.Lang }}/post/"
           {{ end }}
-        class="button">View more posts</a>
+        class="button">{{ i18n "see_more" }}</a>
       {{ end }}
     </div>
-  </section>-->
-
+  </section>
+-->
   <!-- This if statement only applies if someone goes to the /categories url -->
   <!-- Otherwise this section is shown for all other links -->
   {{ if .Site.Params.showSidebarCategories  }}
@@ -81,7 +80,7 @@
     <section id="categories">
       <header>
         <h3>
-          <a href="/categories/">Categories</a>
+          <a href="/{{ .Site.Language.Lang }}/categories/">{{ i18n "categories" }}</a>
         </h3>
       </header>
         {{ if .Site.Params.categoriesByCount }}
@@ -95,10 +94,10 @@
           <article>
             <header>
               {{ if ne $value.Name "" }}
-                <a href="/categories/{{ $value.Name | urlize }}/">{{ $value.Name }}</a>
+                <a href="{{ printf "%s/%s" "categories" $value.Name | urlize | relLangURL }}/">{{ $value.Name }}</a>
                 <span style="float:right;">{{ $value.Count }}</span>
               {{ else }}
-                Uncategorized
+                {{ i18n "uncategorized" }}
                 <span style="float:right;">{{ $value.Count }}</span>
               {{ end }}
             </header>
@@ -109,14 +108,33 @@
   {{ end }}
   {{ end }}
 
+
   <!-- About -->
-  {{ with .Site.Params.intro.about }}
+
+  <!--This is to use the About text in config.toml -->
+  <!--{{ with .Site.Params.intro.about }}
+    <section id="mini-bio">
+      <h3>{{ i18n "about" }}</h3>
+      <p>{{ . | safeHTML }}</p>
+      <a href="{{ "about" | relLangURL }}" class="button">{{ i18n "learn_more" }}</a>
+    </section>
+  {{ end }}-->
+  <!---->
+  
+  <!--This is a fix tu use html inline code element-->
     <section id="mini-bio">
       <h3>About</h3>
-      <p>{{ . | safeHTML }}</p>
+      <p>.layer is a data science oriented community created for
+      promoting collaboration and knowledge sharing among its members. 
+      In Unix-like operating system, files or folders starting with a 
+      <em>dot</em> are treated as hidden, invisible to the passerby. Most 
+      people don’t even know their existence and purpose. Much like 
+      <em>dot</em> files, data scientists are the hidden layer between a 
+      world where people produce data and live the outcomes of many 
+      performing algorithms. For those data scientists, now is time to 
+      say: <code>Hello, World!</code></p>
       <a href="/about/" class="button">Learn More</a>
     </section>
-  {{ end }}
 
   <!-- Footer -->
   <section id="footer">
