@@ -46,8 +46,18 @@ What a great modification done by a great programmer.
 
 ## Wait.
 
-This is the moment the epiphany came. I was not the one doing a great job: my teammate was. He handed me some code that was so clean that anyone could modify anything, without unintended side effect in a very short period. It was some code he intended using for himself - not a curated version of some rushed out scripts. I experienced the holy grail of good code. I could not have achieved something this great, or nothing I’ve taught myself over the year could have helped me - but my teammate could.
+This is the moment the epiphany came. I was not the one have been doing a great job: my teammate was. He handed me some code that was so clean that anyone could quickly modify anything without unexpected side effect. Everything was self explanatory, no comments laying around, no arbitrary numbers. The code had the perfect vertical and horizontal length and my solarized theme made the code look like a work of art. I experienced, what I thought at that time was, the holy grail of good code. 
 
-That moment I realised that there were a lot of stuff I didn’t know that I didn’t know. As someone purely rational would do to overcome this lack of knowledge, I enrolled in a software engineering certificate. This allowed me to open a huge Pandora’s box that sprung a lot of ideas and concepts that were thought-provoking and mind breaking. I believe I’m a better programmer than I was and I believe I have the tools to be a better one tomorrow.
+There were many things that differenciated our solutions. 
 
-This articles is the first of many that will allow me to share those tools I found in that Pandora's box. These articles will be half philosophical and half technical. They will be centered around good practices in software engineering while sharing some of my experience coping with (really) crappy code base. Crappy code base that have been written by me, obviously.
+First of all, there were things my teammate knew that i didn't know that i didn't know. Things like data pipeline, design pattern and principle, unit testing, clean code, software architecture, etc. These elements are the normal distribution for the actuary, The mean and the variance for the statistician. The ground on which everything is build. Clearly my hacking and school background never prepared me for this.
+
+The second thing that differenciated our solution was his holistic view of the problem. I was too busy on *making things work* while my teammate was busy figuring *the best way* to make it work. This subtle difference is crucial. A good solution will make something work right now. The best solution makes something work right now AND consider the future user - even if it means taking some time to step back and build in the right direction. 
+
+Clearly no solution could (or should) have planted all the seeds for the crazyness that came after the initial request. But my stuborness to produce a quick solution building on my initial solution without reconsidering the paradim shift in the problem doomed me i the long run.
+
+## Clean slate
+
+I enrolled in a software engineering certificate so I could rebuild a more stable foundation. This allowed me to open a huge Pandora’s box that uncover thought-provoking and mind breaking ideas and concepts. I believe I’m a better programmer than I was and I believe I have the tools to be a better one tomorrow.
+
+This articles is the first of many that will allow me to share those tools I found in that Pandora's box. These articles will be half philosophical and half technical. They will be centered around good practices in software engineering, while sharing some of my experience coping with (really) crappy code base. Crappy code base that have been written by me, of course.
