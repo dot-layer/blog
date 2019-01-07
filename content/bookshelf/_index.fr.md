@@ -3,7 +3,7 @@ title = "Étagère à livres"
 date = "2018-10-16"
 +++
 
-Cette liste collective de livres regroupés par sujets est offerte dans l'effort de répondre à la quetion fondamentale : quels sont les livres indispensables à lire en informatique, apprentissage automatique et statistiques? Des liens vers des légitimes sont disponibles avec l'icon :book: et le site web avec l'icon :globe_with_meridians:. Des revues de ces livres seront ajoutés progressivement.
+Cette liste de livres, regroupés par sujets, est offerte dans l'effort de répondre à la question fondamentale : quels sont les livres indispensables à lire en informatique, en apprentissage automatique et en statistiques? Des liens vers des sources légitimes sont disponibles avec la présence de l'icon :book: et le site web avec la présence l'icon :globe_with_meridians:. Des revues de ces livres seront ajoutées progressivement.
 
 # **Table des matières**
 1. [Apprentissage automatique/statistique](#ML)
