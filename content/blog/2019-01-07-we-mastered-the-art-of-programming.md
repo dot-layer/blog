@@ -14,7 +14,7 @@ featuredpath: "img/headers/"
 
 This is probably going to sound cliché and trivial but I just realised that I learned how to use a computer before learning to use a pen. I launched my favorite game on a MS/DOS terminal a few years before writing my name on paper.
 
-This is cliché and trivial since this holds true for many of us data scientist growing up with a computer. We found a way to download music out of napster, limewire or torrents - whatever was working at that time. We figured how to burn our friends’ game on a CD-ROM and then crack it with a fake CD KEY. We learned how to repair the family’s printer. We understood how to connect our laptop to Eduroam. We made very serious and scientific calculations for school points. We then moved to a workplace where we grasp the depth of the 'vLookup'. We connected thousands of *Excel* spreadsheets together. We mastered the art of programming.
+This is cliché and trivial since this holds true for many of us data scientist growing up with a computer. We found a way to download music out of napster, limewire or torrents - whatever was working at that time. We figured how to burn our friends’ game on a CD-ROM and then crack it with a fake CD KEY. We learned how to repair the family’s printer. We understood how to connect our laptop to Eduroam. We made very serious and scientific calculations for school points. We then moved to a workplace where we grasp the depth of the `vLookup`. We connected thousands of *Excel* spreadsheets together. We mastered the art of programming.
 
 ## problem solving at it's finest
 
@@ -24,7 +24,7 @@ But no computer problem get stashed away once solved. They come back to haunt yo
 
 Maybe if you took a little more time to think of how future you would feel using it things would have been different. Maybe you would have cleaned the code. Maybe you would have explicated the magic number (why divide by 8.2?). Maybe some side effects would have been commented. Well this is not important for now, because the code *works*.
 
-But this did not apply to me. I could jump back in my code, read the witty comment I wrote and remember what dimension of the matrix 'X' were represented by variable 'i', 'j' and 'k'. I had a bunch of smell tests that could let me know if I broke something. No really, I mastered the art of programming.
+But this did not apply to me. I could jump back in my code, read the witty comment I wrote and remember what dimension of the matrix `X` were represented by variable `i`, `j` and `k`. I had a bunch of smell tests that could let me know if I broke something. No really, I mastered the art of programming.
 
 ## Until one day.
 
