@@ -50,7 +50,7 @@ This is the moment the epiphany came. I was not the one have been doing a great 
 
 ## Different solutions.
 
-First of all, there were things my teammate knew that I didn't know that I didn't know. Things like data pipeline, [design patterns](https://sourcemaking.com/design_patterns) and [principles](https://en.wikipedia.org/wiki/SOLID), unit testing, [clean code](https://en.wikipedia.org/wiki/Worship), software architecture, etc. These are the normal distribution for the actuary, the $(X'X)^-1$ for the statistician. The ground on which everything is build. Clearly my hacking and school background never prepared me for this.
+First of all, there were things my teammate knew that I didn't know that I didn't know. Things like data pipeline, [design patterns](https://sourcemaking.com/design_patterns) and [principles](https://en.wikipedia.org/wiki/SOLID), unit testing, [clean code](https://en.wikipedia.org/wiki/Worship), software architecture, etc. These are the normal distribution for the actuary, the $(X'X)^{-1}$ for the statistician. The ground on which everything is build. Clearly my hacking and school background never prepared me for this.
 
 My teammate had an holistic view of the problem. I was too busy *making things work* while my teammate was busy figuring *the best way* to make it work. This subtle difference is crucial. A good solution will make something work right now. The best solution makes something work right now AND consider the future user. Even if it means taking extra time to step back and build in the right direction.
 
