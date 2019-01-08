@@ -48,7 +48,7 @@ What a great modification done by a great programmer.
 
 This is the moment the epiphany came. I was not the one have been doing a great job: my teammate was. He handed me some code that was so clean that anyone could quickly modify anything without unexpected side effect. Everything was self-explanatory, no comments lying around, no arbitrary numbers. The code had the perfect vertical and horizontal length and my solarized theme made the code look like a work of art. I experienced, what I thought at that time was, the holy grail of good code.
 
-## Differents solutions.
+## Different solutions.
 
 First of all, there were things my teammate knew that i didn't know that i didn't know. Things like data pipeline, [design patterns](https://sourcemaking.com/design_patterns) and [principles](https://en.wikipedia.org/wiki/SOLID), unit testing, [clean code](https://en.wikipedia.org/wiki/Worship), software architecture, etc. These elements are the normal distribution for the actuary, the mean and variance for the statistician. The ground on which everything is build. Clearly my hacking and school background never prepared me for this.
 
