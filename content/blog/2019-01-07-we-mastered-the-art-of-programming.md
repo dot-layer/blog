@@ -46,7 +46,7 @@ What a great modification done by a great programmer.
 
 ## Wait.
 
-This is the moment the epiphany came. I was not the one have been doing a great job: my teammate was. He handed me some code that was so clean that anyone could quickly modify anything without unexpected side effect. Everything was self-explanatory, no comments lying around, no arbitrary numbers. The code had the perfect vertical and horizontal length and my solarized theme made the code look like a work of art. I experienced, what I thought at that time was, the holy grail of good code.
+This is the moment the epiphany came. I was not the one have been doing a great job: my teammate was. He handed me some code that was so clean that anyone could quickly modify anything without unexpected side effect. Everything was self-explanatory, no comments lying around, no arbitrary numbers. The code had the perfect vertical and horizontal length and my solarized theme made the code look like a work of art. I experienced, what I thought at that time was, the [holy grail of good code](https://coding2fun.wordpress.com/2017/02/08/how-to-design-reliable-scalable-and-maintainable-applications/).
 
 ## Different solutions.
 
