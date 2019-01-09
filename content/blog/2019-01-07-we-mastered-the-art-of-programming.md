@@ -24,7 +24,7 @@ But computer problem seldom get stashed away once solved. They come back to haun
 
 Maybe if you took a little more time to think of how future you would feel using it, things would have been different. Maybe you would have cleaned the code. Maybe you would have explained the [magic number](https://en.wikipedia.org/wiki/Magic_number_(programming)) (why divide by 8.2?). Maybe side effects would have been commented. Well this is not important for now, because the code *works*.
 
-But this did not apply to me. I could jump back in my code, read the witty comment I wrote and remember what `i`, `j` and `k` represented in the  matrix `X`. I make functions, so I [don't repeat myself](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself). I had a bunch of smell tests that let me know if I broke something. No really, I mastered the art of programming.
+But this did not apply to me. I could jump back in my code, read the witty comment I wrote and remember what `i`, `j` and `k` represented in the  matrix `X`. I make functions, so I [don't repeat myself](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself). I had a bunch of smell tests that let me know if I was breaking something. No really, I mastered the art of programming.
 
 ## Until one day.
 
