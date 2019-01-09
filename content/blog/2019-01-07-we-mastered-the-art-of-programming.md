@@ -28,7 +28,7 @@ But this did not apply to me. I could jump back in my code, read the witty comme
 
 ## Until one day.
 
-I was working in a [Tech Startup](https://www.xpertsea.com/) and my team was working on a shrimp detection model. We were a few guys with different backgrounds. Everyone was a software engineers except for myself; I was an actuary holding the most statistical knowledge. We were pitted against one another to solve this shrimp detection problem. Plot twist. I was not the successful one, for reasons I was not even aware of.
+I was working in a [Tech Startup](https://www.xpertsea.com/) and my team was working on a shrimp detection model. We were a few guys with different backgrounds. Everyone was a software engineers except for myself; I was an actuary, the most knowledgeable in statistics among us. We were pitted against one another to solve this shrimp detection problem. Plot twist. I was not the successful one, for reasons I was not even aware of.
 
 It started pretty well. I quickly build a script that let me grab the data from an unstructured source and convert it to a structured format. I would then run diagnosis to find any outliers or collinearity between features. Once the data was cleaned, another script generated a regression model using a step-wise algorithm. The model would generate predictions and save them into a file. The last script was doing graph and  basic analysis. Pretty standard data science duty. The report was done deal and I could quickly deliver great results to the team.
 
