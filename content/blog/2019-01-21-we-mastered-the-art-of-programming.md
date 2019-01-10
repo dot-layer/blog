@@ -18,7 +18,7 @@ This is cliché and trivial since this holds true for many of us data scientist 
 
 ## problem solving at it's finest.
 
-What connects the dot between is the curiosity and the satisfaction of solving a problem, a computer problem. We make things work. This is how we get points on a school assignment. This is how our boss sees us as the achiever. This is how we create pure value. Based on this, it only makes sense that the faster you solve a computer problem, the better you are.
+What connects the dot is the curiosity and the satisfaction of solving a problem, a computer problem. We make things work. This is how we get points on a school assignment. This is how our boss sees us as the achiever. This is how we create pure value. Based on this, it only makes sense that the faster you solve a computer problem, the better you are.
 
 But computer problem seldom get stashed away once solved. They come back to haunt you and require adjustments to the code so it fits the new constraints. Great, a new problem! You have to find the fastest way to hack the code. This is fun until one or two things happen: either the code you have to revise comes from a *bad* programmer or something breaks every time you alter something else. It will eventually work, but it’ll take a little longer than the previous iteration. This continues, you realise that the *bad* programmer is your past self a few months ago and you fear modifying anything since you have no faith this [*Jenga*](https://secure.img1-fg.wfcdn.com/im/93997415/resize-h800%5Ecompr-r85/4885/48852016/Jenga%25AE+giant%25u2122+premium+jeu+de+bois+franc.jpg) will hold at all.
 
