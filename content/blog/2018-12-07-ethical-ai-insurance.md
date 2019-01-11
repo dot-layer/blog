@@ -38,7 +38,7 @@ individual to the insurance company.
 Let $Y$ be the random variable representing total costs for a risk. 
 Then, an individual may pay $E[Y]$ to an insurance company and since
 the risk has been transfered, the individual has 0 variance and the 
-insurance company holds $Var(S)$ variance. 
+insurance company holds $Var(Y)$ variance. 
 
 I like to say actuaries were the first data scientists. They have 
 been using statistical models (GLMs, mostly) for a while without 
@@ -51,17 +51,24 @@ easily interpretable.
 
 # The role of segmentation in insurance pricing
 
-What is segmentation
+What is segmentation.
 
 Arthur Charpentier has a great series of example showing the impact
-of segmentation in an insurance portfolio. 
+of segmentation in an insurance portfolio.
+
+Segmentation is part of a critical process in insurance called ratemaking. This process involved the estimation of costs associated with transfer of risk. Actuaries are often assigned to the task of building adequate ratemaking process. The [Casualty Actuarial Society](https://www.casact.org/) proposed 4 principles associated with the ratemaking process:
+
+- **Principle 1:** A rate is an estimate of the expected value of future costs. 
+- **Principle 2:** A rate provides for all costs associated with the transfer of risk.
+- **Principle 3:** A rate provides for the costs associated with an individual risk transfer.
+- **Principle 4:** A rate is reasonable and not excessive, inadequate, or unfairly discriminatory if it is an actuarially sound estimate of the expected value of all future costs associated with an individual risk transfer. 
 
 While studying the distribution of spatial autocorrelation in a home
 insurance portfolio for a large property and casualty insurance
 company Canada, I found that modeling spatial autocorrelation had 
 significant improvements for the theft peril, which is inherently a
-sociodemographic phenomenon. Therefore, using territorial 
-segmentation for pricing the theft risk might be discriminatory. 
+sociodemographic phenomenon. Therefore, could we say that using territorial 
+segmentation for pricing the theft risk is acting in a discriminatory manner? I think it's fair to have this debate and the next section is intented to outline those gray zones that comes to my mind ...
 
 # Key principles from de declaration affecting actuaries
 
