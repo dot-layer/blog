@@ -81,7 +81,7 @@ where `$\mu = (\mu_1, \dots, \mu_{18})$` represents the *true/ideal* batting ave
 
 If the MLE were minimizing the mean squared error, then, by definition, it would necessarily follow that `$\hat\mu_i^{(\mathrm{MLE})} = \hat\mu_i^{(\mathrm{JS})}$`, and in particular that `$c^*=1$`. This is where Stein's result comes into play: it states that if `$c^*$` minimizes the mean squared error, then it must be the case that `$c^*<1$` and so `$\hat\mu^{(\mathrm{JS})} \neq \hat\mu^{(\mathrm{MLE})}$`.
 
-Using the method proposed by [James and Stein (1961)](http://www.stat.yale.edu/~hz68/619/Stein-1961.pdf) to estmimate `$c^*$` leads to the value `$c^*=.212$`, and since in our example the grand average is `$\bar\mu = .265$`, we get
+The method proposed by [James and Stein (1961)](http://www.stat.yale.edu/~hz68/619/Stein-1961.pdf) to estmimate `$c^*$` leads to the value `$c^*=.212$`, and since in our example the grand average is `$\bar\mu = .265$`, we get
 `$$
 	\hat\mu_i^{(\mathrm{JS})} = .265 + (.212)(\hat\mu_i^{(\mathrm{MLE})} - .265)
 $$`
