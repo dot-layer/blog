@@ -14,7 +14,7 @@ featuredpath: "img/headers/"
 
 This is probably going to sound cliché and trivial but I just realised that I learned how to use a computer before learning to use a pen. I launched my favorite game on a MS/DOS terminal a few years before writing my name on paper.
 
-This is cliché and trivial since this holds true for many of us data scientist growing up with a computer. We found a way to download music out of napster, limewire or torrents - whatever was working at that time. We figured how to burn our friends’ game on a CD-ROM and then crack it with a fake CD KEY. We learned how to repair the family’s printer. We understood how to connect our laptop to Eduroam. We made very serious and scientific calculations for school points. We then moved to a workplace where we grasp the depth of the `vLookup`. We connected thousands of *Excel* spreadsheets together. We mastered the art of programming.
+This is cliché and trivial since this holds true for many of us data scientists growing up with a computer. We found a way to download music out of napster, limewire or torrents - whatever was working at that time. We figured how to burn our friends’ game on a CD-ROM and then crack it with a fake CD KEY. We learned how to repair the family’s printer. We understood how to connect our laptop to Eduroam. We made very serious and scientific calculations for school points. We then moved to a workplace where we grasp the depth of the `vLookup`. We connected thousands of *Excel* spreadsheets together. We mastered the art of programming.
 
 ## problem solving at it's finest.
 
