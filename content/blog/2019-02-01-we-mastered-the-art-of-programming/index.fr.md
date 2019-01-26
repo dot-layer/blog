@@ -1,7 +1,7 @@
 ---
 title: On maîtrise l'art de la programmation
 author: Jean-Thomas Baillargeon
-date: '2019-02-01'
+date: '2019-01-26'
 slug: on-maitrise-lart-de-la-programmation
 type: post
 tags:
