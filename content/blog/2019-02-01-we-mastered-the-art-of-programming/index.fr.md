@@ -1,8 +1,8 @@
 ---
-title: On maîtrise l'art de la programmation
+title: Nous maîtrisons l'art de la programmation
 author: Jean-Thomas Baillargeon
 date: '2019-01-26'
-slug: on-maitrise-lart-de-la-programmation
+slug: nous-maitrisons-lart-de-la-programmation
 type: post
 tags:
 - ingénierie logicielle
