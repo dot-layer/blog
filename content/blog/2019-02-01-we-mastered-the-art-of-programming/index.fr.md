@@ -19,7 +19,7 @@ Cela va probablement paraitre cliché et trivial, mais je viens de réaliser que
 C'est cliché et trivial, car c'est vrai pour beaucoup d'entre nous, les *data scientists* qui ont grandi avec un ordinateur. Nous avons trouvé un moyen de télécharger de la musique sur Napster, Limewire ou avec les torrents - peu importe ce qui fonctionnait à l'époque. Nous avons gravé les jeux de nos amis sur un CD-ROM, puis le *cracker* avec un faux *CD-Key* . Nous avons appris à réparer l’imprimante de la famille. Nous avons compris comment connecter notre portable à Eduroam. Nous avons fait des calculs très sérieux et scientifiques pour des points à l'école. Nous nous sommes arrivés sur le marché du travail, où nous avons pu saisissons la profondeur du `vLookup`. Nous avons connecté des milliers de feuilles de calcul *Excel* ensemble. Nous maitrisons l'art de la programmation.
 
 
-## La résolution de problème à son meilleur.
+## La résolution de problèmes à son meilleur.
 
 
 Ce qui attache le tout ensemble est la curiosité et la satisfaction de résoudre un problème, un problème informatique. Nous faisons fonctionner les choses. C'est comme ça que nous obtenons des points pour un travail scolaire. C’est comme ça que notre patron nous voit comme le meilleur. C'est comme ça que nous créons de la valeur. Basé là-dessus, il est logique que plus on résolve rapidement un problème, meilleur nous sommes perçus. 
