@@ -13,7 +13,7 @@ featuredpath: "img/headers/"
 ---
 
 
-Cela va probablement paraitre cliché et trivial, mais je viens de réaliser que j’ai appris à utiliser un ordinateur avant d’apprendre à utiliser un crayon. J'ai lancé mon jeu préféré dans un terminal MS / DOS quelques années avant d'apprendre à écrire mon nom.
+Cela va probablement paraître cliché et trivial, mais je viens de réaliser que j’ai appris à utiliser un ordinateur avant d’apprendre à utiliser un crayon. J'ai lancé mon jeu préféré dans un terminal MS / DOS quelques années avant d'apprendre à écrire mon nom.
 
 
 C'est cliché et trivial, car c'est vrai pour beaucoup d'entre nous, les *data scientists* qui ont grandi avec un ordinateur. Nous avons trouvé un moyen de télécharger de la musique sur Napster, Limewire ou avec les torrents - peu importe ce qui fonctionnait à l'époque. Nous avons gravé les jeux de nos amis sur un CD-ROM, puis le *cracker* avec un faux *CD-Key* . Nous avons appris à réparer l’imprimante de la famille. Nous avons compris comment connecter notre portable à Eduroam. Nous avons fait des calculs très sérieux et scientifiques pour des points à l'école. Nous nous sommes arrivés sur le marché du travail, où nous avons pu saisissons la profondeur du `vLookup`. Nous avons connecté des milliers de feuilles de calcul *Excel* ensemble. Nous maitrisons l'art de la programmation.
