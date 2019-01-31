@@ -1,7 +1,7 @@
 ---
 title: We Mastered the Art of Programming
 author: Jean-Thomas Baillargeon
-date: '2019-01-26'
+date: '2019-02-01'
 slug: we-mastered-the-art-of-programming
 type: post
 tags:
