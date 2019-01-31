@@ -88,7 +88,7 @@ De toute évidence, aucune solution n’aurait pu (ou dû) semer toutes les grai
 
 
 
-Je me suis inscrit à un certificat en génie logiciel pour bâtir une base plus solide. Cela m’a permis d’ouvrir une énorme boite de Pandore de laquelle ont surgi des idées et des concepts impressionnants. Je crois que je suis un meilleur programmeur que moi et que je dispose des outils pour être meilleur demain.
+Je me suis inscrit à un certificat en génie logiciel pour bâtir une base plus solide. Cela m’a permis d’ouvrir une énorme boîte de Pandore de laquelle ont surgi des idées et des concepts impressionnants. Je crois que je suis un meilleur programmeur que moi et que je dispose des outils pour être meilleur demain.
 
 
 Cet article est le premier de plusieurs dans lesquels je partagerai les outils que j'ai trouvés dans cette boite de Pandore. Ces articles seront à moitié philosophiques et à moitié techniques. Ils seront centrés sur les bonnes pratiques en matière de génie logiciel, tout en partageant mon expérience avec du code (vraiment) à chier. Du code à chier qui a été écrit par moi, bien sûr.
