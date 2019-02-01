@@ -46,43 +46,31 @@ It started pretty well. I quickly built a script that let me grab the data from 
 Then we had to evaluate the evolution of the model. This analysis became a weekly affair, then a daily one. Every day, the analysis got more complicated and the dataset got bigger and weirder. We cross-sectioned the data for certain shrimp providers, age, average size, country, quality of water — name it. We changed the image-processing method, we added countless custom features, we used various metrics, we corrected the dataset, etc. This is where I hit the wall. The software engineer guy was pumping his analysis a few hours before me, every day.
 
 
-## Pourquoi ça ne marche pas?
+## Why isn't this working ?
 
 
-Cela a appelé à mes compétences en résolution de problèmes. Comment puis-je atteindre une production plus rapide? En comprenant mieux ce qu'il faisait.
+This called for my problem solving skills. How can I achieve faster production? By better understanding what he was doing.
 
+First thing I saw is the pre-processing step was nightly done by a robot. The second thing I saw was his [cache](https://en.wikipedia.org/wiki/Cache_(computing)), where all the data were ready for treatment and intermediate values were even pre-calculated (for data grouping and other analysis). The third thing was the modeling part, where everything was so tightly bundled that he could multi-thread all different data cross-sections in one operation. The best part of all this was — all those things were done by 9 am when he arrived. Least to say that gave him plenty of time to work on his analysis.
 
-La première chose que j'ai vue est que l'étape de pré-traitement a été effectuée chaque nuit par un robot. La deuxième chose que j’ai vue était son [cache] (https://en.wikipedia.org/wiki/Cache_ (informatique)), où toutes les données étaient prêtes pour le traitement et les valeurs intermédiaires étaient même précalculées (pour le regroupement et la autres analyses). La troisième chose était la partie modélisation, où tout était si serré qu'il pouvait multi-threader toutes les sections de données différentes en une seule opération. La meilleure partie de tout cela était - toutes ces choses ont été faites à 9 heures du matin quand il est arrivé. Le moins que l'on puisse dire, c'est que cela lui donnait amplement le temps de travailler à son analyse.
+I asked him if he could lend me a piece or two to integrate them into my scripts. As a good teammate, he obliged and provided me with a chunk of code. My pride was hurt enough that I went back to my desk alone and worked on it by myself. It was a relatively big chunk of code, so I expected a proportionate effort to plug everything and test. I opened the code and could quickly locate the lines that would require modifications. The music of typing was flowing into my ears — yes I had my [mechanical keyboard](http://www.wasdkeyboards.com/index.php/products/code-keyboard/code-87-key-mechanical-keyboard.html) at that time. It only took me around half an hour to do everything. I made it work without any unexpected side effects the first time I launched the script.
 
+What a great modification done by a great programmer.
 
-Je lui ai demandé s'il pouvait me prêter un ou deux morceaux pour les intégrer à mes scripts. En tant que bon coéquipier, il m'a obligé et m'a fourni un morceau de code. Ma fierté était suffisamment blessée pour que je retourne seul à mon bureau et que j'y travaille moi-même. C'était un morceau de code relativement gros, donc je m'attendais à un effort proportionné pour tout brancher et tout tester. J'ai ouvert le code et pouvais localiser rapidement les lignes qui nécessiteraient des modifications. La musique de frappe tapait dans mes oreilles - oui, j'avais mon clavier mécanique (http://www.wasdkeyboards.com/index.php/products/code-keyboard/code-87-key-mechanical-keyboard.html ) à ce moment-là. Il ne m'a fallu qu'une demi-heure pour tout faire. Je l'ai fait fonctionner sans effets secondaires inattendus la première fois que j'ai lancé le script.
+## Wait.
 
+This is the moment the epiphany came. I was not the one who has been doing a great job: my teammate was. He handed me some code that was so clean that anyone could quickly modify anything without unexpected side effect. Everything was self-explanatory, no comments lying around, no arbitrary numbers. The code had the perfect vertical and horizontal length and my solarized theme made the code look like a work of art. I experienced, what I thought at that time was, the [holy grail of good code](https://coding2fun.wordpress.com/2017/02/08/how-to-design-reliable-scalable-and-maintainable-applications/).
 
-Quelle belle modification faite par un grand programmeur.
+## Different solutions.
 
+First of all, there were things my teammate knew that I didn't know that I didn't know. Things like data pipeline, [design patterns](https://sourcemaking.com/design_patterns) and [principles](https://en.wikipedia.org/wiki/SOLID), unit testing, [clean code](https://en.wikipedia.org/wiki/Worship), software architecture, etc. These are the normal distribution for the actuary, the $(X'X)^{-1}$ for the statistician. The ground on which everything is built. Clearly my hacking and school background never prepared me for this.
 
-## Attendre.
+My teammate had an holistic view of the problem. I was too busy *making things work* while my teammate was busy figuring *the best way* to make it work. This subtle difference is crucial. A good solution will make something work right now. The best solution makes something work right now AND consider the future user. Even if it means taking extra time to step back and build in the right direction.
 
+Clearly no solution could (or should) have initially planted all the seeds for the craziness that came after the first request. But my stubbornness to produce a quick solution recycling my first approach without reconsidering possible paradigm shift in the problem doomed me in the long run.
 
-C'est le moment où l'épiphanie est arrivée. Je n'étais pas celui qui a fait un excellent travail: mon coéquipier l'était. Il m'a remis un code tellement propre que n'importe qui pouvait rapidement modifier quelque chose sans effets secondaires inattendus. Tout se passait d'explications, pas de commentaires, pas de chiffres arbitraires. Le code avait la longueur verticale et horizontale parfaite et mon thème solarisé faisait en sorte que le code ressemble à une œuvre d'art. J'ai connu, à l'époque, ce que je pensais être le [Saint Graal du bon code] (https://coding2fun.wordpress.com/2017/02/08/how-to-design-reliable-scalable-and-maintainable- applications/).
+## Clean slate.
 
+I enrolled in a software engineering certificate to build a stronger foundation. This allowed me to open a huge Pandora’s box uncovering thought-provoking and mind breaking ideas and concepts. I believe I’m a better programmer than I was and I believe I have the tools to be a better one tomorrow.
 
-## Différentes solutions.
-
-
-Tout d'abord, il y avait des choses que mon coéquipier savait que je ne savais pas que je ne savais pas. Des choses comme le pipeline de données, [modèles de conception] (https://sourcemaking.com/design_patterns) et [principes] (https://en.wikipedia.org/wiki/SOLID), les tests unitaires, [code propre] (https: //en.wikipedia.org/wiki/Worship), architecture logicielle, etc. Il s'agit de la distribution normale de l'actuaire, le $ (X'X) ^ {- 1} $ du statisticien. Le sol sur lequel tout est construit. De toute évidence, mon piratage informatique et mon parcours scolaire ne m'ont jamais préparé à cela.
-
-
-Mon coéquipier avait une vision globale du problème. J'étais trop occupé * à faire fonctionner les choses * pendant que mon coéquipier était occupé à trouver le * meilleur moyen * de le faire fonctionner. Cette différence subtile est cruciale. Une bonne solution permettra de faire fonctionner quelque chose maintenant. La meilleure solution permet de faire fonctionner quelque chose ET de considérer le futur utilisateur. Même si cela signifie prendre plus de temps pour prendre du recul et aller dans la bonne direction.
-
-
-De toute évidence, aucune solution n’aurait (ou n’aurait dû) initialement semer toutes les graines de la folie qui a suivi la première demande. Mais mon obstination à trouver une solution rapide, recyclant ma première approche sans reconsidérer le possible changement de paradigme du problème, m'a condamnée à long terme.
-
-
-## Table rase.
-
-
-Je me suis inscrit à un certificat en génie logiciel pour bâtir une base plus solide. Cela m’a permis d’ouvrir une énorme boîte de Pandore qui dévoilait des idées et des concepts bouleversants. Je crois que je suis un meilleur programmeur que moi et que je dispose des outils pour être meilleur demain.
-
-
-Cet article est le premier d'une longue liste dans laquelle je partagerai les outils que j'ai trouvés dans cette boîte de Pandore. Ces articles seront à moitié philosophiques et à moitié techniques. Ils seront centrés sur les bonnes pratiques en matière de génie logiciel, tout en partageant mon expérience de gestion avec une base de code (vraiment) merdique. Base de code merdique qui avait été écrit par moi, bien sûr.
+This article is the first of many in which I will share those tools I found in that Pandora's box. These articles will be half philosophical and half technical. They will be centered around good practices in software engineering, while sharing my experience coping with (really) crappy code base. Crappy code base that had been written by me, of course.
