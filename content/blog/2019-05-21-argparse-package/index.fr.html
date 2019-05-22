@@ -1,0 +1,43 @@
+---
+title: "argparse: un outil méconnu"
+author: "Stéphane Caron"
+date: '2019-05-21'
+slug: optparse-package
+categories: ["R"]
+type: post
+description: "Utiliser le package argparse pour faciliter l'appel de programmes R."
+output: html_document
+---
+
+
+
+<p>Dans les derniers mois, j’ai été confronté à 2 défis qui m’ont éventuellement permis de découvrir un package R et une manière de programmer qui m’étaient auparavant inconnus. Dans un premier temps, je devais intégrer l’appel de programmes R à l’intérieur d’un <em>shell script</em> (un fichier avec l’extension <code>.sh</code>) dans lequel je devais passer différents arguments utilisés par le programme. Dans un deuxième temps, je devais lancer un programme R avec différents paramètres à l’intérieur d’une instance <em>Amazon Web Services (AWS)</em> pour laquelle je n’avais pas d’interface graphique. Dans les deux cas, je devais faire l’appel d’un programme R à partir de la ligne de commande, ce que j’ai compris qui était possible avec la commande <code>Rscript</code>, mais pour lequel je devais également passer des paramètres en arguments lors de cet appel. C’est à ce moment que j’ai fais la découverte du package <code>argparse</code>, un outil méconnu de plusieurs personnes.</p>
+<div id="argparse-et-la-ligne-de-commande" class="section level1">
+<h1><code>argparse</code> et la ligne de commande</h1>
+</div>
+<div id="fonctionnement" class="section level1">
+<h1>Fonctionnement</h1>
+<ol style="list-style-type: decimal">
+<li>Définir les arguments</li>
+<li>Parser la liste</li>
+<li>Utiliser les params dans le scripts</li>
+</ol>
+<div id="nommer-les-arguments" class="section level2">
+<h2>Nommer les arguments</h2>
+</div>
+<div id="type-darguments" class="section level2">
+<h2>Type d’arguments</h2>
+</div>
+<div id="valeurs-par-defaut" class="section level2">
+<h2>Valeurs par défaut</h2>
+</div>
+<div id="definir-laide" class="section level2">
+<h2>Définir l’aide</h2>
+</div>
+</div>
+<div id="exemple" class="section level1">
+<h1>Exemple</h1>
+</div>
+<div id="conclusion" class="section level1">
+<h1>Conclusion</h1>
+</div>
