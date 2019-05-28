@@ -5,39 +5,144 @@ date: '2019-05-21'
 slug: optparse-package
 categories: ["R"]
 type: post
-description: "Utiliser le package argparse pour faciliter l'appel de programmes R."
+description: "Utiliser le package argparse pour faciliter l'appel de scripts R."
 output: html_document
+featured: "argparse-package.png"
+featuredpath: "img/headers/"
 ---
 
 
 
-<p>Dans les derniers mois, j’ai été confronté à 2 défis qui m’ont éventuellement permis de découvrir un package R et une manière de programmer qui m’étaient auparavant inconnus. Dans un premier temps, je devais intégrer l’appel de programmes R à l’intérieur d’un <em>shell script</em> (un fichier avec l’extension <code>.sh</code>) dans lequel je devais passer différents arguments utilisés par le programme. Dans un deuxième temps, je devais lancer un programme R avec différents paramètres à l’intérieur d’une instance <em>Amazon Web Services (AWS)</em> pour laquelle je n’avais pas d’interface graphique. Dans les deux cas, je devais faire l’appel d’un programme R à partir de la ligne de commande, ce que j’ai compris qui était possible avec la commande <code>Rscript</code>, mais pour lequel je devais également passer des paramètres en arguments lors de cet appel. C’est à ce moment que j’ai fais la découverte du package <code>argparse</code>, un outil méconnu de plusieurs personnes.</p>
+<p>Dans les derniers mois, j’ai été confronté à 2 défis qui m’ont éventuellement permis de découvrir un package R et une manière de programmer qui m’étaient auparavant inconnus. Dans un premier temps, je devais intégrer l’appel de programmes R à l’intérieur d’un <em>shell script</em> (un fichier avec l’extension <code>.sh</code>) dans lequel je devais passer différents arguments ou paramètres qui allaient être utilisés par le programme. Dans un deuxième temps, je devais lancer un programme R avec différents paramètres à l’intérieur d’une instance <em>Amazon Web Services (AWS)</em>, pour laquelle je n’avais pas d’interface graphique. Dans les deux cas, je devais faire l’appel d’un programme R à partir de la ligne de commande, ce que j’ai compris qui était possible avec la commande <code>Rscript</code>, mais pour lequel je devais également passer des arguments à ce programme lors de l’appel. C’est à ce moment que j’ai fais la découverte du package <a href="https://cran.r-project.org/web/packages/argparse/index.html">argparse</a>, un outil méconnu par plusieurs et qui offre des fonctionnalités intéressantes.</p>
 <div id="argparse-et-la-ligne-de-commande" class="section level1">
 <h1><code>argparse</code> et la ligne de commande</h1>
+<p>Comme vous l’avez probablement deviné dans l’introduction, <code>argparse</code> est un package R qui permet de facilter l’appel de programmes R à partir de la ligne de commande. Pour être plus précis, <code>argparse</code> est un package qui permet de créer une interface de ligne de commande (ou <em>command line interface</em> ou <em>CLI</em>). Cette interface agit en quelque sorte de pont (ou moyen de communication) entre l’appel d’une commande via le terminal et les opérations effectuées à l’intérieur d’un programme.</p>
+<p>Pourquoi appeler un programme R de la ligne de commande alors qu’on peut le lancer directement de la majorité des <em>IDE</em> comme RStudio ou même à partir de R directement? Il y a plusieurs exemples qui pourraient être cités, les deux exemples mentionnés en introduction sont pour moi des applications courantes, surtout lorsqu’on doit utiliser des ressources en ligne comme des instances <em>AWS</em> pour plus de puissance de calculs. Ces instances sont souvent dépourvues d’interface graphique, ce qui fait en sorte que nous nous retrouvons souvent devant le terrifant écran noir du terminal.</p>
 </div>
 <div id="fonctionnement" class="section level1">
 <h1>Fonctionnement</h1>
+<p>Le package R <code>argparse</code> est très similaire à la librarie Python du même nom. De plus, il existe d’autres packages R, comme <a href="https://cran.r-project.org/web/packages/optparse/index.html">optparse</a>, qui fonctionnent de manière similaire. L’objectif de cet article n’est pas de vanter un package plus d’un autre, mais plutôt d’illustrer le concept général en utilisant comme exemple le package <code>argparse</code>. La création d’une interface de ligne de commande avec ce package est très simple, les étapes sont généralement:</p>
 <ol style="list-style-type: decimal">
-<li>Définir les arguments</li>
-<li>Parser la liste</li>
-<li>Utiliser les params dans le scripts</li>
+<li>Définir les arguments pouvant être appelés de la ligne de commande</li>
+<li>Parser les arguments et les stockés dans un objet (habituellement une liste)</li>
+<li>Utiliser les éléments ce cette liste dans le programme</li>
 </ol>
+<p>Les étapes 2 et 3 sont sont assez simples à réaliser. L’étape la plus cruciale est de bien définir les arguments (étape 1). Pour se faire, il y a quelques considérations à prendre en compte. Les prochaines sections vont permettre de mieux définir ces considérations.</p>
+<div id="initialiser-lobjet-parser" class="section level2">
+<h2>Initialiser l’objet <code>Parser</code></h2>
+<p>Tout d’abord, avant même de définir les arguments, il faut attacher le package <code>argparse</code> et initialiser l’objet de type <code>Parser</code>. Nous pourrons ensuite ajouter des arguments à cet objets dans les prochaines sections.</p>
+<pre class="r"><code>library(argparse)
+parser &lt;- ArgumentParser(description = &quot;Simuler des distributions normales&quot;)</code></pre>
+</div>
 <div id="nommer-les-arguments" class="section level2">
 <h2>Nommer les arguments</h2>
-</div>
-<div id="type-darguments" class="section level2">
-<h2>Type d’arguments</h2>
-</div>
-<div id="valeurs-par-defaut" class="section level2">
-<h2>Valeurs par défaut</h2>
+<p>Maintenant que l’objet <code>Parser</code> est définit, il faut définir et nommer les arguments qui pourront être appelés à la ligne de commande. Pour ajouter ces arguments à notre objet, on utilise la méthode <code>add_argument()</code>. Il existe deux sortes d’arguments: les argument positionnels et les arguments optionnels. Dans le premier cas, ces arguments sont obligatoires et doivent être appelés dans un ordre précis alors que dans le deuxième cas, ils sont facultatifs et peuvent être appelés dans n’importe quel ordre, tant qu’ils sont nommés dans l’appel. Voici un exemple simple d’ajout de ces 2 sortes d’arguments:</p>
+<pre class="r"><code>parser$add_argument(&quot;n_dist&quot;, type = &quot;integer&quot;)
+parser$add_argument(&quot;-m&quot;, &quot;--mean&quot;, type = &quot;double&quot;, default = 0)</code></pre>
+<p>Les arguments optionnels sont identifiés par le préfixe <code>-</code> alors que les autres seront considérés comme positionnels. Il est possible de spécifier le type de valeur de l’argument grâce à l’option <code>type</code> qui peut prendre les types suivants:</p>
+<ul>
+<li>“double”</li>
+<li>“character”</li>
+<li>“logical”</li>
+<li>“integer”</li>
+</ul>
+<p>Les arguments optionnels doivent être accompagnés par une valeur par défaut. Notez que les arguments optionnels sont parfois nommés de 2 manières, avec un seul trait d’union (<code>-m</code>) pour l’abréviation courte et deux (<code>--mean</code>) pour le nom complet. Il n’est pas obligatoire de mettre les deux, mais cela peut améliorer la clarté de l’appel.</p>
 </div>
 <div id="definir-laide" class="section level2">
 <h2>Définir l’aide</h2>
+<p>Une fonctionnalité intéressante avec les interfaces de ligne de commande comme celle du package <code>argparse</code> est que l’on peut généralement définir une aide pour l’appel pour chaque argument pouvant être appelé par le programme. Cette aide peut être affichée en appelant l’argument <code>-h</code> ou <code>--help</code> au programme. Par exemple,</p>
+<pre class="r"><code>parser &lt;- ArgumentParser(description = &quot;Simuler des distributions normales&quot;)
+parser$add_argument(&quot;n_dist&quot;, type = &quot;integer&quot;,
+                    help = &quot;Nombre de distributions simulées&quot;)
+parser$add_argument(&quot;-m&quot;, &quot;--mean&quot;, type = &quot;double&quot;, default = 0,
+                    help = &quot;Moyenne pour chaque distribution normale [défault: %(default)s]&quot;)
+parser$print_help()</code></pre>
+<pre><code>## usage: /Library/Frameworks/R.framework/Versions/3.5/Resources/library/blogdown/scripts/render_page.R
+##        [-h] [-m MEAN] n_dist
+## 
+## Simuler des distributions normales
+## 
+## positional arguments:
+##   n_dist                Nombre de distributions simulées
+## 
+## optional arguments:
+##   -h, --help            show this help message and exit
+##   -m MEAN, --mean MEAN  Moyenne pour chaque distribution normale [défault: 0]</code></pre>
+<p>Notez que la valeur par défaut peut être incorporée dans l’aide.</p>
+</div>
+<div id="fonctionnalites-supplementaires" class="section level2">
+<h2>Fonctionnalités supplémentaires</h2>
+<ul>
+<li>Groupe d’arguments</li>
+<li>Sub parser</li>
+</ul>
+</div>
+<div id="une-fois-les-arguments-definits" class="section level2">
+<h2>Une fois les arguments définits</h2>
+<p>Une fois les arguments bien définit, il ne reste plus qu’à <em>parser</em> les arguments passé à ligne de commande et les utiliser dans le programme en utilisant la fonction <code>parse_args()</code>:</p>
+<pre class="r"><code>args &lt;- parser$parse_args()</code></pre>
 </div>
 </div>
 <div id="exemple" class="section level1">
 <h1>Exemple</h1>
+<p>Voici un exmple de programme où est-ce qu’on veut simuler un certains nombre de lois normales et estimer les moyennes et écart-types de ces simulations. De plus, nous voulons avoir la possibilité de définir les paramètres de ces lois normales et aussi l’option de sauvergarder un graphique illustrant la densité estimé comparativement à la vraie densité.</p>
+<pre class="r"><code>library(argparse)
+library(ggplot2)
+
+
+# Build Command Line Interface --------------------------------------------
+
+parser &lt;- ArgumentParser(description = &quot;Simulate random normal distributions&quot;)
+parser$add_argument(&quot;n_dist&quot;, type = &quot;integer&quot;,
+                    help = &quot;Number of distributions to simulated&quot;)
+parser$add_argument(&quot;-m&quot;, &quot;--mean&quot;, type = &quot;double&quot;, default = 0, metavar = &quot;&quot;,
+                    help = &quot;mean for the simulated normal dist [default: %(default)s]&quot;)
+parser$add_argument(&quot;-s&quot;, &quot;--sd&quot;, type = &quot;double&quot;, default = 1, metavar = &quot;&quot;,
+                    help = &quot;sd for the simulated normal dist [default: %(default)s]&quot;)
+parser$add_argument(&quot;-n&quot;, &quot;--n-obs&quot;, type = &quot;integer&quot;, default = 1000, metavar = &quot;&quot;,
+                    help = &quot;number of simulations in each dist [default: %(default)s]&quot;)
+parser$add_argument(&quot;-r&quot;, &quot;--random-seed&quot;, type = &quot;integer&quot;, default = 42, metavar = &quot;&quot;,
+                    help = &quot;random seed selected [default: %(default)s]&quot;)
+parser$add_argument(&quot;-g&quot;, &quot;--graph-save&quot;, action = &quot;store_true&quot;, 
+                    help = &quot;save the graph: [default: %(default)s]&quot;)
+parser$add_argument(&quot;-p&quot;, &quot;--path-graph&quot;, type = &quot;character&quot;, default = &quot;./graph.png&quot;, metavar = &quot;&quot;,
+                    help = &quot;path to save graph [default: \&quot;%(default)s\&quot;]&quot;)
+
+args &lt;- parser$parse_args()
+
+# Simulate normal distributions -------------------------------------------
+
+set.seed(args$random_seed)
+
+simulated_list &lt;- lapply(1:args$n_dist, function(x) sort(rnorm(n = args$n_obs, mean = args$mean, sd = args$sd)))
+simulated_matrix &lt;- matrix(unlist(simulated_list), nrow = args$n_dist, ncol = args$n_obs, byrow = TRUE)
+mean_distribution &lt;- colMeans(simulated_matrix)
+
+# Output mean and sd simulated
+mean(mean_distribution)
+sd(mean_distribution)
+
+# Plot the simulated distributed
+plot &lt;- ggplot(data.frame(obs = mean_distribution), aes(obs)) +
+  geom_histogram(aes(y = ..density.., color = &quot;Simulated&quot;), 
+                 bins = 30) +
+  stat_function(fun=function(x)dnorm(x, mean = args$mean, sd = args$sd),
+                size = 2, aes(color = &quot;True&quot;)) + 
+  scale_y_continuous(&quot;Density&quot;) +
+  scale_x_continuous(&quot;x&quot;) +
+  scale_colour_manual(&quot;Distribution&quot;, values = c(&quot;gray&quot;, &quot;red&quot;)) + 
+  theme_classic()
+
+# Save the graph
+if (args$graph_save) {
+  ggsave(args$path_graph, plot) 
+}</code></pre>
 </div>
 <div id="conclusion" class="section level1">
 <h1>Conclusion</h1>
+<ul>
+<li>doc Python</li>
+<li>autre libraries R</li>
+<li>j’espere vous aider</li>
+</ul>
 </div>
