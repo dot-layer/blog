@@ -16,12 +16,12 @@ featuredpath: "img/headers/"
 <p>Dans les derniers mois, j’ai été confronté à 2 défis qui m’ont éventuellement permis de découvrir un package R et une manière de programmer qui m’étaient auparavant inconnus. Dans un premier temps, je devais intégrer l’appel de programmes R à l’intérieur d’un <em>shell script</em> (un fichier avec l’extension <code>.sh</code>) dans lequel je devais passer différents arguments ou paramètres qui allaient être utilisés par le programme. Dans un deuxième temps, je devais lancer un programme R avec différents paramètres à l’intérieur d’une instance <em>Amazon Web Services (AWS)</em>, pour laquelle je n’avais pas d’interface graphique. Dans les deux cas, je devais faire l’appel d’un programme R à partir de la ligne de commande, ce que j’ai compris qui était possible avec la commande <code>Rscript</code>, mais pour lequel je devais également passer des arguments à ce programme lors de l’appel. C’est à ce moment que j’ai fais la découverte du package <a href="https://cran.r-project.org/web/packages/argparse/index.html">argparse</a>, un outil méconnu par plusieurs et qui offre des fonctionnalités intéressantes.</p>
 <div id="argparse-et-la-ligne-de-commande" class="section level1">
 <h1><code>argparse</code> et la ligne de commande</h1>
-<p>Comme vous l’avez probablement deviné dans l’introduction, <code>argparse</code> est un package R qui permet de facilter l’appel de programmes R à partir de la ligne de commande. Pour être plus précis, <code>argparse</code> est un package qui permet de créer une interface de ligne de commande (ou <em>command line interface</em> ou <em>CLI</em>). Cette interface agit en quelque sorte de pont (ou moyen de communication) entre l’appel d’une commande via le terminal et les opérations effectuées à l’intérieur d’un programme.</p>
-<p>Pourquoi appeler un programme R de la ligne de commande alors qu’on peut le lancer directement de la majorité des <em>IDE</em> comme RStudio ou même à partir de R directement? Il y a plusieurs exemples qui pourraient être cités, les deux exemples mentionnés en introduction sont pour moi des applications courantes, surtout lorsqu’on doit utiliser des ressources en ligne comme des instances <em>AWS</em> pour plus de puissance de calculs. Ces instances sont souvent dépourvues d’interface graphique, ce qui fait en sorte que nous nous retrouvons souvent devant le terrifant écran noir du terminal.</p>
+<p>Comme vous l’avez probablement deviné dans l’introduction, <code>argparse</code> est un package R qui permet de faciliter l’appel de programmes R à partir de la ligne de commande. Pour être plus précis, <code>argparse</code> est un package qui permet de créer une interface de ligne de commande (ou <em>command line interface</em> ou <em>CLI</em>). Cette interface agit en quelque sorte de pont (ou moyen de communication) entre l’appel d’une commande via le terminal et les opérations effectuées à l’intérieur d’un programme.</p>
+<p>Pourquoi appeler un programme R de la ligne de commande alors qu’on peut le lancer directement de la majorité des <em>IDE</em> comme RStudio ou même à partir de R directement? Il y a plusieurs exemples qui pourraient être cités, les deux exemples mentionnés en introduction sont pour moi des applications courantes, surtout lorsqu’on doit utiliser des ressources en ligne comme des instances <em>AWS</em> pour plus de puissance de calculs. Ces instances sont souvent dépourvues d’interface graphique, ce qui fait en sorte que nous nous retrouvons souvent devant le terrifiant écran noir du terminal.</p>
 </div>
 <div id="fonctionnement" class="section level1">
 <h1>Fonctionnement</h1>
-<p>Le package R <code>argparse</code> est très similaire à la librarie Python du même nom. De plus, il existe d’autres packages R, comme <a href="https://cran.r-project.org/web/packages/optparse/index.html">optparse</a>, qui fonctionnent de manière similaire. L’objectif de cet article n’est pas de vanter un package plus d’un autre, mais plutôt d’illustrer le concept général en utilisant comme exemple le package <code>argparse</code>. La création d’une interface de ligne de commande avec ce package est très simple, les étapes sont généralement:</p>
+<p>Le package R <code>argparse</code> est très similaire à la librairie Python du même nom. De plus, il existe d’autres packages R, comme <a href="https://cran.r-project.org/web/packages/optparse/index.html">optparse</a>, qui fonctionnent de manière similaire. L’objectif de cet article n’est pas de vanter un package plus d’un autre, mais plutôt d’illustrer le concept général en utilisant comme exemple le package <code>argparse</code>. La création d’une interface de ligne de commande avec ce package est très simple, les étapes sont généralement:</p>
 <ol style="list-style-type: decimal">
 <li>Définir les arguments pouvant être appelés de la ligne de commande</li>
 <li>Parser les arguments et les stockés dans un objet (habituellement une liste)</li>
@@ -73,7 +73,7 @@ parser$print_help()</code></pre>
 </div>
 <div id="fonctionnalites-supplementaires" class="section level2">
 <h2>Fonctionnalités supplémentaires</h2>
-<p>Ces quelques options devraient vous permettre de créer une interface de ligne de commande simple d’utilisation et couvrant la majorité de vos besoins. Toutefois, notez que le package possède également plusieurs autres fonctionnalités intéressantes comme regrouper des arguments, hériter des proprités de d’autres arguments parents, améliorer l’affichage de l’aide, etc.</p>
+<p>Ces quelques options devraient vous permettre de créer une interface de ligne de commande simple d’utilisation et couvrant la majorité de vos besoins. Toutefois, notez que le package possède également plusieurs autres fonctionnalités intéressantes comme regrouper des arguments, hériter des propriétés de d’autres arguments parents, améliorer l’affichage de l’aide, etc.</p>
 </div>
 <div id="une-fois-les-arguments-definits" class="section level2">
 <h2>Une fois les arguments définits</h2>
@@ -83,7 +83,7 @@ parser$print_help()</code></pre>
 </div>
 <div id="exemple" class="section level1">
 <h1>Exemple</h1>
-<p>Voici un exmple de programme où est-ce qu’on veut simuler un certain nombre de lois normales et estimer la moyenne et l’écart-types de la distribution selon ces simulations. De plus, nous voulons avoir la possibilité de définir les paramètres de ces lois normales et aussi l’option de sauvergarder un graphique illustrant la densité estimée comparativement à la vraie densité.</p>
+<p>Voici un exemple de programme où est-ce qu’on veut simuler un certain nombre de lois normales et estimer la moyenne et l’écart-types de la distribution selon ces simulations. De plus, nous voulons avoir la possibilité de définir les paramètres de ces lois normales et aussi l’option de sauvegarder un graphique illustrant la densité estimée comparativement à la vraie densité.</p>
 <pre class="r"><code>library(argparse)
 library(ggplot2)
 
@@ -139,5 +139,5 @@ if (args$graph_save) {
 </div>
 <div id="conclusion" class="section level1">
 <h1>Conclusion</h1>
-<p>Pour davantage d’informations sur le fonctionnement du package ou et des différentes options, vous pouvez consulter de <a href="https://github.com/trevorld/r-argparse">dépôt</a> du package R et aussi la documentation complète <a href="https://docs.python.org/3/library/argparse.html">en ligne</a> de la même librarie Python. J’espère que ce court article vous aura permis de maîtriser l’essentiel quant au fonctionnement des interfaces de ligne de commande et leur utilité.</p>
+<p>Pour davantage d’informations sur le fonctionnement du package ou et des différentes options, vous pouvez consulter de <a href="https://github.com/trevorld/r-argparse">dépôt</a> du package R et aussi la documentation complète <a href="https://docs.python.org/3/library/argparse.html">en ligne</a> de la même librairie Python. J’espère que ce court article vous aura permis de maîtriser l’essentiel quant au fonctionnement des interfaces de ligne de commande et leur utilité.</p>
 </div>
