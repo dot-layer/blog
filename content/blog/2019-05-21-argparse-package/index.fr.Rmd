@@ -51,7 +51,9 @@ parser$add_argument("n_dist", type = "integer")
 parser$add_argument("-m", "--mean", type = "double", default = 0)
 ```
 
-Les arguments optionnels sont identifiés par le préfixe `-` alors que les autres seront considérés comme positionnels. Il est possible de spécifier le type de valeur de l'argument grâce à l'option `type` qui peut prendre les types suivants:
+Les arguments optionnels sont généralement identifiés par le préfixe `-` alors que les autres seront considérés comme positionnels. L'option `required` permet également de spécifier les arguments qui ne peuvent être omis lors de l'appel. 
+
+Il est possible de spécifier le type de valeur de l'argument grâce à l'option `type` qui peut prendre les types suivants:
 
 - "double"
 - "character"
@@ -67,22 +69,21 @@ Une fonctionnalité intéressante avec les interfaces de ligne de commande comme
 ```{r}
 parser <- ArgumentParser(description = "Simuler des distributions normales")
 parser$add_argument("n_dist", type = "integer",
-                    help = "Nombre de distributions simulées")
+                    help = "nombre de distributions simulées")
 parser$add_argument("-m", "--mean", type = "double", default = 0,
-                    help = "Moyenne pour chaque distribution normale [défault: %(default)s]")
+                    help = "moyenne pour chaque distribution normale [défault: %(default)s]")
 parser$print_help()
 ```
 
-Notez que la valeur par défaut peut être incorporée dans l'aide.
+Notez que la valeur par défaut peut être incorporée dans l'aide (voir le code ci-dessus).
 
 ## Fonctionnalités supplémentaires
 
-- Groupe d'arguments
-- Sub parser
+Ces quelques options devraient vous permettre de créer une interface de ligne de commande simple d'utilisation et couvrant la majorité de vos besoins. Toutefois, notez que le package possède également plusieurs autres fonctionnalités intéressantes comme regrouper des arguments, hériter des proprités de d'autres arguments parents, améliorer l'affichage de l'aide, etc.
 
 ## Une fois les arguments définits
 
-Une fois les arguments bien définit, il ne reste plus qu'à *parser* les arguments passé à ligne de commande et les utiliser dans le programme en utilisant la fonction `parse_args()`:
+Une fois les arguments bien définis, il ne reste plus qu'à *parser* les arguments passés à ligne de commande et les utiliser dans le programme en utilisant la fonction `parse_args()`:
 
 ```{r, eval=FALSE}
 args <- parser$parse_args()
@@ -90,34 +91,35 @@ args <- parser$parse_args()
 
 # Exemple
 
-Voici un exmple de programme où est-ce qu'on veut simuler un certains nombre de lois normales et estimer les moyennes et écart-types de ces simulations. De plus, nous voulons avoir la possibilité de définir les paramètres de ces lois normales et aussi l'option de sauvergarder un graphique illustrant la densité estimé comparativement à la vraie densité.
+Voici un exmple de programme où est-ce qu'on veut simuler un certain nombre de lois normales et estimer la moyenne et l'écart-types de la distribution selon ces simulations. De plus, nous voulons avoir la possibilité de définir les paramètres de ces lois normales et aussi l'option de sauvergarder un graphique illustrant la densité estimée comparativement à la vraie densité.
 
 ```{r, eval=FALSE}
 library(argparse)
 library(ggplot2)
 
 
-# Build Command Line Interface --------------------------------------------
+# Batir l’interface de ligne de commande ----------------------------------
 
-parser <- ArgumentParser(description = "Simulate random normal distributions")
+parser <- ArgumentParser(description = "Simuler des distributions normales")
 parser$add_argument("n_dist", type = "integer",
-                    help = "Number of distributions to simulated")
+                    help = "nombre de distributions à simuler")
 parser$add_argument("-m", "--mean", type = "double", default = 0, metavar = "",
-                    help = "mean for the simulated normal dist [default: %(default)s]")
+                    help = "moyenne pour chaque distribution normale [défault: %(default)s]")
 parser$add_argument("-s", "--sd", type = "double", default = 1, metavar = "",
-                    help = "sd for the simulated normal dist [default: %(default)s]")
+                    help = "écart-type pour chaque distribution normale [défault: %(default)s]")
 parser$add_argument("-n", "--n-obs", type = "integer", default = 1000, metavar = "",
-                    help = "number of simulations in each dist [default: %(default)s]")
+                    help = "nombre d'observations simulés dans chaque simulation [défault: %(default)s]")
 parser$add_argument("-r", "--random-seed", type = "integer", default = 42, metavar = "",
-                    help = "random seed selected [default: %(default)s]")
+                    help = "nombre aléatoire d'amorce [défault: %(default)s]")
 parser$add_argument("-g", "--graph-save", action = "store_true", 
-                    help = "save the graph: [default: %(default)s]")
+                    help = "sauvegarder le graphique [défault: %(default)s]")
 parser$add_argument("-p", "--path-graph", type = "character", default = "./graph.png", metavar = "",
-                    help = "path to save graph [default: \"%(default)s\"]")
+                    help = "chemin vers lequel sauvegarder le graphique [défault: \"%(default)s\"]")
 
 args <- parser$parse_args()
 
-# Simulate normal distributions -------------------------------------------
+
+# Simuler les lois normales -----------------------------------------------
 
 set.seed(args$random_seed)
 
@@ -125,11 +127,11 @@ simulated_list <- lapply(1:args$n_dist, function(x) sort(rnorm(n = args$n_obs, m
 simulated_matrix <- matrix(unlist(simulated_list), nrow = args$n_dist, ncol = args$n_obs, byrow = TRUE)
 mean_distribution <- colMeans(simulated_matrix)
 
-# Output mean and sd simulated
+# Imprimer la moyenne et l'ecart type estimés
 mean(mean_distribution)
 sd(mean_distribution)
 
-# Plot the simulated distributed
+# Faire le graphique de la distribution simulée
 plot <- ggplot(data.frame(obs = mean_distribution), aes(obs)) +
   geom_histogram(aes(y = ..density.., color = "Simulated"), 
                  bins = 30) +
@@ -140,7 +142,7 @@ plot <- ggplot(data.frame(obs = mean_distribution), aes(obs)) +
   scale_colour_manual("Distribution", values = c("gray", "red")) + 
   theme_classic()
 
-# Save the graph
+# Sauvegarder le graphique
 if (args$graph_save) {
   ggsave(args$path_graph, plot) 
 }
@@ -148,6 +150,4 @@ if (args$graph_save) {
 
 # Conclusion
 
-- doc Python
-- autre libraries R
-- j'espere vous aider
+Pour davantage d'informations sur le fonctionnement du package ou et des différentes options, vous pouvez consulter de [dépôt](https://github.com/trevorld/r-argparse) du package R et aussi la documentation complète [en ligne](https://docs.python.org/3/library/argparse.html) de la même librarie Python. J'espère que ce court article vous aura permis de maîtriser l'essentiel quant au fonctionnement des interfaces de ligne de commande et leur utilité.

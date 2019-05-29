@@ -39,7 +39,8 @@ parser &lt;- ArgumentParser(description = &quot;Simuler des distributions normal
 <p>Maintenant que l’objet <code>Parser</code> est définit, il faut définir et nommer les arguments qui pourront être appelés à la ligne de commande. Pour ajouter ces arguments à notre objet, on utilise la méthode <code>add_argument()</code>. Il existe deux sortes d’arguments: les argument positionnels et les arguments optionnels. Dans le premier cas, ces arguments sont obligatoires et doivent être appelés dans un ordre précis alors que dans le deuxième cas, ils sont facultatifs et peuvent être appelés dans n’importe quel ordre, tant qu’ils sont nommés dans l’appel. Voici un exemple simple d’ajout de ces 2 sortes d’arguments:</p>
 <pre class="r"><code>parser$add_argument(&quot;n_dist&quot;, type = &quot;integer&quot;)
 parser$add_argument(&quot;-m&quot;, &quot;--mean&quot;, type = &quot;double&quot;, default = 0)</code></pre>
-<p>Les arguments optionnels sont identifiés par le préfixe <code>-</code> alors que les autres seront considérés comme positionnels. Il est possible de spécifier le type de valeur de l’argument grâce à l’option <code>type</code> qui peut prendre les types suivants:</p>
+<p>Les arguments optionnels sont généralement identifiés par le préfixe <code>-</code> alors que les autres seront considérés comme positionnels. L’option <code>required</code> permet également de spécifier les arguments qui ne peuvent être omis lors de l’appel.</p>
+<p>Il est possible de spécifier le type de valeur de l’argument grâce à l’option <code>type</code> qui peut prendre les types suivants:</p>
 <ul>
 <li>“double”</li>
 <li>“character”</li>
@@ -53,9 +54,9 @@ parser$add_argument(&quot;-m&quot;, &quot;--mean&quot;, type = &quot;double&quot
 <p>Une fonctionnalité intéressante avec les interfaces de ligne de commande comme celle du package <code>argparse</code> est que l’on peut généralement définir une aide pour l’appel pour chaque argument pouvant être appelé par le programme. Cette aide peut être affichée en appelant l’argument <code>-h</code> ou <code>--help</code> au programme. Par exemple,</p>
 <pre class="r"><code>parser &lt;- ArgumentParser(description = &quot;Simuler des distributions normales&quot;)
 parser$add_argument(&quot;n_dist&quot;, type = &quot;integer&quot;,
-                    help = &quot;Nombre de distributions simulées&quot;)
+                    help = &quot;nombre de distributions simulées&quot;)
 parser$add_argument(&quot;-m&quot;, &quot;--mean&quot;, type = &quot;double&quot;, default = 0,
-                    help = &quot;Moyenne pour chaque distribution normale [défault: %(default)s]&quot;)
+                    help = &quot;moyenne pour chaque distribution normale [défault: %(default)s]&quot;)
 parser$print_help()</code></pre>
 <pre><code>## usage: /Library/Frameworks/R.framework/Versions/3.5/Resources/library/blogdown/scripts/render_page.R
 ##        [-h] [-m MEAN] n_dist
@@ -63,54 +64,52 @@ parser$print_help()</code></pre>
 ## Simuler des distributions normales
 ## 
 ## positional arguments:
-##   n_dist                Nombre de distributions simulées
+##   n_dist                nombre de distributions simulées
 ## 
 ## optional arguments:
 ##   -h, --help            show this help message and exit
-##   -m MEAN, --mean MEAN  Moyenne pour chaque distribution normale [défault: 0]</code></pre>
-<p>Notez que la valeur par défaut peut être incorporée dans l’aide.</p>
+##   -m MEAN, --mean MEAN  moyenne pour chaque distribution normale [défault: 0]</code></pre>
+<p>Notez que la valeur par défaut peut être incorporée dans l’aide (voir le code ci-dessus).</p>
 </div>
 <div id="fonctionnalites-supplementaires" class="section level2">
 <h2>Fonctionnalités supplémentaires</h2>
-<ul>
-<li>Groupe d’arguments</li>
-<li>Sub parser</li>
-</ul>
+<p>Ces quelques options devraient vous permettre de créer une interface de ligne de commande simple d’utilisation et couvrant la majorité de vos besoins. Toutefois, notez que le package possède également plusieurs autres fonctionnalités intéressantes comme regrouper des arguments, hériter des proprités de d’autres arguments parents, améliorer l’affichage de l’aide, etc.</p>
 </div>
 <div id="une-fois-les-arguments-definits" class="section level2">
 <h2>Une fois les arguments définits</h2>
-<p>Une fois les arguments bien définit, il ne reste plus qu’à <em>parser</em> les arguments passé à ligne de commande et les utiliser dans le programme en utilisant la fonction <code>parse_args()</code>:</p>
+<p>Une fois les arguments bien définis, il ne reste plus qu’à <em>parser</em> les arguments passés à ligne de commande et les utiliser dans le programme en utilisant la fonction <code>parse_args()</code>:</p>
 <pre class="r"><code>args &lt;- parser$parse_args()</code></pre>
 </div>
 </div>
 <div id="exemple" class="section level1">
 <h1>Exemple</h1>
-<p>Voici un exmple de programme où est-ce qu’on veut simuler un certains nombre de lois normales et estimer les moyennes et écart-types de ces simulations. De plus, nous voulons avoir la possibilité de définir les paramètres de ces lois normales et aussi l’option de sauvergarder un graphique illustrant la densité estimé comparativement à la vraie densité.</p>
+<p>Voici un exmple de programme où est-ce qu’on veut simuler un certain nombre de lois normales et estimer la moyenne et l’écart-types de la distribution selon ces simulations. De plus, nous voulons avoir la possibilité de définir les paramètres de ces lois normales et aussi l’option de sauvergarder un graphique illustrant la densité estimée comparativement à la vraie densité.</p>
 <pre class="r"><code>library(argparse)
 library(ggplot2)
 
 
-# Build Command Line Interface --------------------------------------------
+# Batir l’interface de ligne de commande ----------------------------------
 
-parser &lt;- ArgumentParser(description = &quot;Simulate random normal distributions&quot;)
+parser &lt;- ArgumentParser(description = &quot;Simuler des distributions normales&quot;)
 parser$add_argument(&quot;n_dist&quot;, type = &quot;integer&quot;,
-                    help = &quot;Number of distributions to simulated&quot;)
+                    help = &quot;nombre de distributions à simuler&quot;)
 parser$add_argument(&quot;-m&quot;, &quot;--mean&quot;, type = &quot;double&quot;, default = 0, metavar = &quot;&quot;,
-                    help = &quot;mean for the simulated normal dist [default: %(default)s]&quot;)
+                    help = &quot;moyenne pour chaque distribution normale [défault: %(default)s]&quot;)
 parser$add_argument(&quot;-s&quot;, &quot;--sd&quot;, type = &quot;double&quot;, default = 1, metavar = &quot;&quot;,
-                    help = &quot;sd for the simulated normal dist [default: %(default)s]&quot;)
+                    help = &quot;écart-type pour chaque distribution normale [défault: %(default)s]&quot;)
 parser$add_argument(&quot;-n&quot;, &quot;--n-obs&quot;, type = &quot;integer&quot;, default = 1000, metavar = &quot;&quot;,
-                    help = &quot;number of simulations in each dist [default: %(default)s]&quot;)
+                    help = &quot;nombre d&#39;observations simulés dans chaque simulation [défault: %(default)s]&quot;)
 parser$add_argument(&quot;-r&quot;, &quot;--random-seed&quot;, type = &quot;integer&quot;, default = 42, metavar = &quot;&quot;,
-                    help = &quot;random seed selected [default: %(default)s]&quot;)
+                    help = &quot;nombre aléatoire d&#39;amorce [défault: %(default)s]&quot;)
 parser$add_argument(&quot;-g&quot;, &quot;--graph-save&quot;, action = &quot;store_true&quot;, 
-                    help = &quot;save the graph: [default: %(default)s]&quot;)
+                    help = &quot;sauvegarder le graphique [défault: %(default)s]&quot;)
 parser$add_argument(&quot;-p&quot;, &quot;--path-graph&quot;, type = &quot;character&quot;, default = &quot;./graph.png&quot;, metavar = &quot;&quot;,
-                    help = &quot;path to save graph [default: \&quot;%(default)s\&quot;]&quot;)
+                    help = &quot;chemin vers lequel sauvegarder le graphique [défault: \&quot;%(default)s\&quot;]&quot;)
 
 args &lt;- parser$parse_args()
 
-# Simulate normal distributions -------------------------------------------
+
+# Simuler les lois normales -----------------------------------------------
 
 set.seed(args$random_seed)
 
@@ -118,11 +117,11 @@ simulated_list &lt;- lapply(1:args$n_dist, function(x) sort(rnorm(n = args$n_obs
 simulated_matrix &lt;- matrix(unlist(simulated_list), nrow = args$n_dist, ncol = args$n_obs, byrow = TRUE)
 mean_distribution &lt;- colMeans(simulated_matrix)
 
-# Output mean and sd simulated
+# Imprimer la moyenne et l&#39;ecart type estimés
 mean(mean_distribution)
 sd(mean_distribution)
 
-# Plot the simulated distributed
+# Faire le graphique de la distribution simulée
 plot &lt;- ggplot(data.frame(obs = mean_distribution), aes(obs)) +
   geom_histogram(aes(y = ..density.., color = &quot;Simulated&quot;), 
                  bins = 30) +
@@ -133,16 +132,12 @@ plot &lt;- ggplot(data.frame(obs = mean_distribution), aes(obs)) +
   scale_colour_manual(&quot;Distribution&quot;, values = c(&quot;gray&quot;, &quot;red&quot;)) + 
   theme_classic()
 
-# Save the graph
+# Sauvegarder le graphique
 if (args$graph_save) {
   ggsave(args$path_graph, plot) 
 }</code></pre>
 </div>
 <div id="conclusion" class="section level1">
 <h1>Conclusion</h1>
-<ul>
-<li>doc Python</li>
-<li>autre libraries R</li>
-<li>j’espere vous aider</li>
-</ul>
+<p>Pour davantage d’informations sur le fonctionnement du package ou et des différentes options, vous pouvez consulter de <a href="https://github.com/trevorld/r-argparse">dépôt</a> du package R et aussi la documentation complète <a href="https://docs.python.org/3/library/argparse.html">en ligne</a> de la même librarie Python. J’espère que ce court article vous aura permis de maîtriser l’essentiel quant au fonctionnement des interfaces de ligne de commande et leur utilité.</p>
 </div>
