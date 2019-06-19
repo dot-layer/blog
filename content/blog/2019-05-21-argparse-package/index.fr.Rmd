@@ -148,6 +148,12 @@ if (args$graph_save) {
 }
 ```
 
+Voici un exemple d'appel ([voir figure](#fig:img1)) et de résultat effectué à la ligne de commande en utilisant ce programme :
+
+```{r img1, echo=FALSE, fig.align='center', fig.cap="Exemple d'appel du programme à partir de la ligne de commande."}
+knitr::include_graphics("screenshot-example.png")
+```
+
 # Conclusion
 
 Pour davantage d'informations sur le fonctionnement du package et des différentes options, vous pouvez consulter de [dépôt](https://github.com/trevorld/r-argparse) du package R et aussi la documentation complète [en ligne](https://docs.python.org/3/library/argparse.html) de la même librairie Python. J'espère que ce court article vous aura permis de maîtriser l'essentiel quant au fonctionnement des interfaces de ligne de commande en R et leur utilité.

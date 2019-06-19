@@ -58,7 +58,7 @@ parser$add_argument(&quot;n_dist&quot;, type = &quot;integer&quot;,
 parser$add_argument(&quot;-m&quot;, &quot;--mean&quot;, type = &quot;double&quot;, default = 0,
                     help = &quot;moyenne pour chaque distribution normale [défault: %(default)s]&quot;)
 parser$print_help()</code></pre>
-<pre><code>## usage: /Library/Frameworks/R.framework/Versions/3.5/Resources/library/blogdown/scripts/render_page.R
+<pre><code>## usage: /Library/Frameworks/R.framework/Versions/3.6/Resources/library/blogdown/scripts/render_page.R
 ##        [-h] [-m MEAN] n_dist
 ## 
 ## Simuler des distributions normales
@@ -136,6 +136,13 @@ plot &lt;- ggplot(data.frame(obs = mean_distribution), aes(obs)) +
 if (args$graph_save) {
   ggsave(args$path_graph, plot) 
 }</code></pre>
+<p>Voici un exemple d’appel (<a href="#fig:img1">voir figure</a>) et de résultat effectué à la ligne de commande en utilisant ce programme :</p>
+<div class="figure" style="text-align: center"><span id="fig:img1"></span>
+<img src="screenshot-example.png" alt="Exemple d'appel du programme à partir de la ligne de commande."  />
+<p class="caption">
+Figure 1: Exemple d’appel du programme à partir de la ligne de commande.
+</p>
+</div>
 </div>
 <div id="conclusion" class="section level1">
 <h1>Conclusion</h1>
