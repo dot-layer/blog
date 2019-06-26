@@ -21,7 +21,7 @@ featuredpath: "img/headers/"
 </div>
 <div id="fonctionnement" class="section level1">
 <h1>Fonctionnement</h1>
-<p>Le package R <code>argparse</code> est en fait une <em>wrapper</em> à la librairie Python du même nom. De plus, il existe d’autres packages R, comme <a href="https://cran.r-project.org/web/packages/optparse/index.html">optparse</a>, qui fonctionnent de manière similaire. L’objectif de cet article n’est pas de vanter un package plus d’un autre, mais plutôt d’illustrer le concept général en utilisant comme exemple le package <code>argparse</code>. La création d’une interface de ligne de commande avec ce package est très simple, les étapes sont généralement :</p>
+<p>Le package R <code>argparse</code> est en fait un <em>wrapper</em> à la librairie Python du même nom. De plus, il existe d’autres packages R, comme <a href="https://cran.r-project.org/web/packages/optparse/index.html">optparse</a>, qui fonctionnent de manière similaire. L’objectif de cet article n’est pas de vanter un package plus d’un autre, mais plutôt d’illustrer le concept général en utilisant comme exemple le package <code>argparse</code>. La création d’une interface de ligne de commande avec ce package est très simple, les étapes sont généralement :</p>
 <ol style="list-style-type: decimal">
 <li>Définir les arguments pouvant être appelés de la ligne de commande</li>
 <li>Parser les arguments et les stocker dans un objet (habituellement une liste)</li>
@@ -136,7 +136,7 @@ plot &lt;- ggplot(data.frame(obs = mean_distribution), aes(obs)) +
 if (args$graph_save) {
   ggsave(args$path_graph, plot) 
 }</code></pre>
-<p>Voici un exemple d’appel (<a href="#fig:img1">voir figure</a>) et de résultat effectué à la ligne de commande en utilisant ce programme :</p>
+<p>Voici un exemple d’appel (<a href="#fig:img1">voir figure</a>) et de résultat effectués à la ligne de commande en utilisant ce programme :</p>
 <div class="figure" style="text-align: center"><span id="fig:img1"></span>
 <img src="screenshot-example.png" alt="Exemple d'appel du programme à partir de la ligne de commande."  />
 <p class="caption">
@@ -146,5 +146,5 @@ Figure 1: Exemple d’appel du programme à partir de la ligne de commande.
 </div>
 <div id="conclusion" class="section level1">
 <h1>Conclusion</h1>
-<p>Pour davantage d’informations sur le fonctionnement du package et des différentes options, vous pouvez consulter de <a href="https://github.com/trevorld/r-argparse">dépôt</a> du package R et aussi la documentation complète <a href="https://docs.python.org/3/library/argparse.html">en ligne</a> de la même librairie Python. J’espère que ce court article vous aura permis de maîtriser l’essentiel quant au fonctionnement des interfaces de ligne de commande en R et leur utilité.</p>
+<p>Pour davantage d’informations sur le fonctionnement du package et des différentes options, vous pouvez consulter de <a href="https://github.com/trevorld/r-argparse">dépôt</a> du package R et aussi la documentation complète <a href="https://docs.python.org/3/library/argparse.html">en ligne</a> de la même librairie Python. J’espère que ce court article vous aura permis de comprendre l’essentiel quant au fonctionnement des interfaces de ligne de commande en R et leur utilité.</p>
 </div>
