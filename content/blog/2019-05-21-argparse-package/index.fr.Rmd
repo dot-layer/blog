@@ -15,27 +15,27 @@ featuredpath: "img/headers/"
 knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
 ```
 
-Dans les derniers mois, j'ai été confronté à 2 défis qui m'ont éventuellement permis de découvrir un package R et une manière de programmer qui m'étaient auparavant inconnus. Dans un premier temps, je devais intégrer l'appel de programmes R à l'intérieur d'un *shell script* (un fichier avec l'extension `.sh`) dans lequel je devais passer différents arguments qui allaient être utilisés par le programme. Dans un deuxième temps, je devais lancer un programme R, avec différents paramètres, à l'aide d'une instance *Amazon Web Services (AWS)*, pour laquelle je n'avais pas d'interface graphique. Dans les deux cas, je devais faire l'appel d'un programme R à partir de la ligne de commande, ce qui est d'ailleurs possible avec la commande `Rscript`. Par contre, je devais également passer des arguments à ce programme lors de l'appel à la ligne de commande. C'est à ce moment que j'ai fais la découverte du package [argparse](https://cran.r-project.org/web/packages/argparse/index.html), un outil méconnu par plusieurs et qui offre des fonctionnalités intéressantes.
+Dans les derniers mois, j'ai été confronté à 2 défis qui m'ont éventuellement permis de découvrir un *package* R et une manière de programmer qui m'étaient auparavant inconnus. Dans un premier temps, je devais intégrer l'appel de programmes R à l'intérieur d'un *shell script* (un fichier avec l'extension `.sh`) dans lequel je devais passer différents arguments qui allaient être utilisés par le programme. Dans un deuxième temps, je devais lancer un programme R, avec différents paramètres, à l'aide d'une instance *Amazon Web Services (AWS)*, pour laquelle je n'avais pas d'interface graphique. Dans les deux cas, je devais faire l'appel d'un programme R à partir de la ligne de commande, ce qui est d'ailleurs possible avec la commande `Rscript`. Par contre, je devais également passer des arguments à ce programme lors de l'appel à la ligne de commande. C'est à ce moment que j'ai fais la découverte du package [argparse](https://cran.r-project.org/web/packages/argparse/index.html), un outil méconnu par plusieurs et qui offre des fonctionnalités intéressantes.
 
 # `argparse` et la ligne de commande
 
-Comme vous l'avez probablement deviné dans l'introduction, `argparse` est un package R qui permet de faciliter l'appel de programmes R à partir de la ligne de commande. Pour être plus précis, `argparse` est un package qui permet de créer une interface de ligne de commande (ou *command line interface* ou *CLI*). Cette interface agit en quelque sorte de pont (ou moyen de communication) entre l'appel d'un programme via la ligne de commande et les opérations effectuées à l'intérieur de ce programme.
+Comme vous l'avez probablement deviné dans l'introduction, `argparse` est un *package* R qui permet de faciliter l'appel de programmes R à partir de la ligne de commande. Pour être plus précis, `argparse` permet de créer une interface de ligne de commande (ou *command line interface* ou *CLI*). Cette interface agit comme une sorte de pont (ou moyen de communication) entre l'appel d'un programme via la ligne de commande et les opérations effectuées à l'intérieur de ce programme.
 
-Pourquoi appeler un programme R de la ligne de commande alors qu'on peut le lancer directement de la majorité des *IDE* comme RStudio ou même à partir de R directement? Il y a plusieurs exemples qui pourraient être cités, les deux exemples mentionnés en introduction sont pour moi des applications courantes, surtout lorsqu'on doit utiliser des ressources en ligne comme des instances *AWS* pour plus de puissance de calculs. Ces instances sont souvent dépourvues d'interface graphique, ce qui fait en sorte que nous nous retrouvons souvent devant le terrifiant écran noir du terminal.
+Pourquoi appeler un programme R de la ligne de commande alors qu'on peut le lancer directement de la majorité des *IDE* comme RStudio ou même à partir de R directement? Plusieurs exemples pourraient être cités, les deux mentionnés en introduction sont pour moi des applications courantes, surtout lorsqu'on doit utiliser des ressources en ligne comme des instances *AWS* pour plus de puissance de calculs. Ces instances sont souvent dépourvues d'interface graphique, ce qui fait en sorte que nous nous retrouvons souvent devant le terrifiant écran noir du terminal.
 
 # Fonctionnement
 
-Le package R `argparse` est en fait un *wrapper* à la librairie Python du même nom. De plus, il existe d'autres packages R, comme [optparse](https://cran.r-project.org/web/packages/optparse/index.html), qui fonctionnent de manière similaire. L'objectif de cet article n'est pas de vanter un package plus d'un autre, mais plutôt d'illustrer le concept général en utilisant comme exemple le package `argparse`. La création d'une interface de ligne de commande avec ce package est très simple, les étapes sont généralement :
+Le *package* R `argparse` est en fait un *wrapper* à la librairie Python du même nom. D'autres *packages* R, comme [optparse](https://cran.r-project.org/web/packages/optparse/index.html), fonctionnent de manière similaire. L'objectif de cet article n'est pas de vanter un *package* plus qu'un autre, mais plutôt d'illustrer le concept général en utilisant comme exemple le *package* `argparse`. La création d'une interface de ligne de commande avec ce *package* est très simple, les étapes sont généralement :
 
 1. Définir les arguments pouvant être appelés de la ligne de commande
-2. Parser les arguments et les stocker dans un objet (habituellement une liste)
-3. Utiliser les éléments ce cette liste dans le programme
+2. *Parser* les arguments et les stocker dans un objet (habituellement une liste)
+3. Utiliser les éléments de cette liste dans le programme
 
-Les étapes 2 et 3 sont sont assez simples à réaliser. L'étape la plus cruciale est de bien définir les arguments (étape 1). Pour se faire, il y a quelques considérations à prendre en compte. Les prochaines sections vont permettre de mieux définir ces considérations.
+Les étapes 2 et 3 sont sont assez simples à réaliser. L'étape la plus cruciale est de bien définir les arguments (étape 1). Pour se faire, il y a quelques éléments essentiels à prendre en compte. Les prochaines sections mettent en lumière ces considérations.
 
 ## Initialiser l'objet `Parser`
 
-Tout d'abord, avant même de définir les arguments, il faut attacher le package `argparse` et initialiser l'objet de type `Parser`. Nous pourrons ensuite ajouter des arguments à cet objet dans les prochaines sections.
+Tout d'abord, avant même de définir les arguments, il faut attacher le *package* `argparse` et initialiser l'objet de type `Parser`. Nous pourrons ensuite ajouter des arguments à cet objet dans les prochaines sections.
 
 ```{r}
 library(argparse)
@@ -60,11 +60,11 @@ Il est possible de spécifier le type de valeur de l'argument grâce à l'option
 - "logical"
 - "integer"
 
-Les arguments optionnels doivent être accompagnés d'une valeur par défaut. Notez que les arguments optionnels sont parfois nommés de 2 manières, avec un seul trait d'union (`-m`) pour l'abréviation courte et deux (`--mean`) pour le nom complet. Il n'est pas obligatoire de mettre les deux, mais cela peut améliorer la clarté de l'appel.
+Les arguments optionnels doivent être accompagnés d'une valeur par défaut. Notez que ceux-ci sont parfois nommés de 2 manières, avec un seul trait d'union (`-m`) pour l'abréviation courte et deux (`--mean`) pour le nom complet. Il n'est pas obligatoire de mettre les deux, mais cela peut améliorer la clarté de l'appel.
 
 ## Définir l'aide
 
-Une fonctionnalité intéressante avec les interfaces de ligne de commande comme celle du package `argparse` est que l'on peut généralement définir une aide pour l'appel de chaque argument pouvant être appelé par le programme. Cela permet de documenter un programme en résumant son objectif et en résumant son mode d'usage. Cette aide peut être affichée en appelant l'argument `-h` ou `--help` au programme. Par exemple, 
+Une fonctionnalité intéressante avec les interfaces de ligne de commande comme celle du *package* `argparse` est que l'on peut généralement définir une aide pour l'appel de chaque argument pouvant être appelé par le programme. Cela permet de documenter un programme en résumant son objectif et en résumant son mode d'usage. Cette aide peut être affichée en appelant l'argument `-h` ou `--help` au programme. Par exemple, 
 
 ```{r}
 parser <- ArgumentParser(description = "Simuler des distributions normales")
@@ -81,7 +81,7 @@ Notez que la valeur par défaut peut être incorporée dans l'aide (voir le code
 
 Ces quelques options devraient vous permettre de créer une interface de ligne de commande simple d'utilisation et couvrant la majorité de vos besoins. Toutefois, notez que le package possède également plusieurs autres fonctionnalités intéressantes comme regrouper des arguments, hériter des propriétés d'autres arguments parents, améliorer l'affichage de l'aide, etc.
 
-## Une fois les arguments définits
+## Une fois les arguments définis
 
 Une fois les arguments bien définis, il ne reste plus qu'à *parser* les arguments passés à ligne de commande et les utiliser dans le programme en utilisant la fonction `parse_args()`:
 
@@ -91,7 +91,7 @@ args <- parser$parse_args()
 
 # Exemple
 
-Voici un exemple de programme où on veut simuler un certain nombre de lois normales et estimer la moyenne et l'écart-type de la distribution selon ces simulations. De plus, nous voulons avoir la possibilité de spécifier les paramètres de ces lois normales et aussi l'option de sauvegarder un graphique illustrant la densité estimée comparativement à la vraie densité.
+Voici un exemple de programme où on veut simuler un certain nombre de lois normales et estimer la moyenne et l'écart-type de la distribution avec ces simulations. Supposons en plus qu'on veuille pouvoir spécifier les paramètres de ces lois normales et sauvegarder un graphique illustrant la densité estimée comparativement à la vraie densité.
 
 ```{r, eval=FALSE}
 library(argparse)
@@ -156,4 +156,4 @@ knitr::include_graphics("screenshot-example.png")
 
 # Conclusion
 
-Pour davantage d'informations sur le fonctionnement du package et des différentes options, vous pouvez consulter de [dépôt](https://github.com/trevorld/r-argparse) du package R et aussi la documentation complète [en ligne](https://docs.python.org/3/library/argparse.html) de la même librairie Python. J'espère que ce court article vous aura permis de comprendre l'essentiel quant au fonctionnement des interfaces de ligne de commande en R et leur utilité.
+Pour davantage d'informations sur le fonctionnement de `argparse` et des différentes options qu'il offre, vous pouvez consulter le [dépôt](https://github.com/trevorld/r-argparse) du *package* R et aussi la documentation complète [en ligne](https://docs.python.org/3/library/argparse.html) de la même librairie Python. J'espère que ce court article vous aura permis de comprendre l'essentiel quant au fonctionnement des interfaces de ligne de commande en R et leur utilité.
