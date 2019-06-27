@@ -1,0 +1,105 @@
+---
+title: Agrégation simple de classements
+author: Samuel Perreault
+date: '2019-06-16'
+slug: Agrégation simple de classements
+type: post
+tags:
+- analytique de sports
+description: ""
+featured: "agregation-cover.png"
+featuredpath: "img/headers/"
+output: md_document
+---
+
+
+
+<p>Dans le cadre de la fin de semaine d’analytique de sports récemment organisée par des .Layeuriens, nous (L. Caron, L.-A. Vallière-Lavoie et moi-même) avons construit une petite routine qui aggrège différents <em>draft rankings</em> pour en former un unique. Pardonnez le manque d’explications lolk. En passant, allez voir le <a href="https://stecaron.shinyapps.io/shiny-app/">ShinyApp</a> créé par d’autres participants de la fin de semaine (un truc de tennis).</p>
+<div id="rvest" class="section level2">
+<h2>rvest</h2>
+<p>En gros, nous avons <em>rvest</em> des listes <a href="http://www.mynhldraft.com/2019-nhl-draft/2019-nhl-draft-rankings/">mynhldraft.com</a> :</p>
+<pre><code>library(rvest)
+library(data.table)
+
+html &lt;- read_html(&quot;http://www.mynhldraft.com/2019-nhl-draft/2019-nhl-draft-rankings/&quot;)
+
+tables &lt;- html %&gt;%
+  html_nodes(&quot;table&quot;)
+
+tables &lt;- lapply(tables, html_table, fill=T)
+tables &lt;- tables[-1]
+
+temp &lt;- as.data.table(do.call(cbind, tables))[-1,]
+
+names(temp) &lt;- unlist(temp[1,])
+names(temp) &lt;- gsub(&quot;\n&quot;, &quot;&quot;, names(temp))
+temp &lt;- temp[-1,]
+
+head(temp)[,1:3]</code></pre>
+<pre><code>##    V1 Future Considerations    June 7th
+## 1:  1                       Jack Hughes
+## 2:  2                       Kakko Kaapo
+## 3:  3                       Bowen Byram
+## 4:  4                  Vasili Podkolzin
+## 5:  5                     Alex Turcotte
+## 6:  6                      Peyton Krebs
+##    Russ Cohen    Sportsology    June 7th
+## 1:                           Jack Hughes
+## 2:                           Kaapo Kakko
+## 3:                         Alex Turcotte
+## 4:                      Vasily Podkolzin
+## 5:                           Bowen Byram
+## 6:                         Cole Caufield</code></pre>
+<p>Les 14 listes (nous en avons retiré 2 parce qu’elles concernaient seulement les Européens et les Nord-Américains respectivement) contiennent un classement des 32 meilleurs espoirs (choix de première ronde) pour le repêchage de la LNH selon différents experts.</p>
+</div>
+<div id="metriques" class="section level2">
+<h2>Métriques</h2>
+<p>Après un peu plus de nettoyage (on vous épargne les détails), nous avons créé un data.table <code>main</code>. Avec un passage de <em>data.table</em> à <em>dplyr</em>, nous avons comparer quelques métriques. En particulier, nous avons effectué une correction (très <em>de base</em>) pour palier au fait que certains joueurs ne se retrouvaient pas dans toutes les listes : 60 joueurs au total aparaissaient dans au moins une liste, mais seulement 32 joueurs sont sélectionnés en première ronde. Voici notre top 10 du repêchage selon cette métrique.</p>
+<pre><code>library(tibble)
+library(purrr)
+library(magrittr)
+library(dplyr)
+
+main &lt;- fread(&quot;data/main.R&quot;, encoding = &quot;UTF-8&quot;)
+
+by_player &lt;- data.table(player = player &lt;- unique(unlist(main[, player])),
+                         ID = as.numeric(as.factor(player)))
+
+main %&lt;&gt;%
+  left_join(by_player, by = &quot;player&quot;)
+
+by_player &lt;-
+  by_player %&gt;%
+  left_join(main %&gt;%
+              group_by(ID) %&gt;%
+              summarise(straight_average = mean(rank),
+                        min_ranking = min(rank),
+                        max_ranking = max(rank),
+                        variance = var(rank),
+                        count = n(),
+                        median = median(rank),
+                        corrected_average = (sum(rank) + (14 - count) * 33) / 14) %&gt;%
+              mutate(final_selection = rank(corrected_average)),
+            by = &quot;ID&quot;)
+
+by_player[order(by_player$final_selection),]$player[1:10]</code></pre>
+<pre><code>##  [1] &quot;Jack Hughes&quot;      &quot;Kaapo Kakko&quot;      &quot;Bowen Byram&quot;     
+##  [4] &quot;Alex Turcotte&quot;    &quot;Trevor Zegras&quot;    &quot;Kirby Dach&quot;      
+##  [7] &quot;Dylan Cozens&quot;     &quot;Vasili Podkolzin&quot; &quot;Matthew Boldy&quot;   
+## [10] &quot;Peyton Krebs&quot;</code></pre>
+</div>
+<div id="multi-dimensional-scaling" class="section level2">
+<h2>Multi-dimensional scaling</h2>
+<p>Avec le temps qu’il nous restait, nous avons ensuite décidé de construire une matrice de distance (entre les joueurs) calculée en considérant le vecteurs des rangs :</p>
+<pre><code>##      Albert Johansson Albin Grewe Alex Newhook Alex Turcotte Alex Vlasic
+## [1,]               33          28           15             3          33
+## [2,]               33          33           14             4          25
+## [3,]               33          33           11             3          24
+## [4,]               33          33           18            10          33
+## [5,]               33          33           13             5          33</code></pre>
+<p>Chaque rangée correspond aux prédictions d’un expert. Nous avons remplacé les NA (ceux qui ne sont pas parmi les 32 premiers choix) par des 33. Clairement, ce n’est pas la meilleure chose à faire, les étapes suivantes auraient pu nous aider à faire une imputation plus sensée, mais nous n’avons pas pris le temps…</p>
+<p>Nous avons calculé une sorte de variation locale des rangs : <img src="canard.png" /></p>
+<p>Naturellement, plus on considère des rangs élevés, plus il y a d’incertitude quant à ceux-ci (du moins cette année). Ce qui se passe après 25 ne fait plus de sens puisque nos données sont censurées à droite. Nous avons utilisé ceci (en gardant la valeur maximum après le <em>peak</em>), pour calculer des distances <em>somewhat</em> normalisées (entre les joueurs). Finalement, la matrice de distance obtenue nous a permis de projeté nos données sur une droite (une seule dimension) : ce qu’on appelle du positionnement multidimensionnel. En fait, nous avons <em>pluggé</em> la matrice de distance dans la fonction <code>cmdscale</code>. Les valeurs obtenues forment l’axe vertical dans la figure suivante. <img src="draft-normalized.png" /></p>
+<p>En gardant un espacement constant sur l’axe horizontal, on peut apprécier à quel point Jack Hughes et Kaapo Kakko se démarque du reste (ils étaient toujours premier et deuxième…).</p>
+<p>À+</p>
+</div>
