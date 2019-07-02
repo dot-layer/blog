@@ -11,13 +11,13 @@ featured: "agregation-cover.png"
 featuredpath: "img/headers/"
 ---
 
-Il y a quelques jours, certains membres de la communauté .Layer (y compris moi-même) nous sommes réunis dans un chalet autour d'une thématique commune: l'analyse de données sportives ! Lors de ce week-end, nous avons *brainstormer* sur de potentiels projets reliant le sports et l'analyse de données, ce qui nous entraîné à entamer 3 projets en parallèles.
+Il y a quelques jours, des membres de la communauté .Layer se sont réunis dans un chalet autour d'une thématique: l'analyse de données sportives. Lors de ce week-end, nous avons effleuré trois projets reliant sports et analyse de données:
 
-1. Agréger différents *draft rankings* pour en former un unique (L-A Vallière-Lavoie, Laurent Caron et moi-même)
-2. Un [dashboard](https://stecaron.shinyapps.io/shiny-app/) de données permettant d'identifier les meilleurs jeunes joueurs de tennis de l'ATP (Phil B-l, Stéphane Caron, Sam Auclair, John Tremblay et J.P. Le Cavalier)
+1. Agréger différents *draft rankings* (LNH) pour en former un unique (L-A Vallière-Lavoie, Laurent Caron et Sam Perreault)
+2. Un [dashboard](https://stecaron.shinyapps.io/shiny-app/) de données permettant d'identifier les meilleurs jeunes joueurs de tennis de l'ATP (Phil B-l, Sté Caron, Sam Auclair, John Tremblay et J.P. Le Cavalier)
 3. Un outil pour trouver le bon régime et le bon programme d'entraînement selon des objectifs (Antoine Buteau)
 
-Dans cet article, je vais vous décrire très brièvement notre projet d’agrégation de listes de repêchages. Le timing était bon puisqu'une semaine après le chalet, c'était le repêchage officiel de la LNH ...
+Cet article sommarise très brièvement le projet d’agrégation de listes de repêchages. Le timing était bon puisqu'une semaine après le chalet, c'était ledit repêchage de la LNH.
 
 ## Extraire les données
 
