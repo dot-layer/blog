@@ -1,6 +1,6 @@
 ---
 title: Agrégation simple de classements
-author: "Samuel Perreault"
+author: "Samuel Perreault et Stéphane Caron"
 date: '2019-06-16'
 slug: Agrégation simple de classements
 type: post
@@ -112,7 +112,7 @@ by_player[order(by_player$final_selection),]$player[1:10]
 
 ## Multi-dimensional scaling
 
-Avec le temps qu'il nous restait, nous avons ensuite décidé de construire une matrice de distances (entre les joueurs) calculée en considérant le vecteur des rangs:
+Avec le temps qu'il nous restait, nous avons décidé de construire une matrice de distances (entre les joueurs) calculée en considérant le vecteur des rangs:
 
 
 ```
@@ -128,9 +128,7 @@ Chaque rangée correspond aux prédictions d'un expert. Nous avons remplacé les
 
 Nous avons calculé une sorte de variation locale des rangs:
 
-<div style="text-align: center">
-<img src="canard-2.jpg" alt="drawing" width="400"/>
-</div>
+![](canard.png)
 
 Naturellement, plus on considère des rangs élevés, plus il y a d'incertitude quant à ceux-ci (du moins cette année). Ce qui se passe après 25 ne fait plus de sens puisque nos données sont censurées à droite.
 Nous avons utilisé ceci (en gardant la valeur maximum après le *peak*), pour calculer des distances *somewhat* normalisées (entre les joueurs).
@@ -141,11 +139,16 @@ Finalement, la matrice de distances obtenue nous a permis de projeter nos donné
 
 En gardant un espacement constant sur l'axe horizontal, on peut apprécier à quel point Jack Hughes et Kaapo Kakko se démarque du reste (ils étaient toujours premier et deuxième ...).
 
-Comme je l'ai mentionné en introduction, le repêchage officiel de la LNH avait lieu quelques jours après notre première analyse (figure ci-haut). Nous avons donc comparer l'agrégation des experts avant le repêchage avec les vrais choix ! Les résultats sont présentés dans la figure ci-dessous alors que les noms des joueurs sont accompagnés de leur rang réel et de la différence versus ce qui était prévu dans l'analyse que nous avons fais (entre parenthèses). Les noms de joueurs en gris ont été repêchés au rang prévu, les rouges ont été repêchés plus tard que prévu alors que les verts ont été repêché plus tôt que prévu.
+Comme mentionné en introduction, le repêchage officiel de la LNH avait lieu quelques jours après notre première analyse (figure ci-haut).
+Les résultats sont présentés dans la figure ci-dessous: les noms des joueurs sont accompagnés de leur rang observé, ainsi que la différence entre la prédiction de l'agrégation d'experts et le rang observé. 
+Les noms de joueurs en gris ont été repêchés au rang prévu, les rouges ont été repêchés plus tard que prévu alors que les verts ont été repêché plus tôt que prévu.
 
 ![](plot-after-draft.png)
 
-
-On remarque qu'il n'y a pas eu de surprise concernant Jack Hugues et Kaapo Kakko. Par contre, certains joueurs ont surpris certains experts en étant repêchés plus tôt, par exemple Kirby Dach qui à monté de 4 rangs (ce qui est intéressant considérant la basse incertitude du top 10). Il y aussi Moritz Seider qui a grimpé de 10 rangs en étant repêché 6ème au total par Détroit. Parmi les joueurs qui ont été repêchés plus tard que prévu, on remarque le Russe Arthur Kaliyev et le Québécois Raphaël Lavoie qui ont respectivement dégringolé de 16 et 19 rangs pour finalement aboutir en 2ème ronde. C'est d'ailleurs deux joueurs très talentueux dont certains experts remettaient en question leur éthique de travail ...
+On remarque qu'il n'y a pas eu de surprise concernant Jack Hugues et Kaapo Kakko.
+D'autres sélections ont surpris les experts, par exemple Kirby Dach qui à monté de 4 rangs (ce qui est intéressant considérant la faible incertitude du top 10).
+Il y aussi Moritz Seider qui a grimpé de 10 rangs en étant repêché 6ème au total par Détroit.
+Parmi les joueurs qui ont été repêchés plus tard que prévu, on remarque le Russe Arthur Kaliyev et le Québécois Raphaël Lavoie qui ont respectivement dégringolés des rangs 16 et 19 pour finalement aboutir en 2ème ronde.
+C'est d'ailleurs deux joueurs très talentueux dont certains experts remettaient en question leur éthique de travail.
 
 À+
