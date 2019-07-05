@@ -148,7 +148,9 @@ Les noms de joueurs en gris ont été repêchés au rang prévu, les rouges ont 
 On remarque qu'il n'y a pas eu de surprise concernant Jack Hugues et Kaapo Kakko.
 D'autres sélections ont surpris les experts, par exemple Kirby Dach qui à monté de 4 rangs (ce qui est intéressant considérant la faible incertitude du top 10).
 Il y aussi Moritz Seider qui a grimpé de 10 rangs en étant repêché 6ème au total par Détroit.
-Parmi les joueurs qui ont été repêchés plus tard que prévu, on remarque le Russe Arthur Kaliyev et le Québécois Raphaël Lavoie qui ont respectivement dégringolés des rangs 16 et 19 pour finalement aboutir en 2ème ronde.
+Parmi les joueurs repêchés plus tard que prévu, on remarque le Russe Arthur Kaliyev et le Québécois Raphaël Lavoie qui ont respectivement dégringolés des rangs 16 et 19 pour finalement aboutir en 2ème ronde.
 C'est d'ailleurs deux joueurs très talentueux dont certains experts remettaient en question leur éthique de travail.
+
+Le reste de l'analyse est laissé en exercice hehe ;)
 
 À+
