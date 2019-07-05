@@ -143,7 +143,7 @@ Comme mentionné en introduction, le repêchage officiel de la LNH avait lieu qu
 Les résultats sont présentés dans la figure ci-dessous: les noms des joueurs sont accompagnés de leur rang observé, ainsi que la différence entre la prédiction de l'agrégation d'experts et le rang observé. 
 Les noms de joueurs en gris ont été repêchés au rang prévu, les rouges ont été repêchés plus tard que prévu alors que les verts ont été repêché plus tôt que prévu.
 
-![](plot-after-draft.png)
+![](p-a-d.png)
 
 On remarque qu'il n'y a pas eu de surprise concernant Jack Hugues et Kaapo Kakko.
 D'autres sélections ont surpris les experts, par exemple Kirby Dach qui à monté de 4 rangs (ce qui est intéressant considérant la faible incertitude du top 10).
