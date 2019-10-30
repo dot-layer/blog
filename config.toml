@@ -25,6 +25,8 @@ enableEmoji   = true
   navbarTitle          = ".layer"
   # Sets where "View More Posts" links
   viewMorePostLink     = "/blog/"
+  # Sets default img for thumbnails
+  og_image             = "img/headers/hackathon-code-cover.JPG"
 
 # Optional Params
   # Sets navbarTitle to match the section of the website
