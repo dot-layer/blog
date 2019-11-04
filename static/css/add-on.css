@@ -4,3 +4,8 @@
   is an official part of the theme (ex. Pull Requests) should be included in main.css
   within the formating given.
 */
+
+#header .lang-switcher img {
+  padding: 15%;
+  opacity: 0.9;
+}
