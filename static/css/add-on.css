@@ -31,3 +31,7 @@
 #sidebar ul.icons {
   margin-top: 0;
 }
+
+.author {
+  white-space: normal;
+}

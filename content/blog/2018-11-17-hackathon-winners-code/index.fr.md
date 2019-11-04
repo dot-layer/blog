@@ -1,6 +1,6 @@
 ---
 title: Entrevue avec les gagnants
-author: "Stéphane Caron et <br> Marc-André Bernier"
+author: "Stéphane Caron et Marc-André Bernier"
 date: '2018-12-02'
 slug: hackathon-winners-code
 type: post
