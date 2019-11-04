@@ -104,7 +104,6 @@ enableEmoji   = true
 [Languages]
     [Languages.en]
         LanguageName = "English"
-        title = ".Layer"
         description = ".Layer community website"
         weight = 1
 
@@ -151,7 +150,6 @@ enableEmoji   = true
 
     [Languages.fr]
         LanguageName = "Français"
-        title = ".Layer"
         description = "Site web de la communauté .Layer"
         weight = 2
 
