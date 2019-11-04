@@ -78,6 +78,8 @@
             <link rel="stylesheet" href="{{ "css/academicons.min.css" | relURL }}">
         {{ end }}
 
+        <link rel="icon" href="img/main/dotlayer_favicon.ico">
+
         {{ if ne ($.Scratch.Get "cssFiles") false }}
             {{ range $.Scratch.Get "cssFiles" }}
                 {{ if ne . "default" }}
