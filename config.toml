@@ -148,7 +148,8 @@ enableEmoji   = true
             # required for proper functionality. HTML is supported within the params.
             [Languages.en.params.intro]
             about     = ".Layer is a data science oriented community created for promoting collaboration and knowledge sharing among its members. In Unix-like operating system, files or folders starting with a dot are treated as hidden, invisible to the passerby. Most people don’t even know their existence and purpose. Much like dot files, data scientists are the hidden layer between a world where people produce data and live the outcomes of many performing algorithms. For those data scientists, now is time to say: Hello World!"
-            # paragraph = Meet, Learn & Share 
+            header    = "img/main/DotLayer_logo_full+tagline_COL_RVB.png"
+            
             # This appears at the top of the sidebar above params.intro.header.
             # A width of less than 100px is recommended from a design perspective.
             [Languages.en.params.intro.pic]  # (useless, defined for all languages)
