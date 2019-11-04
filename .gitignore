@@ -7,6 +7,6 @@ public/
 
 *.DS_Store
 
-./resources/_gen/assets/scss/sass/*.content
-./resources/_gen/assets/scss/sass/*.json
+*.content
+*.json
 
