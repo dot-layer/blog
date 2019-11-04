@@ -22,3 +22,7 @@
 #header .lang-switcher img:hover {
   opacity: 0.9;
 }
+
+.author {
+  white-space: normal;
+}
