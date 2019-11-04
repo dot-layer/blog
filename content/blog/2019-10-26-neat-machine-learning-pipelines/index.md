@@ -7,7 +7,11 @@ type: post
 canonical: https://www.neuraxio.com/en/blog/neuraxle/2019/10/26/neat-machine-learning-pipelines.html
 tags:
   - neuraxle
-  - clean software
+  - clean code
+  - software
+  - software architecture
+  - machine learning
+  - deep learning
 description: "How should we build a machine learning pipeline that will be ready to deploy in production once finished?"
 featured: "neat-ml-pipelines.jpg"
 featuredpath: "img/headers"
