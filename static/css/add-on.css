@@ -5,7 +5,20 @@
   within the formating given.
 */
 
+#header .main ul li {
+  border: none;
+}
+
+#header .lang-switcher a {
+  border-left: solid 1px rgba(160, 160, 160, 0.3);
+}
+
 #header .lang-switcher img {
   padding: 15%;
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+#header .lang-switcher img:hover {
   opacity: 0.9;
 }
