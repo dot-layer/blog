@@ -19,8 +19,9 @@ enableEmoji   = true
     post = "/:slug/"
 
 [params]
-  # Sets the meta tag description
-  description          = ".Layer community website"
+  # Sets the meta tag description (duplicated in Languages)
+  ## description          = ".Layer community website"
+  
   # Sets the navbarTitle that appears in the top left of the navigation bar
   navbarTitle          = ".Layer"
   # Sets where "View More Posts" links
