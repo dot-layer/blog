@@ -188,6 +188,7 @@ enableEmoji   = true
             # required for proper functionality. HTML is supported within the params.
             [Languages.fr.params.intro]
             # paragraph = "Rencontrer, Apprendre & Partager."
+            header    = "img/main/DotLayer_logo_full+tagline_COL_RVB.png"
             about     = ".Layer est une communauté axée sur la science des données créée pour promouvoir la collaboration et le partage des connaissances entre ses membres. Dans les systèmes d'exploitation de type Unix, les fichiers ou les dossiers commençant par un point sont traités comme cachés, invisibles pour les passants. La plupart des gens ne connaissent même pas leur existence et leur but. Tout comme les fichiers de points, les scientifiques de données constituent la couche cachée entre un monde où les utilisateurs produisent des données et vivent les résultats de nombreux algorithmes performants. Pour ces scientifiques de données, le moment est venu de dire: Hello World!"
 
             # This appears at the top of the sidebar above params.intro.header.
