@@ -1,6 +1,6 @@
 ---
 title: Entrevue avec les gagnants
-author: "Laurent Caron et <br> Marc-André Bernier"
+author: "Laurent Caron et Marc-André Bernier"
 date: '2018-11-28'
 slug: hackathon-winners-presentation
 type: post
