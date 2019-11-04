@@ -34,17 +34,20 @@ A [pipeline](https://www.quora.com/What-is-a-pipeline-and-baseline-in-machine-le
 ### Methods of a Pipeline
 
 Pipelines (or steps in the pipeline) **must have those two methods**:
+
 - “[fit](https://www.neuraxio.com/en/neuraxle/stable/api/neuraxle.base.html#neuraxle.base.BaseStep.fit)” to learn on the data and acquire state (e.g.: neural network’s neural weights are such state)
 - “[transform](https://www.neuraxio.com/en/neuraxle/stable/api/neuraxle.base.html#neuraxle.base.BaseStep.transform)" (or "predict") to actually process the data and generate a prediction.
 
 Note: if a step of a pipeline doesn’t need to have one of those two methods, it could inherit from [NonFittableMixin](https://www.neuraxio.com/en/neuraxle/stable/api/neuraxle.base.html#neuraxle.base.NonFittableMixin) or [NonTransformableMixin](https://www.neuraxio.com/en/neuraxle/stable/api/neuraxle.base.html#neuraxle.base.NonTransformableMixin) to be provided a default implementation of one of those methods to do nothing.
 
 It is possible for pipelines or their steps to also **optionally define those methods**:
+
 - “[fit_transform](https://www.neuraxio.com/en/neuraxle/stable/api/neuraxle.base.html#neuraxle.base.BaseStep.fit_transform)” to fit and then transform the data, but in one pass, which allows for potential code optimizations when the two methods must be done one after the other directly.
 - “[setup](https://www.neuraxio.com/en/neuraxle/stable/api/neuraxle.base.html#neuraxle.base.BaseStep.setup)” which will call the “setup” method on each of its step. For instance, if a step contains a TensorFlow, PyTorch, or Keras neural network, the steps could create their neural graphs and register them to the GPU in the “setup” method before fit. It is discouraged to create the graphs directly in the constructors of the steps for several reasons, such as if the steps are copied before running many times with different hyperparameters within an Automatic Machine Learning algorithm that searches for the best hyperparameters for you.
 - “[teardown](https://www.neuraxio.com/en/neuraxle/stable/api/neuraxle.base.html#neuraxle.base.BaseStep.teardown)”, which is the opposite of the “setup” method: it clears resources.
 
 The **following methods are provided by default** to allow for managing hyperparameters:
+
 - “[get_hyperparams](https://www.neuraxio.com/en/neuraxle/stable/api/neuraxle.base.html#neuraxle.base.BaseStep.get_hyperparams)” will return you a dictionary of the hyperparameters. If your pipeline contains more pipelines (nested pipelines), then the hyperparameter’ keys are chained with double underscores “\_\_” separators.
 - “[set_hyperparams](https://www.neuraxio.com/en/neuraxle/stable/api/neuraxle.base.html#neuraxle.base.BaseStep.set_hyperparams)” will allow you to set new hyperparameters in the same format of when you get them.
 - “[get_hyperparams_space](https://www.neuraxio.com/en/neuraxle/stable/api/neuraxle.base.html#neuraxle.base.BaseStep.get_hyperparams_space)” allows you to get the space of hyperparameter, which will be not empty if you defined one. So, the only difference with “get_hyperparams” here is that you’ll get statistic distributions as values instead of a precise value. For instance, one hyperparameter for the number of layers could be a `RandInt(1, 3)` which means 1 to 3 layers. You can call `.rvs()` on this dict to pick a value randomly and send it to “set_hyperparams” to try training on it.
