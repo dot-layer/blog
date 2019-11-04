@@ -78,6 +78,9 @@
             <link rel="stylesheet" href="{{ "css/academicons.min.css" | relURL }}">
         {{ end }}
 
+        {{ $style := resources.Get "sass/main.scss" | toCSS | minify | fingerprint }}
+        <link rel="stylesheet" href="{{ $style.Permalink }}">
+
         {{ if ne ($.Scratch.Get "cssFiles") false }}
             {{ range $.Scratch.Get "cssFiles" }}
                 {{ if ne . "default" }}
