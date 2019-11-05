@@ -174,7 +174,7 @@ enableEmoji   = true
             # These are optional params related to the sidebar. They are recommended, but not
             # required for proper functionality. HTML is supported within the params.
             [Languages.fr.params.intro]
-            header    = ".layer"
+            header    = "img/main/DotLayer_logo_full+tagline_COL_RVB.png"
 
             paragraph = "Rencontrer, Apprendre & Partager."
 

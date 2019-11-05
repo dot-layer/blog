@@ -15,7 +15,7 @@
     {{ end }}
     {{ with .Site.Params.intro }}
       <header>
-        <img src={{ .header }} class="sidebar_logo" />
+        <img src={{ .header | absURL }} class="sidebar_logo" />
       </header>
     {{ end }}
     {{ if .Site.Params.socialAppearAtTop }}
