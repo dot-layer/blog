@@ -22,7 +22,7 @@ enableEmoji   = true
   # Sets the meta tag description
   description          = ".layer community website"
   # Sets the navbarTitle that appears in the top left of the navigation bar
-  navbarTitle          = ".layer"
+  navbarTitle          = ".Layer"
   # Sets where "View More Posts" links
   viewMorePostLink     = "/blog/"
   # Sets default img for thumbnails
@@ -47,8 +47,9 @@ enableEmoji   = true
   # apple-touch-icon-precomposed.png, favicon.png, favicon.ico, and mstile.png.
   # These are stored in the favicon folder. See the following for more information:
   # https://github.com/audreyr/favicon-cheat-sheet
-  loadFavicon          = false
+  loadFavicon          = true
   faviconVersion       = ""
+  faviconPath          = "img/main/dotlayer_favicon.ico"
   # Sets Social Share links to appear on posts
   socialShare          = true
   # Sets specific share to appear on posts (default behavior is to appear)
@@ -103,7 +104,7 @@ enableEmoji   = true
 [Languages]
     [Languages.en]
         LanguageName = "English"
-        title = ".layer"
+        title = ".Layer"
         description = ".layer community website"
         weight = 1
 
@@ -148,7 +149,7 @@ enableEmoji   = true
 
     [Languages.fr]
         LanguageName = "Français"
-        title = ".layer"
+        title = ".Layer"
         description = "Site web de la communauté .layer"
         weight = 2
 
