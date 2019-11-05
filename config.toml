@@ -1,7 +1,7 @@
 baseurl = "https://dotlayer.org/"
 languageCode = "en-us"
 DefaultContentLanguage = "en"
-title = ".layer"
+title = ".Layer"
 theme = "hugo-future-imperfect"
 preserveTaxonomyNames = true
 paginate = 3
@@ -18,9 +18,11 @@ enableEmoji   = true
 [permalinks]
     post = "/:slug/"
 
+
 [params]
-  # Sets the meta tag description
-  description          = ".layer community website"
+  # Sets the meta tag description (duplicated in Languages)
+  description          = ".Layer community website"
+  
   # Sets the navbarTitle that appears in the top left of the navigation bar
   navbarTitle          = ".Layer"
   # Sets where "View More Posts" links
@@ -99,13 +101,28 @@ enableEmoji   = true
 # Sets the number of recent posts to show in the sidebar. The default value is 5.
     sidebar = 0
 
+[params.intro]
+  header    = "img/main/DotLayer_logo_full+tagline_COL_RVB.png"
+  paragraph = ""
+
+  # This appears at the top of the sidebar above params.intro.header.
+  # A width of less than 100px is recommended from a design perspective.
+  [params.intro.pic]
+    # src       = "/img/main/DotLayer_logo_full+tagline_COL_RVB.jpg"
+    # Sets Image to be a cirlce
+    # circle    = false
+    # Sets Image to be Future Imperfect's hexagon
+    # imperfect = false
+    # width     = "250px"
+    # alt       = ".Layer"
+
 # Sets the menu items in the navigation bar
 # Identifier prepends a Font Awesome icon to the menu item
 [Languages]
     [Languages.en]
         LanguageName = "English"
         title = ".Layer"
-        description = ".layer community website"
+        description = ".Layer community website"
         weight = 1
 
             # Sets the menu items in the navigation bar
@@ -132,25 +149,24 @@ enableEmoji   = true
             # These are optional params related to the sidebar. They are recommended, but not
             # required for proper functionality. HTML is supported within the params.
             [Languages.en.params.intro]
+            about     = ".Layer is a data science oriented community created for promoting collaboration and knowledge sharing among its members. In Unix-like operating system, files or folders starting with a dot are treated as hidden, invisible to the passerby. Most people don’t even know their existence and purpose. Much like dot files, data scientists are the hidden layer between a world where people produce data and live the outcomes of many performing algorithms. For those data scientists, now is time to say: Hello World!"
             header    = "img/main/DotLayer_logo_full+tagline_COL_RVB.png"
-
-            about     = ".layer is a data science oriented community created for promoting collaboration and knowledge sharing among its members. In Unix-like operating system, files or folders starting with a dot are treated as hidden, invisible to the passerby. Most people don’t even know their existence and purpose. Much like dot files, data scientists are the hidden layer between a world where people produce data and live the outcomes of many performing algorithms. For those data scientists, now is time to say: Hello World!"
-
+           
             # This appears at the top of the sidebar above params.intro.header.
             # A width of less than 100px is recommended from a design perspective.
-            [Languages.en.params.intro.pic]
+            [Languages.en.params.intro.pic]  # (useless, defined for all languages)
                 # src       = "/img/main/logo.jpg"
                 # Sets Image to be a cirlce
-                circle    = false
+                # circle    = false
                 # Sets Image to be Future Imperfect's hexagon
-                imperfect = true
-                width     = ""
-                alt       = "Hugo Future Imperfect"
+                # imperfect = true
+                # width     = ""
+                # alt       = "Hugo Future Imperfect"
 
     [Languages.fr]
         LanguageName = "Français"
         title = ".Layer"
-        description = "Site web de la communauté .layer"
+        description = "Site web de la communauté .Layer"
         weight = 2
 
             [[Languages.fr.menu.main]]
@@ -174,22 +190,20 @@ enableEmoji   = true
             # These are optional params related to the sidebar. They are recommended, but not
             # required for proper functionality. HTML is supported within the params.
             [Languages.fr.params.intro]
+            # paragraph = "Rencontrer, Apprendre & Partager."
             header    = "img/main/DotLayer_logo_full+tagline_COL_RVB.png"
-
-            paragraph = "Rencontrer, Apprendre & Partager."
-
-            about     = ".layer est une communauté axée sur la science des données créée pour promouvoir la collaboration et le partage des connaissances entre ses membres. Dans les systèmes d'exploitation de type Unix, les fichiers ou les dossiers commençant par un point sont traités comme cachés, invisibles pour les passants. La plupart des gens ne connaissent même pas leur existence et leur but. Tout comme les fichiers de points, les scientifiques de données constituent la couche cachée entre un monde où les utilisateurs produisent des données et vivent les résultats de nombreux algorithmes performants. Pour ces scientifiques de données, le moment est venu de dire: Hello World!"
+            about     = ".Layer est une communauté axée sur la science des données créée pour promouvoir la collaboration et le partage des connaissances entre ses membres. Dans les systèmes d'exploitation de type Unix, les fichiers ou les dossiers commençant par un point sont traités comme cachés, invisibles pour les passants. La plupart des gens ne connaissent même pas leur existence et leur but. Tout comme les fichiers de points, les scientifiques de données constituent la couche cachée entre un monde où les utilisateurs produisent des données et vivent les résultats de nombreux algorithmes performants. Pour ces scientifiques de données, le moment est venu de dire: Hello World!"
 
             # This appears at the top of the sidebar above params.intro.header.
             # A width of less than 100px is recommended from a design perspective.
-            [Languages.fr.params.intro.pic]
+            [Languages.fr.params.intro.pic] # (useless, defined for all languages)
                 # src       = "/img/main/logo.jpg"
                 # Sets Image to be a cirlce
-                circle    = false
+                # circle    = false
                 # Sets Image to be Future Imperfect's hexagon
-                imperfect = true
-                width     = ""
-                alt       = "Hugo Future Imperfect"
+                # imperfect = true
+                # width     = ""
+                # alt       = "Hugo Future Imperfect"
 
 # Sets Social Media icons to appear and link to your account. Value should be your
 # username unless otherwise noted. These are the icons affected by socialAppearAtTop
