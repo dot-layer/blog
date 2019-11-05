@@ -49,8 +49,9 @@ enableEmoji   = true
   # apple-touch-icon-precomposed.png, favicon.png, favicon.ico, and mstile.png.
   # These are stored in the favicon folder. See the following for more information:
   # https://github.com/audreyr/favicon-cheat-sheet
-  loadFavicon          = false
+  loadFavicon          = true
   faviconVersion       = ""
+  faviconPath          = "img/main/dotlayer_favicon.ico"
   # Sets Social Share links to appear on posts
   socialShare          = true
   # Sets specific share to appear on posts (default behavior is to appear)
@@ -120,6 +121,7 @@ enableEmoji   = true
 [Languages]
     [Languages.en]
         LanguageName = "English"
+        title = ".Layer"
         description = ".Layer community website"
         weight = 1
 
@@ -149,7 +151,7 @@ enableEmoji   = true
             [Languages.en.params.intro]
             about     = ".Layer is a data science oriented community created for promoting collaboration and knowledge sharing among its members. In Unix-like operating system, files or folders starting with a dot are treated as hidden, invisible to the passerby. Most people don’t even know their existence and purpose. Much like dot files, data scientists are the hidden layer between a world where people produce data and live the outcomes of many performing algorithms. For those data scientists, now is time to say: Hello World!"
             header    = "img/main/DotLayer_logo_full+tagline_COL_RVB.png"
-            
+           
             # This appears at the top of the sidebar above params.intro.header.
             # A width of less than 100px is recommended from a design perspective.
             [Languages.en.params.intro.pic]  # (useless, defined for all languages)
@@ -163,6 +165,7 @@ enableEmoji   = true
 
     [Languages.fr]
         LanguageName = "Français"
+        title = ".Layer"
         description = "Site web de la communauté .Layer"
         weight = 2
 
