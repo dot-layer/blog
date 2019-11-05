@@ -9,7 +9,7 @@
   {{ $favVer := $.Scratch.Get "favVer" }}
 
   <link rel="apple-touch-icon-precomposed" href='{{ .Site.Params.faviconPath }}'>
-  <link rel="icon" href='{{ .Site.Params.faviconPath }}'>
+  <link rel="icon" href='{{ .Site.Params.faviconPath | absURL }}'>
 
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="msapplication-TileImage" content='{{ .Site.Params.faviconPath }}'>
