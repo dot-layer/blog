@@ -23,7 +23,7 @@
 }
 
 #header .main .lang-switcher > a,
-#header .main .lang-switcher ul li > a {
+#header .main .lang-switcher ul li {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -42,11 +42,24 @@
   width: 50%;
   height: auto;
   opacity: 0.6;
+}
+
+#header .lang-switcher a:not(.active),
+#header .lang-switcher a:not(.active) > * {
   cursor: pointer;
 }
 
-#header .lang-switcher img:hover {
+#header .lang-switcher a:not(.active) img:hover {
   opacity: 0.9;
+}
+
+#header .main .lang-switcher li.no-translation,
+#header .main .lang-switcher li.no-translation > * {
+  cursor: not-allowed;
+}
+
+#header .main .lang-switcher li.no-translation img:hover {
+  opacity: 0.6;
 }
 
 .sidebar_logo {
