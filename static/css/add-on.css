@@ -5,16 +5,42 @@
   within the formating given.
 */
 
-#header .main ul li {
-  border: none;
+#header,
+#header > *:not(h1) {
+  border-bottom: solid 1px rgba(160, 160, 160, 0.3);
 }
 
-#header .lang-switcher a {
-  border-left: solid 1px rgba(160, 160, 160, 0.3);
+#header .links {
+  margin-left: 0;
+}
+
+#header .links i {
+  font-size: 14px;
+}
+
+#header .links i.fa.fa-home {
+  font-size: 16px;
+}
+
+#header .main .lang-switcher > a,
+#header .main .lang-switcher ul li > a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#header .main .lang-switcher ul li {
+  width: calc(100% + 3px);
+  transform: translateX(-1px);
+  border-right: solid 1px rgba(160, 160, 160, 0.3);
+  border-bottom: solid 1px rgba(160, 160, 160, 0.3);
 }
 
 #header .lang-switcher img {
-  padding: 15%;
+  padding: 0;
+  margin: 0;
+  width: 50%;
+  height: auto;
   opacity: 0.6;
   cursor: pointer;
 }
@@ -28,10 +54,18 @@
   height: auto;
 }
 
-#sidebar ul.icons {
+#intro .icons {
   margin-top: 0;
+}
+
+#mini-bio {
+  user-select: none;
 }
 
 .author {
   white-space: normal;
+}
+
+.fa.fa-github {
+  font-size: 20px
 }
