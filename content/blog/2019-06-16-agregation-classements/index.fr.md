@@ -4,6 +4,7 @@ author: Samuel Perreault et Stéphane Caron
 date: '2019-06-16'
 slug: Agrégation simple de classements
 type: post
+categories: ["Analytique"]
 tags:
 - analytique de sports
 description: ""

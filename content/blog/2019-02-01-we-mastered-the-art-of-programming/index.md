@@ -4,6 +4,7 @@ author: Jean-Thomas Baillargeon
 date: '2019-02-01'
 slug: we-mastered-the-art-of-programming
 type: post
+categories: ["Software engineering"]
 tags:
 - software engineering
 - best practices

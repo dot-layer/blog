@@ -4,6 +4,7 @@ author: "Stéphane Caron et Marc-André Bernier"
 date: '2018-12-02'
 slug: hackathon-winners-code
 type: post
+categories: ["Hackathon"]
 tags:
   - interview
   - meetup
