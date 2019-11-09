@@ -9,12 +9,22 @@
   margin-left: 0;
 }
 
-#header .links i {
-  font-size: 14px;
+#menu .links {
+  opacity: 0.65;
 }
 
-#header .links i.fa.fa-home {
-  font-size: 16px;
+#menu .links h3 {
+  font-weight: 400;
+}
+
+#header .links ul li a i.fa,
+#menu .links i.fa {
+  font-size: 1.2em;
+}
+
+#header .links i.fa.fa-home,
+#menu .links i.fa.fa-home {
+  font-size: 1.4em;
 }
 
 #header .main .lang-switcher > a,
