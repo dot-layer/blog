@@ -5,6 +5,10 @@
   within the formating given.
 */
 
+body.is-menu-visible {
+  overflow: hidden;
+}
+
 #header .links {
   margin-left: 0;
 }
