@@ -76,33 +76,28 @@
   {{ if .Site.Params.showSidebarCategories  }}
   {{ if ne ($.Scratch.Get "showCategories") false }}
   <!-- Categories List -->
-    <section id="categories">
-      <header>
-        <h3>
-          <a href="/{{ .Site.Language.Lang }}/categories/">{{ i18n "categories" }}</a>
-        </h3>
-      </header>
-        {{ if .Site.Params.categoriesByCount }}
-          {{ $.Scratch.Set "categories" .Site.Taxonomies.categories.ByCount }}
-        {{ else }}
-          {{ $.Scratch.Set "categories" .Site.Taxonomies.categories.Alphabetical }}
-        {{ end }}
+  <section id="categories">
+    <header>
+      <h3>{{ i18n "categories" }}</h3>
+    </header>
+      {{ if .Site.Params.categoriesByCount }}
+        {{ $.Scratch.Set "categories" .Site.Taxonomies.categories.ByCount }}
+      {{ else }}
+        {{ $.Scratch.Set "categories" .Site.Taxonomies.categories.Alphabetical }}
+      {{ end }}
 
-        {{ range $key, $value := $.Scratch.Get "categories" }}
-        <p>
-          <article>
-            <header>
-              {{ if ne $value.Name "" }}
-                <a href="{{ printf "%s/%s" "categories" $value.Name | urlize | relLangURL }}/">{{ $value.Name | humanize }}</a>
-                <span style="float:right;">{{ $value.Count }}</span>
-              {{ else }}
-                {{ i18n "uncategorized" }}
-                <span style="float:right;">{{ $value.Count }}</span>
-              {{ end }}
-            </header>
-          </article>
-        </p>
-        {{ end }}
+      {{ range $key, $value := $.Scratch.Get "categories" }}
+        <article class="category_container">
+          {{ if ne $value.Name "" }}
+            <a href="{{ printf "%s/%s" "categories" $value.Name | urlize | relLangURL }}/">
+              <span class="category_item">{{ $value.Name | humanize }}</span>
+            </a>
+            <a href="{{ printf "%s/%s" "categories" $value.Name | urlize | relLangURL }}/">
+              <span style="float:right;" class="category_count">{{ $value.Count }}</span>
+            </a>
+          {{ end }}
+        </article>
+      {{ end }}
     </section>
   {{ end }}
   {{ end }}
