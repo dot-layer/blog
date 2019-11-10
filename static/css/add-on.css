@@ -90,7 +90,8 @@ body.is-menu-visible {
 }
 
 #categories .category_item,
-#categories .category_count {
+#categories .category_count,
+.stats .post_category_item {
   font-size: 0.9em;
 }
 
@@ -100,6 +101,11 @@ body.is-menu-visible {
   width: 25px;
   height: 25px;
   text-align: center;
+}
+
+.stats .post_category {
+  font-size: 0.7em;
+  margin-bottom: 0;
 }
 
 .author {
