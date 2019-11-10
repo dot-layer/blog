@@ -145,6 +145,12 @@ enableEmoji   = true
                 url = "/contact/"
                 identifier = "fa fa-envelope-o"
                 weight = 3
+
+            [[Languages.en.menu.main]]
+                name = "Bookshelf"
+                url = "/bookshelf/"
+                identifier = "fa fa-book"
+                weight = 4
             
             # These are optional params related to the sidebar. They are recommended, but not
             # required for proper functionality. HTML is supported within the params.
@@ -186,6 +192,12 @@ enableEmoji   = true
                 url = "/contact/"
                 identifier = "fa fa-envelope-o"
                 weight = 3
+
+            [[Languages.fr.menu.main]]
+                name = "Étagere à livres"
+                url = "/bookshelf/"
+                identifier = "fa fa-book"
+                weight = 4
 
             # These are optional params related to the sidebar. They are recommended, but not
             # required for proper functionality. HTML is supported within the params.
