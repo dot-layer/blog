@@ -4,6 +4,7 @@ author: "Laurent Caron et Marc-André Bernier"
 date: '2018-11-28'
 slug: hackathon-winners-presentation
 type: post
+categories: ["Hackathon"]
 tags:
   - interview
   - meetup

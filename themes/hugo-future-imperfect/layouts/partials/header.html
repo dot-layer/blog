@@ -77,8 +77,8 @@
             <link rel="stylesheet" href="{{ "css/add-on.css" | relURL }}">
             <link rel="stylesheet" href="{{ "css/academicons.min.css" | relURL }}">
         {{ end }}
-
-        <link rel="icon" href="img/main/dotlayer_favicon.ico">
+        
+        <link rel="icon" href="{{ .Site.Params.faviconPath | absURL }}">
 
         {{ if ne ($.Scratch.Get "cssFiles") false }}
             {{ range $.Scratch.Get "cssFiles" }}

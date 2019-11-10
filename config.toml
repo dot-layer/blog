@@ -137,7 +137,7 @@ enableEmoji   = true
             [[Languages.en.menu.main]]
                 name = "About"
                 url = "/about/"
-                identifier = "fa fa-id-card-o"
+                identifier = "fa fa-info"
                 weight = 2
 
             [[Languages.en.menu.main]]
@@ -178,7 +178,7 @@ enableEmoji   = true
             [[Languages.fr.menu.main]]
                 name = "À propos"
                 url = "/about/"
-                identifier = "fa fa-id-card-o"
+                identifier = "fa fa-info"
                 weight = 2
 
             [[Languages.fr.menu.main]]
