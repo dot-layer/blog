@@ -4,6 +4,7 @@ author: Jean-Thomas Baillargeon
 date: '2019-02-01'
 slug: on-a-maitrise-lart-de-la-programmation
 type: post
+categories: ["Ingénierie logicielle"]
 tags:
 - ingénierie logicielle
 - bonnes pratiques

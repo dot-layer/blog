@@ -15,8 +15,7 @@
     {{ end }}
     {{ with .Site.Params.intro }}
       <header>
-        <h2>{{ .header }}</h2>
-        <p>{{ .paragraph | safeHTML }}</p>
+        <img src={{ .header | absURL }} class="sidebar_logo" />
       </header>
     {{ end }}
     {{ if .Site.Params.socialAppearAtTop }}
@@ -94,7 +93,7 @@
           <article>
             <header>
               {{ if ne $value.Name "" }}
-                <a href="{{ printf "%s/%s" "categories" $value.Name | urlize | relLangURL }}/">{{ $value.Name }}</a>
+                <a href="{{ printf "%s/%s" "categories" $value.Name | urlize | relLangURL }}/">{{ $value.Name | humanize }}</a>
                 <span style="float:right;">{{ $value.Count }}</span>
               {{ else }}
                 {{ i18n "uncategorized" }}

@@ -15,7 +15,6 @@
         {{ if not (eq .Lang $.Site.Language.Lang) }}
         <li><a href="/{{ .Lang }}" lang="{{ .Lang }}" class="no-translation">
             <img src="/flags/{{ .Lang }}.png" alt="{{ .Lang }}">
-            <img alt="fr" src="/flags/Flag_NoTr.png" style="position: relative;top: -100%;width: 100%;padding: 0;margin: auto;">
         </a></li>
         {{ end }}
     {{ end }}
@@ -37,10 +36,9 @@
     {{ else }}
       {{ range .Site.Languages }}
         {{ if not (eq .Lang $.Site.Language.Lang) }}
-        <li><a href="" lang="{{ .Lang }}" class="no-translation">
+        <li class="no-translation">
             <img src="/flags/{{ .Lang }}.png" alt="{{ .Lang }}">
-            <img alt="fr" src="/flags/Flag_NoTr.png" style="position: relative;top: -100%;width: 100%;padding: 0;margin: auto;">
-        </a></li>
+        </li>
         {{ end }}
     {{ end }}
   {{ end }}  

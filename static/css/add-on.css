@@ -4,3 +4,91 @@
   is an official part of the theme (ex. Pull Requests) should be included in main.css
   within the formating given.
 */
+
+body.is-menu-visible {
+  overflow: hidden;
+}
+
+#header .links {
+  margin-left: 0;
+}
+
+#menu .links {
+  opacity: 0.65;
+}
+
+#menu .links h3 {
+  font-weight: 400;
+}
+
+#header .links ul li a i.fa,
+#menu .links i.fa {
+  font-size: 1.2em;
+}
+
+#header .links i.fa.fa-home,
+#menu .links i.fa.fa-home {
+  font-size: 1.4em;
+}
+
+#header .main .lang-switcher > a,
+#header .main .lang-switcher ul li,
+#header .main .lang-switcher ul li > a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#header .main .lang-switcher ul li {
+  width: calc(100% + 3px);
+  transform: translateX(-1px);
+  border-right: solid 1px rgba(160, 160, 160, 0.3);
+  border-bottom: solid 1px rgba(160, 160, 160, 0.3);
+}
+
+#header .lang-switcher img {
+  padding: 0;
+  margin: 0;
+  width: 50%;
+  height: auto;
+  opacity: 0.6;
+}
+
+#header .lang-switcher a:not(.active),
+#header .lang-switcher a:not(.active) > * {
+  cursor: pointer;
+}
+
+#header .lang-switcher a:not(.active) img:hover {
+  opacity: 0.9;
+}
+
+#header .main .lang-switcher li.no-translation,
+#header .main .lang-switcher li.no-translation > * {
+  cursor: not-allowed;
+}
+
+#header .main .lang-switcher li.no-translation img:hover {
+  opacity: 0.6;
+}
+
+.sidebar_logo {
+  width: 80%;
+  height: auto;
+}
+
+#intro .icons {
+  margin-top: 0;
+}
+
+#mini-bio {
+  user-select: none;
+}
+
+.author {
+  white-space: normal;
+}
+
+.fa.fa-github {
+  font-size: 20px
+}
