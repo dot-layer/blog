@@ -6,9 +6,7 @@ description: "A simple explanation of Stein's paradox through the famous basebal
 date: '2019-01-05'
 categories: ["Statistics"]
 type: post
-tags: 
-  - estimation
-  - paradox
+tags: ["estimation", "paradox"]
 featured: "stein-baseball.jpg"
 featuredpath: "img/headers/"
 ---

@@ -5,8 +5,7 @@ date: '2018-09-16'
 slug: our-day-at-otthac18
 type: post
 categories: ["Analytics"]
-tags:
-  - hockey analytics
+tags: ["hockey analytics"]
 description: ""
 featured: "otthac18-cover.png"
 featuredpath: "img/headers/"

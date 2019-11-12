@@ -5,10 +5,7 @@ date: '2018-11-28'
 slug: hackathon-winners-presentation
 type: post
 categories: ["Hackathon"]
-tags:
-  - interview
-  - meetup
-  - hackathon
+tags: ["interview", "meetup", "hackathon"]
 description: "Meetup ML Québec | Prix Martin Luther King Jr."
 featured: "hackathon-presentation-cover.png"
 featuredpath: "img/headers/"

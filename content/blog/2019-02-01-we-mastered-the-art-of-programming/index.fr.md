@@ -5,9 +5,7 @@ date: '2019-02-01'
 slug: on-a-maitrise-lart-de-la-programmation
 type: post
 categories: ["Ingénierie logicielle"]
-tags:
-- ingénierie logicielle
-- bonnes pratiques
+tags: ["ingénierie logicielle", "bonnes pratiques"]
 description: ""
 featured: "we-mastered-the-art-of-programming-cover.jpeg"
 featuredpath: "img/headers/"

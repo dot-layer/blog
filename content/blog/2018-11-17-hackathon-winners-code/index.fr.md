@@ -5,10 +5,7 @@ date: '2018-12-02'
 slug: hackathon-winners-code
 type: post
 categories: ["Hackathon"]
-tags:
-  - interview
-  - meetup
-  - hackathon
+tags: ["interview", "meetup", "hackathon"]
 description: "Meetup ML Québec | Prix Linus Torvalds"
 featured: "hackathon-code-cover.JPG"
 featuredpath: "img/headers/"
