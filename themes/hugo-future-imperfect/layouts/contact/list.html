@@ -24,7 +24,7 @@
       {{ if .Params.netlify }}
         <form name="contact" action="thank-you" netlify>
       {{ else }}
-        <form id="contact" action="//{{ .Params.emailservice }}" method="post">
+        <form id="contact" action="{{ .Params.emailservice }}" method="post">
         {{ end }}
           <h4 class="contact_replytxt">{{ i18n "repliestext" }}.</h4>
           <input 

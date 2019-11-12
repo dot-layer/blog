@@ -2,7 +2,7 @@
 title = "Get in touch!"
 type = "contact"
 netlify = false
-emailservice = "formspree.io/info@dotlayer.com"
+emailservice = "https://formspree.io/mknnbvlp"
 contactname = "Name"
 contactemail = "Recipient's Email Address"
 contactlang = "EN"
