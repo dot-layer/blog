@@ -31,6 +31,10 @@ body.is-menu-visible {
   font-size: 1.4em;
 }
 
+.fa.fa-github {
+  font-size: 20px
+}
+
 #header .main .lang-switcher {
   color: rgba(51, 51, 51, 0.4);
 }
@@ -106,15 +110,35 @@ body.is-menu-visible {
   transform: translateY(3px);
 }
 
+.author {
+  white-space: normal;
+}
+
+.stats {
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-top: 2em;
+}
+
 .stats .post_category {
   font-size: 0.7em;
   margin-bottom: 0;
 }
 
-.author {
-  white-space: normal;
+.stats .post_tag_item {
+  font-size: 0.9em;
+  border: solid 1px #2ebaae;
+  color: #2ebaae;
+  border-radius: 1em;
+  padding: 2px 10px;
 }
 
-.fa.fa-github {
-  font-size: 20px
+.stats .tag_container {
+  display: flex;
+}
+
+.post > footer .stats .tag_container li {
+  margin-left: 0.5em;
 }
