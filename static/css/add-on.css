@@ -139,6 +139,10 @@ body.is-menu-visible {
   display: flex;
 }
 
+.post > footer .stats .category_container li {
+  text-align: start;
+}
+
 .post > footer .stats .tag_container li {
   margin-left: 0.5em;
 }
