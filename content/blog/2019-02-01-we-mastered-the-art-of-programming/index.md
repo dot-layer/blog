@@ -5,7 +5,7 @@ date: '2019-02-01'
 slug: we-mastered-the-art-of-programming
 type: post
 categories: ["Software engineering"]
-tags: ["software engineering", "best practices"]
+tags: ["Software Engineering", "Best Practices"]
 description: ""
 featured: "we-mastered-the-art-of-programming-cover.jpeg"
 featuredpath: "img/headers/"

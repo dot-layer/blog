@@ -8,7 +8,7 @@ categories: ["R"]
 type: post
 featured: "ggplot-cover.jpg"
 featuredpath: "img/headers/"
-tags: ["vizualisation", "plot", "ggplot2"]
+tags: ["Vizualisation", "Plot", "Ggplot2"]
 output:
   html_document:
     keep_md: true
