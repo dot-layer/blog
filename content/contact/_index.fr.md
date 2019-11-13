@@ -4,8 +4,8 @@ type = "contact"
 netlify = false
 emailservice = "https://formspree.io/mknnbvlp"
 contactname = "Nom"
-contactemail = "Adresse email du destinataire"
+contactemail = "Adresse courriel du destinataire"
 contactlang = "FR"
 contactmessage = "Message"
-contactsubject = "Sujet du email"
+contactsubject = "Sujet du courriel"
 +++
