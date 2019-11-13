@@ -127,16 +127,23 @@ body.is-menu-visible {
   margin-bottom: 0;
 }
 
+.stats .tag_container {
+  display: flex;
+}
+
+@media screen and (max-width: 400px) {
+  .stats .tag_container {
+    flex-direction: column;
+  }
+}
+
 .stats .post_tag_item {
   font-size: 0.9em;
   border: solid 1px #2ebaae;
   color: #2ebaae;
   border-radius: 1em;
   padding: 2px 10px;
-}
-
-.stats .tag_container {
-  display: flex;
+  white-space: pre;
 }
 
 .post > footer .stats .category_container li {
