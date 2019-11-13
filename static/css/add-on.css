@@ -201,6 +201,14 @@ h1, h2, h3, h4, h5, h6 {
   float: right;
 }
 
+@media screen and (max-width: 768px) {
+  #contact input.contact_input.name,
+  #contact input.contact_input.email {
+    width: 100%;
+    float: none;
+  }
+}
+
 #contact textarea.contact_input.message {
   min-height: 15em;
   font-size: 0.9em;
