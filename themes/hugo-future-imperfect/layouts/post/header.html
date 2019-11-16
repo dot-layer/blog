@@ -11,9 +11,15 @@
         {{ end }}
     </div>
     <div class="meta">
-        <time class="published"
-            datetime='{{ .Date }}'>
-            {{ default (i18n "date_format") | .Date.Format }}</time>
+        {{ if $.Page.Params.dateFr }}
+            <time class="published" datetime='{{ .Date }}'>
+                {{ $.Page.Params.dateFr }}
+            </time>
+        {{ else }}
+            <time class="published" datetime='{{ .Date }}'>
+                {{ dateFormat "January 2, 2006" .Date }}
+            </time>
+        {{ end }}
         <span class="author">{{ .Params.author | safeHTML }}</span>
         {{ if .Site.Params.includeReadingTime }}
             <p>{{ .ReadingTime }} {{ i18n "postreadingtime" }}</p>

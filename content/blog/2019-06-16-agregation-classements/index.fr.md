@@ -1,6 +1,7 @@
 ---
 title: Agrégation simple de classements
 author: Samuel Perreault et Stéphane Caron
+dateFr: "16 Juin 2019"
 date: '2019-06-16'
 slug: Agrégation simple de classements
 type: post
