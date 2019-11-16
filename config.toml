@@ -51,7 +51,7 @@ enableEmoji   = true
   # https://github.com/audreyr/favicon-cheat-sheet
   loadFavicon          = true
   faviconVersion       = ""
-  faviconPath          = "img/main/dotlayer_favicon_grey.ico"
+  faviconPath          = "img/main/grey_favicon.ico"
   # Sets Social Share links to appear on posts
   socialShare          = true
   # Sets specific share to appear on posts (default behavior is to appear)
