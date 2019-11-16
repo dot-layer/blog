@@ -1,7 +1,7 @@
 ---
 title: On a maîtrisé l'art de la programmation
 author: Jean-Thomas Baillargeon
-dateFr: "1 Février 2019"
+dateFr: "1 Février, 2019"
 date: '2019-02-01'
 slug: on-a-maitrise-lart-de-la-programmation
 type: post
