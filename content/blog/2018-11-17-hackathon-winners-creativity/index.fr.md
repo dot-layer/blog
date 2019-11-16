@@ -1,8 +1,8 @@
 ---
 title: Entrevue avec les gagnants
 author: Laurent Caron et Marc-André Bernier
-dateFr: "2 Décembre, 2018"
-date: '2018-12-02'
+dateFr: "8 Décembre, 2018"
+date: '2018-12-08'
 slug: hackathon-winners-creativity
 type: post
 categories: ["Hackathon"]
