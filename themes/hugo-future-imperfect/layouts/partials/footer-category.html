@@ -1,45 +1,53 @@
 <ul class="stats">
-    {{ if isset .Params "categories" }}
-        {{ $categoryCount := (len .Params.categories) }}
+  {{ if isset .Params "categories" }}
+    {{ $categoryCount := (len .Params.categories) }}
 
-        <!--
-            Set the title before displaying the categories associated with this post.
-            The title will use the variables from the Categories menu set in the Config.
-            If the Categories menu was not set then use the default values instead.
-        -->
-        {{ if ge $categoryCount 1 }}
-            <li>
-                {{ $categoryMenu := (where .Site.Menus.main "Name" "Categories") }}
+		<!--
+				Set the title before displaying the categories associated with this post.
+				The title will use the variables from the Categories menu set in the Config.
+				If the Categories menu was not set then use the default values instead.
+		-->
 
-                {{ if ne (len $categoryMenu) 0 }}
-                    {{ $categoryMenu := index $categoryMenu 0 }}
-
-                    {{ $.Scratch.Set "categoryUrl" $categoryMenu.URL }}
-
-                    {{ if gt $categoryCount 1 }}
-                        {{ $categoryMenu.Name }}
-                    {{ else }}
-                        {{ $categoryMenu.Name | singularize }}
-                    {{ end }}
-                {{ else }}
-                    {{ $.Scratch.Set "categoryUrl" "/categories/" }}
-
-                    {{ if gt $categoryCount 1 }}
-                        <h1 class="post_category">{{ i18n "categories" }}</h1>
-                    {{ else }}
-                        <h1 class="post_category">{{ i18n "category" }}</h1>
-                    {{ end }}
-                {{ end }}
-            </li>
-        {{ end }}
-    {{ end }}
-
-    <!-- Display the categories associated with this post -->
-    {{ range .Params.categories }}
+    <section class="category_container">
+      {{ if ge $categoryCount 1 }}
         <li>
-            <a href='{{ add ($.Scratch.Get "categoryUrl") . | urlize | relLangURL }}' lang="{{ $.Lang }}">
-                <span class="post_category_item">{{ . }}</span>
-            </a>
+          {{ $categoryMenu := (where .Site.Menus.main "Name" "Categories") }}
+            {{ if ne (len $categoryMenu) 0 }}
+              {{ $categoryMenu := index $categoryMenu 0 }}
+              {{ $.Scratch.Set "categoryUrl" $categoryMenu.URL }}
+              {{ if gt $categoryCount 1 }}
+                  {{ $categoryMenu.Name }}
+              {{ else }}
+                  {{ $categoryMenu.Name | singularize }}
+              {{ end }}
+            {{ else }}
+              {{ $.Scratch.Set "categoryUrl" "/categories/" }}
+              {{ if gt $categoryCount 1 }}
+                  <h1 class="post_category">{{ i18n "categories" }}</h1>
+              {{ else }}
+                  <h1 class="post_category">{{ i18n "category" }}</h1>
+              {{ end }}
+            {{ end }}
         </li>
-    {{ end }}
+        {{ end }}
+      {{ end }}
+  
+      <!-- Display the categories associated with this post -->
+      {{ range .Params.categories }}
+        <li>
+          <a href='{{ add ($.Scratch.Get "categoryUrl") . | urlize | relLangURL }}' lang="{{ $.Lang }}">
+            <span class="post_category_item">{{ . }}</span>
+          </a>
+        </li>
+      {{ end }}
+    </section>
+
+    <!-- Display the tags associated with this post -->
+    <section class="tag_container">
+      {{ range .Params.tags }}
+        <li>
+          <span class="post_tag_item">{{ . }}</span>
+        </li>
+      {{ end }}
+    </section>
 </ul>
