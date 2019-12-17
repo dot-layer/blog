@@ -17,7 +17,6 @@ date = "2019-12-17"
 **Petite histoire :** 
 
 À l'été 2018, une quinzaine de personnes, des amis d'amis passionés de *machine learning* se réunissaient dans un chalet de Charlevoix.
-
 L'objectif était de se doter d'une plateforme pour favoriser la collaboration entre différents acteurs dans le milieu (à Québec).
 Un malheureux accident de moustiquaire plus tard (comme on en voit trop souvent), .Layer avait son nom et un projet collaboratif pour favoriser les projets collaboratifs naissait.
 On parlait déjà de créer un organisme sans but lucratif (OSBL) pour assurer la gestion de nos activités.
