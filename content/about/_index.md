@@ -5,16 +5,16 @@ date = "2019-12-17"
 
 .Layer (dot-layer) is an open community dedicated to promoting collaboration and knowledge sharing in data science.
 
-**Why .Layer ?** In Unix operating systems, files beggining with a dot are invisible to the user. Many ignore their purpose, even their existence. In this world where data are queens, *data scientists* form this hidden layer, invisible to the public. It is now time we say `Hello, World!`
+**Why .Layer?** In Unix operating systems, files beggining with a dot are invisible to the user. Many ignore their purpose, even their existence. In this world where data are queens, *data scientists* form this hidden layer, invisible to the public. It is now time we say `Hello, World!`
 
-**Implication :** Concretely, we work together for
+**Implication:** Concretely, we work together for
 
   - organizing educational events promoting the sharing of knowledge in data science
   - promoting ethical uses of data
   - encouraging the creation of collaborative projects
   - assisting in the development and proper functioning of projects aiming to disseminate/vulgarize concepts related to data science.
   
-**Petite histoire :** 
+**Our story:** 
 
 During the summer of 2018, around fifteen people, friends of friends passionate about *machine learning* gathered in a chalet in Charlevoix.
 The objective was to create a platform to promote collaboration between the various actors in the field (in Quebec City).
