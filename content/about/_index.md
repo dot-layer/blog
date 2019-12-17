@@ -12,7 +12,7 @@ date = "2019-12-17"
   - organizing educational events promoting the sharing of knowledge in data science
   - promoting ethical uses of data
   - encouraging the creation of collaborative projects
-  - assisting in the development and proper functioning of projects aiming to disseminate/vulgarize concepts related to data science.
+  - assisting in the development and proper functioning of projects aiming to disseminate/explain concepts related to data science.
   
 **Our story:** 
 
@@ -22,6 +22,6 @@ An unfortunate patio screen accident later (as we see too often), .Layer had his
 We were already talking about creating a non-profit organization (NPO) to manage our activities.
 
 2019 marked the "official" birth of the NPO with a first board of directors and the creation of different committees.
-At the time of the second edition of the legendary "chalet", a [blog](dotlayer.org) was operational, [Meeting Machine Learning Québec](https://www.facebook.com/MeetupMLQuebec/) (conferences, workshops, hackothon) was already an integral part of the ecosystem and the first episodes of the [OpenLayer podcast](https://www.youtube.com/channel/UCB3tYpZ1ojiqAroyDN05Cyw) had just been broadcast. The rest of the story is to be written. We are waiting for you, don't hesitate to contact us if you want to get involved!
+At the time of the second edition of the legendary "chalet", a [blog](dotlayer.org) was operational, [Meetup Machine Learning Québec](https://www.facebook.com/MeetupMLQuebec/) (conferences, workshops, hackothon) was already an integral part of the ecosystem and the first episodes of the [OpenLayer podcast](https://www.youtube.com/channel/UCB3tYpZ1ojiqAroyDN05Cyw) had just been broadcast. The rest of the story is to be written. We are waiting for you, don't hesitate to contact us if you want to get involved!
 
 To follow what's up with .Layer ---> [facebook](https://www.facebook.com/groups/dotlayer/).
