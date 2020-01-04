@@ -49,7 +49,7 @@
               </h3>
               {{ $.Scratch.Set "dateType" .Date }}
               <time class="published" datetime='{{ .Date }}'>
-              {{ default (i18n "date_format") | .Date.Format }}</time>
+                {{ dateFormat "January 2, 2006" .Date }}</time>
             </header>
             {{ .Render "featured" }}
           </article>
