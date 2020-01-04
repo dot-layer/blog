@@ -5,8 +5,7 @@ date: '2019-06-16'
 slug: Agrégation simple de classements
 type: post
 categories: ["Analytique"]
-tags:
-- analytique de sports
+tags: ["Analytique de sports"]
 description: ""
 featured: "agregation-cover.png"
 featuredpath: "img/headers/"

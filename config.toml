@@ -155,7 +155,7 @@ enableEmoji   = true
             # These are optional params related to the sidebar. They are recommended, but not
             # required for proper functionality. HTML is supported within the params.
             [Languages.en.params.intro]
-            about     = ".Layer is a data science oriented community created for promoting collaboration and knowledge sharing among its members. In Unix-like operating system, files or folders starting with a dot are treated as hidden, invisible to the passerby. Most people don’t even know their existence and purpose. Much like dot files, data scientists are the hidden layer between a world where people produce data and live the outcomes of many performing algorithms. For those data scientists, now is time to say: Hello World!"
+            about     = ".Layer (dot-layer) is an open community dedicated to promoting collaboration and knowledge sharing in data science. In Unix operating systems, files beggining with a dot are invisible to the user. Many ignore their purpose, even their existence. In this world where data are queens, *data scientists* form this hidden layer, invisible to the public. It is now time we say Hello, World!"
             header    = "img/main/DotLayer_logo_full+tagline_COL_RVB.png"
            
             # This appears at the top of the sidebar above params.intro.header.
@@ -204,7 +204,7 @@ enableEmoji   = true
             [Languages.fr.params.intro]
             # paragraph = "Rencontrer, Apprendre & Partager."
             header    = "img/main/DotLayer_logo_full+tagline_COL_RVB.png"
-            about     = ".Layer est une communauté axée sur la science des données créée pour promouvoir la collaboration et le partage des connaissances entre ses membres. Dans les systèmes d'exploitation de type Unix, les fichiers ou les dossiers commençant par un point sont traités comme cachés, invisibles pour les passants. La plupart des gens ne connaissent même pas leur existence et leur but. Tout comme les fichiers de points, les scientifiques de données constituent la couche cachée entre un monde où les utilisateurs produisent des données et vivent les résultats de nombreux algorithmes performants. Pour ces scientifiques de données, le moment est venu de dire: Hello World!"
+            about     = ".Layer (dot-layer) est une communauté ouverte dédiée à la promotion de la collaboration et le partage de connaissances en science des données. Dans les systèmes d'exploitation Unix, les fichiers et répertoires commençant par un point sont invisibles pour l'utilisateur. Plusieurs ignorent leur rôle et même leur existence. En ce monde où les données sont reines, les *data scientists* forment cette couche cachée, invisible du grand public. Il est maintenant temps que nous disions Hello, World!"
 
             # This appears at the top of the sidebar above params.intro.header.
             # A width of less than 100px is recommended from a design perspective.
