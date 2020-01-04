@@ -11,9 +11,12 @@
         {{ end }}
     </div>
     <div class="meta">
-        {{ if $.Page.Params.dateFr }}
+        {{if eq .Site.Language.Lang "fr"}}
+            {{ $monthFr := index $.Site.Data.mois.mois }}
             <time class="published" datetime='{{ .Date }}'>
-                {{ $.Page.Params.dateFr }}
+                {{ .Date.Day }}
+                {{ index $monthFr (printf "%d" .Date.Month) }}
+                {{ .Date.Year }}
             </time>
         {{ else }}
             <time class="published" datetime='{{ .Date }}'>

@@ -92,10 +92,12 @@
                         <article class="mini-post">
                             <header>
                                 <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-                                {{ $.Scratch.Set "dateType" .Date }}
-                                {{ if .Params.dateFr }}
+                                {{if eq .Site.Language.Lang "fr"}}
+                                    {{ $monthFr := index $.Site.Data.mois.mois }}
                                     <time class="published" datetime='{{ .Date }}'>
-                                        {{ .Params.dateFr }}
+                                        {{ .Date.Day }}
+                                        {{ index $monthFr (printf "%d" .Date.Month) }}
+                                        {{ .Date.Year }}
                                     </time>
                                 {{ else }}
                                     <time class="published" datetime='{{ .Date }}'>
