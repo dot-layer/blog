@@ -11,6 +11,8 @@
   other = "about"
 [blog]
   other = "Blog"
+[bookshelf]
+  other = "Books"
 [categories]
   other = "Categories"
 [category]

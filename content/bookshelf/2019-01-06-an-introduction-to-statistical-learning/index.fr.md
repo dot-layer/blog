@@ -4,7 +4,6 @@ slug: islr
 author: "Christopher Blier-Wong"
 description: "Gareth James, Daniela Witten, Trevor Hastie and Robert Tibshirani"
 date: '2019-01-06'
-categories: ["Book Review"]
 type: "book review"
 tags: 
 - Machine Learning
