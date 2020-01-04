@@ -138,9 +138,44 @@ h1, h2, h3, h4, h5, h6 {
   white-space: normal;
 }
 
+.stats {
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-top: 2em;
+}
+
 .stats .post_category {
   font-size: 0.7em;
   margin-bottom: 0;
+}
+
+.stats .tag_container {
+  display: flex;
+}
+
+@media screen and (max-width: 400px) {
+  .stats .tag_container {
+    flex-direction: column;
+  }
+}
+
+.stats .post_tag_item {
+  font-size: 0.9em;
+  border: solid 1px #282727;
+  color: #282727;
+  border-radius: 1em;
+  padding: 2px 10px;
+  white-space: pre;
+}
+
+.post > footer .stats .category_container li {
+  text-align: start;
+}
+
+.post > footer .stats .tag_container li {
+  margin-left: 0.5em;
 }
 
 /* ------- */
@@ -164,6 +199,14 @@ h1, h2, h3, h4, h5, h6 {
 #contact input.contact_input.email {
   width: 50%;
   float: right;
+}
+
+@media screen and (max-width: 768px) {
+  #contact input.contact_input.name,
+  #contact input.contact_input.email {
+    width: 100%;
+    float: none;
+  }
 }
 
 #contact textarea.contact_input.message {

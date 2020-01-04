@@ -6,10 +6,7 @@ date: '2018-12-08'
 slug: hackathon-winners-creativity
 type: post
 categories: ["Hackathon"]
-tags:
-  - interview
-  - meetup
-  - hackathon
+tags: ["Interview", "Meetup", "Hackathon"]
 description: "Meetup ML Québec | Prix Leonardo da Vinci"
 featured: "hackathon-creativity-cover.JPG"
 featuredpath: "img/headers/"
