@@ -11,6 +11,8 @@
   other = "about"
 [blog]
   other = "Blog"
+[bookshelf]
+  other = ".Books"
 [categories]
   other = "Categories"
 [category]
@@ -19,6 +21,8 @@
   other = "Contact"
 [hours]
   other = "hours"
+[in_construction]
+  other = "In construction"
 [learn_more]
   other = "learn more"
 [next_page]
