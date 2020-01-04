@@ -92,10 +92,18 @@
                         <article class="mini-post">
                             <header>
                                 <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-                                {{ $.Scratch.Set "dateType" .Date }}
-                                <time class="published" datetime=
-                                    '{{ ($.Scratch.Get "dateType").Format "2006-01-02" }}'>
-                                    {{ default (i18n "date_format") | .Date.Format }}</time>
+                                {{if eq .Site.Language.Lang "fr"}}
+                                    {{ $monthFr := index $.Site.Data.mois.mois }}
+                                    <time class="published" datetime='{{ .Date }}'>
+                                        {{ .Date.Day }}
+                                        {{ index $monthFr (printf "%d" .Date.Month) }}
+                                        {{ .Date.Year }}
+                                    </time>
+                                {{ else }}
+                                    <time class="published" datetime='{{ .Date }}'>
+                                        {{ dateFormat "January 2, 2006" .Date }}
+                                    </time>
+                                {{ end }}
                             </header>
                             {{ .Render "featured" }}
                         </article>
@@ -112,13 +120,4 @@
                 {{ end }}
             </div>
         </section>
-
-    <!-- Actions -->
-        <!--
-        <section>
-            <ul class="actions vertical">
-                <li><a href="#" class="button big fit">Log In</a></li>
-            </ul>
-        </section>
-        -->
 </section>
