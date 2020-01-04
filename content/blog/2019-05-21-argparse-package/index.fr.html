@@ -1,7 +1,7 @@
 ---
 title: "argparse: un outil méconnu"
 author: "Stéphane Caron"
-date: '2019-11-11'
+date: '2020-01-03'
 slug: optparse-package
 categories: ["R"]
 type: post
@@ -13,7 +13,7 @@ featuredpath: "img/headers/"
 
 
 
-<p>Dans les derniers mois, j’ai été confronté à 2 défis qui m’ont éventuellement permis de découvrir un <em>package</em> R et une manière de programmer qui m’étaient auparavant inconnus. Dans un premier temps, je devais intégrer l’appel de programmes R à l’intérieur d’un <em>shell script</em> (un fichier avec l’extension <code>.sh</code>) dans lequel je devais passer différents arguments qui allaient être utilisés par le programme. Dans un deuxième temps, je devais lancer un programme R, avec différents paramètres, à l’aide d’une instance <em>Amazon Web Services (AWS)</em>, pour laquelle je n’avais pas d’interface graphique. Dans les deux cas, je devais faire l’appel d’un programme R à partir de la ligne de commande, ce qui est d’ailleurs possible avec la commande <code>Rscript</code>. Par contre, je devais également passer des arguments à ce programme lors de l’appel à la ligne de commande. C’est à ce moment que j’ai fais la découverte du package <a href="https://cran.r-project.org/web/packages/argparse/index.html">argparse</a>, un outil méconnu par plusieurs et qui offre des fonctionnalités intéressantes.</p>
+<p>Dans les derniers mois, j’ai été confronté à 2 défis qui m’ont éventuellement permis de découvrir un <em>package</em> R et une manière de programmer qui m’étaient auparavant inconnus. Dans un premier temps, je devais intégrer l’appel de programmes R à l’intérieur d’un fichier de ligne de commande ou un <em>shell script</em> (un fichier avec l’extension <code>.sh</code>) dans lequel je devais passer différents arguments qui allaient être utilisés par le programme. Dans un deuxième temps, je devais lancer un programme R, avec différents paramètres, à l’aide d’une instance <em>Amazon Web Services (AWS)</em>, pour laquelle je n’avais pas d’interface graphique. Dans les deux cas, je devais faire l’appel d’un programme R à partir de la ligne de commande, ce qui est d’ailleurs possible avec la commande <code>Rscript</code>. Par contre, je devais également passer des arguments à ce programme lors de l’appel à la ligne de commande. C’est à ce moment que j’ai fais la découverte du package <a href="https://cran.r-project.org/web/packages/argparse/index.html">argparse</a>, un outil méconnu par plusieurs et qui offre des fonctionnalités intéressantes.</p>
 <div id="argparse-et-la-ligne-de-commande" class="section level1">
 <h1><code>argparse</code> et la ligne de commande</h1>
 <p>Comme vous l’avez probablement deviné dans l’introduction, <code>argparse</code> est un <em>package</em> R qui permet de faciliter l’appel de programmes R à partir de la ligne de commande. Pour être plus précis, <code>argparse</code> permet de créer une interface de ligne de commande (ou <em>command line interface</em> ou <em>CLI</em>). Cette interface agit comme une sorte de pont (ou moyen de communication) entre l’appel d’un programme via la ligne de commande et les opérations effectuées à l’intérieur de ce programme.</p>
@@ -58,7 +58,8 @@ parser$add_argument(&quot;n_dist&quot;, type = &quot;integer&quot;,
 parser$add_argument(&quot;-m&quot;, &quot;--mean&quot;, type = &quot;double&quot;, default = 0,
                     help = &quot;moyenne pour chaque distribution normale [défault: %(default)s]&quot;)
 parser$print_help()</code></pre>
-<pre><code>## usage: /Library/Frameworks/R.framework/Versions/3.6/Resources/library/blogdown/scripts/render_page.R [-h] [-m MEAN] n_dist
+<pre><code>## usage: /Library/Frameworks/R.framework/Versions/3.6/Resources/library/blogdown/scripts/render_page.R
+##        [-h] [-m MEAN] n_dist
 ## 
 ## Simuler des distributions normales
 ## 

@@ -1,7 +1,7 @@
 ---
 title: "argparse: un outil méconnu"
 author: "Stéphane Caron"
-date: '2019-11-11'
+date: '2020-01-03'
 slug: optparse-package
 categories: ["R"]
 type: post
@@ -15,7 +15,7 @@ featuredpath: "img/headers/"
 knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
 ```
 
-Dans les derniers mois, j'ai été confronté à 2 défis qui m'ont éventuellement permis de découvrir un *package* R et une manière de programmer qui m'étaient auparavant inconnus. Dans un premier temps, je devais intégrer l'appel de programmes R à l'intérieur d'un *shell script* (un fichier avec l'extension `.sh`) dans lequel je devais passer différents arguments qui allaient être utilisés par le programme. Dans un deuxième temps, je devais lancer un programme R, avec différents paramètres, à l'aide d'une instance *Amazon Web Services (AWS)*, pour laquelle je n'avais pas d'interface graphique. Dans les deux cas, je devais faire l'appel d'un programme R à partir de la ligne de commande, ce qui est d'ailleurs possible avec la commande `Rscript`. Par contre, je devais également passer des arguments à ce programme lors de l'appel à la ligne de commande. C'est à ce moment que j'ai fais la découverte du package [argparse](https://cran.r-project.org/web/packages/argparse/index.html), un outil méconnu par plusieurs et qui offre des fonctionnalités intéressantes.
+Dans les derniers mois, j'ai été confronté à 2 défis qui m'ont éventuellement permis de découvrir un *package* R et une manière de programmer qui m'étaient auparavant inconnus. Dans un premier temps, je devais intégrer l'appel de programmes R à l'intérieur d'un fichier de ligne de commande ou un *shell script* (un fichier avec l'extension `.sh`) dans lequel je devais passer différents arguments qui allaient être utilisés par le programme. Dans un deuxième temps, je devais lancer un programme R, avec différents paramètres, à l'aide d'une instance *Amazon Web Services (AWS)*, pour laquelle je n'avais pas d'interface graphique. Dans les deux cas, je devais faire l'appel d'un programme R à partir de la ligne de commande, ce qui est d'ailleurs possible avec la commande `Rscript`. Par contre, je devais également passer des arguments à ce programme lors de l'appel à la ligne de commande. C'est à ce moment que j'ai fais la découverte du package [argparse](https://cran.r-project.org/web/packages/argparse/index.html), un outil méconnu par plusieurs et qui offre des fonctionnalités intéressantes.
 
 # `argparse` et la ligne de commande
 
