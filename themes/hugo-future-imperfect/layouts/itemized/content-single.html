@@ -2,11 +2,7 @@
   {{ .Render "header" }}
 
   {{ if .Site.Params.socialShare }}
-    <section id="social-share">
-      <ul class="icons">
-        {{ partial "share-links" . }}
-      </ul>
-    </section>
+    {{ partial "share-links" . }}
   {{ end }}
 
   {{ .Render "featured" }}
