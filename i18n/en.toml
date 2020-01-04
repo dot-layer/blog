@@ -21,6 +21,8 @@
   other = "January 2, 2006"
 [hours]
   other = "hours"
+[in_construction]
+  other = "In construction"
 [learn_more]
   other = "learn more"
 [next_page]

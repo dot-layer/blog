@@ -1,5 +1,5 @@
 +++
 title = "Étagère à livres"
 type = "book review"
-date = "2018-09-01"
+date = "2020-01-03"
 +++
