@@ -12,7 +12,7 @@
 [blog]
   other = "Blog"
 [bookshelf]
-  other = "Books"
+  other = ".Books"
 [categories]
   other = "Categories"
 [category]
