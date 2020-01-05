@@ -194,7 +194,7 @@ enableEmoji   = true
                 weight = 3
 
             [[Languages.fr.menu.main]]
-                name = "Étagere à livres"
+                name = "Étagère à livres"
                 url = "/bookshelf/"
                 identifier = "fa fa-book"
                 weight = 4
