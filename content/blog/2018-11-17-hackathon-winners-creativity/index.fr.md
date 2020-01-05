@@ -1,13 +1,11 @@
 ---
 title: Entrevue avec les gagnants
-author: Laurent Caron et <br> Marc-André Bernier
+author: Laurent Caron et Marc-André Bernier
 date: '2018-12-08'
 slug: hackathon-winners-creativity
 type: post
-tags:
-  - interview
-  - meetup
-  - hackathon
+categories: ["Hackathon"]
+tags: ["Interview", "Meetup", "Hackathon"]
 description: "Meetup ML Québec | Prix Leonardo da Vinci"
 featured: "hackathon-creativity-cover.JPG"
 featuredpath: "img/headers/"

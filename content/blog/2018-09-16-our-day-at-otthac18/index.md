@@ -4,8 +4,8 @@ author: dot-hockey #Philippe Blouin-Leclerc; Antoine Buteau; Stéphane Caron; Sa
 date: '2018-09-16'
 slug: our-day-at-otthac18
 type: post
-tags:
-  - hockey analytics
+categories: ["Analytics"]
+tags: ["Hockey Analytics"]
 description: ""
 featured: "otthac18-cover.png"
 featuredpath: "img/headers/"

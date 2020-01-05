@@ -1,9 +1,11 @@
 +++
-title = "Contact"
+title = "Get in touch!"
 type = "contact"
 netlify = false
-emailservice = "formspree.io/example@email.com"
-contactname = "Your Name"
-contactemail = "Your Email Address"
-contactmessage = "Your Message"
+emailservice = "https://formspree.io/mknnbvlp"
+contactname = "Name"
+contactemail = "Recipient's Email Address"
+contactlang = "EN"
+contactmessage = "Message"
+contactsubject = "Email subject"
 +++

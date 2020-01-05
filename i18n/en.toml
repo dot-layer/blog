@@ -1,35 +1,3 @@
-[date_format]
-  other = "January 2, 2006"
-[postreadingtime]
-  other = "minutes read"
-[recent_posts]
-  other = "Recent posts"
-[see_more]
-  other = "See more"
-[read_more]
-  other = "Read more"
-[categories]
-  other = "Categories"
-[category]
-  other = "Category"
-[tags]
-  other = "Tags"
-[tag]
-  other = "Tag"  
-[uncategorized]
-  other = "Uncategorized"
-[share_post]
-  other = "Share this post"
-[about]
-  other = "about"
-[learn_more]
-  other = "learn more"
-[repliestext]
-  other = "Replies typically within"
-[hours]
-  other = "hours"
-[submit]
-  other = "Submit"
 [404_oops]
   other = "Oops, the page you're<br/>looking for does not exist."
 [404_backorreport]
@@ -38,11 +6,46 @@
   other = "Go To Homepage"
 [404_report]
   other = "Report A Problem"
+
+[about]
+  other = "about"
 [blog]
   other = "Blog"
+[bookshelf]
+  other = ".Books"
+[categories]
+  other = "Categories"
+[category]
+  other = "Category"
 [contact]
   other = "Contact"
+[hours]
+  other = "hours"
+[in_construction]
+  other = "In construction"
+[learn_more]
+  other = "learn more"
 [next_page]
   other = "Next Page"
+[postreadingtime]
+  other = "minutes read"
 [previous_page]
   other = "Previous Page"
+[read_more]
+  other = "Read more"
+[recent_posts]
+  other = "Recent posts"
+[repliestext]
+  other = "Typically replies within a day"
+[see_more]
+  other = "See more"
+[share_post]
+  other = "Share this post"
+[submit]
+  other = "Submit"
+[tag]
+  other = "Tag"  
+[tags]
+  other = "Tags"
+[uncategorized]
+  other = "Uncategorized"

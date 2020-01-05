@@ -4,9 +4,8 @@ author: Jean-Thomas Baillargeon
 date: '2019-02-01'
 slug: on-a-maitrise-lart-de-la-programmation
 type: post
-tags:
-- ingénierie logicielle
-- bonnes pratiques
+categories: ["Ingénierie logicielle"]
+tags: ["Ingénierie Logicielle", "Bonnes Pratiques"]
 description: ""
 featured: "we-mastered-the-art-of-programming-cover.jpeg"
 featuredpath: "img/headers/"

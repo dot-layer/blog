@@ -1,35 +1,3 @@
-[date_format]
-  other = "2 Janvier, 2006"
-[postreadingtime]
-  other = "minutes"
-[recent_posts]
-  other = "Posts récents"
-[see_more]
-  other = "Voir plus"
-[read_more]
-  other = "Lire la suite"
-[categories]
-  other = "Catégories"
-[category]
-  other = "Catégorie"
-[tags]
-  other = "Tags"
-[tag]
-  other = "Tag"
-[uncategorized]
-  other = "Sans catégorie"
-[share_post]
-  other = "Partager ce post"
-[about]
-  other = "à propos"
-[learn_more]
-  other = "En savoir plus"
-[repliestext]
-  other = "Réponse généralement en"
-[hours]
-  other = "heures"
-[submit]
-  other = "Envoyer"
 [404_oops]
   other = "Oops, la page que vous<br/>demandez n'existe pas."
 [404_backorreport]
@@ -38,11 +6,46 @@
   other = "Go To Homepage"
 [404_report]
   other = "Report A Problem"
+
+[about]
+  other = "à propos"
 [blog]
   other = "Blog"
+[bookshelf]
+  other = ".Livres"
+[categories]
+  other = "Catégories"
+[category]
+  other = "Catégorie"
 [contact]
   other = "Contact"
+[hours]
+  other = "heures"
+[in_construction]
+  other = "En construction"
+[learn_more]
+  other = "En apprendre plus"
 [next_page]
   other = "Page suivante"
 [previous_page]
   other = "Page précédente"
+[postreadingtime]
+  other = "minutes"
+[read_more]
+  other = "Lire la suite"
+[recent_posts]
+  other = "Posts récents"
+[repliestext]
+  other = "Répond généralement en l'espace de quelques heures"
+[see_more]
+  other = "Voir plus"
+[share_post]
+  other = "Partager ce post"
+[submit]
+  other = "Envoyer"
+[tag]
+  other = "Tag"
+[tags]
+  other = "Tags"
+[uncategorized]
+  other = "Sans catégorie"

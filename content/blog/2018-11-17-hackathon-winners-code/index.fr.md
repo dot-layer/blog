@@ -1,13 +1,11 @@
 ---
 title: Entrevue avec les gagnants
-author: "Stéphane Caron et <br> Marc-André Bernier"
+author: "Stéphane Caron et Marc-André Bernier"
 date: '2018-12-02'
 slug: hackathon-winners-code
 type: post
-tags:
-  - interview
-  - meetup
-  - hackathon
+categories: ["Hackathon"]
+tags: ["Interview", "Meetup", "Hackathon"]
 description: "Meetup ML Québec | Prix Linus Torvalds"
 featured: "hackathon-code-cover.JPG"
 featuredpath: "img/headers/"
