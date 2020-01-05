@@ -33,6 +33,18 @@
             {{ end }}
         {{ end }}
 
+        {{ if isset .Params "canonical" }}
+            {{ with .Params.canonical }}
+                <!-- NOTE: this rel="canonical" link is there for search engines
+                to not penalize duplicate content. If a post was taken from
+                another site and reuploaded here, then it's a good practice
+                to link to the canonical version of the post on the original
+                site to avoid duplicate content penality for optimizing the
+                sites for search engines. -->
+                <link rel="canonical" href="{{ . }}">
+            {{ end }}
+        {{ end }}
+
         {{ template "_internal/twitter_cards.html" . }}
         {{ template "_internal/opengraph.html" . }}
         <!-- Facebook sharing -->
@@ -56,7 +68,7 @@
                 <meta property="twitter:image" content="{{ . }}"/>
             {{ end }}
         {{ end }}
-        
+
         {{ template "_internal/schema.html" . }}
         {{ template "_internal/google_news.html" . }}
 
@@ -77,7 +89,7 @@
             <link rel="stylesheet" href="{{ "css/add-on.css" | relURL }}">
             <link rel="stylesheet" href="{{ "css/academicons.min.css" | relURL }}">
         {{ end }}
-        
+
         <link rel="icon" href="{{ .Site.Params.faviconPath | absURL }}">
 
         {{ if ne ($.Scratch.Get "cssFiles") false }}
