@@ -6,7 +6,7 @@ slug: recap-2019
 type: post
 categories: [""]
 tags: ["Nouvelles .Layer"]
-description: "Un petit récapitulatif de l'année 2019 pour .Layer"
+description: ""
 featured: "recap-2019-cover.png"
 featuredpath: "img/headers/"
 ---
