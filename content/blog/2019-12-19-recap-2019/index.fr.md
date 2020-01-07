@@ -6,7 +6,6 @@ slug: recap-2019
 type: post
 categories: [""]
 tags: ["Nouvelles .Layer"]
-<<<<<<< HEAD
 description: ""
 featured: "recap-2019-cover.png"
 featuredpath: "img/headers/"
