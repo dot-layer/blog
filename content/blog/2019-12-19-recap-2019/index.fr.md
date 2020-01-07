@@ -6,6 +6,7 @@ slug: recap-2019
 type: post
 categories: [""]
 tags: ["Nouvelles .Layer"]
+<<<<<<< HEAD
 description: ""
 featured: "recap-2019-cover.png"
 featuredpath: "img/headers/"
@@ -40,7 +41,7 @@ Celui-ci est composé de Christopher Blier-Wong, Guillaume Chevalier, Annie Desh
 Le site a été *upgradé* pas mal en 2019, surtout son allure, et 2020 s'annonce l'année la plus active en termes d'articles : déjà deux beaux articles *pending*.
 On compte aussi l'utiliser pour garder à jour les membres et *followers* sur ce qui se passe avec les réalisations .Layeuriennes (comme je fais en ce moment quoi).
 
-Le comité est ouvert à toutes sortes d'articles : français, anglais, vulgarisation de concepts (apprentissage machine, programmation, science des données, statistique, etc), expérience personnelle, présentation d'un projet, *name it*!
+Le comité est ouvert à toutes sortes d'articles : français, anglais, vulgarisation de concepts (apprentissage machine, programmation, science des données, statistique, etc), expérience personnelle, présentation d'un projet, *name it*! Soyez pas timide.
 
 # OpenLayer
 
