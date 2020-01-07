@@ -7,7 +7,7 @@ type: post
 categories: [""]
 tags: ["Nouvelles .Layer"]
 description: "Un petit récapitulatif de l'année 2019 pour .Layer"
-featured: ""
+featured: "recap-2019-cover.png"
 featuredpath: "img/headers/"
 ---
 
