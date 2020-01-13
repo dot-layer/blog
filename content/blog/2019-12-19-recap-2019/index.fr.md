@@ -65,7 +65,7 @@ et trois ateliers pratiques :
 
   - Atelier d'introduction aux fondements du machine learning
   - Atelier d'introduction aux réseaux de neurones convolutifs
-  - trois
+  - Atelier pratique Git
 
 Nic et Dave tiennent à remercier les entreprises qui nous reçu Meetup Machine Learning Québe: XpertSea, Desjardins, Mirego et LE CAMP.  De plus. un gros merci au CRDM et au cercle finance Québec qui on appuyer un ou plusieurs de nos initiatives.
   
