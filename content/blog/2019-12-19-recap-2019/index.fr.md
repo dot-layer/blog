@@ -63,7 +63,7 @@ On a eu droit à quatre meetups officiels :
 
 et trois ateliers pratiques :
 
-  - un
+  - Atelier d'introduction aux fondements du machine learning
   - deux
   - trois
 
