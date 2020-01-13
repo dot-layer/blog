@@ -67,7 +67,7 @@ et trois ateliers pratiques :
   - Atelier d'introduction aux réseaux de neurones convolutifs
   - trois
 
-Nic et Dave tiennent à remercier **Des gens qui ont aidé à l'organisation? Des financeurs? NIC,DAVE,CHRIS**
+Nic et Dave tiennent à remercier les entreprises qui nous reçu Meetup Machine Learning Québe: XpertSea, Desjardins, Mirego et LE CAMP.  De plus. un gros merci au CRDM et au cercle finance Québec qui on appuyer un ou plusieurs de nos initiatives.
   
 2020 s'annonce tout aussi occupée avec un meetup déjà *in the making*.
 On vise aussi à incorporer plus de formules 5@7 et potentiellement un hackaton.
