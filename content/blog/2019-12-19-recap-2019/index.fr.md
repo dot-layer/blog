@@ -36,7 +36,7 @@ Pour 2020, l'objectif est de mettre en place un processus d'adhésion de membres
 # Comité blog
 
 En plus du CA, on a vu la naissance d'un comité pour prendre en charge le [blog](https://www.dotlayer.org/fr/).
-Celui-ci est composé de Christopher Blier-Wong, Guillaume Chevalier, Annie Deshaies, Samuel Perreault et Simon Valois, et se chargera de maintenir le site en vie, de l'améliorer et d'accompagner les contributeurs avec un service d'édition.
+Celui-ci est composé de [Christopher Blier-Wong](https://github.com/chblw), [Guillaume Chevalier](https://github.com/guillaume-chevalier), [Annie Deshaies](https://github.com/AnnieDeshaies), [Samuel Perreault](https://github.com/samperochkin) et Simon Valois, et se chargeront de maintenir le site en vie, de l'améliorer, et d'accompagner les contributeurs avec un service d'édition.
 Le site a été *upgradé* pas mal en 2019, surtout son allure (merci Annie), et 2020 s'annonce l'année la plus active en termes d'articles : déjà un bel article *pending*.
 On compte aussi l'utiliser pour garder à jour les membres et *followers* sur ce qui se passe avec les réalisations .Layeuriennes (comme je fais en ce moment quoi).
 
