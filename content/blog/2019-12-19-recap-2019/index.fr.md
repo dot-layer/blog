@@ -70,6 +70,7 @@ Nic et Dave tiennent à remercier les entreprises qui nous reçu Meetup Machine 
 On vise aussi à incorporer plus de formules 5@7 et potentiellement un hackaton.
 À suivre, soyez à l'affût!
 
+![Meetup chez Mirego](https://rawcdn.githack.com/dot-layer/blog/post/recap-2019/content/blog/2019-12-19-recap-2019/fig/mirego.fr.png)
 
 # Chalet ML 2019 et 2020
 
@@ -84,6 +85,8 @@ On peut pas garantir que la compagnie va *double book* notre chalet pour ensuite
 Un comité sera créé en automne (prends pas ça pour du cash) pour veiller à son organisation.
 Il faut entre autres choses déterminer si une nouvelle formule doit être adoptée. 
 Accomoder plus de 25 personnes (la bouffe pi toute pi toute), ça commence à être un pas pire défi!
+
+![Photo de groupe du Chalet 2k19](https://rawcdn.githack.com/dot-layer/blog/post/recap-2019/content/blog/2019-12-19-recap-2019/fig/chalet.fr.png)
 
 Ça y est. On se souhaite une bonne année!
 
