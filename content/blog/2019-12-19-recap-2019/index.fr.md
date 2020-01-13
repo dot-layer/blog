@@ -47,7 +47,7 @@ Le comité est ouvert à toutes sortes d'articles : français, anglais, vulgaris
 Euh oui, un podcast .Layeurien existe.
 C'est une initiative de David Beauchemin, qui exposer différentes facettes du domaine de l'apprentissage machine et de l'intelligence artificielle.
 (OpenLayer)[https://www.youtube.com/channel/UCB3tYpZ1ojiqAroyDN05Cyw/featured] publie des discussions de 55-75 minutes, au cours desquelles David questionne son invité sur son parcours qui l'a plongé dans le *ML*.
-Déjà 19 épisodes diffusées (et 3 de plus d'enregistrées) et plus de 3400 visionnements au total sur les plateformes Spotify, Balado Québec, Itunes music, Google podcast **YOUTUBE OR WHAT??? DAVIIID HELP MÉ**.
+Déjà 19 épisodes diffusées (et 3 de plus d'enregistrées) et plus de 3400 visionnements au total sur les plateformes YouTube, Spotify, Balado Québec, Itunes music, Google podcast.
 
 **PLUS? DAVE**
 
