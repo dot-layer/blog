@@ -64,7 +64,7 @@ On a eu droit à quatre meetups officiels :
 et trois ateliers pratiques :
 
   - Atelier d'introduction aux fondements du machine learning
-  - deux
+  - Atelier d'introduction aux réseaux de neurones convolutifs
   - trois
 
 Nic et Dave tiennent à remercier **Des gens qui ont aidé à l'organisation? Des financeurs? NIC,DAVE,CHRIS**
