@@ -56,7 +56,7 @@ Pour 2020, la sortie d'épisode techniques et un panel d'experts!
 La gang de Meetup ML, Nicolas Garneau et David Beauchemin (le gars fait tout ou quoi?), fut encore une fois très active cette année.
 On a eu droit à quatre meetups officiels : 
 
-  - un
+  - Meetup ML en vision chez XpertSea
   - deux
   - trois
   - quatre
