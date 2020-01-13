@@ -71,7 +71,7 @@ Nic et Dave tiennent à remercier **Des gens qui ont aidé à l'organisation? De
   
 2020 s'annonce tout aussi occupée avec un meetup déjà *in the making*.
 On vise aussi à incorporer plus de formules 5@7 et potentiellement un hackaton.
-À suivre, soyez à l'affût! **PLUS D'info? NIC,DAVE,CHRIS**
+À suivre, soyez à l'affût!
 
 
 # Chalet ML 2019 et 2020
