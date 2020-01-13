@@ -58,7 +58,7 @@ On a eu droit à quatre meetups officiels :
 
   - Meetup ML en vision chez XpertSea
   - Meetup ML en finance chez Desjardins Lab Lévis
-  - trois
+  - Meetup ML chez Mirego
   - Meetup MLQC 5@7 - maîtrise en IA chez LE CAMP
 
 et trois ateliers pratiques :
