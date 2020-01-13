@@ -23,11 +23,11 @@ Officiellement, le nom de l'OSBL est *RAMQ* (est bonne quand même non?) pour Re
 Le pseudonyme *.Layer* est le nom d'exercice.
 Le comité administratif est composé de
 
-  - Stéphane Caron -- Président
-  - David Beauchemin -- Vice-Président affaires externes
-  - Jean-Thomas Baillargeon -- Trésorier
-  - Nicolas Garneau -- Secrétaire
-  - Jean-Christophe Yelle -- Vice-Président communications
+  - [Stéphane Caron](https://github.com/stecaron) -- Président
+  - [David Beauchemin](https://github.com/davebulaval) -- Vice-Président affaires externes
+  - [Jean-Thomas Baillargeon](https://github.com/jtbai) -- Trésorier
+  - [Nicolas Garneau](https://github.com/ngarneau) -- Secrétaire
+  - [Jean-Christophe Yelle](https://github.com/jcyelle) -- Vice-Président communications
   
 La CA a pris soin de créer une [charte](https://github.com/dot-layer/charte-osbl) pour l'OSBL.
 Pour 2020, l'objectif est de mettre en place un processus d'adhésion de membres dits *actifs*, qui incluerait potentiellement une (petite!) cotisation. 
@@ -45,7 +45,7 @@ Le comité est ouvert à toutes sortes d'articles : français, anglais, vulgaris
 # OpenLayer
 
 Euh oui, un podcast .Layeurien existe.
-C'est une initiative de David Beauchemin, qui exposer différentes facettes du domaine de l'apprentissage machine et de l'intelligence artificielle.
+C'est une initiative de [David Beauchemin](https://github.com/davebulaval), qui exposer différentes facettes du domaine de l'apprentissage machine et de l'intelligence artificielle.
 (OpenLayer)[https://www.youtube.com/channel/UCB3tYpZ1ojiqAroyDN05Cyw/featured] publie des discussions de 55-75 minutes, au cours desquelles David questionne son invité sur son parcours qui l'a plongé dans le *ML*.
 Déjà 19 épisodes diffusées (et 3 de plus d'enregistrées) et plus de 3400 visionnements au total sur les plateformes YouTube, Spotify, Balado Québec, Itunes music, Google podcast.
 
@@ -53,21 +53,18 @@ Pour 2020, la sortie d'épisode techniques et un panel d'experts!
 
 # Meetup Machine Learning Québec
 
-La gang de Meetup ML, Nicolas Garneau et David Beauchemin (le gars fait tout ou quoi?), fut encore une fois très active cette année.
-On a eu droit à quatre meetups officiels : 
+La gang de Meetup ML, [Nicolas Garneau](https://github.com/ngarneau) et [David Beauchemin](https://github.com/davebulaval) (le gars fait tout ou quoi?), fut encore une fois très active cette année.
+On a eu droit à quatre meetups officiels et trois ateliers pratiques : 
 
   - Meetup ML en vision chez XpertSea
   - Meetup ML en finance chez Desjardins Lab Lévis
   - Meetup ML chez Mirego
   - Meetup MLQC 5@7 - maîtrise en IA chez LE CAMP
-
-et trois ateliers pratiques :
-
   - Atelier d'introduction aux fondements du machine learning
   - Atelier d'introduction aux réseaux de neurones convolutifs
   - Atelier pratique Git
 
-Nic et Dave tiennent à remercier les entreprises qui nous reçu Meetup Machine Learning Québe: XpertSea, Desjardins, Mirego et LE CAMP.  De plus. un gros merci au CRDM et au cercle finance Québec qui on appuyer un ou plusieurs de nos initiatives.
+Nic et Dave tiennent à remercier les entreprises qui nous reçu Meetup Machine Learning Québec: XpertSea, Desjardins, Mirego et LE CAMP.  De plus. un gros merci au CRDM et au cercle finance Québec qui on appuyer un ou plusieurs de nos initiatives.
   
 2020 s'annonce tout aussi occupée avec un meetup déjà *in the making*.
 On vise aussi à incorporer plus de formules 5@7 et potentiellement un hackaton.
@@ -90,4 +87,4 @@ Accomoder plus de 25 personnes (la bouffe pi toute pi toute), ça commence à ê
 
 Ça y est. On se souhaite une bonne année!
 
-Sam Peroche
+Sam Peroche (+ Guillaume Chevalier et Dave Beauchemin)
