@@ -29,7 +29,7 @@ Le comité administratif est composé de
   - Nicolas Garneau -- Secrétaire
   - Jean-Christophe Yelle -- Vice-Président communications
   
-La CA a pris soin de créer un [charte](https://github.com/dot-layer/charte-osbl) pour l'OSBL.
+La CA a pris soin de créer une [charte](https://github.com/dot-layer/charte-osbl) pour l'OSBL.
 Pour 2020, l'objectif est de mettre en place un processus d'adhésion de membres dits *actifs*, qui incluerait potentiellement une (petite!) cotisation. 
 
 
