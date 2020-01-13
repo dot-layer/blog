@@ -57,7 +57,7 @@ La gang de Meetup ML, Nicolas Garneau et David Beauchemin (le gars fait tout ou 
 On a eu droit à quatre meetups officiels : 
 
   - Meetup ML en vision chez XpertSea
-  - deux
+  - Meetup ML en finance chez Desjardins Lab Lévis
   - trois
   - quatre
 
