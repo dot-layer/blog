@@ -37,7 +37,7 @@ Pour 2020, l'objectif est de mettre en place un processus d'adhésion de membres
 
 En plus du CA, on a vu la naissance d'un comité pour prendre en charge le [blog](https://www.dotlayer.org/fr/).
 Celui-ci est composé de [Christopher Blier-Wong](https://github.com/chblw), [Guillaume Chevalier](https://github.com/guillaume-chevalier), [Annie Deshaies](https://github.com/AnnieDeshaies), [Samuel Perreault](https://github.com/samperochkin) et Simon Valois, et se chargeront de maintenir le site en vie, de l'améliorer, et d'accompagner les contributeurs avec un service d'édition.
-Le site a été *upgradé* pas mal en 2019, surtout son allure (merci Annie), et 2020 s'annonce l'année la plus active en termes d'articles : déjà un bel article *pending*.
+Le site a été *upgradé* pas mal en 2019, surtout son allure (merci Annie), et 2020 s'annonce l'année la plus active en termes d'articles : déjà un article sorti concernant [argparse](https://www.dotlayer.org/fr/blog/2019-05-21-argparse-package/optparse-package/) et un autre *pending*.
 On compte aussi l'utiliser pour garder à jour les membres et *followers* sur ce qui se passe avec les réalisations .Layeuriennes (comme je fais en ce moment quoi).
 
 Le comité est ouvert à toutes sortes d'articles : français, anglais, vulgarisation de concepts (apprentissage machine, programmation, science des données, statistique, etc), expérience personnelle, présentation d'un projet, *name it*! Soyez pas timide.
@@ -50,6 +50,8 @@ C'est une initiative de [David Beauchemin](https://github.com/davebulaval), qui 
 Déjà 19 épisodes diffusées (et 3 de plus d'enregistrées) et plus de 3400 visionnements au total sur les plateformes YouTube, Spotify, Balado Québec, Itunes music, Google podcast.
 
 Pour 2020, la sortie d'épisode techniques et un panel d'experts!
+
+![Meetup chez Mirego](https://rawcdn.githack.com/dot-layer/blog/post/recap-2019/content/blog/2019-12-19-recap-2019/fig/mirego.fr.png)
 
 # Meetup Machine Learning Québec
 
@@ -69,8 +71,6 @@ Nic et Dave tiennent à remercier les entreprises qui nous reçu Meetup Machine 
 2020 s'annonce tout aussi occupée avec un meetup déjà *in the making*.
 On vise aussi à incorporer plus de formules 5@7 et potentiellement un hackaton.
 À suivre, soyez à l'affût!
-
-![Meetup chez Mirego](https://rawcdn.githack.com/dot-layer/blog/post/recap-2019/content/blog/2019-12-19-recap-2019/fig/mirego.fr.png)
 
 # Chalet ML 2019 et 2020
 
