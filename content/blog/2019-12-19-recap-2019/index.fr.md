@@ -4,8 +4,8 @@ author: Samuel Perreault et David Beauchemin
 date: '2020-01-14'
 slug: recap-2019
 type: post
-categories: [""]
-tags: ["Nouvelles .Layer"]
+categories: ["Nouvelles .Layer"]
+tags: [""]
 description: ""
 featured: "recap-2019-cover.png"
 featuredpath: "img/headers/"
