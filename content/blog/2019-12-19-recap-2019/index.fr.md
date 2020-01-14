@@ -52,6 +52,7 @@ Déjà 19 épisodes diffusées (et 3 de plus d'enregistrées) et plus de 3400 vi
 Pour 2020, la sortie d'épisode techniques et un panel d'experts!
 
 ![Meetup chez Mirego](https://rawcdn.githack.com/dot-layer/blog/post/recap-2019/content/blog/2019-12-19-recap-2019/fig/mirego.fr.png)
+Crédit photo : Jean-François Chaput
 
 # Meetup Machine Learning Québec
 
@@ -66,7 +67,7 @@ On a eu droit à quatre meetups officiels et trois ateliers pratiques :
   - Atelier d'introduction aux réseaux de neurones convolutifs
   - Atelier pratique Git
 
-Nic et Dave tiennent à remercier les entreprises qui nous reçu Meetup Machine Learning Québec: XpertSea, Desjardins, Mirego et LE CAMP.  De plus. un gros merci au CRDM et au cercle finance Québec qui on appuyer un ou plusieurs de nos initiatives.
+Nic et Dave tiennent à remercier les entreprises qui nous reçu Meetup Machine Learning Québec: XpertSea, Desjardins, Mirego et LE CAMP. De plus. un gros merci au CRDM et au cercle finance Québec qui on appuyer un ou plusieurs de nos initiatives.
   
 2020 s'annonce tout aussi occupée avec un meetup déjà *in the making*.
 On vise aussi à incorporer plus de formules 5@7 et potentiellement un hackaton.
@@ -87,6 +88,7 @@ Il faut entre autres choses déterminer si une nouvelle formule doit être adopt
 Accomoder plus de 25 personnes (la bouffe pi toute pi toute), ça commence à être un pas pire défi!
 
 ![Photo de groupe du Chalet 2k19](https://rawcdn.githack.com/dot-layer/blog/post/recap-2019/content/blog/2019-12-19-recap-2019/fig/chalet.fr.png)
+Crédit photo : Jean-Christophe Yelle
 
 Ça y est. On se souhaite une bonne année!
 
