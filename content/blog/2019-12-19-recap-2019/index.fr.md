@@ -90,4 +90,4 @@ Accomoder plus de 25 personnes (la bouffe pi toute pi toute), ça commence à ê
 
 Ça y est. On se souhaite une bonne année!
 
-Sam Peroche (+ Guillaume Chevalier et Dave Beauchemin)
+Sam Peroche et David Beauchemin (+ Guillaume Chevalier)
