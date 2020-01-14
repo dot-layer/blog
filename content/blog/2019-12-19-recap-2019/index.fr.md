@@ -1,6 +1,6 @@
 ---
 title: .Layer en 2019
-author: Samuel Perreault
+author: Samuel Perreault et David Beauchemin
 date: '2019-12-16'
 slug: recap-2019
 type: post
