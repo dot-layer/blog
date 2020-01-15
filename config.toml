@@ -5,7 +5,6 @@ title = ".Layer"
 theme = "hugo-future-imperfect"
 preserveTaxonomyNames = true
 paginate = 3
-disqusShortname = "dotlayerorg"
 googleAnalytics = "UA-127083360-1"
 pluralizeListTitles = false
 # Set the followings to true as part of your site SEO
@@ -80,21 +79,6 @@ enableEmoji   = true
   highlightjsTheme = "github"
   MathJaxCDN = "//cdnjs.cloudflare.com/ajax/libs"
   MathJaxVersion = "2.7.1"
-
-# Disqus will take priority over Staticman (github.com/eduardoboucas/staticman)
-# due to its ease of use. Feel free to check out both and decide what you would
-# prefer to use. See Staticman.yml for additional settings.
-[params.staticman]
-  # Sets Statiman to be active
-  staticman = false
-  # Sets the location for Staticman to connect to
-  username  = ""
-  repo      = ""
-  branch    = ""
-
-  [params.staticman.recaptcha]
-    sitekey = "SITE_KEY"
-    secret  = "ENCRYPTED_SECRET"
 
 
 [params.postAmount]
