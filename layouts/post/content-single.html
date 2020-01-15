@@ -9,7 +9,22 @@
     </section>
   {{ end }}
 
-  {{ .Render "featured" }}
+  {{ if and (isset .Params "featuredpath") (ne .Params.featuredpath "") }}
+    {{ $.Scratch.Set "path" .Params.featuredpath }}
+
+    {{ if and (isset .Params "featured") (ne .Params.featuredpath "") }}
+        {{ $.Scratch.Set "structType" "page" }}
+        {{ partial "img-path" . }}
+        {{ $path := $.Scratch.Get "path" }}
+        {{ $alt := $.Scratch.Get "alt" }}
+        {{ $img := $.Scratch.Get "img" }}
+
+        <div class="image featured">
+            <img src="{{ $path | relURL }}/{{ .Params.featured }}" alt="{{ $alt }}">
+        </div>
+    {{ end }}
+  {{ end }}
+  
   <div id="content">
     {{ .Content }}
   </div>
