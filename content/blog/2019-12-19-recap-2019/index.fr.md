@@ -5,7 +5,7 @@ date: '2020-01-14'
 slug: recap-2019
 type: post
 categories: ["Nouvelles .Layer"]
-tags: [""]
+tags: []
 description: ""
 featured: "recap-2019-cover.png"
 featuredpath: "img/headers/"
