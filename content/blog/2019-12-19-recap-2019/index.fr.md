@@ -36,7 +36,7 @@ Pour 2020, l'objectif est de mettre en place un processus d'adhésion de membres
 # Comité blog
 
 En plus du CA, on a vu la naissance d'un comité pour prendre en charge le [blog](https://www.dotlayer.org/fr/).
-Celui-ci est composé de [Christopher Blier-Wong](https://github.com/chblw), [Guillaume Chevalier](https://github.com/guillaume-chevalier), [Annie Deshaies](https://github.com/AnnieDeshaies), [Samuel Perreault](https://github.com/samperochkin) et Simon Valois, et se chargeront de maintenir le site en vie, de l'améliorer, et d'accompagner les contributeurs avec un service d'édition.
+Celui-ci est composé de [Christopher Blier-Wong](https://github.com/chblw), [Guillaume Chevalier](https://github.com/guillaume-chevalier), [Annie Deshaies](https://github.com/AnnieDeshaies), [Samuel Perreault](https://github.com/samperochkin) et Simon Valois, qui se chargeront de maintenir le site en vie, de l'améliorer, et d'accompagner les contributeurs avec un service d'édition.
 Le site a été *upgradé* pas mal en 2019, surtout son allure (merci Annie), et 2020 s'annonce l'année la plus active en termes d'articles : déjà un article sorti concernant [argparse](https://www.dotlayer.org/fr/blog/2019-05-21-argparse-package/optparse-package/) et un autre *pending*.
 On compte aussi l'utiliser pour garder à jour les membres et *followers* sur ce qui se passe avec les réalisations .Layeuriennes (comme je fais en ce moment quoi).
 
@@ -45,18 +45,18 @@ Le comité est ouvert à toutes sortes d'articles : français, anglais, vulgaris
 # OpenLayer
 
 Euh oui, un podcast .Layeurien existe.
-C'est une initiative de [David Beauchemin](https://github.com/davebulaval), qui exposer différentes facettes du domaine de l'apprentissage machine et de l'intelligence artificielle.
+C'est une initiative de [David Beauchemin](https://github.com/davebulaval), qui expose différentes facettes du domaine de l'apprentissage machine et de l'intelligence artificielle.
 [OpenLayer](https://www.youtube.com/channel/UCB3tYpZ1ojiqAroyDN05Cyw/featured) publie des discussions de 55-75 minutes, au cours desquelles David questionne son invité sur son parcours qui l'a plongé dans le *ML*.
-Déjà 19 épisodes diffusées (et 3 de plus d'enregistrées) et plus de 3400 visionnements au total sur les plateformes YouTube, Spotify, Balado Québec, Itunes music, Google podcast.
+Déjà 19 épisodes diffusés (et 3 de plus d'enregistrés) et plus de 3400 visionnements au total sur les plateformes YouTube, Spotify, Balado Québec, Itunes music, Google podcast.
 
-Pour 2020, la sortie d'épisode techniques et un panel d'experts!
+Pour 2020, la sortie d'épisodes techniques et un panel d'experts!
 
 ![Meetup chez Mirego](https://rawcdn.githack.com/dot-layer/blog/post/recap-2019/content/blog/2019-12-19-recap-2019/fig/mirego.fr.png)
 Crédit photo : Jean-François Chaput, Mirego
 
 # Meetup Machine Learning Québec
 
-La gang de Meetup ML, [Nicolas Garneau](https://github.com/ngarneau) et [David Beauchemin](https://github.com/davebulaval) (le gars fait tout ou quoi?), fut encore une fois très active cette année.
+La gang de Meetup ML, [Nicolas Garneau](https://github.com/ngarneau) et [David Beauchemin](https://github.com/davebulaval) (le gars fait tout ou quoi?), fût encore une fois très active cette année.
 On a eu droit à quatre meetups officiels et trois ateliers pratiques : 
 
   - Meetup ML en vision chez XpertSea
@@ -67,7 +67,7 @@ On a eu droit à quatre meetups officiels et trois ateliers pratiques :
   - Atelier d'introduction aux réseaux de neurones convolutifs
   - Atelier pratique Git
 
-Nic et Dave tiennent à remercier les entreprises qui nous reçu Meetup Machine Learning Québec: XpertSea, Desjardins, Mirego et LE CAMP. De plus. un gros merci au CRDM et au cercle finance Québec qui on appuyer un ou plusieurs de nos initiatives.
+Nic et Dave tiennent à remercier les entreprises qui ont reçu Meetup Machine Learning Québec: XpertSea, Desjardins, Mirego et LE CAMP. De plus. un gros merci au [CRDM](https://crdm.ulaval.ca/) et au [Cercle Finance du Québec](https://cerclefinanceduquebec.com/) qui ont appuyé une ou plusieurs de nos initiatives.
   
 2020 s'annonce tout aussi occupée avec un meetup déjà *in the making*.
 On vise aussi à incorporer plus de formules 5@7 et potentiellement un hackaton.
@@ -77,14 +77,14 @@ On vise aussi à incorporer plus de formules 5@7 et potentiellement un hackaton.
 
 Le légendaire *Chalet .Layer*, une fin de semaine dans un Chalet avec 
 zuss des passionnés de *ML*, se tenait cette année à Stoneham en Août.
-L'ambiance décontractée étaitent au rendez-vous pour les 20 .Léyeuriens présents.
-Merci aux quatre présentateurs (JéDB, Nic, JTBaï, Camille - thx) d'avoir étanché de notre soif de *ML*.
+L'ambiance décontractée était au rendez-vous pour les 20 .Léyeuriens présents.
+Merci aux quatre présentateurs (JéDB, Nic, JTBaï, Camille - thx) d'avoir étanché notre soif de *ML*.
 (*Next thing you know* Bute te sort un pain perdu du four. De la magie. Fallait être là.)
 Merci à tous pour l'effort général dans l'organisation.
 
-On peut pas garantir que la compagnie va *double book* notre chalet pour ensuite nous dédommager avec un palace (un conte fées quoi) comme en 2019, mais on peut dire (peut-on?) qu'en 2020 ça devrait être quelque part entre Montréal et Québec.
+On peut pas garantir que la compagnie va *double book* notre chalet pour ensuite nous dédommager avec un palace (un conte de fées quoi) comme en 2019, mais on peut dire (peut-on?) qu'en 2020 ça devrait être quelque part entre Montréal et Québec.
 Un comité sera créé en automne (prends pas ça pour du cash) pour veiller à son organisation.
-Il faut entre autres choses déterminer si une nouvelle formule doit être adoptée. 
+Il faut, entre autres choses, déterminer si une nouvelle formule doit être adoptée. 
 Accomoder plus de 25 personnes (la bouffe pi toute pi toute), ça commence à être un pas pire défi!
 
 ![Photo de groupe du Chalet 2k19](https://rawcdn.githack.com/dot-layer/blog/post/recap-2019/content/blog/2019-12-19-recap-2019/fig/chalet.fr.png)
