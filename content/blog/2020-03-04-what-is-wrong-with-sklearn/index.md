@@ -106,7 +106,7 @@ Metaestimators are crucial for advanced features. For instance, a `ParallelTrans
 
 ## Solutions that we’ve Found to Those Scikit-Learn's Problems
 
-For sure, Scikit-Learn is very convenient and well-built. However, it needs a refresh. Here are our solutions to make Scikit-Learn fresh and useable within modern computing projects!
+For sure, Scikit-Learn is very convenient and well-built. However, it needs a refresh. Here are our solutions with Neuraxle to make Scikit-Learn fresh and useable within modern computing projects!
 
 -   [Inability to Reasonably do Automatic Machine Learning (AutoML)](https://www.neuraxle.org/stable/scikit-learn_problems_solutions.html#inability-to-reasonably-do-automatic-machine-learning-automl)
     -   [Problem: Defining the Search Space (Hyperparameter Distributions)](https://www.neuraxle.org/stable/scikit-learn_problems_solutions.html#problem-defining-the-search-space-hyperparameter-distributions)
