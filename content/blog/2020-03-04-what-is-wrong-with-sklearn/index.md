@@ -23,6 +23,7 @@ featuredpath: "img/headers"
 > Scikit-Learn’s “pipe and filter” design pattern is simply beautiful. But how to use it for Deep Learning, AutoML, and complex production-level pipelines?
 
 Scikit-Learn had its first release in 2007, which was a [pre deep learning era](https://github.com/guillaume-chevalier/Awesome-Deep-Learning-Resources#trends). However, it’s one of the most known and adopted machine learning library, and is still growing. On top of all, it uses the Pipe and Filter design pattern as a software architectural style - it’s what makes Scikit-Learn so fabulous, added to the fact it provides algorithms ready for use. However, it has massive issues when it comes to do the following, which we should be able to do in 2020 already:
+
 - Automatic Machine Learning (AutoML),
 - Deep Learning Pipelines,
 - More complex Machine Learning pipelines.
@@ -31,16 +32,16 @@ Let’s first clarify what’s missing exactly, and then let’s see how we solv
 
 > TL;DR: How could things work to allow us to do what’s in the above list with the Pipe and Filter design pattern / architectural style that is particular of Scikit-Learn? The API must be redesigned to include broader functionalities, such as allowing the definition of hyperparameter spaces, and allowing a more comprehensive object lifecycle & data flow functionalities in the steps of a pipeline.
 
-Don’t get me wrong, I used to love Scikit-Learn, and I still love to use it. It is a nice status quo: it offers useful features such as the ability to define pipelines with a panoply of premade machine learning algorithms. However, there are serious problems that they just couldn’t see upfront back in 2007.
+Don’t get me wrong, I used to love Scikit-Learn, and I still love to use it. It is a nice status quo: it offers useful features such as the ability to define pipelines with a panoply of premade machine learning algorithms. However, there are serious problems that they just couldn’t see in 2007, when deep learning wasn't a thing.
 
 ## The Problems
 
-Some of the problems are highlighted by the top core developers of Scikit-Learn himself at a Scipy conference. He calls for new libraries to solve those problems instead of doing that within Scikit-Learn:
+Some of the problems are highlighted by the top core developer of Scikit-Learn himself at a Scipy conference. He calls for new libraries to solve those problems instead of doing that within Scikit-Learn:
 
 <iframe width="740" height="416" src="https://www.youtube.com/embed/Wy6EKjJT79M?start=1361&amp;end=1528" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 </iframe>
 
-> Source: **the top core developers of Scikit-Learn himself** - Andreas C. Müller @ SciPy Conference
+> Source: **the top core developer of Scikit-Learn himself** - Andreas C. Müller @ SciPy Conference
 
 ### Inability to Reasonably do Automatic Machine Learning (AutoML)
 
@@ -76,9 +77,9 @@ Think about the following features:
   - fine-tuning
 - having evaluation strategies that works with the mini-batching and all of the aforementioned things.
 
-Scikit-Learn does almost none of the above, and hardly allows it as their API is too strict and wasn't built with those considerations in mind at first in the original [Scikit-Learn Pipeline](https://scikit-learn.org/stable/modules/generated/sklearn.pipeline.Pipeline.html). Yet, all of those things are required for Deep Learning algorithms to be trained (and thereafter deployed).
+Scikit-Learn does almost none of the above, and hardly allows it as their API is too strict and wasn't built with those considerations in mind: for instance they are mostly lacking in the original [Scikit-Learn Pipeline](https://scikit-learn.org/stable/modules/generated/sklearn.pipeline.Pipeline.html). Yet, all of those things are required for Deep Learning algorithms to be trained (and thereafter deployed).
 
-Plus, Scikit-Learn lacks a compatibility with Deep Learning frameworks (i.e.: TensorFlow, Keras, PyTorch, Poutyne), and Scikit-Learn lacks some things to do proper serialization. Scikit-Learn lacks to provide [lifecycle methods](https://programmingwithmosh.com/javascript/react-lifecycle-methods/) to manage resources and GPU memory allocation, for instance. Think of lifecycle methods as methods each objects has: `__init__`, `fit`, `transform`. For instance, picture adding also `setup`, `teardown`, `mutate`, `introspect`, `save`, `load`, and more, to manage the events of the life of each algorithm's object in a pipeline.
+Plus, Scikit-Learn lacks some things to do proper serialization, and it also lacks a compatibility with Deep Learning frameworks (i.e.: TensorFlow, Keras, PyTorch, Poutyne). It also lacks to provide [lifecycle methods](https://programmingwithmosh.com/javascript/react-lifecycle-methods/) to manage resources and GPU memory allocation. Think of lifecycle methods as methods where each objects has: `__init__`, `fit`, `transform`. For instance, picture adding also `setup`, `teardown`, `mutate`, `introspect`, `save`, `load`, and more, to manage the events of the life of each algorithm's object in a pipeline.
 
 You’d also want some pipeline steps to be able to manipulate labels, for instance in the case of an autoregressive autoencoder where some “X” data is extracted to “y” data during the fitting phase only, or in the case of applying a one-hot encoder to the labels to feed them as integers.
 
@@ -105,7 +106,7 @@ Metaestimators are crucial for advanced features. For instance, a `ParallelTrans
 
 ## Solutions that we’ve Found to Those Scikit-Learn's Problems
 
-For sure, Scikit-Learn is very convenient and well-built. However, it needs a refresh. Here are our solutions to make Scikit-Learn fresh and useable within modern computing projects!
+For sure, Scikit-Learn is very convenient and well-built. However, it needs a refresh. Here are our solutions with Neuraxle to make Scikit-Learn fresh and useable within modern computing projects!
 
 -   [Inability to Reasonably do Automatic Machine Learning (AutoML)](https://www.neuraxle.org/stable/scikit-learn_problems_solutions.html#inability-to-reasonably-do-automatic-machine-learning-automl)
     -   [Problem: Defining the Search Space (Hyperparameter Distributions)](https://www.neuraxle.org/stable/scikit-learn_problems_solutions.html#problem-defining-the-search-space-hyperparameter-distributions)
