@@ -23,6 +23,7 @@ featuredpath: "img/headers"
 > Scikit-Learn’s “pipe and filter” design pattern is simply beautiful. But how to use it for Deep Learning, AutoML, and complex production-level pipelines?
 
 Scikit-Learn had its first release in 2007, which was a [pre deep learning era](https://github.com/guillaume-chevalier/Awesome-Deep-Learning-Resources#trends). However, it’s one of the most known and adopted machine learning library, and is still growing. On top of all, it uses the Pipe and Filter design pattern as a software architectural style - it’s what makes Scikit-Learn so fabulous, added to the fact it provides algorithms ready for use. However, it has massive issues when it comes to do the following, which we should be able to do in 2020 already:
+
 - Automatic Machine Learning (AutoML),
 - Deep Learning Pipelines,
 - More complex Machine Learning pipelines.
