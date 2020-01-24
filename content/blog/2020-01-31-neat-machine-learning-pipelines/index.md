@@ -1,7 +1,7 @@
 ---
 title: How to Code Neat Machine Learning Pipelines
 author: "Guillaume Chevalier"
-date: '2019-10-26'
+date: '2020-01-31'
 slug: neat-machine-learning-pipelines
 type: post
 canonical: https://www.neuraxio.com/en/blog/neuraxle/2019/10/26/neat-machine-learning-pipelines.html
