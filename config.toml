@@ -1,6 +1,6 @@
 baseurl = "https://dotlayer.org/"
-languageCode = "en-us"
-DefaultContentLanguage = "en"
+languageCode = "fr"
+DefaultContentLanguage = "fr"
 title = ".Layer"
 theme = "hugo-future-imperfect"
 preserveTaxonomyNames = true
