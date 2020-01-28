@@ -51,7 +51,7 @@ Déjà 19 épisodes diffusés (et 3 de plus d'enregistrés) et plus de 3400 visi
 
 Pour 2020, la sortie d'épisodes techniques et un panel d'experts!
 
-![Meetup chez Mirego](https://rawcdn.githack.com/dot-layer/blog/post/recap-2019/content/blog/2019-12-19-recap-2019/fig/mirego.fr.png)
+![Meetup chez Mirego](fig/mirego.fr.png)
 Crédit photo : Jean-François Chaput, Mirego
 
 # Meetup Machine Learning Québec
@@ -87,7 +87,7 @@ Un comité sera créé en automne (prends pas ça pour du cash) pour veiller à 
 Il faut, entre autres choses, déterminer si une nouvelle formule doit être adoptée. 
 Accomoder plus de 25 personnes (la bouffe pi toute pi toute), ça commence à être un pas pire défi!
 
-![Photo de groupe du Chalet 2k19](https://rawcdn.githack.com/dot-layer/blog/post/recap-2019/content/blog/2019-12-19-recap-2019/fig/chalet.fr.png)
+![Photo de groupe du Chalet 2k19](fig/chalet.fr.png)
 Crédit photo : Jean-Christophe Yelle
 
 Ça y est. On se souhaite une bonne année!

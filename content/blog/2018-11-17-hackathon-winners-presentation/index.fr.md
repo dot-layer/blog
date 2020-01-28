@@ -31,10 +31,6 @@ R: Nous croyons que la démonstration de la méthode utilisée est ce qui a char
 
 R: En résumé, nous sommes partis d'un modèle existant pour bénéficier des poids appris par ce dernier. Nous l'avons ensuite modifié pour qu'il soit mieux adapté à la problématique à résoudre. Puis, nous l'avons ré-entraîné à l'aide des données de toits fournies.
 
-Pour expliquer le réseau et présenter notre méthode, nous avons présenté aux juges l'image suivante, tirée de [cet article](https://www.groundai.com/media/arxiv_projects/23387/) :
-
-![](https://www.groundai.com/media/arxiv_projects/23387/res50.svg)
-
 Pour les plus curieux, voici les détails de notre solution :  
 
 ResNet50 est un réseau pré-entraîné dans le cadre de la compétition [ImageNet](https://www.quora.com/What-is-the-ImageNet-competition) sur des millions d'images.  Cependant, l'objectif de ce réseau est de discriminer 1000 classes d'objets. Dans notre cas, nous n'en avions que 2 à discriminer : toit vert, ou non. Nous avons donc remplacé la couche de sortie originale par une neurone de sortie sigmoïde, donnant une interprétation probabiliste de notre résultat. De cette façon, on peut prédire avec la couche de sortie du réseau la probabilité que l'image a d’appartenir à chacune des 2 classes, selon les informations qu'a réussi à collecter le réseau de neurones en entraînement. Nous avons également ajouté quelques couches cachées avant la couche de sortie.
