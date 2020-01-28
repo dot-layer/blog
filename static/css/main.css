@@ -425,7 +425,6 @@
 		input[type="button"]:after,
 		.button:before,
 		.button:after {
-			color: #aaaaaa;
 			position: relative;
 		}
 
