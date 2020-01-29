@@ -1,10 +1,9 @@
 baseurl = "https://dotlayer.org/"
-languageCode = "en-us"
-DefaultContentLanguage = "en"
+languageCode = "fr"
+DefaultContentLanguage = "fr"
 title = ".Layer"
 theme = "hugo-future-imperfect"
 preserveTaxonomyNames = true
-paginate = 3
 googleAnalytics = "UA-127083360-1"
 pluralizeListTitles = false
 # Set the followings to true as part of your site SEO

@@ -1,13 +1,16 @@
 {{ partial "header" . }}
-    {{ $.Scratch.Set "shareNav" true }}
-    {{ partial "navbar" . }}
-    <!-- Main -->
-    <div id="main">
-        {{ range first 5 (where .Site.Pages "Type" "post") }}
-            {{ .Render "content-list" }}
 
-            {{ partial "share-menu" . }}
-        {{ end }}
-    </div>
-    {{ partial "sidebar" . }}
+{{ $.Scratch.Set "shareNav" true }}
+{{ partial "navbar" . }}
+
+<!-- Main -->
+<div id="main">
+    {{ range (.Paginator 6).Pages }}
+        {{ .Render "content-list" }}
+    {{ end }}
+
+    {{ partial "pagination" . }}
+</div>
+
+{{ partial "sidebar" . }}
 {{ partial "footer" . }}
