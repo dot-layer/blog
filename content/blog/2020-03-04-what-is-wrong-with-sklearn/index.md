@@ -17,7 +17,7 @@ tags:
   - machine learning
 description: "Scikit-Learn had its first release in 2007, which was a pre deep learning era. However, it’s one of the most known and adopted machine learning library, and is still growing."
 featured: "sklearn-broken.jpg"
-featuredpath: "img/headers"
+featuredpath: "img/headers/"
 ---
 
 > Scikit-Learn’s “pipe and filter” design pattern is simply beautiful. But how to use it for Deep Learning, AutoML, and complex production-level pipelines?
