@@ -38,7 +38,7 @@ Don’t get me wrong, I used to love Scikit-Learn, and I still love to use it. I
 
 Some of the problems are highlighted by the top core developer of Scikit-Learn himself at a Scipy conference. He calls for new libraries to solve those problems instead of doing that within Scikit-Learn:
 
-<iframe width="740" height="416" src="https://www.youtube.com/embed/Wy6EKjJT79M?start=1361&amp;end=1528" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+<iframe width="100%" height="416" src="https://www.youtube.com/embed/Wy6EKjJT79M?start=1361&amp;end=1528" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 </iframe>
 
 > Source: **the top core developer of Scikit-Learn himself** - Andreas C. Müller @ SciPy Conference
