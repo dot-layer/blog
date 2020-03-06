@@ -135,15 +135,15 @@ Il reste enfin à définir le gain associé à chacun des bris. Une force du gra
 
 Avec une régression des moindre carrés, la perte est définie par $(y - pred)^2$. Cette perte a une forme parabolique et son minimum est bien entendu lorsque la valeur prédite égale la valeur observée. La notion critique à remarquer est qu'en ne connaissant que les dérivées premières et secondes de la perte par rapport à la prédiction, il est possible de déterminer non seulement quel serait la prédiction optimale, mais également la réduction de la perte. 
 
-Pouor le premier des 15 conditions possibles, l'arbre distinguerait les données en les groupes gauche et droite de la manière suivante:  
+Pour la première des 15 conditions possibles, l'arbre distinguerait les données en deux groupes (gauche et droite) de la manière suivante:  
 
 ![](first_split.png)
 
-Le gain apporté est calculé comme la réduction de la perte qu'apporterait cette décision. Pour y arriver, on calcule d'abord la perte sur l'ensemble des données. Effectuer un bris dans l'arbre devra apporter un gain par rapport à cette valeur de référence. 
-
-Ensuite, le gain est calculé séparément pour les groupes de gauche et de droite. La perte associée à différentes prédictions pour le groupe de gauche est la suivante:
+Le gain se définit comme la réduction de la perte qu'apporterait une modification à la prédiction. Il est calculé séparément pour les groupes de gauche et de droite. La perte associée à différentes prédictions pour le groupe de gauche est la suivante:
 
 ![](left_parabole.png)
+
+On calcule également la perte sur l'ensemble des données. Effectuer un bris dans l'arbre devra apporter un gain par rapport à cette valeur de référence. 
 
 Il est à noter que la perte minimale est atteinte lorsque la prédictions est de -1.11, ce qui correspond à la moyenne des résidus pour le groupe 1. 
 
