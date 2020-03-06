@@ -1,49 +1,39 @@
 ---
 title: "Boosting Trees avec Julia"
 author: "Jeremie"
-date: "2019-01-04"
+date: "2020-02-04"
 slug: "julia-boosting-trees"
 type: "post"
 tags: ["Machine Learning", "Julia"]
-description: "description"
+featured: "julia-plot.png"
+featuredpath: "img/headers/"
+description: "Développement d'algorithmes from scratch"
 ---
 
 
-```{r setup, include=FALSE}
-library(magrittr)
-library(data.table)
-library(plotly)
-library(ggplot2)
-library(knitr)
-library(kableExtra)
-library(extrafont)
-library(scales)
-# library(EvoTrees)
-```
-
-
-> Cet article a pour but d'exposer les principes clés permettant une implantation haute performance du gradient boosting trees en Julia, permettant de bénéficier à la fois de l'expressivité d'un language dynamique comme Python ou R et de la performance d'un langage compilé le C/C++. 
+> Cet article a pour but d'exposer les principes clés permettant une implantation haute performance du gradient boosting trees en Julia, un langage réconciliant l'expressivité et la productivité qu'on retrouve en Python et R et la performance de langages compilés comme le C et C++. 
 
 Bien que les approches par réseaux de neuronnes accaparent une bonne partie de l'attention, l'importances des algorithmes reposant sur des artbres de décision ne peut être négligée. Ils continuent de se démarquer comme offrant la meilleure performance prédictive dans de nombreuses situations, particulièrement lorsqu'il s'agit de problèmes de régresion ou de classification impliquant des données tabulaires.
 
-Parmi les plus célèbres représentants de cette famille d'algorithmes, on compte [Xgboost](https://xgboost.readthedocs.io/en/latest/), [LightGBM](https://lightgbm.readthedocs.io/en/latest/) et [CatBoost](). Si ces dernières implantations sont relativement récentes (2014, 2016 et 2017), l'algorithme avait été développé depuis déjà quelques années, puisqu'on le retrouve dès 2001 dans le désormais classique [Elements of Statistical Learning](https://web.stanford.edu/~hastie/ElemStatLearn/). 
+Parmi les plus célèbres représentants de cette famille d'algorithmes, on compte [Xgboost](https://xgboost.readthedocs.io/en/latest/), [LightGBM](https://lightgbm.readthedocs.io/en/latest/) et [CatBoost](https://catboost.ai/). Si ces dernières implantations sont relativement récentes (2014, 2016 et 2017), l'algorithme avait été développé depuis déjà quelques années, puisqu'on le retrouve dès 2001 dans le désormais classique [Elements of Statistical Learning](https://web.stanford.edu/~hastie/ElemStatLearn/). 
 
 Il serait hasardeux d'apporter un diagnostic définitif sur ce qui a conduit à l'explosion de popularité de l'algorithme. L'intérêt pour pour le l'apprentissage machine et le développement d'une approche compétitive à la modélisation via des plateformes comme Kaggle n'y sont sans doute pas étrangers. Un atout du gradient boosting est également sa rapidité: Xgboost apportait à sa sortie une réduction du temps d'entraînement de l'ordre de 10X par rapports au implantations R et Python existantes. 
 
-Dans un contexte d'utilisation commerciale, les enjeux de performance deviennent rapidement significatifs compte tenu des volumes de données impliqués. Le soucis qu'on y accorde au sein de la nouvelle génération d'algorithmes y est sans doute lié. Aussi, lorsqu'il est question de performance, le coeur de l'algorithme est typiquement développé dans un lnagage compilé tel le le C/C++, bien que l'utilisateur interagit le plus souvent au travers de langages dynamiques comme Python et R et facilient l'interface avec le code source.  
+Dans un contexte d'utilisation commerciale, les enjeux de performance deviennent rapidement significatifs compte tenu des volumes de données impliqués. Le soucis qu'on y accorde au sein de la nouvelle génération d'algorithmes y est sans doute lié. Aussi, lorsqu'il est question de performance, le coeur de l'algorithme est typiquement développé dans un langage compilé (C/C++), bien que l'utilisateur interagit le plus souvent avec ces librairies au travers d'interfaces en Python et R qui facilient le développement expérimental.  
 
-Dans ce contexte, une des facettes intéressante du langage Julia qui se veut une réponse à l'enjeu des 2 langages. Les figure ci-dessous montrent que l'intégralité de l'implantation Julia du gradient boosting est codée... en Julia! 
+Une facette intéressante du langage Julia est qu'elle permet de briser cette barrière des 2 langages. La figure ci-dessous montre que l'intégralité de l'implantation Julia du gradient boosting est codée... en Julia! 
 
 ![](xgboost_github.PNG)
 
-La suite de l'article a pour but de montrer comment il est possible d'implanter des algorithmes "from scratch" dans un langage convivial tout en obtenant des vitesses d'exécution compétitives aux solutions les plus performantes sur le marhcé. 
+![](julia_github.PNG)
 
+On verra maintenant plus en détails comment il est possible d'implanter des algorithmes "from scratch" dans un langage convivial tout en obtenant des vitesses d'exécution compétitives aux solutions les plus performantes sur le marché. 
 
 ## Mise en contexte
 
-Afin de rendre plus tangible les détails de l'implantation du gradient boosting en Julia, un problème de régression avec 2 variables continues est présenté. 
+Afin de rendre plus tangible les détails de l'implantation du gradient boosting en Julia, un problème de régression avec 2 variables continues servira d'exemple. 
 
-La variable réponse est dépendante des variables var1 et var2. L'effet est sinusoïdal en `var1` et croissant en `var2`.
+La variable réponse est dépendante des variables `var1` et `var2`. L'effet est sinusoïdal en `var1` et croissant en `var2`.
 
 ![](data_3D.png)
 
@@ -77,11 +67,11 @@ struct GBTree
 end
 ```
 
-En son coeur Julia supporte des représentations multi-dimensionnelles via des Array{T,N}. Un vector `Vector{T}` ou une matrice `Matrix{T}` ne sont que des cas particulies des Array{T,N}, où N = 1 et 2 respectivement. L'élément `T` dans Array{T,N} réfère au type. Lorsqu'on travaille avec un vecteur de nombres continus, par exemple en R avec `c(1.1, 2.2)` ou en Python avec [1.1, 2.2], on se trouverait dans l'univers Julia à travailler avec un Vector{Float64} (ou encore Float32/Float16 au besoin). En Julia, cette représentation multidimensionnelle ne se limite pas aux nombres conventionnels comme les Float ou les Integer, ça peut être n'importe quel type d'object. Par exmeple, on pourrait parfaitement avoir une matrice dont les éléments sont des DataFrames (mais le produit matriciel de tels objects resterait à définir!). Dans le cas présent, le choix est pris de définir un modèle de GBTree comme constitué d'une vecteur d'arbres. 
+En son coeur Julia supporte des représentations multi-dimensionnelles via des Array{T,N}. Un vector `Vector{T}` ou une matrice `Matrix{T}` ne sont que des cas particuliers des `Array{T,N}`, où N = 1 et 2 respectivement. L'élément `T` dans `Array{T,N}` réfère au type. Lorsqu'on travaille avec un vecteur de nombres continus, par exemple en R avec `c(1.1, 2.2)` ou en Python avec `[1.1, 2.2]`, l'équivalent dans l'univers Julia serait `Vector{Float64}`: `[1.1, 2.2]` (ou encore Float32/Float16 au besoin). En Julia, cette représentation multidimensionnelle ne se limite pas aux nombres conventionnels comme les Float ou les Integer, ça peut être n'importe quel type d'object. Par exemple, on pourrait parfaitement avoir une matrice dont les éléments sont des DataFrames (mais le produit matriciel de tels objects resterait à définir!). Dans le cas présent, le choix est pris de définir un modèle de GBTree comme constitué d'une vecteur d'arbres. 
 
 ## Définition d'un arbre
 
-Tel que montré plus haut, un arbre de décision se compose d'une série de noeuds comportant chacun une décision binaire. Par exemple, dans l'arbre ci-dessous, on commence par décider, pour chaque observation, si la variable 1 est plus petite que X. Si on va dans le segment de gauche, la décision suivante est si la variable 2 est plus petite que `X`. On arrive ensuite à un noeud terminal qui indique la prédiction à associer à l'observation. 
+Tel que montré plus haut, un arbre de décision se compose d'une série de noeuds comportant chacun une décision binaire. Par exemple, dans l'arbre ci-dessous, on commance par établir, pour chaque observation, si la variable 1 est plus petite que `X`. Si oui, on va dans le segment de gauche et la décision suivante est si la variable 2 est plus petite que `X`. On arrive ensuite à un noeud terminal qui indique la prédiction à associer à l'observation. 
 
 ![](tree_1.png)
 
