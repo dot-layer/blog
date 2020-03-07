@@ -49,7 +49,7 @@ L'entraînement d'un gradient boosting trees peut être décrit sommairement de 
 2. Mettre à jour les prédicions en ajoutant les prédictions de l'arbre _A1_ aux prédictions actuelles: pred = pred + predict(_A1_)
 3. Répéter 1. et 2. pour un nombre N arbres.
 
-Dans un scénario où le nombre d'itértions est 4, le modèle entraîné pourrait se visualiser de la façon suivante: 
+Dans un scénario où le nombre d'itérations serait de 4, le modèle entraîné pourrait se visualiser de la façon suivante: 
 
 ![](tree_group.png)
 
