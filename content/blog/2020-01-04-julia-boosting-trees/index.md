@@ -112,7 +112,7 @@ Julia supporte plusieurs saveurs de parallélisme. Dans le cas de la recherche d
 end
 ```
 
-Une façon brute de chercher le meilleur bris est de de mettre en ordre les observations selon une variable donnée. Une fois les observations en ordre, on peut considérer pour chacune des valeurs uniques prises par cette variable quel serait le gain si la condition s'exerçait sur cette valeur. 
+Une façon brute de chercher le meilleur bris est de mettre en ordre les observations selon une variable donnée. Une fois les observations en ordre, on peut considérer pour chacune des valeurs uniques prises par cette variable quel serait le gain si la condition s'exerçait sur cette valeur. 
 
 Une telle approche fonctionne, mais est sujette à quelques inconvénients. D'abord, ordonner une variable est une opération coûteuse, particulièrement si on considère que l'opération doit être répétée pour plusieurs variables, pour chacun des noeuds et pour chaque arbre. Également, si le nombre de valeurs uniques prises par une variable est très élevée, ça implique d'évaluer le gain à un très grand nombre de reprises. 
 
