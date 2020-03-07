@@ -102,7 +102,7 @@ Une fois les structures en place, il ne reste plus qu'à identifier les valeurs 
 
 Il s'agit d'évaluer pour chaque variable la condition apportant la plus grande réduction de la fonction de perte. C'est là que l'essentiel de la charge de calcul se trouve et que certains choix de design permettront d'atteindre des performances optimales. Ensuite, la variable dont la condition optimale apporte le plus grand gain sera retenue pour définir la condition du noeud. 
 
-Pour chaque noeud, l'algorithme s'exerce d'une perspective univariée. La capacité d'un arbre à réfléter des intéractions entre variables provient du fait que les conditions dans les sous-branches s'exercent de façon indépendante. On a là un premier élément se prêtant à une optimisation: puisque l'évaluation de la meilleure condition se fait de façon indépendante pour chaque variable, il s'agit d'une recherche qui se parallélise aisément. 
+Pour chaque noeud, l'algorithme s'exerce d'une perspective univariée. La capacité d'un arbre à refléter des interactions entre variables provient du fait que les conditions dans les sous-branches s'exercent de façon indépendante. On a là un premier élément se prêtant à une optimisation: puisque l'évaluation de la meilleure condition se fait de façon indépendante pour chaque variable, il s'agit d'une recherche qui se parallélise aisément. 
 
 Julia supporte plusieurs saveurs de parallélisme. Dans le cas de la recherche de variables, tous les coeurs du processeur peuvent être mis à profit simplement en utilisant la macro `@threads`. 
 
