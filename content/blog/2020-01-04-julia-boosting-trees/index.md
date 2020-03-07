@@ -13,7 +13,7 @@ description: "Développement d'algorithmes from scratch"
 
 > Cet article a pour but d'exposer les principes clés permettant une implantation haute performance du gradient boosting trees en Julia, un langage réconciliant l'expressivité et la productivité qu'on retrouve en Python et en R et la performance de langages compilés comme le C et C++. 
 
-Bien que les approches par réseaux de neuronnes accaparent une bonne partie de l'attention, l'importances des algorithmes reposant sur des artbres de décision ne peut être négligée. Ils continuent de se démarquer comme offrant la meilleure performance prédictive dans de nombreuses situations, particulièrement lorsqu'il s'agit de problèmes de régresion ou de classification impliquant des données tabulaires.
+Bien que les approches par réseaux de neuronnes accaparent une bonne partie de l'attention, l'importance des algorithmes reposant sur des artbres de décision ne peut être négligée. Ils continuent de se démarquer comme offrant la meilleure performance prédictive dans de nombreuses situations, particulièrement lorsqu'il s'agit de problèmes de régresion ou de classification impliquant des données tabulaires.
 
 Parmi les plus célèbres représentants de cette famille d'algorithmes, on compte [Xgboost](https://xgboost.readthedocs.io/en/latest/), [LightGBM](https://lightgbm.readthedocs.io/en/latest/) et [CatBoost](https://catboost.ai/). Si ces dernières implantations sont relativement récentes (2014, 2016 et 2017), l'algorithme avait été développé depuis déjà quelques années, puisqu'on le retrouve dès 2001 dans le désormais classique [Elements of Statistical Learning](https://web.stanford.edu/~hastie/ElemStatLearn/). 
 
