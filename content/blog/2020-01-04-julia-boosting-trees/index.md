@@ -57,7 +57,7 @@ Pour obtenir une prédiction, il suffit d'additionner la prédiction obtenue à 
 
 Comme on peut le constater, un modèle GBT ne consiste qu'en une collection d'arbres de décision. Quelques subtilités sont néanmoins introduites en pratique, par exemple le réchantillonnage des observations et des variables explicatives à chacune des itérations. Reste qu'une fois qu'on a établit comment construire un arbre de décision, l'essentiel du travail est accompli. À noter que la même logique s'appliquerait si on construisait un RandomForest: il ne suffirait encore là que de savoir construire un arbre de décision, le reste n'est qu'une variation de l'algorithme présenté plus haut. 
 
-En julia, on peut définir la structure du modèle de la manière suivante, où un GBTree est composée d'une vecteur de Tree: 
+En Julia, on peut définir la structure du modèle de la manière suivante, où un GBTree est composé d'un vecteur de Tree: 
 
 ```julia
 struct GBTree
