@@ -1,6 +1,6 @@
 ---
 title: "Boosting Trees avec Julia"
-author: "Jeremie"
+author: "Jeremie Desgagne-Bouchard"
 date: "2020-02-04"
 slug: "julia-boosting-trees"
 type: "post"
