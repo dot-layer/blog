@@ -71,7 +71,7 @@ En son coeur Julia supporte des représentations multi-dimensionnelles via des A
 
 ## Définition d'un arbre
 
-Tel que montré plus haut, un arbre de décision se compose d'une série de noeuds comportant chacun une décision binaire. Par exemple, dans l'arbre ci-dessous, on commance par établir, pour chaque observation, si la variable 1 est plus petite que `X`. Si oui, on va dans le segment de gauche et la décision suivante est si la variable 2 est plus petite que `X`. On arrive ensuite à un noeud terminal qui indique la prédiction à associer à l'observation. 
+Tel que montré plus haut, un arbre de décision se compose d'une série de noeuds comportant chacun une décision binaire. Par exemple, dans l'arbre ci-dessous, on commence par établir, pour chaque observation, si la variable 1 est plus petite que `X`. Si oui, on va dans le segment de gauche et la décision suivante est si la variable 2 est plus petite que `X`. On arrive ensuite à un noeud terminal qui indique la prédiction à associer à l'observation. 
 
 ![](tree_1.png)
 
