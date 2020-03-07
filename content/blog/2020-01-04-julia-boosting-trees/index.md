@@ -11,7 +11,7 @@ description: "Développement d'algorithmes from scratch"
 ---
 
 
-> Cet article a pour but d'exposer les principes clés permettant une implantation haute performance du gradient boosting trees en Julia, un langage réconciliant l'expressivité et la productivité qu'on retrouve en Python et R et la performance de langages compilés comme le C et C++. 
+> Cet article a pour but d'exposer les principes clés permettant une implantation haute performance du gradient boosting trees en Julia, un langage réconciliant l'expressivité et la productivité qu'on retrouve en Python et en R et la performance de langages compilés comme le C et C++. 
 
 Bien que les approches par réseaux de neuronnes accaparent une bonne partie de l'attention, l'importances des algorithmes reposant sur des artbres de décision ne peut être négligée. Ils continuent de se démarquer comme offrant la meilleure performance prédictive dans de nombreuses situations, particulièrement lorsqu'il s'agit de problèmes de régresion ou de classification impliquant des données tabulaires.
 
@@ -152,5 +152,4 @@ Puisqu'une approximation de 2e degré (dérivées première et seconde) est util
 $gain = (δ) ^ 2 / (∑δ² + λ * ∑𝑤)/2$
 
 $pred = - η * ∑δ / (∑δ² + λ * ∑𝑤)$
-
 
