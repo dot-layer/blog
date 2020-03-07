@@ -96,7 +96,7 @@ end
 
 Comme on peut le voir dans le TreeNode, pour chaque noeud on doit définir sur quelle variable la décision doit être prise ainsi que la condition à appliquer. 
 
-Une fois les structures en place, ne reste plus qu'à identifier les valeurs que doivent prendre ces structures.
+Une fois les structures en place, il ne reste plus qu'à identifier les valeurs que doivent prendre ces structures.
 
 ## Construction d'un arbre
 
@@ -152,4 +152,3 @@ Puisqu'une approximation de 2e degré (dérivées première et seconde) est util
 $gain = (δ) ^ 2 / (∑δ² + λ * ∑𝑤)/2$
 
 $pred = - η * ∑δ / (∑δ² + λ * ∑𝑤)$
-
