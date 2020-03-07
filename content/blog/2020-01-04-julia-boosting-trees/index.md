@@ -75,7 +75,7 @@ Tel que montré plus haut, un arbre de décision se compose d'une série de noeu
 
 ![](tree_1.png)
 
-Une structure récursive peut être une représentation intuitve pour un arbre. On définit alors comme objet un noeud qui contient le critère de décision ainsi que 2 noeuds dépendants ("child nodes") selon que la condition soit respectée ou non. Il est également possible de représenter un arbre par un simple vecteur de noeuds: 
+Une structure récursive peut être une représentation intuitive pour un arbre. On définit alors comme objet un noeud qui contient le critère de décision ainsi que 2 noeuds dépendants ("child nodes") selon que la condition soit respectée ou non. Il est également possible de représenter un arbre par un simple vecteur de noeuds: 
 
 ```julia
 struct Tree{L, T<:AbstractFloat, S<:Int}
