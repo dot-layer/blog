@@ -147,7 +147,7 @@ On calcule également la perte sur l'ensemble des données. Effectuer un bris da
 
 Il est à noter que la perte minimale est atteinte lorsque la prédictions est de -1.11, ce qui correspond à la moyenne des résidus pour le groupe 1. 
 
-Puisqu'une approximation de 2e degré (dérivées première et seconde) est utilisée pour représenter la perte, il existe une solution analytique permettant d'obtenir la valeur de la prédiction optimale et de la réduction de la perte associée à cette dernière. Ça revient à trouver le minimum d'une fonction parabolique, soit la valeur de la prédiction où la dérivée première de la perte est égale à 0. La dérivée de la fonction de perte étant linéaire, l'approche par descente du gradient donne une solution exacte. 
+Puisqu'une approximation de second degré (i.e. les dérivées premières et secondes) est utilisée pour représenter la perte, il existe une solution analytique permettant d'obtenir la valeur de la prédiction optimale et de la réduction de la perte associée à cette dernière. Ça revient à trouver le minimum d'une fonction parabolique, soit la valeur de la prédiction où la dérivée première de la perte est égale à 0. La dérivée de la fonction de perte étant linéaire, l'approche par descente du gradient donne une solution exacte. 
 
 $gain = (δ) ^ 2 / (∑δ² + λ * ∑𝑤)/2$
 
