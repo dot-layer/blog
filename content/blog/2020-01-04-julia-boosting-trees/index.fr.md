@@ -167,8 +167,8 @@ Comparaison du temps d'entraînement pour 100 itérations sur des données gén�
 
 Il en ressort que la méthode par histogramme est critique pour obtenir de bonnes performances au-delà de quelques centaines de milliers d'observations. Aussi, au-delà du million d'observations, XGBoost reprend l'avantage sur EvoTrees. 
 
-EvoTrees supporte par ailleurs quelques fonctions de pertes qu'on ne retrouve pas dans XGBoost, dont la régression par quantile ainsi que la régression Gaussienne (estimation simulatanée des paramètres \mu et \sigma de la distribution). 
+EvoTrees supporte par ailleurs quelques fonctions de pertes qu'on ne retrouve pas dans XGBoost, dont la régression par quantile ainsi que la régression Gaussienne (estimation simultanée des paramètres μ et σ de la distribution). 
 
 ## Développements futurs
 
-Une piste de développement serait de d'envisager différentes mode de parallélisme avec des données plus volumineuse afin de combler l'écart de performance avec des données > 1 M d'observations, par exemple en parallélisant la construction d'histogramme às l'intérieur d'une même variable. Également, fidèle à l'esprit de résolution du problème des deux langages, Julia offre des fonctionnalités prometteuses pour le développement d'algorithmes sur [GPU](https://juliacomputing.com/domains/gpus.html). Supporter la construction d'histogramme esn CUDA pourrait ainsi être la meilleure réponse pour le traitement de données très volumineuses.  
+Une piste de développement serait de d'envisager différentes mode de parallélisme avec des données plus volumineuse afin de combler l'écart de performance avec des données > 1 M d'observations, par exemple en parallélisant la construction d'histogrammes à l'intérieur d'une même variable. Également, fidèle à l'esprit de résolution du problème des deux langages, Julia offre des fonctionnalités prometteuses pour le développement d'algorithmes sur [GPU](https://juliacomputing.com/domains/gpus.html). Supporter la construction d'histogrammes en CUDA pourrait ainsi être la meilleure réponse pour le traitement de données très volumineuses.  
