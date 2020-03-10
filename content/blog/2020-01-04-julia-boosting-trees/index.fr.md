@@ -15,11 +15,11 @@ description: "Développement d'algorithmes from scratch"
 
 Bien que les approches par réseaux de neurones accaparent une bonne partie de l'attention, l'importance des algorithmes reposant sur des arbres de décision ne peut être négligée. Ils continuent de se démarquer comme offrant la meilleure performance prédictive dans de nombreuses situations, particulièrement lorsqu'il s'agit de problèmes de régression ou de classification impliquant des données tabulaires.
 
-Parmi les plus célèbres représentants de cette famille d'algorithmes, on compte [XGBoost](https://xgboost.readthedocs.io/en/latest/), [LightGBM](https://lightgbm.readthedocs.io/en/latest/) et [CatBoost](https://catboost.ai/). Si ces dernières implantations sont relativement récentes (2014, 2016 et 2017), l'idée avait été développé depuis déjà quelques années puisqu'on la retrouve dès 2001 dans le désormais classique [Elements of Statistical Learning](https://web.stanford.edu/~hastie/ElemStatLearn/). 
+Parmi les plus célèbres représentants de cette famille d'algorithmes, on compte [XGBoost](https://xgboost.readthedocs.io/en/latest/), [LightGBM](https://lightgbm.readthedocs.io/en/latest/) et [CatBoost](https://catboost.ai/). Si ces dernières implantations sont relativement récentes (2014, 2016 et 2017), l'idée avait été développée depuis déjà quelques années puisqu'on la retrouve dès 2001 dans le désormais classique [Elements of Statistical Learning](https://web.stanford.edu/~hastie/ElemStatLearn/). 
 
-Il serait hasardeux d'apporter un diagnostic définitif sur ce qui a conduit à l'explosion de popularité de l'algorithme. L'intérêt pour pour l'apprentissage machine et le développement d'une approche compétitive à la modélisation via des plateformes comme Kaggle n'y sont sans doute pas étrangers. Un atout du gradient boosting est également sa rapidité: XGBoost apportait à sa sortie une réduction du temps d'entraînement de l'ordre de 10X par rapport aux implantations en R et Python existantes. 
+Il serait hasardeux d'apporter un diagnostic définitif sur ce qui a conduit à l'explosion de popularité de l'algorithme. L'intérêt pour l'apprentissage machine et le développement d'une approche compétitive à la modélisation via des plateformes comme Kaggle n'y sont sans doute pas étrangers. Un atout du gradient boosting est également sa rapidité: XGBoost apportait à sa sortie une réduction du temps d'entraînement de l'ordre de 10X par rapport aux implantations en R et Python existantes. 
 
-Dans un contexte d'utilisation commerciale, les enjeux de performance deviennent rapidement significatifs compte tenu des volumes de données impliqués. Le souci qu'on y accorde au sein de la nouvelle génération d'algorithmes n'est sans doute pas étranger à ces impératifs commerciaux. Aussi, lorsqu'il est question de performance, le coeur de l'algorithme est typiquement développé dans un langage compilé (C/C++), bien que l'utilisateur interagit le plus souvent avec ces librairies au travers d'interfaces en Python et R qui facilitent le développement expérimental.  
+Dans un contexte d'utilisation commerciale, les enjeux de performance deviennent rapidement significatifs compte tenu des volumes de données impliqués. Le souci qu'on y accorde au sein de la nouvelle génération d'algorithmes n'est sans doute pas étranger à ces impératifs commerciaux. Aussi, lorsqu'il est question de performance, le coeur d'un algorithme est typiquement développé dans un langage compilé (C/C++), bien que l'utilisateur interagit le plus souvent avec celui-ci au travers d'interfaces en Python ou R qui facilitent le développement expérimental.  
 
 Une facette intéressante du langage Julia est qu'elle permet de briser cette barrière des 2 langages. La figure ci-dessous montre que contrairement à XGBoost, l'intégralité de l'implantation [Julia du gradient boosting](https://github.com/Evovest/EvoTrees.jl) est codée... en Julia! 
 
@@ -45,7 +45,7 @@ La variable réponse est dépendante des variables `var1` et `var2`. L'effet est
 L'entraînement d'un gradient boosting trees peut être décrit sommairement de la manière suivante: 
 
 0. Définir une prédiction de base pour chacune des observations. Ex: pred = 0.0
-1. Construire un arbre de décision, _A1_ expliquant la différence entre les prédicitons et les valeurs observées.  
+1. Construire un arbre de décision, _A1_ expliquant la différence entre les prédictions et les valeurs observées.  
 2. Mettre à jour les prédicions en ajoutant les prédictions de l'arbre _A1_ aux prédictions actuelles: pred = pred + predict(_A1_)
 3. Répéter 1. et 2. pour un nombre N d'arbres.
 
@@ -67,7 +67,7 @@ struct GBTree
 end
 ```
 
-En son coeur Julia supporte des représentations multi-dimensionnelles via des `Array{T,N}`. Un vecteur `Vector{T}` ou une matrice `Matrix{T}` ne sont que des cas particuliers des `Array{T,N}`, où `N` = 1 et 2 respectivement. L'élément `T` réfère au type. Par exemple, un vecteur peut être défini par: `[1.1, 2.2]`. la nature de cet object serait `Vector{Float64}`. En Julia, la représentation multi-dimensionnelle ne se limite pas aux nombres conventionnels comme les Float ou les Integer, ça peut être n'importe quel type d’objet. Par exemple, on pourrait parfaitement avoir une matrice dont les éléments sont des DataFrames (mais le produit matriciel de ces objets resterait à définir!). Dans le cas de GBT, le modèle est ainsi constitué d'un `Vector{Tree}`. 
+En son coeur Julia supporte des représentations multi-dimensionnelles via des `Array{T,N}`. Un vecteur `Vector{T}` ou une matrice `Matrix{T}` ne sont que des cas particuliers des `Array{T,N}`, où `N` = 1 et 2 respectivement. L'élément `T` réfère au type. Par exemple, un vecteur peut être défini par: `[1.1, 2.2]`. la nature de cet objet serait `Vector{Float64}`. En Julia, la représentation multi-dimensionnelle ne se limite pas aux nombres conventionnels comme les Float ou les Integer, ça peut être n'importe quel type d’objet. Par exemple, on pourrait parfaitement avoir une matrice dont les éléments sont des DataFrames (mais le produit matriciel de ces objets resterait à définir!). Dans le cas de GBT, le modèle est ainsi constitué d'un `Vector{Tree}`. 
 
 ## Définition d'un arbre
 
@@ -116,7 +116,7 @@ Une façon brute de chercher le meilleur bris est de mettre en ordre les observa
 
 Une telle approche fonctionne, mais est sujette à quelques inconvénients. D'abord, ordonner une variable est une opération coûteuse, particulièrement si on considère que l'opération doit être répétée pour plusieurs variables, pour chacun des noeuds et pour chaque arbre. Également, si le nombre de valeurs uniques prises par une variable est très élevée, ça implique d'évaluer le gain à un très grand nombre de reprises. 
 
-La méthode de l'histogramme permet de contourner ces obstacles. L'idée de discrétiser chaque variable en associant chaque observation à un groupe, basé par exemple sur le quantile. En utilisant un entier entre 0 et 255 comme identifiant de ces groupes, la matrice de données est encodée dans un format UInt8, lequel accapare 8 fois moins de mémoire qu'un format Float64 (un _numeric_ en R). 
+La méthode de l'histogramme permet de contourner ces obstacles. L'idée est de discrétiser chaque variable en associant chaque observation à un groupe, par exemple le quantile. En utilisant un entier entre 0 et 255 comme identifiant de ces groupes, la matrice de données est encodée dans un format UInt8, lequel accapare 8 fois moins de mémoire qu'un format Float64 (un _numeric_ en R). 
 
 Avant la construction des arbres, la librairie EvoTrees effectue cette discrétisation en trouvant d'abord les quantiles pour chacune des variables (get_edges), puis en créant une matrice de `UInt8` pour encoder les données d'entraînement.
 
