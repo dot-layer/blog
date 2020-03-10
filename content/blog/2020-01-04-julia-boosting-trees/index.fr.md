@@ -67,7 +67,7 @@ struct GBTree
 end
 ```
 
-En son coeur Julia supporte des représentations multi-dimensionnelles via des `Array{T,N}`. Un vecteur `Vector{T}` ou une matrice `Matrix{T}` ne sont que des cas particuliers des `Array{T,N}`, où `N` = 1 et 2 respectivement. L'élément `T` réfère au type. Par exemple, un vecteur peut être défini par: `[1.1, 2.2]`. la nature de cet objet serait `Vector{Float64}`. En Julia, la représentation multi-dimensionnelle ne se limite pas aux nombres conventionnels comme les Float ou les Integer, ça peut être n'importe quel type d’objet. Par exemple, on pourrait parfaitement avoir une matrice dont les éléments sont des DataFrames (mais le produit matriciel de ces objets resterait à définir!). Dans le cas de GBT, le modèle est ainsi constitué d'un `Vector{Tree}`. 
+En son coeur Julia supporte des représentations multi-dimensionnelles via des `Array{T,N}`. Un vecteur `Vector{T}` ou une matrice `Matrix{T}` ne sont que des cas particuliers des `Array{T,N}`, où `N` = 1 et 2 respectivement. L'élément `T` réfère au type. Par exemple, un vecteur peut être défini par: `[1.1, 2.2]`. La nature de cet objet serait `Vector{Float64}`. En Julia, la représentation multi-dimensionnelle ne se limite pas aux nombres conventionnels comme les Float ou les Integer, ça peut être n'importe quel type d’objet. Par exemple, on pourrait parfaitement avoir une matrice dont les éléments sont des DataFrames (mais le produit matriciel de ces objets resterait à définir!). Dans le cas de GBT, le modèle est ainsi constitué d'un `Vector{Tree}`. 
 
 ## Définition d'un arbre
 
