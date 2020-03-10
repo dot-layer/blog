@@ -149,7 +149,7 @@ Puisqu'une approximation de second degré (i.e. les dérivées premières et sec
 
 $gain = \fraction{\sigma^2}{(\sum \sigma^2 + \lambda \times \sum \omega) \times 2}$
 
-$pred = - η * ∑δ / (∑δ² + λ * ∑𝑤)$
+$pred = - \fraction{\eta \times \sum \sigma}{\sum \sigma^2 + \lambda \times \sum \omega}$
 
 Au terme du processus d'entraînement, le modèle prend la forme suivante:
 
