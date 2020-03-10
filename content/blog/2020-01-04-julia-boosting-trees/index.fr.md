@@ -167,7 +167,7 @@ Comparaison du temps d'entraînement pour 100 itérations sur des données gén�
 
 Il en ressort que la méthode par histogramme est critique pour obtenir de bonnes performances au-delà de quelques centaines de milliers d'observations. Aussi, au-delà du million d'observations, XGBoost reprend l'avantage sur EvoTrees. 
 
-EvoTrees supporte par ailleurs quelques fonctions de pertes qu'on ne retrouve pas dans XGBoost, dont la régression par quantile ainsi que la régression Gaussienne (estimation simultanée des paramètres $/mu$ et $\sigma$ de la distribution). 
+EvoTrees supporte par ailleurs quelques fonctions de pertes qu'on ne retrouve pas dans XGBoost, dont la régression par quantile ainsi que la régression Gaussienne (estimation simultanée des paramètres $\mu$ et $\sigma$ de la distribution). 
 
 ## Développements futurs
 
