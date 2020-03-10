@@ -147,7 +147,7 @@ Il est à noter que la perte minimale est atteinte lorsque la prédiction est de
 
 Puisqu'une approximation de second degré (i.e. les dérivées premières et secondes) est utilisée pour représenter la perte, il existe une solution analytique permettant d'obtenir la valeur de la prédiction optimale et de la réduction de la perte associée à cette dernière. Ça revient à trouver le minimum d'une fonction parabolique, soit la valeur de la prédiction où la dérivée première de la perte est égale à 0. La dérivée de la fonction de perte étant linéaire, l'approche par descente du gradient donne une solution exacte. 
 
-$gain = (δ) ^ 2 / (∑δ² + λ * ∑𝑤)/2$
+$gain = \fraction{\sigma^2}{(\sum \sigma^2 + \lambda \times \sum \omega) \times 2}$
 
 $pred = - η * ∑δ / (∑δ² + λ * ∑𝑤)$
 
