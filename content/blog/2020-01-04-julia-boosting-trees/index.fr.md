@@ -21,7 +21,7 @@ Il serait hasardeux d'apporter un diagnostic définitif sur ce qui a conduit à 
 
 Dans un contexte d'utilisation commerciale, les enjeux de performance deviennent rapidement significatifs compte tenu des volumes de données impliqués. Le souci qu'on y accorde au sein de la nouvelle génération d'algorithmes n'est sans doute pas étranger à ces impératifs commerciaux. Aussi, lorsqu'il est question de performance, le coeur d'un algorithme est typiquement développé dans un langage compilé (C/C++), bien que l'utilisateur interagit le plus souvent avec celui-ci au travers d'interfaces en Python ou R qui facilitent le développement expérimental.  
 
-Une facette intéressante du langage Julia est qu'elle permet de briser cette barrière des 2 langages. La figure ci-dessous montre que contrairement à XGBoost, l'intégralité de l'implantation [Julia du gradient boosting](https://github.com/Evovest/EvoTrees.jl) est codée... en Julia! 
+Une facette intéressante du langage Julia est qu'il permet de briser cette barrière des 2 langages. La figure ci-dessous montre que contrairement à XGBoost, l'intégralité de l'implantation [Julia du gradient boosting](https://github.com/Evovest/EvoTrees.jl) est codée... en Julia! 
 
 ![](xgboost_github.PNG)
 
