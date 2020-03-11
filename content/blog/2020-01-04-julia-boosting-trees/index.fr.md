@@ -11,7 +11,7 @@ description: "Développement d'algorithmes from scratch"
 ---
 
 
-> Cet article a pour but d'exposer les principes clés permettant une implantation haute performance du gradient boosting trees en Julia, un langage réconciliant l'expressivité et la productivité qu'on retrouve en Python et en R et la performance de langages compilés comme le C et C++. 
+> Cet article a pour but d'exposer les principes clés permettant une implantation haute performance du _gradient boosting trees_ en Julia, un langage réconciliant l'expressivité et la productivité qu'on retrouve en Python et en R et la performance de langages compilés comme le C et C++. 
 
 Bien que les approches par réseaux de neurones accaparent une bonne partie de l'attention, l'importance des algorithmes reposant sur des arbres de décision ne peut être négligée. Ils continuent de se démarquer comme offrant la meilleure performance prédictive dans de nombreuses situations, particulièrement lorsqu'il s'agit de problèmes de régression ou de classification impliquant des données tabulaires.
 
@@ -175,4 +175,3 @@ Une piste de développement seest de considérerifférents modes de parallélism
 ## Conclusion
 
 Au-delà de la librairie EvoTrees, Julia offre un environnement de choix pour toute tâche exigeante en calculs. Le projet [MLJ](https://github.com/alan-turing-institute/MLJ.jl) auquel Evotrees est intégré offre un bon point d'entrée pour tout projet de modélisation traditionnel. Plus significatif encore est de réaliser que de nombreuses routines algorithmiques peuvent être implantées relativement aisément, permettant de se libérer des lourdeurs communes aux librairies clés en main pour se concentrer sur les caractéristiques uniques du problème à résoudre. La légèreté de l'outil d'apprentissage profond [Flux](https://fluxml.ai/) en est un exemple éloquent. 
-
