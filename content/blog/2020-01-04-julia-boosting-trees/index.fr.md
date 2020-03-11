@@ -11,7 +11,7 @@ description: "Développement d'algorithmes from scratch"
 ---
 
 
-> Cet article a pour but d'exposer les principes clés permettant une implantation haute performance du _gradient boosting trees_ en Julia, un langage réconciliant l'expressivité et la productivité qu'on retrouve en Python et en R et la performance de langages compilés comme le C et C++. 
+> Cet article a pour but d'exposer les principes clés permettant une implantation haute performance du gradient boosting trees en Julia, un langage réconciliant l'expressivité et la productivité qu'on retrouve en Python et en R et la performance de langages compilés comme le C et C++. 
 
 Bien que les approches par réseaux de neurones accaparent une bonne partie de l'attention, l'importance des algorithmes reposant sur des arbres de décision ne peut être négligée. Ils continuent de se démarquer comme offrant la meilleure performance prédictive dans de nombreuses situations, particulièrement lorsqu'il s'agit de problèmes de régression ou de classification impliquant des données tabulaires.
 
@@ -164,13 +164,33 @@ Afin d'évaluer si l'implantation de l'algorithme est compétitive, une comparai
 | 100K x 100        |     9.39s     |     4.25s    |   2.02s  |   |
 | 1M X 100          |     146.5s    |     20.2s    |   22.5   |   |
 
+
+L'expérimentation peut être conduite de la façon suivante: 
+
+```julia
+using EvoTrees
+
+X = rand(Int(1.e5), 100)
+Y = rand(size(X, 1))
+
+config = EvoTreeRegressor(
+    loss=:linear, metric=:none,
+    nrounds=100,
+    λ = 0.0, γ=0.0, η=0.05,
+    max_depth = 6, min_weight = 1.0,
+    rowsample=0.5, colsample=0.5, nbins=32)
+
+@time model = fit_evotree(config, X, Y);
+@time pred = predict(model, X)
+```
+
 Il en ressort que la méthode par histogramme est critique pour obtenir de bonnes performances sur des données volumineuses. Aussi, au-delà du million d'observations, XGBoost reprend l'avantage sur EvoTrees. 
 
 EvoTrees supporte par ailleurs quelques fonctions de pertes qu'on ne retrouve pas dans XGBoost, dont la régression par quantile ainsi que la régression gaussienne (estimation simultanée des paramètres $\mu$ et $\sigma$ de la distribution). 
 
 ## Développements futurs
 
-Une piste de développement seest de considérerifférents modes de parallélisme avec des données plus volumineuses afin de combler l'écart de performance avec des données de > 1 M d'observations, par exemple en parallélisant la construction d'histogrammes à l'intérieur d'une même variable. Également, fidèle à l'esprit de résolution du problème des deux langages, Julia offre des fonctionnalités prometteuses pour le développement d'algorithmes sur [GPU](https://juliacomputing.com/domains/gpus.html). Supporter la construction d'histogrammes en CUDA pourrait ainsi être la meilleure réponse pour le traitement de données très volumineuses.  
+Une piste de développement serait de considérer différents modes de parallélisme avec des données plus volumineuses afin de combler l'écart de performance lorsque les observations > sont 1 M, par exemple en parallélisant la construction d'histogrammes à l'intérieur d'une même variable. Également, fidèle à l'esprit de résolution du problème des deux langages, Julia offre des fonctionnalités prometteuses pour le développement d'algorithmes sur [GPU](https://juliacomputing.com/domains/gpus.html). Supporter la construction d'histogrammes en CUDA pourrait ainsi être la meilleure réponse pour le traitement de données très volumineuses.  
 
 ## Conclusion
 
