@@ -118,7 +118,7 @@ Une telle approche fonctionne, mais est sujette à quelques inconvénients. D'ab
 
 La méthode de l'histogramme permet de contourner ces obstacles. L'idée est de discrétiser chaque variable en associant chaque observation à un groupe, par exemple le quantile. En utilisant un entier entre 0 et 255 comme identifiant de ces groupes, la matrice de données est encodée dans un format `UInt8`, lequel accapare 8 fois moins de mémoire qu'un format `Float64` (un _numeric_ en R). 
 
-Avant la construction des arbres, la librairie EvoTrees effectue cette discrétisation en trouvant d'abord les quantiles pour chacune des variables (get_edges), puis en créant une matrice de `UInt8` pour encoder les données d'entraînement.
+Avant la construction des arbres, la librairie EvoTrees effectue cette discrétisation en trouvant d'abord les quantiles pour chacune des variables (`get_edges`), puis en créant une matrice de `UInt8` pour encoder les données d'entraînement.
 
 ```julia
 edges = EvoTrees.get_edges(X_train, params.nbins)
