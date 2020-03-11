@@ -190,7 +190,7 @@ EvoTrees supporte par ailleurs quelques fonctions de pertes qu'on ne retrouve pa
 
 ## Développements futurs
 
-Une piste de développement serait de considérer différents modes de parallélisme avec des données plus volumineuses afin de combler l'écart de performance lorsque les observations > sont 1 M, par exemple en parallélisant la construction d'histogrammes à l'intérieur d'une même variable. Également, fidèle à l'esprit de résolution du problème des deux langages, Julia offre des fonctionnalités prometteuses pour le développement d'algorithmes sur [GPU](https://juliacomputing.com/domains/gpus.html). Supporter la construction d'histogrammes en CUDA pourrait ainsi être la meilleure réponse pour le traitement de données très volumineuses.  
+Une piste de développement serait de considérer différents modes de parallélisme avec des données plus volumineuses afin de combler l'écart de performance lorsque les observations sont > 1 M, par exemple en parallélisant la construction d'histogrammes à l'intérieur d'une même variable. Également, fidèle à l'esprit de résolution du problème des deux langages, Julia offre des fonctionnalités prometteuses pour le développement d'algorithmes sur [GPU](https://juliacomputing.com/domains/gpus.html). Supporter la construction d'histogrammes en CUDA pourrait ainsi être la meilleure réponse pour le traitement de données très volumineuses.  
 
 ## Conclusion
 
