@@ -125,7 +125,7 @@ edges = EvoTrees.get_edges(X_train, params.nbins)
 X_bin = EvoTrees.binarize(X_train, edges)
 ```
 
-En choisissant le nombre de groupe (nbins) comme étant 16, le problème à résoudre prend la forme suivante d'un point de vue univarié: 
+En choisissant le nombre de groupes (`nbins`) comme étant 16, le problème à résoudre prend la forme suivante d'un point de vue univarié: 
 
 ![](bin_one_ways.png)
 
