@@ -156,33 +156,13 @@ Au terme du processus d'entraînement, le modèle prend la forme suivante:
 
 ## Évaluation de la performance
 
-Afin d'évaluer si l'implantation de l'algorithme est compétitive, une comparaison du temps d'entraînement par rapport à XGBoost pour 100 itérations sur des données générées aléatoirement est conduite:  
+Afin d'évaluer si l'implantation de l'algorithme est compétitive, une [comparaison du temps d'entraînement](https://github.com/Evovest/EvoTrees.jl/blob/master/blog/benchmarks.jl) par rapport à XGBoost pour 100 itérations sur des données générées aléatoirement est conduite:  
 
 | Dimensions / Algo | XGBoost Exact | XGBoost Hist | EvoTrees |   |
 |-------------------|:-------------:|:------------:|:--------:|---|
 | 10K x 100         |     1.18s     |     2.15s    |   0.52s  |   |
 | 100K x 100        |     9.39s     |     4.25s    |   2.02s  |   |
 | 1M X 100          |     146.5s    |     20.2s    |   22.5   |   |
-
-
-L'expérimentation peut être conduite de la façon suivante: 
-
-```julia
-using EvoTrees
-
-X = rand(Int(1.e5), 100)
-Y = rand(size(X, 1))
-
-config = EvoTreeRegressor(
-    loss=:linear, metric=:none,
-    nrounds=100,
-    λ = 0.0, γ=0.0, η=0.05,
-    max_depth = 6, min_weight = 1.0,
-    rowsample=0.5, colsample=0.5, nbins=32)
-
-@time model = fit_evotree(config, X, Y);
-@time pred = predict(model, X)
-```
 
 Il en ressort que la méthode par histogramme est critique pour obtenir de bonnes performances sur des données volumineuses. Aussi, au-delà du million d'observations, XGBoost reprend l'avantage sur EvoTrees. 
 
