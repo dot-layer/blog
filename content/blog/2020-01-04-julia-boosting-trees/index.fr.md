@@ -31,7 +31,7 @@ On verra maintenant plus en détail comment il est possible d'implanter des algo
 
 ## Mise en contexte
 
-Afin de rendre plus tangible les détails de l'implantation du gradient boosting en Julia, un problème de régression avec 2 variables continues servira d'exemple. 
+Afin de rendre plus tangibles les détails de l'implantation du gradient boosting en Julia, un problème de régression avec 2 variables continues servira d'exemple. 
 
 La variable réponse est dépendante des variables `var1` et `var2`. L'effet est sinusoïdal en `var1` et croissant en `var2`.
 
@@ -42,11 +42,11 @@ La variable réponse est dépendante des variables `var1` et `var2`. L'effet est
 
 ## Introduction à l'algorithme
 
-L'entraînement d'un gradient boosting trees peut être décrit sommairement de la manière suivante: 
+L'entraînement d'un gradient boosting trees (GBT) peut être décrit sommairement de la manière suivante: 
 
 0. Définir une prédiction de base pour chacune des observations. Ex: pred = 0.0
 1. Construire un arbre de décision, _A1_ expliquant la différence entre les prédictions et les valeurs observées.  
-2. Mettre à jour les prédicions en ajoutant les prédictions de l'arbre _A1_ aux prédictions actuelles: pred = pred + predict(_A1_)
+2. Mettre à jour les prédictions en ajoutant les prédictions de l'arbre _A1_ aux prédictions actuelles: pred = pred + predict(_A1_)
 3. Répéter 1. et 2. pour un nombre N d'arbres.
 
 Dans un scénario où le nombre d'itérations serait de 4, le modèle entraîné pourrait se visualiser de la façon suivante: 
@@ -55,7 +55,7 @@ Dans un scénario où le nombre d'itérations serait de 4, le modèle entraîné
 
 Pour obtenir une prédiction, il suffit d'additionner la prédiction obtenue à chacun des 4 arbres. 
 
-Comme on peut le constater, un modèle GBT ne consiste qu'en une collection d'arbres de décision. Quelques subtilités sont néanmoins introduites en pratique, par exemple le rééchantillonnage des observations et des variables explicatives à chacune des itérations. Reste qu'une fois qu'on a établi comment construire un arbre de décision, l'essentiel du travail est accompli. À noter que la même logique s'appliquerait si on construisait un RandomForest: il ne suffirait encore là que de savoir construire un arbre de décision, le reste n'étant qu'une variation de l'algorithme présenté plus haut. 
+Comme on peut le constater, un modèle GBT consiste en une collection d'arbres de décision. Quelques subtilités sont néanmoins introduites en pratique, par exemple le rééchantillonnage des observations et des variables explicatives à chacune des itérations. Reste qu'une fois qu'on a établi comment construire un arbre de décision, l'essentiel du travail est accompli. À noter que la même logique s'appliquerait si on construisait un RandomForest: il ne suffirait encore là que de savoir construire un arbre de décision, le reste n'étant qu'une variation de l'algorithme présenté plus haut. 
 
 En Julia, on peut définir la structure du modèle de la manière suivante, où un GBTree est composé d'un vecteur de Tree: 
 
@@ -67,7 +67,7 @@ struct GBTree
 end
 ```
 
-En son coeur Julia supporte des représentations multi-dimensionnelles via des `Array{T,N}`. Un vecteur `Vector{T}` ou une matrice `Matrix{T}` ne sont que des cas particuliers des `Array{T,N}`, où `N` = 1 et 2 respectivement. L'élément `T` réfère au type. Par exemple, un vecteur peut être défini par: `[1.1, 2.2]`. La nature de cet objet serait `Vector{Float64}`. En Julia, la représentation multi-dimensionnelle ne se limite pas aux nombres conventionnels comme les Float ou les Integer, ça peut être n'importe quel type d’objet. Par exemple, on pourrait parfaitement avoir une matrice dont les éléments sont des DataFrames (mais le produit matriciel de ces objets resterait à définir!). Dans le cas de GBT, le modèle est ainsi constitué d'un `Vector{Tree}`. 
+En son coeur Julia supporte des représentations multi-dimensionnelles via des `Array{T,N}`. Un vecteur `Vector{T}` ou une matrice `Matrix{T}` ne sont que des cas particuliers des `Array{T,N}`, où `N` = 1 et 2 respectivement. L'élément `T` réfère au type. Par exemple, un vecteur peut être défini par: `[1.1, 2.2]`. La nature de cet objet serait `Vector{Float64}`. En Julia, la représentation multi-dimensionnelle ne se limite pas aux nombres conventionnels comme les Float ou les Integer, ça peut être n'importe quel type d’objet. Par exemple, on pourrait parfaitement avoir une matrice dont les éléments sont des DataFrames (mais le produit matriciel de ces objets resterait à définir!). Dans le cas du GBT, le modèle est ainsi constitué d'un `Vector{Tree}`. 
 
 ## Définition d'un arbre
 
@@ -75,7 +75,7 @@ Tel que montré plus haut, un arbre de décision se compose d'une série de noeu
 
 ![](tree_1.png)
 
-Une structure récursive peut être une représentation intuitive pour un arbre qui serait alors définit comme un noeud contenant le critère de décision ainsi que 2 noeuds dépendants ("child nodes") selon que la condition soit respectée ou non. Il est également possible de représenter un arbre par un simple vecteur de noeuds: 
+Une structure récursive peut être une représentation intuitive pour un arbre qui serait alors défini comme un noeud contenant le critère de décision ainsi que 2 noeuds dépendants ("child nodes") selon que la condition soit respectée ou non. Il est également possible de représenter un arbre par un simple vecteur de noeuds: 
 
 ```julia
 struct Tree{L, T<:AbstractFloat, S<:Int}
@@ -94,15 +94,15 @@ struct TreeNode{L, T<:AbstractFloat, S<:Int, B<:Bool}
 end
 ```
 
-Comme on peut le voir dans la structure `TreeNode`, pour chaque noeud on doit définir sur quelle variable la décision doit être prise ainsi que la condition à appliquer. 
+Comme on peut le voir dans la structure `TreeNode`, chaque noeud définit sur quelle variable la décision est prise (`feat`) ainsi que la condition à appliquer (`cond`). S'il s'agit d'un noeud terminal, il contiendra la prédiction (`pred`) et l'indicateur `split` sera à `false`. 
 
-Une fois les structures établies, il ne reste plus qu'à identifier les valeurs elles doivent prendre. 
+Une fois les structures établies, il ne reste plus qu'à identifier les valeurs qu'elles doivent prendre. 
 
 ## Construction d'un arbre
 
-Il s'agit d'évaluer pour chaque variable la condition apportant la plus grande réduction de la fonction de perte. C'est là que l'essentiel de la charge de calcul se trouve et que certains choix de design permettront d'atteindre des performances optimales. Ensuite, la variable dont la condition optimale apporte le plus grand gain sera retenue pour définir la condition du noeud. 
+Pour construire un arbre, il s'agit d'évaluer pour chaque variable la condition apportant la plus grande réduction de la fonction de perte (la somme des erreurs au carré par exemple). C'est là que l'essentiel de la charge de calcul se trouve et que certains choix de design permettront d'atteindre des performances optimales. Ensuite, la variable dont la condition optimale apporte le plus grand gain sera retenue pour définir la condition du noeud. 
 
-Pour chaque noeud, l'algorithme s'exerce d'une perspective univariée. Il s'agit là d'un propriété se prêtant à une optimisation. Puisque l'évaluation de la meilleure condition se fait de façon indépendante pour chaque variable, cette recherche peut aisément être parallélisée.
+Pour chaque noeud, l'algorithme s'exerce d'une perspective univariée. Il s'agit là d'une propriété se prêtant à une optimisation. Puisque l'évaluation de la meilleure condition se fait de façon indépendante pour chaque variable, cette recherche peut aisément être parallélisée.
 
 Julia supporte plusieurs saveurs de parallélisme. Dans le cas de la recherche de variables, tous les coeurs du processeur peuvent être mis à profit simplement en utilisant la macro `@threads` incluse dans les fonctionnalités de base du langage.  
 
@@ -114,9 +114,9 @@ end
 
 Une façon brute de chercher le meilleur bris est de mettre en ordre les observations selon une variable donnée. Une fois les observations en ordre, on peut considérer pour chacune des valeurs uniques prises par cette variable quel serait le gain si la condition s'exerçait sur cette valeur. 
 
-Une telle approche fonctionne, mais est sujette à quelques inconvénients. D'abord, ordonner une variable est une opération coûteuse, particulièrement si on considère que l'opération doit être répétée pour plusieurs variables, pour chacun des noeuds et pour chaque arbre. Également, si le nombre de valeurs uniques prises par une variable est très élevée, ça implique d'évaluer le gain à un très grand nombre de reprises. 
+Une telle approche fonctionne, mais est sujette à quelques inconvénients. D'abord, ordonner une variable est une opération coûteuse, particulièrement si on considère que l'opération doit être répétée pour plusieurs variables, pour chacun des noeuds et pour chaque arbre. Également, si le nombre de valeurs uniques prises par une variable est très élevé, ça implique d'évaluer le gain à un très grand nombre de reprises. 
 
-La méthode de l'histogramme permet de contourner ces obstacles. L'idée est de discrétiser chaque variable en associant chaque observation à un groupe, par exemple le quantile. En utilisant un entier entre 0 et 255 comme identifiant de ces groupes, la matrice de données est encodée dans un format UInt8, lequel accapare 8 fois moins de mémoire qu'un format Float64 (un _numeric_ en R). 
+La méthode de l'histogramme permet de contourner ces obstacles. L'idée est de discrétiser chaque variable en associant chaque observation à un groupe, par exemple le quantile. En utilisant un entier entre 0 et 255 comme identifiant de ces groupes, la matrice de données est encodée dans un format `UInt8`, lequel accapare 8 fois moins de mémoire qu'un format `Float64` (un _numeric_ en R). 
 
 Avant la construction des arbres, la librairie EvoTrees effectue cette discrétisation en trouvant d'abord les quantiles pour chacune des variables (get_edges), puis en créant une matrice de `UInt8` pour encoder les données d'entraînement.
 
@@ -131,25 +131,24 @@ En choisissant le nombre de groupe (nbins) comme étant 16, le problème à rés
 
 Sous cette formulation, le nombre de conditions à évaluer se limite désormais à 15 (ou plus généralement, nbins-1). 
 
-Il reste enfin à définir le gain associé à chacun des bris. Une force du gradient boosting est sa flexibilité. Sous l'implantation introduite par XGboost, il suffit de définir une fonction de perte qui soit convexe. Par exemple, avec une régression des moindres carrés, la perte est définie par $(y - pred)^2$. Cette perte a une forme parabolique et son minimum est bien entendu lorsque la valeur prédite égale la valeur observée. La notion critique à remarquer est qu'en ne connaissant que les dérivées premières et secondes de la perte par rapport à la prédiction, il est possible de déterminer non seulement quelle serait la prédiction optimale, mais également la réduction de la perte. 
+Il reste enfin à définir le gain associé à chacun des bris. Une force du gradient boosting est sa flexibilité. Sous l'implantation introduite par XGboost, il suffit de définir une fonction de perte qui soit convexe. Par exemple, avec une régression des moindres carrés, la perte est définie par $(y - pred)^2$. Cette perte a une forme parabolique et son minimum est bien entendu lorsque la valeur prédite égale la valeur observée. La notion critique à remarquer est qu'en ne connaissant que les dérivées premières et secondes de la perte par rapport à la prédiction, il est possible de déterminer non seulement quelle serait la prédiction optimale, mais également le gain réalisé et ce, peu importe la fonction de perte grâce à une approximation de second degré: 
+
+```julia
+pred = -params.η .* node.∑δ ./ (node.∑δ² .+ params.λ .* node.∑𝑤)
+gain = sum((∑δ .^ 2 ./ (∑δ² .+ λ .* ∑𝑤)) ./ 2
+```
+
+Où η = vitesse d'apprentissage, ∑δ, ∑δ² = somme des dérivées premières et secondes, ∑w = somme des poids et λ = facteur de régularisation. 
 
 Pour la première des 15 conditions possibles, l'arbre distinguerait les données en deux groupes (gauche et droite) de la manière suivante: 
 
 ![](first_split.png)
 
-Le gain se définit comme la réduction de la perte qu'apporterait une modification à la prédiction. Il est calculé séparément pour les groupes de gauche et de droite. La perte associée à différentes modifications de la prédiction pour le groupe de gauche est la suivante:
+Le gain se définit comme la réduction de la perte qu'apporterait une modification à la prédiction. Il est calculé séparément pour les groupes de gauche et de droite puis additionné. La perte associée à différentes modifications de la prédiction pour le groupe de gauche est la suivante:
 
 ![](left_parabole.png)
 
-On calcule également la perte sur l'ensemble des données. Effectuer un bris dans l'arbre devra apporter un gain par rapport à cette valeur de référence. 
-
-Il est à noter que la perte minimale est atteinte lorsque la prédiction est de -1.11, ce qui correspond à la moyenne des résidus pour le groupe 1. 
-
-Puisqu'une approximation de second degré (i.e. les dérivées premières et secondes) est utilisée pour représenter la perte, il existe une solution analytique permettant d'obtenir la valeur de la prédiction optimale et de la réduction de la perte associée à cette dernière. Ça revient à trouver le minimum d'une fonction parabolique, soit la valeur de la prédiction où la dérivée première de la perte est égale à 0. La dérivée de la fonction de perte étant linéaire, l'approche par descente du gradient donne une solution exacte. 
-
-$gain = \fraction{\sigma^2}{(\sum \sigma^2 + \lambda \times \sum \omega) \times 2}$
-
-$pred = - \fraction{\eta \times \sum \sigma}{\sum \sigma^2 + \lambda \times \sum \omega}$
+La perte minimale est atteinte lorsque la prédiction est de -1.11, ce qui correspond à la moyenne des résidus pour le groupe 1. La perte sur l'ensemble des données est également calculée. Effectuer un bris dans l'arbre devra apporter un gain par rapport à cette valeur de référence. 
 
 Au terme du processus d'entraînement, le modèle prend la forme suivante:
 
@@ -157,7 +156,7 @@ Au terme du processus d'entraînement, le modèle prend la forme suivante:
 
 ## Évaluation de la performance
 
-Comparaison du temps d'entraînement pour 100 itérations sur des données générées aléatoirement. 
+Afin d'évaluer si l'implantation de l'algorithme est compétitive, une comparaison du temps d'entraînement par rapport à XGBoost pour 100 itérations sur des données générées aléatoirement est conduite:  
 
 | Dimensions / Algo | XGBoost Exact | XGBoost Hist | EvoTrees |   |
 |-------------------|:-------------:|:------------:|:--------:|---|
@@ -165,10 +164,15 @@ Comparaison du temps d'entraînement pour 100 itérations sur des données gén�
 | 100K x 100        |     9.39s     |     4.25s    |   2.02s  |   |
 | 1M X 100          |     146.5s    |     20.2s    |   22.5   |   |
 
-Il en ressort que la méthode par histogramme est critique pour obtenir de bonnes performances au-delà de quelques centaines de milliers d'observations. Aussi, au-delà du million d'observations, XGBoost reprend l'avantage sur EvoTrees. 
+Il en ressort que la méthode par histogramme est critique pour obtenir de bonnes performances sur des données volumineuses. Aussi, au-delà du million d'observations, XGBoost reprend l'avantage sur EvoTrees. 
 
-EvoTrees supporte par ailleurs quelques fonctions de pertes qu'on ne retrouve pas dans XGBoost, dont la régression par quantile ainsi que la régression Gaussienne (estimation simultanée des paramètres $\mu$ et $\sigma$ de la distribution). 
+EvoTrees supporte par ailleurs quelques fonctions de pertes qu'on ne retrouve pas dans XGBoost, dont la régression par quantile ainsi que la régression gaussienne (estimation simultanée des paramètres $\mu$ et $\sigma$ de la distribution). 
 
 ## Développements futurs
 
-Une piste de développement serait d'envisager différents modes de parallélisme avec des données plus volumineuses afin de combler l'écart de performance avec des données de > 1 M d'observations, par exemple en parallélisant la construction d'histogrammes à l'intérieur d'une même variable. Également, fidèle à l'esprit de résolution du problème des deux langages, Julia offre des fonctionnalités prometteuses pour le développement d'algorithmes sur [GPU](https://juliacomputing.com/domains/gpus.html). Supporter la construction d'histogrammes en CUDA pourrait ainsi être la meilleure réponse pour le traitement de données très volumineuses.  
+Une piste de développement seest de considérerifférents modes de parallélisme avec des données plus volumineuses afin de combler l'écart de performance avec des données de > 1 M d'observations, par exemple en parallélisant la construction d'histogrammes à l'intérieur d'une même variable. Également, fidèle à l'esprit de résolution du problème des deux langages, Julia offre des fonctionnalités prometteuses pour le développement d'algorithmes sur [GPU](https://juliacomputing.com/domains/gpus.html). Supporter la construction d'histogrammes en CUDA pourrait ainsi être la meilleure réponse pour le traitement de données très volumineuses.  
+
+## Conclusion
+
+Au-delà de la librairie EvoTrees, Julia offre un environnement de choix pour toute tâche exigeante en calculs. Le projet [MLJ](https://github.com/alan-turing-institute/MLJ.jl) auquel Evotrees est intégré offre un bon point d'entrée pour tout projet de modélisation traditionnel. Plus significatif encore est de réaliser que de nombreuses routines algorithmiques peuvent être implantées relativement aisément, permettant de se libérer des lourdeurs communes aux librairies clés en main pour se concentrer sur les caractéristiques uniques du problème à résoudre. La légèreté de l'outil d'apprentissage profond [Flux](https://fluxml.ai/) en est un exemple éloquent. 
+
