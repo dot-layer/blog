@@ -158,13 +158,13 @@ Au terme du processus d'entraînement, le modèle prend la forme suivante:
 
 Afin d'évaluer si l'implantation de l'algorithme est compétitive, une [comparaison du temps d'entraînement](https://github.com/Evovest/EvoTrees.jl/blob/master/blog/benchmarks.jl) par rapport à XGBoost pour 100 itérations sur des données générées aléatoirement est conduite:  
 
-| Dimensions / Algo | XGBoost Exact | XGBoost Hist | EvoTrees |   |
-|-------------------|:-------------:|:------------:|:--------:|---|
-| 10K x 100         |     1.18s     |     2.15s    |   0.52s  |   |
-| 100K x 100        |     9.39s     |     4.25s    |   2.02s  |   |
-| 1M X 100          |     146.5s    |     20.2s    |   22.5   |   |
+| Dimensions / Algo | XGBoost Exact | XGBoost Hist | EvoTrees |
+|-------------------|:-------------:|:------------:|:--------:|
+| 10K x 100         |     1.18s     |     2.15s    |   0.52s  |
+| 100K x 100        |     9.39s     |     4.25s    |   2.02s  |
+| 1M X 100          |     146.5s    |     20.2s    |   21.5 1 |
 
-Il en ressort que la méthode par histogramme est critique pour obtenir de bonnes performances sur des données volumineuses. Aussi, au-delà du million d'observations, XGBoost reprend l'avantage sur EvoTrees. 
+Il en ressort que la méthode par histogramme est critique pour obtenir de bonnes performances sur des données volumineuses. Également, EvoTrees se compare avantageusement à XGBoost sur des données de petite taille et affiche des performances comparables sur des données plus volumineuses. 
 
 EvoTrees supporte par ailleurs quelques fonctions de pertes qu'on ne retrouve pas dans XGBoost, dont la régression par quantile ainsi que la régression gaussienne (estimation simultanée des paramètres $\mu$ et $\sigma$ de la distribution). 
 
