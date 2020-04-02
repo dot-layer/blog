@@ -1,7 +1,7 @@
 ---
 title: "Boosting Trees avec Julia"
 author: "Jeremie Desgagne-Bouchard"
-date: "2020-02-04"
+date: "2020-04-01"
 slug: "julia-boosting-trees"
 type: "post"
 tags: ["Machine Learning", "Julia"]
@@ -162,7 +162,7 @@ Afin d'évaluer si l'implantation de l'algorithme est compétitive, une [compara
 |-------------------|:-------------:|:------------:|:--------:|
 | 10K x 100         |     1.18s     |     2.15s    |   0.52s  |
 | 100K x 100        |     9.39s     |     4.25s    |   2.02s  |
-| 1M X 100          |     146.5s    |     20.2s    |   21.5 1 |
+| 1M X 100          |     146.5s    |     20.2s    |   21.5s  |
 
 Il en ressort que la méthode par histogramme est critique pour obtenir de bonnes performances sur des données volumineuses. Également, EvoTrees se compare avantageusement à XGBoost sur des données de petite taille et affiche des performances comparables sur des données plus volumineuses. 
 
