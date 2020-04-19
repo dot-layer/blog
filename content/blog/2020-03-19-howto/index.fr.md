@@ -28,7 +28,7 @@ Voyons en détail chacune des étapes. Mais tout d'abord, quelques commentaires 
 
 Tous les articles sur le blog sont assujettis à la license [CC-BY](https://creativecommons.org/licenses/by/4.0/deed.fr). Aussi, si vous souhaitez publier sur le blog de .Layer un article déjà paru sur une autre plateforme, veuillez s'il vous plaît le mentionner dans l'article (au début ou à la fin), ainsi que dans le *Pull Request*. Finalement, gardez en tête que l'objectif principal du blog est l'éducation et le partage du savoir.
 
-À des fins de reproductibilité dans le temps et pour tous, **le dépôt doit rester indépendant de toute compilation de code (R, Python, Julia, etc)**.
+À des fins de reproductibilité dans le temps et pour tous, **le dépôt doit rester indépendant de toute compilation de code (R, Python, Julia, etc.)**.
 Par exemple, si vous utilisez RMarkdown (.Rmd), qui permet d'intégrer du code R dans un fichier Markdown, vous devrez alors compiler le tout et copier seulement le .md ou le .html dans le dépôt du blog (à l'étape 2.3).
 
 
