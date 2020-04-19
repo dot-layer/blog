@@ -11,25 +11,25 @@ featured: "howto-fr-cover.png"
 featuredpath: "img/headers/"
 ---
 
-Contribuer au blog n'aura jamais été aussi facile. Tout d'abord, il faut dire que toute soumission, quelque soit son format (Markdown, Microsoft Word, Notepad, *name it*!) sera considérée, et ultimement transcrite en Markdown. On pense déjà à une façon de faire pour la révision des documents non-Markdown (possiblement Google Docs). Ceci étant écrit, pour ceux et celles qui voudraient écrire et soumettre un article de la façon _conventionnelle_, voici une procédure simple pour y arriver.
+Contribuer au blog n'aura jamais été aussi facile. Tout d'abord, il faut dire que toute soumission, quel que soit son format (Markdown, Microsoft Word, Notepad, *name it*!) sera considérée, et ultimement transcrite en Markdown. On pense déjà à une façon de faire pour la révision des documents non-Markdown (possiblement Google Docs). Ceci étant écrit, pour ceux et celles qui voudraient écrire et soumettre un article de la façon _conventionnelle_, voici une procédure simple pour y arriver.
 
 1. **Création de l'article**
   1. Enregister le fichier `.md` utilisé pour créer cet article (disponible [ici](https://github.com/dot-layer/blog/blob/master/content/blog/2020-03-19-howto/index.fr.md)) sous le nom `index.md` (pour les articles en anglais) ou `index.fr.md` (pour les articles en français).
-  2. Y insérer votre article et modifier les champs essentiels de l'en-tête ainsi que le contenu (duh). Il faut sauvegarder vos images dans le même répertoire que le fichier .md (ou dans un sous-répertoire); à l'exception de l'image de couverture, son emplacement spécifié avec le champ `featured: ""`.\\
+  2. Y insérer votre article et modifier les champs essentiels de l'en-tête ainsi que le contenu (duh). Il faut sauvegarder vos images dans le même dossier que le fichier .md (ou dans un sous-répertoire); à l'exception de l'image de couverture, son emplacement est spécifié avec le champ `featured: ""`.\\
 2. **Soumission de l'article**
-  1. `git fork https://github.com/dot-layer/blog` le dépot, c'est-à-dire de *fourcher* le [dépôt du blog](https://github.com/dot-layer/blog).
+  1. `git fork https://github.com/dot-layer/blog` le dépot, c'est-à-dire *fourcher* le [dépôt du blog](https://github.com/dot-layer/blog).
   2. `git checkout -b post/tes-initiales_nom-du-post`, c'est-à-dire créer une nouvelle branche pour votre article.
   3. Créer un nouveau répertoire `content/blog/YYYY-mm-dd-nom-du-post` et y insérer votre article (.md ou .html) ainsi que les fichiers statiques (e.g. images) nécessaire à sa compilation.
   4. Faire un *Pull Request* à la branche *master* sur le [github du blog](https://github.com/dot-layer/blog/pulls).
 
-Voyons en détails chacune des étapes. Mais tout d'abord, quelques commentaires d'intérêts.
+Voyons en détail chacune des étapes. Mais tout d'abord, quelques commentaires d'intérêts.
 
-## License et reproductibilité
+## Licence et reproductibilité
 
-Tous les articles sur le blog sont assujettis à la license [CC-BY](https://creativecommons.org/licenses/by/4.0/deed.fr). Aussi, si vous souhaitez publier sur le blog de .Layer un article déjà paru sur une autre plateform, veuillez s'il vous plaît le mentionner dans l'article (au début ou à la fin), ainsi que dans le *Pull Request*. Finalement, gardez en tête que l'objectif principal du blog est l'éducation et le partage du savoir.
+Tous les articles sur le blog sont assujettis à la license [CC-BY](https://creativecommons.org/licenses/by/4.0/deed.fr). Aussi, si vous souhaitez publier sur le blog de .Layer un article déjà paru sur une autre plateforme, veuillez s'il vous plaît le mentionner dans l'article (au début ou à la fin), ainsi que dans le *Pull Request*. Finalement, gardez en tête que l'objectif principal du blog est l'éducation et le partage du savoir.
 
 À des fins de reproductibilité dans le temps et pour tous, **le dépôt doit rester indépendant de toute compilation de code (R, Python, Julia, etc)**.
-Par exemple, si vous utilisez RMarkdown (.Rmd), qui permet d'intégrer du code R dans un fichier Markdown, vous devrez alors compiler le tout et glisser seulement le .md ou le .html dans le dépôt du blog (à l'étape 2.3).
+Par exemple, si vous utilisez RMarkdown (.Rmd), qui permet d'intégrer du code R dans un fichier Markdown, vous devrez alors compiler le tout et copier seulement le .md ou le .html dans le dépôt du blog (à l'étape 2.3).
 
 
 # 1. Création d'un article
@@ -58,7 +58,7 @@ On s'occupera aussi des champs `categories` et `tags`.
 Le champ `slug` est un *surnom* pour votre article qui sera utilisé pour nommer les différents dossiers liés à l'article sur le dépot du blog.
 Le champ `featured` doit contenir le nom du fichier de l'image de couverture, tandis que `featuredpath` (qui doit rester inchangé) indique où trouver le fichier. C'est d'ailleurs là que vous devez placer votre image de couverture.
 
-En ce qui attrait à l'écriture de l'article, il faut connaître les bases de Markdown. 
+En ce qui a trait à l'écriture de l'article, il faut connaître les bases de Markdown. 
 En plus du contenu déjà dans le *template* que constitue cet article, on vous conseille cette petite [*cheatsheet*](https://github.com/adam-p/markdown-here/wiki/Markdown-Here-Cheatsheet) pour utiliser Markdown.
 
 # 2. Soumission d'un article
