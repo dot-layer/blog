@@ -11,7 +11,7 @@ featured: "howto-fr-cover.png"
 featuredpath: "img/headers/"
 ---
 
-Contribuer au blog n'aura jamais été aussi facile. Tout d'abord, il faut dire que toute soumission, quel que soit son format (Markdown, Microsoft Word, Notepad, *name it*!) sera considérée, et ultimement transcrite en Markdown. On pense déjà à une façon de faire pour la révision des documents non-Markdown (possiblement Google Docs). Ceci étant écrit, pour ceux et celles qui voudraient écrire et soumettre un article de la façon _conventionnelle_, voici une procédure simple pour y arriver.
+Contribuer au blog n'aura jamais été aussi facile. Tout d'abord, il faut dire que toute soumission, quel que soit son format (Markdown, Microsoft Word, Notepad, *name it*!), sera considérée, et ultimement transcrite en Markdown. On pense déjà à une façon de faire pour la révision des documents non-Markdown (possiblement Google Docs). Ceci étant écrit, pour ceux et celles qui voudraient écrire et soumettre un article de la façon _conventionnelle_, voici une procédure simple pour y arriver.
 
 1. **Création de l'article**
   1. Enregister le fichier `.md` utilisé pour créer cet article (disponible [ici](https://github.com/dot-layer/blog/blob/master/content/blog/2020-03-19-howto/index.fr.md)) sous le nom `index.md` (pour les articles en anglais) ou `index.fr.md` (pour les articles en français).
