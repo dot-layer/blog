@@ -67,7 +67,7 @@ En plus du contenu déjà dans le *template* que constitue cet article, on vous 
 
 **Étapes 2.3.** Créer un nouveau répertoire/dossier `content/blog/YYYY-mm-dd-nom-du-post` (dans votre nouveau dépôt créer à l'étape précédente) et y insérer votre article ainsi que les fichiers statiques (e.g. images) nécessaires à sa compilation. Comme mentionné plus tôt dans l'article, on demande de s'en tenir au .md (ou .html), il n'est plus question de compiler de code R, Python, Julia, etc. lorsque l'article est intégré au dépôt du blog.
 
-**Étape 2.4.** Faire un *Pull Request* à la branche *master* sur le [github du blog](https://github.com/dot-layer/blog). Encore une opération classique de Git. À partir de là, les collaborateurs qui gèrent le blogue feront une révision de l'article et des recommendations constructives, en plus de s'assurer que le rendu est *clean*.
+**Étape 2.4.** Faire un *Pull Request* à la branche *master* sur le [github du blog](https://github.com/dot-layer/blog). Encore une opération classique de Git. À partir de là, les collaborateurs qui gèrent le blogue feront une révision de l'article et des recommandations constructives, en plus de s'assurer que le rendu est *clean*.
 
 
 Euh voilà... Pas plus compliqué que ça. En espérant que ça vous aidera.
