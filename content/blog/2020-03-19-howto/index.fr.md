@@ -55,7 +55,7 @@ featuredpath: "img/headers/"
 Les champs sont presque tous *self-explanatory*. 
 Le champ `date` devrait contenir la date de création du fichier. On le changera pour la date de publication en temps et lieu (dans le *Pull Request*).
 On s'occupera aussi des champs `categories` et `tags`.
-Le champ `slug` est un *surnom* pour votre article qui sera utilisé pour nommer les différents dossiers liés à l'article sur le dépot du blog.
+Le champ `slug` est un *surnom* pour votre article qui sera utilisé pour nommer les différents dossiers liés à l'article sur le répertoire du blog.
 Le champ `featured` doit contenir le nom du fichier de l'image de couverture, tandis que `featuredpath` (qui doit rester inchangé) indique où trouver le fichier. C'est d'ailleurs là que vous devez placer votre image de couverture.
 
 En ce qui a trait à l'écriture de l'article, il faut connaître les bases de Markdown. 
