@@ -1,4 +1,6 @@
-# .layer blog
+Version française [ici](dotlayer.org/about/), directement sur le site du [blog](dotlayer.org/).
+
+# .Layer blog
 
 The objective behind the blog is to make it easy for the community members (and anybody else) to promote their work and share their thoughts and ideas related to the field of data science/machine learning.
 
@@ -16,7 +18,7 @@ The objective behind the blog is to make it easy for the community members (and 
     4. assisting in the development and proper functioning of projects aiming to disseminate/explain concepts related to data science.
 
 ## How to contribute to the blog?
-The best way to contribute to the blog is by proposing new blog post. All the instruction are include in `HOWTO.md`. 
+The best way to contribute to the blog is by proposing new blog post. All the instructions are include in `HOWTO.md`. 
 
 # Actual Hugo version
 

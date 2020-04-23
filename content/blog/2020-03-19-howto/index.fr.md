@@ -57,6 +57,12 @@ Le champ `date` devrait contenir la date de création du fichier. On le changera
 On s'occupera aussi des champs `categories` et `tags`.
 Le champ `slug` est un *surnom* pour votre article qui sera utilisé pour nommer les différents dossiers liés à l'article sur le répertoire du blog.
 Le champ `featured` doit contenir le nom du fichier de l'image de couverture, tandis que `featuredpath` (qui doit rester inchangé) indique où trouver le fichier. C'est d'ailleurs là que vous devez placer votre image de couverture.
+Finalement, si l'article soumis est déjà publié sur une autre plateforme, veuillez ajouter le champ `canonical` afin de spécifier ladite plateforme. Par exemple, dans l'en-tête de l'article *What's wrong with Scikit-Learn* publié sur le blog, on trouve
+```
+canonical: https://www.neuraxio.com/en/blog/scikit-learn/2020/01/03/what-is-wrong-with-scikit-learn.html
+```
+en plus de la mention à la fin de l'article qui réfère à la publication originale.
+
 
 En ce qui a trait à l'écriture de l'article, il faut connaître les bases de Markdown. 
 En plus du contenu déjà dans le *template* que constitue cet article, on vous conseille cette petite [*cheatsheet*](https://github.com/adam-p/markdown-here/wiki/Markdown-Here-Cheatsheet) pour utiliser Markdown.
