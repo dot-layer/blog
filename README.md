@@ -1,4 +1,4 @@
-Version française [ici](dotlayer.org/about/), directement sur le site du [blog](dotlayer.org/).
+Version française [ici](https://www.dotlayer.org/about/), directement sur le site du [blog](https://www.dotlayer.org/).
 
 # .Layer blog
 
