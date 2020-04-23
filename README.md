@@ -1,3 +1,5 @@
+Version française [ici](dotlayer.org/about/), directement sur le site du [blog](dotlayer.org/).
+
 # .Layer blog
 
 The objective behind the blog is to make it easy for the community members (and anybody else) to promote their work and share their thoughts and ideas related to the field of data science/machine learning.
