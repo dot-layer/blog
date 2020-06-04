@@ -72,8 +72,35 @@ Les 3 Airbnb que j'ai réservé coûtaient en moyenne 1250\\$ par mois, soit 3,7
 Pour le reste des dépenses (transports, nourriture, restos, activités) j'avais prévu environ 5,000\\$ pour un montant total d'environ 10,000\\$ pour 3 mois (yup, Copenhague est pas donné).
 Avec ma bourse de 1,300\\$, il ne me restait qu'à prévoir 9,700\\$, je me suis donc muni d'une petite marge de crédit :)
 
-## Arrivée à Copenhague
+## Copenhague
+
+Copenhague est sans aucun doute une des plus belles villes en Europe que j'ai visité.
+Très propre, on y circule facilement à vélo (il faut absolument s'en procurer un, [Swapfiets](https://swapfiets.dk/en/) est parfait pour ça), la nourriture excellente et d'impressionantes micros.
+On ajoute à tout ça la chaleur des gens.
+Coastal est un laboratoire d'une quinzaine de chercheurs (qui sont régulièrement présent) et chacun d'entre eux m'ont personellement accueilli.
+Le groupe organise régulièrement des activités, *after work beer* et participe religieusement aux *pub quiz* du [Mikkeller](https://mikkeller.com/).
+
+J'étais particulièrement surpris de leur ouverture.
+Dès la première journée au laboratoire, j'étais un des leurs.
+J'ai passé beaucoup de temps avec [Manu](https://e-bug.github.io/), avec qui je partageais un bureau, et [Yova](https://yovakem.github.io/), qui m'a rapidement intégré à son projet de recherche.
+Le fait d'être présent facilite grandement la collaboration et la partage de connaissance.
+Je me souviens m'être régulièrement lever de mon bureau pour aller clairifier certaines choses avec Yova; on s'installe au tableau blanc, et on se met à écrire un paquet de trucs.
+Faire ça à distance, est pratiquement impossible.
+Même si avec la COVID-19 on s'adapte et le travail à distane est plus facile, l'accessibilité instantanée d'une discussion avec un pair, n'a pas d'égale.
+
+Après 1 mois de travail à Copenhague qui a initié un article de conférence, je me dirigeait vers Berlin en Allemagne, pour rencontrer entre autre Anders, et assister à plusieurs meetup de NLP.
 
 ## Séjour à Berlin
 
+- Rencontrer Anders
+- Rencontre Alan
+- Italians: We need to meet people in person
+- Retour anticiper
+- Debut du projet avec Mareike
+
 ## Take-aways
+
+- Met some people
+- Changed my research perspective
+- 2 papers underway
+- Had fun
