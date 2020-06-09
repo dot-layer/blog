@@ -29,7 +29,7 @@ Effectivement, il est souvent bien vu de faire son doctorat dans un établisseme
 Puisque ce n'est pas mon cas (j'ai fait toute ma scolarité à l'Université Laval), c'était essentiel pour moi de faire un stop dans un autre laboratoire.
 Pas seulement pour un éventuel poste, mais aussi pour améliorer ma façon de penser, d'attaquer les problèmes et par conséquent de trouver des solutions.
 Le doctorat est fait pour se spécialiser, être un expert dans un domaine ou une problématique très pointue.
-Même si dans notre laboratoire on est entouré de personnes beaucoup plus brillantes que nous, elle ne travaillent pas nécessairement dans les mêmes problèmes
+Même si dans notre laboratoire on est entouré de personnes beaucoup plus brillantes que nous, elle ne travaillent pas nécessairement sur les mêmes problèmes.
 On devient rapidement un expert dans notre domaine, d'où le besoin de se faire "challenger" par des pairs qui s'y connaissent autant sinon mieux que nous.
 Sebastian Ruder en glisse un mot dans son excellent billet ["10 Tips for Research and a PhD"](https://ruder.io/10-tips-for-research-and-a-phd/).
 
@@ -53,7 +53,7 @@ Cependant Anders était extrêmement réactif considérant le fait que j'étais 
 Ça confirmait donc mon stage de 3 mois du 4 février au 27 avril 2020 à Copenhague!
 
 
-## Le financement
+### Le financement
 
 Si vous avez votre propre "stash" de côté, c'est l'idéal.
 J'avais quelques dollars en banque mais Copenhague est une des villes les plus cher *à visiter*.
@@ -90,17 +90,31 @@ Même si avec la COVID-19 on s'adapte et le travail à distane est plus facile, 
 
 Après 1 mois de travail à Copenhague qui a initié un article de conférence, je me dirigeait vers Berlin en Allemagne, pour rencontrer entre autre Anders, et assister à plusieurs meetup de NLP.
 
-## Séjour à Berlin
+### Séjour à Berlin
 
-- Rencontrer Anders
-- Rencontre Alan
-- Italians: We need to meet people in person
-- Retour anticiper
-- Debut du projet avec Mareike
+Début mars j'attéris à Berlin pour y rencontrer physiquement Anders.
+Les hôtes de mon Airbnb étaient italiens et déjà ils commençaient à s'inquiéter de la situation en Italie, craignant une propagation de la COVID-19 en Allemagne.
+J'avais 2 rendez-vous de prévu pour la première semaine.
+Le mardi, je suis allé dîner avec Anders pour discuter d'un projet de recherche qui m'a amené à travailler avec Mareike, une étudiante post-doc, et trois autres collègues, Sebastian Ruder, Anders Sandholm et Ivan Vulic.
+
+Le jeudi, je suis allé dîner avec Alan.
+Ce fut une rencontre vraiment intéressante, où il m'a parlé de la recherche qui se faisait chez Rasa.
+Il m'a même offert de venir faire un stage dans leur équipe de recherche!
+Le soir même, j'apprends que le Danemark ferme ses frontières en raison de la COVID-19 pour une durée indéterminée.
+J'étais, d'une certaine façon, pris en Allemagne.
+J'ai appelé mes assurances voyages pour les prévenir d'un retour anticipé et leur demander un remboursement des frais qui y sont reliés.
+On a décliné ma demande, me disant que tant qu'il n'y avait pas d'annonce fait par le gouvernement, le retour anticipé serait à mes frais.
+Les vols se remplissaient rapidement, le prix des billets d'avions montait en flèche, j'ai donc décidé d'acheter mon billet pour le lendemain.
+Samedi, le gouvernement demande à tous les citoyens canadiens de rentrer au pays.
+Merci les assurances (j'ai quand même réclamé, soyez sans craintes).
+
 
 ## Take-aways
 
-- Met some people
-- Changed my research perspective
-- 2 papers underway
-- Had fun
+Malgré tout ça, j'ai retiré beaucoup de positif de cette expérience.
+J'ai manqué quelques rencontres à Berlin mais somme toute j'ai créé une belle relation avec les étudiants du Coastal Lab.
+Voir comment d'autres personnes abordent un projet de recherche est vraiment inspirant.
+Ça change en quelque sorte notre façon de voir les choses, nous amène une nouvelle perspective.
+
+Non seulement j'ai eu beaucoup de plaisir à voyager, mon court séjour à Copenhague m'a amené deux articles scientifiques, de belle collaboration, et même un futur stage chez Rasa.
+Je recommande donc vivement à toute personne, ayant a chance de passer du temps dans un autre laboratoire de recherche, de saisir cette opportunité!
