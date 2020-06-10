@@ -59,7 +59,7 @@ Cependant, Anders était extrêmement réactif considérant le fait que j'étais
 
 Si vous avez votre propre "stash" de côté, c'est l'idéal.
 J'avais quelques dollars en banque, mais Copenhague est une des villes les plus chères *à visiter*.
-Le bureau international fournit une bourse de 1000\\$ pour tout stage à l'étranger aux cycles supérieurs, ce qui couvrait essentiellement mon billet d'avion de 1023\\$ réservé en octobre pour un départ en février.
+Le bureau international fournit une bourse de 1 000\\$ pour tout stage à l'étranger aux cycles supérieurs, ce qui couvrait essentiellement mon billet d'avion de 1 023\\$ réservé en octobre pour un départ en février.
 
 [L'AELÉS offre également un soutien de 300$](https://www.aelies.ulaval.ca/services/soutien-financier/) pour les stages ou voyages d'études. 
 Ce n’est pas énorme, mais très rapide de faire la demande et c'est mieux qu'une claque en plein visage.
