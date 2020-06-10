@@ -99,7 +99,7 @@ Les hôtes de mon Airbnb étaient italiens et déjà ils commençaient à s'inqu
 J'avais 2 rendez-vous de prévus pour la première semaine.
 Le mardi, je suis allé dîner avec Anders pour discuter d'un projet de recherche qui m'a amené à travailler avec Mareike, une étudiante postdoc, et trois autres collègues, Sebastian Ruder, Anders Sandholm et Ivan Vulic.
 
-Le jeudi, je suis allé dîner avec Alan.
+Le jeudi, je suis allé dîner avec Alan de chez Rasa.
 Ce fut une rencontre vraiment intéressante, où il m'a parlé de la recherche qui se faisait chez Rasa.
 Il m'a même offert de venir faire un stage dans leur équipe de recherche!
 Le soir même, j'apprends que le Danemark ferme ses frontières en raison de la COVID-19 pour une durée indéterminée.
