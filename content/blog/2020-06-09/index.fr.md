@@ -63,7 +63,7 @@ Le bureau international fournit une bourse de 1000\\$ pour tout stage à l'étra
 
 [L'AELÉS offre également un soutien de 300$](https://www.aelies.ulaval.ca/services/soutien-financier/) pour les stages ou voyages d'études. 
 Ce n’est pas énorme, mais très rapide de faire la demande et c'est mieux qu'une claque en plein visage.
-[Mitac Globalink](https://www.mitacs.ca/fr/programmes/globalink/bourses-de-recherche-mitacs-globalink) offre habituellement une bourse allant jusqu'à 6000\\$, mais le programme n'a jamais ouvert pour l'année 2019-2020.
+[Mitac Globalink](https://www.mitacs.ca/fr/programmes/globalink/bourses-de-recherche-mitacs-globalink) offre habituellement une bourse allant jusqu'à 6 000\\$, mais le programme n'a jamais ouvert pour l'année 2019-2020.
 [Le FRQNT](http://www.frqnt.gouv.qc.ca/bourses-et-subventions/consulter-les-programmes-remplir-une-demande/bourse/programme-de-stages-internationaux-unhd79281561647688100) a également un programme de stage international pouvant financer jusqu'à 15 000\\$.
 Ce programme-ci est très compétitif et malheureusement je n'ai pas obtenu le financement.
 Je me retrouvais donc avec une bourse de 1,300\\$ pour partir 3 mois à Copenhague :(
