@@ -11,8 +11,8 @@ featured: "copenhagen-fr-cover.jpg"
 featuredpath: "img/headers/"
 ---
 
-L’hiver dernier, j’ai eu la chance d’aller à Copehnhague, au Danemark, dans le cadre de ma recherche de doctorat.
-Je suis allé visiter un laboratoire en traitement automatique de la langue naturel qui oeuvre précisément dans mon domaine, [le Coastal Lab](https://coastalcph.github.io/).
+L’hiver dernier, j’ai eu la chance d’aller à Copenhague, au Danemark, dans le cadre de ma recherche de doctorat.
+Je suis allé visiter un laboratoire en traitement automatique de la langue naturel, [le Coastal Lab](https://coastalcph.github.io/), qui oeuvre précisément dans mon domaine, le transfert d'apprentissage.
 Je vous fais donc part de mon expérience dans ce billet, qui j’espère pourra en inspirer d’autre à étendre leurs frontières en recherche, lorsque la situation le permettra.
 
 ## La motivation
@@ -28,7 +28,7 @@ La deuxième est que je voulais tout simplement rencontrer des gens, élargir mo
 La troisième est que je crois qu'il est fondamental pour un chercheur d'étendre ses horizons en recherche.
 
 Effectivement, il est souvent bien vu de faire son doctorat dans un établissement différent de notre scolarité précédente, surtout lorsque l'on veut postuler pour un poste de chercheur ou de professeur.
-Puisque ce n'est pas mon cas (j'ai fait toute ma scolarité à l'Université Laval), c'était essentiel pour moi de faire un stop dans un autre laboratoire.
+Puisque ce n'est pas mon cas (j'ai fait toute ma scolarité à l'université Laval), c'était essentiel pour moi de faire un stop dans un autre laboratoire.
 Pas seulement pour un éventuel poste, mais aussi pour améliorer ma façon de penser, d'attaquer les problèmes et par conséquent de trouver des solutions.
 Le doctorat est fait pour se spécialiser, être un expert dans un domaine ou une problématique très pointue.
 Même si dans notre laboratoire on est entouré de personnes beaucoup plus brillantes que nous, elles ne travaillent pas nécessairement sur les mêmes problèmes.
@@ -39,14 +39,16 @@ Sebastian Ruder en glisse un mot dans son excellent billet ["10 Tips for Researc
 
 ### Trouver un laboratoire
 
-En 2014, j'ai fait une session d'étude à Toulouse en France et le bureau international de l'Université Laval nous donne un sacré coup de main pour l'organisation du projet.
+En 2014, j'ai fait une session d'étude à Toulouse en France et le bureau international de l'université Laval nous donne un sacré coup de main pour l'organisation du projet.
+Sans doute existe-t-il des mécanismes similaires dans d'autres universités.
+
 Cependant, l'organisation d'un stage de recherche à l'étranger peut s'avérer assez différente surtout si nous n'avons pas de connexion à l'endroit où nous désirons aller.
 Pour ma part, je n'avais pas vraiment de préférences.
 J'ai littéralement envoyé des courriels aux superviseurs de laboratoires qui m'intéressaient comme;
 
-1. [Anders Søgaard](https://anderssoegaard.github.io/), de l'Université de Copenhague.
-2. [Noah Smith](https://homes.cs.washington.edu/~nasmith/), de l'Université de Washington,
-3. [Shay Cohen](http://homepages.inf.ed.ac.uk/scohen/), de l'Université d'Edinburgh,
+1. [Anders Søgaard](https://anderssoegaard.github.io/), de l'université de Copenhague.
+2. [Noah Smith](https://homes.cs.washington.edu/~nasmith/), de l'université de Washington,
+3. [Shay Cohen](http://homepages.inf.ed.ac.uk/scohen/), de l'université d'Edinburgh,
 
 Anders est le seul à m'avoir répondu parmi la dizaine de courriels envoyés.
 Il m’a littéralement écrit: "We love guest PhDs, our doors are open!".
@@ -59,9 +61,11 @@ Cependant, Anders était extrêmement réactif considérant le fait que j'étais
 
 Si vous avez votre propre "stash" de côté, c'est l'idéal.
 J'avais quelques dollars en banque, mais Copenhague est une des villes les plus chères *à visiter*.
-Le bureau international fournit une bourse de 1 000\\$ pour tout stage à l'étranger aux cycles supérieurs, ce qui couvrait essentiellement mon billet d'avion de 1 023\\$ réservé en octobre pour un départ en février.
+Comme mentionné précédemment, les universités sont souvent munies d'un bureau international.
+Celui de l'université Laval fournit une bourse de 1 000\\$ pour tout stage à l'étranger aux cycles supérieurs, ce qui couvrait essentiellement mon billet d'avion de 1 023\\$ réservé en octobre pour un départ en février.
 
-[L'AELÉS offre également un soutien de 300$](https://www.aelies.ulaval.ca/services/soutien-financier/) pour les stages ou voyages d'études. 
+Les associations étudiantes peuvent également vous donner un coup de main.
+[L'AELIÉS](https://www.aelies.ulaval.ca/services/soutien-financier/), l'association des étudiant(e)s inscrits aux études supérieures, offre également un soutien de 300$ pour les stages ou voyages d'études. 
 Ce n’est pas énorme, mais très rapide de faire la demande et c'est mieux qu'une claque en plein visage.
 [Mitac Globalink](https://www.mitacs.ca/fr/programmes/globalink/bourses-de-recherche-mitacs-globalink) offre habituellement une bourse allant jusqu'à 6 000\\$, mais le programme n'a jamais ouvert pour l'année 2019-2020.
 [Le FRQNT](http://www.frqnt.gouv.qc.ca/bourses-et-subventions/consulter-les-programmes-remplir-une-demande/bourse/programme-de-stages-internationaux-unhd79281561647688100) a également un programme de stage international pouvant financer jusqu'à 15 000\\$.
