@@ -66,7 +66,7 @@ Ce n’est pas énorme, mais très rapide de faire la demande et c'est mieux qu'
 [Mitac Globalink](https://www.mitacs.ca/fr/programmes/globalink/bourses-de-recherche-mitacs-globalink) offre habituellement une bourse allant jusqu'à 6 000\\$, mais le programme n'a jamais ouvert pour l'année 2019-2020.
 [Le FRQNT](http://www.frqnt.gouv.qc.ca/bourses-et-subventions/consulter-les-programmes-remplir-une-demande/bourse/programme-de-stages-internationaux-unhd79281561647688100) a également un programme de stage international pouvant financer jusqu'à 15 000\\$.
 Ce programme-ci est très compétitif et malheureusement je n'ai pas obtenu le financement.
-Je me retrouvais donc avec une bourse de 1,300\\$ pour partir 3 mois à Copenhague :(
+Je me retrouvais donc avec une bourse de 1 300\\$ pour partir 3 mois à Copenhague :(
 
 Pour ce qui est de l'hébergement, j'ai choisi d'opter pour la formule économique; une chambre dans un Airbnb.
 J'avais prévu dans mon séjour aller à Berlin rencontrer Anders (qui était chez Google en mars) et Alan Nichol de chez [Rasa](https://rasa.com/).
