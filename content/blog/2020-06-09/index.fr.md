@@ -71,7 +71,7 @@ Je me retrouvais donc avec une bourse de 1,300\\$ pour partir 3 mois à Copenhag
 Pour ce qui est de l'hébergement, j'ai choisi d'opter pour la formule économique; une chambre dans un Airbnb.
 J'avais prévu dans mon séjour aller à Berlin rencontrer Anders (qui était chez Google en mars) et Alan Nichol de chez [Rasa](https://rasa.com/).
 Les 3 Airbnb que j'ai réservés coûtaient en moyenne 1 250\\$ par mois, soit 3 750\\$ pour l'hébergement.
-Pour le reste des dépenses (transports, nourriture, restos, activités) j'avais prévu environ 5,000\\$ pour un montant total d'environ 10,000\\$ pour 3 mois (yup, Copenhague n’est pas donné).
+Pour le reste des dépenses (transports, nourriture, restos, activités) j'avais prévu environ 5 000\\$ pour un montant total d'environ 10 000\\$ pour 3 mois (yup, Copenhague n’est pas donné).
 Avec ma bourse de 1,300\\$, il ne me restait qu'à prévoir 9,700\\$, je me suis donc muni d'une petite marge de crédit :)
 
 ## Copenhague
