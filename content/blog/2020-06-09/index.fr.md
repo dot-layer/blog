@@ -11,7 +11,7 @@ featured: "copenhagen-fr-cover.jpg"
 featuredpath: "img/headers/"
 ---
 
-L’hiver dernier, j’ai eu la chance d’aller au Danemark, à Copenhague, dans le cadre de ma recherche au doctorat.
+L’hiver dernier, j’ai eu la chance d’aller à Copehnhague, au Danemark, dans le cadre de ma recherche de doctorat.
 Je suis allé visiter un laboratoire en traitement automatique de la langue naturel qui oeuvre précisément dans mon domaine, [le Coastal Lab](https://coastalcph.github.io/).
 Je vous fais donc part de mon expérience dans ce billet, qui j’espère pourra en inspirer d’autre à étendre leurs frontières en recherche, lorsque la situation le permettra.
 
