@@ -22,9 +22,11 @@ On comprenait encore moins lorsque je leur disais que c'était un "stage de rech
 Clairement, le gars est tombé sur la tête; ça ne fait pas partie du cheminement au doctorat et en plus les stages ici au Canada sont rémunérés (voir très bien).
 
 Il y a en fait trois principales raisons.
+
 La première, très simple, est que j'adore voyager. 
 La deuxième est que je voulais tout simplement rencontrer des gens, élargir mon réseau de contacts.
 La troisième est que je crois qu'il est fondamental pour un chercheur d'étendre ses horizons en recherche.
+
 Effectivement, il est souvent bien vu de faire son doctorat dans un établissement différent de notre scolarité précédente, surtout lorsque l'on veut postuler pour un poste de chercheur ou de professeur.
 Puisque ce n'est pas mon cas (j'ai fait toute ma scolarité à l'Université Laval), c'était essentiel pour moi de faire un stop dans un autre laboratoire.
 Pas seulement pour un éventuel poste, mais aussi pour améliorer ma façon de penser, d'attaquer les problèmes et par conséquent de trouver des solutions.
