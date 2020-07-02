@@ -26,13 +26,16 @@
       {{ else }}
         <form id="contact" action="{{ .Params.emailservice }}" method="POST">
         {{ end }}
+        {{ $empty_input := i18n "empty_input" }}
           <h4 class="contact_replytxt">{{ i18n "repliestext" }}.</h4>
+          <!-- N.B. For oninvalid to work, it must be before required. -->
           <input 
             placeholder="{{ .Params.contactname }}" 
             type="text" 
             name="name"
             class="contact_input name"
             tabindex="1" 
+            oninvalid="this.setCustomValidity('{{ $empty_input }}');"
             required 
             autofocus
           >
@@ -41,7 +44,8 @@
             type="email" 
             name="replyto" 
             class="contact_input email"
-            tabindex="2" 
+            tabindex="2"
+            oninvalid="this.setCustomValidity('{{ $empty_input }}');"
             required
           >
           <input 
@@ -55,7 +59,8 @@
             placeholder="{{ .Params.contactmessage}}" 
             name="message"
             class="contact_input message"
-            tabindex="4" 
+            tabindex="4"
+            oninvalid="this.setCustomValidity('{{ $empty_input }}');"
             required></textarea>
           <input 
             type="hidden" 
