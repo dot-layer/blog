@@ -11,7 +11,7 @@ featured: "howto-cover.png"
 featuredpath: "img/headers/"
 ---
 
-Contributing to the blog has never been easier. First of all, it must be said that any submission, whatever its format (Markdown, Microsoft Word, Notepad, *name it*!), will be considered, and ultimately transcribed into Markdown. We are already thinking of a way to review non-Markdown documents (possibly Google Docs). This being written, for those who would like to write and submit an article in the _conventional_ way, here is a simple procedure to get there.
+Contributing to the blog has never been easier. First of all, it must be said that any submission, whatever its format (Markdown, Microsoft Word, Notepad, *name it*!), will be considered, and ultimately transcribed into Markdown by our team. We are already thinking of a way to review non-Markdown documents (possibly Google Docs). This being written, for those who would like to write and submit an article in the _conventional_ way, here is a simple procedure to get there.
 
 1. **Article creation**
   1. Save the `.md` file used to create this article (available [here](https://github.com/dot-layer/blog/blob/master/content/blog/2020-03-19-howto/index.en.md)) under the name `index.en.md` (for articles in English) or` index.fr.md` (for articles in French).
