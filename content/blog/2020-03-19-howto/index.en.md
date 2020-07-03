@@ -75,7 +75,7 @@ In addition to the content already in the *template* that constitutes this artic
 
 **Steps 2.3.** Create a new directory/folder `content/blog/YYYY-mm-dd-post-name` (in your new repository created in the previous step) and insert your article and the static files (e.g. images) necessary for its compilation. As mentioned earlier in the article, we ask to stick to the .md (or .html), it is no longer a question of compiling R code, Python, Julia, etc. when the article is included in the blog repository.
 
-**Step 2.4.** Make a *Pull Request* to the *master* branch on the [blog github](https://github.com/dot-layer/blog). Another classic Git operation. From there, contributors who manage the blog will review the article and make constructive recommendations, in addition to ensuring that the rendering is *clean*.
+**Step 2.4.** Make a *Pull Request* to the *master* branch on the [blog github](https://github.com/dot-layer/blog). Another classic Git operation. From there, contributors who manage the blog will review the article, make constructive recommendations, and ensure that the rendering is *clean*.
 
 
 Uh there ... No more complicated than that. Hope this will help you.
