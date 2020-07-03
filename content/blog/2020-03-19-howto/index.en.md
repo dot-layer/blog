@@ -57,7 +57,7 @@ featuredpath: "img/headers/"
 The fields are almost all *self-explanatory*.
 The `date` field should contain the creation date of the file. We will change it for the publication date in due time (in the *Pull Request*).
 We will also take care of the `categories` and` tags` fields.
-The `slug` field is a *nickname* for your article which will be used to name the various files linked to the article in the blog directory.
+The `slug` field is a *nickname* for your article, which will be used to name the various files linked to the article in the blog directory.
 The `featured` field should contain the name of the cover image file, while` featuredpath` (which should remain unchanged) indicates where to find the file. This is where you should place your cover image.
 Finally, if the article submitted is already published on another platform, please add the `canonical` field to specify the platform. For example, in the header of the article *What's wrong with Scikit-Learn* published on the blog, we find
 ```
