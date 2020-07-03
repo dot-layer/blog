@@ -3,9 +3,9 @@
 [404_backorreport]
   other = "Vous pourriez vouloir revenir à la page d'accueil.<br/>Si vous pensez que quelque chose est cassé, merci d'envoyer un rapport."
 [404_gotohome]
-  other = "Go To Homepage"
+  other = "Aller à la page d'accueil"
 [404_report]
-  other = "Report A Problem"
+  other = "Signaler un problème"
 
 [about]
   other = "à propos"
@@ -19,6 +19,8 @@
   other = "Catégorie"
 [contact]
   other = "Contact"
+[empty_input]
+  other = "Veuillez remplir ce champ."
 [hours]
   other = "heures"
 [in_construction]

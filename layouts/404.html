@@ -6,7 +6,6 @@
     <link rel="stylesheet" media="screen" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600" />
     <link rel="stylesheet" media="screen" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
 
-
     <style>
      * {
          -moz-box-sizing:border-box;
@@ -69,6 +68,7 @@
          clear: both;
      }
     </style>
+
     <style>
   .plain.error-page-wrapper {
     font-family: 'Source Sans Pro', sans-serif;
@@ -181,7 +181,8 @@
       margin-right:10%;
     }
   }
-</style>
+    </style>
+
     <style>
 
     .background-color {
@@ -222,29 +223,27 @@
       box-shadow: 0 0 60px #000000;
     }
 
-</style>
+    </style>
   </head>
+
   <body class="plain error-page-wrapper background-color background-image">
     <div class="content-container">
-	<div class="head-line secondary-text-color">
-		404
-	</div>
-	<div class="subheader primary-text-color">
-    {{ i18n "404_oops" | safeHTML }}
-	</div>
-	<hr>
-	<div class="clearfix"></div>
-	<div class="context primary-text-color">
-		<!-- doesn't use context_content because it's ALWAYS the same thing -->
-    <p>
-      {{ i18n "404_backorreport" | safeHTML }}
-    </p>
-	</div>
-	<div class="buttons-container">
-		<a class="border-button" href="{{ "/" | relLangURL }}">{{ i18n "404_gotohome"}}</a>
-		<a class="border-button" href="mailto:{{ .Site.Social.email }}">{{ i18n "404_report"}}</a>
-	</div>
-</div>
+      <div class="head-line secondary-text-color">404</div>
+      <div class="subheader primary-text-color">{{ i18n "404_oops" | safeHTML }}</div>
+
+      <hr>
+      <div class="clearfix"></div>
+    
+      <div class="context primary-text-color">
+        <!-- doesn't use context_content because it's ALWAYS the same thing -->
+        <p>{{ i18n "404_backorreport" | safeHTML }}</p>
+      </div>
+      
+      <div class="buttons-container">
+        <a class="border-button" href="{{ "/" | relLangURL }}">{{ i18n "404_gotohome"}}</a>
+        <a class="border-button" href="mailto:{{ .Site.Social.email }}">{{ i18n "404_report"}}</a>
+      </div>
+    </div>
 
     <script>
      function ErrorPage(container, pageType, templateName) {
@@ -359,7 +358,5 @@
      });
 
     </script>
-
-
   </body>
 </html>
