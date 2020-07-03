@@ -15,7 +15,7 @@ Contributing to the blog has never been easier. First of all, it must be said th
 
 1. **Article creation**
   1. Save the `.md` file used to create this article (available [here](https://github.com/dot-layer/blog/blob/master/content/blog/2020-03-19-howto/index.en.md)) under the name `index.en.md` (for articles in English) or` index.fr.md` (for articles in French).
-  2. Insert your article and modify the essential fields of the header as well as the content (duh). You must save your images in the same folder as the .md file (or in a sub-directory); with the exception of the cover image, its location is specified with the `featured:" "` field.\\
+  2. Insert your article and modify the header's essential fields as well as the content (duh). You must save your images in the same folder as the .md file (or in a sub-directory); except for the cover image, its location is specified with the `featured:" "` field.\\
 2. **Submission of the article**
   1. `git fork https://github.com/dot-layer/blog` directory, i.e. *fork* the [blog directory](https://github.com/dot-layer/blog).
   2. `git checkout -b post/your-initials_post-name`, i.e. create a new branch for your article.
