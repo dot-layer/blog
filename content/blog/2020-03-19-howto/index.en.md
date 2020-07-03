@@ -71,7 +71,7 @@ In addition to the content already in the *template* that constitutes this artic
 
 # 2. Submission of an article
 
-**Steps 2.1. and 2.2.** These are classic operations of [Git](https://git-scm.com/). If you are not comfortable with Git, let us know and we will make it up! Otherwise, Atlassian offers a great free online [training](https://www.atlassian.com/fr/git).
+**Steps 2.1. and 2.2.** These are classic operations of [Git](https://git-scm.com/). If you are not comfortable with Git, let us know and we will make it up! Otherwise, Atlassian offers great free online [training](https://www.atlassian.com/fr/git).
 
 **Steps 2.3.** Create a new directory/folder `content/blog/YYYY-mm-dd-post-name` (in your new repository created in the previous step) and insert your article and the static files (e.g. images) necessary for its compilation. As mentioned earlier in the article, we ask to stick to the .md (or .html), it is no longer a question of compiling R code, Python, Julia, etc. when the article is included in the blog repository.
 
