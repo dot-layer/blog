@@ -184,39 +184,39 @@ h1, h2, h3, h4, h5, h6 {
 /* CONTACT */
 /* ------- */
 
-#contact .contact_replytxt {
+.contact-forms .contact_replytxt {
   margin: 0 0 1em 0;
 }
 
-#contact input.contact_input {
+.contact-forms input.contact_input {
   margin: 0.7em 0;
   font-size: 0.9em;
 }
 
-#contact input.contact_input.name {
+.contact-forms input.contact_input.name {
   width: 49%;
   float: left;
 }
 
-#contact input.contact_input.email {
+.contact-forms input.contact_input.email {
   width: 50%;
   float: right;
 }
 
 @media screen and (max-width: 768px) {
-  #contact input.contact_input.name,
-  #contact input.contact_input.email {
+  .contact-forms input.contact_input.name,
+  .contact-forms input.contact_input.email {
     width: 100%;
     float: none;
   }
 }
 
-#contact textarea.contact_input.message {
+.contact-forms textarea.contact_input.message {
   min-height: 15em;
   font-size: 0.9em;
   padding-top: 0.6em;
 }
 
-#contact .button {
+.contact-forms .button {
   margin-top: 2em;
 }
