@@ -12,7 +12,7 @@ First, to assure reproducibility through time, and for all different users, **th
 2. Fork the repository 
 3. Create a new branch from `master`. The naming convention is: `post/your-initials_name-of-your-post` (all in *lower case* letter). 
 4. Create a new directory for your post using this naming convention: `content/blog/YYYY-mm-dd-name-of-your-post`. 
-5. Add your post and and all static files inside that directory. At this point, your post file should be a html or a markdown file. If you do not have any code to compile, you can simply create a new markdown file in that directory and start to write your post. Also, you have to name your post file as: `index.md`.
+5. Add your post and and all static files inside that directory. At this point, your post file should be a html or a markdown file. If you do not have any code to compile, you can simply create a new markdown file in that directory and start to write your post. Also, you have to name your post file as: `index.en.md`.
 6. If you wanna add a french version of your post, create a `index.fr.md` file.
 7. If you have static files such as images or graphics different for both languages, name them using `image.fr.png` extension. Be sure to have correct paths in your post.
 8. The slug will be used to copy your post directory in the `public/` folder. The slug is a parameter included in your YAML header. We decided to use the slug based on a [suggestion](https://bookdown.org/yihui/blogdown/configuration.html#options) from Yihui Xie.
