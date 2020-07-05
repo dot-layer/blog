@@ -1,8 +1,10 @@
 <!--
-  Rss is call in the <head> tag. It generates a link to dotlayer.org/index.xml which can be displayed as
-  simple xml text with the following warning: "This XML file does not appear to have any style information associated with it. 
-  The document tree is shown below." Don't worry, it's only the browser telling you it is showing you the raw data instead of
-  an html version. Only search engines will be accessing that file so the raw xml is all they are interested in.
+  This file is called in the header file inside the head tag. 
+  It generates a link to dotlayer.org/index.xml which can be displayed as raw data depending on your browser 
+  with the following warning: "This XML file does not appear to have any style information associated with it. 
+  The document tree is shown below." 
+  Don't worry, it's only the browser telling you it is showing you raw data. 
+  Only search engines will be accessing that file so the raw xml is all they are interested in.
 -->
 
 {{- $pctx := . -}}
@@ -24,7 +26,7 @@
     <link>{{ .Permalink }}</link>
     <description>Recent content {{ if ne  .Title  .Site.Title }}{{ with .Title }}in {{.}} {{ end }}{{ end }}on {{ .Site.Title }}</description>
     <generator>Hugo -- gohugo.io</generator>
-    {{ with .Site.LanguageCode }}
+    {{ with .Site.Language.Lang }}
       <language>{{.}}</language>
     {{end}}
     <managingEditor>.Layer</managingEditor>
@@ -40,7 +42,6 @@
       <title>{{ .Title }}</title>
       <link>{{ .Permalink }}</link>
       <pubDate>{{ .Date.Format "02 Jan 2006" | safeHTML }}</pubDate>
-      {{ with .Site.Author.name }}<author>{{.}}{{ with $.Site.Author.name }} ({{.}}){{end}}</author>{{end}}
       <guid>{{ .Permalink }}</guid>
       <description>{{ .Summary | html }}</description>
     </item>
