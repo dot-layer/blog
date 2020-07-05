@@ -1,0 +1,49 @@
+<!--
+  Rss is call in the <head> tag. It generates a link to dotlayer.org/index.xml which can be displayed as
+  simple xml text with the following warning: "This XML file does not appear to have any style information associated with it. 
+  The document tree is shown below." Don't worry, it's only the browser telling you it is showing you the raw data instead of
+  an html version. Only search engines will be accessing that file so the raw xml is all they are interested in.
+-->
+
+{{- $pctx := . -}}
+{{- if .IsHome -}}{{ $pctx = .Site }}{{- end -}}
+{{- $pages := slice -}}
+{{- if or $.IsHome $.IsSection -}}
+{{- $pages = $pctx.RegularPages -}}
+{{- else -}}
+{{- $pages = $pctx.Pages -}}
+{{- end -}}
+{{- $limit := .Site.Config.Services.RSS.Limit -}}
+{{- if ge $limit 1 -}}
+{{- $pages = $pages | first $limit -}}
+{{- end -}}
+{{- printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>{{ if eq  .Title  .Site.Title }}{{ .Site.Title }}{{ else }}{{ with .Title }}{{.}} on {{ end }}{{ .Site.Title }}{{ end }}</title>
+    <link>{{ .Permalink }}</link>
+    <description>Recent content {{ if ne  .Title  .Site.Title }}{{ with .Title }}in {{.}} {{ end }}{{ end }}on {{ .Site.Title }}</description>
+    <generator>Hugo -- gohugo.io</generator>
+    {{ with .Site.LanguageCode }}
+      <language>{{.}}</language>
+    {{end}}
+    <managingEditor>.Layer</managingEditor>
+    <webMaster>.Layer</webMaster>
+    {{ if not .Date.IsZero }}
+      <lastBuildDate>{{ .Date.Format "02 Jan 2006" | safeHTML }}</lastBuildDate>
+    {{ end }}
+    {{ with .OutputFormats.Get "RSS" }}
+	    {{ printf "<atom:link href=%q rel=\"self\" type=%q />" .Permalink .MediaType | safeHTML }}
+    {{ end }}
+    {{ range $pages }}
+    <item>
+      <title>{{ .Title }}</title>
+      <link>{{ .Permalink }}</link>
+      <pubDate>{{ .Date.Format "02 Jan 2006" | safeHTML }}</pubDate>
+      {{ with .Site.Author.name }}<author>{{.}}{{ with $.Site.Author.name }} ({{.}}){{end}}</author>{{end}}
+      <guid>{{ .Permalink }}</guid>
+      <description>{{ .Summary | html }}</description>
+    </item>
+    {{ end }}
+  </channel>
+</rss>
