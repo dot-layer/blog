@@ -70,6 +70,10 @@
   <li><a href="//facebook.com/{{.}}" target="_blank" title="Facebook" class="fa fa-facebook"></a></li>
 {{ end }}
 
+{{ with .Site.Social.slack }}
+  <li><a href="//{{.}}" target="_blank" title="Slack" class="fa fa-slack"></a></li>
+{{ end }}
+
 {{ with .Site.Social.googleplus }}
   <li><a href="//plus.google.com/+{{.}}" target="_blank" title="Google+" class="fa fa-google-plus"></a></li>
 {{ end }}
