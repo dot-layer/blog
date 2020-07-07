@@ -2421,7 +2421,6 @@
 		max-width: 100%;
 		opacity: 1;
 		padding: 4.5em;
-		width: 90em;
 		overflow: hidden;
 	}
 
@@ -2433,7 +2432,6 @@
 
 			#wrapper {
 				padding: 3em;
-				min-width: 1148px;
 			}
 
 		}
@@ -2500,6 +2498,12 @@
 				opacity: 0.65;
 				font-size: 0.9em;
 				padding: 0;
+		}
+
+		@media screen and (max-width: 1148px) {
+			#sidebar {
+				min-width: 20%;
+			}
 		}
 
 		@media screen and (max-width: 980px) {
@@ -2625,6 +2629,7 @@
 	#footer .icons {
 		color: #aaaaaa;
 		text-align: center;
+		font-size: 1.4rem;
 		margin-top: 0;
 		padding-top: 0
 	}
@@ -2846,9 +2851,11 @@
 		background-color: rgba(51, 51, 51, 0.6);
 	}
 
-	.share-btn .fa-facebook,
-	.share-btn .fa-envelope {
-		transform: translateX(-1px);
+	@media screen and (min-width: 1680px) {
+		.share-btn .fa-facebook,
+		.share-btn .fa-twitter {
+			transform: translateY(1px);
+		}
 	}
 
 	@media screen and (max-width: 980px) {

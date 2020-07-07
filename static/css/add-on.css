@@ -40,7 +40,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .fa.fa-github {
-  font-size: 20px
+  font-size: 1.6rem;
 }
 
 /* ----------------- */
@@ -93,8 +93,14 @@ h1, h2, h3, h4, h5, h6 {
 /* ------------------- */
 
 .sidebar_logo {
-  width: 80%;
+  width: 100%;
   height: auto;
+}
+
+@media screen and (min-width: 1680px) {
+  .sidebar_logo {
+    width: 80%;
+  }
 }
 
 #sidebar {
@@ -103,6 +109,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #intro .icons {
   margin-top: 0;
+  font-size: 1.4rem;
 }
 
 /* -------------- */

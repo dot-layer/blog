@@ -24,4 +24,7 @@ We were already talking about creating a non-profit organization (NPO) to manage
 2019 marked the "official" birth of the NPO with a first board of directors and the creation of different committees.
 At the time of the second edition of the legendary "chalet", a [blog](dotlayer.org) was operational, [Meetup Machine Learning Québec](https://www.facebook.com/MeetupMLQuebec/) (conferences, workshops, hackothon) was already an integral part of the ecosystem and the first episodes of the [OpenLayer podcast](https://www.youtube.com/channel/UCB3tYpZ1ojiqAroyDN05Cyw) had just been broadcast. The rest of the story is to be written. We are waiting for you, don't hesitate to contact us if you want to get involved!
 
-To follow what's up with .Layer ---> [facebook](https://www.facebook.com/groups/dotlayer/).
+To chat with us --> [Slack](https://dotlayerorg.slack.com)
+
+To follow what's up with .Layer --> [Facebook](https://www.facebook.com/groups/dotlayer/)
+

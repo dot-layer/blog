@@ -226,6 +226,7 @@ enableEmoji   = true
   xing             = ""
   slideshare       = ""
   # Social Networks
+  slack            = "dotlayerorg.slack.com"
   facebook         = "groups/dotlayer"
   googleplus       = ""
   reddit           = ""

@@ -7,14 +7,14 @@ type: post
 categories: ["Contribuer"]
 tags: []
 description: "Un gabarit pour contribuer au blog .Layer"
-featured: "howto-fr-cover.png"
+featured: "howto-cover.png"
 featuredpath: "img/headers/"
 ---
 
 Contribuer au blog n'aura jamais été aussi facile. Tout d'abord, il faut dire que toute soumission, quel que soit son format (Markdown, Microsoft Word, Notepad, *name it*!), sera considérée, et ultimement transcrite en Markdown. On pense déjà à une façon de faire pour la révision des documents non-Markdown (possiblement Google Docs). Ceci étant écrit, pour ceux et celles qui voudraient écrire et soumettre un article de la façon _conventionnelle_, voici une procédure simple pour y arriver.
 
 1. **Création de l'article**
-  1. Enregister le fichier `.md` utilisé pour créer cet article (disponible [ici](https://github.com/dot-layer/blog/blob/master/content/blog/2020-03-19-howto/index.fr.md)) sous le nom `index.md` (pour les articles en anglais) ou `index.fr.md` (pour les articles en français).
+  1. Enregister le fichier `.md` utilisé pour créer cet article (disponible [ici](https://github.com/dot-layer/blog/blob/master/content/blog/2020-03-19-howto/index.fr.md)) sous le nom `index.en.md` (pour les articles en anglais) ou `index.fr.md` (pour les articles en français).
   2. Y insérer votre article et modifier les champs essentiels de l'en-tête ainsi que le contenu (duh). Il faut sauvegarder vos images dans le même dossier que le fichier .md (ou dans un sous-répertoire); à l'exception de l'image de couverture, son emplacement est spécifié avec le champ `featured: ""`.\\
 2. **Soumission de l'article**
   1. `git fork https://github.com/dot-layer/blog` le répertoire, c'est-à-dire *fourcher* le [répertoire du blog](https://github.com/dot-layer/blog).
@@ -34,7 +34,7 @@ Par exemple, si vous utilisez RMarkdown (.Rmd), qui permet d'intégrer du code R
 
 # 1. Création d'un article
 
-**Étape 1.1.** Enregister, sous le nom `index.md`/`index.fr.md` (anglais/français), le fichier .md [source](https://github.com/dot-layer/blog/blob/master/content/blog/2020-03-19-howto/index.fr.md) utilisé pour créer le présent article. Cette étape sert simplement à vous éviter de copier l'en-tête (en format [YAML](https://docs.ansible.com/ansible/latest/reference_appendices/YAMLSyntax.html)), qui contient quelques champs essentiels à remplir.
+**Étape 1.1.** Enregister, sous le nom `index.en.md`/`index.fr.md` (anglais/français), le fichier .md [source](https://github.com/dot-layer/blog/blob/master/content/blog/2020-03-19-howto/index.fr.md) utilisé pour créer le présent article. Cette étape sert simplement à vous éviter de copier l'en-tête (en format [YAML](https://docs.ansible.com/ansible/latest/reference_appendices/YAMLSyntax.html)), qui contient quelques champs essentiels à remplir.
 
 **Étape 1.2.** L'en-tête en format YAML de cet article va comme suit.
 
@@ -71,7 +71,7 @@ En plus du contenu déjà dans le *template* que constitue cet article, on vous 
 
 **Étapes 2.1. et 2.2.** Ce sont des opérations classiques de [Git](https://git-scm.com/). Si jamais vous n'êtes pas à l'aise avec Git, faites-nous signe et on s'arrangera! Sinon, Atlassian offre une super [formation](https://www.atlassian.com/fr/git) gratuite en ligne.
 
-**Étapes 2.3.** Créer un nouveau répertoire/dossier `content/blog/YYYY-mm-dd-nom-du-post` (dans votre nouveau dépôt créer à l'étape précédente) et y insérer votre article ainsi que les fichiers statiques (e.g. images) nécessaires à sa compilation. Comme mentionné plus tôt dans l'article, on demande de s'en tenir au .md (ou .html), il n'est plus question de compiler de code R, Python, Julia, etc. lorsque l'article est intégré au dépôt du blog.
+**Étapes 2.3.** Créer un nouveau répertoire/dossier `content/blog/YYYY-mm-dd-nom-du-post` (dans votre nouveau dépôt créé à l'étape précédente) et y insérer votre article ainsi que les fichiers statiques (e.g. images) nécessaires à sa compilation. Comme mentionné plus tôt dans l'article, on demande de s'en tenir au .md (ou .html), il n'est plus question de compiler de code R, Python, Julia, etc. lorsque l'article est intégré au dépôt du blog.
 
 **Étape 2.4.** Faire un *Pull Request* à la branche *master* sur le [github du blog](https://github.com/dot-layer/blog). Encore une opération classique de Git. À partir de là, les collaborateurs qui gèrent le blogue feront une révision de l'article et des recommandations constructives, en plus de s'assurer que le rendu est *clean*.
 
