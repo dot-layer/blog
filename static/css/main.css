@@ -2702,10 +2702,14 @@
 	max-width: 64px;
   min-width: 64px;
   padding-left: 2px;
-  text-align: center;
+	text-align: center;
 }
 
-@media screen and (max-width: 736px) {
+#header .main .lang-switcher a {
+	border: none;
+}
+
+@media screen and (max-width: 980px) {
   #header .lang-switcher {
       float: right;
   }
@@ -2722,10 +2726,6 @@
 	background-color: rgba(60, 59, 59, 0.1);
 	color: rgba(60, 59, 59, 0.5) !important;
 	cursor: default;
-}
-
-#header .main .lang-switcher a {
-	border: none;
 }
 
 /* Menu */
