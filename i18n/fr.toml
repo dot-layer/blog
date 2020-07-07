@@ -19,6 +19,8 @@
   other = "Catégorie"
 [contact]
   other = "Contact"
+[contribute]
+  other = "Contribuer"
 [empty_input]
   other = "Veuillez remplir ce champ."
 [hours]
