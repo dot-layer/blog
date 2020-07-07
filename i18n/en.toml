@@ -19,6 +19,8 @@
   other = "Category"
 [contact]
   other = "Contact"
+[contribute]
+  other = "Contribute"
 [empty_input]
   other = "Please fill out this field."
 [hours]
@@ -37,8 +39,6 @@
   other = "Read more"
 [recent_posts]
   other = "Recent posts"
-[repliestext]
-  other = "Typically replies within a day"
 [see_more]
   other = "See more"
 [share_post]

@@ -11,16 +11,16 @@ featured: "howto-cover.png"
 featuredpath: "img/headers/"
 ---
 
-Contribuer au blog n'aura jamais été aussi facile. Tout d'abord, il faut dire que toute soumission, quel que soit son format (Markdown, Microsoft Word, Notepad, *name it*!), sera considérée, et ultimement transcrite en Markdown. On pense déjà à une façon de faire pour la révision des documents non-Markdown (possiblement Google Docs). Ceci étant écrit, pour ceux et celles qui voudraient écrire et soumettre un article de la façon _conventionnelle_, voici une procédure simple pour y arriver.
+Contribuer au blog n'aura jamais été aussi facile. Tout d'abord, il faut dire que toute soumission, quel que soit son format (Markdown, Microsoft Word, Notepad, *name it*!), sera considérée, et ultimement transcrite en Markdown. On offre l'option de soumettre un article [ici](https://dotlayer.org/contribute) et on pense déjà à une façon de faire pour la révision des documents non-Markdown (possiblement Google Docs). Ceci étant écrit, pour ceux et celles qui voudraient écrire et soumettre un article de la façon _conventionnelle_, voici une procédure simple pour y arriver.
 
 1. **Création de l'article**
-  1. Enregister le fichier `.md` utilisé pour créer cet article (disponible [ici](https://github.com/dot-layer/blog/blob/master/content/blog/2020-03-19-howto/index.fr.md)) sous le nom `index.en.md` (pour les articles en anglais) ou `index.fr.md` (pour les articles en français).
-  2. Y insérer votre article et modifier les champs essentiels de l'en-tête ainsi que le contenu (duh). Il faut sauvegarder vos images dans le même dossier que le fichier .md (ou dans un sous-répertoire); à l'exception de l'image de couverture, son emplacement est spécifié avec le champ `featured: ""`.\\
+    1. Enregister le fichier `.md` utilisé pour créer cet article (disponible [ici](https://github.com/dot-layer/blog/blob/master/content/blog/2020-03-19-howto/index.fr.md)) sous le nom `index.en.md` (pour les articles en anglais) ou `index.fr.md` (pour les articles en français).
+    2. Y insérer votre article et modifier les champs essentiels de l'en-tête ainsi que le contenu (duh). Il faut sauvegarder vos images dans le même dossier que le fichier .md (ou dans un sous-répertoire); à l'exception de l'image de couverture, son emplacement est spécifié avec le champ `featured: ""`.
 2. **Soumission de l'article**
-  1. `git fork https://github.com/dot-layer/blog` le répertoire, c'est-à-dire *fourcher* le [répertoire du blog](https://github.com/dot-layer/blog).
-  2. `git checkout -b post/tes-initiales_nom-du-post`, c'est-à-dire créer une nouvelle branche pour votre article.
-  3. Créer un nouveau répertoire `content/blog/YYYY-mm-dd-nom-du-post` et y insérer votre article (.md ou .html) ainsi que les fichiers statiques (e.g. images) nécessaires à sa compilation.
-  4. Faire un *Pull Request* à la branche *master* sur le [github du blog](https://github.com/dot-layer/blog/pulls).
+    1. `git fork https://github.com/dot-layer/blog` le répertoire, c'est-à-dire *fourcher* le [répertoire du blog](https://github.com/dot-layer/blog).
+    2. `git checkout -b post/tes-initiales_nom-du-post`, c'est-à-dire créer une nouvelle branche pour votre article.
+    3. Créer un nouveau répertoire `content/blog/YYYY-mm-dd-nom-du-post` et y insérer votre article (.md ou .html) ainsi que les fichiers statiques (e.g. images) nécessaires à sa compilation.
+    4. Faire un *Pull Request* à la branche *master* sur le [github du blog](https://github.com/dot-layer/blog/pulls).
 
 Voyons en détail chacune des étapes. Mais tout d'abord, quelques commentaires d'intérêts.
 

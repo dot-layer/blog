@@ -1,11 +1,11 @@
 +++
-title = "Contactez-nous!"
-type = "contact"
 netlify = false
-emailservice = "https://formspree.io/mknnbvlp"
-contactname = "Nom"
-contactemail = "Adresse courriel du destinataire"
-contactlang = "FR"
-contactmessage = "Message"
-contactsubject = "Sujet du courriel"
+lang = "FR"
+contactFormTitle = "Contactez-nous!"
+contactSubtitle = "Répond généralement en l'espace de quelques heures."
+contactService = "https://formspree.io/mknnbvlp"
+contactName = "Nom"
+contactEmail = "Adresse courriel du destinataire"
+contactSubject = "Sujet du courriel"
+contactMessage = "Message"
 +++
