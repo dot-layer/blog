@@ -1,22 +1,15 @@
-<li class="lang-switcher">
-  <h1 class="active" lang="{{ .Site.Language.Lang }}">.{{ .Site.Language.Lang }}</h1>
-  <ul class="dropdown-menu">
-  {{ if .IsTranslated }}
-    {{ range .Translations }}
-      <li>
-        <h1>
-          <a href="{{ .Permalink }}" lang="{{ .Lang }}">.{{ .Lang }}</a>
-        </h1>
+{{ if .IsTranslated }}
+  {{ range .Translations }}
+    <li class="lang-switcher">
+      <span><a href="{{ .Permalink }}" lang="{{ .Lang }}">.{{ .Lang }}</a></span>
+    </li>
+  {{ end }}
+{{ else }}
+  {{ range .Site.Languages }}
+    {{ if not (eq .Lang $.Site.Language.Lang) }}
+      <li class="lang-switcher unavailable">
+        <span>.{{ .Lang }}</span>
       </li>
     {{ end }}
-  {{ else }}
-    {{ range .Site.Languages }}
-      {{ if not (eq .Lang $.Site.Language.Lang) }}
-        <li class="no-translation">
-          <h1 title="not available">.{{ .Lang }}</h1>
-        </li>
-      {{ end }}
-    {{ end }}
-  {{ end }}  
-  </ul>
-</li>
+  {{ end }}
+{{ end }}  
