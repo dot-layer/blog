@@ -5,16 +5,8 @@ date: '2020-01-03'
 slug: neat-machine-learning-pipelines
 type: post
 canonical: https://www.neuraxio.com/en/blog/scikit-learn/2020/01/03/what-is-wrong-with-scikit-learn.html
-categories:
-  - Software engineering
-  - Python
-tags:
-  - scikit learn
-  - machine learning
-  - deep learning
-  - clean code
-  - software architecture
-  - machine learning
+categories: ["Software engineering", "Python"]
+tags: ["Scikit Learn", "Machine Learning", "Deep Learning", "Clean Code", "Software Architecture"]
 description: "Scikit-Learn had its first release in 2007, which was a pre deep learning era. However, it’s one of the most known and adopted machine learning library, and is still growing."
 featured: "sklearn-broken.jpg"
 featuredpath: "img/headers/"

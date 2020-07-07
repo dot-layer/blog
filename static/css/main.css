@@ -2705,6 +2705,11 @@
   text-align: center;
 }
 
+@media screen and (max-width: 736px) {
+  #header .lang-switcher {
+      float: right;
+  }
+
 #header .main .lang-switcher:hover {
 	color: #2ebaae !important;
 	-moz-transition: color 0.2s ease-in-out;
