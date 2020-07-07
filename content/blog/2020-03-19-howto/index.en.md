@@ -11,16 +11,16 @@ featured: "howto-cover.png"
 featuredpath: "img/headers/"
 ---
 
-Contributing to the blog has never been easier. First of all, it must be said that any submission, whatever its format (Markdown, Microsoft Word, Notepad, *name it*!), will be considered, and ultimately transcribed into Markdown by our team. We are already thinking of a way to review non-Markdown documents (possibly Google Docs). This being written, for those who would like to write and submit a post in the _conventional_ way, here is a simple procedure to get there.
+Contributing to the blog has never been easier. First of all, it must be said that any submission, whatever its format (Markdown, Microsoft Word, Notepad, *name it*!), will be considered, and ultimately transcribed into Markdown by our team. We offer the option to submit an article [here](https://dotlayer.org/en/contribute), and we are already thinking of a way to review non-Markdown documents (possibly Google Docs). This being written, for those who would like to write and submit a post in the _conventional_ way, here is a simple procedure to get there.
 
 1. **Blog post creation**
-  1. Save the `.md` file used to create this post (available [here](https://github.com/dot-layer/blog/blob/master/content/blog/2020-03-19-howto/index.en.md)) under the name `index.en.md` (for posts in English) or` index.fr.md` (for posts in French).
-  2. Insert your post and modify the header's essential fields as well as the content (duh). You must save your images in the same folder as the .md file (or in a sub-directory); except for the cover image, its location is specified with the `featured:" "` field.\\
+    1. Save the `.md` file used to create this post (available [here](https://github.com/dot-layer/blog/blob/master/content/blog/2020-03-19-howto/index.en.md)) under the name `index.en.md` (for posts in English) or` index.fr.md` (for posts in French).
+    2. Insert your post and modify the header's essential fields as well as the content (duh). You must save your images in the same folder as the .md file (or in a sub-directory); except for the cover image, its location is specified with the `featured:" "` field.
 2. **Submission of the blog post**
-  1. `git fork https://github.com/dot-layer/blog` directory, i.e. *fork* the [blog directory](https://github.com/dot-layer/blog).
-  2. `git checkout -b post/your-initials_post-name`, i.e. create a new branch for your post.
-  3. Create a new directory `content/ blog/YYYY-mm-dd-post-name` and insert your post (.md or .html) as well as the static files (e.g. images) necessary for its compilation.
-  4. Make a *Pull Request* to the branch *master* on the [blog github](https://github.com/dot-layer/blog/pulls).
+    1. `git fork https://github.com/dot-layer/blog` directory, i.e. *fork* the [blog directory](https://github.com/dot-layer/blog).
+    2. `git checkout -b post/your-initials_post-name`, i.e. create a new branch for your post.
+    3. Create a new directory `content/ blog/YYYY-mm-dd-post-name` and insert your post (.md or .html) as well as the static files (e.g. images) necessary for its compilation.
+    4. Make a *Pull Request* to the branch *master* on the [blog github](https://github.com/dot-layer/blog/pulls).
 
 Let's take a closer look at each of the steps. But first, a few comments of interest.
 

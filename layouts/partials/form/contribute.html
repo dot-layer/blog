@@ -23,14 +23,24 @@
 				
         <!-- N.B. For oninvalid to work, it must be before required. -->
         <input 
+					placeholder="{{ .Params.postEmail}}" 
+					type="email" 
+					name="replyto" 
+					class="contact_input first"
+					tabindex="1"
+          oninvalid="this.setCustomValidity('{{ $empty_input }}');"
+					required
+          autofocus
+        >
+        
+        <input 
         placeholder="{{ .Params.postTitle }}" 
         type="text" 
         name="title"
         class="contact_input name"
-        tabindex="1" 
+        tabindex="2" 
         oninvalid="this.setCustomValidity('{{ $empty_input }}');"
         required 
-        autofocus
 				>
 				
         <input 
@@ -38,7 +48,7 @@
         type="email" 
         name="author" 
         class="contact_input email"
-        tabindex="2"
+        tabindex="3"
         oninvalid="this.setCustomValidity('{{ $empty_input }}');"
         required
 				>
@@ -48,7 +58,7 @@
         placeholder="{{ .Params.postContent}}" 
         name="content"
         class="contact_input message"
-        tabindex="3"
+        tabindex="4"
         oninvalid="this.setCustomValidity('{{ $empty_input }}');"
 				required></textarea>
 				
