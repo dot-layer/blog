@@ -19,7 +19,6 @@
 		var	$window = $(window),
 			$body = $('body'),
 			$menu = $('#menu'),
-			$shareMenu = $('#share-menu'),
 			$sidebar = $('#sidebar'),
 			$main = $('#main');
 
