@@ -21,6 +21,12 @@
   other = "Contact"
 [contribute]
   other = "Contribute"
+[contribute_to_git]
+  other = "You can do it directly in our Git repo! --> "
+[contribute_help]
+  other = "Intructions"
+[contribute_by_email]
+  other = "Or submit your post here!"
 [empty_input]
   other = "Please fill out this field."
 [hours]
