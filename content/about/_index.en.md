@@ -3,7 +3,7 @@ title = "About .Layer"
 date = "2019-12-17"
 +++
 
-.Layer (dot-layer) is an open community dedicated to promoting collaboration and knowledge sharing in data science.
+.Layer (dot-layer) is an open community promoting collaboration and knowledge sharing in data science.
 
 **Why .Layer?** In Unix operating systems, files beggining with a dot are invisible to the user. Many ignore their purpose, even their existence. In this world where data are queens, *data scientists* form this hidden layer, invisible to the public. It is now time we say `Hello, World!`
 
