@@ -10,7 +10,18 @@
 						<h2>{{ .Params.PostFormTitle }}</h2>
 				{{ end }}
 		</div>
-	</header>
+  </header>
+  
+  <div class="note">
+    <h4>{{ i18n "contribute_to_git"}} 
+      {{ if eq .Site.Language.Lang "fr" }}  
+        <a href="/blog/howto-fr">
+      {{ else }}
+        <a href="/en/blog/howto-en">
+      {{ end }}
+      
+      {{ i18n "contribute_help" }}</a></h4>
+  </div>
     
 	<div id="content">
     {{ if .Params.netlify }}
@@ -19,7 +30,7 @@
     	<form id="contribute" class="contact-forms" action="{{ .Params.emailservice }}" method="POST">
     {{ end }}
         
-				<h4 class="contact_replytxt">{{ .Params.postSubtitle }}</h4>
+				<h4 class="contact_replytxt">{{ i18n "contribute_by_email" }}</h4>
 				
         <!-- N.B. For oninvalid to work, it must be before required. -->
         <input 

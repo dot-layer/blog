@@ -21,6 +21,12 @@ h1, h2, h3, h4, h5, h6 {
   margin-left: 0;
 }
 
+@media screen and (min-width: 980px) {
+  #menu {
+    display: none;
+  }
+}
+
 #menu .links {
   opacity: 0.65;
 }
@@ -217,4 +223,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .contact-forms .button {
   margin-top: 2em;
+}
+
+.note {
+  margin-bottom: 2em;
 }
