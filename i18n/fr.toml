@@ -22,7 +22,7 @@
 [contribute]
   other = "Contribuer"
 [contribute_to_git]
-  other = "Vous pouvez le faire directement dans notre repo Git! --> "
+  other = "Vous pouvez le faire directement dans notre dépôt Git! --> "
 [contribute_help]
   other = "Intructions"
 [contribute_by_email]
