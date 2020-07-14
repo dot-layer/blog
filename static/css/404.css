@@ -1,0 +1,139 @@
+html {
+  width: 100%;
+  height: 100%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+body {
+  min-height: 100%;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+.clearfix {
+  clear: both;
+  zoom: 1;
+}
+
+.clearfix:before,
+.clearfix:after {
+  content: "\0020";
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.error-page-wrapper {
+  font-family: "Source Sans Pro", sans-serif;
+  background-color: rgba(244, 244, 244, 1);
+  padding: 0 5%;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.content-container {
+  -webkit-transition: left 0.5s ease-out, opacity 0.5s ease-out;
+  -moz-transition: left 0.5s ease-out, opacity 0.5s ease-out;
+  -ms-transition: left 0.5s ease-out, opacity 0.5s ease-out;
+  -o-transition: left 0.5s ease-out, opacity 0.5s ease-out;
+  transition: left 0.5s ease-out, opacity 0.5s ease-out;
+  position: relative;
+  width: 375px;
+  left: -30px;
+  opacity: 0;
+}
+
+@media screen and (max-width: 600px) {
+    .content-container {
+        width: 75%;
+        min-width: 240px;
+    }
+}
+
+.content-container.in {
+  left: 0px;
+  opacity: 1;
+}
+
+.head-line {
+  transition: color 0.2s linear;
+  font-size: 48px;
+  line-height: 60px;
+  color: rgba(0, 0, 0, 1);
+  letter-spacing: -1px;
+  margin-bottom: 5px;
+}
+
+@media screen and (max-width: 600px) {
+    .head-line {
+        font-size: 3rem;
+        line-height: 5rem;
+    }
+}
+
+.subheader {
+  transition: color 0.2s linear;
+  font-size: 36px;
+  line-height: 46px;
+  color: rgba(171, 171, 171, 1);
+  margin-bottom: 35px;
+}
+
+@media screen and (max-width: 600px) {
+    .subheader {
+        font-size: 2rem;
+        line-height: 2.25rem;
+    }
+}
+
+.context {
+  transition: color 0.2s linear;
+  font-size: 18px;
+  line-height: 27px;
+  color: rgba(171, 171, 171, 1);
+  margin-bottom: 45px;
+}
+
+@media screen and (max-width: 600px) {
+    .context {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+}
+
+.buttons-container a {
+  transition: color 0.2s linear, border-color 0.2s linear;
+  font-size: 14px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: rgba(46, 186, 174, 1);
+  border: 2px solid rgba(46, 186, 174, 1);
+  border-radius: 99px;
+  padding: 8px 30px 9px;
+  display: inline-block;
+}
+
+@media screen and (max-width: 600px) {
+    .buttons-container a {
+        font-size: 0.9rem;
+        padding: 0.6rem 1.25rem;
+    }
+}
+
+.buttons-container a:hover {
+  border-color: rgba(171, 171, 171, 1);
+  color: rgba(171, 171, 171, 1);
+}
+
+.buttons-container a:first-child {
+  margin-right: 25px;
+  margin-bottom: 25px;
+}
+
