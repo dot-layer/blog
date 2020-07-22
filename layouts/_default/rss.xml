@@ -6,8 +6,6 @@
   Don't worry, it's only the browser telling you it is showing you raw data. 
   Only search engines will be accessing that file so the raw xml is all they are interested in.
 -->
-
-
 {{- printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
