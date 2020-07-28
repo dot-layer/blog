@@ -1,7 +1,7 @@
 ---
 title: København
 author: Nicolas Garneau
-date: '2020-06-09'
+date: '2020-07-29'
 slug: copenhagen
 type: post
 categories: ["Trippin"]
