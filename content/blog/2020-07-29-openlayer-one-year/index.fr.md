@@ -23,7 +23,7 @@ Cette idée d'avoir un podcast vidéo m’est venue il y a environ 2-3 ans en é
 
 ### Les débuts
 
-*Fast-forward* à l’été 2019, j’ai débuté en invitant un collègue et ami, [Nicolas Garneau](https://youtu.be/x9Zo-F0PWQE), pour commencer avec un invité plus « facile » à interagir avec, puisque je le connais bien. C’est un épisode intéressant puisqu’on aborde différents aspects personnels de sa vie, mais aussi des aspects plus techniques comme la qualité du code en recherche et ce qui se veut être une introduction à la reproductibilité en science.
+*Fast-forward* à l’été 2019, j’ai débuté en invitant un collègue et ami, [Nicolas Garneau](https://youtu.be/x9Zo-F0PWQE), pour commencer avec un invité plus « facile » à interagir avec, puisque je le connais bien. C’est un épisode intéressant puisqu’on aborde différents aspects personnels de sa vie, mais aussi de sujets plus techniques comme la qualité du code en recherche et ce qui se veut être une introduction à la reproductibilité en science.
 
 ### L’évolution
 
