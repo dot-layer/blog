@@ -41,7 +41,7 @@ Je vais t’avouer que je n’y pense pas vraiment, si ce jour arrive, je vais v
 
 Premièrement, en réfléchissant au contenu des épisodes, j’en suis venu à un constat; le plus important n’est pas la technologie, ton expertise ou *whatever*, mais principalement la vision que tu portes sur le problème et de comment tu l’utilises pour adresser le problème.
 
-Prenons par exemple, [Alexandre Dubé-côté](https://youtu.be/YAnDc-GicpY), il a vraiment utilisé une vision orientée affaires pour nous expliquer comment bien concevoir des solutions d'IA. C’est-à-dire, que cette dernière doit répondre à un besoin, qu'il soit un besoin d’affaires, ou académique, ou social, cette solution doit répondre à un besoin.
+Prenons par exemple, [Alexandre Dubé-côté](https://youtu.be/YAnDc-GicpY), il a vraiment utilisé une vision orientée affaires pour nous expliquer comment bien concevoir des solutions d'IA. C’est-à-dire, que cette dernière doit répondre à un besoin, qu'il soit un besoin d’affaires, académique, ou social, cette solution doit répondre à un besoin.
 
 [Helene-Sarah Becotte](https://youtu.be/yRiEF7_i13Q) a beaucoup eu ce discours à travers son utilisation des mathématiques. La vision de beaucoup de gens (dans mon entourage non universitaire, mettons) des maths c’est que c’est *useless*. Alors que si on lui donne une vision plus utilitaire, donc répondre à un besoin, bien les maths prennent tous leurs sens. Le meilleur exemple de cela est son excellent [blog](https://helenebecotte.com/2019/11/24/optimise-ta-productivite-en-remplacant-ton-cafe-par-du-the/) sur l’optimisation de ta consommation de café pour être le plus productif possible.
 
