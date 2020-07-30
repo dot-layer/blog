@@ -19,7 +19,7 @@ D’abord, c’est quoi OpenLayer?
 
 Ça se veut un lieu ou une *myriade* de personnes viennent partager et ayant des profils aux antipodes les uns des autres, mais gravitant autour de cette *bébitte* qu’est l'IA. De l’expert en recherche en apprentissage automatique en passant par l’avocat en propriété intellectuelle jusqu’aux ressources humaines ou la santé. Nous avons eu droit à beaucoup d’informations sur cet univers selon différents acteurs du milieu.
 
-Cette idée d'avoir un podcast vidéo m’est venue il y a environ 2-3 ans en écoutant Mike Ward sous écoute (j’ai écouté l’ensemble des épisodes ou à peu près #BRAG). Je me suis dit, il y a quelque chose d’intéressant à faire avec cela. Par la suite, les choses se sont mises en branle lorsque j’ai quitté mon appartement d’étudiant laid sur l'avenue Myrand. Un mur « blanc » vieillis par le soleil et les années en arrière-plan accompagner du son de mon voisin qui gueule (littéralement) en gammant c’est pas l’arrière-plan le plus excitant mettons.
+Cette idée d'avoir un podcast vidéo m’est venue il y a environ 2-3 ans en écoutant Mike Ward sous écoute (j’ai écouté l’ensemble des épisodes ou à peu près #BRAG). Je me suis dit, il y a quelque chose d’intéressant à faire avec cela. Par la suite, les choses se sont mises en branle lorsque j’ai quitté mon appartement d’étudiant laid sur l'avenue Myrand. Un mur « blanc » vieillis par le soleil et les années en arrière-plan accompagner du son de mon voisin qui gueule (littéralement) en *gammant* c’est pas l’arrière-plan le plus excitant mettons.
 
 ### Les débuts
 
