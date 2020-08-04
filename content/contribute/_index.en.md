@@ -6,5 +6,5 @@ postService = "https://formspree.io/xvowwrwo"
 postTitle = "Post title"
 postAuthor = "Author(s) name(s)"
 postContent = "Post content"
-postEmail = "Recipient's Email Address"
+postEmail = "Correspondence email address"
 +++
