@@ -27,7 +27,7 @@ Cette idée d'avoir un podcast vidéo m’est venue il y a environ 2-3 ans en é
 
 ### L’évolution
 
-S’ensuivit plusieurs expérimentations dans les épisodes suivants : le décor à utiliser, la configuration de la console de son, le positionnement des micros et de la caméra, le contrôle de la lumière dans l’environnement et de mes chats dans l’arrière-plan. Plusieurs points ont été corrigés, mais d’autres restent à améliorer continuellement.
+Les épisodes suivant m'ont permis d'effectuer plusieurs expérimentations: le décor à utiliser, la configuration de la console de son, le positionnement des micros et de la caméra, le contrôle de la lumière dans l’environnement et de mes chats dans l’arrière-plan. Plusieurs points ont été corrigés, mais d’autres restent à améliorer.
 
 ### Et maintenant?
 
