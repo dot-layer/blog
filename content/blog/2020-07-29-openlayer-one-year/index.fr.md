@@ -51,4 +51,4 @@ J’ai trouvé intéressante l'idée de connaître relativement bien plusieurs d
 
 Ce qui m’amène à mon troisième point, *do the extra miles*! À travers les diverses discussions, j’ai vraiment ressenti que c’est vraiment ce qui fait la différence. Par exemple, se construire un porte-folio de solution, développer son image professionnelle sur les réseaux sociaux (LinkedIn, Twitter, Tik Tok?!?!). Le point est, fait en un petit peu plus que les autres et ça va paraître sur le long run.
 
-Écoute, je pourrais encore continuer, mais l’idée reste de faire un retour sur cette expérience plus qu’analyser chaque moment. J’espère continuer cette aventure encore longtemps et merci à tout mes ***number one fan*** (au singulier parce que vous êtes unique).
+Écoute, je pourrais encore continuer, mais l’idée reste de faire un retour sur cette expérience plus qu’analyser chaque moment. J’espère continuer cette aventure encore longtemps et merci à tous mes ***number one fan***.
