@@ -37,7 +37,7 @@ Je vais t’avouer que je n’y pense pas vraiment, si ce jour arrive, je vais v
 
 ## Les discussions
 
-À travers les divers épisodes, plusieurs sujets ont été abordés. Notamment l’aspect technique de l’IA ou de l’apprentissage automatique, le droit et la législation des algorithmes et leurs propriétés intellectuelles, la mise en production des solutions et j’en passe. Je pourrais facilement faire un texte avec chaque épisode, c’est pourquoi je vais plutôt recenser ici quelques moments forts qui m’ont personnellement marqué et qui ont amené à réfléchir sur certains aspects de mon travail.
+À travers les divers épisodes, plusieurs sujets ont été abordés avec les invités. Notamment l’aspect technique de l’IA ou de l’apprentissage automatique, le droit et la législation des algorithmes et leurs propriétés intellectuelles, la mise en production des solutions et j’en passe. Je pourrais facilement faire un texte avec chaque épisode, c’est pourquoi je vais plutôt recenser ici quelques moments forts qui m’ont personnellement marqué et qui ont amené à réfléchir sur certains aspects de mon travail.
 
 Premièrement, en réfléchissant au contenu des épisodes, j’en suis venu à un constat; le plus important n’est pas la technologie, ton expertise ou *whatever*, mais principalement la vision que tu portes sur le problème et comment tu l’utilises pour adresser le problème.
 
