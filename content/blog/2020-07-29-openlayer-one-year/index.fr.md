@@ -39,7 +39,7 @@ Je vais t’avouer que je n’y pense pas vraiment, si ce jour arrive, je vais v
 
 À travers les divers épisodes, plusieurs sujets ont été abordés. Notamment l’aspect technique de l’IA ou de l’apprentissage automatique, le droit et la législation des algorithmes et leurs propriétés intellectuelles, la mise en production des solutions et j’en passe. Je pourrais facilement faire un texte avec chaque épisode, c’est pourquoi je vais plutôt recenser ici quelques moments forts qui m’ont personnellement marqué et qui ont amené à réfléchir sur certains aspects de mon travail.
 
-Premièrement, en réfléchissant au contenu des épisodes, j’en suis venu à un constat; le plus important n’est pas la technologie, ton expertise ou *whatever*, mais principalement la vision que tu portes sur le problème et de comment tu l’utilises pour adresser le problème.
+Premièrement, en réfléchissant au contenu des épisodes, j’en suis venu à un constat; le plus important n’est pas la technologie, ton expertise ou *whatever*, mais principalement la vision que tu portes sur le problème et comment tu l’utilises pour adresser le problème.
 
 Prenons par exemple, [Alexandre Dubé-côté](https://youtu.be/YAnDc-GicpY), il a vraiment utilisé une vision orientée affaires pour nous expliquer comment bien concevoir des solutions d'IA. C’est-à-dire, que cette dernière doit répondre à un besoin, qu'il soit un besoin d’affaires, académique, ou social, cette solution doit répondre à un besoin.
 
