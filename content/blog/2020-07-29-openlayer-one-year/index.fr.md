@@ -1,7 +1,7 @@
 ---
 title: OpenLayer, 1 an plus tard
 author: David Beauchemin
-date: '2020-07-29'
+date: '2020-08-19'
 slug: podcast
 type: post
 categories: ["podcast"]
