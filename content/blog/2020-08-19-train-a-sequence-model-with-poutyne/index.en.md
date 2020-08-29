@@ -532,15 +532,20 @@ exp.test(mx_loader)
 exp_bi_lstm.test(mx_loader)
 ```
 
-The next table presents the results of both the model for both the country. We first see that 
+The next table presents the results of both the model for both the country tested. We first see that the first test 
+(RU) gives poorer results than Mexico, even if the second one is a different structure and language. 
+This situation could be explained by the language root of both languages; Spanish is closer to French than Russia. 
+But an interesting thing is that even in a *difficult* annotation context, both the model perform relatively well. 
+It means that our models seem to have really learned the *logic* of an address sequence. It could also mean that if 
+we train our model longer, maybe we could improve our results. But, other improvements will be discussed in the next summary section.
+
+
 | Model (Country) | LSTM one layer | Bi-LSTM two layers |
 |:---------------:|:--------------:|:------------------:|
 |    Loss (RU)    |   **2.5181**   |       4.6118       |
 |  Accuracy (RU)  |   **48.9820**  |       47.3185      |
 |    Loss (MX)    |     2.6786     |     **1.7147**     |
 |  Accuracy (MX)  |     50.2013    |     **63.5317**    |
-
-Which is good.
 
 ### Summary
 In summary, we found that using a Bi-LSTM with two layers seems to perform better on countries' addresses not seen during training. Still, the results are not as good as those of Canada (training dataset). A solution to this problem could be to train a model using all the
@@ -551,7 +556,7 @@ We also explored that the language has a negative impact on the results since we
 which is *normal* considering that they were trained for a specific language. A possible solution to that problem is the use of subword embedding composed of sub-division of a word instead of the complete one. For example, a two characters window embeddings of `H1A1` would be the aggregate embeddings of the subword `H1`, `1A` and `A1`. 
 
 > Alert of self-promotion of my work here
-I've personally explored this avenue in an article about the use of subword embedding for address parsing.  
+I've personally explored this avenue in an article about the use of [subword embedding for address parsing](https://arxiv.org/abs/2006.16152).  
 
 That been said, our model still performed well on the Canadian dataset, and one can simply train simpler LSTM model using
 country data to obtain the best results possible with the simpler model as possible. 
