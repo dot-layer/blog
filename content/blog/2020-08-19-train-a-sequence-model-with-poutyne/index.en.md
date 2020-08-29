@@ -416,43 +416,150 @@ input_dim = dimension * 2 #since bidirectional
 
 fully_connected_network = nn.Linear(input_dim, tag_dimension)
 
-full_network = FullNetWork(lstm_network, fully_connected_network)
+full_network_bi_lstm = FullNetWork(lstm_network, fully_connected_network)
 ```
  
 ### Training
  
  ```python
-exp = Experiment("./", full_network, device=cuda_device, optimizer=optimizer,
+exp_bi_lstm = Experiment("./", full_network_bi_lstm, device=cuda_device, optimizer=optimizer,
                  loss_function=cross_entropy, batch_metrics=["acc"])
-exp.train(train_loader, valid_generator=valid_loader, epochs=epoch_number)
+exp_bi_lstm.train(train_loader, valid_generator=valid_loader, epochs=epoch_number)
 ```
 
 ### Results
-Here a table of results diff.
+Here the last epoch validationresults of the larger model. We can see that, on the valdiation dataset,
+we obtain a marginal gain of around `0.3` for the accuracy over the preivous one. Not much of an improvement.
 
-TABLE
+|   Model  | Bi-LSTM two layers |
+|:--------:|:------------------:|
+|   Loss   |    0.0050          |
+| Accuracy |    99.8594         |
 
-We can see, not much of a difference for a larger model, but now that we have our two models trained, let's validate as a
-unique and final steps on the test set.
+But now that we have our two trained model, lets use the test set as a final an **unique** steps of the evaluation of the performance.
 
-TABLE
+``` python
+exp.test(test_loader)
+exp_bi_lstm.test(test_loader)
+```
 
-| Model              | Loss   | Accuracy |
-|--------------------|--------|----------|
-| LSTM one layer     | 0.0152 | 99.5758  |
-| Bi-LSTM two layers |        |          |
+The next table present the results of the Bi-LSTM with two layers and the previous model (LSTM with one layer).
 
-ANALYSE.
+|   Model  | LSTM one layer | Bi-LSTM two layers |
+|:--------:|:--------------:|:------------------:|
+|   Loss   |     0.0152     |    **0.0050**      |
+| Accuracy |     99.5758    |    **99.8550**     |
+
+We can see similar results as the validation one for both the model. Also, we still see a little improvement 
+of the accuracy and the loss for the larger model. But when considering that we only improved by around 0.3, one can
+argue that it's only a matter of the seed. For testing the robustness of our approach we could use retrain multiple time
+our training step but using everytime a different seed on report the mean and one standard variation but instead of that
+we will try something else. 
 
 #### Zero Shot Evaluation
-First US and GB with exact same structure (show picture)
+Since we have to our disposition other country address, let's see if our model have really learn a typical address sequence
+or he have simply learn all the cases (know as memorization).
 
-RESULTS
+We will test three different cases
 
-Let's try with a different language but same structure (Russia)
-RESULTS
+    - the first one we will test if our model perform well on coutry using the exact same 
+    address structure as our training dataset: United-States of America (US) and United-Kingdom (UK)
+    - the second one we will test if our model perform well on country using the exact same address structure **but** 
+    using a totaly different language: Russia (RU)
+    - the last one we will test if our model perform well on country using a different address structure **and** a 
+    different language: Mexico (MX).
 
-Now, let's try a different language and a different structure (Mexico)
-Results
+For each we will have a total dataset of `100,000` examples and we will use the last and best epoch results (the 10th). 
+Also, we will use the same pre processing steps (i.e. data vectorization, the same pad collate function), but we will only applied
+a test phase.
+
+But first, let's download and vectorize all the needed datasets.
+
+
+``` python
+download_data('./data/', "us")
+download_data('./data/', "gb")
+download_data('./data/', "ru")
+download_data('./data/', "mx")
+
+us_data = pickle.load(open("./data/us.p", "rb"))  # 100,000 examples
+gb_data = pickle.load(open("./data/gb.p", "rb"))  # 100,000 examples
+ru_data = pickle.load(open("./data/ru.p", "rb"))  # 100,000 examples
+mx_data = pickle.load(open("./data/mx.p", "rb"))  # 100,000 examples
+
+dataset_vectorizer.vectorize(us_data)
+dataset_vectorizer.vectorize(gb_data)
+dataset_vectorizer.vectorize(ru_data)
+dataset_vectorizer.vectorize(mx_data)
+```
+
+##### First Test
+
+Now let's tests for the United-States of America and United-Kingdom.
+
+``` python
+us_loader = DataLoader(us_data, batch_size=batch_size, collate_fn=pad_collate_fn)
+exp.test(us_loader)
+exp_bi_lstm.test(us_loader)
+
+gb_loader = DataLoader(gb_data, batch_size=batch_size, collate_fn=pad_collate_fn)
+exp.test(gb_loader)
+exp_bi_lstm.test(gb_loader)
+```
+
+The next table present the results of both the model for both the country. We first see that for the two country, we obtain
+better results using the BLSTM (around 8% better). Its interessting to see that even if the structure is similar, and also the
+presence of the same language as in the training dataset (ie. English), we obtain poorer results than before. That situation
+is mostly due to the postal code format that are not similar. For the US, it is 5 digits and for the UK it is similar 
+to Canada but it is not always a letter followed by a number and it is not always 6 caracters. It's *normal* for a model to
+have difficulty is that kind of new pattern, but he has still achieve good results.
+
+| Model (Country) | LSTM one layer | Bi-LSTM two layers |
+|:---------------:|:--------------:|:------------------:|
+|    Loss (US)    |     0.6176     |       **0.3078**   |
+|  Accuracy (US)  |     84.7396    |       **91.8220**  |
+|    Loss (UK)    |     0.4368     |       **0.1571**   |
+|  Accuracy (UK)  |     86.2543    |       **95.6840**  |
+
+
+##### The Second and Third Test
+
+Now let's tests for Russia and Maxico.
+``` python
+ru_loader = DataLoader(ru_data, batch_size=batch_size, collate_fn=pad_collate_fn)
+exp.test(ru_loader)
+exp_bi_lstm.test(ru_loader)
+
+mx_loader = DataLoader(mx_data, batch_size=batch_size, collate_fn=pad_collate_fn)
+exp.test(mx_loader)
+exp_bi_lstm.test(mx_loader)
+```
+
+The next table present the results of both the model for both the country. We first see that 
+| Model (Country) | LSTM one layer | Bi-LSTM two layers |
+|:---------------:|:--------------:|:------------------:|
+|    Loss (RU)    |   **2.5181**   |       4.6118       |
+|  Accuracy (RU)  |   **48.9820**  |       47.3185      |
+|    Loss (MX)    |     2.6786     |     **1.7147**     |
+|  Accuracy (MX)  |     50.2013    |     **63.5317**    |
+
+Which is good.
+
+### Summary
+In summary, we found that using a Bi-LSTM with two layers seem to perform better on country address not seen during training, but
+the results are not as good as those of the Canada (training dataset). A solution for this problem could be to train a model using all the
+possible data in the world. This approach was use by [Libpostal](https://github.com/openvenues/libpostal) which trained a 
+CRF over a impressive near `100` millions address (yes a 100 millions). The data is publicly available if you want to explore this avenue next.
+
+We also explored that the language have a negative impact on the results since we use monolinugal word embeddings (i.e. French), 
+which is *normal* considering that they were train for a specific language. A possible solution to that problem is 
+the use of subword embedding that are compose of sub-division of word instead of the complete word. For example, a two 
+caracters window embeddings of `H1A1` would be the aggregate embeddings of the subword `H1`, `1A` and `A1`. 
+
+> Alert of self promotion of my work here
+I've personnaly explored this avenue in an article about the use of subword embedding for address parsing.  
+
+That been said, our model still performed well on the Canadian dataset and one can simply train simplier LSTM model using
+country data to obtain the best results possible with the simplier model as possible. 
 
 
