@@ -45,7 +45,7 @@ But, instead of using a vanilla RNN, we use a variant of it, know as a long shor
 better stability with gradient update (vanishing and exploding gradient) by using gates 
 ([to learn more about LSTM](http://colah.github.io/posts/2015-08-Understanding-LSTMs/)). 
 
-Also, for now, let simply use a single layer unidirectional LSTM (and we will, later on, explore the use of more layer and bidirectional approach). 
+Also, for now, let's simply use a single layer unidirectional LSTM (and we will, later on, explore the use of more layers and bidirectional approach). 
 
 ### Word Embeddings
 
