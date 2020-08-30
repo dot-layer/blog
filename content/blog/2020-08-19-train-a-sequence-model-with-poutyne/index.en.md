@@ -12,7 +12,9 @@ featuredpath: "img/headers/"
 ---
 
 > In this article, we will train an RNN, or more precisely, an LSTM, to predict the sequence of tags associated with a 
-given address, known as parsing address.
+given address, known as parsing address. 
+
+> Also, the code (only) is available in [this Google Colab Jupyter notebook](https://colab.research.google.com/github/dot-layer/blog/blob/post%2Fdb_sequence_training_poutyne/content/blog/2020-08-19-train-a-sequence-model-with-poutyne/article_notebook.ipynb#scrollTo=c1JxpCRsQN0e).
 
 > Before starting this article, I would like to disclaim that this tutorial is greatly inspired by the one I did for Poutyne.
 Also, the content is base on a recent article I wrote with Marouane Yassine. But, one can find a difference between the 
@@ -423,7 +425,7 @@ full_network_bi_lstm = FullNetWork(lstm_network, fully_connected_network)
  
 ### Training
  
- ```python
+```python
 exp_bi_lstm = Experiment("./", full_network_bi_lstm, device=cuda_device, optimizer=optimizer,
                  loss_function=cross_entropy, batch_metrics=["acc"])
 exp_bi_lstm.train(train_loader, valid_generator=valid_loader, epochs=epoch_number)
@@ -440,7 +442,7 @@ we can see that we obtain a marginal gain of around `0.3` for the accuracy over 
 
 But now that we have our two trained models, let's use the test set as a final an **unique** steps of the evaluation of the performance.
 
-``` python
+```python
 exp.test(test_loader)
 exp_bi_lstm.test(test_loader)
 ```
@@ -474,8 +476,7 @@ a test phase.
 
 But first, let's download and vectorize all the needed datasets.
 
-
-``` python
+```python
 download_data('./data/', "us")
 download_data('./data/', "gb")
 download_data('./data/', "ru")
@@ -496,7 +497,7 @@ dataset_vectorizer.vectorize(mx_data)
 
 Now let's test for the United-States of America and United-Kingdom.
 
-``` python
+```python
 us_loader = DataLoader(us_data, batch_size=batch_size, collate_fn=pad_collate_fn)
 exp.test(us_loader)
 exp_bi_lstm.test(us_loader)
@@ -523,7 +524,8 @@ have difficulty is that kind of new pattern, but he has still achieved good resu
 ##### The Second and Third Test
 
 Now let's tests for Russia and Maxico.
-``` python
+
+```python
 ru_loader = DataLoader(ru_data, batch_size=batch_size, collate_fn=pad_collate_fn)
 exp.test(ru_loader)
 exp_bi_lstm.test(ru_loader)
@@ -539,7 +541,6 @@ This situation could be explained by the language root of both languages; Spanis
 But an interesting thing is that even in a *difficult* annotation context, both the model perform relatively well. 
 It means that our models seem to have really learned the *logic* of an address sequence. It could also mean that if 
 we train our model longer, maybe we could improve our results. But, other improvements will be discussed in the next summary section.
-
 
 | Model (Country) | LSTM one layer | Bi-LSTM two layers |
 |:---------------:|:--------------:|:------------------:|
