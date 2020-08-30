@@ -20,7 +20,7 @@ two other content, I've tried to put more insight for the less technical readers
 
 Sequential data, such as an address, are data that we assume are conditional to the previously known information. For example, 
 when writing an address, we know, in Canada, that after the civic number (e.g. 420), we have the street name (e.g. du Lac).
-That means that if we know the sequence's structure, we can predict the following information in the sequence. Various modelling approaches have been proposed to make predictions over sequential data. Still, more recently, deep learning models know as Recurrent Neural Network (RNN) has been introduced for this time of data.
+That means that if we know the sequence's structure, we can predict the following information in the sequence. Various modelling approaches have been proposed to make predictions over sequential data. Still, more recently, deep learning models known as Recurrent Neural Network (RNN) has been introduced for this type of data.
 
 Training an RNN requires various tricks (padding and packing) that we will explore in this article. First, lets 
 state our problem, and later on, we will discuss what an actual RNN or LSTM is.
