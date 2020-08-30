@@ -462,11 +462,11 @@ or he has simply learned all the cases (know as memorization).
 
 We will test three different cases
 
-    - the first one we will test if our model performs well on countries using the exact same 
+   - the first one we will test if our model performs well on countries using the exact same 
     address structure as our training dataset: United-States of America (US) and United-Kingdom (UK)
-    - the second one we will test if our model performs well on a country using the exact same address structure **but** 
+   - the second one we will test if our model performs well on a country using the exact same address structure **but** 
     using a totally different language: Russia (RU)
-    - the last one will test if our model performs well on a country using a different address structure **and** a different language: Mexico (MX).
+   - the last one will test if our model performs well on a country using a different address structure **and** a different language: Mexico (MX).
 
 For each, we will have a total dataset of `100,000` examples, and we will use the last and best epoch results (the 10th). 
 Also, we will use the same pre-processing steps (i.e. data vectorization, the same pad collate function), but we will only apply
