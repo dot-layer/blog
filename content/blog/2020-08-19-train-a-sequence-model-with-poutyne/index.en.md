@@ -388,6 +388,7 @@ It will take around 6 minutes per epochs, so around an hour for the complete tra
 The next figure presents the loss and the accuracy during training (blue) and during validation (orange).
 After 10 epochs, we obtain a validation loss and accuracy of `0.01981` and `99.54701` respectively, which is pretty
 good for a first model. Also, we can see that our model did not seem to have overfitted.
+
 ![loss_acc](graph/training_graph.png)
 
 ## Bigger model
