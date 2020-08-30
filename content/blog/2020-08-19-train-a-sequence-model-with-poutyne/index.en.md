@@ -559,5 +559,5 @@ which is *normal* considering that they were trained for a specific language. A 
 > Alert of self-promotion of my work here
 I've personally explored this avenue in an article about the use of [subword embedding for address parsing](https://arxiv.org/abs/2006.16152).  
 
-That been said, our model still performed well on the Canadian dataset, and one can simply train simpler LSTM model using
+That being said, our model still performed well on the Canadian dataset, and one can simply train simpler LSTM model using
 country data to obtain the best results possible with the simpler model as possible. 
