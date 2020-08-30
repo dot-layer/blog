@@ -270,7 +270,7 @@ dataset_vectorizer.vectorize(test_data)
 
 Now, since all the addresses are not of the same size, it is impossible to batch them together since all tensor elements must have the same lengths. But there is a trick, padding!
 
-The idea is simple. We add *empty* tokens at the end of each sequence up to the longest one in a batch. For the word vectors, we add vectors of 0 as padding. For the tag indices, we pad with -100s. We do so because of the [cross-entropy loss](https://pytorch.org/docs/stable/generated/torch.nn.CrossEntropyLoss.html#torch.nn.CrossEntropyLoss), the accuracy metric and the [F1 metric](https://poutyne.org/metrics.html#poutyne.framework.metrics.FBeta) all ignore targets with values of -100.
+The idea is simple. We add *empty* tokens at the end of each sequence up to the longest one in a batch. For the word vectors, we add vectors of 0 as padding. For the tag indices, we pad with -100s. We do so because of the [cross-entropy loss](https://pytorch.org/docs/stable/generated/torch.nn.CrossEntropyLoss.html#torch.nn.CrossEntropyLoss) and the accuracy metric all ignore targets with values of -100.
 
 To do this padding, we use the `collate_fn` argument of the [PyTorch `DataLoader`](https://pytorch.org/docs/stable/data.html#torch.utils.data.DataLoader), and on running time, that process will be done. One thing to consider, since we pad the sequence, we need each sequence's lengths to unpad them in the forward pass. That way, we can pad and pack the sequence to minimize the training time (read [this good explanation](https://stackoverflow.com/questions/51030782/why-do-we-pack-the-sequences-in-pytorch) of why we pad and pack sequences).
 
