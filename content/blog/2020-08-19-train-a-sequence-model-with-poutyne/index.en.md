@@ -22,7 +22,7 @@ two other content, I've tried to put more insight for the less technical readers
 
 Sequential data, such as an address, are data that we assume are conditional to the previously known information. For example, 
 when writing an address, we know, in Canada, that after the civic number (e.g. 420), we have the street name (e.g. du Lac).
-That means that if we know the sequence's structure, we can predict the following information in the sequence. Various modelling approaches have been proposed to make predictions over sequential data. Still, more recently, deep learning models known as Recurrent Neural Network (RNN) has been introduced for this type of data.
+That means that if we know the sequence's structure, we can predict the following information. Various modelling approaches have been proposed to make predictions over sequential data. Still, more recently, deep learning models known as Recurrent Neural Network (RNN) has been introduced for this type of data.
 
 Training an RNN requires various tricks (padding and packing) that we will explore in this article. First, let's 
 state our problem, and later on, we will discuss what an actual RNN or LSTM is.
@@ -47,14 +47,14 @@ But, instead of using a vanilla RNN, we use a variant of it, know as a long shor
 better stability with gradient update (vanishing and exploding gradient) by using gates 
 ([to learn more about LSTM](http://colah.github.io/posts/2015-08-Understanding-LSTMs/)). 
 
-Also, for now, let's simply use a single layer unidirectional LSTM (and we will, later on, explore the use of more layers and bidirectional approach). 
+Also, for now, let's simply use a single layer unidirectional LSTM. We will, later on, explore the use of more layers and bidirectional approach. 
 
 ### Word Embeddings
 
 Since our data is text, we will use a well-known word encoding technique, word embeddings. Word embeddings are vectors
 representation of words. The main hypothesis is that words have a linear relation along with them. For example, the linear relation
-between `king` and `queen` is the gender. So logically, if we remove the vector of `male` to `king` and add the vector
-of `female` we should obtain the vector of `queen`. That been said; usually, those kind of representation are in dimension `300`, which
+between the word `king` and `queen` is gender. So logically, if we remove the vector of `male` to `king` and add the vector
+of `female`, we should obtain the vector of `queen`. That been said; usually, those kind of representation are in dimension `300`, which
 make it impossible for humans to reason about. Still, the idea is there but in a larger dimension space.
 
 So our LSTM input and hidden state dimensions will be of the same size as the word vectors. 
@@ -132,9 +132,9 @@ lr = 0.1
 epoch_number = 10
 ```
 
-We also need to set Pythons's, NumPy's and PyTorch's seeds by using Poutyne function so that our training is (almost) reproducible.
+We also need to set Pythons's, NumPy's and PyTorch's seeds using Poutyne function so that our training is (almost) reproducible.
 
-> See [here](https://determined.ai/blog/reproducibility-in-ml/) for more explanation of why setting seed does not grand full reproducibility.
+> See [here](https://determined.ai/blog/reproducibility-in-ml/) for more explanation of why setting seed does not guarantee reproducibility.
 
 ```python
 set_seeds(42)
@@ -178,8 +178,7 @@ valid_data = pickle.load(open("./data/valid.p", "rb"))  # 182,198 examples
 test_data = pickle.load(open("./data/test.p", "rb"))  # 100,000 examples
 ```
 
-If we take a look at the training dataset, as explain before, it's a list of `728,789` tuples where the first element 
-is the full address, and the second is a list of the tag (the ground truth).
+As we explained before, the dataset is a list of `728,789` tuples where the first element is the full address, and the second is a list of the tag (the ground truth).
 
 ```python
 train_data[0:2]
@@ -191,7 +190,7 @@ train_data[0:2]
 
 ### Vectorize the Dataset
 
-Since we used word embeddings as our encoded representation of the word, we need to *convert* the address into word vector, for that we will use a vectorizer. This embedding vectorizer will extract for every word the embedding value using the pre-trained French fastText model.
+Since we used word embeddings as our encoded representation of the word, we need to *convert* the address into word vector, for that, we will use a vectorizer. This embedding vectorizer will extract for every word the embedding value using the pre-trained French fastText model.
 
 ```python
 class EmbeddingVectorizer:
@@ -217,10 +216,10 @@ embedding_vectorizer = EmbeddingVectorizer()
 ```
 
 We also need to apply a similar approach but for the address tag (e.g. StreeNumber, StreetName). 
-This vectorizer needs to convert the tag into categorical values (e.g. 0, 1 ...). 
+This vectorizer needs to convert the tag into categorical values (e.g. 0, 1). 
 
 For simplicity, we will use a `DatasetVectorizer` class that will apply the vectorizing process using both 
-the embedding and the address tag vectorizing process.
+the embedding and the address vectorize process.
 
 ```python
 class DatasetVectorizer:
@@ -292,7 +291,7 @@ def pad_collate_fn(batch):
         word vectors and (2) their respective lengths of the sequences. The element 
         y is a tensor of padded tag indices. The word vectors are padded with vectors 
         of 0s and the tag indices are padded with -100s. Padding with -100 is done 
-        because of the cross-entropy loss, the accuracy metric and the F1 metric ignores 
+        because of the cross-entropy loss and the accuracy metric ignores 
         the targets with values -100.
     """
 
@@ -396,12 +395,12 @@ good for a first model. Also, we can see that our model did not seem to have ove
 ## Bigger model
 
 It seems like our model performed pretty well, but just for fun, let's unleash the full potential of LSTM using a
-bidirectional approach (bi-LSTM). What it mean, is instead of _simply_ using a seeing the sequence from the start to the end, we
+bidirectional approach (bi-LSTM). What it means is instead of _simply_ using a seeing the sequence from the start to the end, we
 also train the model to see the sequence from the end to the start. It's important to state that the two directions are
-not shared, meaning that we _see_ the sequence in one direction at the time but we gather both the information for the 
+not shared, meaning that we _see_ the sequence in one direction at the time, but we gather both the information for the 
 fully connected layer. That way, our model can get insight from both direction.
 
-Also, instead of using only one layer, let's use a LSTM, which mean that we use two layers of hidden state.
+Instead of using only one layer, let's use an LSTM, which means that we use two layers of hidden state.
 
 So, let's create the new LSTM and fully connected network.
 
@@ -432,7 +431,7 @@ exp_bi_lstm.train(train_loader, valid_generator=valid_loader, epochs=epoch_numbe
 ```
 
 ### Results
-Here is the last epoch validation results of the larger model. On the validation dataset,
+Here are the last epoch validation results of the larger model. On the validation dataset,
 we can see that we obtain a marginal gain of around `0.3` for the accuracy over the previous one. Not much of an improvement.
 
 |   Model  | Bi-LSTM two layers |
@@ -440,7 +439,7 @@ we can see that we obtain a marginal gain of around `0.3` for the accuracy over 
 |   Loss   |    0.0050          |
 | Accuracy |    99.8594         |
 
-But now that we have our two trained models, let's use the test set as a final an **unique** steps of the evaluation of the performance.
+But now that we have our two trained models, let's use the test set as a final an **unique** steps of evaluating the performance.
 
 ```python
 exp.test(test_loader)
@@ -455,8 +454,8 @@ The next table presents the results of the Bi-LSTM with two layers and the previ
 | Accuracy |     99.5758    |    **99.8550**     |
 
 We can see similar results as the validation one for both the model. Also, we still see a little improvement of the accuracy and the loss for the larger model. But when considering that we only improved by around 0.3, one can
-argue that it's only a matter of the seed. For testing our approach's robustness, we could use retrain multiple times
-our training step but using every time a different seed. Using those trained models, we can report the mean and one standard variation of the metrics instead of a single training. But instead of doing that, let's try something else. 
+argue that it's only a matter of the seed. To test our approach's robustness, we could use retrain multiple times
+our training step but using a different seed every time. Using those trained models, we can report the mean and one standard variation of the metrics instead of a single training. But instead of doing that, let's try something else. 
 
 #### Zero Shot Evaluation
 Since we have to our disposition other country address, let's see if our model has really learned a typical address sequence
@@ -523,7 +522,7 @@ have difficulty is that kind of new pattern, but he has still achieved good resu
 
 ##### The Second and Third Test
 
-Now let's tests for Russia and Maxico.
+Now let's tests for Russia and Mexico.
 
 ```python
 ru_loader = DataLoader(ru_data, batch_size=batch_size, collate_fn=pad_collate_fn)
@@ -537,7 +536,7 @@ exp_bi_lstm.test(mx_loader)
 
 The next table presents the results of both the model for both the country tested. We first see that the first test 
 (RU) gives poorer results than Mexico, even if the second one is a different structure and language. 
-This situation could be explained by the language root of both languages; Spanish is closer to French than Russia. 
+This situation could be explained by both languages' language roots; Spanish is closer to French than Russia. 
 But an interesting thing is that even in a *difficult* annotation context, both the model perform relatively well. 
 It means that our models seem to have really learned the *logic* of an address sequence. It could also mean that if 
 we train our model longer, maybe we could improve our results. But, other improvements will be discussed in the next summary section.
@@ -558,7 +557,7 @@ We also explored that the language has a negative impact on the results since we
 which is *normal* considering that they were trained for a specific language. A possible solution to that problem is the use of subword embedding composed of sub-division of a word instead of the complete one. For example, a two characters window embeddings of `H1A1` would be the aggregate embeddings of the subword `H1`, `1A` and `A1`. 
 
 > Alert of self-promotion of my work here
-I've personally explored this avenue in an article about the use of [subword embedding for address parsing](https://arxiv.org/abs/2006.16152).  
+I've personally explored this avenue in an article about using [subword embedding for address parsing](https://arxiv.org/abs/2006.16152).  
 
 That being said, our model still performed well on the Canadian dataset, and one can simply train simpler LSTM model using
 country data to obtain the best results possible with the simpler model as possible. 
