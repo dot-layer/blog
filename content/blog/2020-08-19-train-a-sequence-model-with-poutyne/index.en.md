@@ -18,8 +18,8 @@ given address, known as parsing address.
 
 > Before starting this article, I would like to disclaim that this tutorial is greatly inspired by a online tutorial I 
 created for Poutyne framework. Also, the content is based on a recent article I wrote with Marouane Yassine. However, 
-there are differences between the present work and the other content, I've tried to put more insight for the less technical readers than in the previous two.
-
+there are differences between the present work and the two others, I've tried to put more insights for the less technical reader in this one.
+>
 Sequential data, such as an address, are data that we assume are conditional to the previously known information. For example, 
 when writing an address, we know, in Canada, that after the civic number (e.g. 420), we have the street name (e.g. du Lac).
 That means that if we know the sequence's structure, we can predict the following information. Various modelling approaches have been proposed to make predictions over sequential data. Still, more recently, deep learning models known as Recurrent Neural Network (RNN) has been introduced for this type of data.
