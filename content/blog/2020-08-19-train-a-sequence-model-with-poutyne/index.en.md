@@ -17,8 +17,8 @@ given address, known as parsing address.
 > Also, the code (only) is available in [this Google Colab Jupyter notebook](https://colab.research.google.com/github/dot-layer/blog/blob/post%2Fdb_sequence_training_poutyne/content/blog/2020-08-19-train-a-sequence-model-with-poutyne/article_notebook.ipynb#scrollTo=c1JxpCRsQN0e).
 
 > Before starting this article, I would like to disclaim that this tutorial is greatly inspired by a online tutorial I 
-created for Poutyne framework. Also, the content is base on a recent article I wrote with Marouane Yassine. But, one can find a difference between the 
-two other content, I've tried to put more insight for the less technical readers than in the previous two.
+created for Poutyne framework. Also, the content is based on a recent article I wrote with Marouane Yassine. However, 
+there are differences between the present work and the other content, I've tried to put more insight for the less technical readers than in the previous two.
 
 Sequential data, such as an address, are data that we assume are conditional to the previously known information. For example, 
 when writing an address, we know, in Canada, that after the civic number (e.g. 420), we have the street name (e.g. du Lac).
