@@ -45,7 +45,7 @@ allows previous outputs to be used as inputs for the next prediction
 
 But, instead of using a vanilla RNN, we use a variant of it, know as a long short-term memory (LSTM) that is known to have
 better stability with gradient update (vanishing and exploding gradient) by using gates 
-([to learn more about LSTM](http://colah.github.io/posts/2015-08-Understanding-LSTMs/)). 
+([to learn more about LSTMs](http://colah.github.io/posts/2015-08-Understanding-LSTMs/)). 
 
 Also, for now, let's simply use a single layer unidirectional LSTM. We will, later on, explore the use of more layers and bidirectional approach. 
 
