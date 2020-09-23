@@ -43,7 +43,7 @@ In brief, RNN is a neural network in which connections between nodes form a temp
 allows previous outputs to be used as inputs for the next prediction
 ([For more about RNN](https://stanford.edu/~shervine/teaching/cs-230/cheatsheet-recurrent-neural-networks)). 
 
-But, instead of using a vanilla RNN, we use a variant of it, know as a long short-term memory (LSTM) that is known to have
+For the present purpose, we do not use the vanilla RNN, but a variant of it known as long short-term memory (LSTM) network. This latter, which involves components called gates, is often preferred over its competitors due to its better stability with respect to gradient update (vanishing and exploding gradient).
 better stability with gradient update (vanishing and exploding gradient) by using gates 
 ([to learn more about LSTMs](http://colah.github.io/posts/2015-08-Understanding-LSTMs/)). 
 
