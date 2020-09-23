@@ -34,7 +34,7 @@ the street name or the postal code (or zip code). The following figure shows an 
 ![address parsing canada](address_parsing.png)
 
 Since addresses are written in a predetermined sequence, RNN is the best way to crack this problem. However, to decode the output of the RNN, we also need another component, a fully-connected layer. 
-So, our architecture, we will be composed of an RNN and a fully-connected layer. 
+Our architecture will therefore consist of an RNN and a fully-connected layer. 
 
 ## RNN
 Speaking of RNN, what is it?
