@@ -28,7 +28,7 @@ Training an RNN requires various tricks (padding and packing) that we will explo
 state our problem, and later on, we will discuss what an actual RNN or LSTM is.
 
 ## Address Tagging
-Address tagging is the task of detecting, by tagging, the different parts of an address such as the civic number, 
+Address tagging is the task of detecting and tagging the different parts of an address such as the civic number, 
 the street name or the postal code (or zip code). The following figure shows an example of such a tagging.
 
 ![address parsing canada](address_parsing.png)
