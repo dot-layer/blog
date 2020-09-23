@@ -24,7 +24,7 @@ Sequential data, such as addresses, are pieces of information that are deliberat
 when writing an address, we know, in Canada, that after the civic number (e.g. 420), we have the street name (e.g. du Lac).
 Hence, if one was asked to complete an address containing only a number, she could reasonably assume that the next information that should be added to the sequence is a street name. Various modelling approaches have been proposed to make predictions over sequential data. Still, more recently, deep learning models known as Recurrent Neural Network (RNN) has been introduced for this type of data.
 
-Training an RNN requires various tricks (padding and packing) that we will explore in this article. First, let's 
+The main purpose of this article is to discuss the various tricks (e.g., padding and packing) that are required for training an RNN. Before we do that, let us define our "address" problem more formally and elaborate on what RNNs (and LSTMs) actually are.
 state our problem, and later on, we will discuss what an actual RNN or LSTM is.
 
 ## Address Tagging
