@@ -54,7 +54,7 @@ Also, for now, let's simply use a single layer unidirectional LSTM. We will, lat
 Since our data is text, we will use a well-known word encoding technique, word embeddings. Word embeddings are vector
 representations of words. The main hypothesis underlying their use is that there exists a linear relation between words. For example, the linear relation
 between the word `king` and `queen` is gender. So logically, if we remove the vector corresponding to `male` to the one for `king`, and then add the vector for
-of `female`, we should obtain the vector of `queen`. That been said; usually, those kind of representation are in dimension `300`, which
+`female`, we should obtain the vector corresponding to `queen`. That being said, those kind of representation usually are in dimension `300`, which
 make it impossible for humans to reason about. Still, the idea is there but in a larger dimension space.
 
 So our LSTM input and hidden state dimensions will be of the same size as the word vectors. 
