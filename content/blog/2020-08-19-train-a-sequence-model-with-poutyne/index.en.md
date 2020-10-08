@@ -55,7 +55,7 @@ Since our data is text, we will use a well-known word encoding technique, word e
 representations of words. The main hypothesis underlying their use is that there exists a linear relation between words. For example, the linear relation
 between the word `king` and `queen` is gender. So logically, if we remove the vector corresponding to `male` to the one for `king`, and then add the vector for
 `female`, we should obtain the vector corresponding to `queen`. That being said, those kind of representation usually are in dimension `300`, which
-make it impossible for humans to reason about. Still, the idea is there but in a larger dimension space.
+makes it impossible for humans to reason about them. Still, the idea is there but in a larger dimension space.
 
 So our LSTM input and hidden state dimensions will be of the same size as the word vectors. 
 This size corresponds to the word embeddings dimension, which in our case will be the 
