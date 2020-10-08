@@ -101,7 +101,7 @@ lstm_network = nn.LSTM(input_size=dimension,
 
 
 ## Fully-connected Layer
-Since the output of the LSTM network is of `300`, we will use a fully-connected layer to map this large dimension space into
+Since the output of the LSTM network is of dimension `300`, we will use a fully-connected layer to map this large dimension space into
 a smaller one equal to the tag space (e.g. number of tags to predict (8)). 
 
 But, since we want to predict the most probable tokens, we will use the softmax function 
