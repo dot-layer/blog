@@ -63,7 +63,7 @@ This size corresponds to the word embeddings dimension, which in our case will b
 
 ### The Pytorch Model
 
-But first, let's import all the needed packages.
+Let us first import all the required packages.
 
 ```python
 import os
