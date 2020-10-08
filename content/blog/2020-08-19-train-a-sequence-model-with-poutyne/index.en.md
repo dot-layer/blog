@@ -58,7 +58,7 @@ between the word `king` and `queen` is gender. So logically, if we remove the ve
 makes it impossible for humans to reason about them. Still, the idea is there but in a larger dimension space.
 
 So our LSTM's input and hidden state dimensions will be of the same size as the vectors of embedded words. 
-This size corresponds to the word embeddings dimension, which in our case will be the 
+For the present purpose, we will use the
 [French pre trained](https://fasttext.cc/docs/en/crawl-vectors.html) fastText embeddings of dimension `300`. 
 
 ### The Pytorch Model
