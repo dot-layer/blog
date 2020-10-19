@@ -145,7 +145,7 @@ The dataset consists of `1,010,987` complete French and English Canadian address
 Here's an example `("420 rue des Lilas Ouest, Québec, G1V 2V3", [StreetNumber, StreetName, StreetName, StreetName, 
 Orientation, City, PostalCode, PostalCode])`.
 
-Now let's download our dataset; for simplicity, the data was already split into an 80-20 train, valid and a `100,000` test set. 
+Now let's download our dataset; for simplicity, the data was already split into an 80-20 train-valid and a `100,000` test set. 
 Also, the dataset is pickled for simplicity (using a Python `list`). Here is the code to download it.
 
 ```python
