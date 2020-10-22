@@ -258,7 +258,7 @@ class DatasetVectorizer:
 dataset_vectorizer = DatasetVectorizer(embedding_vectorizer)
 ```  
 
-Now, let's vectorize (in place) our dataset.
+Now, let's vectorize our dataset.
 
 ```python
 dataset_vectorizer.vectorize(train_data)
