@@ -439,7 +439,7 @@ we can see that we obtain a marginal gain of around `0.3` for the accuracy over 
 |   Loss   |    0.0050          |
 | Accuracy |    99.8594         |
 
-But now that we have our two trained models, let's use the test set as a final an **unique** steps of evaluating the performance.
+But now that we have our two trained models, let's use the test set as a final and **unique** step for evaluating their performance.
 
 ```python
 exp.test(test_loader)
