@@ -431,7 +431,7 @@ exp_bi_lstm.train(train_loader, valid_generator=valid_loader, epochs=epoch_numbe
 ```
 
 ### Results
-Here are the last epoch validation results of the larger model. On the validation dataset,
+Here are the validation results for the last epoch of the larger model. On the validation dataset,
 we can see that we obtain a marginal gain of around `0.3` for the accuracy over the previous one. Not much of an improvement.
 
 |   Model  | Bi-LSTM two layers |
