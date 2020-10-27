@@ -351,7 +351,7 @@ full_network = FullNetWork(lstm_network, fully_connected_network)
 
 ## Summary
 
-So we have created an LSTM network (`lstm_network`), a fully connected network (`fully_connected_network`), those two 
+So we have created an LSTM network (`lstm_network`) and a fully connected network (`fully_connected_network`), and we use both
 components are used in the full network. This full network used padded, packed sequences (defined in the forward pass), 
 so we created the `pad_collate_fn` function to process the needed work. The DataLoader will conduct that process. Finally, 
 when we load the data, this will be done using the vectorizer, so the address will be represented using word embeddings. 
