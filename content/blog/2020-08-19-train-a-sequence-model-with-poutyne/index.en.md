@@ -400,7 +400,7 @@ also train the model to see the sequence from the end to the start. It's importa
 not shared, meaning that we _see_ the sequence in one direction at the time, but we gather the information from both directions into the 
 fully connected layer. That way, our model can get insight from both directions.
 
-Instead of using only one layer, let's use an LSTM, which means that we use two layers of hidden state.
+Instead of using only one layer, let's use a bi-LSTM, which means that we use two layers of hidden state.
 
 So, let's create the new LSTM and fully connected network.
 
