@@ -446,7 +446,7 @@ exp.test(test_loader)
 exp_bi_lstm.test(test_loader)
 ```
 
-The next table presents the results of the Bi-LSTM with two layers and the previous model (LSTM with one layer).
+The next table presents the results of the bi-LSTM with two layers and the previous model (LSTM with one layer).
 
 |   Model  | LSTM one layer | Bi-LSTM two layers |
 |:--------:|:--------------:|:------------------:|
