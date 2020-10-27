@@ -360,7 +360,7 @@ Also, the address components will be converted into categorical value (from 0 to
 
 ## The Training
 
-Now that we have all the components for the network let's define our Stochastic Gradient Descent 
+Now that we have all the components for the network, let's define our Stochastic Gradient Descent 
 ([SGD](https://en.wikipedia.org/wiki/Stochastic_gradient_descent)) optimizer.
 
 ```python
