@@ -454,7 +454,7 @@ The next table presents the results of the bi-LSTM with two layers and the previ
 | Accuracy |     99.5758    |    **99.8550**     |
 
 We see similar validation results for both the model. Also, we still see a little improvement in accuracy and total loss for the larger model. Considering that we only improved by around 0.3, one can
-argue that it's only a matter of the seed. To test our approach's robustness, we could use retrain multiple times
+argue that it's only a matter of seed. To test the robustness of our approach, we could train our model multiple times
 our training step but using a different seed every time. Using those trained models, we can report the mean and one standard variation of the metrics instead of a single training. But instead of doing that, let's try something else. 
 
 #### Zero Shot Evaluation
