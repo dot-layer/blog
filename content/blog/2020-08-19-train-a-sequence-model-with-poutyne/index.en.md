@@ -498,7 +498,7 @@ For each, we will have a total dataset of `100,000` examples, and we will use th
 Also, we will use the same pre-processing steps (i.e. data vectorization, the same pad collate function), but we will only apply
 a test phase.
 
-But first, let's download and vectorize all the needed datasets.
+First, let's download and vectorize all the needed datasets.
 
 ```python
 download_data('./data/', "us")
