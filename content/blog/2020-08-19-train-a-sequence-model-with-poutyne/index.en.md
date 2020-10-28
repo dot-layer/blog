@@ -519,7 +519,7 @@ dataset_vectorizer.vectorize(mx_data)
 
 ##### First Test
 
-Now let's test for the United-States of America and United-Kingdom.
+Now let's test for the United States of America and United Kingdom.
 
 ```python
 us_loader = DataLoader(us_data, batch_size=batch_size, collate_fn=pad_collate_fn)
