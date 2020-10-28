@@ -66,8 +66,16 @@ For the present purpose, we will use the
 Let us first import all the required packages.
 
 ```python
+%pip install --upgrade poutyne #install poutyne on colab
+%pip install --upgrade colorama #install colorama on colab
+%matplotlib inline
+
+import contextlib
 import os
 import pickle
+import re
+import sys
+from io import TextIOBase
 
 import fasttext
 import fasttext.util
@@ -193,6 +201,18 @@ train_data[0:2]
 Since we used word embeddings as our encoded representation of the words, we need to *convert* the address into word vector. In order to do that, we will use a `vectorizer` (i.e. the process of converting word into vector). This embedding vectorizer will extract, for each word, the embedding value based on the pre-trained French fastText model.
 
 ```python
+# We use this class so that the download templating of the fastText
+# script be not buggy as hell in notebooks.
+class LookForProgress(TextIOBase):
+    def __init__(self, stdout):
+        self.stdout = stdout
+        self.regex = re.compile(r'([0-9]+(\.[0-9]+)?%)', re.IGNORECASE)
+        
+    def write(self, o):
+        res = self.regex.findall(o)
+        if len(res) != 0:
+            print(f"\r{res[-1][0]}", end='', file=self.stdout)
+
 class EmbeddingVectorizer:
     def __init__(self):
         """
