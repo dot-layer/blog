@@ -190,7 +190,7 @@ train_data[0:2]
 
 ### Vectorize the Dataset
 
-Since we used word embeddings as our encoded representation of the words, we need to *convert* the address into word vector. In order to do that, we will use a vectorizer. This embedding vectorizer will extract, for each word, the embedding value based on the pre-trained French fastText model.
+Since we used word embeddings as our encoded representation of the words, we need to *convert* the address into word vector. In order to do that, we will use a `vectorizer` (i.e. the process of converting word into vector). This embedding vectorizer will extract, for each word, the embedding value based on the pre-trained French fastText model.
 
 ```python
 class EmbeddingVectorizer:
@@ -216,7 +216,7 @@ embedding_vectorizer = EmbeddingVectorizer()
 ```
 
 We also need to apply a similar operation to the address tags (e.g. StreeNumber, StreetName). 
-This time, however, the vectorizer needs to convert the tags into categorical values (e.g. 0, 1). 
+This time, however, the `vectorizer` needs to convert the tags into categorical values (e.g. StreetNumber -> 0). 
 
 For simplicity, we will use a `DatasetVectorizer` class that will apply the vectorizing process using both 
 the embedding and the address vectorize process.
@@ -265,6 +265,11 @@ dataset_vectorizer.vectorize(train_data)
 dataset_vectorizer.vectorize(valid_data)
 dataset_vectorizer.vectorize(test_data)
 ```
+
+```python
+train_data[0]
+```
+
 
 ### DataLoader
 > We use a first trick, ``padding``.
