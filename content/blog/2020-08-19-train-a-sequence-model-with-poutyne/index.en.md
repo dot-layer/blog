@@ -531,7 +531,7 @@ exp.test(gb_loader)
 exp_bi_lstm.test(gb_loader)
 ```
 
-The next table presents the results of both the model for both the country. We first see that we obtain
+The next table presents the results of both models for both countries. We obtain
 better results for the two countries using the bi-LSTM (around 8% better). It's interesting to see that considering that their structures are similar. Also, the
 presence of the same language as in the training dataset (i.e. English), we obtain poorer results than before. That situation
 is mostly due to the postal code format is not similar. For the US, it is 5 digits, and for the UK it is similar to Canada, but it is not always a letter followed by a number, and it is not always 6 characters. It's *normal* for a model to
