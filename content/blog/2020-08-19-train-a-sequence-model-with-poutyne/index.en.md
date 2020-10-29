@@ -491,7 +491,7 @@ We will test our model on three different types of datasets
    - first, on addresses with the exact same structure 
     as in our training dataset: addresses from the United States of America (US) and the United Kingdom (UK)
    - secondly, on addresses with the exact same structure as those in our training dataset **but** 
-    using a totally different language: Russia (RU)
+    written in a totally different language: addresses from Russia (RU)
    - the last one will test if our model performs well on a country using a different address structure **and** a different language: Mexico (MX).
 
 For each, we will have a total dataset of `100,000` examples, and we will use the last and best epoch results (the 10th). 
