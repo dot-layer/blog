@@ -483,7 +483,7 @@ argue that it's only a matter of seed. To test the robustness of our approach, w
 using different seeds and report the mean and standard deviation of each metric over all experiments rather than the result of a single training. Let's try something else. 
 
 #### Zero Shot Evaluation
-Since we have to our disposition other country address, let's see if our model has really learned a typical address sequence
+Since we have at our disposition other country addresses, let's see if our model has really learned a typical address sequence
 or he has simply learned all the cases (know as memorization).
 
 We will test three different cases
