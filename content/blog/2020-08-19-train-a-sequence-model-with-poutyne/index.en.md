@@ -480,7 +480,7 @@ The next table presents the results of the bi-LSTM with two layers and the previ
 
 We see similar validation results for both models. Also, we still see a little improvement in accuracy and total loss for the larger model. Considering that we only improved by around 0.3, one can
 argue that it's only a matter of seed. To test the robustness of our approach, we could train our model multiple times
-using a different seeds and report the mean and standard deviation of each metric over all experiments rather than the result of a single training. Let's try something else. 
+using different seeds and report the mean and standard deviation of each metric over all experiments rather than the result of a single training. Let's try something else. 
 
 #### Zero Shot Evaluation
 Since we have to our disposition other country address, let's see if our model has really learned a typical address sequence
