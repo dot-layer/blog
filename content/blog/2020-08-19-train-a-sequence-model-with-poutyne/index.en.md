@@ -495,7 +495,7 @@ We will test three different cases
    - the last one will test if our model performs well on a country using a different address structure **and** a different language: Mexico (MX).
 
 For each, we will have a total dataset of `100,000` examples, and we will use the last and best epoch results (the 10th). 
-Also, we will use the same pre-processing steps (i.e. data vectorization, the same pad collate function), but we will only apply
+Also, we will use the same pre-processing steps as before (i.e. data vectorization, the same pad collate function), but we will only apply
 a test phase.
 
 First, let's download and vectorize all the needed datasets.
