@@ -489,7 +489,7 @@ or if it has simply learned all the cases (know as memorization).
 We will test three different cases
 
    - first, on addresses with the exact same structure 
-    address structure as our training dataset: United-States of America (US) and United-Kingdom (UK)
+    as in our training dataset: addresses from the United States of America (US) and the United Kingdom (UK)
    - the second one we will test if our model performs well on a country using the exact same address structure **but** 
     using a totally different language: Russia (RU)
    - the last one will test if our model performs well on a country using a different address structure **and** a different language: Mexico (MX).
