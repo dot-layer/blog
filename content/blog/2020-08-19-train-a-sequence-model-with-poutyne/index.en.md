@@ -7,7 +7,7 @@ type: post
 categories: ["python", "machine learning"]
 tags: []
 description: "Address tagging with a RNN"
-featured: "OpenLayer_YoutubeBanner.jpg"
+featured: "we-mastered-the-art-of-programming-cover.jpeg"
 featuredpath: "img/headers/"
 ---
 
