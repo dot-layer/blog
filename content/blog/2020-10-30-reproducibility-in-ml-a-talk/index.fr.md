@@ -15,4 +15,4 @@ featuredpath: "img/headers/"
 
 Récemment, j'ai offert un webinaire auprès de l'Institut intelligence et données (IID) de l'Université Laval sur la reproductibilité en apprentissage automatique. Le sujet m'apparait important puisqu'il a un impact important sur la crédibilité de nos résultats de recherche et sur notre productivité. Voici donc [l'enregistrement](lien)  de ma présentation et le [contenu](https://davebulaval.github.io/reproductibilite-en-apprentissage-automatique/) de celle-ci.
 
-En espérant que les outils présentés vous aideront à rendre vos solutions plus robustes et amélioreront votre productivité.
+En espérant que les outils présentés vous aideront à rendre vos solutions plus robustes et qu'ils amélioreront votre productivité.
