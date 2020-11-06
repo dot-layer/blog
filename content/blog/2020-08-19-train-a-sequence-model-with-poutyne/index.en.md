@@ -14,18 +14,16 @@ featuredpath: "img/headers/"
 > In this article, we will train an RNN, or more precisely, an LSTM, to predict the sequence of tags associated with a 
 given address, known as parsing address. 
 
-> Also, the code (only) is available in [this Google Colab Jupyter notebook](https://colab.research.google.com/github/dot-layer/blog/blob/post%2Fdb_sequence_training_poutyne/content/blog/2020-08-19-train-a-sequence-model-with-poutyne/article_notebook.ipynb#scrollTo=c1JxpCRsQN0e).
+> Also, the article is available in a [Google Colab Jupyter notebook](https://colab.research.google.com/github/dot-layer/blog/blob/post%2Fdb_sequence_training_poutyne/content/blog/2020-08-19-train-a-sequence-model-with-poutyne/article_notebook.ipynb#scrollTo=c1JxpCRsQN0e).
 
-> Before starting this article, I would like to disclaim that this tutorial is greatly inspired by a online tutorial I 
-created for Poutyne framework. Also, the content is based on a recent article I wrote with Marouane Yassine. However, 
-there are differences between the present work and the two others, I've tried to put more insights for the less technical reader in this one.
->
+> Before starting this article, we would like to disclaim that this tutorial is greatly inspired by a online tutorial David created for Poutyne framework. Also, the content is based on a recent article we wrote about address tagging. However, there are differences between the present work and the two others, we've tried to put more insights for the less technical reader in this one.
+
+
 Sequential data, such as addresses, are pieces of information that are deliberately given in a specific order. In other words, they are sequences with a particular structure; and knowing this structure is crucial for predicting the missing entries of a given truncated sequence. For example, 
 when writing an address, we know, in Canada, that after the civic number (e.g. 420), we have the street name (e.g. du Lac).
-Hence, if one was asked to complete an address containing only a number, she could reasonably assume that the next information that should be added to the sequence is a street name. Various modelling approaches have been proposed to make predictions over sequential data. Still, more recently, deep learning models known as Recurrent Neural Network (RNN) has been introduced for this type of data.
+Hence, if one was asked to complete an address containing only a number, he could reasonably assume that the next information that should be added to the sequence is a street name. Various modelling approaches have been proposed to make predictions over sequential data. Still, more recently, deep learning models known as Recurrent Neural Network (RNN) have been introduced for this type of data.
 
-The main purpose of this article is to discuss the various tricks (e.g., padding and packing) that are required for training an RNN. Before we do that, let us define our "address" problem more formally and elaborate on what RNNs (and LSTMs) actually are.
-state our problem, and later on, we will discuss what an actual RNN or LSTM is.
+The main purpose of this article is to introduce the various tricks (e.g., padding and packing) that are required for training an RNN. Before we do that, let us define our "address" problem more formally and elaborate on what RNNs (and LSTMs) actually are.
 
 ## Address Tagging
 Address tagging is the task of detecting and tagging the different parts of an address such as the civic number, 
@@ -41,17 +39,16 @@ Speaking of RNN, what is it?
 
 In brief, RNN is a neural network in which connections between nodes form a temporal sequence. It means that this type of network
 allows previous outputs to be used as inputs for the next prediction
-([For more about RNN](https://stanford.edu/~shervine/teaching/cs-230/cheatsheet-recurrent-neural-networks)). 
+([for more about RNN](https://stanford.edu/~shervine/teaching/cs-230/cheatsheet-recurrent-neural-networks)). 
 
-For the present purpose, we do not use the vanilla RNN, but a variant of it known as long short-term memory (LSTM) network. This latter, which involves components called gates, is often preferred over its competitors due to its better stability with respect to gradient update (vanishing and exploding gradient).
-better stability with gradient update (vanishing and exploding gradient) by using gates 
+For the present purpose, we do not use the vanilla RNN, but a variant of it known as long short-term memory (LSTM) network. This latter, which involves components called gates, is often preferred over its competitors due to its better stability with respect to gradient update (vanishing and exploding gradient)
 ([to learn more about LSTMs](http://colah.github.io/posts/2015-08-Understanding-LSTMs/)). 
 
 Also, for now, let's simply use a single layer unidirectional LSTM. We will, later on, explore the use of more layers and bidirectional approach. 
 
 ### Word Embeddings
 
-Since our data is text, we will use a well-known word encoding technique, word embeddings. Word embeddings are vector
+Since our data is text, we will use a well-known text encoding technique, word embeddings. Word embeddings are vector
 representations of words. The main hypothesis underlying their use is that there exists a linear relation between words. For example, the linear relation
 between the word `king` and `queen` is gender. So logically, if we remove the vector corresponding to `male` to the one for `king`, and then add the vector for
 `female`, we should obtain the vector corresponding to `queen`. That being said, those kind of representation usually are in dimension `300`, which
@@ -126,7 +123,7 @@ fully_connected_network = nn.Linear(input_dim, tag_dimension)
 ## Training Constants
 
 Now, let's set our training constants. We first specify a CUDA (GPU) device for training (using a CPU is way too long, 
-if you don't have one, you can use a Google Colab notebook). 
+if you don't have one, you can use the Google Colab notebook). 
 
 Secondly, we set the batch size (i.e. the number of elements to see before updating the model), the learning rate for the optimizer
 and the number of epochs.
@@ -142,7 +139,7 @@ epoch_number = 10
 
 We also need to set Pythons's, NumPy's and PyTorch's seeds using the Poutyne function so that our training is (almost) reproducible.
 
-> See [here](https://determined.ai/blog/reproducibility-in-ml/) for more explanation of why setting seed does not guarantee reproducibility.
+> See [here](https://determined.ai/blog/reproducibility-in-ml/) for more explanation of why setting seed does not guarantee complete reproducibility.
 
 ```python
 set_seeds(42)
@@ -198,8 +195,9 @@ train_data[0:2]
 
 ### Vectorize the Dataset
 
-Since we used word embeddings as our encoded representation of the words, we need to *convert* the address into word vector. In order to do that, we will use a `vectorizer` (i.e. the process of converting word into vector). This embedding vectorizer will extract, for each word, the embedding value based on the pre-trained French fastText model.
+Since we used word embeddings as our encoded representation of the address, we need to *convert* the address into word vector. In order to do that, we will use a `vectorizer` (i.e. the process of converting word into vector). This embedding vectorizer will extract, for each word, the embedding value based on the pre-trained French fastText model.
 
+> It take some time to download the first time
 ```python
 # We use this class so that the download templating of the fastText
 # script be not buggy as hell in notebooks.
@@ -239,7 +237,7 @@ We also need to apply a similar operation to the address tags (e.g. StreeNumber,
 This time, however, the `vectorizer` needs to convert the tags into categorical values (e.g. StreetNumber -> 0). 
 
 For simplicity, we will use a `DatasetVectorizer` class that will apply the vectorizing process using both 
-the embedding and the address vectorize process.
+the embedding and the address vectorize process that we just describe.
 
 ```python
 class DatasetVectorizer:
@@ -290,15 +288,37 @@ dataset_vectorizer.vectorize(test_data)
 train_data[0]
 ```
 
+> Here a example after the vectorizing process
+
+```
+([array([ 5.30934185e-02, -6.72420338e-02,  8.96735638e-02, -3.26771051e-01,
+         -4.42410737e-01, -1.32014668e-02,  1.50324404e-01, -2.50251926e-02,
+          1.24011010e-01, -1.68488681e-01,  4.80616689e-02, -5.40233105e-02,
+          1.21191796e-02,  3.89859192e-02,  1.25505164e-01, -1.40419468e-01,
+         -2.62053646e-02,  1.01731330e-01, 
+         ...
+         -5.71550950e-02, -3.92134525e-02,  4.85491045e-02,  4.82993454e-01,
+          3.35614271e-02, -5.97143888e-01, -9.82549414e-02,  8.23293403e-02],
+        dtype=float32), #dimension of 300 # first word
+        ... 
+        # word N of the sequence
+        array([-6.28125593e-02, -1.72182580e-03,  1.27990674e-02,  7.47001171e-02,
+        ...
+        3.74843590e-02],
+        dtype=float32)],
+    
+ #second element of the tuple
+ [0, 1, 1, 1, 3, 4, 5, 5] #the ground truth tag)
+```
 
 ### DataLoader
 > We use a first trick, ``padding``.
 
 Now, since the addresses are not all of the same size, it is impossible to batch them together; recall that all tensor elements must have the same lengths. But there is a trick, padding!
 
-The idea is simple. We add *empty* tokens at the end of each sequence up to the longest one in a batch. For the word vectors, we add vectors of 0 as padding. For the tag indices, we pad with -100's. We do so because the [cross-entropy loss](https://pytorch.org/docs/stable/generated/torch.nn.CrossEntropyLoss.html#torch.nn.CrossEntropyLoss) and the accuracy metric both ignore targets with values of -100.
+The idea is simple. We add *empty* tokens at the end of each sequence up to the longest one in the batch. For the word vectors, we add vectors of 0 as padding. For the tag indices, we pad with -100's. We do so because the [cross-entropy loss](https://pytorch.org/docs/stable/generated/torch.nn.CrossEntropyLoss.html#torch.nn.CrossEntropyLoss) and the accuracy metric both ignore targets with values of -100.
 
-To do this padding, we use the `collate_fn` argument of the [PyTorch `DataLoader`](https://pytorch.org/docs/stable/data.html#torch.utils.data.DataLoader), and on running time, that process will be done. One thing to keep in mind when treating padded sequences is that their (original) length will be required to unpack them later on, in the forward pass. That way, we can pad and pack the sequence to minimize the training time (read [this good explanation](https://stackoverflow.com/questions/51030782/why-do-we-pack-the-sequences-in-pytorch) of why we pad and pack sequences).
+To do this padding, we use the `collate_fn` argument of the [PyTorch `DataLoader`](https://pytorch.org/docs/stable/data.html#torch.utils.data.DataLoader), and on running time, that process will be done. One thing to keep in mind when treating padded sequences is that their (original) length will be required to unpack them later on (since we also pack them), in the forward pass. That way, we can pad and pack the sequence to minimize the training time (read [this good explanation](https://stackoverflow.com/questions/51030782/why-do-we-pack-the-sequences-in-pytorch) of why we pack sequences).
 
 ```python
 def pad_collate_fn(batch):
@@ -347,7 +367,7 @@ test_loader = DataLoader(test_data, batch_size=batch_size, collate_fn=pad_collat
 ## Full Network
 > We use a second trick, ``packing``.
 
-Since our sequences are of variable lengths and that we want to be as efficient as possible when packing them, we cannot use the [PyTorch `nn.Sequential`](https://pytorch.org/docs/stable/generated/torch.nn.Sequential.html) class to define our model. Instead, we define the forward pass so that it packs and unpacks the sequences (again, you can read [this good explanation](https://stackoverflow.com/questions/51030782/why-do-we-pack-the-sequences-in-pytorch) of why we pad and pack sequences).
+Since our sequences are of variable lengths and that we want to be as efficient as possible when packing them, we cannot use the [PyTorch `nn.Sequential`](https://pytorch.org/docs/stable/generated/torch.nn.Sequential.html) class to define our model. Instead, we define the forward pass so that it use packed sequences (again, you can read [this good explanation](https://stackoverflow.com/questions/51030782/why-do-we-pack-the-sequences-in-pytorch) of why we pack sequences).
 
 ```python
 class FullNetWork(nn.Module):
@@ -377,23 +397,23 @@ full_network = FullNetWork(lstm_network, fully_connected_network)
 ## Summary
 
 So we have created an LSTM network (`lstm_network`) and a fully connected network (`fully_connected_network`), and we use both
-components in the full network. The full network makes use of padded, packed sequences (defined in the forward pass), 
-so we created the `pad_collate_fn` function to process the necessary work. The DataLoader will conduct that process. Finally, 
-we will load the data using the vectorizer. This means that the addresses will be represented by word embeddings. 
+components in the full network. The full network makes use of padded-packed sequences, 
+so we created the `pad_collate_fn` function to process the necessary work within the `DataLoader`. Finally, 
+we will load the data using the vectorizer (within the `DataLoader` using the `pad_collate` function). This means that the addresses will be represented by word embeddings. 
 Also, the address components will be converted into categorical value (from 0 to 7).
 
 
 ## The Training
 
-Now that we have all the components for the network, let's define our Stochastic Gradient Descent 
-([SGD](https://en.wikipedia.org/wiki/Stochastic_gradient_descent)) optimizer.
+Now that we have all the components for the network, let's define our optimizer (Stochastic Gradient Descent) 
+([SGD](https://en.wikipedia.org/wiki/Stochastic_gradient_descent)).
 
 ```python
 optimizer = optim.SGD(full_network.parameters(), lr)
 ```
 
 ### Poutyne Experiment
-> Disclaimer that I'm a dev on Poutyne, so I will present code using this framework. See the project [here](https://poutyne.org/).
+> Disclaimer that David is a dev on Poutyne, so we will present code using this framework. See the project [here](https://poutyne.org/).
 
 Let's create our experiment using Poutyne for automatically logging in the project root directory (`./`). We will also set
 the loss function and a batch metric (accuracy) to monitor the training.
@@ -411,7 +431,7 @@ exp.train(train_loader, valid_generator=valid_loader, epochs=epoch_number)
 It will take around 6 minutes per epochs, so around an hour for the complete training.
 
 ### Results
-The next figure shows the loss and the accuracy during training (blue) and during validation (orange).
+The next figure shows the loss and the accuracy during our training (blue) and during our validation (orange) steps.
 After 10 epochs, we obtain a validation loss and accuracy of `0.01981` and `99.54701` respectively, which is pretty
 good for a first model. Also, we can see that our model did not seem to have overfitted.
 
@@ -420,12 +440,12 @@ good for a first model. Also, we can see that our model did not seem to have ove
 ## Bigger model
 
 It seems like our model performed pretty well, but just for fun, let's unleash the full potential of LSTM using a
-bidirectional approach (bi-LSTM). What it means is that instead of _simply_ viewing the sequence from the start to the end, we
+bidirectional approach (bidirectional LSTM). What it means is that instead of _simply_ viewing the sequence from the start to the end, we
 also train the model to see the sequence from the end to the start. It's important to state that the two directions are
 not shared, meaning that we _see_ the sequence in one direction at the time, but we gather the information from both directions into the 
 fully connected layer. That way, our model can get insight from both directions.
 
-Instead of using only one layer, let's use a bi-LSTM, which means that we use two layers of hidden state.
+Instead of using only one layer, let's use a bidirectional bi-LSTM, which means that we use two layers of hidden state for each direction.
 
 So, let's create the new LSTM and fully connected network.
 
@@ -456,7 +476,7 @@ exp_bi_lstm.train(train_loader, valid_generator=valid_loader, epochs=epoch_numbe
 ```
 
 ### Results
-Here are the validation results for the last epoch of the larger model. On the validation dataset,
+Here are our validation results for the last epoch of the larger model. On the validation dataset,
 we can see that we obtain a marginal gain of around `0.3` for the accuracy over the previous one. Not much of an improvement.
 
 |   Model  | Bi-LSTM two layers |
@@ -482,7 +502,7 @@ We see similar validation results for both models. Also, we still see a little i
 argue that it's only a matter of seed. To test the robustness of our approach, we could train our model multiple times
 using different seeds and report the mean and standard deviation of each metric over all experiments rather than the result of a single training. Let's try something else. 
 
-#### Zero Shot Evaluation
+### Zero Shot Evaluation
 Since we have at our disposition other country addresses, let's see if our model has really learned a typical address sequence
 or if it has simply learned all the cases (know as memorization).
 
@@ -494,9 +514,9 @@ We will test our model on three different types of datasets
     written in a totally different language: addresses from Russia (RU)
    - finally, on addresses that exhibit a different structure **and** that are written in a different language: addresses from Mexico (MX).
 
-For each test, we will use a dataset of `100,000` examples in total, and we will use the results from the last epochs, which were always the best. 
+For each test, we will use a dataset of `100,000` examples in total, and we will evaluate using the best epoch of our two models (i.e. last epoch for both of them). 
 Also, we will use the same pre-processing steps as before (i.e. data vectorization, the same pad collate function), but we will only apply
-a test phase.
+a test phase, meaning no training step.
 
 First, let's download and vectorize all the needed datasets.
 
@@ -581,8 +601,8 @@ CRF over an impressive near `100` million address (yes, **100 million**). The da
 We also explored that the language has a negative impact on the results since we use monolingual word embeddings (i.e. French), 
 which is *normal* considering that they were trained for a specific language. A possible solution to that problem is the use of subword embedding composed of sub-division of a word instead of the complete one. For example, a two characters window embeddings of `H1A1` would be the aggregate embeddings of the subword `H1`, `1A` and `A1`. 
 
-> Alert of self-promotion of my work here
-I've personally explored this avenue in an article about using [subword embedding for address parsing](https://arxiv.org/abs/2006.16152).  
+> Alert of self-promotion of our work here
+We've personally explored this avenue in an article using [subword embedding for address parsing](https://arxiv.org/abs/2006.16152).  
 
 That being said, our model still performed well on the Canadian dataset, and one can simply train simpler LSTM model using
 country data to obtain the best results possible with the simpler model as possible. 
