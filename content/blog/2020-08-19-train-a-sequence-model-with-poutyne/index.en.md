@@ -196,7 +196,7 @@ train_data[0:2]
 
 Since we used word embeddings as the encoded representations of the addresses, we need to *convert* the addresses into word vectors. In order to do that, we will use a `vectorizer` (i.e. the process of converting words into vectors). This embedding vectorizer will extract, for each word, the embedding value based on the pre-trained French fastText model.
 
-> It take some time to download the first time
+> It takes some time to download the first time
 ```python
 # We use this class so that the download templating of the fastText
 # script be not buggy as hell in notebooks.
