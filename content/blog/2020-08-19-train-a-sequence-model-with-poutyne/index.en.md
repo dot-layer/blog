@@ -579,7 +579,7 @@ exp.test(mx_loader)
 exp_bi_lstm.test(mx_loader)
 ```
 
-The next table presents the results of both the model for both the country tested. We first see that the first test 
+The next table presents the results of both models for the two countries tested. We see that the first test 
 (RU) gives poorer results than Mexico, even if the second one is a different structure and language. 
 This situation could be explained by both languages' language roots; Spanish is closer to French than Russia. 
 But an interesting thing is that even in a *difficult* annotation context, both the model perform relatively well. 
