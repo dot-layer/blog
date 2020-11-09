@@ -313,7 +313,7 @@ train_data[0]
 ### DataLoader
 > We use a first trick, ``padding``.
 
-Now, since the addresses are not all of the same size, it is impossible to batch them together; recall that all tensor elements must have the same lengths. But there is a trick, padding!
+Now, because the addresses are not all of the same size, it is impossible to batch them together; recall that all tensor elements must have the same lengths. But there is a trick, padding!
 
 The idea is simple. We add *empty* tokens at the end of each sequence up to the longest one in the batch. For the word vectors, we add vectors of 0 as padding. For the tag indices, we pad with -100's. We do so because the [cross-entropy loss](https://pytorch.org/docs/stable/generated/torch.nn.CrossEntropyLoss.html#torch.nn.CrossEntropyLoss) and the accuracy metric both ignore targets with values of -100.
 
