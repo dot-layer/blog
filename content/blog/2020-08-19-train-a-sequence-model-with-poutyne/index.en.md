@@ -21,7 +21,7 @@ given address, known as parsing address.
 
 Sequential data, such as addresses, are pieces of information that are deliberately given in a specific order. In other words, they are sequences with a particular structure; and knowing this structure is crucial for predicting the missing entries of a given truncated sequence. For example, 
 when writing an address, we know, in Canada, that after the civic number (e.g. 420), we have the street name (e.g. du Lac).
-Hence, if one was asked to complete an address containing only a number, he could reasonably assume that the next information that should be added to the sequence is a street name. Various modelling approaches have been proposed to make predictions over sequential data. Still, more recently, deep learning models known as Recurrent Neural Network (RNN) have been introduced for this type of data.
+Hence, if one is asked to complete an address containing only a number, he can reasonably assume that the next information that should be added to the sequence is a street name. Various modelling approaches have been proposed to make predictions over sequential data. Still, more recently, deep learning models known as Recurrent Neural Network (RNN) have been introduced for this type of data.
 
 The main purpose of this article is to introduce the various tricks (e.g., padding and packing) that are required for training an RNN. Before we do that, let us define our "address" problem more formally and elaborate on what RNNs (and LSTMs) actually are.
 
