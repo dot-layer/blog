@@ -60,7 +60,7 @@ For the present purpose, we will use the
 
 ### The Pytorch Model
 
-Let us first import all the required packages.
+Let us first import all the necessary packages.
 
 ```python
 %pip install --upgrade poutyne #install poutyne on colab
