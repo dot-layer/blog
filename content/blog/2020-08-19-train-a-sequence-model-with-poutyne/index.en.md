@@ -552,7 +552,7 @@ exp_bi_lstm.test(gb_loader)
 ```
 
 The next table presents the results of both models for both countries. We obtain
-better results for the two countries using the bi-LSTM (around 8% better). It's interesting to see that considering that their structures are similar. Also, the
+better results for the two countries using the bidirectional bi-LSTM (around 8% better). It's interesting to see that considering that their structures are similar to those in the training dataset (Canada), we obtain near as good results as those observed during training. Meaning that our model seems to have learned to recognize the structure of an address. Also, the
 presence of the same language as in the training dataset (i.e. English), we obtain poorer results than before. That situation
 is mostly due to the postal code format is not similar. For the US, it is 5 digits, and for the UK it is similar to Canada, but it is not always a letter followed by a number, and it is not always 6 characters. It's *normal* for a model to
 have difficulty is that kind of new pattern, but he has still achieved good results.
@@ -594,7 +594,7 @@ we train our model longer, maybe we could improve our results. But, other improv
 |  Accuracy (MX)  |     50.2013    |     **63.5317**    |
 
 ### Summary
-In summary, we found that using a Bi-LSTM with two layers seems to perform better on countries' addresses not seen during training. Still, the results are not as good as those of Canada (training dataset). A solution to this problem could be to train a model using all the
+In summary, we found that using a bidirectional Bi-LSTM with two layers seems to perform better on countries' addresses not seen during training. Still, the results are not as good as those of Canada (training dataset). A solution to this problem could be to train a model using all the
 possible data in the world. This approach was used by [Libpostal](https://github.com/openvenues/libpostal) which trained a 
 CRF over an impressive near `100` million address (yes, **100 million**). The data is publicly available if you want to explore this avenue next.
 
