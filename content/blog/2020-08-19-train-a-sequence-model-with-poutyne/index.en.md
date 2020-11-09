@@ -182,7 +182,7 @@ valid_data = pickle.load(open("./data/valid.p", "rb"))  # 182,198 examples
 test_data = pickle.load(open("./data/test.p", "rb"))  # 100,000 examples
 ```
 
-As we explained before, the (train) dataset is a list of `728,789` tuples where the first element is the full address, and the second is a list of tags (the ground truth).
+As explained before, the (train) dataset is a list of `728,789` tuples where the first element is the full address, and the second is a list of tags (the ground truth).
 
 ```python
 train_data[0:2]
