@@ -145,7 +145,7 @@ set_seeds(42)
 ```
 
 ## The Dataset
-The dataset consists of `1,010,987` complete French and English Canadian address and their associated address components tags.
+The dataset consists of `1,010,987` complete French and English Canadian addresses and their associated tags.
 Here's an example `("420 rue des Lilas Ouest, Québec, G1V 2V3", [StreetNumber, StreetName, StreetName, StreetName, 
 Orientation, City, PostalCode, PostalCode])`.
 
