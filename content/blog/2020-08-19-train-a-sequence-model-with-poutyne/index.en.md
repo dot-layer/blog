@@ -413,7 +413,7 @@ optimizer = optim.SGD(full_network.parameters(), lr)
 ```
 
 ### Poutyne Experiment
-> Disclaimer that David is a dev on Poutyne, so we will present code using this framework. See the project [here](https://poutyne.org/).
+> Disclaimer: David is a dev on Poutyne, so we will present code using this framework. See the project [here](https://poutyne.org/).
 
 Let's create our experiment using Poutyne for automatically logging in the project root directory (`./`). We will also set
 the loss function and a batch metric (accuracy) to monitor the training.
