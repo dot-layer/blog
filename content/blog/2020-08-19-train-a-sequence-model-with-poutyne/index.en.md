@@ -12,7 +12,7 @@ featuredpath: "img/headers/"
 ---
 
 > In this article, we will train an RNN, or more precisely, an LSTM, to predict the sequence of tags associated with a 
-given address, known as parsing address. 
+given address, known as address parsing.
 
 > Also, the article is available in a [Google Colab Jupyter notebook](https://colab.research.google.com/github/dot-layer/blog/blob/post%2Fdb_sequence_training_poutyne/content/blog/2020-08-19-train-a-sequence-model-with-poutyne/article_notebook.ipynb#scrollTo=c1JxpCRsQN0e).
 
