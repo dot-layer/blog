@@ -286,7 +286,7 @@ dataset_vectorizer.vectorize(test_data)
 train_data[0]
 ```
 
-> Here a example after the vectorizing process
+> Here is a example after the vectorizing process
 
 ```
 ([array([ 5.30934185e-02, -6.72420338e-02,  8.96735638e-02, -3.26771051e-01,
