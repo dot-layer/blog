@@ -172,7 +172,7 @@ download_data('./data/', "valid")
 download_data('./data/', "test")
 ```
 
-Now let's load in memory the data.
+Now let's load the data in memory.
 
 ```python
 # load the data
