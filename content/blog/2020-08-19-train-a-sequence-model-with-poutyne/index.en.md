@@ -505,7 +505,7 @@ using different seeds and report the mean and standard deviation of each metric 
 
 ### Zero Shot Evaluation
 Since we have at our disposition addresses from other countries, let's see if our model has really learned a typical address sequence
-or if it has simply learned all the cases (know as memorization).
+or if it has simply *memorized* all the training examples.
 
 We will test our model on three different types of datasets
 
