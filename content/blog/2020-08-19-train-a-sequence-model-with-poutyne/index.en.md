@@ -54,7 +54,7 @@ between the word `king` and `queen` is gender. So logically, if we remove the ve
 `female`, we should obtain the vector corresponding to `queen` (`king - male + female = queen`). That being said, those kinds of representation usually are in dimension `300`, which
 makes it impossible for humans to reason about them. Still, the idea is there but in a larger dimension space.
 
-So our LSTM's input and hidden state dimensions will be of the same size as the vectors of embedded words. 
+So our LSTM's input and hidden state dimensions will be of the same sizes as the vectors of embedded words. 
 For the present purpose, we will use the
 [French pre trained](https://fasttext.cc/docs/en/crawl-vectors.html) fastText embeddings of dimension `300`. 
 
