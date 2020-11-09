@@ -480,7 +480,7 @@ exp_bi_lstm.train(train_loader, valid_generator=valid_loader, epochs=epoch_numbe
 Here are our validation results for the last epoch of the larger model. On the validation dataset,
 we can see that we obtain a marginal gain of around `0.3` for the accuracy over the previous one. Not much of an improvement.
 
-|   Model  | Bi-LSTM two layers |
+|   Model  | Bidirectional bi-LSTM |
 |:--------:|:------------------:|
 |   Loss   |    0.0050          |
 | Accuracy |    99.8594         |
@@ -492,9 +492,9 @@ exp.test(test_loader)
 exp_bi_lstm.test(test_loader)
 ```
 
-The next table presents the results of the bi-LSTM with two layers and the previous model (LSTM with one layer).
+The next table presents the results of the bidirectional bi-LSTM with two layers and the previous model (LSTM with one layer).
 
-|   Model  | LSTM one layer | Bi-LSTM two layers |
+|   Model  | LSTM one layer | Bidirectional bi-LSTM |
 |:--------:|:--------------:|:------------------:|
 |   Loss   |     0.0152     |    **0.0050**      |
 | Accuracy |     99.5758    |    **99.8550**     |
@@ -558,7 +558,7 @@ presence of the same language as in the training dataset (i.e. English), we obta
 is mostly due to the postal code format is not similar. For the US, it is 5 digits, and for the UK it is similar to Canada, but it is not always a letter followed by a number, and it is not always 6 characters. It's *normal* for a model to
 have difficulty is that kind of new pattern, but he has still achieved good results.
 
-| Model (Country) | LSTM one layer | Bi-LSTM two layers |
+| Model (Country) | LSTM one layer | Bidirectional bi-LSTM |
 |:---------------:|:--------------:|:------------------:|
 |    Loss (US)    |     0.6176     |       **0.3078**   |
 |  Accuracy (US)  |     84.7396    |       **91.8220**  |
@@ -587,7 +587,7 @@ But an interesting thing is that even in a *difficult* annotation context, both 
 It means that our models seem to have really learned the *logic* of an address sequence. It could also mean that if 
 we train our model longer, maybe we could improve our results. But, other improvements will be discussed in the next summary section.
 
-| Model (Country) | LSTM one layer | Bi-LSTM two layers |
+| Model (Country) | LSTM one layer | Bidirectional bi-LSTM |
 |:---------------:|:--------------:|:------------------:|
 |    Loss (RU)    |   **2.5181**   |       4.6118       |
 |  Accuracy (RU)  |   **48.9820**  |       47.3185      |
