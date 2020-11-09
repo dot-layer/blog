@@ -605,4 +605,4 @@ which is *normal* considering that they were trained for a specific language. A 
 We've personally explored this avenue in an article using [subword embedding for address parsing](https://arxiv.org/abs/2006.16152).  
 
 That being said, our model still performed well on the Canadian dataset, and one can simply train simpler LSTM model using
-country data to obtain the best results possible with the simpler model as possible. 
+country data to obtain the best results possible with a model as simple as possible. 
