@@ -424,7 +424,7 @@ exp = Experiment("./", full_network, device=cuda_device, optimizer=optimizer,
                  loss_function=cross_entropy, batch_metrics=["acc"])
 ```
 
-Using our experiment, we can now launch the training as simple as
+Using our experiment, we can now launch the training as simply as
 
 ```python
 exp.train(train_loader, valid_generator=valid_loader, epochs=epoch_number)
