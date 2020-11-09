@@ -124,7 +124,7 @@ fully_connected_network = nn.Linear(input_dim, tag_dimension)
 Now, let's set our training constants. We first specify a CUDA (GPU) device for training (using a CPU takes way too long, 
 if you don't have one, you can use the Google Colab notebook). 
 
-Secondly, we set the batch size (i.e. the number of elements to see before updating the model), the learning rate for the optimizer
+Second, we set the batch size (i.e. the number of elements to see before updating the model), the learning rate for the optimizer
 and the number of epochs.
 
 ```python
