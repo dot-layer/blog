@@ -368,7 +368,7 @@ test_loader = DataLoader(test_data, batch_size=batch_size, collate_fn=pad_collat
 ## Full Network
 > We use a second trick, ``packing``.
 
-Since our sequences are of variable lengths and that we want to be as efficient as possible when packing them, we cannot use the [PyTorch `nn.Sequential`](https://pytorch.org/docs/stable/generated/torch.nn.Sequential.html) class to define our model. Instead, we define the forward pass so that it use packed sequences (again, you can read [this good explanation](https://stackoverflow.com/questions/51030782/why-do-we-pack-the-sequences-in-pytorch) of why we pack sequences).
+Since our sequences are of variable lengths and that we want to be as efficient as possible when packing them, we cannot use the [PyTorch `nn.Sequential`](https://pytorch.org/docs/stable/generated/torch.nn.Sequential.html) class to define our model. Instead, we define the forward pass so that it uses packed sequences (again, you can read [this good explanation](https://stackoverflow.com/questions/51030782/why-do-we-pack-the-sequences-in-pytorch) of why we pack sequences).
 
 ```python
 class FullNetWork(nn.Module):
@@ -397,7 +397,7 @@ full_network = FullNetWork(lstm_network, fully_connected_network)
 
 ## Summary
 
-So we have created an LSTM network (`lstm_network`) and a fully connected network (`fully_connected_network`), and we use both
+We have created an LSTM network (`lstm_network`) and a fully connected network (`fully_connected_network`), and we use both
 components in the full network. The full network makes use of padded-packed sequences, 
 so we created the `pad_collate_fn` function to process the necessary work within the `DataLoader`. Finally, 
 we will load the data using the vectorizer (within the `DataLoader` using the `pad_collate` function). This means that the addresses will be represented by word embeddings. 
@@ -424,7 +424,7 @@ exp = Experiment("./", full_network, device=cuda_device, optimizer=optimizer,
                  loss_function=cross_entropy, batch_metrics=["acc"])
 ```
 
-Using our experiment, we can now launch the training as simple as
+Using our experiment, we can now launch the training as simply as
 
 ```python
 exp.train(train_loader, valid_generator=valid_loader, epochs=epoch_number)
@@ -440,7 +440,7 @@ good for a first model. Also, we can see that our model did not seem to have ove
 
 ## Bigger model
 
-It seems like our model performed pretty well, but just for fun, let's unleash the full potential of LSTM using a
+It seems that our model performed pretty well, but just for fun, let's unleash the full potential of LSTM using a
 bidirectional approach (bidirectional LSTM). What it means is that instead of _simply_ viewing the sequence from the start to the end, we
 also train the model to see the sequence from the end to the start. It's important to state that the two directions are
 not shared, meaning that we _see_ the sequence in one direction at the time, but we gather the information from both directions into the 
