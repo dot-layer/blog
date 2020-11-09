@@ -595,7 +595,7 @@ we train our model longer, we could potentially improve our results. Other modif
 
 ### Summary
 In summary, we found that using a bidirectional Bi-LSTM with two layers seems to perform better on countries' addresses not seen during training. Still, the results are not as good as those of Canada (training dataset). A solution to this problem could be to train a model using all the
-possible data in the world. This approach was used by [Libpostal](https://github.com/openvenues/libpostal) which trained a 
+data from all over the world. This approach was used by [Libpostal](https://github.com/openvenues/libpostal), which trained a 
 CRF over an impressive near `100` million address (yes, **100 million**). The data is publicly available if you want to explore this avenue next.
 
 We also explored that the language has a negative impact on the results since we use monolingual word embeddings (i.e. French), 
