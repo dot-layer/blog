@@ -44,7 +44,7 @@ allows previous outputs to be used as inputs for the next prediction
 For the present purpose, we do not use the vanilla RNN, but a variant of it known as long short-term memory (LSTM) network. This latter, which involves components called gates, is often preferred over its competitors due to its better stability with respect to gradient update (vanishing and exploding gradient)
 ([to learn more about LSTMs](http://colah.github.io/posts/2015-08-Understanding-LSTMs/)). 
 
-Also, for now, let's simply use a single layer unidirectional LSTM. We will, later on, explore the use of more layers and bidirectional approach. 
+For now, let's simply use a single layer unidirectional LSTM. We will, later on, explore the use of more layers and a bidirectional approach. 
 
 ### Word Embeddings
 
