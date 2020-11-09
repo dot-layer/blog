@@ -507,7 +507,7 @@ using different seeds and report the mean and standard deviation of each metric 
 Since we have at our disposition addresses from other countries, let's see if our model has really learned a typical address sequence
 or if it has simply *memorized* all the training examples.
 
-We will test our model on three different types of datasets
+We will test our model on three different types of dataset
 
    - first, on addresses with the exact same structure 
     as in our training dataset: addresses from the United States of America (US) and the United Kingdom (UK)
