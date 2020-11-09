@@ -315,9 +315,11 @@ train_data[0]
 
 Now, because the addresses are not all of the same size, it is impossible to batch them together; recall that all tensor elements must have the same lengths. But there is a trick, padding!
 
-The idea is simple. We add *empty* tokens at the end of each sequence up to the longest one in the batch. For the word vectors, we add vectors of 0 as padding. For the tag indices, we pad with -100's. We do so because the [cross-entropy loss](https://pytorch.org/docs/stable/generated/torch.nn.CrossEntropyLoss.html#torch.nn.CrossEntropyLoss) and the accuracy metric both ignore targets with values of -100.
+The idea is simple; we add *empty* tokens at the end of each sequence until they reach the length of the longest one in the batch. For example, if we have three sequences of length ${1, 3, 5}$, padding will add *empty* tokens to the first two, 4 for the first and 2 for the second.
 
-To do this padding, we use the `collate_fn` argument of the [PyTorch `DataLoader`](https://pytorch.org/docs/stable/data.html#torch.utils.data.DataLoader), and on running time, that process will be done. One thing to keep in mind when treating padded sequences is that their (original) length will be required to unpack them later on (since we also pack them), in the forward pass. That way, we can pad and pack the sequence to minimize the training time (read [this good explanation](https://stackoverflow.com/questions/51030782/why-do-we-pack-the-sequences-in-pytorch) of why we pack sequences).
+For the word vectors, we add vectors of 0 as padding. For the tag indices, we pad with -100's. We do so because the [cross-entropy loss](https://pytorch.org/docs/stable/generated/torch.nn.CrossEntropyLoss.html#torch.nn.CrossEntropyLoss) and the accuracy metric both ignore targets with values of -100.
+
+To do the padding, we use the `collate_fn` argument of the [PyTorch `DataLoader`](https://pytorch.org/docs/stable/data.html#torch.utils.data.DataLoader), and on running time, the process will be done by the `DataLoader`. One thing to keep in mind when treating padded sequences is that their (original) length will be required to unpack them later on (since we also pack them), in the forward pass. That way, we can pad and pack the sequence to minimize the training time (read [this good explanation](https://stackoverflow.com/questions/51030782/why-do-we-pack-the-sequences-in-pytorch) of why we pack sequences).
 
 ```python
 def pad_collate_fn(batch):
