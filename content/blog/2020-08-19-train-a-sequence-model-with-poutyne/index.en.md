@@ -594,7 +594,7 @@ we train our model longer, we could potentially improve our results. Other modif
 |  Accuracy (MX)  |     50.2013    |     **63.5317**    |
 
 ### Summary
-In summary, we found that using a bidirectional Bi-LSTM with two layers seems to perform better on countries' addresses not seen during training. Still, the results are not as good as those of Canada (training dataset). A solution to this problem could be to train a model using all the
+In summary, we found that using a bidirectional bi-LSTM seems to perform better on addresses not seen during training, including those coming from other countries. Still, the results for addresses from other countries are not as good as those for Canadian addresses (training dataset). A solution to this problem could be to train a model using all the
 data from all over the world. This approach was used by [Libpostal](https://github.com/openvenues/libpostal), which trained a 
 CRF over an impressive near `100` million addresses (yes, **100 million**). If you want to explore this avenue, the data is publicly available.
 
