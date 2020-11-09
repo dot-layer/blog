@@ -580,7 +580,7 @@ exp_bi_lstm.test(mx_loader)
 ```
 
 The next table presents the results of both models for the two countries tested. We see that the first test 
-(RU) gives poorer results than Mexico, even if the second one is a different structure and language. 
+(RU) gives poorer results than those for Mexican addresses, even if these latter are written in a different structure and language. 
 This situation could be explained by both languages' language roots; Spanish is closer to French than Russia. 
 But an interesting thing is that even in a *difficult* annotation context, both the model perform relatively well. 
 It means that our models seem to have really learned the *logic* of an address sequence. It could also mean that if 
