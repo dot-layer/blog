@@ -1,7 +1,7 @@
 ---
 title: Reproductibilité en apprentissage automatique - Webinaire
 author: David Beauchemin
-date: '2020-10-30'
+date: '2020-11-11'
 slug: machine learning
 type: post
 categories: ["nouvelles", "machine learning"]
