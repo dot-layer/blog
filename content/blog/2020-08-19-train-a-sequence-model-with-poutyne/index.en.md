@@ -1,5 +1,5 @@
 ---
-title: Train a Recurrent Neural Network (RNN) with Poutyne
+title: Training a Recurrent Neural Network (RNN) with Poutyne
 author: David Beauchemin et Marouane Yassine
 date: '2020-08-18'
 slug: machine learning
