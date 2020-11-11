@@ -381,6 +381,11 @@ class RecurrentNet(nn.Module):
     def forward(self, padded_sequences_vectors, lengths):
         """
             Defines the computation performed at every call.
+
+            Shapes:
+                padded_sequences_vectors: batch_size * longest_sequence_length (padding), 300
+                lengths: batch_size
+
         """
         total_length = padded_sequences_vectors.shape[1]
         pack_padded_sequences_vectors = pack_padded_sequence(padded_sequences_vectors, lengths.cpu(), batch_first=True)
@@ -388,8 +393,8 @@ class RecurrentNet(nn.Module):
         lstm_out, self.hidden_state = self.lstm_network(pack_padded_sequences_vectors)
         lstm_out, _ = pad_packed_sequence(lstm_out, batch_first=True, total_length=total_length)
 
-        tag_space = self.fully_connected_network(lstm_out)
-        return tag_space.transpose(-1, 1) # we need to transpose since it's a sequence
+        tag_space = self.fully_connected_network(lstm_out) # shape: batch_size * longest_sequence_length, 8 (tag space)
+        return tag_space.transpose(-1, 1) # we need to transpose since it's a sequence # shape: batch_size * 8, longest_sequence_length
 
 full_network = FullNetWork(lstm_network, fully_connected_network)
 ```
