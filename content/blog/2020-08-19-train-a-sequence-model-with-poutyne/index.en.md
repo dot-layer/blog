@@ -424,7 +424,7 @@ Let's create our experiment using Poutyne for automatically logging in the proje
 the loss function and a batch metric (accuracy) to monitor the training.
 
 ```python
-exp = Experiment("./", full_network, device=cuda_device, optimizer=optimizer,
+exp = Experiment("./", full_network, device=device, optimizer=optimizer,
                  loss_function=cross_entropy, batch_metrics=["acc"])
 ```
 
