@@ -231,7 +231,7 @@ class EmbeddingVectorizer:
 embedding_vectorizer = EmbeddingVectorizer()
 ```
 
-We also need to apply a similar operation to the address tags (e.g. StreeNumber, StreetName). 
+We also need to apply a similar operation to the address tags (e.g. StreetNumber, StreetName). 
 This time, however, the `vectorizer` needs to convert the tags into categorical values (e.g. StreetNumber -> 0). 
 For simplicity, we will use a `DatasetVectorizer` class that will apply the vectorizing process using both 
 the embedding and the address vectorization process that we've just described.
