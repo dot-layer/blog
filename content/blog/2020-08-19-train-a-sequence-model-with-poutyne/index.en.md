@@ -311,7 +311,7 @@ train_data[0]
 ### DataLoader
 > We use a first trick, ``padding``.
 
-Now, because the addresses are not all of the same size, it is impossible to batch them together; recall that all tensor elements must have the same lengths. But there is a trick, padding!
+Now, because the addresses are not all of the same size, it is impossible to batch them together; recall that all tensor elements must have the same lengths. But there is a trick: padding!
 
 The idea is simple; we add *empty* tokens at the end of each sequence until they reach the length of the longest one in the batch. For example, if we have three sequences of length ${1, 3, 5}$, padding will add *empty* tokens to the first two, 4 for the first and 2 for the second.
 
