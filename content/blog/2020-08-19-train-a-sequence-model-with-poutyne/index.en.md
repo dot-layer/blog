@@ -87,7 +87,7 @@ from torch.utils.data import DataLoader
 ```
 
 Now, let's create a single (i.e. one layer) unidirectional LSTM with `input_size` and `hidden_size` of `300`. We 
-will explore later on the effect of stacking more layers and of using a bidirectional approach.
+will explore later on the effect of stacking more layers and using a bidirectional approach.
 
 > See [here](https://discuss.pytorch.org/t/could-someone-explain-batch-first-true-in-lstm/15402) the explanation why we use the `batch_first` argument.
 
