@@ -566,7 +566,7 @@ The next table presents the results of both models for the two countries tested.
 (RU) gives poorer results than those for Mexican addresses, even if these latter are written in a different structure and language. 
 This situation could be explained by both languages' roots; Spanish is closer to French than Russian is. 
 An interesting thing is that even in a *difficult* annotation context, both models perform relatively well. 
-It suggests that our models have really learned the *logic* of an address sequence. It could also mean that if 
+It suggests that our models have really learned the *logic* of an address sequence. It could also mean that, if 
 we train our model longer, we could potentially improve our results. Other modifications that could improve our models are discussed in the next and final section.
 
 | Model (Country) | LSTM one layer | Bidirectional bi-LSTM |
