@@ -62,29 +62,26 @@ For the present purpose, we will use the
 
 Let us first import all the necessary packages.
 
+> Installing pymagnitude take 2-3 minutes
 ```python
 %pip install --upgrade poutyne #install poutyne on colab
 %pip install --upgrade colorama #install colorama on colab
+%pip install --upgrade pymagnitude #install pymagnitude on colab
 %matplotlib inline
 
-import contextlib
-import os
 import pickle
-import re
-import sys
-from io import TextIOBase
 
-import fasttext
-import fasttext.util
-import requests
 import torch
 import torch.nn as nn
 import torch.optim as optim
 from poutyne import set_seeds
 from poutyne.framework import Experiment
+from pymagnitude import Magnitude
 from torch.nn.functional import cross_entropy
 from torch.nn.utils.rnn import pad_packed_sequence, pack_padded_sequence, pad_sequence
 from torch.utils.data import DataLoader
+
+from utils import download_data, download_fasttext_magnitude_embeddings
 ```
 
 Now, let's create a single (i.e. one layer) unidirectional LSTM with `input_size` and `hidden_size` of `300`. We 
@@ -152,21 +149,8 @@ Orientation, City, PostalCode, PostalCode])`.
 Now let's download our dataset. For simplicity, the data was already split into an 80-20 train-valid and a `100,000` test set. 
 Also note that the dataset was pickled for simplicity (using a Python `list`). Here is the code to download it.
 
+> The function `download_data` is define in another [Python module]()
 ```python
-def download_data(saving_dir, data_type):
-    """
-    Function to download the dataset using data_type to specify if we want the train, valid or test.
-    """
-
-    # hardcoded url to download the pickled dataset
-    root_url = "https://dot-layer.github.io/blog-external-assets/train_rnn/{}.p"
-
-    url = root_url.format(data_type)
-    r = requests.get(url)
-    os.makedirs(saving_dir, exist_ok=True)
-
-    open(os.path.join(saving_dir, f"{data_type}.p"), 'wb').write(r.content)
-    
 download_data('./data/', "train")
 download_data('./data/', "valid")
 download_data('./data/', "test")
@@ -176,7 +160,6 @@ Now let's load the data in memory.
 
 ```python
 # load the data
-
 train_data = pickle.load(open("./data/train.p", "rb"))  # 728,789 examples
 valid_data = pickle.load(open("./data/valid.p", "rb"))  # 182,198 examples
 test_data = pickle.load(open("./data/test.p", "rb"))  # 100,000 examples
@@ -196,27 +179,21 @@ train_data[0:2]
 
 Since we used word embeddings as the encoded representations of the addresses, we need to *convert* the addresses into the corresponding word vectors. In order to do that, we will use a `vectorizer` (i.e. the process of converting words into vectors). This embedding vectorizer will extract, for each word, the embedding value based on the pre-trained French fastText model.
 
-> It takes some time to download the first time
+> The function `download_fasttext_magnitude_embeddings` is define in another [Python module]()
+> About Magnitude fastText model 
+> Sincethe original fastText model take a lot of RAM (~9 GO). I've came accross [magnitude](https://github.com/plasticityai/magnitude) when I've published a model and the model was so large with the embedding that it could not fit in a *normal* computer.
+> The idea behind Magnitude is to convert the original vectors into a mapping between the word and subword and the vectors using a local database. The conversion took about 8 hours do to, and the script is broken for fastText embeddings
+> 
 ```python
 # We use this class so that the download templating of the fastText
 # script be not buggy as hell in notebooks.
-class LookForProgress(TextIOBase):
-    def __init__(self, stdout):
-        self.stdout = stdout
-        self.regex = re.compile(r'([0-9]+(\.[0-9]+)?%)', re.IGNORECASE)
-        
-    def write(self, o):
-        res = self.regex.findall(o)
-        if len(res) != 0:
-            print(f"\r{res[-1][0]}", end='', file=self.stdout)
-
 class EmbeddingVectorizer:
-    def __init__(self):
+    def __init__(self, path="./"):
         """
         Embedding vectorizer
         """
-        fasttext.util.download_model('fr', if_exists='ignore')
-        self.embedding_model = fasttext.load_model("./cc.fr.300.bin")
+        file_name = download_fasttext_magnitude_embeddings(saving_dir=path)
+        self.embedding_model = Magnitude(file_name)
 
     def __call__(self, address):
         """
@@ -226,9 +203,10 @@ class EmbeddingVectorizer:
         """
         embeddings = []
         for word in address.split():
-            embeddings.append(self.embedding_model[word])
+            embeddings.append(self.embedding_model.query(word))
         return embeddings
-     
+   
+  
 embedding_vectorizer = EmbeddingVectorizer()
 ```
 
@@ -270,6 +248,7 @@ class DatasetVectorizer:
         for tag in tags:
             idx_tags.append(self.tags_set[tag])
         return idx_tags
+
 
 dataset_vectorizer = DatasetVectorizer(embedding_vectorizer)
 ```  
@@ -346,7 +325,7 @@ def pad_collate_fn(batch):
     # The list of integer consist of the lengths of the sequences in order.
     sequences_vectors, sequences_labels, lengths = zip(*[
         (torch.FloatTensor(seq_vectors), torch.LongTensor(labels), len(seq_vectors)) 
-         for (seq_vectors, labels) in sorted(batch, key=lambda x: len(x[0]), reverse=True)
+        for (seq_vectors, labels) in sorted(batch, key=lambda x: len(x[0]), reverse=True)
     ])
 
     lengths = torch.LongTensor(lengths)
@@ -396,7 +375,7 @@ class RecurrentNet(nn.Module):
         tag_space = self.fully_connected_network(lstm_out) # shape: batch_size * longest_sequence_length, 8 (tag space)
         return tag_space.transpose(-1, 1) # we need to transpose since it's a sequence # shape: batch_size * 8, longest_sequence_length
 
-full_network = FullNetWork(lstm_network, fully_connected_network)
+full_network = RecurrentNet(lstm_network, fully_connected_network)
 ```
 
 ## Summary
@@ -469,14 +448,14 @@ input_dim = dimension * 2 #since bidirectional
 
 fully_connected_network = nn.Linear(input_dim, tag_dimension)
 
-full_network_bi_lstm = FullNetWork(lstm_network, fully_connected_network)
+full_network_bi_lstm = RecurrentNet(lstm_network, fully_connected_network)
 ```
  
 ### Training
  
 ```python
-exp_bi_lstm = Experiment("./", full_network_bi_lstm, device=cuda_device, optimizer=optimizer,
-                 loss_function=cross_entropy, batch_metrics=["acc"])
+exp_bi_lstm = Experiment("./", full_network_bi_lstm, device=device, optimizer=optimizer,
+                         loss_function=cross_entropy, batch_metrics=["acc"])
 exp_bi_lstm.train(train_loader, valid_generator=valid_loader, epochs=epoch_number)
 ```
 
