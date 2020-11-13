@@ -37,17 +37,3 @@ def download_fasttext_magnitude_embeddings(saving_dir):
         os.remove(os.path.join(saving_dir, gz_file_name))
     return file_name
 
-
-def download_data(saving_dir, data_type):
-    """
-    Function to download the dataset using data_type to specify if we want the train, valid or test.
-    """
-
-    # hardcoded url to download the pickled dataset
-    root_url = "https://dot-layer.github.io/blog-external-assets/train_rnn/{}.p"
-
-    url = root_url.format(data_type)
-    r = requests.get(url)
-    os.makedirs(saving_dir, exist_ok=True)
-
-    open(os.path.join(saving_dir, f"{data_type}.p"), 'wb').write(r.content)

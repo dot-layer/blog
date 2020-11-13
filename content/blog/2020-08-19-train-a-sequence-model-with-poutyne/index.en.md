@@ -67,11 +67,16 @@ Let us first import all the necessary packages.
 ```python
 %pip install --upgrade poutyne #install poutyne on colab
 %pip install --upgrade colorama #install colorama on colab
-%pip install --upgrade pymagnitude #install pymagnitude on colab
+%pip install --upgrade pymagnitude-lite #install pymagnitude on colab
 %matplotlib inline
 
+import gzip
+import os
 import pickle
+import shutil
+import warnings
 
+import requests
 import torch
 import torch.nn as nn
 import torch.optim as optim
@@ -81,8 +86,6 @@ from pymagnitude import Magnitude
 from torch.nn.functional import cross_entropy
 from torch.nn.utils.rnn import pad_packed_sequence, pack_padded_sequence, pad_sequence
 from torch.utils.data import DataLoader
-
-from utils import download_data, download_fasttext_magnitude_embeddings
 ```
 
 Now, let's create a single (i.e. one layer) unidirectional LSTM with `input_size` and `hidden_size` of `300`. We 
@@ -155,8 +158,22 @@ and its corresponding tags
 Now let's download our dataset. For simplicity, a `100,000` addresses test set is kept aside, with 80% of the remaining addresses used for training and 20 % used as a validation set. 
 Also note that the dataset was pickled for simplicity (using a Python `list`). Here is the code to download it.
 
-> The function `download_data` is define in another [Python module]()
 ```python
+def download_data(saving_dir, data_type):
+    """
+    Function to download the dataset using data_type to specify if we want the train, valid or test.
+    """
+
+    # hardcoded url to download the pickled dataset
+    root_url = "https://dot-layer.github.io/blog-external-assets/train_rnn/{}.p"
+
+    url = root_url.format(data_type)
+    r = requests.get(url)
+    os.makedirs(saving_dir, exist_ok=True)
+
+    open(os.path.join(saving_dir, f"{data_type}.p"), 'wb').write(r.content)
+
+
 download_data('./data/', "train")
 download_data('./data/', "valid")
 download_data('./data/', "test")
@@ -185,12 +202,43 @@ train_data[:2] # The first two train items
 
 Since we used word embeddings as the encoded representations of the words in the addresses, we need to *convert* the addresses into the corresponding word vectors. In order to do that, we will use a `vectorizer` (i.e. the process of converting words into vectors). This embedding vectorizer will extract, for each word, the embedding value based on the pre-trained French fastText model.
 
-> The function `download_fasttext_magnitude_embeddings` is define in another [Python module]()
 > About Magnitude fastText model 
 > Sincethe original fastText model take a lot of RAM (~9 GO). I've came accross [magnitude](https://github.com/plasticityai/magnitude) when I've published a model and the model was so large with the embedding that it could not fit in a *normal* computer.
 > The idea behind Magnitude is to convert the original vectors into a mapping between the word and subword and the vectors using a local database. The conversion took about 8 hours do to, and the script is broken for fastText embeddings
 > 
 ```python
+def download_from_url(model: str, saving_dir: str, extension: str):
+    """
+    Simple function to download the content of a file from a distant repository.
+    """
+    model_url = "https://graal.ift.ulaval.ca/public/deepparse/{}." + extension
+    url = model_url.format(model)
+    r = requests.get(url)
+
+    os.makedirs(saving_dir, exist_ok=True)
+    open(os.path.join(saving_dir, f"{model}.{extension}"), "wb").write(r.content)
+
+
+def download_fasttext_magnitude_embeddings(saving_dir):
+    """
+    Function to download the magnitude pre-trained fastText model.
+    """
+    model = "fasttext"
+    extension = "magnitude"
+    file_name = os.path.join(saving_dir, f"{model}.{extension}")
+    if not os.path.isfile(file_name):
+        warnings.warn("The fastText pre-trained word embeddings will be download in magnitude format (2.3 GO), "
+                      "this process will take several minutes.")
+        extension = extension + ".gz"
+        download_from_url(model=model, saving_dir=saving_dir, extension=extension)
+        gz_file_name = file_name + ".gz"
+        with gzip.open(os.path.join(saving_dir, gz_file_name), "rb") as f:
+            with open(os.path.join(saving_dir, file_name), "wb") as f_out:
+                shutil.copyfileobj(f, f_out)
+        os.remove(os.path.join(saving_dir, gz_file_name))
+    return file_name
+
+
 class EmbeddingVectorizer:
     def __init__(self, path="./"):
         """
