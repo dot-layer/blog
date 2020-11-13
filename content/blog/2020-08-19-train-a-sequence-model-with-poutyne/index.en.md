@@ -381,7 +381,7 @@ full_network = RecurrentNet(lstm_network, fully_connected_network)
 
 We have created an LSTM network (`lstm_network`) and a fully connected network (`fully_connected_network`), and we use both
 components in the full network. The full network makes use of padded-packed sequences, 
-so we created the `pad_collate_fn` function to process the necessary work within the `DataLoader`. Finally, 
+so we created the `pad_collate_fn` function to do the necessary work within the `DataLoader`. Finally, 
 we will load the data using the vectorizer (within the `DataLoader` using the `pad_collate` function). This means that the addresses will be represented by word embeddings. 
 Also, the address components will be converted into categorical value (from 0 to 7).
 
