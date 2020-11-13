@@ -38,7 +38,7 @@ Our architecture will therefore consist of an RNN and a fully-connected layer.
 Speaking of RNN, what is it?
 
 In brief, a RNN is a neural network in which connections between nodes form a temporal sequence. It means that this type of network
-allows previous outputs to be used as inputs for the next prediction
+allows previous outputs to be used as inputs for the next prediction.
 ([for more about RNN](https://stanford.edu/~shervine/teaching/cs-230/cheatsheet-recurrent-neural-networks)). 
 
 For the present purpose, we do not use the vanilla RNN, but a variant of it known as long short-term memory (LSTM) network. This latter, which involves components called gates, is often preferred over its competitors due to its better stability with respect to gradient update (vanishing and exploding gradient)
