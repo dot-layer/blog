@@ -35,7 +35,6 @@ Since addresses are written in a predetermined sequence, RNN is the best way to 
 Our architecture will therefore consist of an RNN and a fully-connected layer. 
 
 ## Recurrent Neural Network (RNN)
-Speaking of RNN, what is it?
 
 In brief, a RNN is a neural network in which connections between nodes form a temporal sequence. It means that this type of network
 allows previous outputs to be used as inputs for the next prediction.
