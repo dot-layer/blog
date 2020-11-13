@@ -601,7 +601,7 @@ we train our model longer, we could potentially improve our results. Other modif
 ### Summary
 In summary, we found that using a bidirectional bi-LSTM seems to perform better on addresses not seen during training, including those coming from other countries. Still, the results for addresses from other countries are not as good as those for Canadian addresses (training dataset). A solution to this problem could be to train a model using all the
 data from all over the world. This approach was used by [Libpostal](https://github.com/openvenues/libpostal), which trained a 
-CRF over an impressive near `100` million addresses (yes, **100 million**). If you want to explore this avenue, the data is publicly available.
+CRF over an impressive near `100` million addresses (yes, **100 million**). If you want to explore this avenue, the data they used is publicly available [here](https://github.com/openvenues/libpostal).
 
 We also explored the idea that the language has a negative impact on the results, since we use monolingual word embeddings (i.e. French), 
 which is *normal* considering that they were trained for a specific language. A possible solution to that problem is the use of subword embedding composed of sub-division of a word instead of the complete one. For example, a two characters window embeddings of `H1A1` would be the aggregate embeddings of the subword `H1`, `1A` and `A1`. 
