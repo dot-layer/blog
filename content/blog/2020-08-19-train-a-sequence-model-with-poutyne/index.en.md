@@ -603,7 +603,7 @@ In summary, we found that using a bidirectional bi-LSTM seems to perform better 
 data from all over the world. This approach was used by [Libpostal](https://github.com/openvenues/libpostal), which trained a 
 CRF over an impressive near `100` million addresses (yes, **100 million**). If you want to explore this avenue, the data they used is publicly available [here](https://github.com/openvenues/libpostal).
 
-We also explored the idea that the language has a negative impact on the results, since we use monolingual word embeddings (i.e. French), 
+We also explored the idea that the language disparity has a negative impact on the results, since we use monolingual word embeddings (i.e. French), 
 which is *normal* considering that they were trained for a specific language. A possible solution to that problem is the use of subword embedding composed of sub-division of a word instead of the complete one. For example, a two characters window embeddings of `H1A1` would be the aggregate embeddings of the subword `H1`, `1A` and `A1`. 
 
 > Alert of self-promotion of our work here
