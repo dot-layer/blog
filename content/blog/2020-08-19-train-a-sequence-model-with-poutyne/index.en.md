@@ -191,8 +191,6 @@ Since we used word embeddings as the encoded representations of the words in the
 > The idea behind Magnitude is to convert the original vectors into a mapping between the word and subword and the vectors using a local database. The conversion took about 8 hours do to, and the script is broken for fastText embeddings
 > 
 ```python
-# We use this class so that the download templating of the fastText
-# script be not buggy as hell in notebooks.
 class EmbeddingVectorizer:
     def __init__(self, path="./"):
         """
