@@ -483,7 +483,7 @@ The next table presents the results of the bidirectional bi-LSTM with two layers
 
 We see similar validation results for both models. Also, we still see a little improvement in accuracy and total loss for the larger model. Considering that we only improved by around `0.3` %, one can
 argue that the difference is only due to training variance (mostly due to our random sampling of training batches). To test the robustness of our approach, we could train our model multiple times
-using different seeds and report the mean and standard deviation of each metric over all experiments rather than the result of a single training. Let's try something else. 
+using different random seeds and report the mean and standard deviation of each metric over all experiments rather than the result of a single training. Let's try something else. 
 
 ### Zero Shot Evaluation
 Since we have at our disposition addresses from other countries, let's see if our model has really learned a typical address sequence
