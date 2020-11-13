@@ -37,7 +37,7 @@ Our architecture will therefore consist of an RNN and a fully-connected layer.
 ## RNN
 Speaking of RNN, what is it?
 
-In brief, RNN is a neural network in which connections between nodes form a temporal sequence. It means that this type of network
+In brief, a RNN is a neural network in which connections between nodes form a temporal sequence. It means that this type of network
 allows previous outputs to be used as inputs for the next prediction
 ([for more about RNN](https://stanford.edu/~shervine/teaching/cs-230/cheatsheet-recurrent-neural-networks)). 
 
