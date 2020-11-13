@@ -47,7 +47,7 @@ For now, let's simply use a single layer unidirectional LSTM. We will, later on,
 
 ### Word Embeddings
 
-Since our data is text, we will use a well-known text encoding technique, word embeddings. Word embeddings are vector
+Since our data is text, we will use a well-known text encoding technique: word embeddings. Word embeddings are vector
 representations of words. The main hypothesis underlying their use is that there exists a linear relation between words. For example, the linear relation
 between the word `king` and `queen` is gender. So logically, if we remove the vector corresponding to `male` to the one for `king`, and then add the vector for
 `female`, we should obtain the vector corresponding to `queen` (`king - male + female = queen`). That being said, those kinds of representation usually are in  high dimensions such as `300`, which
