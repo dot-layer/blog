@@ -137,7 +137,7 @@ epoch_number = 10
 
 We also need to set Pythons's, NumPy's and PyTorch's random seeds using the Poutyne function to make our training (almost) completely reproducible.
 
-> See [here](https://determined.ai/blog/reproducibility-in-ml/) for more explanation of why setting seed does not guarantee complete reproducibility.
+> See [here](https://determined.ai/blog/reproducibility-in-ml/) for an explanation on why setting seed does not guarantee complete reproducibility.
 
 ```python
 set_seeds(42)
