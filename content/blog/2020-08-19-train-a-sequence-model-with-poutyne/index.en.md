@@ -66,7 +66,7 @@ Let us first import all the necessary packages.
 ```python
 %pip install --upgrade poutyne #install poutyne on colab
 %pip install --upgrade colorama #install colorama on colab
-%pip install --upgrade pymagnitudelight #install pymagnitude on colab
+%pip install --upgrade pymagnitude-light #install pymagnitude on colab
 %matplotlib inline
 
 import gzip
@@ -204,12 +204,13 @@ Since we used word embeddings as the encoded representations of the words in the
 > About Magnitude fastText model 
 > Sincethe original fastText model take a lot of RAM (~9 GO). I've came accross [magnitude](https://github.com/plasticityai/magnitude) when I've published a model and the model was so large with the embedding that it could not fit in a *normal* computer.
 > The idea behind Magnitude is to convert the original vectors into a mapping between the word and subword and the vectors using a local database. The conversion took about 8 hours do to, and the script is broken for fastText embeddings
-> 
+> It would be a little bit slower but Google Colab don't allow us to use more than 12 GO.
 ```python
 def download_from_url(model: str, saving_dir: str, extension: str):
     """
     Simple function to download the content of a file from a distant repository.
     """
+    print("Downloading the model.")
     model_url = "https://graal.ift.ulaval.ca/public/deepparse/{}." + extension
     url = model_url.format(model)
     r = requests.get(url)
@@ -231,6 +232,7 @@ def download_fasttext_magnitude_embeddings(saving_dir):
         extension = extension + ".gz"
         download_from_url(model=model, saving_dir=saving_dir, extension=extension)
         gz_file_name = file_name + ".gz"
+        print("Unzip the model.")
         with gzip.open(os.path.join(saving_dir, gz_file_name), "rb") as f:
             with open(os.path.join(saving_dir, file_name), "wb") as f_out:
                 shutil.copyfileobj(f, f_out)
@@ -305,7 +307,7 @@ dataset_vectorizer = DatasetVectorizer(embedding_vectorizer)
 ```  
 
 Now, let's vectorize our dataset.
-
+> Take a **couple of minutes** since our approach is not in direcly into the RAM.
 ```python
 dataset_vectorizer.vectorize(train_data)
 dataset_vectorizer.vectorize(valid_data)
@@ -315,8 +317,10 @@ dataset_vectorizer.vectorize(test_data)
 > Here is a example after the vectorizing process
 ```python
 address, tag = train_data[0] # Unpack the first tuple
-print(f"The vectorized address is now {address}")
-print(f"It is now a Tensor of shape {address.shape}")
+print(f"The vectorized address is now a list of vectors {address}")
+```
+
+```python
 print(f"Tag is now a list of integers : {tag}")
 ```
 
