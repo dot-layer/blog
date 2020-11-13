@@ -66,7 +66,7 @@ Let us first import all the necessary packages.
 ```python
 %pip install --upgrade poutyne #install poutyne on colab
 %pip install --upgrade colorama #install colorama on colab
-%pip install --upgrade pymagnitude-lite #install pymagnitude on colab
+%pip install --upgrade pymagnitudelight #install pymagnitude on colab
 %matplotlib inline
 
 import gzip
@@ -81,7 +81,7 @@ import torch.nn as nn
 import torch.optim as optim
 from poutyne import set_seeds
 from poutyne.framework import Experiment
-from pymagnitude import Magnitude
+from pymagnitudelight import Magnitude
 from torch.nn.functional import cross_entropy
 from torch.nn.utils.rnn import pad_packed_sequence, pack_padded_sequence, pad_sequence
 from torch.utils.data import DataLoader
