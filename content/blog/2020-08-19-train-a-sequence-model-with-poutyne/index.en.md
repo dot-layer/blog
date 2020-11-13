@@ -425,7 +425,7 @@ good for a first model. Also, since our training accuracy and loss closely match
 It seems that our model performed pretty well, but just for fun, let's unleash the full potential of LSTMs using a
 bidirectional approach (bidirectional LSTM). What it means is that instead of _simply_ viewing the sequence from the start to the end, we
 also train the model to see the sequence from the end to the start. It's important to state that the two directions are
-not shared, meaning that we _see_ the sequence in one direction at the time, but we gather the information from both directions into the 
+not shared, meaning that the model _sees_ the sequence in one direction at the time, but gathers the information from both directions into the 
 fully connected layer. That way, our model can get insight from both directions.
 
 Instead of using only one layer, let's use a bidirectional bi-LSTM, which means that we use two layers of hidden state for each direction.
