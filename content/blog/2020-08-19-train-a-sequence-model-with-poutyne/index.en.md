@@ -332,7 +332,7 @@ def pad_collate_fn(batch):
 
     Returns:
         A tuple (x, y). The element x is a tuple containing (1) a tensor of padded 
-        word vectors and (2) their respective lengths of the sequences. The element 
+        word vectors and (2) their respective original sequence lengths. The element 
         y is a tensor of padded tag indices. The word vectors are padded with vectors 
         of 0s and the tag indices are padded with -100s. Padding with -100 is done 
         because of the cross-entropy loss and the accuracy metric ignores 
