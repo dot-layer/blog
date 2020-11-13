@@ -57,7 +57,7 @@ We therefore fix our LSTM's input and hidden state dimensions to the same sizes 
 For the present purpose, we will use the
 [French pre-trained](https://fasttext.cc/docs/en/crawl-vectors.html) fastText embeddings of dimension `300`. 
 
-### The Pytorch Model
+### The PyTorch Model
 
 Let us first import all the necessary packages.
 
