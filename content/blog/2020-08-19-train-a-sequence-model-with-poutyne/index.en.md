@@ -345,7 +345,7 @@ test_loader = DataLoader(test_data, batch_size=batch_size, collate_fn=pad_collat
 ## Full Network
 > We use a second trick, ``packing``.
 
-Since our sequences are of variable lengths and that we want to be as efficient as possible when packing them, we cannot use the [PyTorch `nn.Sequential`](https://pytorch.org/docs/stable/generated/torch.nn.Sequential.html) class to define our model. Instead, we define the forward pass so that it uses packed sequences (again, you can read [this good explanation](https://stackoverflow.com/questions/51030782/why-do-we-pack-the-sequences-in-pytorch) of why we pack sequences).
+Since our sequences are of variable lengths and that we want to be as efficient as possible when packing them, we cannot use the [PyTorch `nn.Sequential`](https://pytorch.org/docs/stable/generated/torch.nn.Sequential.html) class to define our model. Instead, we define the forward pass so that it uses packed sequences (again, you can read [this good explanation](https://stackoverflow.com/questions/51030782/why-do-we-pack-the-sequences-in-pytorch) on why we pack sequences).
 
 ```python
 class RecurrentNet(nn.Module):
