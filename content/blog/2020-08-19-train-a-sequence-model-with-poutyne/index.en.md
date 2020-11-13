@@ -42,7 +42,7 @@ allows previous outputs to be used as inputs for the next prediction.
 For more information regarding RNNs, have a look at Stanford's freely available [cheastsheet](https://stanford.edu/~shervine/teaching/cs-230/cheatsheet-recurrent-neural-networks). 
 
 For our purpose, we do not use the vanilla RNN, but a widely-use variant of it known as long short-term memory (LSTM) network. This latter, which involves components called gates, is often preferred over its competitors due to its better stability with respect to gradient update (vanishing and exploding gradient).
-([to learn more about LSTMs](http://colah.github.io/posts/2015-08-Understanding-LSTMs/)). 
+To learn more about LSTMs, see [here](http://colah.github.io/posts/2015-08-Understanding-LSTMs/) for an in-depth explanation. 
 
 For now, let's simply use a single layer unidirectional LSTM. We will, later on, explore the use of more layers and a bidirectional approach. 
 
