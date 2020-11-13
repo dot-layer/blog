@@ -34,7 +34,7 @@ the street name or the postal code (or zip code). The following figure shows an 
 Since addresses are written in a predetermined sequence, RNN is the best way to crack this problem. However, to decode the output of the RNN, we also need another component, a fully-connected layer. 
 Our architecture will therefore consist of an RNN and a fully-connected layer. 
 
-## RNN
+## Recurrent Neural Network (RNN)
 Speaking of RNN, what is it?
 
 In brief, a RNN is a neural network in which connections between nodes form a temporal sequence. It means that this type of network
