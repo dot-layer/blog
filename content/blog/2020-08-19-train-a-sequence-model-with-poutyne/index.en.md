@@ -63,7 +63,6 @@ For the present purpose, we will use the
 
 Let us first import all the necessary packages.
 
-> Installing pymagnitude take 2-3 minutes
 ```python
 %pip install --upgrade poutyne #install poutyne on colab
 %pip install --upgrade colorama #install colorama on colab
