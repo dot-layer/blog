@@ -16,7 +16,7 @@ given address, known as address parsing.
 
 > Also, the article is available in a [Google Colab Jupyter notebook](https://colab.research.google.com/github/dot-layer/blog/blob/post%2Fdb_sequence_training_poutyne/content/blog/2020-08-19-train-a-sequence-model-with-poutyne/article_notebook.ipynb).
 
-> Before starting this article, we would like to disclaim that this tutorial is greatly inspired by an online tutorial David created for the Poutyne framework. Also, the content is based on a recent article we wrote about address tagging. However, there are differences between the present work and the two others, we've tried to put more insights for the less technical reader in this one.
+> Before starting this article, we would like to disclaim that this tutorial is greatly inspired by an online tutorial David created for the Poutyne framework. Also, the content is based on a recent [article](https://arxiv.org/abs/2006.16152) we wrote about address tagging. However, there are differences between the present work and the two others, as this one is specifically designed for the less technical reader.
 
 
 Sequential data, such as addresses, are pieces of information that are deliberately given in a specific order. In other words, they are sequences with a particular structure; and knowing this structure is crucial for predicting the missing entries of a given truncated sequence. For example, 
@@ -31,34 +31,33 @@ the street name or the postal code (or zip code). The following figure shows an 
 
 ![address parsing canada](address_parsing.png)
 
-Since addresses are written in a predetermined sequence, RNN is the best way to crack this problem. However, to decode the output of the RNN, we also need another component, a fully-connected layer. 
-Our architecture will therefore consist of an RNN and a fully-connected layer. 
+Since addresses are sequences of arbitrary length where a word's index does not mean as much as its position relative to others, one can hardly rely on a simple fully connected neural network for address tagging.
+A dedicated type of neural networks was specifically designed for this kind of tasks involving sequential data: RNNs.
 
-## RNN
-Speaking of RNN, what is it?
+## Recurrent Neural Network (RNN)
 
-In brief, RNN is a neural network in which connections between nodes form a temporal sequence. It means that this type of network
-allows previous outputs to be used as inputs for the next prediction
-([for more about RNN](https://stanford.edu/~shervine/teaching/cs-230/cheatsheet-recurrent-neural-networks)). 
+In brief, a RNN is a neural network in which connections between nodes form a temporal sequence. It means that this type of network
+allows previous outputs to be used as inputs for the next prediction.
+For more information regarding RNNs, have a look at Stanford's freely available [cheastsheet](https://stanford.edu/~shervine/teaching/cs-230/cheatsheet-recurrent-neural-networks). 
 
-For the present purpose, we do not use the vanilla RNN, but a variant of it known as long short-term memory (LSTM) network. This latter, which involves components called gates, is often preferred over its competitors due to its better stability with respect to gradient update (vanishing and exploding gradient)
-([to learn more about LSTMs](http://colah.github.io/posts/2015-08-Understanding-LSTMs/)). 
+For our purpose, we do not use the vanilla RNN, but a widely-use variant of it known as long short-term memory (LSTM) network. This latter, which involves components called gates, is often preferred over its competitors due to its better stability with respect to gradient update (vanishing and exploding gradient).
+To learn more about LSTMs, see [here](http://colah.github.io/posts/2015-08-Understanding-LSTMs/) for an in-depth explanation. 
 
 For now, let's simply use a single layer unidirectional LSTM. We will, later on, explore the use of more layers and a bidirectional approach. 
 
 ### Word Embeddings
 
-Since our data is text, we will use a well-known text encoding technique, word embeddings. Word embeddings are vector
+Since our data is text, we will use a well-known text encoding technique: word embeddings. Word embeddings are vector
 representations of words. The main hypothesis underlying their use is that there exists a linear relation between words. For example, the linear relation
 between the word `king` and `queen` is gender. So logically, if we remove the vector corresponding to `male` to the one for `king`, and then add the vector for
-`female`, we should obtain the vector corresponding to `queen` (`king - male + female = queen`). That being said, those kinds of representation usually are in  high dimensions such as `300`, which
-makes it impossible for humans to reason about them. Still, the idea is there but in a higher dimensional space.
+`female`, we should obtain the vector corresponding to `queen` (i.e. `king - male + female = queen`). That being said, this kind of representation is usually made in high dimensions such as `300`, which
+makes it impossible for humans to reason about them. Neural networks, on the other hand, can efficiently make use of the implicit relations despite their high dimensionality.
 
-So our LSTM's input and hidden state dimensions will be of the same sizes as the vectors of embedded words. 
+We therefore fix our LSTM's input and hidden state dimensions to the same sizes as the vectors of embedded words. 
 For the present purpose, we will use the
-[French pre trained](https://fasttext.cc/docs/en/crawl-vectors.html) fastText embeddings of dimension `300`. 
+[French pre-trained](https://fasttext.cc/docs/en/crawl-vectors.html) fastText embeddings of dimension `300`. 
 
-### The Pytorch Model
+### The PyTorch Model
 
 Let us first import all the necessary packages.
 
@@ -85,9 +84,9 @@ from utils import download_data, download_fasttext_magnitude_embeddings
 ```
 
 Now, let's create a single (i.e. one layer) unidirectional LSTM with `input_size` and `hidden_size` of `300`. We 
-will explore later on the effect of stacking more layers and of using a bidirectional approach.
+will explore later on the effect of stacking more layers and using a bidirectional approach.
 
-> See [here](https://discuss.pytorch.org/t/could-someone-explain-batch-first-true-in-lstm/15402) the explanation why we use the `batch_first` argument.
+> See [here](https://discuss.pytorch.org/t/could-someone-explain-batch-first-true-in-lstm/15402) why we use the `batch_first` argument.
 
 ```python
 dimension = 300
@@ -133,9 +132,9 @@ lr = 0.1
 epoch_number = 10
 ```
 
-We also need to set Pythons's, NumPy's and PyTorch's seeds using the Poutyne function so that our training is (almost) reproducible.
+We also need to set Pythons's, NumPy's and PyTorch's random seeds using the Poutyne function to make our training (almost) completely reproducible.
 
-> See [here](https://determined.ai/blog/reproducibility-in-ml/) for more explanation of why setting seed does not guarantee complete reproducibility.
+> See [here](https://determined.ai/blog/reproducibility-in-ml/) for an explanation on why setting seed does not guarantee complete reproducibility.
 
 ```python
 set_seeds(42)
@@ -146,7 +145,7 @@ The dataset consists of `1,010,987` complete French and English Canadian address
 Here's an example `("420 rue des Lilas Ouest, Québec, G1V 2V3", [StreetNumber, StreetName, StreetName, StreetName, 
 Orientation, City, PostalCode, PostalCode])`.
 
-Now let's download our dataset. For simplicity, the data was already split into an 80-20 train-valid and a `100,000` test set. 
+Now let's download our dataset. For simplicity, a `100,000` addresses test set is kept aside, with 80% of the remaining addresses used for training and 20 % used as a validation set. 
 Also note that the dataset was pickled for simplicity (using a Python `list`). Here is the code to download it.
 
 > The function `download_data` is define in another [Python module]()
@@ -168,7 +167,7 @@ test_data = pickle.load(open("./data/test.p", "rb"))  # 100,000 examples
 As explained before, the (train) dataset is a list of `728,789` tuples where the first element is the full address, and the second is a list of tags (the ground truth).
 
 ```python
-train_data[0:2]
+train_data[:2] # The first two train items
 ```
 
 > (the output)
@@ -177,7 +176,7 @@ train_data[0:2]
 
 ### Vectorize the Dataset
 
-Since we used word embeddings as the encoded representations of the addresses, we need to *convert* the addresses into the corresponding word vectors. In order to do that, we will use a `vectorizer` (i.e. the process of converting words into vectors). This embedding vectorizer will extract, for each word, the embedding value based on the pre-trained French fastText model.
+Since we used word embeddings as the encoded representations of the words in the addresses, we need to *convert* the addresses into the corresponding word vectors. In order to do that, we will use a `vectorizer` (i.e. the process of converting words into vectors). This embedding vectorizer will extract, for each word, the embedding value based on the pre-trained French fastText model.
 
 > The function `download_fasttext_magnitude_embeddings` is define in another [Python module]()
 > About Magnitude fastText model 
@@ -210,7 +209,7 @@ class EmbeddingVectorizer:
 embedding_vectorizer = EmbeddingVectorizer()
 ```
 
-We also need to apply a similar operation to the address tags (e.g. StreeNumber, StreetName). 
+We also need to apply a similar operation to the address tags (e.g. StreetNumber, StreetName). 
 This time, however, the `vectorizer` needs to convert the tags into categorical values (e.g. StreetNumber -> 0). 
 For simplicity, we will use a `DatasetVectorizer` class that will apply the vectorizing process using both 
 the embedding and the address vectorization process that we've just described.
@@ -291,13 +290,13 @@ train_data[0]
 ### DataLoader
 > We use a first trick, ``padding``.
 
-Now, because the addresses are not all of the same size, it is impossible to batch them together; recall that all tensor elements must have the same lengths. But there is a trick, padding!
+Now, because the addresses are not all of the same size, it is impossible to batch them together; recall that all tensor elements must have the same lengths. But there is a trick: padding!
 
-The idea is simple; we add *empty* tokens at the end of each sequence until they reach the length of the longest one in the batch. For example, if we have three sequences of length ${1, 3, 5}$, padding will add *empty* tokens to the first two, 4 for the first and 2 for the second.
+The idea is simple; we add *empty* tokens at the end of each sequence until they reach the length of the longest one in the batch. For example, if we have three sequences of length ${1, 3, 5}$, padding will add 4 and 2 *empty* tokens respectively to the first two.
 
 For the word vectors, we add vectors of 0 as padding. For the tag indices, we pad with -100's. We do so because the [cross-entropy loss](https://pytorch.org/docs/stable/generated/torch.nn.CrossEntropyLoss.html#torch.nn.CrossEntropyLoss) and the accuracy metric both ignore targets with values of -100.
 
-To do the padding, we use the `collate_fn` argument of the [PyTorch `DataLoader`](https://pytorch.org/docs/stable/data.html#torch.utils.data.DataLoader), and on running time, the process will be done by the `DataLoader`. One thing to keep in mind when treating padded sequences is that their (original) length will be required to unpack them later on (since we also pack them), in the forward pass. That way, we can pad and pack the sequence to minimize the training time (read [this good explanation](https://stackoverflow.com/questions/51030782/why-do-we-pack-the-sequences-in-pytorch) of why we pack sequences).
+To do the padding, we use the `collate_fn` argument of the [PyTorch `DataLoader`](https://pytorch.org/docs/stable/data.html#torch.utils.data.DataLoader), and on running time, the process will be done by the `DataLoader`. One thing to keep in mind when treating padded sequences is that their original length will be required to unpad them later on in the forward pass. That way, we can pad and pack the sequence to minimize the training time (read [this good explanation](https://stackoverflow.com/questions/51030782/why-do-we-pack-the-sequences-in-pytorch) on why we pack sequences).
 
 ```python
 def pad_collate_fn(batch):
@@ -312,7 +311,7 @@ def pad_collate_fn(batch):
 
     Returns:
         A tuple (x, y). The element x is a tuple containing (1) a tensor of padded 
-        word vectors and (2) their respective lengths of the sequences. The element 
+        word vectors and (2) their respective original sequence lengths. The element 
         y is a tensor of padded tag indices. The word vectors are padded with vectors 
         of 0s and the tag indices are padded with -100s. Padding with -100 is done 
         because of the cross-entropy loss and the accuracy metric ignores 
@@ -397,7 +396,7 @@ optimizer = optim.SGD(full_network.parameters(), lr)
 ```
 
 ### Poutyne Experiment
-> Disclaimer: David is a dev on Poutyne, so we will present code using this framework. See the project [here](https://poutyne.org/).
+> Disclaimer: David is a developer on the Poutyne library, so we will present code using this framework. See the project [here](https://poutyne.org/).
 
 Let's create our experiment using Poutyne for automatically logging in the project root directory (`./`). We will also set
 the loss function and a batch metric (accuracy) to monitor the training.
@@ -580,10 +579,10 @@ we train our model longer, we could potentially improve our results. Other modif
 ### Summary
 In summary, we found that using a bidirectional bi-LSTM seems to perform better on addresses not seen during training, including those coming from other countries. Still, the results for addresses from other countries are not as good as those for Canadian addresses (training dataset). A solution to this problem could be to train a model using all the
 data from all over the world. This approach was used by [Libpostal](https://github.com/openvenues/libpostal), which trained a 
-CRF over an impressive near `100` million addresses (yes, **100 million**). If you want to explore this avenue, the data is publicly available.
+CRF over an impressive near `100` million addresses (yes, **100 million**). If you want to explore this avenue, the data they used is publicly available [here](https://github.com/openvenues/libpostal).
 
-We also explored the idea that the language has a negative impact on the results, since we use monolingual word embeddings (i.e. French), 
-which is *normal* considering that they were trained for a specific language. A possible solution to that problem is the use of subword embedding composed of sub-division of a word instead of the complete one. For example, a two characters window embeddings of `H1A1` would be the aggregate embeddings of the subword `H1`, `1A` and `A1`. 
+We also explored the idea that the language disparity has a negative impact on the results, since we use monolingual word embeddings (i.e. French), 
+which is *normal* considering that they were trained for a specific language. A possible solution to that problem is the use of subword embeddings composed of sub-division of a word instead of the complete one. For example, a two characters window embeddings of `H1A1` would be the aggregated embeddings of the subword `H1`, `1A` and `A1`. 
 
 > Alert of self-promotion of our work here
 We've personally explored this avenue in an article using [subword embedding for address parsing](https://arxiv.org/abs/2006.16152).  
