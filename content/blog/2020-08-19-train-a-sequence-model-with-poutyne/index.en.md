@@ -31,7 +31,8 @@ the street name or the postal code (or zip code). The following figure shows an 
 
 ![address parsing canada](address_parsing.png)
 
-Since addresses are written in a predetermined sequence, RNN is the best way to crack this problem. However, to decode the output of the RNN, we also need another component, a fully-connected layer. 
+Since addresses are sequences of arbitrary length where a word's index does not mean as much as its position relative to others, one can hardly rely on a simple fully connected neural network for address tagging.
+A dedicated type of neural networks was specifically designed for this kind of tasks involving sequential data: RNNs.
 Our architecture will therefore consist of an RNN and a fully-connected layer. 
 
 ## Recurrent Neural Network (RNN)
