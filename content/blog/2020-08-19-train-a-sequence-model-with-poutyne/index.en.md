@@ -535,7 +535,7 @@ exp_bi_lstm.test(gb_loader)
 ```
 
 The next table presents the results of both models for both countries. We obtain
-better results for the two countries using the bidirectional bi-LSTM (around 8% better). It's interesting to see that considering that their structures are similar to those in the training dataset (Canada), we obtain near as good results as those observed during training. Meaning that our model seems to have learned to recognize the structure of an address. Also, the
+better results for the two countries using the bidirectional bi-LSTM (around 8% better). It's interesting to see that, considering address structures are similar to those in the training dataset (Canada), we obtain near as good results as those observed during training. This suggests that our model seems to have learned to recognize the structure of an address. Also, the
 presence of the same language as in the training dataset (i.e. English), we obtain poorer results than before. That situation
 is most likely due to the fact that the postal code formats are not the same. For the US, it is 5 digits, and for the UK it is similar to that of Canada, but it is not always a letter followed by a number and not always 6 characters. It is *normal* for a model to
 have difficulty when faced with new patterns. All in all, we can say that our model has achieved good results.
