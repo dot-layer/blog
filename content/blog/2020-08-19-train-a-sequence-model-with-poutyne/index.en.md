@@ -184,7 +184,7 @@ test_data = pickle.load(open("./data/test.p", "rb"))  # 100,000 examples
 As explained before, the (train) dataset is a list of `728,789` tuples where the first element is the full address, and the second is a list of tags (the ground truth).
 
 ```python
-train_data[0:2]
+train_data[:2] # The first two train items
 ```
 
 > (the output)
