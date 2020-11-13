@@ -550,7 +550,7 @@ have difficulty when faced with new patterns. All in all, we can say that our mo
 
 ##### The Second and Third Test
 
-Now let's tests for Russia and Mexico.
+Now let's test for Russia and Mexico.
 
 ```python
 ru_loader = DataLoader(ru_data, batch_size=batch_size, collate_fn=pad_collate_fn)
