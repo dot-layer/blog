@@ -31,6 +31,8 @@ the street name or the postal code (or zip code). The following figure shows an 
 
 ![address parsing canada](address_parsing.png)
 
+For our purpose, we define 8 pertinent tags that can be found in an address: `[StreetNumber, StreetName, Orientation, Unit, Municipality, Province, PostalCode, GeneralDelivery]`.
+
 Since addresses are sequences of arbitrary length where a word's index does not mean as much as its position relative to others, one can hardly rely on a simple fully connected neural network for address tagging.
 A dedicated type of neural networks was specifically designed for this kind of tasks involving sequential data: RNNs.
 
@@ -142,8 +144,13 @@ set_seeds(42)
 
 ## The Dataset
 The dataset consists of `1,010,987` complete French and English Canadian addresses and their associated tags.
-Here's an example `("420 rue des Lilas Ouest, Québec, G1V 2V3", [StreetNumber, StreetName, StreetName, StreetName, 
-Orientation, City, PostalCode, PostalCode])`.
+Here's an example address
+
+`"420 rue des Lilas Ouest, Québec, G1V 2V3"`
+
+and its corresponding tags
+
+`[StreetNumber, StreetName, StreetName, StreetName, Orientation, Municipality, PostalCode, PostalCode]`.
 
 Now let's download our dataset. For simplicity, a `100,000` addresses test set is kept aside, with 80% of the remaining addresses used for training and 20 % used as a validation set. 
 Also note that the dataset was pickled for simplicity (using a Python `list`). Here is the code to download it.
@@ -260,31 +267,12 @@ dataset_vectorizer.vectorize(valid_data)
 dataset_vectorizer.vectorize(test_data)
 ```
 
-```python
-train_data[0]
-```
-
 > Here is a example after the vectorizing process
-
-```
-([array([ 5.30934185e-02, -6.72420338e-02,  8.96735638e-02, -3.26771051e-01,
-         -4.42410737e-01, -1.32014668e-02,  1.50324404e-01, -2.50251926e-02,
-          1.24011010e-01, -1.68488681e-01,  4.80616689e-02, -5.40233105e-02,
-          1.21191796e-02,  3.89859192e-02,  1.25505164e-01, -1.40419468e-01,
-         -2.62053646e-02,  1.01731330e-01, 
-         ...
-         -5.71550950e-02, -3.92134525e-02,  4.85491045e-02,  4.82993454e-01,
-          3.35614271e-02, -5.97143888e-01, -9.82549414e-02,  8.23293403e-02],
-        dtype=float32), #dimension of 300 # first word
-        ... 
-        # word N of the sequence
-        array([-6.28125593e-02, -1.72182580e-03,  1.27990674e-02,  7.47001171e-02,
-        ...
-        3.74843590e-02],
-        dtype=float32)],
-    
- #second element of the tuple
- [0, 1, 1, 1, 3, 4, 5, 5] #the ground truth tag)
+```python
+address, tag = train_data[0] # Unpack the first tuple
+print(f"The vectorized address is now {address}")
+print(f"It is now a Tensor of shape {address.shape}")
+print(f"Tag is now a list of integers : {tag}")
 ```
 
 ### DataLoader
@@ -399,7 +387,7 @@ optimizer = optim.SGD(full_network.parameters(), lr)
 > Disclaimer: David is a developer on the Poutyne library, so we will present code using this framework. See the project [here](https://poutyne.org/).
 
 Let's create our experiment using Poutyne for automated logging in the project root directory (`./`). We will also set
-the loss function and a batch metric (accuracy) to monitor the training.
+the loss function and a batch metric (accuracy) to monitor the training. The accuracy is compute word-tag, meaning that every correct tag prediction is a good prediction. For example, the accuracy of the prediction `StreetNumber, StreetName` with the ground truth `StreetNumber, StreetName` is 1 and the accuracy of the prediction `StreetNumber, StreetNumber` with the ground truth `StreetNumber, StreetName` is 0.5.
 
 ```python
 exp = Experiment("./", full_network, device=device, optimizer=optimizer,
@@ -415,8 +403,7 @@ It will take around 6 minutes per epochs, so around an hour for the complete tra
 
 ### Results
 The next figure shows the loss and the accuracy during our training (blue) and during our validation (orange) steps.
-After 10 epochs, we obtain a validation loss and accuracy of `0.01981` and `99.54701` respectively, which is pretty
-good for a first model. Also, since our training accuracy and loss closely match their respective validation values, our model does not appear to be overfitted on the training set.
+After 10 epochs, we obtain a validation loss and accuracy of `0.01981` and `99.54701` respectively, satisfying values for a first model. Also, since our training accuracy and loss closely match their respective validation values, our model does not appear to be overfitted on the training set.
 
 ![loss_acc](graph/training_graph.png)
 
@@ -535,9 +522,7 @@ exp_bi_lstm.test(gb_loader)
 ```
 
 The next table presents the results of both models for both countries. We obtain
-better results for the two countries using the bidirectional bi-LSTM (around 8% better). It's interesting to see that, considering address structures are similar to those in the training dataset (Canada), we obtain near as good results as those observed during training. This suggests that our model seems to have learned to recognize the structure of an address. Also, the
-presence of the same language as in the training dataset (i.e. English), we obtain poorer results than before. That situation
-is most likely due to the fact that the postal code formats are not the same. For the US, it is 5 digits, and for the UK it is similar to that of Canada, but it is not always a letter followed by a number and not always 6 characters. It is *normal* for a model to
+better results for the two countries using the bidirectional bi-LSTM (around 8% better). It's interesting to see that, considering address structures are similar to those in the training dataset (Canada), we obtain near as good results as those observed during training. This suggests that our model seems to have learned to recognize the structure of an address. Also, despite the language being the same as in the training dataset (i.e. some English address in the bilingual canadian address dataset), we obtain poorer results. That situation is most likely due to the fact that the postal code formats are not the same. For the US, it is 5 digits, and for the UK it is similar to that of Canada, but it is not always a letter followed by a number and not always 6 characters. It is *normal* for a model to
 have difficulty when faced with new patterns. All in all, we can say that our model has achieved good results.
 
 | Model (Country) | LSTM one layer | Bidirectional bi-LSTM |
@@ -550,7 +535,9 @@ have difficulty when faced with new patterns. All in all, we can say that our mo
 
 ##### The Second and Third Test
 
-Now let's test for Russia and Mexico.
+Now let's test for Russia and Mexico. 
+
+But first, let's discuss how our French embeddings can generate word vectors for vocabulary in a different language. FastText use subword embeddings when complete embeddings do not exist. For example, we can assume the presence of a word embedding vector for the word `Roi`, but we face an out-of-vocabulary (OOV) for the word `H1A1` since this word is not a real word. The trick with fastText is that they create compose embeddings using the subword with fixed window size (length of the subword) when facing OOV word. For example, a two characters window embeddings of `H1A1` would be the aggregated embeddings of the subword `H1`, `1A` and `A1`. 
 
 ```python
 ru_loader = DataLoader(ru_data, batch_size=batch_size, collate_fn=pad_collate_fn)
@@ -563,8 +550,7 @@ exp_bi_lstm.test(mx_loader)
 ```
 
 The next table presents the results of both models for the two countries tested. We see that the first test 
-(RU) gives poorer results than those for Mexican addresses, even if these latter are written in a different structure and language. 
-This situation could be explained by both languages' roots; Spanish is closer to French than Russian is. 
+(RU) gives poorer results than those for Mexican addresses, even if these latter are written in a different structure and language. This situation could be explained by both languages' roots; Spanish is closer to French than Russian is. 
 An interesting thing is that even in a *difficult* annotation context, both models perform relatively well. 
 It suggests that our models have really learned the *logic* of an address sequence. It could also mean that, if 
 we train our model longer, we could potentially improve our results. Other modifications that could improve our models are discussed in the next and final section.
@@ -581,8 +567,7 @@ In summary, we found that using a bidirectional bi-LSTM seems to perform better 
 data from all over the world. This approach was used by [Libpostal](https://github.com/openvenues/libpostal), which trained a 
 CRF over an impressive near `100` million addresses (yes, **100 million**). If you want to explore this avenue, the data they used is publicly available [here](https://github.com/openvenues/libpostal).
 
-We also explored the idea that the language disparity has a negative impact on the results, since we use monolingual word embeddings (i.e. French), 
-which is *normal* considering that they were trained for a specific language. A possible solution to that problem is the use of subword embeddings composed of sub-division of a word instead of the complete one. For example, a two characters window embeddings of `H1A1` would be the aggregated embeddings of the subword `H1`, `1A` and `A1`. 
+We also explored the idea that the language disparity has a negative impact on the results, since we use monolingual word embeddings (i.e. French), which is *normal* considering that they were trained for a specific language.
 
 > Alert of self-promotion of our work here
 We've personally explored this avenue in an article using [subword embedding for address parsing](https://arxiv.org/abs/2006.16152).  
