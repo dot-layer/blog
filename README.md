@@ -22,5 +22,5 @@ The best way to contribute to the blog is by proposing new blog post. All the in
 
 # Actual Hugo version
 
-The website is currently using `HUGO_VERSION = 0.42`
+The website is currently using `HUGO_VERSION = 0.42`.
 
