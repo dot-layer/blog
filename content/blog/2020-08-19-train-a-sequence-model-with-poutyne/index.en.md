@@ -265,12 +265,13 @@ embedding_vectorizer = EmbeddingVectorizer()
 
 We also need to apply a similar operation to the address tags (e.g. StreetNumber, StreetName). 
 This time, however, the `vectorizer` needs to convert the tags into categorical values (e.g. StreetNumber -> 0). 
-For simplicity, we will use a `DatasetVectorizer` class that will apply the vectorizing process using both 
-the embedding and the address vectorization process that we've just described.
+For simplicity, we will use a `DatasetBucket` class that will apply the vectorizing process using both 
+the embedding and the address vectorization process that we've just described during training. 
 
 ```python
-class DatasetVectorizer:
-    def __init__(self, embedding_vectorizer):
+class DatasetBucket:
+    def __init__(self, data, embedding_vectorizer):
+        self.data = data
         self.embedding_vectorizer = embedding_vectorizer
         self.tags_set = {
             "StreetNumber": 0,
@@ -283,9 +284,12 @@ class DatasetVectorizer:
             "GeneralDelivery": 7
         }
 
-    def vectorize(self, data):  # We vectorize inplace
-        for idx, item in enumerate(data):
-            data[idx] = self._item_vectorizing(item)
+    def __len__(self):
+        return len(self.data)
+
+    def __getitem__(self, item):  # We vectorize when data is asked
+        data = self.data[item]
+        return self._item_vectorizing(data)
 
     def _item_vectorizing(self, item):
         address = item[0]
@@ -303,26 +307,11 @@ class DatasetVectorizer:
         return idx_tags
 
 
-dataset_vectorizer = DatasetVectorizer(embedding_vectorizer)
+
+train_dataset_vectorizer = DatasetBucket(train_data, embedding_vectorizer)
+valid_dataset_vectorizer = DatasetBucket(valid_data, embedding_vectorizer)
+test_dataset_vectorizer = DatasetBucket(test_data, embedding_vectorizer)
 ```  
-
-Now, let's vectorize our dataset.
-> Take a **couple of minutes** since our approach is not in direcly into the RAM.
-```python
-dataset_vectorizer.vectorize(train_data)
-dataset_vectorizer.vectorize(valid_data)
-dataset_vectorizer.vectorize(test_data)
-```
-
-> Here is a example after the vectorizing process
-```python
-address, tag = train_data[0] # Unpack the first tuple
-print(f"The vectorized address is now a list of vectors {address}")
-```
-
-```python
-print(f"Tag is now a list of integers : {tag}")
-```
 
 ### DataLoader
 > We use a first trick, ``padding``.
@@ -374,9 +363,9 @@ def pad_collate_fn(batch):
 ```
 
 ```python
-train_loader = DataLoader(train_data, batch_size=batch_size, shuffle=True, collate_fn=pad_collate_fn)
-valid_loader = DataLoader(valid_data, batch_size=batch_size, collate_fn=pad_collate_fn)
-test_loader = DataLoader(test_data, batch_size=batch_size, collate_fn=pad_collate_fn)
+train_loader = DataLoader(train_dataset_vectorizer, batch_size=batch_size, shuffle=True, collate_fn=pad_collate_fn)
+valid_loader = DataLoader(valid_dataset_vectorizer, batch_size=batch_size, collate_fn=pad_collate_fn)
+test_loader = DataLoader(test_dataset_vectorizer, batch_size=batch_size, collate_fn=pad_collate_fn)
 ```
 
 ## Full Network
