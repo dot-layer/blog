@@ -363,8 +363,8 @@ def pad_collate_fn(batch):
 ```
 
 ```python
-train_loader = DataLoader(train_dataset_vectorizer, batch_size=batch_size, shuffle=True, collate_fn=pad_collate_fn)
-valid_loader = DataLoader(valid_dataset_vectorizer, batch_size=batch_size, collate_fn=pad_collate_fn)
+train_loader = DataLoader(train_dataset_vectorizer, batch_size=batch_size, shuffle=True, collate_fn=pad_collate_fn, num_workers=2)
+valid_loader = DataLoader(valid_dataset_vectorizer, batch_size=batch_size, collate_fn=pad_collate_fn, num_workers=2)
 test_loader = DataLoader(test_dataset_vectorizer, batch_size=batch_size, collate_fn=pad_collate_fn)
 ```
 
