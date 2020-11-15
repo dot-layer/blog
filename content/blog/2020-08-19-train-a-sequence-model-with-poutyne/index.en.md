@@ -363,9 +363,9 @@ def pad_collate_fn(batch):
 ```
 
 ```python
-train_loader = DataLoader(train_dataset_vectorizer, batch_size=batch_size, shuffle=True, collate_fn=pad_collate_fn, num_workers=2)
-valid_loader = DataLoader(valid_dataset_vectorizer, batch_size=batch_size, collate_fn=pad_collate_fn, num_workers=2)
-test_loader = DataLoader(test_dataset_vectorizer, batch_size=batch_size, collate_fn=pad_collate_fn)
+train_loader = DataLoader(train_dataset_vectorizer, batch_size=batch_size, shuffle=True, collate_fn=pad_collate_fn, num_workers=4)
+valid_loader = DataLoader(valid_dataset_vectorizer, batch_size=batch_size, collate_fn=pad_collate_fn, num_workers=4)
+test_loader = DataLoader(test_dataset_vectorizer, batch_size=batch_size, collate_fn=pad_collate_fn, num_workers=2)
 ```
 
 ## Full Network
@@ -437,7 +437,7 @@ Using our experiment, we can now launch the training as simply as
 ```python
 exp.train(train_loader, valid_generator=valid_loader, epochs=epoch_number)
 ```
-It will take around 6 minutes per epochs, so around an hour for the complete training.
+It will take around 40 minutes per epochs, so around an hour for the complete training.
 
 ### Results
 The next figure shows the loss and the accuracy during our training (blue) and during our validation (orange) steps.
