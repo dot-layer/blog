@@ -312,6 +312,17 @@ train_dataset_vectorizer = DatasetBucket(train_data, embedding_vectorizer)
 valid_dataset_vectorizer = DatasetBucket(valid_data, embedding_vectorizer)
 test_dataset_vectorizer = DatasetBucket(test_data, embedding_vectorizer)
 ```  
+> Here is a example of the vectorizing process
+
+```python
+address, tag = train_dataset_vectorizer[0] # Unpack the first tuple
+print(f"The vectorized address is now a list of vectors {address}")
+```
+
+```python
+print(f"Tag is now a list of integers : {tag}")
+```
+
 
 ### DataLoader
 > We use a first trick, ``padding``.
