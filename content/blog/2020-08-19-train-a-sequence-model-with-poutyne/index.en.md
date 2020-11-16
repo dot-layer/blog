@@ -409,7 +409,7 @@ optimizer = optim.SGD(full_network.parameters(), lr)
 > Disclaimer: David is a developer on the Poutyne library, so we will present code using this framework. See the project [here](https://poutyne.org/).
 
 Let's create our experiment using Poutyne for automated logging in the project root directory (`./`). We will also set
-the loss function and a batch metric (accuracy) to monitor the training. The accuracy is compute word-tag, meaning that every correct tag prediction is a good prediction. For example, the accuracy of the prediction `StreetNumber, StreetName` with the ground truth `StreetNumber, StreetName` is 1 and the accuracy of the prediction `StreetNumber, StreetNumber` with the ground truth `StreetNumber, StreetName` is 0.5.
+the loss function and a batch metric (accuracy) to monitor the training. The accuracy is computed on the word-tag level, meaning that every correct tag prediction is a good prediction. For example, the accuracy of the prediction `StreetNumber, StreetName` with the ground truth `StreetNumber, StreetName` is 1 and the accuracy of the prediction `StreetNumber, StreetNumber` with the ground truth `StreetNumber, StreetName` is 0.5.
 
 ```python
 exp = Experiment("./", full_network, device=device, optimizer=optimizer,
