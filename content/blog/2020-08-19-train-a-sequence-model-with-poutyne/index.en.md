@@ -66,6 +66,7 @@ Let us first import all the necessary packages.
 ```python
 %pip install --upgrade poutyne #install poutyne on colab
 %pip install --upgrade colorama #install colorama on colab
+%pip install --upgrade fastttext #install fastttext on colab
 %matplotlib inline
 
 import os
