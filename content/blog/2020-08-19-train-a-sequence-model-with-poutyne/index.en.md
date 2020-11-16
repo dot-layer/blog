@@ -6,7 +6,7 @@ slug: machine learning
 type: post
 categories: ["python", "machine learning", "RNN", "PyTorch", "Poutyne", "LSTM", "Address parsing"]
 tags: []
-description: "Train a RNN for address parsing"
+description: "Train an RNN for address parsing"
 featured: "we-mastered-the-art-of-programming-cover.jpeg"
 featuredpath: "img/headers/"
 ---
@@ -38,7 +38,7 @@ A dedicated type of neural networks was specifically designed for this kind of t
 
 ## Recurrent Neural Network (RNN)
 
-In brief, a RNN is a neural network in which connections between nodes form a temporal sequence. It means that this type of network
+In brief, an RNN is a neural network in which connections between nodes form a temporal sequence. It means that this type of network
 allows previous outputs to be used as inputs for the next prediction.
 For more information regarding RNNs, have a look at Stanford's freely available [cheastsheet](https://stanford.edu/~shervine/teaching/cs-230/cheatsheet-recurrent-neural-networks). 
 
