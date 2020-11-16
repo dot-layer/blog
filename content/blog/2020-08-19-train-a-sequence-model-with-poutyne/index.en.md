@@ -199,7 +199,7 @@ train_data[:2] # The first two train items
 
 ### Vectorize the Dataset
 
-Since we used word embeddings as the encoded representations of the words in the addresses, we need to *convert* the addresses into the corresponding word vectors. In order to do that, we will use a `vectorizer` (i.e. the process of converting words into vectors). This embedding vectorizer will extract, for each word, the embedding value based on the pre-trained French fastText model.
+Since we used word embeddings as the encoded representations of the words in the addresses, we need to *convert* the addresses into the corresponding word vectors. In order to do that, we will use a `vectorizer` (i.e. the process of converting words into vectors). This embedding vectorizer will extract, for each word, the embedding value based on the pre-trained French fastText model. We use French embeddings because French is the language in which most of the adresses in our dataset are written.
 > If you are curious about another solution, the [Google Colab Jupyter notebook](https://colab.research.google.com/github/dot-layer/blog/blob/post%2Fdb_sequence_training_poutyne/content/blog/2020-08-19-train-a-sequence-model-with-poutyne/article_notebook_colab.ipynb) uses Magnitude.
 ```python
 # We use this class so that the download templating of the fastText
