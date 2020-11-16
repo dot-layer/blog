@@ -14,7 +14,7 @@ featuredpath: "img/headers/"
 > In this article, we will train an RNN, or more precisely, an LSTM, to predict the sequence of tags associated with a 
 given address, known as address parsing.
 
-> Also, the article is available in a [Jupyter Notebook](https://github.com/dot-layer/blog/blob/master/Github/blog/content/blog/2020-08-19-train-a-sequence-model-with-poutyne/article_notebook.ipynb) or in a [Google Colab Jupyter notebook](https://colab.research.google.com/github/dot-layer/blog/blob/post%2Fdb_sequence_training_poutyne/content/blog/2020-08-19-train-a-sequence-model-with-poutyne/article_notebook.ipynb).
+> Also, the article is available in a [Jupyter Notebook](https://github.com/dot-layer/blog/blob/master/Github/blog/content/blog/2020-08-19-train-a-sequence-model-with-poutyne/article_notebook.ipynb) or in a [Google Colab Jupyter notebook](https://colab.research.google.com/github/dot-layer/blog/blob/post%2Fdb_sequence_training_poutyne/content/blog/2020-08-19-train-a-sequence-model-with-poutyne/article_notebook_colab.ipynb).
 >
 > Before starting this article, we would like to disclaim that this tutorial is greatly inspired by an online tutorial David created for the Poutyne framework. Also, the content is based on a recent [article](https://arxiv.org/abs/2006.16152) we wrote about address tagging. However, there are differences between the present work and the two others, as this one is specifically designed for the less technical reader.
 
@@ -200,7 +200,7 @@ train_data[:2] # The first two train items
 ### Vectorize the Dataset
 
 Since we used word embeddings as the encoded representations of the words in the addresses, we need to *convert* the addresses into the corresponding word vectors. In order to do that, we will use a `vectorizer` (i.e. the process of converting words into vectors). This embedding vectorizer will extract, for each word, the embedding value based on the pre-trained French fastText model.
-> If you hare curious about another solution, the [Google Colab Jupyter notebook](https://colab.research.google.com/github/dot-layer/blog/blob/post%2Fdb_sequence_training_poutyne/content/blog/2020-08-19-train-a-sequence-model-with-poutyne/article_notebook.ipynb) uses Magnitude.
+> If you hare curious about another solution, the [Google Colab Jupyter notebook](https://colab.research.google.com/github/dot-layer/blog/blob/post%2Fdb_sequence_training_poutyne/content/blog/2020-08-19-train-a-sequence-model-with-poutyne/article_notebook_colab.ipynb) uses Magnitude.
 ```python
 # We use this class so that the download templating of the fastText
 # script be not buggy as hell in notebooks.
