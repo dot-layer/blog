@@ -559,7 +559,7 @@ have difficulty when faced with new patterns. All in all, we can say that our mo
 
 Now let's test for Russia and Mexico. 
 
-But first, let's discuss how our French embeddings can generate word vectors for vocabulary in a different language. FastText use subword embeddings when complete embeddings do not exist. For example, we can assume the presence of a word embedding vector for the word `Roi`, but we face an out-of-vocabulary (OOV) for the word `H1A1` since this word is not a real word. The trick with fastText is that they create compose embeddings using the subword with fixed window size (length of the subword) when facing OOV word. For example, a two characters window embeddings of `H1A1` would be the aggregated embeddings of the subword `H1`, `1A` and `A1`. 
+But first, let's discuss how our French embeddings can generate word vectors for vocabulary in a different language. FastText uses subword embeddings when complete embeddings do not exist. For example, we can assume the presence of a word embedding vector for the word `Roi`, but we face an out-of-vocabulary (OOV) for the word `H1A1` since this word is not a real word. The trick with fastText is that it creates composite embeddings using the subword with fixed window size (length of the subword) when facing OOV words. For example, a two characters window embeddings of `H1A1` would be the aggregated embeddings of the subword `H1`, `1A` and `A1`. 
 
 ```python
 ru_loader = DataLoader(ru_data, batch_size=batch_size, collate_fn=pad_collate_fn)
