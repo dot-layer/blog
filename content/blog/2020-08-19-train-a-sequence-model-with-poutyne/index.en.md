@@ -448,7 +448,7 @@ Using our experiment, we can now launch the training as simply as
 ```python
 exp.train(train_loader, valid_generator=valid_loader, epochs=epoch_number)
 ```
-It will take around 40 minutes per epochs, so around an hour for the complete training.
+It will take around 40 minutes per epochs, so around a couple hours for the complete training.
 
 ### Results
 The next figure shows the loss and the accuracy during our training (blue) and during our validation (orange) steps.
