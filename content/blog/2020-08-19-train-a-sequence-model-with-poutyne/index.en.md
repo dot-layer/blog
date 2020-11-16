@@ -64,11 +64,6 @@ For the present purpose, we will use the
 Let us first import all the necessary packages.
 
 ```python
-%pip install --upgrade poutyne #install poutyne on colab
-%pip install --upgrade colorama #install colorama on colab
-%pip install --upgrade fasttext #install fasttext on colab
-%matplotlib inline
-
 import os
 import pickle
 import re
@@ -421,7 +416,7 @@ Using our experiment, we can now launch the training as simply as
 ```python
 exp.train(train_loader, valid_generator=valid_loader, epochs=epoch_number)
 ```
-It will take around 40 minutes per epochs, so around a couple hours for the complete training.
+It will take around 40 minutes per epochs, so a couple hours for the complete training.
 
 ### Results
 The next figure shows the loss and the accuracy during our training (blue) and during our validation (orange) steps.
