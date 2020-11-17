@@ -1,7 +1,7 @@
 ---
 title: Training a Recurrent Neural Network (RNN) using PyTorch
 author: David Beauchemin and Marouane Yassine
-date: '2020-08-18'
+date: '2020-11-18'
 slug: machine learning
 type: post
 categories: ["python", "machine learning", "RNN", "PyTorch", "Poutyne", "LSTM", "Address parsing"]
