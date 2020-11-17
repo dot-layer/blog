@@ -64,9 +64,12 @@ For the present purpose, we will use the
 Let us first import all the necessary packages.
 
 ```python
+import gzip
 import os
 import pickle
 import re
+import shutil
+import warnings
 from io import TextIOBase
 
 import fasttext
@@ -75,11 +78,12 @@ import requests
 import torch
 import torch.nn as nn
 import torch.optim as optim
-from poutyne import set_seeds
-from poutyne.framework import Experiment
 from torch.nn.functional import cross_entropy
 from torch.nn.utils.rnn import pad_packed_sequence, pack_padded_sequence, pad_sequence
 from torch.utils.data import DataLoader
+
+from poutyne import set_seeds
+from poutyne.framework import Experiment
 ```
 
 Now, let's create a single (i.e. one layer) unidirectional LSTM with `input_size` and `hidden_size` of `300`. We 
