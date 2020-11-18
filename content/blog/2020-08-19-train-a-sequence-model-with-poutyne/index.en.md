@@ -468,7 +468,7 @@ exp_bi_lstm.train(train_loader, valid_generator=valid_loader, epochs=epoch_numbe
 
 ### Results
 Here are our validation results for the last epoch of the larger model. On the validation dataset,
-we can see that we obtain a marginal gain of around `0.3` % for the accuracy over our previous simpler model. This is only a slight improvement.
+we can see that we obtain a marginal gain of around 0.3% for the accuracy over our previous simpler model. This is only a slight improvement.
 
 |   Model  | Bidirectional bi-LSTM |
 |:--------:|:------------------:|
@@ -489,7 +489,7 @@ The next table presents the results of the bidirectional bi-LSTM with two layers
 |   Loss   |     0.0152     |    **0.0050**      |
 | Accuracy |     99.5758    |    **99.8550**     |
 
-We see similar validation results for both models. Also, we still see a little improvement in accuracy and total loss for the larger model. Considering that we only improved by around `0.3` %, one can
+We see similar validation results for both models. Also, we still see a little improvement in accuracy and total loss for the larger model. Considering that we only improved by around 0.3%, one can
 argue that the difference is only due to training variance (mostly due to our random sampling of training batches). To test the robustness of our approach, we could train our model multiple times
 using different random seeds and report the mean and standard deviation of each metric over all experiments rather than the result of a single training. Let's try something else. 
 
