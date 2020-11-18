@@ -284,7 +284,7 @@ train_dataset_vectorizer = DatasetBucket(train_data, embedding_vectorizer)
 valid_dataset_vectorizer = DatasetBucket(valid_data, embedding_vectorizer)
 test_dataset_vectorizer = DatasetBucket(test_data, embedding_vectorizer)
 ```  
-> Here is a example of the vectorizing process
+> Here is a example of the vectorizing process.
 
 ```python
 address, tag = train_dataset_vectorizer[0] # Unpack the first tuple
