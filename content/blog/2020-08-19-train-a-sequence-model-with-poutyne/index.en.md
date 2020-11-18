@@ -590,7 +590,7 @@ CRF over an impressive near `100` million addresses (yes, **100 million**). If y
 
 We also explored the idea that the language disparity has a negative impact on the results, since we use monolingual word embeddings (i.e. French), which is *normal* considering that they were trained for a specific language.
 
-> Alert of self-promotion of our work here
+> Alert of self-promotion of our work here.
 We've personally explored this avenue in an article using [subword embedding for address parsing](https://arxiv.org/abs/2006.16152).  
 
 That being said, our model still performed well on the Canadian dataset, and one can simply train simpler LSTM model using
