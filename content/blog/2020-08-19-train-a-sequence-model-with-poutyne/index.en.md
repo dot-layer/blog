@@ -4,7 +4,7 @@ author: David Beauchemin and Marouane Yassine
 date: '2020-11-18'
 slug: machine learning
 type: post
-categories: ["python", "machine learning", "RNN", "PyTorch", "Poutyne", "LSTM", "Address parsing"]
+categories: ["Python", "Machine learning", "RNN", "PyTorch", "Poutyne", "LSTM", "Address parsing"]
 tags: []
 description: "Train an RNN for address parsing"
 featured: "we-mastered-the-art-of-programming-cover.jpeg"

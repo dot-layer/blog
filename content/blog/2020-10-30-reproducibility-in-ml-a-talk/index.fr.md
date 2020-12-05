@@ -4,7 +4,7 @@ author: David Beauchemin
 date: '2020-11-11'
 slug: machine learning
 type: post
-categories: ["nouvelles", "machine learning"]
+categories: ["Nouvelles", "Machine learning"]
 tags: []
 description: "Des solutions aux embûches à la reproductibilité en apprentissage automatique"
 featured: "hackathon-code-cover.JPG"
