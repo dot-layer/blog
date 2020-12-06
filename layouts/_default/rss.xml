@@ -1,11 +1,3 @@
-<!--
-  This file is called in the header file inside the head tag. 
-  It generates a link to dotlayer.org/index.xml which can be displayed as raw data depending on your browser 
-  with the following warning: "This XML file does not appear to have any style information associated with it. 
-  The document tree is shown below." 
-  Don't worry, it's only the browser telling you it is showing you raw data. 
-  Only search engines will be accessing that file so the raw xml is all they are interested in.
--->
 {{- printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>

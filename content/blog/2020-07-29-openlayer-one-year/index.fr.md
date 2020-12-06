@@ -4,7 +4,7 @@ author: David Beauchemin
 date: '2020-08-18'
 slug: podcast
 type: post
-categories: ["podcast"]
+categories: ["Podcast"]
 tags: []
 description: "Retour sur la première année d'existence d'OpenLayer"
 featured: "OpenLayer_YoutubeBanner.jpg"

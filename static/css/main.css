@@ -1714,6 +1714,7 @@ dl dd {
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
     flex-direction: column;
+    text-align: center;
   }
 
   .post > header .meta > * {
@@ -2436,6 +2437,12 @@ body {
   height: inherit;
   line-height: inherit;
   white-space: nowrap;
+}
+
+@media screen and (max-width: 980px) {
+  #header .main ul li {
+    border-bottom: solid 1px rgba(160, 160, 160, 0.3);
+  }
 }
 
 #header .main ul li > * {
