@@ -1,0 +1,126 @@
+---
+title:  Toolkit for (more) reproducible Machine Learning projects
+author: David Beauchemin
+date: "2020-11-16"
+slug: apprentissage automatique
+type: post
+categories: ["tools", "machine learning", "reproducibility", "ml"]
+tags: []
+description: "A deep-in the tools to use for building a more reproducible ML project"
+featured: "nic_chalet_2019.jpg"
+featuredpath: "img/headers/"
+---
+
+> The header photo was taken during the machine learning cottage organized by Layer in 2019.It shows [Nicolas Garneau](https://www.linkedin.com/in/nicolas-garneau/) during his presentation on various tools to be used for a machine learning project (e.g. [Tmux](https://en.wikipedia.org/wiki/Tmux)). Credit of the photo to Jean-Chistophe Yelle from [Pikur](https://pikur.ca/).
+
+Over the past years, I've been working on various machine learning projects (mostly research ones), and I've faced numerous problems along the way that impacted the reproducibility of my results. At some points in any of those projects, I had to (not without hating myself) take a lot of time to resolve which experimentations were the best, which settings were associated with those results, even worse, where the f*** are my results. All those situations made my work difficult to reproduce and also challenging to share with colleagues. To solved that, I first tried my way to solve those irritations, but rapidly I faced the hard truth: I only have 24 hours in a day, and these problems are time-consuming and (way) more complex problem than I thought.
+
+In this post, 
+
+- I will define "reproducible machine learning" and explain why it matters,
+- I will give three problems related to reproducibility that I've personally faced and why solving them is essential, 
+- solutions I've tried developing on my own to solve those problems and reasons why those solutions are not suited for the problem, and
+- solutions I'm now using to solve those problems and the reason behind those choices.
+
+## Reproducible Machine Learning
+Reproducibility is the principle that says that conclusions can only be drawn from a well-described event, which has occurred several times, caused by different people. On the other hand, in machine learning, reproducibility corresponds (above all) either to being able to reproduce results, or to obtain similar results by re-executing a source code ([Pineau et al. 2020](https://arxiv.org/abs/2003.12206)).
+        
+What that does mean is that our solution needs to be shareable among peers, and the results that we claim to have needs to be reproducible. From a practical point of view, this translates into (1) been able to deploy our model into production and (2) that we are confident that the predictions are "legitimate" (i.e. performance will not drastically decrease when in production).
+
+## Prerequisites: Managing Code Version
+For most, if not all, programmers, we use code versioning tools such as Git to track the changes in any code-based. In brief, Git helps snapshot the state of a code-based at any timestamp (made by the user) and helps to resolve the conflicts between two snapshots. I strongly think that the use of such tools is **fundamental** to all machine learning projects. The reasons have been that we usually don't work alone, and sharing code-file between teams member using messenger, Team, Slack or e-mail is pure craziness. Also, tracking all the changes made over time in the code-base allows tracking any error, bug intrusion, or keeping what has been done so far.
+
+That been said, I will now assume that you are using and know what Git is.
+
+## Managing results
+I've faced this problem during my first project I did. Like any normal naive person, instead of reading the user manual "How to manage any results like a champ," I've just brute force my way to it by creating `.txt` files where I've just dumped raw text of my results. 
+
+It seemed nice; all I add to do was create a "meaningful" filename, such as `param_1_param_2_..._param_100.txt` plus a timestamp and dump all the metrics I've used related to the experimentation. I was so naive; at one point, I've got more than 100 files for that project only. Now, try finding which experiment was the best. 
+
+The problem with this approach and any similar approach where you create a file for each experimentation is that it is complicated to manage all those files. Indeed, it is nearly impossible to be efficient when comparing all those results since that every time you create a new file, you need to go through your results again to compare with the new one. Also, sharing this kind of work between team members is pure insanity.
+
+Possible solutions for that specific problem should (1) efficiently allow a user to compare results between different runs, (2) save easily the results and (3) be minimal to use. Before giving any good solution, let's discuss the second problem since the proposed solution also solved this problem.
+
+## Managing Experimentations
+I've been struck with this problem during my thesis work. I had to try numerous experimentation to explore promising avenues. I had no clear strategies other than writing the configuration of my experiment in my results file title. At first, it seems "right," but at one point, I had more than 15 parameters to "log" in the filename. The names were just so painful to read (especially at 2 in the morning before a milestone with my supervisor). I was amazed how things can get out of hand fast with what first seems like a quick win. The big problem with this kind of approach is that the filename's lengths grow as quickly as the parameters. For sure, I could create a directory and sub-directory related to the parameters. However, the problem is still there if I have `N` parameters, I will have a tree of directory of many nodes and just swim in a pool of directories.
+
+Possible solutions for that specific problem should (1) efficiently log your parameters in a (more) "clever" way, (2) allow comparison between experiments base on the parameters and (3) be user-friendly. 
+
+## What Can Be a Good Solution for Managing Results and Experimentations?
+We need a kind of a database where to log our results and the settings of any experiments. But, I'm pretty sure you are not interested in creating your own database. Fortunately for us, different solutions have been proposed recently to track results and experimentations. I will not go into details for all of them and only focus on the two I think are worthy of your interest. 
+
+### MLflow
+[MLflow](https://mlflow.org/docs/latest/index.html) is an open-source platform for managing tracking experiments to record, compare parameters and results. Using MLflow, you will get a visual interface to compare your experiments based on their parameters or their results. 
+
+MLflow is the solution I use right now. It is minimal, easy to use and needs relatively low code to be implemented in your project (a couple of lines depending on the training framework you are using). 
+
+It also can do other things such a deploying and providing a central model store for collaborative work, but those solutions are mostly priced.
+
+### Weights & Biases
+[Weights & Biases (W&B)](https://docs.wandb.ai/) is an open-source platform to track machine learning experiments, visualize metrics and share results. Using W&B, you will get the same thing as MLflow. The difference is that the dashboard is way more advanced for comparing metrics and logging artifacts such as specific data point predictions or models.
+I must say that this solution is might be my next go-to since they improved so much over the last year. 
+
+That been said, the two solutions offer great features, and there is plenty of other interesting solutions such as [Comet](https://www.comet.ml/site/) out there. I think you should use any of these solutions to manage your results and experiments as long as it suits your need.
+
+## Managing Configurations
+Probably the problem I've faced the most among all my work but never feel that much of a problem since I've tried interesting solutions that were manageable until I found a way better one. As you know, machine learning models have plenty of parameters, and those settings can greatly impact performance. You might want to try different architecture, optimizers, and do a grid search on parameters. My first solutions, were [Argparse](https://docs.python.org/3/howto/argparse.html) and [Configparser](https://docs.python.org/3/library/configparser.html). Those solutions are really useful since they are easy to set up, and arguments are readable. But, the more you add parameters, the more and more the code becomes complex, and it becomes difficult to find yourself. Also, it feels strange to always just copypaste code to create new arguments. It feels contradictory to the [Clean Code](https://www.oreilly.com/library/view/clean-code-a/9780136083238/) idea that "If you copy-paste some bloc of code three times, you might create a function." I also tried other solutions such as [Sacred](https://pypi.org/project/sacred/) with JSON config, but the framework is not … well designed in my opinion, since I always add to copy-paste code to make it work. In brief, something is missing in all of these solutions.
+
+I think the problem with all those solutions is twofold. 
+
+First, parameters need to be structured. That is, I want default settings that don't change much and other settings related to the same concepts grouped together. For example, my global training settings, such as my seed and my device (GPU), are two parameters that can be grouped into the same concept. YAML configuration file can solve this problem since one can structure information in such a way (see figure 1).
+
+``` yaml
+data_loader:
+    batch_size: 2048
+
+training_settings:
+    seed: 42
+    device: "cuda:0"
+```
+Figure 1:  Example of a YAML file.
+
+
+Second, parameters need to be hierarchical. I want to have specific parameters for a particular case without being forced to have them if they are not related to my case. For example, if a want to test my results using SGD and Adam optimizer, I will use two sets of parameters: a learning rate for SGD and a learning rate and betas value for Adam. If I'm using Argparse, I would need to have betas parameters even when using SGD; that just makes no sense to me. 
+
+[Hydra](https://hydra.cc/) solves both by hierarchically using YAML files. With Hydra, you can compose your configuration dynamically, enabling you to easily get the perfect configuration for each run. That is, you can enable settings for SGD when you use this one (`optimizer: SGD`) or Adam settings when using this one (`optimizer: Adam`) (see figure 2). This way of "calling" your configuration means that you will always get the settings you need and not those of other configurations. Also, this hierarchical structure is straightforward to understand, as shown in figure 3. We can see that we have 4 different models and can directly access them quickly without finding which one is used with this model and not this one since all of them only declare the parameters they need. For sure, if you only have 2 or 3 parameters, it seems overkill, but for how long will you only have 2 or 3 parameters? I don't know about you, but not much longer after I start a project, I rapidly have more than 3.
+
+``` yaml
+data_loader:
+    batch_size: 2048
+
+training_settings:
+    seed: 42
+    device: "cuda:0"
+
+defaults:
+    - optimizer: SGD # call the SGD YAML file
+    - model: bi_lstm
+    - dataset: canadian
+    - embeddings: fast_text
+```
+Figure 2:  Example of a YAML file when you use hierarchical configuration. `optimizer: SGD` is equivalent to the content of the file `conf/optimizer/SGD.yaml` in the following figure.
+
+``` sh
+.
+├── config.yaml
+├── dataset
+│   ├── all.yaml
+│   └── canadian.yaml
+├── embeddings
+│   ├── fast_text_character.yaml
+│   └── fast_text.yaml
+├── model
+│   ├── bi_lstm_bidirectionnal.yaml
+│   ├── bi_lstm.yaml
+│   ├── lstm_bidirectionnal.yaml
+│   └── lstm.yaml
+└── optimizer
+    ├── adam.yaml
+    └── SGD.yaml
+```
+Figure 3:  Example of hierarchical configuration directory to rapidly manage your settings.
+
+## Conclusion
+Lack of reproducibility in your machine learning project can be a considerable slowdown to put your models into production. I've presented two solutions to solve some of the problems in your machine learning project. These solutions will help you manage your experimentation, your results and your configuration. For a more complete presentation, I've presented both of them in a [seminar](https://davebulaval.github.io/gestion-configuration-resultats/).
+
+For sure, other parts of your project can be improved to be more reproducible, such as managing dataset version (see [DVC](https://dvc.org/)), managing your training flow (see [Poutyne](https://poutyne.org/) and [Neuraxle](https://www.neuraxle.org/)) and reusability (see [Docker](https://www.docker.com/)). 
