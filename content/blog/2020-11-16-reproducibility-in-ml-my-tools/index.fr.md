@@ -11,16 +11,14 @@ featured: "nic_chalet_2019.jpg"
 featuredpath: "img/headers/"
 ---
 
-> La photo en bannière a été prise durant le chalet en apprentissage automatique organisé par .Layer en 2019. On y voit [Nicolas Garneau](https://www.linkedin.com/in/nicolas-garneau/) durant sa présentation sur divers outils à utilisé pour un projet d'apprentissage automatique (p. ex. [Tmux](https://en.wikipedia.org/wiki/Tmux)). Crédit photo à Jean-Chistophe Yelle de chez [Pikur](https://pikur.ca/).
-
 Ces dernières années, j'ai travaillé sur divers projets d'apprentissage automatique (principalement des projets de recherche), et j'ai rencontré de nombreux problèmes en cours de route qui ont eu un impact sur la reproductibilité de mes résultats. À certains moments, j'ai dû (non sans me détester) prendre beaucoup de temps pour déterminer quelles expérimentations étaient les meilleures, quels paramètres étaient associés à ces résultats, et pire encore, où sont mes f***** résultats. Toutes ces situations  ont rendu mon travail difficile à reproduire et également difficile à partager avec mes collègues. Pour résoudre cela, j'ai d'abord essayé de résoudre ces irritations, mais j'ai rapidement fait face à la dure réalité : je n'ai que 24 heures dans une journée, et ces problèmes prennent du temps et sont (beaucoup) plus complexes que je ne le pensais.
 
 Dans cet article, 
 
 - Je vais définir "l'apprentissage automatique reproductible" et expliquer pourquoi c'est important,
-- Je vais donner trois problèmes liés à la reproductibilité que j'ai personnellement  rencontrés et expliquer pourquoi il est essentiel de les résoudre, 
-- les solutions que j'ai essayé d'élaborer moi-même pour résoudre ces problèmes et les raisons pour lesquelles ces solutions ne sont pas adaptées au problème, et
-- les solutions que j'utilise actuellement pour résoudre ces problèmes et la raison de ces choix.
+- je vais donner trois problèmes liés à la reproductibilité que j'ai personnellement  rencontrés et expliquer pourquoi il est essentiel de les résoudre, 
+- je vais donner les solutions que j'ai essayé d'élaborer moi-même pour résoudre ces problèmes et les raisons pour lesquelles ces solutions ne sont pas adaptées au problème, et
+- je vais donner les solutions que j'utilise actuellement pour résoudre ces problèmes et la raison de ces choix.
 
 ## Apprentissage automatique reproductible
 La reproductibilité est le principe selon lequel on ne peut tirer de conclusions qu'à partir d'un événement bien décrit, qui s'est produit plusieurs fois, causé par différentes personnes. En revanche, dans l'apprentissage machine, la reproductibilité correspond (avant tout) soit à la possibilité de reproduire des résultats, soit à celle d'obtenir des résultats similaires en réexécutant un code source ([Pineau et al. 2020](https://arxiv.org/abs/2003.12206)).
@@ -97,7 +95,7 @@ defaults:
     - dataset: canadian
     - embeddings: fast_text
 ```
-Figure 2 : Exemple de fichiers YAML lorsque vous utilisez une configuration hiérarchique. `optimizer : SGD` est équivalent au contenu du fichier `conf/optimizer/SGD.yaml` dans la figure suivante.
+Figure 2 : Exemple de fichiers YAML lorsque vous utilisez une configuration hiérarchique. `optimizer : SGD` est équivalent au contenu du fichier `conf/optimizer/SGD.yaml` dans la figure 3.
 
 ``` sh
 .
@@ -123,3 +121,5 @@ Figure 3 : Exemple de répertoire de configuration hiérarchique pour gérer rap
 Le manque de reproductibilité de votre projet d'apprentissage automatique peut constituer un frein considérable à la mise en production de vos modèles. J'ai présenté deux solutions pour résoudre certains des problèmes de votre projet d'apprentissage machine. Ces solutions vous aideront à gérer votre expérimentation, vos résultats et votre configuration. Pour une présentation plus complète, je les ai toutes deux présentées dans un [séminaire] (https://davebulaval.github.io/gestion-configuration-resultats/).
 
 Il est certain que d'autres parties de votre projet peuvent être améliorées pour être plus reproductibles, comme la gestion de la version du jeu de données (voir [DVC](https://dvc.org/)), la gestion de votre flux de formation (voir [Poutyne](https://poutyne.org/) et [Neuraxle](https://www.neuraxle.org/)) et la réutilisabilité (voir [Docker](https://www.docker.com/)).
+
+> La photo en bannière a été prise durant le [chalet en apprentissage automatique organisé par .Layer en 2019](https://www.dotlayer.org/blog/2019-12-19-recap-2019/recap-2019/). On y voit [Nicolas Garneau](https://www.linkedin.com/in/nicolas-garneau/) durant sa présentation sur divers outils à utilisé pour un projet d'apprentissage automatique (p. ex. [Tmux](https://en.wikipedia.org/wiki/Tmux)). Crédit photo à Jean-Chistophe Yelle de chez [Pikur](https://pikur.ca/).

@@ -11,16 +11,14 @@ featured: "nic_chalet_2019.jpg"
 featuredpath: "img/headers/"
 ---
 
-> The header photo was taken during the machine learning cottage organized by Layer in 2019.It shows [Nicolas Garneau](https://www.linkedin.com/in/nicolas-garneau/) during his presentation on various tools to be used for a machine learning project (e.g. [Tmux](https://en.wikipedia.org/wiki/Tmux)). Credit of the photo to Jean-Chistophe Yelle from [Pikur](https://pikur.ca/).
-
 Over the past years, I've been working on various machine learning projects (mostly research ones), and I've faced numerous problems along the way that impacted the reproducibility of my results. At some points in any of those projects, I had to (not without hating myself) take a lot of time to resolve which experimentations were the best, which settings were associated with those results, even worse, where the f*** are my results. All those situations made my work difficult to reproduce and also challenging to share with colleagues. To solved that, I first tried my way to solve those irritations, but rapidly I faced the hard truth: I only have 24 hours in a day, and these problems are time-consuming and (way) more complex problem than I thought.
 
 In this post, 
 
 - I will define "reproducible machine learning" and explain why it matters,
 - I will give three problems related to reproducibility that I've personally faced and why solving them is essential, 
-- solutions I've tried developing on my own to solve those problems and reasons why those solutions are not suited for the problem, and
-- solutions I'm now using to solve those problems and the reason behind those choices.
+- I will give solutions I've tried developing on my own to solve these problems and reasons why these solutions are not suited for the problem, and
+- I will give solutions I'm now using to solve these problems and the reason behind these choices.
 
 ## Reproducible Machine Learning
 Reproducibility is the principle that says that conclusions can only be drawn from a well-described event, which has occurred several times, caused by different people. On the other hand, in machine learning, reproducibility corresponds (above all) either to being able to reproduce results, or to obtain similar results by re-executing a source code ([Pineau et al. 2020](https://arxiv.org/abs/2003.12206)).
@@ -98,7 +96,7 @@ defaults:
     - dataset: canadian
     - embeddings: fast_text
 ```
-Figure 2:  Example of a YAML file when you use hierarchical configuration. `optimizer: SGD` is equivalent to the content of the file `conf/optimizer/SGD.yaml` in the following figure.
+Figure 2:  Example of a YAML file when you use hierarchical configuration. `optimizer: SGD` is equivalent to the content of the file `conf/optimizer/SGD.yaml` in the figure 3.
 
 ``` sh
 .
@@ -124,3 +122,5 @@ Figure 3:  Example of hierarchical configuration directory to rapidly manage you
 Lack of reproducibility in your machine learning project can be a considerable slowdown to put your models into production. I've presented two solutions to solve some of the problems in your machine learning project. These solutions will help you manage your experimentation, your results and your configuration. For a more complete presentation, I've presented both of them in a [seminar](https://davebulaval.github.io/gestion-configuration-resultats/).
 
 For sure, other parts of your project can be improved to be more reproducible, such as managing dataset version (see [DVC](https://dvc.org/)), managing your training flow (see [Poutyne](https://poutyne.org/) and [Neuraxle](https://www.neuraxle.org/)) and reusability (see [Docker](https://www.docker.com/)). 
+
+> The header photo was taken during the [machine learning cottage organized by Layer in 2019](https://www.dotlayer.org/blog/2019-12-19-recap-2019/recap-2019/).It shows [Nicolas Garneau](https://www.linkedin.com/in/nicolas-garneau/) during his presentation on various tools to be used for a machine learning project (e.g. [Tmux](https://en.wikipedia.org/wiki/Tmux)). Credit of the photo to Jean-Chistophe Yelle from [Pikur](https://pikur.ca/).
