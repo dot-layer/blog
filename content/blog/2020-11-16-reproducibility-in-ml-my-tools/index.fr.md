@@ -1,5 +1,5 @@
 ---
-title:  Outils pour des projets d'apprentissage machine (plus) reproductibles
+title:  Outils pour des projets d'apprentissage automatique (plus) reproductibles
 author: David Beauchemin
 date: "2020-11-16"
 slug: apprentissage automatique
@@ -11,7 +11,7 @@ featured: "nic_chalet_2019.jpg"
 featuredpath: "img/headers/"
 ---
 
-Ces dernières années, j'ai travaillé sur divers projets d'apprentissage automatique (principalement des projets de recherche), et j'ai rencontré de nombreux problèmes en cours de route qui ont eu un impact sur la reproductibilité de mes résultats. À certains moments, j'ai dû (non sans me détester) prendre beaucoup de temps pour déterminer quelles expérimentations étaient les meilleures, quels paramètres étaient associés à ces résultats, et pire encore, où sont mes f***** résultats. Toutes ces situations  ont rendu mon travail difficile à reproduire et également difficile à partager avec mes collègues. Pour résoudre cela, j'ai d'abord essayé de résoudre ces irritations, mais j'ai rapidement fait face à la dure réalité : je n'ai que 24 heures dans une journée, et ces problèmes prennent du temps et sont (beaucoup) plus complexes que je ne le pensais.
+Ces dernières années, j'ai travaillé sur divers projets d'apprentissage automatique (principalement des projets de recherche), et j'ai rencontré de nombreux problèmes en cours de route qui ont eu un impact sur la reproductibilité de mes résultats. J'ai dû à plusieurs reprises (non sans me détester) prendre beaucoup de temps pour déterminer quelles expérimentations étaient les meilleures et quels paramètres étaient associés à ces résultats. Pire encore, où sont mes foutus résultats. Toutes ces situations  ont rendu mon travail difficile à reproduire et également difficile à partager avec mes collègues. Pour résoudre cela, j'ai tenté plusieurs approches, mais j'ai rapidement fait face à la dure réalité : je n'ai que 24 heures dans une journée, et ces problèmes prennent du temps et sont (beaucoup) plus complexes que je ne le pensais.
 
 Dans cet article, 
 
@@ -21,12 +21,12 @@ Dans cet article,
 - je vais donner les solutions que j'utilise actuellement pour résoudre ces problèmes et la raison de ces choix.
 
 ## Apprentissage automatique reproductible
-La reproductibilité est le principe selon lequel on ne peut tirer de conclusions qu'à partir d'un événement bien décrit, qui s'est produit plusieurs fois, causé par différentes personnes. En revanche, dans l'apprentissage machine, la reproductibilité correspond (avant tout) soit à la possibilité de reproduire des résultats, soit à celle d'obtenir des résultats similaires en réexécutant un code source ([Pineau et al. 2020](https://arxiv.org/abs/2003.12206)).
+En apprentissage automatique, la reproductibilité correspond (avant tout) soit à la possibilité de reproduire des résultats, soit à celle d'obtenir des résultats similaires en réexécutant un code source ([Pineau et al. 2020](https://arxiv.org/abs/2003.12206)).
         
 Cela signifie que notre solution doit pouvoir être partagée entre pairs, et que les résultats que nous prétendons avoir doivent être reproductibles. D'un point de vue pratique, cela se traduit par (1) la possibilité de déployer notre modèle en production et (2) la certitude que les prévisions sont "légitimes" (c'est-à-dire que les performances ne diminueront pas de manière drastique en production).
 
 ## Conditions préalables : Gestion de la version du code
-Pour la plupart des programmeurs, sinon tous, nous utilisons des outils de versionnage de code tels que Git pour suivre les modifications de tout code. En bref, Git permet d'obtenir une capture de l'état d'un code source à n'importe quel moment (fait par l'utilisateur) et aide à résoudre les conflits entre deux de ces captures d'états. Je suis convaincu que l'utilisation de tels outils est **fondamentale** pour tous les projets d'apprentissage machine. Les raisons en sont que nous ne travaillons généralement pas seuls, et que le partage de fichiers de code entre les membres d'une équipe par messagerie, Team, Slack ou courriel est une pure folie. De plus, le suivi de toutes les modifications apportées au fil du temps dans la base de code permet de repérer toute erreur, toute intrusion de bogue ou de conserver ce qui a été fait jusqu'à présent.
+Pour la plupart des programmeurs, nous utilisons des outils de versionnage de code tels que Git pour suivre les modifications de tout code. En bref, Git permet d'obtenir une capture de l'état d'un code source à n'importe quel moment (fait par l'utilisateur) et aide à résoudre les conflits entre deux de ces captures d'états. Je suis convaincu que l'utilisation de tels outils est **essentielle** pour tous les projets d'apprentissage automatique appliqués. Les raisons sont que nous ne travaillons généralement pas seuls, et que le partage de fichiers de code entre les membres d'une équipe par Slack est une pure folie. De plus, le suivi de toutes les modifications apportées au fil du temps dans le code permet de repérer toute erreur et toute intrusion de bogue.
 
 Cela étant dit, je vais maintenant supposer que vous utilisez et connaissez Git.
 
@@ -55,7 +55,7 @@ MLflow est la solution que j'utilise en ce moment. Elle est minimale, facile à 
 La librairie permet également de faire autre chose comme le déploiement et la possibilité d'avoir un répertoire central de modèles pour le travail collaboratif, mais ces solutions sont pour la plupart payantes.
 
 ### Weights & Biases 
-[Weights & Biases (W&B)](https://docs.wandb.ai/) est une plateforme open source permettant de suivre les expériences d'apprentissage en machine, de visualiser les mesures et de partager les résultats. En utilisant W&B, vous obtiendrez la même chose que MLflow. La différence est que le tableau de bord est beaucoup plus avancé pour comparer les mesures et enregistrer des artefacts tels que des prédictions ou des modèles de points de données spécifiques.
+[Weights & Biases (W&B)](https://docs.wandb.ai/) est une plateforme open source permettant de suivre les expériences d'apprentissage en automatique, de visualiser les mesures et de partager les résultats. En utilisant W&B, vous obtiendrez la même chose que MLflow. La différence est que le tableau de bord est beaucoup plus avancé pour comparer les mesures et enregistrer des artefacts tels que des prédictions ou des modèles de points de données spécifiques.
 Je dois dire que cette solution pourrait être ma prochaine étape, car elle sait beaucoup améliorer au cours de l'année dernière. 
 
 Cela dit, les deux solutions offrent de grandes fonctionnalités, et il existe de nombreuses autres solutions intéressantes telles que [Comet](https://www.comet.ml/site/). Je pense que vous devriez utiliser n'importe laquelle de ces solutions pour gérer vos résultats et vos expériences tant qu'elle répond à vos besoins.
@@ -118,7 +118,7 @@ Figure 2 : Exemple de fichiers YAML lorsque vous utilisez une configuration hié
 Figure 3 : Exemple de répertoire de configuration hiérarchique pour gérer rapidement vos paramètres.
 
 ## Conclusion
-Le manque de reproductibilité de votre projet d'apprentissage automatique peut constituer un frein considérable à la mise en production de vos modèles. J'ai présenté deux solutions pour résoudre certains des problèmes de votre projet d'apprentissage machine. Ces solutions vous aideront à gérer votre expérimentation, vos résultats et votre configuration. Pour une présentation plus complète, je les ai toutes deux présentées dans un [séminaire] (https://davebulaval.github.io/gestion-configuration-resultats/).
+Le manque de reproductibilité de votre projet d'apprentissage automatique peut constituer un frein considérable à la mise en production de vos modèles. J'ai présenté deux solutions pour résoudre certains des problèmes de votre projet d'apprentissage automatique. Ces solutions vous aideront à gérer votre expérimentation, vos résultats et votre configuration. Pour une présentation plus complète, je les ai toutes deux présentées dans un [séminaire] (https://davebulaval.github.io/gestion-configuration-resultats/).
 
 Il est certain que d'autres parties de votre projet peuvent être améliorées pour être plus reproductibles, comme la gestion de la version du jeu de données (voir [DVC](https://dvc.org/)), la gestion de votre flux de formation (voir [Poutyne](https://poutyne.org/) et [Neuraxle](https://www.neuraxle.org/)) et la réutilisabilité (voir [Docker](https://www.docker.com/)).
 

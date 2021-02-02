@@ -11,7 +11,7 @@ featured: "nic_chalet_2019.jpg"
 featuredpath: "img/headers/"
 ---
 
-Over the past years, I've been working on various machine learning projects (mostly research ones), and I've faced numerous problems along the way that impacted the reproducibility of my results. At some points in any of those projects, I had to (not without hating myself) take a lot of time to resolve which experimentations were the best, which settings were associated with those results, even worse, where the f*** are my results. All those situations made my work difficult to reproduce and also challenging to share with colleagues. To solved that, I first tried my way to solve those irritations, but rapidly I faced the hard truth: I only have 24 hours in a day, and these problems are time-consuming and (way) more complex problem than I thought.
+Over the past years, I've worked on various machine learning projects (mostly research ones), and I've faced numerous problems along the way that impacted the reproducibility of my results. I had to regularly (not without hating myself) take a lot of time to resolve which experimentations was the best and which settings were associated with those results. Even worse, where the heck are my results. All these situations made my work difficult to reproduce and also challenging to share with colleagues. To solve that, I tried different approaches, but rapidly I faced the hard truth: I only have 24 hours in a day, and these problems are time-consuming and (way) more complex problem than I thought.
 
 In this post, 
 
@@ -21,12 +21,12 @@ In this post,
 - I will give solutions I'm now using to solve these problems and the reason behind these choices.
 
 ## Reproducible Machine Learning
-Reproducibility is the principle that conclusions can only be drawn from a well-described event, which has occurred several times, caused by different people. On the other hand, in machine learning, reproducibility corresponds (above all) either to being able to reproduce results, or to obtain similar results by re-executing a source code ([Pineau et al. 2020](https://arxiv.org/abs/2003.12206)).
+In machine learning, reproducibility corresponds (above all) either to reproduce results, or to obtain similar results by re-executing a source code ([Pineau et al. 2020](https://arxiv.org/abs/2003.12206)).
         
 It means our solution needs to be shareable among peers, and the results that we claim need to be reproducible. From a practical point of view, this translates into (1) being able to deploy our model into production and (2) that we have confidence that our predictions are "accurate" (i.e. performance will not drastically decrease when in production).
 
 ## Prerequisites: Managing Code Version
-For most, if not all, programmers, we use code versioning tools such as Git to track the changes in any code-based. In brief, Git helps snapshot the state of a code-based at any timestamp (made by the user) and helps to resolve the conflicts between two snapshots. I strongly think that the use of such tools is **fundamental** to all machine learning projects. The reasons have been that we usually don't work alone, and sharing code-file between teams member using messenger, Team, Slack or e-mail is pure craziness. Also, tracking all the changes made over time in the code-base allows tracking any error, bug intrusion, or keeping what has been done so far.
+For most programmers, we use code versioning tools such as Git to track any codebase changes. Git helps snapshot the state of a codebase at any timestamp (made by the user) and resolve the conflicts between two snapshots. I strongly think that using such tools is **essential** to all applicated machine learning projects. We usually don't work alone, and sharing code between teams member using Slack is pure craziness. Also, tracking all the changes made over time in the codebase allows tracking any error or bug intrusion.
 
 That been said, I will now assume that you are using and know what Git is.
 
