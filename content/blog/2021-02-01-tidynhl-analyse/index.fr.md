@@ -535,7 +535,7 @@ define_good_choice <- function(dt, player_window, player_min_pts, goalie_min_win
 }
 ```
 
-Afin de valider que notre approche a bel et bien le comportement souhaité, on peut jeter un apperçu aux 30 premiers choix du repêchage du 2005.
+Afin de valider que notre approche a bel et bien le comportement souhaité, on peut jeter un apperçu aux 30 premiers choix du repêchage du 2005 et interpréter la colonne `good_pick`.
 
 
 ```r
