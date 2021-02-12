@@ -262,3 +262,6 @@ enableEmoji   = true
   researchgate     = ""
   # Email
   email            = "info@dotlayer.org"
+
+[markup.goldmark.renderer]
+unsafe= true
