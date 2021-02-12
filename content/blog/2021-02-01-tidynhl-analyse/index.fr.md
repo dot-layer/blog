@@ -351,7 +351,7 @@ Je vous laisse tirer vos propres conclusions, mais de mon côté je remarque que
 
 ### Les buts 🚨 et les passes 🍎 récoltés
 
-Une autre mesure évidente à analyser est le nombre de points réalisés par les joueurs repêchés par une équipe. Contrairement aux matchs joués, il faut tenir compte de la position du joueur dans ce cas-ci. Les attaquants font en général plus de points que les défenseurs, et peut-être que certaines équipes repêchent plus de défenseurs, ou même de gardiens (attendez ça s'en vient) ...
+Une autre mesure évidente à analyser est le nombre de points ($buts + passes$) réalisés par les joueurs repêchés par une équipe. Contrairement aux matchs joués, il faut tenir compte de la position du joueur dans ce cas-ci. Les attaquants font en général plus de points que les défenseurs, et peut-être que certaines équipes repêchent plus de défenseurs, ou même de gardiens (attendez ça s'en vient) ...
 
 
 ```r
@@ -386,7 +386,7 @@ dt_stats_position[player_position_type %in% c("F", "D"),] %>%
 
 ![](index.fr_files/figure-html/plot_pts-1.png)<!-- -->
 
-Dans le graphique ci-dessus, les équipes sont ordonnées selon le nombre de points combiné entre les attaquants (F) et les défenseurs (D). On peut donc conclure que l'Avalanche du Colorado est l'équipe qui a repêchés, entre 2005 et 2015, les joueurs ayant récoltés le plus de points dans la LNH. Dans ce graphique, on peut également voir que les Ducks d'Anaheim et les Predators de Nashville ont repêché de bons défenseurs, probablement au détriment de repêcher des attaquants. Voici les 5 défenseurs les plus productifs repêchés par ces 2 équipes:
+Dans le graphique ci-dessus, les équipes sont ordonnées selon le nombre de points combiné entre les attaquants (F) et les défenseurs (D). On peut donc conclure que les Oilers d'Edmonton est l'équipe qui a repêché, entre 2005 et 2015, les joueurs ayant récoltés le plus de points dans la LNH (merci à la lotterie). Dans ce graphique, on peut également voir que les Ducks d'Anaheim et les Predators de Nashville semblent avoir repêchés de bons défenseurs, probablement au détriment de repêcher de bons attaquants. Voici les 5 défenseurs les plus productifs repêchés par ces 2 équipes:
 
 
 ```r
@@ -405,11 +405,11 @@ unique(dt_all[team_drafted == "NSH" & player_position_type == "D",][order(-skate
 ## [1] "Roman Josi"     "Ryan Ellis"     "Seth Jones"     "Mattias Ekholm" "Cody Franson"
 ```
 
-Pas mal 😮! Vous étiez de curieux de voir les choix de l'Avalanche du Colorado, patience vous les verrez bientôt ...
+Pas mal 😮!
 
 ### Nos amis les gardiens
 
-Maintenant que nous avons regardé les attaquants et les défenseurs, jetons un coup d'oeil aux gardiens de but. Comme comparatif du nombre du points, j'ai utilisé le nombre de victoires.
+Maintenant que nous avons regardé les attaquants et les défenseurs, jetons un coup d'oeil aux gardiens de but. Comme mesure alternative au nombre de points, j'ai utilisé le nombre de victoires.
 
 
 ```r
@@ -454,14 +454,20 @@ Connaissant les problèmes de gardiens de but qu'on connu les Maple Leafs de Tor
 
 ## Trouver le bon joueur {#trouver-bon-joueur}
 
+Maintenant que nous avons un premier portrait de la performance des équipes au repêchage, je veux valider une dernière chose. Je veux voir si certaines équipes ont tendance à faire plus souvent le "bon choix" que d'autres. Pour évaluer si une équipe fait le "bon choix", j'ai mis en place un petit algorithme. Cet algorithme peut s'expliquer comme suit: je regarde pour un choix donné, les choix subséquents et je valide qu'aucun joueur repêché après ce choix n'a fait plus de points. Pour les gardiens, je regarde le nombre de victoires. Pour paufiner cette approche, j'ai fais quelques hypothèses additionnelles:
 
 
-Maintenant que nous avons un premier portrait de la performance des équipes au repêchage, je veux valider une dernière chose. Je veux voir si certaines équipes ont tendance à faire plus souvent le "bon choix" que d'autres. Pour évaluer si une équipe fait le "bon choix", j'ai mis en place un petit algorithme. Cet algorithme peut s'expliquer comme suit: je regarde pour un choix donné, les choix subséquents et je valide qu'aucun joueur repêché après ce choix n'a fait plus de points. Pour les gardiens, je regarde le nombre de victoires. Pour paufiner cette approche, j'ai fais quelques hypothèses additionnelles (basées sur mon bon jugement) :
+```r
+JOUEURS_FENETRE <- 20
+JOUEURS_MIN_PTS <- 100
+JOUEURS_GARDIENS_INTERVAL <- 0.95
+GARDIENS_MIN_WINS <- 50
+```
 
 - Je regarde uniquement les **20** choix subséquents à un choix donné. Cela évite qu'une perle rare repêchée en fin de repêchage, disons Pavel Datsyuk, fasse passer tous les autres choix pour de "mauvais choix".
 - Je vérifie que le joueur a fait un minimum de points, j'ai fixé ce minimum à **100** points.
-- Je donne le bénéfice du doute à un joueur ayant fait presque le même nombre de points qu'un autre dans la fenêtre de 20 choix. Pour rendre cela possible, je considère toujours comme un "bon choix" un joueur qui a fait au moins **95%** du nombre de points qu'un autre joueur dans la fenêtre.
-- Je compare les attaquants avec les attaquants, et les défenseurs avec les défenseurs dans la fenêtre.
+- Je donne le bénéfice du doute à un joueur ayant presque fait le même nombre de points qu'un autre dans la fenêtre de **20** choix. Pour rendre cela possible, je considère toujours comme un "bon choix" un joueur qui a fait au moins **95%** du nombre de points qu'un autre joueur dans la fenêtre.
+- Je compare les attaquants avec les attaquants et les défenseurs avec les défenseurs.
 - En raison du plus petit nombre de gardiens repêchés, je ne considère pas de fenêtre pour cette position. Ainsi, pour qu'un gardien soit considéré comme un "bon choix", il doit avoir récolté plus de victoires que tous les gardiens repêchés après.
 - Je donne également le bénéfice du doute aux gardiens, j'applique encore une fois un ratio de **95%** sur le nombre de victoires.
 - Les gardiens doivent avoir récoltés au moins **50** victoires pour être considérés comme un "bon choix".
@@ -477,6 +483,7 @@ define_good_choice <- function(dt, player_window, player_min_pts, goalie_min_win
 
   for (row in seq_len(nrow(dt))) {
   
+    # On stock les informations sur le choix à valider
     draft_year_temp <- dt[row,]$draft_year
     draft_pick_temp <- dt[row,]$draft_overall
     draft_position_temp <- dt[row,]$player_position_type
@@ -488,6 +495,7 @@ define_good_choice <- function(dt, player_window, player_min_pts, goalie_min_win
       # On filtre les joueurs repêchés dans la fenêtre
       dt_temp <- dt[draft_year == draft_year_temp & player_position_type == draft_position_temp & draft_overall <= (draft_pick_temp + player_window) & draft_overall > draft_pick_temp,]
       
+      # On calcule le nombre de points maximal dans la fenetre
       max_pts_windows <- max(dt_temp$skater_points, na.rm = TRUE)
       
       # Si manquant, on remplace par 0
@@ -500,11 +508,12 @@ define_good_choice <- function(dt, player_window, player_min_pts, goalie_min_win
         dt[row,]$good_pick <- FALSE
       }
   
-    } else {
+    } else if (draft_position_temp == "G") {
   
       # Aucune fenetre pour les gardiens
       dt_temp <- dt[draft_year == draft_year_temp & player_position_type == draft_position_temp & draft_overall > draft_pick_temp,]
       
+      # On calcule le nombre de victoires maximal après le choix
       max_win_windows <- max(dt_temp$goalie_wins, na.rm = TRUE)
       
       # Si manquant, on remplace par 0
@@ -583,9 +592,9 @@ dt_good_picks[draft_year == 2005,][order(draft_overall),][1:30, c("draft_year", 
 ##     draft_year draft_overall team_drafted      player_name player_position_type skater_points goalie_wins good_pick
 ```
 
-À partir de cet apperçu, on peut voir que notre approche n'est pas parfaite, mais nous donne quand même une bonne idée de quels joueurs ont été de "bons choix". Sidney Crosby apparait comme un "bon choix" (fiouuu). On pourrait débattre que Bobby Ryan est un "bon choix", mais Anze Kopitar ne serait pas d'accord 😉. Si vous vous demandez pour TJ Oshie, il a doublé par Paul Stastny en 2ème ronde. Est-ce que je considère Paul Stastny meilleur que TJ Oshie, pas nécéssairement, mais forcé d'admettre que le premier a fait près de 200 points de plus que le second.
+À partir de cet apperçu, on peut voir que notre approche n'est pas parfaite, mais nous donne quand même une bonne idée de quels joueurs ont été de "bons choix". Sidney Crosby apparait comme un "bon choix" (fiouuu). On pourrait débattre que Bobby Ryan est un "bon choix", mais Anze Kopitar ne serait pas d'accord 😉. Si vous vous demandez pour TJ Oshie, il a été doublé par Paul Stastny en 2ème ronde. Est-ce que je considère Paul Stastny meilleur que TJ Oshie, pas nécéssairement, mais forcé d'admettre que le premier a fait près de 200 points de plus que le second.
 
-Maintenant, voyons voir quelles équipes ont réalisé le plus grand nombre de "bons choix" selon l'approche que nous proposons. Puisque certains "bons choix" pourrait être considérés meilleurs que d'autres "bons choix", j'ai pris le soin d'ajouté le nombre de points réalisés par ces joueurs dans le graphique ci-dessous.
+Maintenant, voyons voir quelles équipes ont réalisé le plus grand nombre de "bons choix" selon l'approche que nous proposons. Puisque certains "bons choix" pourrait être considérés meilleurs que d'autres "bons choix", j'ai pris le soin d'ajouter le nombre de points réalisés par ces joueurs dans le graphique ci-dessous.
 
 
 ```r
@@ -608,7 +617,7 @@ ggplot(
 
 ![](index.fr_files/figure-html/plot_good_picks-1.png)<!-- -->
 
-On peut voir que certaines équipes ont eu plus de flair que d'autres. Les Blue Jackets de Columbus et les Sénateurs d'Ottawa semblent se démarquer, regardons leurs "bons choix":
+On peut voir que certaines équipes ont eu plus de flair que d'autres. Les Blue Jackets de Columbus semblent se démarquer, regardons leurs "bons choix":
 
 
 ```r
@@ -633,26 +642,7 @@ dt_good_picks[good_pick == TRUE & team_drafted == "CBJ", (columns_show), with = 
 ## 11:       2015             8      Zach Werenski           173           0
 ```
 
-```r
-# Bons choix des Senateurs
-dt_good_picks[good_pick == TRUE & team_drafted == "OTT", (columns_show), with = F]
-```
-
-```
-##     draft_year draft_overall       player_name skater_points goalie_wins
-##  1:       2005           204    Colin Greening           121           0
-##  2:       2006            28      Nick Foligno           473           0
-##  3:       2006           211       Erik Condra           111           0
-##  4:       2008            15     Erik Karlsson           606           0
-##  5:       2009           129      Mike Hoffman           366           0
-##  6:       2009            39 Jakob Silfverberg           296           0
-##  7:       2009            46      Robin Lehner             0         119
-##  8:       2010           178        Mark Stone           400           0
-##  9:       2012            15         Cody Ceci           129           0
-## 10:       2015            18     Thomas Chabot           126           0
-```
-
-Il y a quand même quelques bons choix dans ces 2 équipes. Par contre, certains de ces joueurs ont su profiter des failles de notre apprcohe (Erik Condra, Colin Greening et Codi Ceci par exemple). Je suis curieux de jeter un coup d'oeil à l'Avalanche du Colorado, qui ont realisé un peu moins de "bons choix", mais ceux-ci semblent avoir performés davantage:
+Il y a quand même quelques bons choix. Par contre, certains de ces joueurs ont peut-être profiter des failles de notre apprcohe (Derek Dorsett ou John Moore par exemple). Je suis curieux de jeter un coup d'oeil à l'Avalanche du Colorado, qui ont realisé un peu moins de "bons choix", mais ceux-ci semblent avoir performés davantage:
 
 
 ```r
@@ -672,7 +662,7 @@ dt_good_picks[good_pick == TRUE & team_drafted == "COL", (columns_show), with = 
 ## 8:       2015            10    Mikko Rantanen           260           0
 ```
 
-Un peu moins de "bons choix" que les Sénateurs, mais ceux-ci ont eu un impact bien plus grand. On peut dire que l'Avalanche ont su profiter de leurs hauts choix au repêchage ...
+Un peu moins de "bons choix" que les Blue Jackets, mais ceux-ci semblent avoir eu un impact bien plus grand. On peut dire que l'Avalanche ont su profiter de leurs hauts choix au repêchage ...
 
 Finalement, aviez-vous réussi à deviner quels étaient les 5 "bons choix" de notre Sainte-Flanelle? 
 
@@ -705,14 +695,18 @@ Pour conclure cet article, je dois vous avouez que je continu de croire que le r
 
 ### Les grands "gagnants" 👍
 
-- **Avalanche du Colorodo:** On peut voir leurs "bon choix" plus haut. Ils ont bien saisis leur chance sur leurs choix de 1ère ronde, considérant qu'ils en ont eu 9 alors que la moyenne de la ligue se situe à 11.
-- **Bruins de Boston**: Arrivant au 25ème rang pour le nombre de choix, ils sont pourtant au 5ème rang pour les points récoltés par les joueurs repêchés. Ils sont également dans le premier tiers pour le nombre de "bons choix".
-- **Penguins de Pittsburg**: Arrivent au dernier rang dans la ligue pour le nombre de choix au total, pourtant ils ont su se tirer bien d'affaires. On peut les voir assez haut pour les points récoltés (11ème rang) et pour les victores des gardiens (8ème rang).
+- **Avalanche du Colorodo:** On peut voir leurs "bon choix" plus haut. Ils ont bien saisis leur chance sur leurs choix de 1ère ronde, considérant qu'ils en ont eu que 9 alors que la moyenne de la ligue se situe à 11.
+- **Bruins de Boston**: Arrivant au 26ème rang pour le nombre de choix, ils sont pourtant au 6ème rang pour les points récoltés par les joueurs repêchés. Ils sont également dans le premier tiers pour le nombre de "bons choix".
+- **Penguins de Pittsburg**: Arrivent au dernier rang dans la ligue pour le nombre de choix au total (avec 66 choix), ils ont fait une bonne utilisation de leurs choix. On peut les voir assez haut pour les points récoltés (12ème rang) et pour les victores des gardiens (9ème rang).
+- **Kings de Los Angeles**: Certes, ils ont eu beaucoup de choix au total (86), mais ils ont su répondre à l'appel dans la majorité des facettes: matchs (1er rang), points (2ème rang) et victoires des gardiens (2ème rang).
 
 ### Les grands "perdants" 👎
 
-- **Sabres de Buffalo**: Ils sont au 4ème rang pour le nombre de choix au toal, (dont 13 en 1er ronde), mais ils arrivent relativement loin dans les classement pour le nombre de points récoltés ou pour les victoires des gardiens. Ils sont également en bas de peloton pour le nombre de "bons choix". 
-- **Jets de Winnipeg (et Atlanta)**: Ils ont sont au-dessus de la moyenne pour le nombre de choix total (83) et nombre de choix de première ronde (12). Ils se retrouvent en bas de classement pour la majorité des métriques: matchs (25ème rang), points (24ème rang). Seul point positif, les gardiens.
-- **Canucks de Vancouver**: Même s'ils ont eu peu de choix au total (68), n'ont pas su tirer leur épingle du jeu dans aucune catégorie. Avec 12 choix de 1ère ronde, versus une moyenne de 11 dans la ligue, on aurait pu s'attendre à de meilleures performances. Le nombre de matchs joués par leurs joueurs repêchés est catastrophique ...
+- **Sabres de Buffalo**: Ils sont au 5ème rang pour le nombre de choix au toal, (dont 13 en 1er ronde), mais ils arrivent relativement loin dans les classement pour le nombre de points récoltés (21ème rang) ou pour les victoires des gardiens (19ème rang). Ils sont également en bas de peloton pour le nombre de "bons choix". 
+- **Jets de Winnipeg (et Atlanta)**: Ils ont sont au-dessus de la moyenne pour le nombre de choix total (83) et nombre de choix de première ronde (12). Ils se retrouvent en bas de classement pour la majorité des métriques: matchs (26ème rang), points (25ème rang). Seul point positif, les gardiens.
+- **Canucks de Vancouver**: Même s'ils ont eu peu de choix au total (68), ils n'ont pas su tirer leur épingle du jeu, et ce, dans aucune catégorie. Avec 12 choix de 1ère ronde, versus une moyenne de 11 dans la ligue, on aurait pu s'attendre à de meilleures performances. Le nombre de matchs joués par leurs joueurs repêchés est catastrophique ...
+- **Coyotes de l'Arizona (et Phoenix)**: On peut pas dire que leurs performances au repêchage est  "désastreuse", mais étant l'équipe avec le plus de choix de premières rondes (16), je me serais attendu à mieux.
 
+
+Mention honorable pour les "mal-aimés" Oilers d'Edmonton. Ils ont certainement eu beaucoup de choix "faciles", mais ils arrivent quand même au premier rang pour le nombre de points.
 
