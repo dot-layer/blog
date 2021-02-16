@@ -20,7 +20,7 @@ reading_time: 10
 
 
 **On entend souvent dire que le repêchage de la LNH, tout comme c'est le cas
-dans d'autres sports profesionnels, est une science inexacte. J'imagine que cette
+dans d'autres sports professionnels, est une science inexacte. J'imagine que cette
 expression fait référence au fait que si l'on doit repêcher un joueur $x$ à un moment 
 $t$ donné, il n'y a aucune certitude que ce joueur est le bon choix. Mais disons 
 qu'on prend le temps de regarder plusieurs choix, sur plusieurs années, est-ce toujours le 
@@ -321,8 +321,7 @@ l'objectif demeure de voir si certaines équipes sont plus performantes que les 
 ### Les matchs joués dans la _Grande Ligue_ {#match-joues}
 
 Comment savoir si une équipe repêche de bons joueurs? La première idée 
-qui me vient en tête est évidemment de regarder le nombre de matchs joué dans la LNH. Cette mesure est en quelque sorte indépendante de la position ou du style de joueur, ce qui rend son interprétation
-plus simple. Par contre, n'oublions pas que certaines équipes ont repêchés plus 
+qui me vient en tête est évidemment de regarder le nombre de matchs joué dans la LNH. Cette mesure est en quelque sorte indépendante de la position ou du style de joueur, ce qui rend son interprétation plus simple. Par contre, n'oublions pas que certaines équipes ont repêchés plus de
 joueurs que d'autres. Dans le graphique ci-dessous, si la logique du nombre de choix était respectée, les barres seraient ordonnées de la plus pâle vers la plus foncée (en partant d'en haut).
 
 
@@ -642,7 +641,7 @@ dt_good_picks[good_pick == TRUE & team_drafted == "CBJ", (columns_show), with = 
 ## 11:       2015             8      Zach Werenski           173           0
 ```
 
-Il y a quand même quelques bons choix. Par contre, certains de ces joueurs ont peut-être profiter des failles de notre apprcohe (Derek Dorsett ou John Moore par exemple). Je suis curieux de jeter un coup d'oeil à l'Avalanche du Colorado, qui ont realisé un peu moins de "bons choix", mais ceux-ci semblent avoir performés davantage:
+Il y a quand même quelques bons choix. Par contre, certains de ces joueurs ont peut-être profiter des failles de notre approche (Derek Dorsett ou John Moore par exemple). Je suis curieux de jeter un coup d'oeil à l'Avalanche du Colorado, qui ont realisé un peu moins de "bons choix", mais ceux-ci semblent avoir performés davantage:
 
 
 ```r
@@ -691,21 +690,21 @@ Pas trop mal, mais sur 10 années de repêchages, on aurait bien aimé avoir que
 
 ## Conclusion {#conclusion}
 
-Pour conclure cet article, je dois vous avouez que je continu de croire que le repêchage est une science inexacte. Il est difficile de tirer des conclusions évidentes étant donné les nombreuses composantes à prendre en compte. Sans entrer trop dans les détails, il y a le nombre de choix et les positions des joueurs repêchés. Certains joueurs font moins de points, mais apportent une composante de plus à une équipe, comme le leadership ou même l'aspect défensif. Toutefois, selon mes analyses, voici les équipes je considèrent comme les grands "gagnants" et "perdants" ainsi que pourquoi.
+Pour conclure cet article, je dois vous avouez que je continu de croire que le repêchage est une science inexacte. Il est difficile de tirer des conclusions évidentes étant donné les nombreuses composantes à prendre en compte. Sans entrer trop dans les détails, il y a le nombre de choix et les positions des joueurs repêchés. Certains joueurs font moins de points, mais apportent une composante de plus à une équipe, comme le leadership ou même l'aspect défensif. Toutefois, selon mes analyses, voici les équipes que je considère comme les grands "gagnants" et "perdants" ainsi que pourquoi.
 
 ### Les grands "gagnants" 👍
 
 - **Avalanche du Colorodo:** On peut voir leurs "bon choix" plus haut. Ils ont bien saisis leur chance sur leurs choix de 1ère ronde, considérant qu'ils en ont eu que 9 alors que la moyenne de la ligue se situe à 11.
-- **Bruins de Boston**: Arrivant au 26ème rang pour le nombre de choix, ils sont pourtant au 6ème rang pour les points récoltés par les joueurs repêchés. Ils sont également dans le premier tiers pour le nombre de "bons choix".
+- **Bruins de Boston**: Arrivant au 26ème rang pour le nombre de choix, ils sont pourtant au 6ème rang pour les points récoltés par les joueurs repêchés. Ils sont également dans le premier tier pour le nombre de "bons choix".
 - **Penguins de Pittsburg**: Arrivent au dernier rang dans la ligue pour le nombre de choix au total (avec 66 choix), ils ont fait une bonne utilisation de leurs choix. On peut les voir assez haut pour les points récoltés (12ème rang) et pour les victores des gardiens (9ème rang).
 - **Kings de Los Angeles**: Certes, ils ont eu beaucoup de choix au total (86), mais ils ont su répondre à l'appel dans la majorité des facettes: matchs (1er rang), points (2ème rang) et victoires des gardiens (2ème rang).
 
 ### Les grands "perdants" 👎
 
-- **Sabres de Buffalo**: Ils sont au 5ème rang pour le nombre de choix au toal, (dont 13 en 1er ronde), mais ils arrivent relativement loin dans les classement pour le nombre de points récoltés (21ème rang) ou pour les victoires des gardiens (19ème rang). Ils sont également en bas de peloton pour le nombre de "bons choix". 
-- **Jets de Winnipeg (et Atlanta)**: Ils ont sont au-dessus de la moyenne pour le nombre de choix total (83) et nombre de choix de première ronde (12). Ils se retrouvent en bas de classement pour la majorité des métriques: matchs (26ème rang), points (25ème rang). Seul point positif, les gardiens.
+- **Sabres de Buffalo**: Ils sont au 5ème rang pour le nombre de choix au toal, (dont 13 en 1er ronde), mais ils arrivent relativement loin dans le classement pour le nombre de points récoltés (21ème rang) ou pour les victoires des gardiens (19ème rang). Ils sont également en bas de peloton pour le nombre de "bons choix". 
+- **Jets de Winnipeg (et Atlanta)**: Ils sont au-dessus de la moyenne pour le nombre de choix total (83) et nombre de choix de première ronde (12). Ils se retrouvent en bas de classement pour la majorité des métriques: matchs (26ème rang), points (25ème rang). Seul point positif, les gardiens.
 - **Canucks de Vancouver**: Même s'ils ont eu peu de choix au total (68), ils n'ont pas su tirer leur épingle du jeu, et ce, dans aucune catégorie. Avec 12 choix de 1ère ronde, versus une moyenne de 11 dans la ligue, on aurait pu s'attendre à de meilleures performances. Le nombre de matchs joués par leurs joueurs repêchés est catastrophique ...
-- **Coyotes de l'Arizona (et Phoenix)**: On peut pas dire que leurs performances au repêchage est  "désastreuse", mais étant l'équipe avec le plus de choix de premières rondes (16), je me serais attendu à mieux.
+- **Coyotes de l'Arizona (et Phoenix)**: On ne peut pas dire que leurs performances au repêchage est  "désastreuse", mais étant l'équipe avec le plus de choix de premières rondes (16), je me serais attendu à mieux.
 
 
 Mention honorable pour les "mal-aimés" Oilers d'Edmonton. Ils ont certainement eu beaucoup de choix "faciles", mais ils arrivent quand même au premier rang pour le nombre de points.
