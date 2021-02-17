@@ -13,7 +13,7 @@ featuredpath: "img/headers/"
 
 Ces dernières années, j'ai travaillé sur divers projets d'apprentissage automatique (principalement des projets de recherche), et j'ai rencontré de nombreux problèmes en cours de route qui ont eu un impact sur la reproductibilité de mes résultats. J'ai dû à plusieurs reprises (non sans me détester) prendre beaucoup de temps pour déterminer quelles expérimentations étaient les meilleures et quels paramètres étaient associés à ces résultats. Pire encore, où sont mes foutus résultats. Toutes ces situations  ont rendu mon travail difficile à reproduire et également difficile à partager avec mes collègues. Pour résoudre cela, j'ai tenté plusieurs approches, mais j'ai rapidement fait face à la dure réalité : je n'ai que 24 heures dans une journée, et ces problèmes prennent du temps et sont (beaucoup) plus complexes que je ne le pensais.
 
-Dans cet article, 
+Dans cet article, je vais
 
 - Je vais définir "l'apprentissage automatique reproductible" et expliquer pourquoi c'est important,
 - je vais donner trois problèmes liés à la reproductibilité que j'ai personnellement  rencontrés et expliquer pourquoi il est essentiel de les résoudre, 
