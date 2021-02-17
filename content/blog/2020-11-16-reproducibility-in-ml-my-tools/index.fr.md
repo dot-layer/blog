@@ -15,7 +15,7 @@ Ces dernières années, j'ai travaillé sur divers projets d'apprentissage autom
 
 Dans cet article, je vais
 
-- Je vais définir "l'apprentissage automatique reproductible" et expliquer pourquoi c'est important,
+- définir "l'apprentissage automatique reproductible" et expliquer pourquoi c'est important,
 - je vais donner trois problèmes liés à la reproductibilité que j'ai personnellement  rencontrés et expliquer pourquoi il est essentiel de les résoudre, 
 - je vais donner les solutions que j'ai essayé d'élaborer moi-même pour résoudre ces problèmes et les raisons pour lesquelles ces solutions ne sont pas adaptées au problème, et
 - je vais donner les solutions que j'utilise actuellement pour résoudre ces problèmes et la raison de ces choix.
