@@ -44,7 +44,7 @@ Par contre, en tant que scientifique de données, je crois que cette incertitude
 
 ## Préparation des données {#preparation-donnees}
 
-Pour tenter de répondre à cette question, j'ai décidé d'analyser les sélections des repêchages allant de 2005 à 2015. Ce choix est arbitraire et se base sur le fait que 10 ans me semble assez crédible comme échantillon de joueurs. Nous allons également considérer les statistiques des joueurs en saison régulière seulement. De cette manière, ça évite de trop pénaliser de bons joueurs repêchés dans de mauvaises équipes. Nous allons commencer par importer les données associées à ces repêchages avec la fonction `tidy_drafts()`.
+Pour tenter de répondre à cette question, j'ai décidé d'analyser les sélections des repêchages allant de 2005 à 2015. Ce choix est arbitraire et se base sur le fait que 10 ans me semble assez crédible comme échantillon de joueurs. Aussi, pour éviter que les bons joueurs repêchés dans de mauvaises équipes soient trop pénalisés, nous allons nous restreindre aux statistiques en saison régulière. La première étape consiste à importer les données associées à ces repêchages avec la fonction `tidy_drafts()`.
  
 
 ```r
