@@ -26,7 +26,7 @@ En apprentissage automatique, la reproductibilité correspond soit à la possibi
 Cela signifie que notre solution doit pouvoir être partagée entre pairs, et que les résultats que nous prétendons avoir doivent être reproductibles. D'un point de vue pratique, cela se traduit par (1) la possibilité de déployer notre modèle en production et (2) la certitude que les prévisions sont "légitimes" (c'est-à-dire que les performances ne diminueront pas de manière drastique en production).
 
 ## Gérer les résultats
-J'ai rencontré le problème de gérer mes résultats correctement lors de mon premier projet. Comme toute personne naïve au lieu de lire le manuel d'utilisation "Comment gérer les résultats comme un champion", j'ai simplement forcé le passage en créant des fichiers `.txt` de mes résultats. 
+J'ai rencontré le problème de gérer mes résultats correctement lors de mon premier projet. Comme toute personne naïve, au lieu de lire le manuel d'utilisation "Comment gérer les résultats comme un champion", j'ai simplement forcé le passage en créant des fichiers `.txt` de mes résultats. 
 
 Cela m'a semblé bien : tout ce que j'avais à faire était de créer un nom de fichier "significatif", tel que `param_1_param_2_..._param_100.txt` plus un horodatage. Par la suite, il me restait juste à y écrire tous mes résultats. J'étais si naïf : à un moment donné, j'avais plus de 100 fichiers pour ce seul projet. Maintenant, essayez de trouver quelle expérience était la meilleure. 
 
