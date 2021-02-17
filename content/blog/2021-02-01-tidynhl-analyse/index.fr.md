@@ -9,6 +9,7 @@ type: post
 tags: 
   - R
   - Analytique de sports
+  - Hockey
 output:
   html_document:
     keep_md: yes
@@ -29,22 +30,19 @@ cas? Est-ce que le repêchage devient en quelque sorte une science plus "exacte"
 Dans cet article, je tenterai d'éclairer cette question en analysant les récents
 repêchages de la LNH. Pour se faire, j'utiliserai différentes fonctionnalités du
 _package_ <svg style="height:0.8em;top:.04em;position:relative;fill:steelblue;" viewBox="0 0 581 512"><path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"/></svg>
-[`tidynhl`](https://jplecavalier.github.io/tidynhl/), un projet réalisé par un 
-de mes bons amis [Jean-Philippe Le Cavalier](https://jplecavalier.rbind.io/fr/).
+[`tidynhl`](https://jplecavalier.github.io/tidynhl/), un projet réalisé par [Jean-Philippe Le Cavalier](https://jplecavalier.rbind.io/fr/) (un bon ami à moi).
 
-## Mise en contexte {#mise-en-contexte}
+# Mise en contexte {#mise-en-contexte}
 
-Pour commencer, je dois vous faire aveu: je préfère regarder le repêchage de la 
+Pour commencer, je dois vous faire un aveu: je préfère regarder le repêchage de la 
 LNH que la finale de la coupe Stanley elle-même. En tant qu'amateur de hockey, 
-j'ai presque honte de l'avouer. J'adore analyser les futurs joueurs ainsi que les choix des équipes pendant cette séance de repêchage. Certes,
-il y aura toujours beaucoup d'incertitude autour de la sélection d'un joueur.
-Par contre, en tant que scientifique de données, je crois que cette incertitude peut être réduite par les experts et les dépisteurs les plus compétents, ceux qui savent bien évaluer les jeunes joueurs. La question à laquelle nous tenterons donc de répondre peut se formuler comme
+j'ai presque honte de l'avouer. J'adore analyser les futurs joueurs ainsi que les choix des équipes pendant cette séance de repêchage. Certes, il y aura toujours beaucoup d'incertitude autour de la sélection d'un joueur. Par contre, en tant que scientifique de données, je crois que cette incertitude peut être réduite par les experts et les dépisteurs les plus compétents, ceux qui savent bien évaluer les jeunes joueurs. La question à laquelle nous tenterons de répondre peut se formuler comme
 
 > Est-ce que certaines équipes sont plus performantes que d'autres pour repêcher de futurs joueurs?
 
-## Préparation des données {#preparation-donnees}
+# Préparation des données {#preparation-donnees}
 
-Pour tenter de répondre à cette question, j'ai décidé d'analyser les sélections des repêchages allant de 2005 à 2015. Ce choix est arbitraire et se base sur le fait que 10 ans me semble assez crédible comme échantillon de joueurs. Aussi, pour éviter que les bons joueurs repêchés dans de mauvaises équipes soient trop pénalisés, nous allons nous restreindre aux statistiques en saison régulière. Cela permettra aux joueurs d'être comparés sur une base plus équitable, où toutes les équipes jouent le même nombre de matchs. La première étape consiste à importer les données associées à ces repêchages avec la fonction `tidy_drafts()`.
+Pour tenter de répondre à cette question, j'ai décidé d'analyser les sélections des repêchages allant de 2005 à 2015. Ce choix est arbitraire et se base sur le fait que 10 ans me semble assez crédible comme échantillon de joueurs (près de 2500 joueurs repêchés). Aussi, pour éviter que les bons joueurs repêchés dans de mauvaises équipes soient trop pénalisés, nous allons nous restreindre aux statistiques en saison régulière. Cela permettra aux joueurs d'être comparés sur une base plus équitable, où toutes les équipes jouent le même nombre de matchs. La première étape consiste à importer les données associées à ces repêchages avec la fonction `tidy_drafts()`.
  
 
 ```r
@@ -62,10 +60,11 @@ dt_draft <- tidy_drafts(
 )
 
 # Enlever les choix sans joueurs (exceptionnels)
-# Par exemple: NJ Devils perdu leur choix en 2011
+# Par exemple: NJ Devils perdu leur choix en 2011 (https://www.cbssports.com/nhl/news/devils-kovalchuk-penalty-reduced-get-first-round-pick-back/)
 dt_draft <- dt_draft[!is.na(player_id),]
 
 # On se crée une fonction pour fusionner les équipes déménagées (ou renommées)
+# Nettoyage de données
 merge_moved_teams <- function(dt) {
   
   dt[team_abbreviation %in% c("WPG", "ATL"), team_abbreviation := "WPG/ATL"]
@@ -189,6 +188,7 @@ trois jeux de données afin de régler quelques détails techniques importants p
 
 ```r
 # On se crée une fonction pour aggréger les données essentielles
+# On va devoir aggréger plusieurs fois les memes stats (pts, games, wins) dans l'analyse
 aggregate_stats <- function(dt, old_by_names, new_by_names) {
   
   dt_aggregated <- dt[, .(
@@ -198,6 +198,7 @@ aggregate_stats <- function(dt, old_by_names, new_by_names) {
     goalie_wins = sum(goalie_wins, na.rm = TRUE)
   ), old_by_names]
   
+  # On additionne les games des goalies et des players car stockés dans 2 variables différentes
   dt_aggregated[, player_games := ifelse(is.na(skater_games), 0, skater_games) + ifelse(is.na(goalie_games), 0, goalie_games)]
   setnames(dt_aggregated, old_by_names, new_by_names)
   
@@ -232,7 +233,7 @@ dt_all[player_name == "P.K. Subban",]
 ## 3:   8474056       2007           2         13            43       8          MTL P.K. Subban                 OHL        Belleville                    D         NJD            21           77            0           0           77
 ```
 
-Maintenant que nous avons structuré les données dans un format plus facile à
+Maintenant que nous avons structuré les données dans un format étant plus facile à
 manipuler, nous allons tenter d'aggréger celles-ci de différentes manières afin
 d'avoir un portrait par équipe. Allons-y ! 
 
@@ -242,7 +243,7 @@ d'avoir un portrait par équipe. Allons-y !
 
 </center>
 
-## Les équipes repêchent-elles autant? {#nombre-de-choix}
+# Les équipes repêchent-elles autant? {#nombre-de-choix}
 
 Dans un premier temps, on est en droit de se poser la question: est-ce que toutes
 les équipes de la LNH repêchent autant de joueurs? Sachant que chaque équipe
@@ -313,16 +314,16 @@ ggplot(
 ![](index.fr_files/figure-html/plot_nb_picks-1.png)<!-- -->
 
 On peut conclure que le nombre de joueurs repêchés par équipe n'est clairement pas
-uniforme, tout comme le nombre choix de première ronde.
+uniforme (écart de 30 choix entre la première et la dernière équipe). On pourrait également dire la même chose pour les choix de premières rondes (écart de 9 choix).
 
-## Qui repêche "bien"?
+# Qui repêche "bien"?
 
 Tentons maintenant d'analyser des mesures qui nous permettront de conclure qu'une
 équipe semble repêcher de bons joueurs, et ce, sur une assez longue période de temps
 (en occurence 10 ans ici). Gardons bien en tête l'aspect relatif entre les équipes, car
 l'objectif demeure de voir si certaines équipes sont plus performantes que les autres.
 
-### Les matchs joués dans la _Grande Ligue_ {#match-joues}
+## Les matchs joués dans la _Grande Ligue_ {#match-joues}
 
 Comment savoir si une équipe repêche de bons joueurs? La première idée 
 qui me vient en tête est évidemment de regarder le nombre de matchs joué dans la LNH. Cette mesure est en quelque sorte indépendante de la position ou du style de joueur, ce qui rend son interprétation plus simple. Par contre, n'oublions pas que certaines équipes ont repêchés plus de
@@ -352,7 +353,7 @@ ggplot(
 
 Je vous laisse tirer vos propres conclusions, mais de mon côté je remarque que les Blackhawks de Chicago semblent avoir peu de matchs joués pour le nombre de choix "réels".
 
-### Les buts 🚨 et les passes 🍎 récoltés
+## Les buts 🚨 et les passes 🍎 récoltés
 
 Une autre mesure évidente à analyser est le nombre de points ($buts + passes$) obtenus par les joueurs repêchés par une équipe. Contrairement aux matchs joués, il faut tenir compte de la position du joueur dans ce cas-ci. Les attaquants font en général plus de points que les défenseurs, et peut-être que certaines équipes repêchent plus de défenseurs, ou même de gardiens (attendez ça s'en vient) ...
 
@@ -410,7 +411,7 @@ unique(dt_all[team_drafted == "NSH" & player_position_type == "D",][order(-skate
 
 Pas mal 😮!
 
-### Nos amis les gardiens
+## Nos amis les gardiens
 
 Maintenant que nous avons regardé les attaquants et les défenseurs, jetons un coup d'oeil aux gardiens de but. Comme mesure alternative au nombre de points, j'ai utilisé le nombre de victoires.
 
@@ -442,7 +443,7 @@ aggregate_stats(
 
 ![](index.fr_files/figure-html/plot_wins-1.png)<!-- -->
 
-Pour ceux qui pensaient que Carey Price permettrait au Canadiens d'être au premier rang, vous étiez trop ambitieux. Par contre, peut-être qu'ils auraient eu plus de chances si j'avais inclus le repêchage de 2003, séance où fut repeché un certain Jaroslav Halak. On peut remarquer que les Capitals de Washington semblent avoir eu du flair pour repêcher de bons gardiens de buts. Les aviez-vous deviner?
+Pour ceux qui pensaient que Carey Price permettrait au Canadiens d'être au premier rang, vous étiez trop ambitieux. Par contre, peut-être qu'ils auraient eu plus de chances si j'avais inclus le repêchage de 2003, séance où fut repeché un certain Jaroslav Halak. On peut remarquer que les Capitals de Washington semblent avoir eu du flair pour repêcher de bons gardiens de buts. Seriez-vous capable de nommer quelques uns de ces gardiens?
 
 
 ```r
@@ -455,7 +456,7 @@ unique(dt_all[team_drafted == "WSH" & player_position_type == "G",][order(-goali
 
 Connaissant les problèmes de gardiens de but qu'on connu les Maple Leafs de Toronto, il est suprenant de les voir au 3ème rang. Toutefois, ils auraient peut-être mieux fait de conserver Tukka Rask dans leurs rangs ... Encore une fois, on ne peut pas dire que les Blackhawks ont eu beaucoup de succès avec leurs gardiens repêchés sur cette période.
 
-## Trouver le bon joueur {#trouver-bon-joueur}
+# Trouver le bon joueur {#trouver-bon-joueur}
 
 Maintenant que nous avons un premier portrait de la performance des équipes au repêchage, je veux valider une dernière chose. Je veux voir si certaines équipes ont tendance à faire plus souvent le "bon choix" que d'autres. Pour évaluer si une équipe fait le "bon choix", j'ai mis en place un petit algorithme. Cet algorithme peut s'expliquer comme suit: je regarde pour un choix donné, les choix subséquents et je valide qu'aucun joueur repêché après ce choix n'a fait plus de points. Pour les gardiens, je regarde le nombre de victoires. Pour paufiner cette approche, j'ai fais quelques hypothèses additionnelles:
 
@@ -692,11 +693,11 @@ Pas trop mal, mais sur 10 années de repêchages, on aurait bien aimé avoir que
 
 </center>
 
-## Conclusion {#conclusion}
+# Conclusion {#conclusion}
 
 Pour conclure cet article, je dois vous avouez que je continu de croire que le repêchage est une science inexacte. Il est difficile de tirer des conclusions évidentes étant donné les nombreuses composantes à prendre en compte. Sans entrer trop dans les détails, il y a le nombre de choix et les positions des joueurs repêchés. Certains joueurs font moins de points, mais apportent une composante de plus à une équipe, comme le leadership ou même l'aspect défensif. Toutefois, selon mes analyses, voici les équipes que je considère comme les grands "gagnants" et "perdants" ainsi que pourquoi.
 
-### Les grands "gagnants" 👍
+## Les grands "gagnants" 👍
 
 - **Avalanche du Colorodo:** On peut voir leurs "bon choix" plus haut. Ils ont bien saisis leur chance sur leurs choix de 1ère ronde, considérant qu'ils en ont eu que 9 alors que la moyenne de la ligue se situe à 11.
 - **Bruins de Boston**: Arrivant au 26ème rang pour le nombre de choix, ils sont pourtant au 6ème rang pour les points récoltés par les joueurs repêchés. Ils sont également dans le premier tier pour le nombre de "bons choix".
