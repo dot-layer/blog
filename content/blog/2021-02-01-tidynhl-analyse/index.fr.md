@@ -38,7 +38,7 @@ Pour commencer, je dois vous faire aveu: je préfère regarder le repêchage de 
 LNH que la finale de la coupe Stanley elle-même. En tant qu'amateur de hockey, 
 j'ai presque honte de l'avouer. J'adore analyser les futurs joueurs ainsi que les choix des équipes pendant cette séance de repêchage. Certes,
 il y aura toujours beaucoup d'incertitude autour de la sélection d'un joueur.
-Par contre, en tant que scientifique de données, je crois que cette incertitude peut être réduite par les experts et les dépisteurs les plus compétents qui savent bien évaluer les jeunes joueurs. La question que nous tenterons donc de répondre peut se formuler comme
+Par contre, en tant que scientifique de données, je crois que cette incertitude peut être réduite par les experts et les dépisteurs les plus compétents, ceux qui savent bien évaluer les jeunes joueurs. La question à laquelle nous tenterons donc de répondre peut se formuler comme
 
 > Est-ce que certaines équipes sont plus performantes que d'autres pour repêcher de futurs joueurs?
 
@@ -708,4 +708,3 @@ Pour conclure cet article, je dois vous avouez que je continu de croire que le r
 
 
 Mention honorable pour les "mal-aimés" Oilers d'Edmonton. Ils ont certainement eu beaucoup de choix "faciles", mais ils arrivent quand même au premier rang pour le nombre de points.
-
