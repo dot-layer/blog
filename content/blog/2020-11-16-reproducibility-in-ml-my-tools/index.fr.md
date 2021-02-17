@@ -18,7 +18,7 @@ Dans cet article, je vais
 - définir "l'apprentissage automatique reproductible" et expliquer pourquoi c'est important,
 - aborder trois problèmes liés à la reproductibilité que j'ai personnellement rencontrés et expliquer pourquoi il est essentiel de les résoudre, 
 - donner les solutions que j'ai essayé d'élaborer moi-même pour résoudre ces problèmes et les raisons pour lesquelles elles ne sont pas adaptées au problème, et
-- je vais donner les solutions que j'utilise actuellement pour résoudre ces problèmes et la raison de ces choix.
+- donner les solutions que j'utilise actuellement pour résoudre ces problèmes et la raison de ces choix.
 
 ## Apprentissage automatique reproductible
 En apprentissage automatique, la reproductibilité correspond soit à la possibilité de reproduire des résultats, soit à celle d'obtenir des résultats similaires en réexécutant un code source ([Pineau et al. 2020](https://arxiv.org/abs/2003.12206)).
