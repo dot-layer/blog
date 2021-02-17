@@ -56,7 +56,7 @@ La librairie permet également de faire autre chose comme le déploiement et la 
 ![](wnb.png)
 Figure 2: [Un aperçu de l'interface visuelle de W&B](https://github.com/wandb/client#try-in-a-colab-).
 
-Cela dit, les deux solutions offrent de grandes fonctionnalités, et il existe de nombreuses autres solutions intéressantes. Je pense que vous devriez utiliser n'importe laquelle de ces solutions pour gérer vos résultats et vos expériences tant qu'elle répond à vos besoins.
+Cela dit, les deux solutions offrent plusieurs fonctionnalités, et il existe de nombreuses autres solutions intéressantes. Je pense que vous devriez utiliser n'importe laquelle de ces solutions pour gérer vos résultats et vos expériences tant qu'elle répond à vos besoins.
 
 ## Gestion des configurations
 La gestion de mes configurations a été le problème auquel j'ai été le plus confronté durant mes travaux de recherche. Les modèles d'apprentissage automatique ont de nombreux paramètres, et ces paramètres peuvent avoir un impact considérable sur les performances. Vous pourriez vouloir essayer différentes architectures, optimisateurs, ou faire une recherche en grille des hyperparamètres optimaux. Le problème est qu'il est difficile de passer facilement d'une configuration de paramètres à une autre et que l'ajout d'un nouveau paramètre peut être lourd.
