@@ -44,7 +44,7 @@ Par contre, en tant que scientifique de données, je crois que cette incertitude
 
 ## Préparation des données {#preparation-donnees}
 
-Pour tenter de répondre à cette question, j'ai décidé d'analyser les sélections des repêchages allant de 2005 à 2015. Ce choix est arbitraire et se base sur le fait que 10 ans me semble assez crédible comme échantillon de joueurs. Aussi, pour éviter que les bons joueurs repêchés dans de mauvaises équipes soient trop pénalisés, nous allons nous restreindre aux statistiques en saison régulière. La première étape consiste à importer les données associées à ces repêchages avec la fonction `tidy_drafts()`.
+Pour tenter de répondre à cette question, j'ai décidé d'analyser les sélections des repêchages allant de 2005 à 2015. Ce choix est arbitraire et se base sur le fait que 10 ans me semble assez crédible comme échantillon de joueurs. Aussi, pour éviter que les bons joueurs repêchés dans de mauvaises équipes soient trop pénalisés, nous allons nous restreindre aux statistiques en saison régulière. Cela permettra aux joueurs d'être comparés sur une base plus équitable, où toutes les équipes jouent le même nombre de matchs. La première étape consiste à importer les données associées à ces repêchages avec la fonction `tidy_drafts()`.
  
 
 ```r
@@ -97,7 +97,7 @@ dt_draft[]
 ## 2338:       2015           7         30           211      16               CHI   8478925   John Dahlstrom          SWEDEN-JR.      Frolunda Jr.
 ```
 
-Afin d'avoir plus d'informations sur les joueurs, nous allons également importer des métadonnées sur ceux-ci grâce à la fonction `tidy_players_meta()`.
+Afin d'avoir plus d'informations sur les joueurs, nous allons également importer des métadonnées (date de naissance, position, nationalité, etc.) sur ceux-ci grâce à la fonction `tidy_players_meta()`.
 
 
 ```r
@@ -106,7 +106,13 @@ dt_meta_player <- tidy_players_meta(
   players_id = unique(dt_draft$player_id), 
   keep_id = TRUE
 )
+```
 
+```
+## Warning in (function (name, value) : actual class for column 'inTop100Alltime' is ['logical'] while expected class is ['integer'], please open an issue with a reprex throwing this warning
+```
+
+```r
 # Fusionner les équipes déménagés
 dt_meta_player <- merge_moved_teams(dt_meta_player)
 
@@ -136,9 +142,7 @@ dt_meta_player[]
 ## 2332:   8478925   John Dahlstrom         FALSE                    N            44               R                    F                SWE                  SWE                       <NA>        Kungsbacka        1997-01-22       FALSE              <NA>            72           189           L          TRUE      FALSE              NA          FALSE      NA              <NA>
 ```
  
-Nous allons ensuite importer les données qui nous permettront d'analyser les 
-statstiques individuelles de ces joueurs repêchés grâce aux fonctions 
-`tidy_skaters_stats()` et `tidy_goalies_stats()`. 
+Nous allons ensuite importer les statstiques individuelles de ces joueurs repêchés grâce aux fonctions `tidy_skaters_stats()` et `tidy_goalies_stats()`. 
 
 
 ```r
@@ -179,8 +183,8 @@ dt_stats[]
 ## 6705:   8478916   Joey Daccord  20182019      2018-19     regular       9               OTT           NA           NA             NA            NA               NA         NA         NA            NA         NA         NA           NA             NA          NA              NA                NA               NA            NA              NA                NA               NA            NA              NA                NA               NA            NA            1              1           0             1           0         0               0                 40                  5      0.8750000   5.000000    60.0000                    35                     3         0.9142857                     3                     2         0.3333333                     2                     0                 1
 ```
 
-Finalement, nous allons faire quelques transformations et manipulations sur ces
-trois jeux de données afin de pouvoir poursuivre notre analyse.
+Finalement, nous allons appliquer quelques transformations et manipulations à ces
+trois jeux de données afin de régler quelques détails techniques importants pour l'analyse.
 
 
 ```r
@@ -350,7 +354,7 @@ Je vous laisse tirer vos propres conclusions, mais de mon côté je remarque que
 
 ### Les buts 🚨 et les passes 🍎 récoltés
 
-Une autre mesure évidente à analyser est le nombre de points ($buts + passes$) réalisés par les joueurs repêchés par une équipe. Contrairement aux matchs joués, il faut tenir compte de la position du joueur dans ce cas-ci. Les attaquants font en général plus de points que les défenseurs, et peut-être que certaines équipes repêchent plus de défenseurs, ou même de gardiens (attendez ça s'en vient) ...
+Une autre mesure évidente à analyser est le nombre de points ($buts + passes$) obtenus par les joueurs repêchés par une équipe. Contrairement aux matchs joués, il faut tenir compte de la position du joueur dans ce cas-ci. Les attaquants font en général plus de points que les défenseurs, et peut-être que certaines équipes repêchent plus de défenseurs, ou même de gardiens (attendez ça s'en vient) ...
 
 
 ```r
@@ -377,7 +381,7 @@ dt_stats_position[player_position_type %in% c("F", "D"),] %>%
     theme(axis.title.y = element_blank(),
           legend.position = "bottom") +
     labs(
-      title = "Nombre de points réalisés par les joueurs repêchés par équipe",
+      title = "Nombre de points obtenus par les joueurs repêchés par équipe",
       subtitle = "Saisons 2005 à 2015 (saison régulière seulement)",
       x = "Nombre de points"
     )
@@ -430,7 +434,7 @@ aggregate_stats(
     theme(axis.title.y = element_blank(),
           legend.position = "bottom") +
     labs(
-      title = "Nombre de victoires réalisées par les gardiens repêchés par équipe",
+      title = "Nombre de victoires obtenus par les gardiens repêchés par équipe",
       subtitle = "Saisons 2005 à 2015 (saison régulière seulement)",
       x = "Nombre de victoires"
     )
@@ -471,7 +475,7 @@ GARDIENS_MIN_WINS <- 50
 - Je donne également le bénéfice du doute aux gardiens, j'applique encore une fois un ratio de **95%** sur le nombre de victoires.
 - Les gardiens doivent avoir récoltés au moins **50** victoires pour être considérés comme un "bon choix".
 
-Ces décisions sont arbitraires et basées sur mon jugement personnel. Je vous laisse le soin de changer certains de ces paramètres comme bon vous semble. Maintenant, voici la fonction qui nous permettra de tester notre approche.
+Ces décisions un peu arbitraires sont basées sur mon jugement personnel. Je vous laisse le soin de changer certains de ces paramètres comme bon vous semble. Maintenant, voici la fonction qui nous permettra de tester notre approche.
 
 
 
@@ -534,7 +538,7 @@ define_good_choice <- function(dt, player_window, player_min_pts, goalie_min_win
 }
 ```
 
-Afin de valider que notre approche a bel et bien le comportement souhaité, on peut jeter un apperçu aux 30 premiers choix du repêchage du 2005 et interpréter la colonne `good_pick`.
+Afin de valider que notre approche se comporte bel et bien comme souhaité, on peut jeter un apperçu aux 30 premiers choix du repêchage du 2005 et interpréter la colonne `good_pick`.
 
 
 ```r
@@ -593,7 +597,7 @@ dt_good_picks[draft_year == 2005,][order(draft_overall),][1:30, c("draft_year", 
 
 À partir de cet apperçu, on peut voir que notre approche n'est pas parfaite, mais nous donne quand même une bonne idée de quels joueurs ont été de "bons choix". Sidney Crosby apparait comme un "bon choix" (fiouuu). On pourrait débattre que Bobby Ryan est un "bon choix", mais Anze Kopitar ne serait pas d'accord 😉. Si vous vous demandez pour TJ Oshie, il a été doublé par Paul Stastny en 2ème ronde. Est-ce que je considère Paul Stastny meilleur que TJ Oshie, pas nécéssairement, mais forcé d'admettre que le premier a fait près de 200 points de plus que le second.
 
-Maintenant, voyons voir quelles équipes ont réalisé le plus grand nombre de "bons choix" selon l'approche que nous proposons. Puisque certains "bons choix" pourrait être considérés meilleurs que d'autres "bons choix", j'ai pris le soin d'ajouter le nombre de points réalisés par ces joueurs dans le graphique ci-dessous.
+Maintenant, voyons voir quelles équipes ont réalisé le plus grand nombre de "bons choix" selon l'approche que nous proposons. Puisque certains "bons choix" pourraient être considérés meilleurs que d'autres "bons choix", j'ai pris le soin d'ajouter le nombre de points réalisés par ces joueurs dans le graphique ci-dessous.
 
 
 ```r
@@ -641,7 +645,7 @@ dt_good_picks[good_pick == TRUE & team_drafted == "CBJ", (columns_show), with = 
 ## 11:       2015             8      Zach Werenski           173           0
 ```
 
-Il y a quand même quelques bons choix. Par contre, certains de ces joueurs ont peut-être profiter des failles de notre approche (Derek Dorsett ou John Moore par exemple). Je suis curieux de jeter un coup d'oeil à l'Avalanche du Colorado, qui ont realisé un peu moins de "bons choix", mais ceux-ci semblent avoir performés davantage:
+Il y a quand même quelques bons choix. Par contre, certains de ces joueurs ont peut-être profiter des failles de notre approche (Derek Dorsett ou John Moore par exemple). Je suis curieux de jeter un coup d'oeil à l'Avalanche du Colorado, qui ont realisé un peu moins de "bons choix".
 
 
 ```r
@@ -661,7 +665,7 @@ dt_good_picks[good_pick == TRUE & team_drafted == "COL", (columns_show), with = 
 ## 8:       2015            10    Mikko Rantanen           260           0
 ```
 
-Un peu moins de "bons choix" que les Blue Jackets, mais ceux-ci semblent avoir eu un impact bien plus grand. On peut dire que l'Avalanche ont su profiter de leurs hauts choix au repêchage ...
+Un peu moins de "bons choix" que les Blue Jackets, mais ceux-ci semblent avoir eu un impact bien plus grand. On peut dire que l'Avalanche a su profiter de leurs hauts choix au repêchage ...
 
 Finalement, aviez-vous réussi à deviner quels étaient les 5 "bons choix" de notre Sainte-Flanelle? 
 
@@ -701,10 +705,11 @@ Pour conclure cet article, je dois vous avouez que je continu de croire que le r
 
 ### Les grands "perdants" 👎
 
-- **Sabres de Buffalo**: Ils sont au 5ème rang pour le nombre de choix au toal, (dont 13 en 1er ronde), mais ils arrivent relativement loin dans le classement pour le nombre de points récoltés (21ème rang) ou pour les victoires des gardiens (19ème rang). Ils sont également en bas de peloton pour le nombre de "bons choix". 
+- **Sabres de Buffalo**: Ils sont au 5ème rang pour le nombre de choix au toal, (dont 13 en 1ère ronde), mais ils arrivent relativement loin dans le classement pour le nombre de points récoltés (21ème rang) ou pour les victoires des gardiens (19ème rang). Ils sont également en bas de peloton pour le nombre de "bons choix". 
 - **Jets de Winnipeg (et Atlanta)**: Ils sont au-dessus de la moyenne pour le nombre de choix total (83) et nombre de choix de première ronde (12). Ils se retrouvent en bas de classement pour la majorité des métriques: matchs (26ème rang), points (25ème rang). Seul point positif, les gardiens.
 - **Canucks de Vancouver**: Même s'ils ont eu peu de choix au total (68), ils n'ont pas su tirer leur épingle du jeu, et ce, dans aucune catégorie. Avec 12 choix de 1ère ronde, versus une moyenne de 11 dans la ligue, on aurait pu s'attendre à de meilleures performances. Le nombre de matchs joués par leurs joueurs repêchés est catastrophique ...
 - **Coyotes de l'Arizona (et Phoenix)**: On ne peut pas dire que leurs performances au repêchage est  "désastreuse", mais étant l'équipe avec le plus de choix de premières rondes (16), je me serais attendu à mieux.
 
 
 Mention honorable pour les "mal-aimés" Oilers d'Edmonton. Ils ont certainement eu beaucoup de choix "faciles", mais ils arrivent quand même au premier rang pour le nombre de points.
+
