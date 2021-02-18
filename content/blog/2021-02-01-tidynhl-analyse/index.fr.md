@@ -105,13 +105,7 @@ dt_meta_player <- tidy_players_meta(
   players_id = unique(dt_draft$player_id), 
   keep_id = TRUE
 )
-```
 
-```
-## Warning in (function (name, value) : actual class for column 'inTop100Alltime' is ['logical'] while expected class is ['integer'], please open an issue with a reprex throwing this warning
-```
-
-```r
 # Fusionner les équipes déménagés
 dt_meta_player <- merge_moved_teams(dt_meta_player)
 
