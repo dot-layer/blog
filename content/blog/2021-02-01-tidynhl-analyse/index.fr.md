@@ -695,12 +695,12 @@ Pour conclure cet article, je dois vous avouez que je continu de croire que le r
 
 - **Avalanche du Colorodo:** On peut voir leurs "bon choix" plus haut. Ils ont bien saisis leur chance sur leurs choix de 1ère ronde, considérant qu'ils en ont eu que 9 alors que la moyenne de la ligue se situe à 11.
 - **Bruins de Boston**: Arrivant au 26ème rang pour le nombre de choix, ils sont pourtant au 6ème rang pour les points récoltés par les joueurs repêchés. Ils sont également dans le premier tier pour le nombre de "bons choix".
-- **Penguins de Pittsburg**: Arrivent au dernier rang dans la ligue pour le nombre de choix au total (avec 66 choix), ils ont fait une bonne utilisation de leurs choix. On peut les voir assez haut pour les points récoltés (12ème rang) et pour les victores des gardiens (9ème rang).
+- **Penguins de Pittsburg**: Arrivent au dernier rang dans la ligue pour le nombre de choix au total (avec 66 choix), mais ils ont fait une bonne utilisation de leurs choix. On peut les voir assez haut pour les points récoltés (12ème rang) et pour les victores des gardiens (9ème rang).
 - **Kings de Los Angeles**: Certes, ils ont eu beaucoup de choix au total (86), mais ils ont su répondre à l'appel dans la majorité des facettes: matchs (1er rang), points (2ème rang) et victoires des gardiens (2ème rang).
 
 ### Les grands "perdants" 👎
 
-- **Sabres de Buffalo**: Ils sont au 5ème rang pour le nombre de choix au toal, (dont 13 en 1ère ronde), mais ils arrivent relativement loin dans le classement pour le nombre de points récoltés (21ème rang) ou pour les victoires des gardiens (19ème rang). Ils sont également en bas de peloton pour le nombre de "bons choix". 
+- **Sabres de Buffalo**: Ils sont au 5ème rang pour le nombre de choix au total, (dont 13 en 1ère ronde), mais ils arrivent relativement loin dans le classement pour le nombre de points récoltés (21ème rang) ou pour les victoires des gardiens (19ème rang). Ils sont également en bas de peloton pour le nombre de "bons choix". 
 - **Jets de Winnipeg (et Atlanta)**: Ils sont au-dessus de la moyenne pour le nombre de choix total (83) et nombre de choix de première ronde (12). Ils se retrouvent en bas de classement pour la majorité des métriques: matchs (26ème rang), points (25ème rang). Seul point positif, les gardiens.
 - **Canucks de Vancouver**: Même s'ils ont eu peu de choix au total (68), ils n'ont pas su tirer leur épingle du jeu, et ce, dans aucune catégorie. Avec 12 choix de 1ère ronde, versus une moyenne de 11 dans la ligue, on aurait pu s'attendre à de meilleures performances. Le nombre de matchs joués par leurs joueurs repêchés est catastrophique ...
 - **Coyotes de l'Arizona (et Phoenix)**: On ne peut pas dire que leurs performances au repêchage est  "désastreuse", mais étant l'équipe avec le plus de choix de premières rondes (16), je me serais attendu à mieux.
