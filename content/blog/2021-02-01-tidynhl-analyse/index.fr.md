@@ -429,7 +429,7 @@ aggregate_stats(
     theme(axis.title.y = element_blank(),
           legend.position = "bottom") +
     labs(
-      title = "Nombre de victoires obtenus par les gardiens repêchés par équipe",
+      title = "Nombre de victoires obtenues par les gardiens repêchés par équipe",
       subtitle = "Saisons 2005 à 2015 (saison régulière seulement)",
       x = "Nombre de victoires"
     )
