@@ -15,7 +15,7 @@ output:
     keep_md: yes
 featured: "hockey-draft-post.jpg"
 featuredpath: "img/headers/"
-reading_time: 10
+reading_time: 15
 ---
 
 
