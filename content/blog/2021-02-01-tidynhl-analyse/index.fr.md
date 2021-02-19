@@ -1,5 +1,5 @@
 ---
-title: "Repêchage de la LNH: est-ce vraiment une science inexacte?"
+title: "Repêchage de la LNH : est-ce vraiment une science inexacte?"
 slug: "tidy-nhl-draft-analysis"
 author: "Stéphane Caron"
 description: ""
@@ -61,7 +61,7 @@ dt_draft <- tidy_drafts(
 
 # Enlever les choix sans joueurs (exceptionnels)
 # Par exemple: NJ Devils perdu leur choix en 2011 (https://www.cbssports.com/nhl/news/devils-kovalchuk-penalty-reduced-get-first-round-pick-back/)
-dt_draft <- dt_draft[!is.na(player_id),]
+dt_draft <- dt_draft[!is.na(player_id)]
 
 # On se crée une fonction pour fusionner les équipes déménagées (ou renommées)
 # Nettoyage de données
@@ -75,7 +75,7 @@ merge_moved_teams <- function(dt) {
 }
 
 # Fusionner les équipes déménagés
-dt_draft <- merge_moved_teams(dt_draft)
+merge_moved_teams(dt_draft)
 
 # Afficher un extrait des données
 dt_draft[]
@@ -102,19 +102,18 @@ Afin d'avoir plus d'informations sur les joueurs, nous allons également importe
 ```r
 # Obtenir les metadonnées sur les joueurs
 dt_meta_player <- tidy_players_meta(
-  players_id = unique(dt_draft$player_id), 
+  players_id = dt_draft$player_id, 
   keep_id = TRUE
 )
 
-# Fusionner les équipes déménagés
-dt_meta_player <- merge_moved_teams(dt_meta_player)
+# Fusionner les équipes déménagées
+merge_moved_teams(dt_meta_player)
 
-dt_all <- merge(
-  x = dt_draft,
-  y = dt_meta_player[, c("player_id", "player_position_type")],
-  by = c("player_id"),
-  all.x = TRUE
-)
+cols <- c("player_id", "player_position_type")
+dt_draft[dt_meta_player, 
+         (cols) := mget(cols), 
+         on = .(player_id)]
+
 
 # Afficher un extrait des métadonnées
 dt_meta_player[]
@@ -141,14 +140,14 @@ Nous allons ensuite importer les statstiques individuelles de ces joueurs repêc
 ```r
 # Obtenir les données de statistiques individuelles des joueurs
 dt_skaters_stats <- tidy_skaters_stats(
-  players_id = unique(dt_all[player_position_type %in% c("F", "D")]$player_id),
+  players_id = dt_draft[player_position_type %in% c("F", "D"), player_id],
   playoffs = FALSE,
   keep_id = TRUE
 )
 
 # Obtenir les données de statistiques individuelles des joueurs
 dt_goalies_stats <- tidy_goalies_stats(
-  players_id = unique(dt_all[player_position_type == "G"]$player_id),
+  players_id = dt_draft[player_position_type == "G", player_id],
   playoffs = FALSE,
   keep_id = TRUE
 )
@@ -169,11 +168,11 @@ dt_stats[]
 ##    4:   8470996   Danny Syvret  20082009      2008-09     regular       4               PHI            2            0              0             0               -1          0  18.850000            27          0          0            0              1           1               0                 0                0     18.850000               0                 0                0      0.000000               0                 0                0      0.000000           NA             NA          NA            NA          NA        NA              NA                 NA                 NA             NA         NA         NA                    NA                    NA                NA                    NA                    NA                NA                    NA                    NA                NA
 ##    5:   8470996   Danny Syvret  20092010      2009-10     regular       4               PHI           21            2              2             4                1         12 262.050000           357          0          0           14             20           6               2                 2                4    257.516667               0                 0                0      2.583333               0                 0                0      1.950000           NA             NA          NA            NA          NA        NA              NA                 NA                 NA             NA         NA         NA                    NA                    NA                NA                    NA                    NA                NA                    NA                    NA                NA
 ##   ---                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
-## 6701:   8478492  Ilya Samsonov  20202021      2020-21     regular      15               WSH           NA           NA             NA            NA               NA         NA         NA            NA         NA         NA           NA             NA          NA              NA                NA               NA            NA              NA                NA               NA            NA              NA                NA               NA            NA            2              2           1             0           0         1               0                 53                  7      0.8679245   3.360000   125.0000                    43                     6         0.8604651                     8                     1         0.8750000                     2                     0                 1
-## 6702:   8478499      Adin Hill  20172018      2017-18     regular      53               ARI           NA           NA             NA            NA               NA         NA         NA            NA         NA         NA           NA             NA          NA              NA                NA               NA            NA              NA                NA               NA            NA              NA                NA               NA            NA            4              4           1             3           0         0               0                129                 14      0.8914729   3.489097   240.7500                   118                    12         0.8983051                     9                     2         0.7777778                     2                     0                 1
-## 6703:   8478499      Adin Hill  20182019      2018-19     regular      53               ARI           NA           NA             NA            NA               NA         NA         NA            NA         NA         NA           NA             NA          NA              NA                NA               NA            NA              NA                NA               NA            NA              NA                NA               NA            NA           13             11           7             5           0         0               1                322                 32      0.9006211   2.757234   696.3500                   271                    27         0.9003690                    41                     5         0.8780488                    10                     0                 1
-## 6704:   8478499      Adin Hill  20192020      2019-20     regular      53               ARI           NA           NA             NA            NA               NA         NA         NA            NA         NA         NA           NA             NA          NA              NA                NA               NA            NA              NA                NA               NA            NA              NA                NA               NA            NA           13              9           2             4           0         3               0                343                 28      0.9183673   2.621859   640.7667                   284                    19         0.9330986                    45                     9         0.8000000                    14                     0                 1
-## 6705:   8478916   Joey Daccord  20182019      2018-19     regular       9               OTT           NA           NA             NA            NA               NA         NA         NA            NA         NA         NA           NA             NA          NA              NA                NA               NA            NA              NA                NA               NA            NA              NA                NA               NA            NA            1              1           0             1           0         0               0                 40                  5      0.8750000   5.000000    60.0000                    35                     3         0.9142857                     3                     2         0.3333333                     2                     0                 1
+## 6717:   8478492  Ilya Samsonov  20202021      2020-21     regular      15               WSH           NA           NA             NA            NA               NA         NA         NA            NA         NA         NA           NA             NA          NA              NA                NA               NA            NA              NA                NA               NA            NA              NA                NA               NA            NA            2              2           1             0           0         1               0                 53                  7      0.8679245   3.360000   125.0000                    43                     6         0.8604651                     8                     1         0.8750000                     2                     0                 1
+## 6718:   8478499      Adin Hill  20172018      2017-18     regular      53               ARI           NA           NA             NA            NA               NA         NA         NA            NA         NA         NA           NA             NA          NA              NA                NA               NA            NA              NA                NA               NA            NA              NA                NA               NA            NA            4              4           1             3           0         0               0                129                 14      0.8914729   3.489097   240.7500                   118                    12         0.8983051                     9                     2         0.7777778                     2                     0                 1
+## 6719:   8478499      Adin Hill  20182019      2018-19     regular      53               ARI           NA           NA             NA            NA               NA         NA         NA            NA         NA         NA           NA             NA          NA              NA                NA               NA            NA              NA                NA               NA            NA              NA                NA               NA            NA           13             11           7             5           0         0               1                322                 32      0.9006211   2.757234   696.3500                   271                    27         0.9003690                    41                     5         0.8780488                    10                     0                 1
+## 6720:   8478499      Adin Hill  20192020      2019-20     regular      53               ARI           NA           NA             NA            NA               NA         NA         NA            NA         NA         NA           NA             NA          NA              NA                NA               NA            NA              NA                NA               NA            NA              NA                NA               NA            NA           13              9           2             4           0         3               0                343                 28      0.9183673   2.621859   640.7667                   284                    19         0.9330986                    45                     9         0.8000000                    14                     0                 1
+## 6721:   8478916   Joey Daccord  20182019      2018-19     regular       9               OTT           NA           NA             NA            NA               NA         NA         NA            NA         NA         NA           NA             NA          NA              NA                NA               NA            NA              NA                NA               NA            NA              NA                NA               NA            NA            1              1           0             1           0         0               0                 40                  5      0.8750000   5.000000    60.0000                    35                     3         0.9142857                     3                     2         0.3333333                     2                     0                 1
 ```
 
 Finalement, nous allons appliquer quelques transformations et manipulations à ces
@@ -196,10 +195,12 @@ aggregate_stats <- function(dt, old_by_names, new_by_names) {
   dt_aggregated[, player_games := ifelse(is.na(skater_games), 0, skater_games) + ifelse(is.na(goalie_games), 0, goalie_games)]
   setnames(dt_aggregated, old_by_names, new_by_names)
   
+  dt_aggregated[]
+  
 }
 
 # Fusionner les équipes déménagés
-dt_stats <- merge_moved_teams(dt_stats)
+merge_moved_teams(dt_stats)
 
 # Aggrégé les données par équipe jouée et joindre les données
 dt_stats_aggregated <- aggregate_stats(
@@ -208,23 +209,22 @@ dt_stats_aggregated <- aggregate_stats(
   new_by_names = c("player_id", "team_played")
 )
 
-dt_all <- merge(
-  x = dt_all,
-  y = dt_stats_aggregated,
-  by = c("player_id"),
-  all.x = TRUE
-)
+dt_all <- merge(dt_draft,
+                dt_stats_aggregated,
+                by = "player_id", 
+                all.x = TRUE)
+
 setnames(dt_all, old = "team_abbreviation", new = "team_drafted")
 
 # Afficher un extrait des données pour un joueur
-dt_all[player_name == "P.K. Subban",]
+dt_all[player_name == "P.K. Subban"]
 ```
 
 ```
 ##    player_id draft_year draft_round draft_pick draft_overall team_id team_drafted player_name amateur_league_name amateur_team_name player_position_type team_played skater_points skater_games goalie_games goalie_wins player_games
 ## 1:   8474056       2007           2         13            43       8          MTL P.K. Subban                 OHL        Belleville                    D         MTL           278          434            0           0          434
 ## 2:   8474056       2007           2         13            43       8          MTL P.K. Subban                 OHL        Belleville                    D         NSH           130          211            0           0          211
-## 3:   8474056       2007           2         13            43       8          MTL P.K. Subban                 OHL        Belleville                    D         NJD            21           77            0           0           77
+## 3:   8474056       2007           2         13            43       8          MTL P.K. Subban                 OHL        Belleville                    D         NJD            22           78            0           0           78
 ```
 
 Maintenant que nous avons structuré les données dans un format étant plus facile à
@@ -264,12 +264,12 @@ head(dt_per_team[])
 
 ```
 ##    team_drafted nb_picks nb_1st_round_picks nb_games_played nb_points nb_wins
-## 1:          NYI       87                 14           10804      4785     128
-## 2:          LAK       86                 10           12863      4834     511
-## 3:          SJS       78                  9            9672      3754      65
-## 4:          CBJ       84                 13           12250      4542     302
-## 5:          EDM       80                 13           10502      5129       0
-## 6:          NYR       71                  8            8072      3193      15
+## 1:          NYI       87                 14           10864      4808     129
+## 2:          LAK       86                 10           12913      4856     513
+## 3:          SJS       78                  9            9708      3770      65
+## 4:          CBJ       84                 13           12294      4564     303
+## 5:          EDM       80                 13           10545      5150       0
+## 6:          NYR       71                  8            8112      3204      15
 ```
 
 Maintenant que nous avons les données aggrégées par équipe, nous pouvons
@@ -360,7 +360,9 @@ dt_stats_position <- aggregate_stats(
   old_by_names = c("team_drafted", "player_position_type"),
   new_by_names = c("team_drafted", "player_position_type")
 )
-dt_stats_position <- merge(dt_stats_position, dt_per_team[, c("team_drafted", "nb_points")], by = "team_drafted", all.x = TRUE)
+
+cols <- c("team_drafted", "nb_points")
+dt_stats_position[dt_per_team, (cols) := mget(cols), on = .(team_drafted)]
 
 dt_stats_position[player_position_type %in% c("F", "D"),] %>%
   ggplot(
@@ -388,7 +390,7 @@ Dans le graphique ci-dessus, les équipes sont ordonnées selon le nombre de poi
 
 
 ```r
-unique(dt_all[team_drafted == "ANA" & player_position_type == "D",][order(-skater_points)]$player_name)[1:5]
+unique(dt_all[team_drafted == "ANA" & player_position_type == "D"][order(-skater_points), player_name])[1:5]
 ```
 
 ```
@@ -396,7 +398,7 @@ unique(dt_all[team_drafted == "ANA" & player_position_type == "D",][order(-skate
 ```
 
 ```r
-unique(dt_all[team_drafted == "NSH" & player_position_type == "D",][order(-skater_points)]$player_name)[1:5]
+unique(dt_all[team_drafted == "NSH" & player_position_type == "D"][order(-skater_points), player_name])[1:5]
 ```
 
 ```
@@ -415,7 +417,7 @@ aggregate_stats(
   dt = dt_all,
   old_by_names = c("team_drafted", "player_position_type"),
   new_by_names = c("team_drafted", "player_position_type")
-)[player_position_type == "G",] %>%
+)[player_position_type == "G"] %>%
   ggplot(
     mapping = aes(
       x = goalie_wins,
@@ -441,7 +443,7 @@ Pour ceux qui pensaient que Carey Price permettrait au Canadiens d'être au prem
 
 
 ```r
-unique(dt_all[team_drafted == "WSH" & player_position_type == "G",][order(-goalie_wins)]$player_name)[1:5]
+unique(dt_all[team_drafted == "WSH" & player_position_type == "G"][order(-goalie_wins), player_name])[1:5]
 ```
 
 ```
@@ -528,7 +530,7 @@ define_good_choice <- function(dt, player_window, player_min_pts, goalie_min_win
   
   }
   
-  return(dt)
+  dt[]
   
 }
 ```
@@ -552,23 +554,23 @@ dt_good_picks <- define_good_choice(
 )
 
 # Apercu des 30 premiers choix du repechage de 2005
-dt_good_picks[draft_year == 2005,][order(draft_overall),][1:30, c("draft_year", "draft_overall", "team_drafted", "player_name", "player_position_type", "skater_points", "goalie_wins", "good_pick")]
+dt_good_picks[draft_year == 2005][order(draft_overall)][1:30, .(draft_year, draft_overall, team_drafted, player_name, player_position_type, skater_points, goalie_wins, good_pick)]
 ```
 
 ```
 ##     draft_year draft_overall team_drafted      player_name player_position_type skater_points goalie_wins good_pick
-##  1:       2005             1          PIT    Sidney Crosby                    F          1272           0      TRUE
-##  2:       2005             2          ANA       Bobby Ryan                    F           562           0     FALSE
+##  1:       2005             1          PIT    Sidney Crosby                    F          1275           0      TRUE
+##  2:       2005             2          ANA       Bobby Ryan                    F           563           0     FALSE
 ##  3:       2005             3          CAR     Jack Johnson                    D           302           0      TRUE
 ##  4:       2005             4          MIN   Benoit Pouliot                    F           263           0     FALSE
-##  5:       2005             5          MTL      Carey Price                    G             0         352      TRUE
+##  5:       2005             5          MTL      Carey Price                    G             0         353      TRUE
 ##  6:       2005             6          CBJ    Gilbert Brule                    F            95           0     FALSE
 ##  7:       2005             7          CHI      Jack Skille                    F            96           0     FALSE
 ##  8:       2005             8          SJS  Devin Setoguchi                    F           261           0     FALSE
 ##  9:       2005             9          OTT        Brian Lee                    D            36           0     FALSE
 ## 10:       2005            10          VAN      Luc Bourdon                    D             2           0     FALSE
-## 11:       2005            11          LAK     Anze Kopitar                    F           965           0      TRUE
-## 12:       2005            12          NYR       Marc Staal                    D           191           0     FALSE
+## 11:       2005            11          LAK     Anze Kopitar                    F           968           0      TRUE
+## 12:       2005            12          NYR       Marc Staal                    D           192           0     FALSE
 ## 13:       2005            13          BUF   Marek Zagrapan                    F             0           0     FALSE
 ## 14:       2005            14          WSH    Sasha Pokulok                    D             0           0     FALSE
 ## 15:       2005            15          NYI     Ryan O'Marra                    F             7           0     FALSE
@@ -580,8 +582,8 @@ dt_good_picks[draft_year == 2005,][order(draft_overall),][1:30, c("draft_year", 
 ## 21:       2005            21          TOR      Tuukka Rask                    G             0         297     FALSE
 ## 22:       2005            22          BOS     Matt Lashoff                    D            16           0     FALSE
 ## 23:       2005            23          NJD  Niclas Bergfors                    F            83           0     FALSE
-## 24:       2005            24          STL       T.J. Oshie                    F           574           0     FALSE
-## 25:       2005            25          EDM  Andrew Cogliano                    F           425           0     FALSE
+## 24:       2005            24          STL       T.J. Oshie                    F           575           0     FALSE
+## 25:       2005            25          EDM  Andrew Cogliano                    F           426           0     FALSE
 ## 26:       2005            26          CGY      Matt Pelech                    F             4           0     FALSE
 ## 27:       2005            27          WSH       Joe Finley                    D             1           0     FALSE
 ## 28:       2005            28          DAL    Matt Niskanen                    D           356           0      TRUE
@@ -590,7 +592,7 @@ dt_good_picks[draft_year == 2005,][order(draft_overall),][1:30, c("draft_year", 
 ##     draft_year draft_overall team_drafted      player_name player_position_type skater_points goalie_wins good_pick
 ```
 
-À partir de cet apperçu, on peut voir que notre approche n'est pas parfaite, mais nous donne quand même une bonne idée de quels joueurs ont été de "bons choix". Sidney Crosby apparait comme un "bon choix" (fiouuu). On pourrait débattre que Bobby Ryan est un "bon choix", mais Anze Kopitar ne serait pas d'accord 😉. Si vous vous demandez pour TJ Oshie, il a été doublé par Paul Stastny en 2ème ronde. Est-ce que je considère Paul Stastny meilleur que TJ Oshie, pas nécéssairement, mais forcé d'admettre que le premier a fait près de 200 points de plus que le second.
+À partir de cet apperçu, on peut voir que notre approche n'est pas parfaite, mais nous donne quand même une bonne idée de quels joueurs ont été de "bons choix". Sidney Crosby apparait comme un "bon choix" (fiouuu). On pourrait débattre que Bobby Ryan est un "bon choix", mais Anze Kopitar ne serait pas d'accord 😉. Si vous vous demandez pour TJ Oshie, il a été doublé par Paul Stastny en 2ème ronde. Est-ce que je considère Paul Stastny meilleur que TJ Oshie, pas nécéssairement, mais force est d'admettre que le premier a fait près de 200 points de plus que le second.
 
 Maintenant, voyons voir quelles équipes ont réalisé le plus grand nombre de "bons choix" selon l'approche que nous proposons. Puisque certains "bons choix" pourraient être considérés meilleurs que d'autres "bons choix", j'ai pris le soin d'ajouter le nombre de points réalisés par ces joueurs dans le graphique ci-dessous.
 
@@ -622,22 +624,22 @@ On peut voir que certaines équipes ont eu plus de flair que d'autres. Les Blue 
 columns_show <- c("draft_year", "draft_overall", "player_name", "skater_points", "goalie_wins")
 
 # Bons choix des Blue Jackets
-dt_good_picks[good_pick == TRUE & team_drafted == "CBJ", (columns_show), with = F]
+dt_good_picks[good_pick == TRUE & team_drafted == "CBJ", .SD, .SDcols = columns_show]
 ```
 
 ```
 ##     draft_year draft_overall        player_name skater_points goalie_wins
-##  1:       2005            67       Kris Russell           237           0
+##  1:       2005            67       Kris Russell           238           0
 ##  2:       2006           189      Derek Dorsett           127           0
 ##  3:       2006            69        Steve Mason             0         205
 ##  4:       2007             7      Jakub Voracek           753           0
 ##  5:       2008           127       Matt Calvert           201           0
-##  6:       2008           157       Cam Atkinson           374           0
+##  6:       2008           157       Cam Atkinson           381           0
 ##  7:       2009            21         John Moore           115           0
 ##  8:       2010             4      Ryan Johansen           446           0
-##  9:       2013            89 Oliver Bjorkstrand           144           0
-## 10:       2013            14      Alex Wennberg           205           0
-## 11:       2015             8      Zach Werenski           173           0
+##  9:       2013            89 Oliver Bjorkstrand           146           0
+## 10:       2013            14      Alex Wennberg           208           0
+## 11:       2015             8      Zach Werenski           174           0
 ```
 
 Il y a quand même quelques bons choix. Par contre, certains de ces joueurs ont peut-être profiter des failles de notre approche (Derek Dorsett ou John Moore par exemple). Je suis curieux de jeter un coup d'oeil à l'Avalanche du Colorado, qui ont realisé un peu moins de "bons choix".
@@ -645,19 +647,19 @@ Il y a quand même quelques bons choix. Par contre, certains de ces joueurs ont 
 
 ```r
 # Bons choix de l'Avalanche
-dt_good_picks[good_pick == TRUE & team_drafted == "COL", (columns_show), with = F]
+dt_good_picks[good_pick == TRUE & team_drafted == "COL", .SD, .SDcols = columns_show]
 ```
 
 ```
 ##    draft_year draft_overall       player_name skater_points goalie_wins
-## 1:       2005            44      Paul Stastny           756           0
+## 1:       2005            44      Paul Stastny           759           0
 ## 2:       2007            14 Kevin Shattenkirk           387           0
-## 3:       2009            33     Ryan O'Reilly           572           0
-## 4:       2009             3      Matt Duchene           638           0
-## 5:       2009            64      Tyson Barrie           357           0
+## 3:       2009            33     Ryan O'Reilly           574           0
+## 4:       2009             3      Matt Duchene           640           0
+## 5:       2009            64      Tyson Barrie           360           0
 ## 6:       2011             2 Gabriel Landeskog           485           0
-## 7:       2013             1  Nathan MacKinnon           509           0
-## 8:       2015            10    Mikko Rantanen           260           0
+## 7:       2013             1  Nathan MacKinnon           510           0
+## 8:       2015            10    Mikko Rantanen           261           0
 ```
 
 Un peu moins de "bons choix" que les Blue Jackets, mais ceux-ci semblent avoir eu un impact bien plus grand. On peut dire que l'Avalanche a su profiter de leurs hauts choix au repêchage ...
@@ -667,16 +669,16 @@ Finalement, aviez-vous réussi à deviner quels étaient les 5 "bons choix" de n
 
 ```r
 # Bons choix des Canadiens
-dt_good_picks[good_pick == TRUE & team_drafted == "MTL", (columns_show), with = F]
+dt_good_picks[good_pick == TRUE & team_drafted == "MTL", .SD, .SDcols = columns_show]
 ```
 
 ```
 ##    draft_year draft_overall       player_name skater_points goalie_wins
-## 1:       2005             5       Carey Price             0         352
+## 1:       2005             5       Carey Price             0         353
 ## 2:       2005           200  Sergei Kostitsyn           176           0
-## 3:       2007            43       P.K. Subban           429           0
-## 4:       2007            22    Max Pacioretty           565           0
-## 5:       2010           147 Brendan Gallagher           341           0
+## 3:       2007            43       P.K. Subban           430           0
+## 4:       2007            22    Max Pacioretty           567           0
+## 5:       2010           147 Brendan Gallagher           343           0
 ```
 
 Pas trop mal, mais sur 10 années de repêchages, on aurait bien aimé avoir quelques "bons choix" de plus (surtout en première ronde) ...
@@ -689,21 +691,21 @@ Pas trop mal, mais sur 10 années de repêchages, on aurait bien aimé avoir que
 
 # Conclusion {#conclusion}
 
-Pour conclure cet article, je dois vous avouez que je continu de croire que le repêchage est une science inexacte. Il est difficile de tirer des conclusions évidentes étant donné les nombreuses composantes à prendre en compte. Sans entrer trop dans les détails, il y a le nombre de choix et les positions des joueurs repêchés. Certains joueurs font moins de points, mais apportent une composante de plus à une équipe, comme le leadership ou même l'aspect défensif. Toutefois, selon mes analyses, voici les équipes que je considère comme les grands "gagnants" et "perdants" ainsi que pourquoi.
+Pour conclure cet article, je dois vous avouer que je continue de croire que le repêchage est une science inexacte. Il est difficile de tirer des conclusions évidentes étant donné les nombreuses composantes à prendre en compte. Sans entrer trop dans les détails, il y a le nombre de choix et les positions des joueurs repêchés. Certains joueurs font moins de points, mais apportent une composante de plus à une équipe, comme le leadership ou même l'aspect défensif. Toutefois, selon mes analyses, voici les équipes que je considère comme les grands "gagnants" et "perdants" ainsi que pourquoi.
 
 ## Les grands "gagnants" 👍
 
-- **Avalanche du Colorodo:** On peut voir leurs "bon choix" plus haut. Ils ont bien saisis leur chance sur leurs choix de 1ère ronde, considérant qu'ils en ont eu que 9 alors que la moyenne de la ligue se situe à 11.
-- **Bruins de Boston**: Arrivant au 26ème rang pour le nombre de choix, ils sont pourtant au 6ème rang pour les points récoltés par les joueurs repêchés. Ils sont également dans le premier tier pour le nombre de "bons choix".
-- **Penguins de Pittsburg**: Arrivent au dernier rang dans la ligue pour le nombre de choix au total (avec 66 choix), mais ils ont fait une bonne utilisation de leurs choix. On peut les voir assez haut pour les points récoltés (12ème rang) et pour les victores des gardiens (9ème rang).
+- **Avalanche du Colorodo:** On peut voir leurs "bons choix" plus haut. Ils ont bien saisi leurs chances avec leurs choix de 1ère ronde, considérant qu'ils n'en ont eu que 9 alors que la moyenne de la ligue se situe à 11.
+- **Bruins de Boston**: Arrivant au 26ème rang pour le nombre de choix, ils sont pourtant au 6ème rang pour les points récoltés par les joueurs repêchés. Ils sont également dans le premier tiers pour le nombre de "bons choix".
+- **Penguins de Pittsburg**: Ils arrivent au dernier rang dans la ligue pour le nombre de choix au total (avec 66 choix), mais ils ont fait une bonne utilisation de leurs choix. On peut les voir assez haut pour les points récoltés (12ème rang) et pour les victores des gardiens (9ème rang).
 - **Kings de Los Angeles**: Certes, ils ont eu beaucoup de choix au total (86), mais ils ont su répondre à l'appel dans la majorité des facettes: matchs (1er rang), points (2ème rang) et victoires des gardiens (2ème rang).
 
 ### Les grands "perdants" 👎
 
 - **Sabres de Buffalo**: Ils sont au 5ème rang pour le nombre de choix au total, (dont 13 en 1ère ronde), mais ils arrivent relativement loin dans le classement pour le nombre de points récoltés (21ème rang) ou pour les victoires des gardiens (19ème rang). Ils sont également en bas de peloton pour le nombre de "bons choix". 
-- **Jets de Winnipeg (et Atlanta)**: Ils sont au-dessus de la moyenne pour le nombre de choix total (83) et nombre de choix de première ronde (12). Ils se retrouvent en bas de classement pour la majorité des métriques: matchs (26ème rang), points (25ème rang). Seul point positif, les gardiens.
+- **Jets de Winnipeg (et Atlanta)**: Ils sont au-dessus de la moyenne pour le nombre de choix total (83) et nombre de choix de première ronde (12). Ils se retrouvent en bas de classement pour la majorité des métriques: matchs (26ème rang), points (24ème rang). Seul point positif, les gardiens.
 - **Canucks de Vancouver**: Même s'ils ont eu peu de choix au total (68), ils n'ont pas su tirer leur épingle du jeu, et ce, dans aucune catégorie. Avec 12 choix de 1ère ronde, versus une moyenne de 11 dans la ligue, on aurait pu s'attendre à de meilleures performances. Le nombre de matchs joués par leurs joueurs repêchés est catastrophique ...
-- **Coyotes de l'Arizona (et Phoenix)**: On ne peut pas dire que leurs performances au repêchage est  "désastreuse", mais étant l'équipe avec le plus de choix de premières rondes (16), je me serais attendu à mieux.
+- **Coyotes de l'Arizona (et Phoenix)**: On ne peut pas dire que leur performance est "désastreuse", mais étant l'équipe avec le plus de choix de premières rondes (16), je me serais attendu à mieux.
 
 
 Mention honorable pour les "mal-aimés" Oilers d'Edmonton. Ils ont certainement eu beaucoup de choix "faciles", mais ils arrivent quand même au premier rang pour le nombre de points.
