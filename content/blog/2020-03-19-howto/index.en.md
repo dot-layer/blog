@@ -9,6 +9,7 @@ tags: []
 description: "A template to contribute to the blog .Layer"
 featured: "howto-cover.png"
 featuredpath: "img/headers/"
+reading_time: ""
 ---
 
 Contributing to the blog has never been easier. First of all, it must be said that any submission, whatever its format (Markdown, Microsoft Word, Notepad, *name it*!), will be considered, and ultimately transcribed into Markdown by our team. We offer the option to submit an article [here](https://dotlayer.org/en/contribute), and we are already thinking of a way to review non-Markdown documents (possibly Google Docs). This being written, for those who would like to write and submit a post in the _conventional_ way, here is a simple procedure to get there.
@@ -50,6 +51,7 @@ tags: []
 description: "A template to contribute to the blog .Layer"
 featured: "howto-cover.png"
 featuredpath: "img/headers/"
+reading_time: ""
 ---
 ```
 The fields are almost all *self-explanatory*.
