@@ -9,6 +9,7 @@ tags: []
 description: "Un gabarit pour contribuer au blog .Layer"
 featured: "howto-cover.png"
 featuredpath: "img/headers/"
+reading_time: ""
 ---
 
 Contribuer au blog n'aura jamais été aussi facile. Tout d'abord, il faut dire que toute soumission, quel que soit son format (Markdown, Microsoft Word, Notepad, *name it*!), sera considérée, et ultimement transcrite en Markdown. On offre l'option de soumettre un article [ici](https://dotlayer.org/contribute) et on pense déjà à une façon de faire pour la révision des documents non-Markdown (possiblement Google Docs). Ceci étant écrit, pour ceux et celles qui voudraient écrire et soumettre un article de la façon _conventionnelle_, voici une procédure simple pour y arriver.
@@ -50,6 +51,7 @@ tags: []
 description: "Un gabarit pour contribuer au blog .Layer"
 featured: "howto-fr-cover.png"
 featuredpath: "img/headers/"
+reading_time: ""
 ---
 ```
 Les champs sont presque tous *self-explanatory*. 
