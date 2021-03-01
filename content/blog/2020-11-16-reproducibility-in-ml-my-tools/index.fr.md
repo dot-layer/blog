@@ -116,7 +116,7 @@ Figure 4 : Exemple de fichiers YAML lorsque vous utilisez une configuration hié
 Figure 5 : Exemple de répertoire de configuration hiérarchique pour gérer rapidement vos paramètres.
 
 ## Conclusion
-Le manque de reproductibilité de vos projets d'apprentissage automatique peut constituer un frein considérable à la mise en production de vos modèles. J'ai présenté deux solutions pour résoudre certains des problèmes de votre projet d'apprentissage automatique. Ces solutions vous aideront à mieux gérer vos configuration, expérimentations et vos résultats. Pour une présentation plus complète, voici mon [séminaire] (https://davebulaval.github.io/gestion-configuration-resultats/) à ce sujet.
+Le manque de reproductibilité de vos projets d'apprentissage automatique peut constituer un frein considérable à la mise en production de vos modèles. J'ai présenté deux solutions pour résoudre certains des problèmes de votre projet d'apprentissage automatique. Ces solutions vous aideront à mieux gérer vos configuration, expérimentations et résultats. Pour une présentation plus complète, voici mon [séminaire] (https://davebulaval.github.io/gestion-configuration-resultats/) à ce sujet.
 
 Bien sûr, d'autres améliorations sont possibles pour rendre vos projets plus reproductibles. Par exemple, la gestion des versions des jeux de données (voir [DVC](https://dvc.org/)), la gestion de votre flux de formation (voir [Poutyne](https://poutyne.org/) et [Neuraxle](https://www.neuraxle.org/)) et la réutilisabilité (voir [Docker](https://www.docker.com/)). 
 
