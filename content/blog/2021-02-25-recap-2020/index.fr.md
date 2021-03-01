@@ -20,7 +20,7 @@ Ce dernier point, celui des membres actifs, était sans aucun doute le dernier m
 
 - le droit de vote en assemblée lors de l'élection des administrateurs;
 - la priorité de réservation pour les événements .Layer;
-- _Bragger_ que tu supportes les activités d'une OSBL en science des données (probablement le plus cool de la liste).
+- _Bragger_ que tu supportes les activités d'une OSBL en science des données (de loin le plus cool de la liste).
 
 Une dizaine de personnes ont effectué les démarches pour devenir membres actifs (voir la liste [ici](https://github.com/dot-layer/charte-osbl/blob/master/LISTEMEMBRES.md)). Il est possible de s'y joindre en suivant cette [procédure](https://github.com/dot-layer/charte-osbl/blob/master/DEVENIRMEMBRE.md) qui se résume essentiellement à écrire à `david.beauchemin.5@ulaval.ca` et à faire un virement interac de 20$. 
 
