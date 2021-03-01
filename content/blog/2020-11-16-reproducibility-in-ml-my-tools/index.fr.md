@@ -73,7 +73,7 @@ training_settings:
     seed: 42
     device: "cuda:0"
 ```
-Figure 3 : Exemple de fichier YAML. [Voici](https://stackoverflow.com/a/1729545/7927776) une belle réponse de la différence entre les fichiers YAML et JSON (anglais).
+Figure 3 : Exemple de fichier YAML. [Voici](https://stackoverflow.com/a/1729545/7927776) une belle réponse Stack Overflow à propos de la différence entre les fichiers YAML et JSON (anglais).
 
 Deuxièmement, les paramètres doivent être hiérarchisés.  Je veux seulement utiliser les paramètres pour un cas spécifique sans être obligé d'avoir d'autres paramètres dont je n'ai pas besoin. Par exemple, si je veux comparer la performance en utilisant les optimiseurs SGD et Adam, j'utiliserai deux ensembles de paramètres : un taux d'apprentissage pour SGD et un taux d'apprentissage et des valeurs de bêta pour Adam. Si j'utilise Argparse, j'aurais besoin des paramètres bêta même si j'utilise SGD.
 
