@@ -55,7 +55,7 @@ En 2019 nous avions dit que "2020 s'annonce tout aussi occupée avec un meetup d
 
 _I guess not!_
 
-Finalement, nous avons _**seulement**_ eu le droit à un évènement meetup le 12 février chez Can-Explore. L'évènement fut un grand succès avec une cinquantaine de personnes. La gang de Meetup ML n'a pas décidé de faire d'évènement en ligne puisque la formule est très accès sur les échanges pendant et après les présentations. L'évènement nous semblait dénaturaliser de son essence et nous avons préféré concentrer nos efforts sur autre chose comme avancer nos 10 autres projets. Nous restons bien sûr à l'affut de tout changement et espérons en organiser un vers la fin de 2021.
+Finalement, nous avons _**seulement**_ eu le droit à un évènement meetup le 12 février chez Can-Explore. L'évènement fut un grand succès avec une cinquantaine de personnes. La gang de Meetup ML n'a pas décidé de faire d'évènement en ligne puisque la formule est très axée sur les échanges pendant et après les présentations. L'évènement nous semblait dénaturé de son essence et nous avons préféré concentrer nos efforts sur autre chose comme avancer nos 10 autres projets. Nous restons bien sûr à l'affut de tout changement et espérons en organiser un vers la fin de 2021.
 
 # Stage sur le projet Universal Data Tool.
 Pour 2020, nous avons eu un stagiaire en programmation durant 5 semaines. Il a travaillé sur le développement de fonctionnalité pour l'outil d'annotation de données [Universal Data Tool](https://universaldatatool.com/).Son travail a permis l'intégration de [plusieurs fonctionnalités](https://github.com/UniversalDataTool/universal-data-tool/issues?q=CedricJean) tel que la [gestion Cognito S3](https://github.com/UniversalDataTool/universal-data-tool/pull/103).
