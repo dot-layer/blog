@@ -28,7 +28,7 @@ Cela signifie que notre solution doit pouvoir être partagée entre pairs, et qu
 ## Gérer les résultats
 J'ai rencontré le problème de gérer mes résultats correctement lors de mon premier projet. Comme toute personne naïve, au lieu de lire le manuel d'utilisation "Comment gérer les résultats comme un champion", j'ai simplement forcé le passage en créant des fichiers `.txt` de mes résultats. 
 
-Cela m'a semblé bien : tout ce que j'avais à faire était de créer un nom de fichier "significatif", tel que `param_1_param_2_..._param_100.txt` plus un horodatage. Par la suite, il me restait juste à y écrire tous mes résultats. J'étais si naïf : à un moment donné, j'avais plus de 100 fichiers pour ce seul projet. Maintenant, essayez de trouver quelle expérience était la meilleure. 
+Cela m'a semblé bien : tout ce que j'avais à faire était de créer un nom de fichier "significatif", tel que `param_1_param_2_..._param_100.txt` plus un horodatage. Par la suite, il me restait juste à y écrire tous mes résultats. J'étais si naïf : à un certain moment, j'avais plus de 100 fichiers pour ce seul projet. Maintenant, essayez de trouver quelle expérience était la meilleure. 
 
 Le problème avec cette approche est qu'il est compliqué de gérer tous ces fichiers. En effet, il est presque impossible d'être efficace en comparant tous ces résultats, car chaque fois que vous créez un nouveau fichier, vous devez revoir tous vos résultats pour les comparer. De plus, partager ce genre de travail entre les membres de l'équipe est une pure folie.
 
