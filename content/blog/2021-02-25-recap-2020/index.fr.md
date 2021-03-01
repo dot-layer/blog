@@ -11,7 +11,7 @@ featured: "recap-2020-cover.png"
 featuredpath: "img/headers/"
 ---
 
-Sans surprise pour personne, 2020 a été une année différente pour .Layer. Malgré cela, 2020 fut une année remplie pour .Layer. Comme on dit, "vaux mieux tard que jamais", donc voici donc un petit *recap* pour la communauté.
+Ce n'est une surprise pour personne, 2020 a été une année différente pour .Layer. Elle fut néanmoins une année assez remplie. Voici donc un petit *recap* pour la communauté. Comme on dit, "vaux mieux tard que jamais"!
 
 # Administration de l'organisme sans but lucratif (OSBL) 
 La crise planétaire de 2020 ne nous a pas empêché de tenir notre assemblée générale annuelle (AGA) dans un format en ligne. Durant l'AGA, plusieurs points importants ont été discutés, tels que la charte, le bilan financier, les projets et surtout la notion de membre actif.
