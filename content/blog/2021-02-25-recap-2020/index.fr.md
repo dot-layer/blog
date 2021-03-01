@@ -16,7 +16,7 @@ Ce n'est une surprise pour personne, 2020 a été une année différente pour .L
 # Administration de l'organisme sans but lucratif (OSBL) 
 La crise planétaire de 2020 ne nous a pas empêché de tenir notre assemblée générale annuelle (AGA) dans un format en ligne. Durant l'AGA, plusieurs points importants ont été discutés, tels que la charte, le bilan financier, les projets en cours et futurs, et surtout la notion de membre actif.
 
-Ce dernier point, sur les membres actifs, était vraiment le dernier morceau à mettre en place pour finaliser la structure de l'OSBL. La motivation de cette initiative est double: d'abord de supporter les frais annuels de l'OSBL et en second lieu de permettre d'avoir un petit coussin pour les imprévus. Ces membres actifs actifs obtiennent certains avantages énumérés ci-bas.
+Ce dernier point, celui des membres actifs, était sans aucun doute le dernier morceau à mettre en place pour finaliser la structure de l'OSBL. Deux éléments motivent cette initiative : (1) couvrir les frais annuels liés à l'OSBL et (2) fournir un petit coussin pour les imprévus. En devenant membre membre actif, un individu obtiendra les avantages suivants :
 
 - Droit de vote en assemblée pour les élections des administrateurs.
 - Être prioritaire dans les événements .Layer (dans le sens de prioritaire pour la réservation de sa place et non pas d'être `VIP`).
