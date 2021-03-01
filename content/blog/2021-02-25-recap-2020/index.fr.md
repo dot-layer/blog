@@ -14,7 +14,7 @@ featuredpath: "img/headers/"
 Sans surprise pour personne, 2020 a été une année différente pour .Layer. Malgré cela, 2020 fut une année remplie pour .Layer. Comme on dit, "vaux mieux tard que jamais", donc voici donc un petit *recap* pour la communauté.
 
 # Administration de l'organisme sans but lucratif (OSBL) 
-La crise planétaire de 2020 ne nous a pas empêchés de tenir notre assemblée générale annuelle (AGA) dans un format en ligne. Durant l'AGA, plusieurs points importants ont été discutés, tels que la charte, le bilan financier, les projets et surtout la notion de membre actif.
+La crise planétaire de 2020 ne nous a pas empêché de tenir notre assemblée générale annuelle (AGA) dans un format en ligne. Durant l'AGA, plusieurs points importants ont été discutés, tels que la charte, le bilan financier, les projets et surtout la notion de membre actif.
 
 Ce dernier point, sur les membres actifs, était vraiment le dernier morceau à mettre en place pour finaliser la structure de l'OSBL. La motivation de cette initiative est double: d'abord de supporter les frais annuels de l'OSBL et en second lieu de permettre d'avoir un petit coussin pour les imprévus. Ces membres actifs actifs obtiennent certains avantages énumérés ci-bas.
 
