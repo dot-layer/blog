@@ -71,7 +71,7 @@ training_settings:
     seed: 42
     device: "cuda:0"
 ```
-Figure 3:  Example of a YAML file. [Here](https://stackoverflow.com/a/1729545/7927776) a nice answers of the difference between YAML and JSON files.
+Figure 3:  Example of a YAML file. [Here](https://stackoverflow.com/a/1729545/7927776) is a nice Stack Overflow answer about the difference between YAML and JSON files.
 
 
 Second, parameters need to be hierarchical. I only want to use the parameters for a specific case without having an obligation to have other parameters I don't need. For example, if a want to compare the performance using SGD and Adam optimizer, I will use two sets of parameters: a learning rate for SGD and a learning rate and beta values for Adam. If I'm using Argparse, I would need to have beta parameters even when using SGD.
