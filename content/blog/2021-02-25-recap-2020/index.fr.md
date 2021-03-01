@@ -18,7 +18,7 @@ La crise planétaire de 2020 ne nous a pas empêché de tenir notre assemblée g
 
 Ce dernier point, celui des membres actifs, était sans aucun doute le dernier morceau à mettre en place pour finaliser la structure de l'OSBL. Deux éléments motivent cette initiative : (1) couvrir les frais annuels liés à l'OSBL et (2) fournir un petit coussin pour les imprévus. En devenant membre membre actif, un individu obtiendra les avantages suivants :
 
-- Droit de vote en assemblée pour les élections des administrateurs.
+- le droit de vote en assemblée lors de l'élection des administrateurs;
 - Être prioritaire dans les événements .Layer (dans le sens de prioritaire pour la réservation de sa place et non pas d'être `VIP`).
 - _Bragger_ que tu supportes les activités d'une OSBL en science des données (probablement le plus cool de la liste).
 
