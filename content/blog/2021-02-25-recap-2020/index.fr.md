@@ -51,7 +51,7 @@ Pour 2021, puisque la situation ne s'améliore pas et que la formule *en personn
 ![Meetup chez Can-Explore](fig/merge_img_can_explore.jpg)
 Crédit photo : Can-Explore
 
-En 2019 nous avions dit que "2020 s'annonce tout aussi occupée avec un meetup déjà *in the making*. On vise aussi à incorporer plus de formules 5@7 et potentiellement un hackaton."
+En 2019, nous écrivions : "2020 s'annonce tout aussi occupée [que 2019] avec un meetup déjà *in the making*. On vise aussi à incorporer plus de formules 5@7 et potentiellement un hackaton."
 
 _I guess not!_
 
