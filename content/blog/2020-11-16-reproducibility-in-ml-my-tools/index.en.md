@@ -11,7 +11,7 @@ featured: "nic_chalet_2019.jpg"
 featuredpath: "img/headers/"
 ---
 
-Over the past years, I've worked on various machine learning projects (mostly research ones), and I've faced numerous problems along the way that impacted the reproducibility of my results. I had to regularly (not without hating myself) take a lot of time to resolve which experimentations was the best and which settings were associated with those results. Even worse, where the heck are my results. All these situations made my work difficult to reproduce and also challenging to share with colleagues. To solve that, I tried different approaches, but rapidly I faced the hard truth: I only have 24 hours in a day, and these problems are time-consuming and (way) more complex problem than I thought.
+Over the past years, I've worked on various machine learning projects (mostly research ones), and I've faced numerous problems along the way that impacted the reproducibility of my results. I had to regularly (not without hating myself) take a lot of time to resolve which experimentation was the best and which settings were associated with those results. Even worse, finding where the heck were my results was painful. All these situations made my work difficult to reproduce and also challenging to share with colleagues. To solve that, I tried different approaches, but rapidly I faced the hard truth: I only have 24 hours in a day, and these problems are time-consuming and (way) more complex problem than I thought.
 
 In this post, 
 
