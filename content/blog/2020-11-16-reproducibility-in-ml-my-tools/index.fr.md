@@ -51,7 +51,7 @@ MLflow est la solution que j'utilise en ce moment. Elle est minimale, facile à 
 La librairie permet également de faire autre chose comme le déploiement et la possibilité d'avoir un répertoire central de modèles, mais ces solutions sont payantes.
 
 ### Weights & Biases 
-[Weights & Biases (W&B)](https://docs.wandb.ai/) est une plateforme open source permettant de suivre les expériences d'apprentissage en automatique, de visualiser les mesures et de partager les résultats. En utilisant W&B, vous obtiendrez les mêmes caractéristiques que celle présenter pour MLflow (voir la Figure 2 pour avoir un aperçu de l'interface graphique). La différence est que le tableau de bord est plus avancé pour comparer les mesures et enregistrer des artefacts tels que des prédictions ou des modèles de points de données spécifiques.
+[Weights & Biases (W&B)](https://docs.wandb.ai/) est une plateforme open source permettant de suivre les expériences d'apprentissage en automatique, de visualiser les métriques et de partager les résultats. En utilisant W&B, vous obtiendrez les mêmes caractéristiques que celles présentées pour MLflow (voir la Figure 2 pour avoir un aperçu de l'interface graphique). La différence est que le tableau de bord est plus avancé pour comparer les métriques et enregistrer des artefacts tels que des prédictions ou des modèles spécifiques.
 
 ![](wnb.png)
 Figure 2: [Un aperçu de l'interface visuelle de W&B](https://github.com/wandb/client#try-in-a-colab-).
