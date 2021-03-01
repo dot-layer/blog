@@ -11,24 +11,23 @@ featured: "recap-2020-cover.png"
 featuredpath: "img/headers/"
 ---
 
-Sans surprise pour personne, 2020 a été une année différente pour .Layer. Malgré cela, 2020 fut une année chargée pour .Layer. Comme ont dit, "vaut mieux tard que jamais", donc voici donc un petit *recap* pour la communauté.
+Sans surprise pour personne, 2020 a été une année différente pour .Layer. Malgré cela, 2020 fut une année remplie pour .Layer. Comme on dit, "vaux mieux tard que jamais", donc voici donc un petit *recap* pour la communauté.
 
 # Administration de l'organisme sans but lucratif (OSBL) 
-La crise plantéraire de 2020 ne nous a pas empêcher de tenir notre assemblée générale annuelle (AGA) sous un format en ligne. Durant cette AGA, plusieurs points important ont été discuter, tel que la charte, le bilan financier, les projets et surtout la notion de membre actif.
+La crise planétaire de 2020 ne nous a pas empêchés de tenir notre assemblée générale annuelle (AGA) dans un format en ligne. Durant l'AGA, plusieurs points importants ont été discutés, tels que la charte, le bilan financier, les projets et surtout la notion de membre actif.
 
-Ce dernier point, sur les membres actifs, était vraiment le dernier morceaux à mettre en place pour finaliser la structure de l'OSBL. La motivation de cette initiative est double: d'abord de supporter les frais annuels de l'OSBL et en second lieu de permettre d'avoir un petit coussin pour les imprévus. Ces membres actifs actifs obtienent certain avantages énumérés ci-bas.
+Ce dernier point, sur les membres actifs, était vraiment le dernier morceau à mettre en place pour finaliser la structure de l'OSBL. La motivation de cette initiative est double: d'abord de supporter les frais annuels de l'OSBL et en second lieu de permettre d'avoir un petit coussin pour les imprévus. Ces membres actifs actifs obtiennent certains avantages énumérés ci-bas.
 
 - Droit de vote en assemblée pour les élections des administrateurs.
-- Être prioritaire dans les événements .Layer (dans le sesn réservation de sa place pas genre être VIP).
-- _Bragger_ que tu supportes une OSBL en science des données (probablement le plus cool de la liste).
+- Être prioritaire dans les événements .Layer (dans le sens de prioritaire pour la réservation de sa place et non pas d'être `VIP`).
+- _Bragger_ que tu supportes les activités d'une OSBL en science des données (probablement le plus cool de la liste).
 
-Une dizaine de personne ont effectuer les démarches pour devenir membre actif (voir la liste [ici](https://github.com/dot-layer/charte-osbl/blob/master/LISTEMEMBRES.md)). Il est toujours possible de ce joindre à cette liste en suivant cette [procédure](https://github.com/dot-layer/charte-osbl/blob/master/DEVENIRMEMBRE.md) qui se résume éssentiellement à écrire à `david.beauchemin.5@ulaval.ca` et à faire un virement interac de 20$. 
+Une dizaine de personnes ont effectué les démarches pour devenir membres actifs (voir la liste [ici](https://github.com/dot-layer/charte-osbl/blob/master/LISTEMEMBRES.md)). Il est possible de s'y joindre en suivant cette [procédure](https://github.com/dot-layer/charte-osbl/blob/master/DEVENIRMEMBRE.md) qui se résume essentiellement à écrire à `david.beauchemin.5@ulaval.ca` et à faire un virement interac de 20$. 
 
+# Comité blogue
+Le comité blogue a connu une bonne première année d'existence.  Ils ont supervisé la publication de 9 articles en 2020. Plusieurs améliorations esthétiques ont aussi été mises en place par le comité et surtout par [Annie Deshaies](https://github.com/AnnieDeshaies) (merci Annie, for real merci!).
 
-# Comité blog
-Le comité Blog a connu une très bonne première année avec la publication de 9 articles en 2020. Plusieurs améliorations esthétiques on aussi été mis en place par le comité et surtout par [Annie Deshaies](https://github.com/AnnieDeshaies) (merci Annie, for real merci!).
-
-Ont rappel que le blogue est ouvert à toutes sortes d’articles : français, anglais, vulgarisation de concepts (apprentissage machine, programmation, science des données, statistique, etc), expérience personnelle, présentation d’un projet, name it! Ne soyez pas timide. En parlant de ces fameux articles, en voici la liste.
+Ont rappel que le blogue est ouvert à toutes sortes d’articles : français, anglais, vulgarisation de concepts (apprentissage machine, programmation, science des données, statistiques, etc.), expérience personnelle, présentation d’un projet, name it! Ne soyez pas timide. En parlant de ces fameux articles, en voici la liste.
 
 - [Training a Recurrent Neural Network (RNN) using PyTorch](https://www.dotlayer.org/en/blog/2020-08-19-train-a-sequence-model-with-poutyne/machine-learning/)
 - [Reproductibilité en apprentissage automatique](https://www.dotlayer.org/blog/2020-10-30-reproducibility-in-ml-a-talk/machine-learning/)
@@ -41,37 +40,29 @@ Ont rappel que le blogue est ouvert à toutes sortes d’articles : français, a
 - [Argparse: un outil méconnu](https://www.dotlayer.org/blog/2019-05-21-argparse-package/optparse-package/)
 
 ## Projets futurs
-+ que 9 articles
-
+Pour 2021, le comité vise un plus grand nombre de publications, soit une douzaine. De plus, cela fait [un moment](https://github.com/dot-layer/blog/issues/14) que nous parlons d'ajouter une bibliothèque de critique (review) de livre, en espérant que cette année sera la bonne! Finalement, nous avons décidé d'ajouter une section [nos membres](https://github.com/dot-layer/blog/issues/112) afin de remercier les membres actifs qui supportent l'initiative. Bien sûr, si vous avez des idées d'améliorations vos suggestions sont très appréciées via l'ouverture d'une [issue](https://github.com/dot-layer/blog/issues).
 
 # OpenLayer
-
-(13 épisodes)
-vues (4 604 sur YouTube 2 000 sur Spotify et autres plateformes)
-La pause Covid
+En 2019, [David Beauchemi](https://github.com/davebulaval) a introduit [OpenLayer](https://anchor.fm/open-layer), un podcast sur l'IA et l'apprentissage machine. Puisque la formule est en présentiel, le nombre d'épisodes publié a été plus bas que ce qui était prévu (27 de moins que prévu), soit 13 pour un total de 32 épisodes total. Toutefois, la formule a connu un grand succès avec pas loin de 5 000 vues sur YouTube et 2 000 sur les autres réseaux de diffusion (c.-à-d. Spotify et iTunes). Cette pause forcée a permis toutefois d'améliorer l'esthétique du podcast avec l'ajout de _thumbnails_, l'amélioration des messages de diffusion et le peaufinage de l'image. 
 
 ## Vision future
-Série en ligne du podcast en anglais pour reach à l'extérieur du Canada.
-
-
+Pour 2021, puisque la situation ne s'améliore pas et que la formule habituelle de le faire en personne n'est pas encore possible, une série _spéciale_ en ligne, en anglais, commence à être mise sur pied. L'idée est de "profiter" de l'impossibilité d'être en personne pour échanger avec des gens de l'extérieur du Québec. Avec cette approche, le podcast deviendrait bilingue.
+# Meetup Machine Learning Québec
 ![Meetup chez Can-Explore](fig/merge_img_can_explore.jpg)
 Crédit photo : Can-Explore
 
-# Meetup Machine Learning Québec
-En 2019 nous avions dit que "2020 s'annonce tout aussi occupée avec un meetup déjà *in the making*.
-On vise aussi à incorporer plus de formules 5@7 et potentiellement un hackaton."
+En 2019 nous avions dit que "2020 s'annonce tout aussi occupée avec un meetup déjà *in the making*. On vise aussi à incorporer plus de formules 5@7 et potentiellement un hackaton."
 
-I guess not! 
+_I guess not!_
 
-1 seul évènement le 12 février chez Can-Explore 
-photo dans le repo.
+Finalement, nous avons _**seulement**_ eu le droit à un évènement meetup le 12 février chez Can-Explore. L'évènement fut un grand succès avec une cinquantaine de personnes. La gang de Meetup ML n'a pas décidé de faire d'évènement en ligne puisque la formule est très accès sur les échanges pendant et après les présentations. L'évènement nous semblait dénaturaliser de son essence et nous avons préféré concentrer nos efforts sur autre chose comme avancer nos 10 autres projets. Nous restons bien sûr à l'affut de tout changement et espérons en organiser un vers la fin de 2021.
 
+# Stage sur le projet Universal Data Tool.
+Pour 2020, nous avons eu un stagiaire en programmation durant 5 semaines. Il a travaillé sur le développement de fonctionnalité pour l'outil d'annotation de données [Universal Data Tool](https://universaldatatool.com/).Son travail a permis l'intégration de [plusieurs fonctionnalités](https://github.com/UniversalDataTool/universal-data-tool/issues?q=CedricJean) tel que la [gestion Cognito S3](https://github.com/UniversalDataTool/universal-data-tool/pull/103).
 
+Mentionnons [Marc-Alexandre Paquet](https://github.com/Ownmarc) qui a eu (1) l'idée et (2) qui a fortement contribué à la supervision du stagiaire durant son stage.
 
-# Le stagiaire sur le projet Universal Data Tool.
-...
-
-
-Ça y est. On se souhaite une bonne année!
+# Conclusion
+Ça y est, c'est la fin du _recap_ de l'année 2020. On se souhaite une (autre) bonne année!
 
 Sam Peroche et David Beauchemin
