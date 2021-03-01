@@ -1,5 +1,5 @@
 ---
-title:  Toolkit for (more) reproducible Machine Learning projects
+title:  Toolkit for (More) Reproducible Machine Learning Projects
 author: David Beauchemin
 date: "2020-11-16"
 slug: machine learning
