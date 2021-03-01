@@ -46,7 +46,7 @@ Pour 2021, le comité vise un plus grand nombre de publications, soit une douzai
 En 2019, [David Beauchemin](https://github.com/davebulaval) a introduit [OpenLayer](https://anchor.fm/open-layer), un podcast sur l'IA et l'apprentissage machine. Puisque la formule est en présentiel, le nombre d'épisodes publié a été plus bas que ce qui était prévu (27 de moins que prévu), soit 13 pour un total de 32 épisodes total. Toutefois, la formule a connu un grand succès avec pas loin de 5 000 vues sur YouTube et 2 000 sur les autres réseaux de diffusion (c.-à-d. Spotify et iTunes). Cette pause forcée a permis toutefois d'améliorer l'esthétique du podcast avec l'ajout de _thumbnails_, l'amélioration des messages de diffusion et le peaufinage de l'image. 
 
 ## Vision future
-Pour 2021, puisque la situation ne s'améliore pas et que la formule habituelle de le faire en personne n'est pas encore possible, une série _spéciale_ en ligne, en anglais, commence à être mise sur pied. L'idée est de "profiter" de l'impossibilité d'être en personne pour échanger avec des gens de l'extérieur du Québec. Avec cette approche, le podcast deviendrait bilingue.
+Pour 2021, puisque la situation ne s'améliore pas et que la formule *en personne* habituelle n'est pas encore possible, une série _spéciale_ en ligne, en anglais, commence à être mise sur pied. L'idée est de "profiter" de l'impossibilité d'être en personne pour échanger avec des gens de l'extérieur du Québec.
 # Meetup Machine Learning Québec
 ![Meetup chez Can-Explore](fig/merge_img_can_explore.jpg)
 Crédit photo : Can-Explore
