@@ -59,7 +59,7 @@ Finalement, nous avons _**seulement**_ eu droit à un évènement meetup, le 12 
 
 # Stage sur le projet Universal Data Tool.
 Officiellement, .Layer a comme mission de promouvoir la collaboration et le partage de connaissances dans le domaine de la science des données. Ceci veut dire, entre autres choses, d'appuyer (1) des stagiaires dans leur développement et (2) des projets *open-source*. On souligne donc l'initiative de [Marc-Alexandre Paquet](https://github.com/Ownmarc) (qui a pondu cette idée de génie) et David Beauchemin (on s'en sort pas, encore lui) qui ont utilisé le statut d'OSBL de .Layer pour offrir un stage en programmation de cinq semaines à Cedric Jean. Cedric a travaillé sur l'outil d'annotation de données [Universal Data Tool](https://universaldatatool.com/). Son travail a permis l'intégration de [plusieurs fonctionnalités](https://github.com/UniversalDataTool/universal-data-tool/issues?q=CedricJean) telle que la [gestion Cognito S3](https://github.com/UniversalDataTool/universal-data-tool/pull/103).
-Message aux membres .Layer, si vous êtes intéressés à encadrer un étudiant (pour un projet lié aux valeur de l'organisation), mais qu'il vous manque un cadre formel pour officialiser le tout, n'hésitez pas à en parler à un membre du CA.
+Message aux membres .Layer, si vous êtes intéressés à encadrer un étudiant (pour un projet lié aux valeurs de l'organisation), mais qu'il vous manque un cadre formel pour officialiser le tout, n'hésitez pas à en parler à un membre du CA.
 
 Mentionnons [Marc-Alexandre Paquet](https://github.com/Ownmarc) qui a eu (1) l'idée et (2) qui a fortement contribué à la supervision du stagiaire.
 
