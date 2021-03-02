@@ -60,7 +60,7 @@ Finalement, nous avons _**seulement**_ eu droit à un évènement meetup, le 12 
 # Stage sur le projet Universal Data Tool.
 Pour 2020, nous avons eu un stagiaire en programmation durant 5 semaines. Il a travaillé sur le développement de fonctionnalité pour l'outil d'annotation de données [Universal Data Tool](https://universaldatatool.com/).Son travail a permis l'intégration de [plusieurs fonctionnalités](https://github.com/UniversalDataTool/universal-data-tool/issues?q=CedricJean) tel que la [gestion Cognito S3](https://github.com/UniversalDataTool/universal-data-tool/pull/103).
 
-Mentionnons [Marc-Alexandre Paquet](https://github.com/Ownmarc) qui a eu (1) l'idée et (2) qui a fortement contribué à la supervision du stagiaire durant son stage.
+Mentionnons [Marc-Alexandre Paquet](https://github.com/Ownmarc) qui a eu (1) l'idée et (2) qui a fortement contribué à la supervision du stagiaire.
 
 # Conclusion
 Ça y est, c'est la fin du _recap_ de l'année 2020. On se souhaite une (autre) bonne année!
