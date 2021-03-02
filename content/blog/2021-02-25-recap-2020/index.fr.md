@@ -39,13 +39,13 @@ On rappelle que le blogue est lieu de publication (en français ou en anglais) p
 - [Recap 2019](https://www.dotlayer.org/blog/2019-12-19-recap-2019/recap-2019/)
 - [Argparse: un outil méconnu](https://www.dotlayer.org/blog/2019-05-21-argparse-package/optparse-package/)
 
-## Projets futurs
+### Projets futurs
 Pour 2021, le comité vise un plus grand nombre de publications, soit une douzaine. De plus, cela fait [un moment](https://github.com/dot-layer/blog/issues/14) que nous parlons d'ajouter une bibliothèque de critiques (reviews) de livre, en espérant que cette année sera la bonne! Finalement, nous planifions aussi d'ajouter une section [nos membres](https://github.com/dot-layer/blog/issues/112) afin de remercier les membres actifs qui supportent l'initiative. Bien sûr, vos idées/suggestions sont toujours très appréciées. Pour ce faire, la meilleure façon est de créer une [issue](https://github.com/dot-layer/blog/issues) sur le dépôt du blogue.
 
 # OpenLayer
 En 2019, [David Beauchemin](https://github.com/davebulaval) a introduit [OpenLayer](https://anchor.fm/open-layer), un podcast sur l'IA et l'apprentissage machine. Puisque la formule est en présentiel, le nombre d'épisodes publiés a été plus bas que prévu, soit 13 (au lieu de 40). Ceci donne tout de même un total de 32 épisodes pour le podcast! La formule a néanmoins connu un grand succès avec près de 5 000 vues sur YouTube et 2 000 sur les autres réseaux de diffusion (c.-à-d. Spotify et iTunes). Cette pause forcée a toutefois permis d'améliorer l'esthétique du podcast grâce à l'ajout de _thumbnails_, l'amélioration des messages de diffusion et le peaufinage de l'image. 
 
-## Vision future
+### Vision future
 Pour 2021, puisque la situation ne s'améliore pas et que la formule *en personne* habituelle n'est pas encore possible, une série _spéciale_ en ligne, en anglais, commence à être mise sur pied. L'idée est de "profiter" de l'impossibilité d'être en personne pour échanger avec des gens de l'extérieur du Québec.
 # Meetup Machine Learning Québec
 ![Meetup chez Can-Explore](fig/merge_img_can_explore.jpg)
@@ -63,7 +63,8 @@ Message aux membres .Layer, si vous êtes intéressés à encadrer un étudiant 
 
 Mentionnons [Marc-Alexandre Paquet](https://github.com/Ownmarc) qui a eu (1) l'idée et (2) qui a fortement contribué à la supervision du stagiaire.
 
-# Conclusion
+<br><br>
+
 Ça y est, c'est la fin du _recap_ de l'année 2020. On se souhaite une (autre) bonne année!
 
 Sam Peroche et David Beauchemin
