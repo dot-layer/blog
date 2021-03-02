@@ -27,7 +27,7 @@ Une dizaine de personnes ont effectué les démarches pour devenir membres actif
 # Comité blogue
 Le comité blogue a connu une bonne première année d'existence.  Ils ont supervisé la publication de 9 articles en 2020. Plusieurs améliorations esthétiques ont aussi été mises en place par le comité et surtout par [Annie Deshaies](https://github.com/AnnieDeshaies) (merci Annie, for real merci!).
 
-On rappelle que le blogue est lieu de publication pour toutes sortes d’articles : français, anglais, vulgarisation de concepts (apprentissage machine, programmation, science des données, statistiques, etc.), expérience personnelle, présentation d’un projet, *name it*! Ne soyez pas timide. En parlant de ces fameux articles, en voici la liste :
+On rappelle que le blogue est lieu de publication (en français ou en anglais) pour des articles portant sur des sujets variés  : vulgarisation de concepts (apprentissage machine, programmation, science des données, statistiques, etc.), expérience personnelle, présentation d’un projet, *name it*! Ne soyez pas timide. En parlant de ces fameux articles, en voici la liste :
 
 - [Training a Recurrent Neural Network (RNN) using PyTorch](https://www.dotlayer.org/en/blog/2020-08-19-train-a-sequence-model-with-poutyne/machine-learning/)
 - [Reproductibilité en apprentissage automatique](https://www.dotlayer.org/blog/2020-10-30-reproducibility-in-ml-a-talk/machine-learning/)
