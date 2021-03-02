@@ -22,7 +22,7 @@ Ce dernier point, celui des membres actifs, était sans aucun doute le dernier m
 - la priorité de réservation pour les événements .Layer;
 - _Bragger_ que tu supportes les activités d'une OSBL en science des données (de loin le plus cool de la liste).
 
-Une dizaine de personnes ont effectué les démarches pour devenir membres actifs (voir la liste [ici](https://github.com/dot-layer/charte-osbl/blob/master/LISTEMEMBRES.md)). Il est possible de s'y joindre en suivant cette [procédure](https://github.com/dot-layer/charte-osbl/blob/master/DEVENIRMEMBRE.md) qui se résume essentiellement à écrire à `jtbaillargeon@hotmail.com` ton nom complet avec et à faire un virement interac de 20$ au trésorier (JTBai). 
+Une dizaine de personnes ont effectué les démarches pour devenir membres actifs (voir la liste [ici](https://github.com/dot-layer/charte-osbl/blob/master/LISTEMEMBRES.md)). Il est possible de s'y joindre en suivant cette [procédure](https://github.com/dot-layer/charte-osbl/blob/master/DEVENIRMEMBRE.md) qui se résume essentiellement à écrire à `jtbaillargeon@hotmail.com` ton nom complet et à faire un virement interac de 20$ au trésorier (JTBai). 
 
 # Comité blogue
 Le comité blogue a connu une bonne première année d'existence.  Ils ont supervisé la publication de 9 articles en 2020. Plusieurs améliorations esthétiques ont aussi été mises en place par le comité et surtout par [Annie Deshaies](https://github.com/AnnieDeshaies) (merci Annie, for real merci!).
