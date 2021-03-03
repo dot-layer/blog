@@ -1,7 +1,7 @@
 ---
 title: .Layer en 2020
 author: Samuel Perreault et David Beauchemin
-date: '2021-02-25'
+date: '2021-03-03'
 slug: recap-2020
 type: post
 categories: ["Nouvelles .Layer"]
