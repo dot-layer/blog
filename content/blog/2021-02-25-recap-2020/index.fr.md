@@ -11,7 +11,7 @@ featured: "recap-2020-cover.png"
 featuredpath: "img/headers/"
 ---
 
-Ce n'est une surprise pour personne, 2020 a été une année différente pour .Layer. Elle fut néanmoins une année assez remplie. Voici donc un petit *recap* pour la communauté. Comme on dit, « vaux mieux tard que jamais »!
+Ce n'est une surprise pour personne, 2020 a été une année différente pour .Layer. Elle fut néanmoins une année assez remplie. Voici donc un petit *recap* pour la communauté. Comme on dit, « mieux vaut tard que jamais »!
 
 # Administration de l'organisme sans but lucratif (OSBL) 
 La crise planétaire de 2020 ne nous a pas empêché de tenir notre assemblée générale annuelle (AGA) dans un format en ligne. Durant l'AGA, plusieurs points importants ont été discutés, tels que la charte, le bilan financier, les projets en cours et futurs, et surtout la notion de membre actif.
@@ -22,7 +22,7 @@ Ce dernier point, celui des membres actifs, était sans aucun doute le dernier m
 - la priorité de réservation pour les événements .Layer;
 - _Bragger_ que tu supportes les activités d'une OSBL en science des données (de loin le plus cool de la liste).
 
-Une dizaine de personnes ont effectué les démarches pour devenir membres actifs (voir la liste [ici](https://github.com/dot-layer/charte-osbl/blob/master/LISTEMEMBRES.md)). Il est possible de s'y joindre en suivant cette [procédure](https://github.com/dot-layer/charte-osbl/blob/master/DEVENIRMEMBRE.md) qui se résume essentiellement à écrire à `jtbaillargeon@hotmail.com` ton nom complet et à faire un virement interac de 20$ au trésorier (JTBai). 
+Une dizaine de personnes ont effectué les démarches pour devenir membres actifs (voir la liste [ici](https://github.com/dot-layer/charte-osbl/blob/master/LISTEMEMBRES.md)). Il est possible de s'y joindre en suivant cette [procédure](https://github.com/dot-layer/charte-osbl/blob/master/DEVENIRMEMBRE.md) qui se résume essentiellement à écrire à un courriel ton nom complet et à faire un virement interac de 20$ au trésorier (JTBai). 
 
 # Comité blogue
 Le comité blogue a connu une bonne première année d'existence.  Ils ont supervisé la publication de 9 articles en 2020. Plusieurs améliorations esthétiques ont aussi été mises en place par le comité et surtout par [Annie Deshaies](https://github.com/AnnieDeshaies) (merci Annie, for real merci!).
@@ -40,7 +40,7 @@ On rappelle que le blogue est lieu de publication (en français ou en anglais) p
 - [Argparse: un outil méconnu](https://www.dotlayer.org/blog/2019-05-21-argparse-package/optparse-package/)
 
 ### Projets futurs
-Pour 2021, le comité vise un plus grand nombre de publications, soit une douzaine. De plus, cela fait [un moment](https://github.com/dot-layer/blog/issues/14) que nous parlons d'ajouter une bibliothèque de critiques (reviews) de livre, en espérant que cette année sera la bonne! Finalement, nous planifions aussi d'ajouter une section [nos membres](https://github.com/dot-layer/blog/issues/112) afin de remercier les membres actifs qui supportent l'initiative. Bien sûr, vos idées/suggestions sont toujours très appréciées. Pour ce faire, la meilleure façon est de créer une [issue](https://github.com/dot-layer/blog/issues) sur le dépôt du blogue.
+Pour 2021, le comité vise un plus grand nombre de publications, soit une douzaine. De plus, cela fait [un moment](https://github.com/dot-layer/blog/issues/14) que nous parlons d'ajouter une bibliothèque de critiques (reviews) de livres, en espérant que cette année sera la bonne! Finalement, nous planifions aussi d'ajouter une section [nos membres](https://github.com/dot-layer/blog/issues/112) afin de remercier les membres actifs qui supportent l'initiative. Bien sûr, vos idées/suggestions sont toujours très appréciées. Pour ce faire, la meilleure façon est de créer une [issue](https://github.com/dot-layer/blog/issues) sur le dépôt du blogue.
 
 # OpenLayer
 En 2019, [David Beauchemin](https://github.com/davebulaval) a introduit [OpenLayer](https://anchor.fm/open-layer), un podcast sur l'IA et l'apprentissage machine. Puisque la formule est en présentiel, le nombre d'épisodes publiés a été plus bas que prévu, soit 13 (au lieu de 40). Ceci donne tout de même un total de 32 épisodes pour le podcast! La formule a néanmoins connu un grand succès avec près de 5 000 vues sur YouTube et 2 000 sur les autres réseaux de diffusion (c.-à-d. Spotify et iTunes). Cette pause forcée a toutefois permis d'améliorer l'esthétique du podcast grâce à l'ajout de _thumbnails_, l'amélioration des messages de diffusion et le peaufinage de l'image. 
