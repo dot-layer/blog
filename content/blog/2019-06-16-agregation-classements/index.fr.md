@@ -2,18 +2,18 @@
 title: Agrégation simple de classements
 author: Samuel Perreault et Stéphane Caron
 date: '2019-06-16'
-slug: Agrégation simple de classements
+slug: agregation-simple-de-classements
 type: post
-categories: ["Analytique"]
-tags: ["Analytique de sports"]
-description: ""
-featured: "agregation-cover.png"
-featuredpath: "img/headers/"
+categories: ['Analytique']
+tags: ['Analytique de sports']
+description: ''
+featured: 'agregation-cover.png'
+featuredpath: 'img/headers/'
 ---
 
 Il y a quelques jours, des membres de la communauté .Layer se sont réunis dans un chalet autour d'une thématique: l'analyse de données sportives. Lors de ce week-end, nous avons effleuré trois projets reliant sports et analyse de données:
 
-1. Agréger différents *draft rankings* (LNH) pour en former un unique (L-A Vallière-Lavoie, Laurent Caron et Sam Perreault)
+1. Agréger différents _draft rankings_ (LNH) pour en former un unique (L-A Vallière-Lavoie, Laurent Caron et Sam Perreault)
 2. Un [dashboard](https://stecaron.shinyapps.io/shiny-app/) de données permettant d'identifier les meilleurs jeunes joueurs de tennis de l'ATP (Phil B-l, Sté Caron, Sam Auclair, John Tremblay et J.P. Le Cavalier)
 3. Un outil pour trouver le bon régime et le bon programme d'entraînement selon des objectifs (Antoine Buteau)
 
@@ -21,7 +21,7 @@ Cet article sommarise très brièvement le projet d’agrégation de listes de r
 
 ## Extraire les données
 
-Pour extraire nos données, nous avons *scrapé* des listes produites par des experts ([mynhldraft.com](http://www.mynhldraft.com/2019-nhl-draft/2019-nhl-draft-rankings/)) en utilisant le *package* R `rvest`:
+Pour extraire nos données, nous avons _scrapé_ des listes produites par des experts ([mynhldraft.com](http://www.mynhldraft.com/2019-nhl-draft/2019-nhl-draft-rankings/)) en utilisant le _package_ R `rvest`:
 
 ```
 library(rvest)
@@ -43,7 +43,6 @@ temp <- temp[-1,]
 
 head(temp)[,1:3]
 ```
-
 
 ```
 ##    V1 Future Considerations    June 7th
@@ -102,18 +101,16 @@ by_player <-
 by_player[order(by_player$final_selection),]$player[1:10]
 ```
 
-
 ```
-##  [1] "Jack Hughes"      "Kaapo Kakko"      "Bowen Byram"     
-##  [4] "Alex Turcotte"    "Trevor Zegras"    "Kirby Dach"      
-##  [7] "Dylan Cozens"     "Vasili Podkolzin" "Matthew Boldy"   
+##  [1] "Jack Hughes"      "Kaapo Kakko"      "Bowen Byram"
+##  [4] "Alex Turcotte"    "Trevor Zegras"    "Kirby Dach"
+##  [7] "Dylan Cozens"     "Vasili Podkolzin" "Matthew Boldy"
 ## [10] "Peyton Krebs"
 ```
 
 ## Multi-dimensional scaling
 
 Avec le temps qu'il nous restait, nous avons décidé de construire une matrice de distances (entre les joueurs) calculée en considérant le vecteur des rangs:
-
 
 ```
 ##      Albert Johansson Albin Grewe Alex Newhook Alex Turcotte Alex Vlasic
@@ -131,16 +128,16 @@ Nous avons calculé une sorte de variation locale des rangs:
 ![](canard.png)
 
 Naturellement, plus on considère des rangs élevés, plus il y a d'incertitude quant à ceux-ci (du moins cette année). Ce qui se passe après 25 ne fait plus de sens puisque nos données sont censurées à droite.
-Nous avons utilisé ceci (en gardant la valeur maximum après le *peak*), pour calculer des distances *somewhat* normalisées (entre les joueurs).
+Nous avons utilisé ceci (en gardant la valeur maximum après le _peak_), pour calculer des distances _somewhat_ normalisées (entre les joueurs).
 
-Finalement, la matrice de distances obtenue nous a permis de projeter nos données sur une droite (une seule dimension) : ce qu'on appelle du positionnement multidimensionnel. En fait, nous avons *pluggé* la matrice de distances dans la fonction `cmdscale`. Les valeurs obtenues forment l'axe vertical dans la figure suivante:
+Finalement, la matrice de distances obtenue nous a permis de projeter nos données sur une droite (une seule dimension) : ce qu'on appelle du positionnement multidimensionnel. En fait, nous avons _pluggé_ la matrice de distances dans la fonction `cmdscale`. Les valeurs obtenues forment l'axe vertical dans la figure suivante:
 
 ![](draft-normalized.png)
 
 En gardant un espacement constant sur l'axe horizontal, on peut apprécier à quel point Jack Hughes et Kaapo Kakko se démarque du reste (ils étaient toujours premier et deuxième ...).
 
 Comme mentionné en introduction, le repêchage officiel de la LNH avait lieu quelques jours après notre première analyse (figure ci-haut).
-Les résultats sont présentés dans la figure ci-dessous: les noms des joueurs sont accompagnés de leur rang observé, ainsi que la différence entre la prédiction de l'agrégation d'experts et le rang observé. 
+Les résultats sont présentés dans la figure ci-dessous: les noms des joueurs sont accompagnés de leur rang observé, ainsi que la différence entre la prédiction de l'agrégation d'experts et le rang observé.
 Les noms de joueurs en gris ont été repêchés au rang prévu, les rouges ont été repêchés plus tard que prévu alors que les verts ont été repêché plus tôt que prévu.
 
 ![](p-a-d.png)
