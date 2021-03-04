@@ -4,16 +4,17 @@ author: Laurent Caron et Marc-André Bernier
 date: '2018-12-08'
 slug: hackathon-winners-creativity
 type: post
-categories: ["Hackathon"]
-tags: ["Interview", "Meetup", "Hackathon"]
-description: "Meetup ML Québec | Prix Leonardo da Vinci"
-featured: "hackathon-creativity-cover.JPG"
-featuredpath: "img/headers/"
+categories: ['Hackathon']
+tags: ['Interview', 'Meetup', 'Hackathon']
+description: 'Meetup ML Québec | Prix Leonardo da Vinci'
+featured: 'hackathon-creativity-cover.JPG'
+featuredpath: 'img/headers/'
+aliases: [/blog/2018-11-17-hackathon-winners-creativity/hackathon-winners-creativity/]
 ---
 
 Le 10 novembre 2018 avait lieu à Québec la [Journée hackathon en assurance](https://www.facebook.com/events/185652975580020/), organisée par [MeetupMLQuebec](https://www.facebook.com/MeetupMLQuebec) et présentée en collaboration avec Intact Assurances et Co-operators.
 
-Félicitations à *Les Beans*, gagnants du prix Leonardo da Vinci, remis à l'équipe qui a proposé la solution la plus créative. Les critères étaient à la discrétion des juges, mais ils nous ont partagé leur processus de décision ci-bas. Pour plus de détails sur la problématique ou l'énoncé, rendez-vous sur le [dépôt officiel](https://github.com/dot-layer/meetup-ML-assurance-hackathon) de la compétition.
+Félicitations à _Les Beans_, gagnants du prix Leonardo da Vinci, remis à l'équipe qui a proposé la solution la plus créative. Les critères étaient à la discrétion des juges, mais ils nous ont partagé leur processus de décision ci-bas. Pour plus de détails sur la problématique ou l'énoncé, rendez-vous sur le [dépôt officiel](https://github.com/dot-layer/meetup-ML-assurance-hackathon) de la compétition.
 
 ![Les juges et les membres de l'équipe *Les Beans*.](MeetupMLQuebec2018_054.JPG)
 
@@ -30,28 +31,26 @@ Au final, le filtre proposé par le photographe était le plus efficace. Nous cr
 
 **PBL**: Étant donné le nombre restreint de données, on s'est dit que si on simplifiait les images, on pourrait se permettre d'avoir des modèles plus simples pour faire le classement.
 
-
 #### Q: Selon vous, pensez-vous que c'est aussi l'élément déterminant qui a fait pencher la balance chez les juges?
 
 Définitivement!
 
 #### Nous avons posé la même question aux juges de cette catégorie. Rappelons-nous que les critères d'évaluation pour cette catégorie étaient à leur discrétion. Voici leur réponse:
 
-L'inclusion de techniques de photographie à la solution était effectivement l'élément clé dans notre décision. Les organisateurs avaient fourni des pistes de solution, mais *Les Beans* ont osé emprunter un chemin différent. Ça a vraiment démontré que l'équipe était capable de *think outside the box*. Ça démontrait aussi une curiosité au sujet de la problématique à résoudre.
+L'inclusion de techniques de photographie à la solution était effectivement l'élément clé dans notre décision. Les organisateurs avaient fourni des pistes de solution, mais _Les Beans_ ont osé emprunter un chemin différent. Ça a vraiment démontré que l'équipe était capable de _think outside the box_. Ça démontrait aussi une curiosité au sujet de la problématique à résoudre.
 
 #### Q: Pouvez-vous nous partager les meilleurs extraits de votre solution?
 
 Voici quelques exemples qui illustrent l'effet des filtres sur les images.
 
-| Avant          | Après            |
-:---------------:|:-----------------:
-![](image-2.png) | ![](image-2.jpg)
-![](image-4.png) | ![](image-4.jpg)
-![](image-7.png) | ![](image-7.jpg)
-![](image-13.png) | ![](image-13.jpg)
+|       Avant       |       Après       |
+| :---------------: | :---------------: |
+| ![](image-2.png)  | ![](image-2.jpg)  |
+| ![](image-4.png)  | ![](image-4.jpg)  |
+| ![](image-7.png)  | ![](image-7.jpg)  |
+| ![](image-13.png) | ![](image-13.jpg) |
 
-**PBL** : On a voulu simplifier les images pour rendre la détection de toit vert plus facile à l'oeil. On s'est dit que de rajouter une étape de prétraitement de données, qui était basée sur l'avis d'un expert en photographie, pourrait aider le modèle à mieux performer. Par contre, comme le jeu de données devait toujours passer au travers de toutes les couches cachées du réseau de neurones *ResNet50*, cela ne simplifiait pas le modèle pour autant. Pour avoir de meilleurs résultats, avec le peu d'images disponibles, il aurait sûrement fallu qu'on joue avec les couches de *ResNet50* pour l'adapter à nos images simplifiées. De cette façon, nous aurions pu avoir un modèle relativement plus simple et mieux adapté pour nos images plus simples.
-
+**PBL** : On a voulu simplifier les images pour rendre la détection de toit vert plus facile à l'oeil. On s'est dit que de rajouter une étape de prétraitement de données, qui était basée sur l'avis d'un expert en photographie, pourrait aider le modèle à mieux performer. Par contre, comme le jeu de données devait toujours passer au travers de toutes les couches cachées du réseau de neurones _ResNet50_, cela ne simplifiait pas le modèle pour autant. Pour avoir de meilleurs résultats, avec le peu d'images disponibles, il aurait sûrement fallu qu'on joue avec les couches de _ResNet50_ pour l'adapter à nos images simplifiées. De cette façon, nous aurions pu avoir un modèle relativement plus simple et mieux adapté pour nos images plus simples.
 
 #### Q: Que conseillez-vous aux gens qui veulent commencer à participer à des hackathons?
 
@@ -61,26 +60,22 @@ Voici quelques exemples qui illustrent l'effet des filtres sur les images.
 
 **PBL**: Combattre le syndrome de l'imposteur. Je crois que tout le monde peut y trouver son compte si la motivation et le désir d'apprendre y sont.
 
-
 #### Q: Que conseillez-vous aux gens qui veulent stimuler leur créativité?
 
-**JT**: Je crois que chaque personne est créative à sa manière, mais ce qui peut stimuler la créativité est de s'ouvrir à plusieurs domaines. Par exemple, ce qui est intéressant dans le domaine de l'apprentissage automatique, c'est que ça réunit des personnes de différents domaines allant de la psychologie à la biologie, jusqu'à l'informatique. Ça en fait donc un domaine très créatif et intéressant. 
+**JT**: Je crois que chaque personne est créative à sa manière, mais ce qui peut stimuler la créativité est de s'ouvrir à plusieurs domaines. Par exemple, ce qui est intéressant dans le domaine de l'apprentissage automatique, c'est que ça réunit des personnes de différents domaines allant de la psychologie à la biologie, jusqu'à l'informatique. Ça en fait donc un domaine très créatif et intéressant.
 Avoir en main plusieurs sources d'idées peut venir générer la créativité. Comme dans le cas de notre solution: penser au photographe était aucunement mathématique, seulement artistique.
-
 
 #### Q: Quels ouvrages conseillez-vous aux gens qui veulent améliorer leurs performances dans la résolution de ce genre de problématiques?
 
-**SP**: En tant que grand fan du language R, je recommande [R for Data Science](https://r4ds.had.co.nz/) (qui est d'ailleurs disponible gratuitement sur le web) pour tous ceux et celles qui souhaitent améliorer leurs compétences en analyses de données. L'accent est principalement mis sur le nettoyage et la visualisation des données. 
+**SP**: En tant que grand fan du language R, je recommande [R for Data Science](https://r4ds.had.co.nz/) (qui est d'ailleurs disponible gratuitement sur le web) pour tous ceux et celles qui souhaitent améliorer leurs compétences en analyses de données. L'accent est principalement mis sur le nettoyage et la visualisation des données.
 
 En ce qui concerne les méthodes statistiques, ma bible est [The Elements of Statistical Learning](https://web.stanford.edu/~hastie/Papers/ESLII.pdf), qui possède aussi un équivalent un peu plus facile à lire pour les plus débutants: [An Introduction to Statistical Learning](https://www.ime.unicamp.br/~dias/Intoduction%20to%20Statistical%20Learning.pdf). Ces deux références sont également disponibles gratuitement en ligne.
 
-
 #### Q: Quel est le background des membres de l'équipe? Croyez-vous que ce background vous favorisait dans la catégorie Leonardo da Vinci?
 
-**JT**: Domaine de l'actuariat, consultation internationale. Je crois que la créativité vient plus de mes intérêts personnels et de mon ouverture d'esprit. 
+**JT**: Domaine de l'actuariat, consultation internationale. Je crois que la créativité vient plus de mes intérêts personnels et de mon ouverture d'esprit.
 
 **SP**: Les trois avons étudié l'actuariat à un certain moment. Maintenant, on se concentre plus particulièrement en statistique et apprentissage machine, que ce soit dans d'autres facultés ou de manière autodidacte. Par rapport aux autres, ça ne nous a probablement pas aidé plus qu'il le faut en ce qui concerne la créativité.
-
 
 #### Q: Aviez-vous ciblé la catégorie de prix Leonardo da Vinci volontairement avant ou pendant la compétition en faisant des compromis sur les autres prix (présentation, code)?
 
@@ -90,26 +85,23 @@ En ce qui concerne les méthodes statistiques, ma bible est [The Elements of Sta
 
 **PBL**: Effectivement, je l'ai déjà vu en spectacle! Aussi, on sait qu'on aurait pu passer la journée à essayer d'optimiser les hyperparamètres pour obtenir les meilleures _metrics_, mais cette approche nous tentait un peu moins. On préférait essayer des nouvelles idées et voir ce qui fonctionne bien.
 
-
 #### Q: De quelle façon votre équipe a-t-elle alloué les 6 heures à sa disposition? Avec du recul, les auriez-vous allouées de façon différente?
 
 **SP**: Après environ une heure, on avait déjà du code qui faisait l'essentiel du travail : un modèle linéaire généralisé, un réseau de neurones et un ensemble d'arbres de décisions. Merci au librairies R keras, glmnet et xgboost! On avait encore de petits bugs avec nos données par contre.
 
-Avec le recul, nous avons passé trop de temps à faire de la recherche en grille (*grid search*) pour trouver de meilleurs hyperparamètres. En rétrospective, j'aurais aimé passez plus de temps pour inclure dans la présentation certains aspects subtiles de nos modèles. On a aussi commencé à préparer notre présentation trop 
+Avec le recul, nous avons passé trop de temps à faire de la recherche en grille (_grid search_) pour trouver de meilleurs hyperparamètres. En rétrospective, j'aurais aimé passez plus de temps pour inclure dans la présentation certains aspects subtiles de nos modèles. On a aussi commencé à préparer notre présentation trop
 tard dans la journée.
 
-Par contre, je crois qu'on a bien fait de s'activer pour appliquer des filtres aux photos. Phil a fait ça avec Photoshop directement et a ensuite passé les résultats dans ResNet50 en python. On voulait tout faire ça en python, et John avait même codé un algorithme qui le faisait. Cependant, les résultats en 
+Par contre, je crois qu'on a bien fait de s'activer pour appliquer des filtres aux photos. Phil a fait ça avec Photoshop directement et a ensuite passé les résultats dans ResNet50 en python. On voulait tout faire ça en python, et John avait même codé un algorithme qui le faisait. Cependant, les résultats en
 Photoshop semblaient meilleurs. Encore une fois, ça aurait été intéressant d'avoir le code de John dans notre présentation pour montrer ce qu'était notre but ultime.
-
 
 #### Q: Est-ce que le hackathon a changé vos plans (études, participations à d'autres événements, cours en ligne, etc.) pour les prochains mois? Quelles sont les prochaines étapes pour vous?
 
-**JT**: Oui à 100%, je compte continuer à vouloir en apprendre plus sur le *Machine Learning* et continuer à lire et coder sur ce sujet.
+**JT**: Oui à 100%, je compte continuer à vouloir en apprendre plus sur le _Machine Learning_ et continuer à lire et coder sur ce sujet.
 
 **SP**: Dans mon cas, ces événements me rappellent toujours que je devrais améliorer mes compétences python!
 
-**PBL**: Ça n'a pas changé mes plans, mais ça confirme que je vais dans la bonne direction. 
-
+**PBL**: Ça n'a pas changé mes plans, mais ça confirme que je vais dans la bonne direction.
 
 #### Q: Avez-vous autre chose à partager au monde entier après cette victoire?
 
@@ -117,7 +109,7 @@ Photoshop semblaient meilleurs. Encore une fois, ça aurait été intéressant d
 
 **SP**: .layer 4 life. Love.
 
-**PBL**: *Spread love* et allez porter vos restants de nourriture des événements coopératifs dans des endroits qui les redistribuent aux plus démunis.
+**PBL**: _Spread love_ et allez porter vos restants de nourriture des événements coopératifs dans des endroits qui les redistribuent aux plus démunis.
 
 Merci pour votre participation, encore une fois félicitations, et rendez-vous au prochain événement de [MeetupMLQuebec](https://www.facebook.com/MeetupMLQuebec)!
 

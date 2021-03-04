@@ -9,6 +9,7 @@ tags: []
 description: "Retour sur la première année d'existence d'OpenLayer"
 featured: 'OpenLayer_YoutubeBanner.jpg'
 featuredpath: 'img/headers/'
+aliases: ['/blog/2020-07-29-openlayer-one-year/podcast/']
 ---
 
 Cela fait maintenant 1 an que j’ai lancé OpenLayer, mon projet de podcast vidéo sur l'IA. 32 épisodes plus tard, beaucoup de choses se sont dites derrière le micro. Ce texte débute par une présentation de mon voyage dans cette aventure et je termine avec un survol de certains moments forts des diverses discussions que j’ai eu la chance d’avoir avec les invités.

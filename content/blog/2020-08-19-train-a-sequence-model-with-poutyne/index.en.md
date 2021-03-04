@@ -9,6 +9,7 @@ tags: []
 description: 'Train an RNN for address parsing'
 featured: 'we-mastered-the-art-of-programming-cover.jpeg'
 featuredpath: 'img/headers/'
+aliases: ['/blog/2020-08-19-train-a-sequence-model-with-poutyne/machine-learning/']
 ---
 
 > In this article, we will train an RNN, or more precisely, an LSTM, to predict the sequence of tags associated with a

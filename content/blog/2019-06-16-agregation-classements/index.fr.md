@@ -9,6 +9,7 @@ tags: ['Analytique de sports']
 description: ''
 featured: 'agregation-cover.png'
 featuredpath: 'img/headers/'
+aliases: [/blog/2019-06-16-agregation-classements/agrégation-simple-de-classements/]
 ---
 
 Il y a quelques jours, des membres de la communauté .Layer se sont réunis dans un chalet autour d'une thématique: l'analyse de données sportives. Lors de ce week-end, nous avons effleuré trois projets reliant sports et analyse de données:

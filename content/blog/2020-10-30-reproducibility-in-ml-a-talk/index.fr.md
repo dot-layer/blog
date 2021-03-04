@@ -4,11 +4,12 @@ author: David Beauchemin
 date: '2020-11-11'
 slug: reproductibilite-apprentissage-automatique
 type: post
-categories: ['Nouvelles', 'Machine learning']
-tags: []
+categories: ['Machine learning']
+tags: ['Nouvelles']
 description: 'Des solutions aux embûches à la reproductibilité en apprentissage automatique'
 featured: 'hackathon-code-cover.JPG'
 featuredpath: 'img/headers/'
+aliases: ['/blog/2020-10-30-reproducibility-in-ml-a-talk/machine-learning/']
 ---
 
 > Un article rapide sur des solutions aux embûches à la reproductibilité en apprentissage automatique.
