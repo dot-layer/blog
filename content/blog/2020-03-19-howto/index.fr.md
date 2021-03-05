@@ -58,7 +58,7 @@ reading_time: ""
 Les champs sont presque tous _self-explanatory_.
 Le champ `date` devrait contenir la date de création du fichier. On le changera pour la date de publication en temps et lieu (dans le _Pull Request_).
 On s'occupera aussi des champs `categories` et `tags`.
-Le champ `slug` est un _surnom_ pour votre article qui sera utilisé pour nommer les différents dossiers liés à l'article sur le répertoire du blog.
+Le champ `slug` est un _surnom_ pour votre article qui sera utilisé pour nommer les différents dossiers liés à l'article sur le répertoire du blog et le nom de l'url.
 Le champ `featured` doit contenir le nom du fichier de l'image de couverture, tandis que `featuredpath` (qui doit rester inchangé) indique où trouver le fichier. C'est d'ailleurs là que vous devez placer votre image de couverture.
 Finalement, si l'article soumis est déjà publié sur une autre plateforme, veuillez ajouter le champ `canonical` afin de spécifier ladite plateforme. Par exemple, dans l'en-tête de l'article _What's wrong with Scikit-Learn_ publié sur le blog, on trouve
 

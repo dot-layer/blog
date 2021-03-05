@@ -58,7 +58,7 @@ reading_time: ""
 The fields are almost all _self-explanatory_.
 The `date` field should contain the creation date of the file. We will change it for the publication date in due time (in the _Pull Request_).
 We will also take care of the `categories` and` tags` fields.
-The `slug` field is a _nickname_ for your post, which will be used to name the various files linked to the post in the blog directory.
+The `slug` field is a _nickname_ for your post, which will be used to name the various files linked to the post in the blog directory and the url name.
 The `featured` field should contain the name of the cover image file, while` featuredpath` (which should remain unchanged) indicates where to find the file. This is where you should place your cover image.
 Finally, if the post submitted is already published on another platform, please add the `canonical` field to specify the platform. For example, in the header of the post _What's wrong with Scikit-Learn_ published on the blog, we find
 
