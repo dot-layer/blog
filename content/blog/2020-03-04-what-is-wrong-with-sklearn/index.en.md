@@ -1,15 +1,16 @@
 ---
-title:  "What's wrong with Scikit-Learn."
-author: "Guillaume Chevalier"
+title: "What's wrong with Scikit-Learn."
+author: 'Guillaume Chevalier'
 date: '2020-01-03'
 slug: neat-machine-learning-pipelines
 type: post
 canonical: https://www.neuraxio.com/en/blog/scikit-learn/2020/01/03/what-is-wrong-with-scikit-learn.html
-categories: ["Software engineering", "Python"]
-tags: ["Scikit Learn", "Machine Learning", "Deep Learning", "Clean Code", "Software Architecture"]
-description: "Scikit-Learn had its first release in 2007, which was a pre deep learning era. However, it’s one of the most known and adopted machine learning library, and is still growing."
-featured: "sklearn-broken.jpg"
-featuredpath: "img/headers/"
+categories: ['Software engineering', 'Python']
+tags: ['Scikit Learn', 'Machine Learning', 'Deep Learning', 'Clean Code', 'Software Architecture']
+description: 'Scikit-Learn had its first release in 2007, which was a pre deep learning era. However, it’s one of the most known and adopted machine learning library, and is still growing.'
+featured: 'sklearn-broken.jpg'
+featuredpath: 'img/headers/'
+aliases: [/blog/2020-03-04-what-is-wrong-with-sklearn/neat-machine-learning-pipelines/]
 ---
 
 > Scikit-Learn’s “pipe and filter” design pattern is simply beautiful. But how to use it for Deep Learning, AutoML, and complex production-level pipelines?
@@ -100,21 +101,21 @@ Metaestimators are crucial for advanced features. For instance, a `ParallelTrans
 
 For sure, Scikit-Learn is very convenient and well-built. However, it needs a refresh. Here are our solutions with Neuraxle to make Scikit-Learn fresh and useable within modern computing projects!
 
--   [Inability to Reasonably do Automatic Machine Learning (AutoML)](https://www.neuraxle.org/stable/scikit-learn_problems_solutions.html#inability-to-reasonably-do-automatic-machine-learning-automl)
-    -   [Problem: Defining the Search Space (Hyperparameter Distributions)](https://www.neuraxle.org/stable/scikit-learn_problems_solutions.html#problem-defining-the-search-space-hyperparameter-distributions)
-    -   [Problem: Defining Hyperparameters in the Constructor is Limiting](https://www.neuraxle.org/stable/scikit-learn_problems_solutions.html#problem-defining-hyperparameters-in-the-constructor-is-limiting)
-    -   [Problem: Different Train and Test Behavior](https://www.neuraxle.org/stable/scikit-learn_problems_solutions.html#problem-different-train-and-test-behavior)
-    -   [Problem: You trained a Pipeline and You Want Feedback on its Learning.](https://www.neuraxle.org/stable/scikit-learn_problems_solutions.html#problem-you-trained-a-pipeline-and-you-want-feedback-statistics-on-its-learning)
+- [Inability to Reasonably do Automatic Machine Learning (AutoML)](https://www.neuraxle.org/stable/scikit-learn_problems_solutions.html#inability-to-reasonably-do-automatic-machine-learning-automl)
+  - [Problem: Defining the Search Space (Hyperparameter Distributions)](https://www.neuraxle.org/stable/scikit-learn_problems_solutions.html#problem-defining-the-search-space-hyperparameter-distributions)
+  - [Problem: Defining Hyperparameters in the Constructor is Limiting](https://www.neuraxle.org/stable/scikit-learn_problems_solutions.html#problem-defining-hyperparameters-in-the-constructor-is-limiting)
+  - [Problem: Different Train and Test Behavior](https://www.neuraxle.org/stable/scikit-learn_problems_solutions.html#problem-different-train-and-test-behavior)
+  - [Problem: You trained a Pipeline and You Want Feedback on its Learning.](https://www.neuraxle.org/stable/scikit-learn_problems_solutions.html#problem-you-trained-a-pipeline-and-you-want-feedback-statistics-on-its-learning)
 - [Inability to Reasonably do Deep Learning Pipelines](https://www.neuraxle.org/stable/scikit-learn_problems_solutions.html#inability-to-reasonably-do-deep-learning-pipelines)
-    -   [Problem: Scikit-Learn Hardly Allows for Mini-Batch Gradient Descent (Incremental Fit)](https://www.neuraxle.org/stable/scikit-learn_problems_solutions.html#problem-scikit-learn-hardly-allows-for-mini-batch-gradient-descent-incremental-fit)
-    -   [Problem: Initializing the Pipeline and Deallocating Resources](https://www.neuraxle.org/stable/scikit-learn_problems_solutions.html#problem-initializing-the-pipeline-and-deallocating-resources)
-    -   [Problem: It is Difficult to Use Other Deep Learning (DL) Libraries in Scikit-Learn](https://www.neuraxle.org/stable/scikit-learn_problems_solutions.html#problem-it-is-difficult-to-use-other-deep-learning-dl-libraries-in-scikit-learn)
-    -   [Problem: The Ability to Transform Output Labels](https://www.neuraxle.org/stable/scikit-learn_problems_solutions.html#problem-the-ability-to-transform-output-labels)
+  - [Problem: Scikit-Learn Hardly Allows for Mini-Batch Gradient Descent (Incremental Fit)](https://www.neuraxle.org/stable/scikit-learn_problems_solutions.html#problem-scikit-learn-hardly-allows-for-mini-batch-gradient-descent-incremental-fit)
+  - [Problem: Initializing the Pipeline and Deallocating Resources](https://www.neuraxle.org/stable/scikit-learn_problems_solutions.html#problem-initializing-the-pipeline-and-deallocating-resources)
+  - [Problem: It is Difficult to Use Other Deep Learning (DL) Libraries in Scikit-Learn](https://www.neuraxle.org/stable/scikit-learn_problems_solutions.html#problem-it-is-difficult-to-use-other-deep-learning-dl-libraries-in-scikit-learn)
+  - [Problem: The Ability to Transform Output Labels](https://www.neuraxle.org/stable/scikit-learn_problems_solutions.html#problem-the-ability-to-transform-output-labels)
 - [Not ready for Production nor for Complex Pipelines](https://www.neuraxle.org/stable/scikit-learn_problems_solutions.html#not-ready-for-production-nor-for-complex-pipelines)
-    -   [Problem: Processing 3D, 4D, or ND Data in your Pipeline with Steps Made for Lower-Dimensionnal Data](https://www.neuraxle.org/stable/scikit-learn_problems_solutions.html#problem-processing-3d-4d-or-nd-data-in-your-pipeline-with-steps-made-for-lower-dimensionnal-data)
-    -   [Problem: Modify a Pipeline Along the Way, such as for Pre-Training or Fine-Tuning](https://www.neuraxle.org/stable/scikit-learn_problems_solutions.html#problem-modify-a-pipeline-along-the-way-such-as-for-pre-training-or-fine-tuning)
-    -   [Problem: Getting Model Attributes from Scikit-Learn Pipeline](https://www.neuraxle.org/stable/scikit-learn_problems_solutions.html#problem-getting-model-attributes-from-scikit-learn-pipeline)
-    -   [Problem: You can't Parallelize nor Save Pipelines Using Steps that Can't be Serialized "as-is" by Joblib](https://www.neuraxle.org/stable/scikit-learn_problems_solutions.html#problem-you-can-t-parallelize-nor-save-pipelines-using-steps-that-can-t-be-serialized-as-is-by-joblib)
+  - [Problem: Processing 3D, 4D, or ND Data in your Pipeline with Steps Made for Lower-Dimensionnal Data](https://www.neuraxle.org/stable/scikit-learn_problems_solutions.html#problem-processing-3d-4d-or-nd-data-in-your-pipeline-with-steps-made-for-lower-dimensionnal-data)
+  - [Problem: Modify a Pipeline Along the Way, such as for Pre-Training or Fine-Tuning](https://www.neuraxle.org/stable/scikit-learn_problems_solutions.html#problem-modify-a-pipeline-along-the-way-such-as-for-pre-training-or-fine-tuning)
+  - [Problem: Getting Model Attributes from Scikit-Learn Pipeline](https://www.neuraxle.org/stable/scikit-learn_problems_solutions.html#problem-getting-model-attributes-from-scikit-learn-pipeline)
+  - [Problem: You can't Parallelize nor Save Pipelines Using Steps that Can't be Serialized "as-is" by Joblib](https://www.neuraxle.org/stable/scikit-learn_problems_solutions.html#problem-you-can-t-parallelize-nor-save-pipelines-using-steps-that-can-t-be-serialized-as-is-by-joblib)
 
 ## Conclusion
 

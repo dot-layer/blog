@@ -14,7 +14,7 @@ canonifyURLs = true
 enableEmoji   = true
 
 [permalinks]
-    post = "/:slug/"
+    blog = "/:slug/"
 
 
 [params]

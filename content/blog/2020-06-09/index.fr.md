@@ -4,11 +4,12 @@ author: Nicolas Garneau
 date: '2020-07-29'
 slug: copenhagen
 type: post
-categories: ["Trippin"]
+categories: ['Trippin']
 tags: []
-description: "Étendre ses frontières en recherche"
-featured: "copenhagen-fr-cover.jpg"
-featuredpath: "img/headers/"
+description: 'Étendre ses frontières en recherche'
+featured: 'copenhagen-fr-cover.jpg'
+featuredpath: 'img/headers/'
+aliases: ['/blog/2020-06-09/copenhagen/']
 ---
 
 L’hiver dernier, j’ai eu la chance d’aller à Copenhague, au Danemark, dans le cadre de ma recherche de doctorat.
@@ -23,7 +24,7 @@ Clairement, le gars est tombé sur la tête; ça ne fait pas partie du chemineme
 
 Il y a en fait trois principales raisons.
 
-La première, très simple, est que j'adore voyager. 
+La première, très simple, est que j'adore voyager.
 La deuxième est que je voulais tout simplement rencontrer des gens, élargir mon réseau de contacts.
 La troisième est que je crois qu'il est fondamental pour un chercheur d'étendre ses horizons en recherche.
 
@@ -39,6 +40,7 @@ Sebastian Ruder en glisse un mot dans son excellent billet ["10 Tips for Researc
 
 Il y a évidemment quelques préparatifs nécessaires pour concrétiser un voyage de recherche.
 Ça se résume essentiellement en 3 étapes;
+
 - Trouver un endroit où faire votre stage;
 - Avoir/obtenir du financement;
 - Trouver votre hébergement.
@@ -48,7 +50,6 @@ Pour obtenir un visa d'étude ou de travail, c'est propre à chaque pays et c'es
 D'où ma décision de partir seulement 3 mois.
 
 Je détaille donc les 3 étapes selon mon expérience personnelle.
-
 
 ### Trouver un laboratoire
 
@@ -69,18 +70,17 @@ Ce n'est rien pour critiquer les autres chercheurs, ils sont tous très occupés
 Cependant, Anders était extrêmement réactif considérant le fait que j'étais un parfait inconnu.
 Ça confirmait donc mon stage de 3 mois du 4 février au 27 avril 2020 à Copenhague!
 
-
 ### Le financement
 
 Si vous avez votre propre "stash" de côté, c'est l'idéal.
-J'avais quelques dollars en banque, mais Copenhague est une des villes les plus chères *à visiter*.
+J'avais quelques dollars en banque, mais Copenhague est une des villes les plus chères _à visiter_.
 Et si comme moi vous aimez la bonne bouffe, la boisson et les produits locaux, ça chiffre assez vite.
 
 Comme mentionné précédemment, les universités sont souvent munies d'un bureau international.
 Celui de l'université Laval fournit une bourse de 1 000\\$ pour tout stage à l'étranger aux cycles supérieurs, ce qui couvrait essentiellement mon billet d'avion de 1 023\\$ réservé en octobre pour un départ en février.
 
 Les associations étudiantes peuvent également vous donner un coup de main.
-[L'AELIÉS](https://www.aelies.ulaval.ca/services/soutien-financier/), l'association des étudiant(e)s inscrits aux études supérieures, offre également un soutien de 300$ pour les stages ou voyages d'études. 
+[L'AELIÉS](https://www.aelies.ulaval.ca/services/soutien-financier/), l'association des étudiant(e)s inscrits aux études supérieures, offre également un soutien de 300$ pour les stages ou voyages d'études.
 Ce n’est pas énorme, mais très rapide de faire la demande et c'est mieux qu'une claque en plein visage.
 
 Au niveau gouvernemental, il y a (avait) quelques possibilités.
@@ -91,7 +91,6 @@ J'ai entendu dire que les gouvernements (fédéral et provincial) ne sont plus t
 Ce qui a beaucoup de sens en effet.
 
 Bref, je me retrouvais donc avec une bourse de 1 300\\$ pour partir 3 mois à Copenhague :(
-
 
 ### L'hébergement
 
@@ -107,7 +106,7 @@ Copenhague est sans aucun doute une des plus belles villes en Europe que j'ai vi
 Très propre, on y circule facilement à vélo (il faut absolument s'en procurer un, [Swapfiets](https://swapfiets.dk/en/) est parfait pour ça), la nourriture excellente et d'impressionnantes microbrasseries.
 On ajoute à tout ça la chaleur des gens.
 Coastal est un laboratoire d'une quinzaine de chercheurs (qui sont régulièrement présents) et chacun d'entre eux m'a personnellement accueilli.
-Le groupe organise régulièrement des activités, *after work beer* et participe religieusement aux *pub quiz* du [Mikkeller](https://mikkeller.com/).
+Le groupe organise régulièrement des activités, _after work beer_ et participe religieusement aux _pub quiz_ du [Mikkeller](https://mikkeller.com/).
 
 J'étais particulièrement surpris de leur ouverture.
 Dès la première journée au laboratoire, j'étais un des leurs.
@@ -133,21 +132,19 @@ Les vols se remplissaient rapidement, le prix des billets d'avion montait en fl�
 Samedi, le gouvernement demande à tous les citoyens canadiens de rentrer au pays.
 Merci les assurances (j'ai quand même réclamé, soyez sans crainte).
 
-
 ### D'une pierre deux coups
 
 Un de mes objectifs de ce voyage était de rencontrer des gens.
 Du point de vue académique, c'était chose faite.
 Je voulais également en profiter pour rencontrer des gens de l'industrie.
 
-Berlin bouillonne au niveau de la scène *startup* à la communauté NLP est impressionnante.
+Berlin bouillonne au niveau de la scène _startup_ à la communauté NLP est impressionnante.
 J'ai eu la chance d'aller dîner avec Alan Nichol de chez [Rasa](https://rasa.com/).
 Ce fut une rencontre vraiment intéressante, Alan est **hyper** sympathique.
 On a parlé de la recherche qui se faisait chez Rasa ainsi que des projets qui m'excitaient.
 Il m'a même offert de venir faire un stage dans leur équipe de recherche!
-Il prévoyait m'introduire à plusieurs *startups* pendant mon séjour à Berlin, dont [Spacy](https://spacy.io/).
+Il prévoyait m'introduire à plusieurs _startups_ pendant mon séjour à Berlin, dont [Spacy](https://spacy.io/).
 Malheureusement, la pandémie m'a forcé à rentrer au bercail.
-
 
 ## Take-aways
 

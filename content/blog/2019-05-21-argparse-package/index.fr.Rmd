@@ -9,6 +9,7 @@ description: "Utiliser le paquetage argparse pour faciliter l'appel de scripts R
 output: html_document
 featured: "argparse-package.png"
 featuredpath: "img/headers/"
+aliases: [/blog/2019-05-21-argparse-package/optparse-package/]
 ---
 
 ```{r setup, include=FALSE}

@@ -1,30 +1,26 @@
 ---
-title: "Repêchage de la LNH : est-ce vraiment une science inexacte?"
-slug: "tidy-nhl-draft-analysis"
-author: "Stéphane Caron"
-description: ""
-date: "2021-02-12"
-categories: ["Analytique"]
+title: 'Repêchage de la LNH : est-ce vraiment une science inexacte?'
+slug: 'tidy-nhl-draft-analysis'
+author: 'Stéphane Caron'
+description: ''
+date: '2021-02-12'
+categories: ['Analytique']
 type: post
-tags: 
-  - R
-  - Analytique de sports
-  - Hockey
+tags: ['R', 'Analytique de sports', 'Hockey']
 output:
   html_document:
     keep_md: yes
-featured: "hockey-draft-post.jpg"
-featuredpath: "img/headers/"
+featured: 'hockey-draft-post.jpg'
+featuredpath: 'img/headers/'
 reading_time: 15
+aliases: ['/blog/2021-02-01-tidynhl-analyse/tidy-nhl-draft-analysis/']
 ---
-
-
 
 **On entend souvent dire que le repêchage de la LNH, tout comme c'est le cas
 dans d'autres sports professionnels, est une science inexacte. J'imagine que cette
-expression fait référence au fait que si l'on doit repêcher un joueur $x$ à un moment 
-$t$ donné, il n'y a aucune certitude que ce joueur est le bon choix. Mais disons 
-qu'on prend le temps de regarder plusieurs choix, sur plusieurs années, est-ce toujours le 
+expression fait référence au fait que si l'on doit repêcher un joueur $x$ à un moment
+$t$ donné, il n'y a aucune certitude que ce joueur est le bon choix. Mais disons
+qu'on prend le temps de regarder plusieurs choix, sur plusieurs années, est-ce toujours le
 cas? Est-ce que le repêchage devient en quelque sorte une science plus "exacte" lorsque l'échantillon de joueurs repêchés devient plus grand?**
 
 Dans cet article, je tenterai d'éclairer cette question en analysant les récents
@@ -34,8 +30,8 @@ _package_ <svg style="height:0.8em;top:.04em;position:relative;fill:steelblue;" 
 
 # Mise en contexte {#mise-en-contexte}
 
-Pour commencer, je dois vous faire un aveu: je préfère regarder le repêchage de la 
-LNH que la finale de la coupe Stanley elle-même. En tant qu'amateur de hockey, 
+Pour commencer, je dois vous faire un aveu: je préfère regarder le repêchage de la
+LNH que la finale de la coupe Stanley elle-même. En tant qu'amateur de hockey,
 j'ai presque honte de l'avouer. J'adore analyser les futurs joueurs ainsi que les choix des équipes pendant cette séance de repêchage. Certes, il y aura toujours beaucoup d'incertitude autour de la sélection d'un joueur. Par contre, en tant que scientifique de données, je crois que cette incertitude peut être réduite par les experts et les dépisteurs les plus compétents, ceux qui savent bien évaluer les jeunes joueurs. La question à laquelle nous tenterons de répondre peut se formuler comme
 
 > Est-ce que certaines équipes sont plus performantes que d'autres pour repêcher de futurs joueurs?
@@ -43,7 +39,6 @@ j'ai presque honte de l'avouer. J'adore analyser les futurs joueurs ainsi que le
 # Préparation des données {#preparation-donnees}
 
 Pour tenter de répondre à cette question, j'ai décidé d'analyser les sélections des repêchages allant de 2005 à 2015. Ce choix est arbitraire et se base sur le fait que 10 ans me semble assez crédible comme échantillon de joueurs (près de 2500 joueurs repêchés). Aussi, pour éviter que les bons joueurs repêchés dans de mauvaises équipes soient trop pénalisés, nous allons nous restreindre aux statistiques en saison régulière. Cela permettra aux joueurs d'être comparés sur une base plus équitable, où toutes les équipes jouent le même nombre de matchs. La première étape consiste à importer les données associées à ces repêchages avec la fonction `tidy_drafts()`.
- 
 
 ```r
 # Charger les packages
@@ -66,12 +61,12 @@ dt_draft <- dt_draft[!is.na(player_id)]
 # On se crée une fonction pour fusionner les équipes déménagées (ou renommées)
 # Nettoyage de données
 merge_moved_teams <- function(dt) {
-  
+
   dt[team_abbreviation %in% c("WPG", "ATL"), team_abbreviation := "WPG/ATL"]
   dt[team_abbreviation %in% c("PHX", "ARI"), team_abbreviation := "ARI/PHX"]
-  
+
   dt
-  
+
 }
 
 # Fusionner les équipes déménagés
@@ -88,7 +83,7 @@ dt_draft[]
 ##    3:       2005           1          3             3      12               CAR   8471677     Jack Johnson                 USA          USA U-18
 ##    4:       2005           1          4             4      30               MIN   8471678   Benoit Pouliot                 OHL           Sudbury
 ##    5:       2005           1          5             5       8               MTL   8471679      Carey Price                 WHL          Tri-City
-##   ---                                                                                                                                           
+##   ---
 ## 2334:       2015           7         26           207       8               MTL   8478921 Jeremiah Addison                 OHL            Ottawa
 ## 2335:       2015           7         27           208      22               EDM   8478922 Miroslav Svoboda           CZREP-JR.        Trinec Jr.
 ## 2336:       2015           7         28           209      22               EDM   8478923     Ziyat Paigin              RUSSIA             Kazan
@@ -98,11 +93,10 @@ dt_draft[]
 
 Afin d'avoir plus d'informations sur les joueurs, nous allons également importer des métadonnées (date de naissance, position, nationalité, etc.) sur ceux-ci grâce à la fonction `tidy_players_meta()`.
 
-
 ```r
 # Obtenir les metadonnées sur les joueurs
 dt_meta_player <- tidy_players_meta(
-  players_id = dt_draft$player_id, 
+  players_id = dt_draft$player_id,
   keep_id = TRUE
 )
 
@@ -110,8 +104,8 @@ dt_meta_player <- tidy_players_meta(
 merge_moved_teams(dt_meta_player)
 
 cols <- c("player_id", "player_position_type")
-dt_draft[dt_meta_player, 
-         (cols) := mget(cols), 
+dt_draft[dt_meta_player,
+         (cols) := mget(cols),
          on = .(player_id)]
 
 
@@ -126,16 +120,15 @@ dt_meta_player[]
 ##    3:   8470817  William Colbert         FALSE                    N            52               D                    D                CAN                  CAN                         ON          Arnprior        1985-02-06       FALSE              <NA>            74           210           L         FALSE      FALSE              NA          FALSE      NA              <NA>
 ##    4:   8470872  Trevor Hendrikx         FALSE                    N            NA               D                    D                CAN                  CAN                         ON        Winchester        1985-03-29       FALSE              <NA>            74           200           R         FALSE      FALSE              NA          FALSE      NA              <NA>
 ##    5:   8470996     Danny Syvret         FALSE                    Y            26               D                    D                CAN                  CAN                         ON         Millgrove        1985-06-13       FALSE              <NA>            72           205           L         FALSE      FALSE              NA          FALSE      NA              <NA>
-##   ---                                                                                                                                                                                                                                                                                                                                                                                
+##   ---
 ## 2328:   8478921 Jeremiah Addison         FALSE                    N            64               L                    F                CAN                  CAN                         ON          Brampton        1996-10-21       FALSE              <NA>            72           188           L          TRUE      FALSE              NA          FALSE      NA              <NA>
 ## 2329:   8478922 Miroslav Svoboda         FALSE                    N            39               G                    G                CZE                  CZE                       <NA>            Vsetin        1995-03-07       FALSE              <NA>            75           191           L          TRUE      FALSE              NA          FALSE      NA              <NA>
 ## 2330:   8478923     Ziyat Paigin         FALSE                    N            92               D                    D                RUS                  RUS                       <NA>             Penza        1995-02-08       FALSE              <NA>            78           210           L          TRUE      FALSE              NA          FALSE      NA              <NA>
 ## 2331:   8478924       Tate Olson         FALSE                    N            NA               D                    D                CAN                  CAN                         SK         Saskatoon        1997-03-21       FALSE              <NA>            74           174           L          TRUE      FALSE              NA          FALSE      NA              <NA>
 ## 2332:   8478925   John Dahlstrom         FALSE                    N            44               R                    F                SWE                  SWE                       <NA>        Kungsbacka        1997-01-22       FALSE              <NA>            72           189           L          TRUE      FALSE              NA          FALSE      NA              <NA>
 ```
- 
-Nous allons ensuite importer les statstiques individuelles de ces joueurs repêchés grâce aux fonctions `tidy_skaters_stats()` et `tidy_goalies_stats()`. 
 
+Nous allons ensuite importer les statstiques individuelles de ces joueurs repêchés grâce aux fonctions `tidy_skaters_stats()` et `tidy_goalies_stats()`.
 
 ```r
 # Obtenir les données de statistiques individuelles des joueurs
@@ -152,8 +145,8 @@ dt_goalies_stats <- tidy_goalies_stats(
   keep_id = TRUE
 )
 
-dt_stats <- rbindlist(list(dt_skaters_stats, dt_goalies_stats), 
-                      use.names = TRUE, 
+dt_stats <- rbindlist(list(dt_skaters_stats, dt_goalies_stats),
+                      use.names = TRUE,
                       fill = TRUE)
 
 # Afficher un extrait des données
@@ -167,7 +160,7 @@ dt_stats[]
 ##    3:   8470996   Danny Syvret  20062007      2006-07     regular      22               EDM           16            0              1             1              -10          6 295.500000           373          0          0           15             25           1               0                 1                1    247.700000               0                 0                0     28.300000               0                 0                0     19.500000           NA             NA          NA            NA          NA        NA              NA                 NA                 NA             NA         NA         NA                    NA                    NA                NA                    NA                    NA                NA                    NA                    NA                NA
 ##    4:   8470996   Danny Syvret  20082009      2008-09     regular       4               PHI            2            0              0             0               -1          0  18.850000            27          0          0            0              1           1               0                 0                0     18.850000               0                 0                0      0.000000               0                 0                0      0.000000           NA             NA          NA            NA          NA        NA              NA                 NA                 NA             NA         NA         NA                    NA                    NA                NA                    NA                    NA                NA                    NA                    NA                NA
 ##    5:   8470996   Danny Syvret  20092010      2009-10     regular       4               PHI           21            2              2             4                1         12 262.050000           357          0          0           14             20           6               2                 2                4    257.516667               0                 0                0      2.583333               0                 0                0      1.950000           NA             NA          NA            NA          NA        NA              NA                 NA                 NA             NA         NA         NA                    NA                    NA                NA                    NA                    NA                NA                    NA                    NA                NA
-##   ---                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+##   ---
 ## 6717:   8478492  Ilya Samsonov  20202021      2020-21     regular      15               WSH           NA           NA             NA            NA               NA         NA         NA            NA         NA         NA           NA             NA          NA              NA                NA               NA            NA              NA                NA               NA            NA              NA                NA               NA            NA            2              2           1             0           0         1               0                 53                  7      0.8679245   3.360000   125.0000                    43                     6         0.8604651                     8                     1         0.8750000                     2                     0                 1
 ## 6718:   8478499      Adin Hill  20172018      2017-18     regular      53               ARI           NA           NA             NA            NA               NA         NA         NA            NA         NA         NA           NA             NA          NA              NA                NA               NA            NA              NA                NA               NA            NA              NA                NA               NA            NA            4              4           1             3           0         0               0                129                 14      0.8914729   3.489097   240.7500                   118                    12         0.8983051                     9                     2         0.7777778                     2                     0                 1
 ## 6719:   8478499      Adin Hill  20182019      2018-19     regular      53               ARI           NA           NA             NA            NA               NA         NA         NA            NA         NA         NA           NA             NA          NA              NA                NA               NA            NA              NA                NA               NA            NA              NA                NA               NA            NA           13             11           7             5           0         0               1                322                 32      0.9006211   2.757234   696.3500                   271                    27         0.9003690                    41                     5         0.8780488                    10                     0                 1
@@ -178,25 +171,24 @@ dt_stats[]
 Finalement, nous allons appliquer quelques transformations et manipulations à ces
 trois jeux de données afin de régler quelques détails techniques importants pour l'analyse.
 
-
 ```r
 # On se crée une fonction pour aggréger les données essentielles
 # On va devoir aggréger plusieurs fois les memes stats (pts, games, wins) dans l'analyse
 aggregate_stats <- function(dt, old_by_names, new_by_names) {
-  
+
   dt_aggregated <- dt[, .(
     skater_points = sum(skater_points, na.rm = TRUE),
     skater_games = sum(skater_games, na.rm = TRUE),
     goalie_games = sum(goalie_games, na.rm = TRUE),
     goalie_wins = sum(goalie_wins, na.rm = TRUE)
   ), old_by_names]
-  
+
   # On additionne les games des goalies et des players car stockés dans 2 variables différentes
   dt_aggregated[, player_games := ifelse(is.na(skater_games), 0, skater_games) + ifelse(is.na(goalie_games), 0, goalie_games)]
   setnames(dt_aggregated, old_by_names, new_by_names)
-  
+
   dt_aggregated[]
-  
+
 }
 
 # Fusionner les équipes déménagés
@@ -205,13 +197,13 @@ merge_moved_teams(dt_stats)
 # Aggrégé les données par équipe jouée et joindre les données
 dt_stats_aggregated <- aggregate_stats(
   dt = dt_stats,
-  old_by_names = c("player_id", "team_abbreviation"), 
+  old_by_names = c("player_id", "team_abbreviation"),
   new_by_names = c("player_id", "team_played")
 )
 
 dt_all <- merge(dt_draft,
                 dt_stats_aggregated,
-                by = "player_id", 
+                by = "player_id",
                 all.x = TRUE)
 
 setnames(dt_all, old = "team_abbreviation", new = "team_drafted")
@@ -229,7 +221,7 @@ dt_all[player_name == "P.K. Subban"]
 
 Maintenant que nous avons structuré les données dans un format étant plus facile à
 manipuler, nous allons tenter d'aggréger celles-ci de différentes manières afin
-d'avoir un portrait par équipe. Allons-y ! 
+d'avoir un portrait par équipe. Allons-y !
 
 <center>
 
@@ -241,17 +233,16 @@ d'avoir un portrait par équipe. Allons-y !
 
 Dans un premier temps, on est en droit de se poser la question: est-ce que toutes
 les équipes de la LNH repêchent autant de joueurs? Sachant que chaque équipe
-possède un choix dans chacune des rondes du repêchage, on pourrait penser que 
+possède un choix dans chacune des rondes du repêchage, on pourrait penser que
 oui. Par contre, on sait très bien que les équipes peuvent échanger leurs choix
 afin d'obtenir des joueurs ou d'autres choix. Ainsi, j'étais curieux
-de voir comment était distribué ce nombre de choix "réels" parmi les équipes. Pour 
+de voir comment était distribué ce nombre de choix "réels" parmi les équipes. Pour
 commencer, nous allons aggréger certaines informations par équipe.
-
 
 ```r
 # Aggréger les données des jouers par équipes repêchés
 dt_per_team <- dt_all[, .(
-  nb_picks = uniqueN(.SD[]$player_id), 
+  nb_picks = uniqueN(.SD[]$player_id),
   nb_1st_round_picks = uniqueN(.SD[draft_round == 1]$player_id),
   nb_games_played = sum(player_games, na.rm = TRUE),
   nb_points = sum(skater_points, na.rm = TRUE),
@@ -273,9 +264,8 @@ head(dt_per_team[])
 ```
 
 Maintenant que nous avons les données aggrégées par équipe, nous pouvons
-visualiser le nombre de joueurs repêchés grâce au _package_ [`ggplot2`](https://ggplot2.tidyverse.org). En bonus, on peut également voir le 
+visualiser le nombre de joueurs repêchés grâce au _package_ [`ggplot2`](https://ggplot2.tidyverse.org). En bonus, on peut également voir le
 nombre de joueurs repêchés en **première ronde** (points rouges).
-
 
 ```r
 library(ggplot2)
@@ -284,7 +274,7 @@ ggplot(
   data = dt_per_team,
   mapping = aes(
     x = nb_picks,
-    y = reorder(as.factor(team_drafted), nb_picks), 
+    y = reorder(as.factor(team_drafted), nb_picks),
   )
 ) +
   geom_col() +
@@ -295,8 +285,8 @@ ggplot(
     )
   ) +
   scale_color_manual(
-    name = "Nombre de joueurs choisi en 1er ronde", 
-    values = c(" " = "red") 
+    name = "Nombre de joueurs choisi en 1er ronde",
+    values = c(" " = "red")
   ) +
   labs(
     title = "Nombre de joueurs repêchés par équipe",
@@ -319,16 +309,15 @@ l'objectif demeure de voir si certaines équipes sont plus performantes que les 
 
 ## Les matchs joués dans la _Grande Ligue_ {#match-joues}
 
-Comment savoir si une équipe repêche de bons joueurs? La première idée 
+Comment savoir si une équipe repêche de bons joueurs? La première idée
 qui me vient en tête est évidemment de regarder le nombre de matchs joué dans la LNH. Cette mesure est en quelque sorte indépendante de la position ou du style de joueur, ce qui rend son interprétation plus simple. Par contre, n'oublions pas que certaines équipes ont repêchés plus de
 joueurs que d'autres. Dans le graphique ci-dessous, si la logique du nombre de choix était respectée, les barres seraient ordonnées de la plus pâle vers la plus foncée (en partant d'en haut).
 
-
 ```r
 ggplot(
-  data = dt_per_team, 
+  data = dt_per_team,
   mapping = aes(
-    y = reorder(as.factor(team_drafted), nb_games_played), 
+    y = reorder(as.factor(team_drafted), nb_games_played),
     x = nb_games_played,
     fill = nb_picks
   )
@@ -350,7 +339,6 @@ Je vous laisse tirer vos propres conclusions, mais de mon côté je remarque que
 ## Les buts 🚨 et les passes 🍎 récoltés
 
 Une autre mesure évidente à analyser est le nombre de points ($buts + passes$) obtenus par les joueurs repêchés par une équipe. Contrairement aux matchs joués, il faut tenir compte de la position du joueur dans ce cas-ci. Les attaquants font en général plus de points que les défenseurs, et peut-être que certaines équipes repêchent plus de défenseurs, ou même de gardiens (attendez ça s'en vient) ...
-
 
 ```r
 library(dplyr)
@@ -388,7 +376,6 @@ dt_stats_position[player_position_type %in% c("F", "D"),] %>%
 
 Dans le graphique ci-dessus, les équipes sont ordonnées selon le nombre de points combiné entre les attaquants (F) et les défenseurs (D). On peut donc conclure que les Oilers d'Edmonton est l'équipe qui a repêché, entre 2005 et 2015, les joueurs ayant récoltés le plus de points dans la LNH (merci à la lotterie). Dans ce graphique, on peut également voir que les Ducks d'Anaheim et les Predators de Nashville semblent avoir repêchés de bons défenseurs, probablement au détriment de repêcher de bons attaquants. Voici les 5 défenseurs les plus productifs repêchés par ces 2 équipes:
 
-
 ```r
 unique(dt_all[team_drafted == "ANA" & player_position_type == "D"][order(-skater_points), player_name])[1:5]
 ```
@@ -410,7 +397,6 @@ Pas mal 😮!
 ## Nos amis les gardiens
 
 Maintenant que nous avons regardé les attaquants et les défenseurs, jetons un coup d'oeil aux gardiens de but. Comme mesure alternative au nombre de points, j'ai utilisé le nombre de victoires.
-
 
 ```r
 aggregate_stats(
@@ -441,7 +427,6 @@ aggregate_stats(
 
 Pour ceux qui pensaient que Carey Price permettrait au Canadiens d'être au premier rang, vous étiez trop ambitieux. Par contre, peut-être qu'ils auraient eu plus de chances si j'avais inclus le repêchage de 2003, séance où fut repeché un certain Jaroslav Halak. On peut remarquer que les Capitals de Washington semblent avoir eu du flair pour repêcher de bons gardiens de buts. Seriez-vous capable de nommer quelques uns de ces gardiens?
 
-
 ```r
 unique(dt_all[team_drafted == "WSH" & player_position_type == "G"][order(-goalie_wins), player_name])[1:5]
 ```
@@ -455,7 +440,6 @@ Connaissant les problèmes de gardiens de but qu'on connu les Maple Leafs de Tor
 # Trouver le bon joueur {#trouver-bon-joueur}
 
 Maintenant que nous avons un premier portrait de la performance des équipes au repêchage, je veux valider une dernière chose. Je veux voir si certaines équipes ont tendance à faire plus souvent le "bon choix" que d'autres. Pour évaluer si une équipe fait le "bon choix", j'ai mis en place un petit algorithme. Cet algorithme peut s'expliquer comme suit: je regarde pour un choix donné, les choix subséquents et je valide qu'aucun joueur repêché après ce choix n'a fait plus de points. Pour les gardiens, je regarde le nombre de victoires. Pour paufiner cette approche, j'ai fais quelques hypothèses additionnelles:
-
 
 ```r
 JOUEURS_FENETRE <- 20
@@ -474,69 +458,66 @@ GARDIENS_MIN_WINS <- 50
 
 Ces décisions un peu arbitraires sont basées sur mon jugement personnel. Je vous laisse le soin de changer certains de ces paramètres comme bon vous semble. Maintenant, voici la fonction qui nous permettra de tester notre approche.
 
-
-
 ```r
 define_good_choice <- function(dt, player_window, player_min_pts, goalie_min_wins, interval) {
-  
+
   dt[, good_pick := NA]
 
   for (row in seq_len(nrow(dt))) {
-  
+
     # On stock les informations sur le choix à valider
     draft_year_temp <- dt[row,]$draft_year
     draft_pick_temp <- dt[row,]$draft_overall
     draft_position_temp <- dt[row,]$player_position_type
     draft_nb_points_temp <- dt[row,]$skater_points
     draft_wins_temp <- dt[row,]$goalie_wins
-  
+
     if (draft_position_temp %in% c("F", "D")) {
-  
+
       # On filtre les joueurs repêchés dans la fenêtre
       dt_temp <- dt[draft_year == draft_year_temp & player_position_type == draft_position_temp & draft_overall <= (draft_pick_temp + player_window) & draft_overall > draft_pick_temp,]
-      
+
       # On calcule le nombre de points maximal dans la fenetre
       max_pts_windows <- max(dt_temp$skater_points, na.rm = TRUE)
-      
+
       # Si manquant, on remplace par 0
       max_pts_windows <- ifelse(is.na(max_pts_windows), 0, max_pts_windows)
       draft_nb_points_temp <- ifelse(is.na(draft_nb_points_temp), 0, draft_nb_points_temp)
-  
+
       if (draft_nb_points_temp > (max_pts_windows * interval) & draft_nb_points_temp >= player_min_pts) {
         dt[row,]$good_pick <- TRUE
       } else {
         dt[row,]$good_pick <- FALSE
       }
-  
+
     } else if (draft_position_temp == "G") {
-  
+
       # Aucune fenetre pour les gardiens
       dt_temp <- dt[draft_year == draft_year_temp & player_position_type == draft_position_temp & draft_overall > draft_pick_temp,]
-      
+
       # On calcule le nombre de victoires maximal après le choix
       max_win_windows <- max(dt_temp$goalie_wins, na.rm = TRUE)
-      
+
       # Si manquant, on remplace par 0
       max_win_windows <- ifelse(is.na(max_win_windows), 0, max_win_windows)
       draft_wins_temp <- ifelse(is.na(draft_wins_temp), 0, draft_wins_temp)
-  
+
       if (draft_wins_temp > (max_win_windows * interval) & draft_wins_temp >= goalie_min_wins) {
         dt[row,]$good_pick <- TRUE
       } else {
         dt[row,]$good_pick <- FALSE
       }
-  
+
     }
-  
+
   }
-  
+
   dt[]
-  
+
 }
 ```
 
 Afin de valider que notre approche se comporte bel et bien comme souhaité, on peut jeter un apperçu aux 30 premiers choix du repêchage du 2005 et interpréter la colonne `good_pick`.
-
 
 ```r
 new_draft_aggregation = aggregate_stats(
@@ -596,12 +577,11 @@ dt_good_picks[draft_year == 2005][order(draft_overall)][1:30, .(draft_year, draf
 
 Maintenant, voyons voir quelles équipes ont réalisé le plus grand nombre de "bons choix" selon l'approche que nous proposons. Puisque certains "bons choix" pourraient être considérés meilleurs que d'autres "bons choix", j'ai pris le soin d'ajouter le nombre de points réalisés par ces joueurs dans le graphique ci-dessous.
 
-
 ```r
 ggplot(
-  data = dt_good_picks[!is.na(good_pick), .(count = .N, nb_points = sum(skater_points, na.rm = T)), .(team_drafted, good_pick)][good_pick == TRUE], 
+  data = dt_good_picks[!is.na(good_pick), .(count = .N, nb_points = sum(skater_points, na.rm = T)), .(team_drafted, good_pick)][good_pick == TRUE],
   mapping = aes(
-    x = count, 
+    x = count,
     y = reorder(as.factor(team_drafted), count),
     fill = nb_points
   )
@@ -618,7 +598,6 @@ ggplot(
 ![](index.fr_files/figure-html/plot_good_picks-1.png)<!-- -->
 
 On peut voir que certaines équipes ont eu plus de flair que d'autres. Les Blue Jackets de Columbus semblent se démarquer, regardons leurs "bons choix":
-
 
 ```r
 columns_show <- c("draft_year", "draft_overall", "player_name", "skater_points", "goalie_wins")
@@ -644,7 +623,6 @@ dt_good_picks[good_pick == TRUE & team_drafted == "CBJ", .SD, .SDcols = columns_
 
 Il y a quand même quelques bons choix. Par contre, certains de ces joueurs ont peut-être profiter des failles de notre approche (Derek Dorsett ou John Moore par exemple). Je suis curieux de jeter un coup d'oeil à l'Avalanche du Colorado, qui ont realisé un peu moins de "bons choix".
 
-
 ```r
 # Bons choix de l'Avalanche
 dt_good_picks[good_pick == TRUE & team_drafted == "COL", .SD, .SDcols = columns_show]
@@ -664,8 +642,7 @@ dt_good_picks[good_pick == TRUE & team_drafted == "COL", .SD, .SDcols = columns_
 
 Un peu moins de "bons choix" que les Blue Jackets, mais ceux-ci semblent avoir eu un impact bien plus grand. On peut dire que l'Avalanche a su profiter de leurs hauts choix au repêchage ...
 
-Finalement, aviez-vous réussi à deviner quels étaient les 5 "bons choix" de notre Sainte-Flanelle? 
-
+Finalement, aviez-vous réussi à deviner quels étaient les 5 "bons choix" de notre Sainte-Flanelle?
 
 ```r
 # Bons choix des Canadiens
@@ -702,11 +679,9 @@ Pour conclure cet article, je dois vous avouer que je continue de croire que le 
 
 ### Les grands "perdants" 👎
 
-- **Sabres de Buffalo**: Ils sont au 5ème rang pour le nombre de choix au total, (dont 13 en 1ère ronde), mais ils arrivent relativement loin dans le classement pour le nombre de points récoltés (21ème rang) ou pour les victoires des gardiens (19ème rang). Ils sont également en bas de peloton pour le nombre de "bons choix". 
+- **Sabres de Buffalo**: Ils sont au 5ème rang pour le nombre de choix au total, (dont 13 en 1ère ronde), mais ils arrivent relativement loin dans le classement pour le nombre de points récoltés (21ème rang) ou pour les victoires des gardiens (19ème rang). Ils sont également en bas de peloton pour le nombre de "bons choix".
 - **Jets de Winnipeg (et Atlanta)**: Ils sont au-dessus de la moyenne pour le nombre de choix total (83) et nombre de choix de première ronde (12). Ils se retrouvent en bas de classement pour la majorité des métriques: matchs (26ème rang), points (24ème rang). Seul point positif, les gardiens.
 - **Canucks de Vancouver**: Même s'ils ont eu peu de choix au total (68), ils n'ont pas su tirer leur épingle du jeu, et ce, dans aucune catégorie. Avec 12 choix de 1ère ronde, versus une moyenne de 11 dans la ligue, on aurait pu s'attendre à de meilleures performances. Le nombre de matchs joués par leurs joueurs repêchés est catastrophique ...
 - **Coyotes de l'Arizona (et Phoenix)**: On ne peut pas dire que leur performance est "désastreuse", mais étant l'équipe avec le plus de choix de premières rondes (16), je me serais attendu à mieux.
 
-
 Mention honorable pour les "mal-aimés" Oilers d'Edmonton. Ils ont certainement eu beaucoup de choix "faciles", mais ils arrivent quand même au premier rang pour le nombre de points.
-
