@@ -18,7 +18,7 @@ In this post,
 - I will define "reproducible machine learning" and explain why it matters,
 - I will give three problems related to reproducibility that I've personally faced and explain why solving them is essential, 
 - I will give solutions I've tried developing on my own to solve these problems and reasons why these solutions are not suited for the problem, and
-- I will give solutions I'm now using to solve these problems and the reason behind these choices.
+- I will present the solutions I'm now using to solve these problems and the reasons behind these choices.
 
 ## Reproducible Machine Learning
 In machine learning, reproducibility corresponds either to reproduce results, or to obtain similar results by re-executing a source code ([Pineau et al. 2020](https://arxiv.org/abs/2003.12206)).
