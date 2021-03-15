@@ -41,7 +41,7 @@ I've been struck with the problem of managing my experimentation during my thesi
 We need to solve both the problem of managing results and experimentations is a database where to log our results and the settings of any experiments. But, I'm pretty sure you are not interested in creating your own database. Fortunately for us, different solutions exist to track results and experimentations. I will not go into details for all of them, but only focus on the two useful for my research projects. 
 
 ### MLflow
-[MLflow](https://mlflow.org/docs/latest/index.html) is an open-source platform for tracking experiments to record, compare parameters and results. Using MLflow, you will get a visual interface (GUI) (Figure 1) to compare your experiments based on their parameters or their results.
+[MLflow](https://mlflow.org/docs/latest/index.html) is an open-source platform for tracking experiments. It helps record and compare both the parameters and the results associated to different experiments. Using MLflow, you will get a visual interface (GUI) (Figure 1) to compare your experiments based on their parameters or their results.
 
 ![](mlflow-ui.png)
 Figure 1: [A snapshot of the visual interface of MLflow](https://databricks.com/blog/2018/06/05/introducing-mlflow-an-open-source-machine-learning-platform.html).
