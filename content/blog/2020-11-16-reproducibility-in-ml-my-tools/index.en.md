@@ -28,7 +28,7 @@ It means our solution needs to be shareable among peers, and the results that we
 ## Managing results
 I've faced the problem of managing my results properly during my first machine learning project. Like any naive person, instead of reading the user manual "How to manage any results like a champ," I brute-forced my way to it by creating `.txt` files of my results. 
 
-It seemed nice: all I add to do was create a "meaningful" filename, such as `param_1_param_2_..._param_100.txt` plus a timestamp and dump all the results. I was so naive: at one point, I've got more than 100 files for that project only. Now, try finding which experiment was the best. 
+It seemed nice: all I had to do was create a "meaningful" filename, such as `param_1_param_2_..._param_100.txt` plus a timestamp and dump all the results. I was so naive: at one point, I've got more than 100 files for that project only. Now, try finding which experiment was the best. 
 
 The problem with this approach is that it is complicated to manage all those files. Indeed, it is nearly impossible to be efficient when comparing all the results since that every time you create a new file, you need to go through all your results again. Also, sharing this kind of work between team members is pure insanity.
 
