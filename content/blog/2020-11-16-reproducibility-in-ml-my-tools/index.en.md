@@ -26,7 +26,7 @@ In machine learning, reproducibility means either reproducing results, or obtain
 It means our solution needs to be shareable among peers, and the results that we claim need to be reproducible. From a practical point of view, this translates into (1) being able to deploy our model into production and (2) that we have confidence that our predictions are "accurate" (i.e. performance will not drastically decrease when in production).
 
 ## Managing results
-I've faced the problem of managing my results properly during my first project. Like any naive person, instead of reading the user manual "How to manage any results like a champ," I brute-forced my way to it by creating `.txt` files of my results. 
+I've faced the problem of managing my results properly during my first machine learning project. Like any naive person, instead of reading the user manual "How to manage any results like a champ," I brute-forced my way to it by creating `.txt` files of my results. 
 
 It seemed nice: all I add to do was create a "meaningful" filename, such as `param_1_param_2_..._param_100.txt` plus a timestamp and dump all the results. I was so naive: at one point, I've got more than 100 files for that project only. Now, try finding which experiment was the best. 
 
