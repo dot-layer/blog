@@ -48,7 +48,7 @@ Figure 1: [A snapshot of the visual interface of MLflow](https://databricks.com/
 
 MLflow is the solution I use right now. It is minimal, easy to use and needs relatively low code (a couple of lines depending on the training framework you are using). 
 
-It also can do other things such a deploying and providing a central storage space for models, but those solutions are priced.
+It can also do other things such as deploying and providing a central storage space for models, but those solutions are priced.
 
 ### Weights & Biases
 [Weights & Biases (W&B)](https://docs.wandb.ai/) is an open-source platform to track machine learning experiments, visualize metrics and share results. Using W&B, you will get the same features as those presented for MLflow (see Figure 2 for a snapshot of the GUI). The difference is that the dashboard is more advanced for comparing metrics and logging artifacts such as specific data point predictions or models.
