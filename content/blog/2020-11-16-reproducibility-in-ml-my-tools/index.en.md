@@ -21,7 +21,7 @@ In this post,
 - I will present the solutions I'm now using to solve these problems and the reasons behind these choices.
 
 ## Reproducible Machine Learning
-In machine learning, reproducibility corresponds either to reproduce results, or to obtain similar results by re-executing a source code ([Pineau et al. 2020](https://arxiv.org/abs/2003.12206)).
+In machine learning, reproducibility means either reproducing results, or obtaining similar results by re-executing a source code ([Pineau et al. 2020](https://arxiv.org/abs/2003.12206)).
         
 It means our solution needs to be shareable among peers, and the results that we claim need to be reproducible. From a practical point of view, this translates into (1) being able to deploy our model into production and (2) that we have confidence that our predictions are "accurate" (i.e. performance will not drastically decrease when in production).
 
