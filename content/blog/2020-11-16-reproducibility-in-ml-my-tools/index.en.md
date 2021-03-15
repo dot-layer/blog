@@ -11,7 +11,7 @@ featured: "nic_chalet_2019.jpg"
 featuredpath: "img/headers/"
 ---
 
-Over the past years, I've worked on various machine learning projects (mostly research ones), and I've faced numerous problems along the way that impacted the reproducibility of my results. I had to regularly (not without hating myself) take a lot of time to resolve which experimentation was the best and which settings were associated with those results. Even worse, finding where the heck were my results was painful. All these situations made my work difficult to reproduce and also challenging to share with colleagues. To solve that, I tried different approaches, but rapidly I faced the hard truth: I only have 24 hours in a day, and these problems are time-consuming and (way) more complex than I thought.
+Over the past years, I've worked on various machine learning projects (mostly research ones), and I've faced numerous problems along the way that impacted the reproducibility of my results. I had to regularly (not without hating myself) take a lot of time to resolve which experiment was the best and which settings were associated with those results. Even worse, finding where the heck were my results was painful. All these situations made my work difficult to reproduce and also challenging to share with colleagues. To solve that, I tried different approaches, but rapidly I faced the hard truth: I only have 24 hours in a day, and these problems are time-consuming and (way) more complex than I thought.
 
 In this post, 
 
@@ -34,11 +34,11 @@ The problem with this approach is that it is complicated to manage all those fil
 
 Possible solutions for that specific problem should (1) efficiently allow a user to compare results between different runs or parameters, (2) easily save the results and (3) not add too much overhead to the process. Before giving any good solution, let's discuss the second problem since the proposed solution also solves this problem.
 
-## Managing Experimentations
-I've been struck with the problem of managing my experimentation during my thesis work. I had no clear strategy other than writing the configuration of my experiment in my results file title. At first, it seemed "right," but at one point, I had more than 15 parameters to "log" in the filename. The names were so painful to read (especially at 2 in the morning before a meeting with my supervisor). I was amazed how fast things can get out of hand with what first seems like a quick win. The big problem with this kind of approach is that the length grows as quickly as the number of parameters. For sure, I could create a directory and sub-directory related to the parameters. However, the problem is still there. I will now have a tree of directories of many nodes and will need to swim in a pool of directories.
+## Managing Experiments
+I've been struck with the problem of managing my experiment during my thesis work. I had no clear strategy other than writing the configuration of my experiment in my results file title. At first, it seemed "right," but at one point, I had more than 15 parameters to "log" in the filename. The names were so painful to read (especially at 2 in the morning before a meeting with my supervisor). I was amazed how fast things can get out of hand with what first seems like a quick win. The big problem with this kind of approach is that the length grows as quickly as the number of parameters. For sure, I could create a directory and sub-directory related to the parameters. However, the problem is still there. I will now have a tree of directories of many nodes and will need to swim in a pool of directories.
 
-## What Can Be a Good Solution for Managing Results and Experimentations?
-We need to solve both the problem of managing results and experimentations is a database where to log our results and the settings of any experiments. But, I'm pretty sure you are not interested in creating your own database. Fortunately for us, different solutions exist to track results and experimentations. I will not go into details for all of them, but only focus on the two useful for my research projects. 
+## What Can Be a Good Solution for Managing Results and Experiments?
+We need to solve both the problem of managing results and experiments is a database where to log our results and the settings of any experiments. But, I'm pretty sure you are not interested in creating your own database. Fortunately for us, different solutions exist to track results and experiments. I will not go into details for all of them, but only focus on the two useful for my research projects. 
 
 ### MLflow
 [MLflow](https://mlflow.org/docs/latest/index.html) is an open-source platform for tracking experiments. It helps record and compare both the parameters and the results associated to different experiments. Using MLflow, you will get a visual interface (GUI) (Figure 1) to compare your experiments based on their parameters or their results.
