@@ -16,7 +16,7 @@ Over the past years, I've worked on various machine learning projects (mostly re
 In this post, 
 
 - I will define "reproducible machine learning" and explain why it matters,
-- I will give three problems related to reproducibility that I've personally faced and why solving them is essential, 
+- I will give three problems related to reproducibility that I've personally faced and explain why solving them is essential, 
 - I will give solutions I've tried developing on my own to solve these problems and reasons why these solutions are not suited for the problem, and
 - I will give solutions I'm now using to solve these problems and the reason behind these choices.
 
