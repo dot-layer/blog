@@ -1,0 +1,94 @@
+.error-page-wrapper {
+  font-family: "Source Sans Pro", sans-serif;
+  background-color: rgba(244, 244, 244, 1);
+  height: 100vh;
+  padding: 0 5%;
+  position: relative;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -moz-align-items: center;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+}
+
+.content-container {
+  -webkit-transition: left 0.5s ease-out, opacity 0.5s ease-out;
+  -moz-transition: left 0.5s ease-out, opacity 0.5s ease-out;
+  -ms-transition: left 0.5s ease-out, opacity 0.5s ease-out;
+  -o-transition: left 0.5s ease-out, opacity 0.5s ease-out;
+  transition: left 0.5s ease-out, opacity 0.5s ease-out;
+  position: relative;
+  width: 23.4375rem; 
+  opacity: 0;
+}
+
+.content-container.in {
+  left: 0px;
+  opacity: 1;
+}
+
+.head-line {
+  -webkit-transition: color 0.2s linear;
+  -moz-transition: color 0.2s linear;
+  -ms-transition: color 0.2s linear;
+  -o-transition: color 0.2s linear;
+  transition: color 0.2s linear;
+  font-size: 3rem;
+  line-height: 3.75rem;
+  color: rgba(0, 0, 0, 1);
+  letter-spacing: -1px;
+  margin-bottom: 0.3125rem;
+}
+
+.subheader {
+  -webkit-transition: color 0.2s linear;
+  -moz-transition: color 0.2s linear;
+  -ms-transition: color 0.2s linear;
+  -o-transition: color 0.2s linear;
+  transition: color 0.2s linear;
+  font-size: 2.25rem;
+  line-height: 2.875rem;
+  color: rgba(171, 171, 171, 1);
+  margin-bottom: 2.1875rem;
+}
+
+.context {
+  -webkit-transition: color 0.2s linear;
+  -moz-transition: color 0.2s linear;
+  -ms-transition: color 0.2s linear;
+  -o-transition: color 0.2s linear;
+  transition: color 0.2s linear;
+  font-size: 1.125rem;
+  line-height: 1.6875rem;
+  color: rgba(171, 171, 171, 1);
+  margin-bottom: 2.8125rem;
+}
+
+.buttons-container a {
+  -webkit-transition: color 0.2s linear, border-color 0.2s linear;
+  -moz-transition: color 0.2s linear, border-color 0.2s linear;
+  -ms-transition: color 0.2s linear, border-color 0.2s linear;
+  -o-transition: color 0.2s linear, border-color 0.2s linear;
+  transition: color 0.2s linear, border-color 0.2s linear;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: rgba(46, 186, 174, 1);
+  border: 2px solid rgba(46, 186, 174, 1);
+  border-radius: 6.1875rem;
+  padding: 0.5rem 1.875rem 0.5625rem;
+  display: inline-block;
+}
+
+.buttons-container a:hover {
+  border-color: rgba(171, 171, 171, 1);
+  color: rgba(171, 171, 171, 1);
+}
+
+.buttons-container a:first-child {
+  margin-right: 1.5625rem;
+  margin-bottom: 1.5625rem;
+}

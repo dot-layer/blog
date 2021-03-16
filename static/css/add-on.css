@@ -228,3 +228,7 @@ h1, h2, h3, h4, h5, h6 {
 .note {
   margin-bottom: 2em;
 }
+
+.note a {
+  border-bottom: dotted 1px rgba(160, 160, 160, 0.65);
+}

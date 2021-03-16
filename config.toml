@@ -14,7 +14,7 @@ canonifyURLs = true
 enableEmoji   = true
 
 [permalinks]
-    post = "/:slug/"
+    blog = "/:slug/"
 
 
 [params]
@@ -262,3 +262,6 @@ enableEmoji   = true
   researchgate     = ""
   # Email
   email            = "info@dotlayer.org"
+
+[markup.goldmark.renderer]
+unsafe= true

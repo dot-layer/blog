@@ -2,21 +2,20 @@
 title: The grammar of graphics
 slug: grammar-of-graphics
 author: Stéphane Caron
-description: "The art of communicating with graphics"
+description: 'The art of communicating with graphics'
 date: '2018-09-01'
-categories: ["R"]
+categories: ['R']
 type: post
-featured: "ggplot-cover.jpg"
-featuredpath: "img/headers/"
-tags: ["Vizualisation", "Plot", "Ggplot2"]
+featured: 'ggplot-cover.jpg'
+featuredpath: 'img/headers/'
+tags: ['Vizualisation', 'Plot', 'Ggplot2']
 output:
   html_document:
     keep_md: true
+aliases: [/blog/2018-09-01-grammar-of-graphics/grammar-of-graphics/]
 ---
 
-
-
-Data science is a growing field that regroups talented and passionate people who generally show remarkable technical skills and outstanding ease to solve problems. However, from my personnal experience, one particular skill is often undervalued: **Communication**. In data science, as in many other fields, graphical vizualisation is an important tool that helps to simplify and clearly communicate results to others. For that reason, it's crucial to master this set of skills. Just like any other means of communcation, like speaking or writing, graphical vizualisation basically requires two main components: 
+Data science is a growing field that regroups talented and passionate people who generally show remarkable technical skills and outstanding ease to solve problems. However, from my personnal experience, one particular skill is often undervalued: **Communication**. In data science, as in many other fields, graphical vizualisation is an important tool that helps to simplify and clearly communicate results to others. For that reason, it's crucial to master this set of skills. Just like any other means of communcation, like speaking or writing, graphical vizualisation basically requires two main components:
 
 - A synthax/grammar/set of rules that ensures everything is well organized and broadly correct.
 - A feeling/intuition to communicate the right things and present them in a way that will make people feel what you want them to feel.
@@ -46,8 +45,7 @@ In its simple form, any well-constructed sentence requires at least mininal elem
 
 #### Data
 
-The data component is nothing but the dataset behind the graph. Without it, there is nothing to be plotted or vizualised. In order to properly use the `ggplot2` framework and the grammar of graphics, the data structure is quite important. The data structure often related to this matter refers to the [tidy](https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html) format. For our example, we'll use the `mtcars` dataset, from the [`dataset`](https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/mtcars.html) library. This particular dataset is already in a tidy (one-observation-one-row) structure as we can see below. 
-
+The data component is nothing but the dataset behind the graph. Without it, there is nothing to be plotted or vizualised. In order to properly use the `ggplot2` framework and the grammar of graphics, the data structure is quite important. The data structure often related to this matter refers to the [tidy](https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html) format. For our example, we'll use the `mtcars` dataset, from the [`dataset`](https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/mtcars.html) library. This particular dataset is already in a tidy (one-observation-one-row) structure as we can see below.
 
 ```r
 library(ggplot2)
@@ -66,7 +64,6 @@ head(mtcars)
 
 We can see our data layer as a bank of words we could use to build our sentence. Once we have our available words, obviously, we need to pick up few of them and organize them in order to build a sentence. Aesthetics is somewhat similar to the action of "pick and organize"" as it defines the scales onto which the data selected is mapped. For example, we could decide to select horsepower and miles per gallon variables from our dataset and plot them onto x and y axis respectively ([see figure below](#fig:aes)).
 
-
 ```r
 ggplot(mtcars, aes(x = hp, y = mpg)) +
   geom_point()
@@ -77,17 +74,16 @@ ggplot(mtcars, aes(x = hp, y = mpg)) +
 <p class="caption">Aesthetics (hp and mpg) define which scales are plotted.</p>
 </div>
 
-In the `ggplot2` framework, we define our aesthetics in the aes() argument. 
+In the `ggplot2` framework, we define our aesthetics in the aes() argument.
 
 #### Geometries
 
 In the previous section, we use points through a scatter plot to vizualise our data. The use of points, or other visual elements known as geometries (lines, bars, text, etc) control the type of plot you wanna create. As a comparison, it can be seen as the type of sentence (declarative, imperative, interrogative, etc) you wanna build. It does not define your content, but rather the way you express your content. For example, instead of points, we could have shown bars ([see figure below](#fig:geom)).
 
-
 ```r
-mtcars %>% 
-  group_by(cyl) %>% 
-  summarise(hp_mean = mean(hp)) %>% 
+mtcars %>%
+  group_by(cyl) %>%
+  summarise(hp_mean = mean(hp)) %>%
     ggplot(aes(x = cyl, y = hp_mean)) +
       geom_bar(stat = "identity")
 ```
@@ -113,7 +109,6 @@ In the real world, we usually don't communicate with the simplest kind of senten
 Facetting a graphic means to plot small different subsets of the data. Relating to grammar, I would compare the action of facetting with the idea of breaking a long sentence in some shorter (clearer) sentences. It's a powerful tool when looking for some patterns in the data as it could help removing the noise of different groups plotted all togheter.
 
 For example, it's difficult to see the true pattern of each group in the following [graphic](#fig:facet1):
-
 
 ```r
 ggplot(mtcars, aes(x = hp, y = mpg, color = as.factor(carb))) +
@@ -145,7 +140,6 @@ Statistics is a layer that summarizes the data in order to aid our understanding
 
 In our example, it's far more difficult to draw conclusions about the distributions of each number of cylinders from the [figure](#fig:boxplot1)
 
-
 ```r
 ggplot(mtcars, aes(x = as.factor(cyl), y = mpg)) +
   geom_point()
@@ -157,7 +151,6 @@ ggplot(mtcars, aes(x = as.factor(cyl), y = mpg)) +
 </div>
 
 compared to the [figure below](#fig:bloxplot2), where we can easily extract the median, the quartiles and so on...
-
 
 ```r
 ggplot(mtcars, aes(x = as.factor(cyl), y = mpg)) +
@@ -177,14 +170,13 @@ Coordinates define the space in which we plot our data. Usually, the Cartesian c
 
 Themes can be seen as evertything non-related to the data. In the grammar of graphics framework, themes ease the understanding of our plots, not necessarily making them more beautiful. In fact, the font type and size, the spacing, the margins, and so on, help to make a text more understandable for the reader. In the same way, the size of geoms, the grid lines or the background color should be carefully chosen in order to direct the audience's focus on the message we want to express with our plot. For example, the non-related data elements in the [figure](#fig:themes1) make it difficult to see relevant patterns in the trend shown by the data:
 
-
 ```r
 ggplot(mtcars, aes(x = mpg, y = qsec)) +
   geom_point(color = "yellow", size  = 2) +
   geom_smooth(color = "red") +
   labs(title = "Qsec vs mpg") +
   theme_dark() +
-  theme(title = element_text(family = "Luminari", face = "bold.italic", colour = "red"), 
+  theme(title = element_text(family = "Luminari", face = "bold.italic", colour = "red"),
         plot.background = element_rect(fill = "yellow"))
 ```
 
@@ -194,7 +186,6 @@ ggplot(mtcars, aes(x = mpg, y = qsec)) +
 </div>
 
 In contrast, the next [figure](#fig:theme2) is way clearer as nothing irrelevant has been added to the plot. This leads the reader to focus on the data and the trend behind it:
-
 
 ```r
 ggplot(mtcars, aes(x = mpg, y = qsec)) +
@@ -213,7 +204,7 @@ In `ggplot2` framework, some themes are prebuilt and can be used directly. Howev
 
 # Intuition for good graphics
 
-As mentionned in the introduction, a good and structured communication requires to follow certain rules (which were described in the first part), but also requires a kind of feeling to **identify** the things that need to be communicated and to make good choices about **how** to communicate them. 
+As mentionned in the introduction, a good and structured communication requires to follow certain rules (which were described in the first part), but also requires a kind of feeling to **identify** the things that need to be communicated and to make good choices about **how** to communicate them.
 
 > "Good grammar is just the first step in creating a good sentence."[^hadley]
 
@@ -245,7 +236,6 @@ The [example 1 figure](#fig:example1) is an example of graphic that basically me
 
 The last example shows that there exists multiple ways to build a given graphical representation. However, all those representations can be "sorted" by relevance in a **given situation**. That being said, I think that for each context, depending on different elements such as the objective, the data and the audience, there exists a particular representation that is the most appropriate for **that particular situation**. Then, there are multiple representations that are still good, which means that the objective is then to practice and gain experience to ultimately approach the most suited one.
 
-
 [^hadley]: Hadley Wickham
 
 # Conclusion
@@ -258,4 +248,3 @@ The complete code of this article can be found through this [link](https://githu
 
 - https://thenextscoop.com/balance-visual-communication-relying-words/
 - https://skillgaze.com/2017/10/31/understanding-different-visualization-layers-of-ggplot/
-
