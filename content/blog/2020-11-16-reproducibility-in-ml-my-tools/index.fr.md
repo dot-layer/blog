@@ -9,6 +9,7 @@ tags: []
 description: 'Un aperçu des outils à utiliser pour développer un projet de ML davantage reproductible'
 featured: 'nic_chalet_2019.jpg'
 featuredpath: 'img/headers/'
+reading_time: ''
 aliases: ['/blog/2020-11-16-reproducibility-in-ml-my-tools/outils-reproductibilite-apprentissage-automatique/']
 ---
 

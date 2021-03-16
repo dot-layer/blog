@@ -9,6 +9,7 @@ tags: []
 description: 'A deep-in the tools to use for building a more reproducible ML project'
 featured: 'nic_chalet_2019.jpg'
 featuredpath: 'img/headers/'
+reading_time: ''
 aliases: ['/blog/2020-11-16-reproducibility-in-ml-my-tools/tools-reproducibility-machine-learning/']
 ---
 
