@@ -1,14 +1,14 @@
 ---
 title:  Outils pour des projets d'apprentissage automatique (davantage) reproductibles
 author: David Beauchemin
-date: "2020-11-16"
-slug: apprentissage automatique
+date: '2021-03-17'
+slug: reproductibilite-apprentissage-automatique
 type: post
-categories: ["outils", "apprentissage automatique", "reproductibilité", "ml"]
+categories: ['outils', 'apprentissage automatique', 'reproductibilité', 'ml']
 tags: []
-description: "Un aperçu des outils à utiliser pour développer un projet de ML davantage reproductible"
-featured: "nic_chalet_2019.jpg"
-featuredpath: "img/headers/"
+description: 'Un aperçu des outils à utiliser pour développer un projet de ML davantage reproductible'
+featured: 'nic_chalet_2019.jpg'
+featuredpath: 'img/headers/'
 ---
 
 Ces dernières années, j'ai travaillé sur divers projets d'apprentissage automatique (principalement des projets de recherche), et j'ai rencontré de nombreux problèmes en cours de route qui ont eu un impact sur la reproductibilité de mes résultats. J'ai dû à plusieurs reprises (non sans me détester) prendre beaucoup de temps pour déterminer quelles expérimentations étaient les meilleures et quels paramètres étaient associés à ces résultats. Pire encore, trouver mes foutus résultats était (souvent) une mission impossible. Toutes ces situations  ont rendu mon travail difficile à reproduire et également difficile à partager avec mes collègues. Pour résoudre cela, j'ai tenté plusieurs approches, mais j'ai rapidement fait face à la dure réalité : je n'ai que 24 heures dans une journée, et ces problèmes prennent du temps et sont (beaucoup) plus complexes que je ne le pensais.
@@ -71,7 +71,7 @@ data_loader:
 
 training_settings:
     seed: 42
-    device: "cuda:0"
+    device: 'cuda:0'
 ```
 Figure 3 : Exemple de fichier YAML. [Voici](https://stackoverflow.com/a/1729545/7927776) une belle réponse Stack Overflow à propos de la différence entre les fichiers YAML et JSON (anglais).
 
@@ -85,7 +85,7 @@ data_loader:
 
 training_settings:
     seed: 42
-    device: "cuda:0"
+    device: 'cuda:0'
 
 defaults:
     - optimizer: SGD # call the SGD YAML file
