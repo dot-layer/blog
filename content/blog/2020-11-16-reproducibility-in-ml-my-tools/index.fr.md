@@ -2,15 +2,15 @@
 title:  Outils pour des projets d'apprentissage automatique (davantage) reproductibles
 author: David Beauchemin
 date: '2021-03-17'
-slug: outils-reproductibilite-apprentissage-automatique
+slug: outils-reproductibilite-ml
 type: post
-categories: ['outils', 'apprentissage automatique', 'reproductibilité', 'ml']
-tags: []
+categories: ['reproductibilité']
+tags: ['outils', 'apprentissage automatique', 'reproductibilité', 'ml', 'Python']
 description: 'Un aperçu des outils à utiliser pour développer un projet de ML davantage reproductible'
 featured: 'nic_chalet_2019.jpg'
 featuredpath: 'img/headers/'
 reading_time: ''
-aliases: ['/blog/2020-11-16-reproducibility-in-ml-my-tools/outils-reproductibilite-apprentissage-automatique/']
+aliases: ['/blog/2020-11-16-reproducibility-in-ml-my-tools/outils-reproductibilite-ml/']
 ---
 
 Ces dernières années, j'ai travaillé sur divers projets d'apprentissage automatique (principalement des projets de recherche), et j'ai rencontré de nombreux problèmes en cours de route qui ont eu un impact sur la reproductibilité de mes résultats. J'ai dû à plusieurs reprises (non sans me détester) prendre beaucoup de temps pour déterminer quelles expérimentations étaient les meilleures et quels paramètres étaient associés à ces résultats. Pire encore, trouver mes foutus résultats était (souvent) une mission impossible. Toutes ces situations  ont rendu mon travail difficile à reproduire et également difficile à partager avec mes collègues. Pour résoudre cela, j'ai tenté plusieurs approches, mais j'ai rapidement fait face à la dure réalité : je n'ai que 24 heures dans une journée, et ces problèmes prennent du temps et sont (beaucoup) plus complexes que je ne le pensais.
