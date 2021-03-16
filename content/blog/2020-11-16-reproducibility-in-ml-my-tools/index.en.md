@@ -115,7 +115,7 @@ Figure 4:  Example of a YAML file when you use hierarchical configuration. `opti
 Figure 5: Example of a hierarchical configuration directory to rapidly manage your settings.
 
 ## Conclusion
-Lack of reproducibility in your machine learning projects can lead to a considerable slowdown to put your models into production. I've presented two solutions to solve some of the problems in your machine learning project. These solutions will help you manage your configuration, experiments and your results. For a more complete presentation, see my [seminar](https://davebulaval.github.io/gestion-configuration-resultats/).
+Lack of reproducibility in your machine learning projects can lead to a considerable slowdown to put your models into production. I've presented two solutions for your machine learning projects. I hope that these will help you manage your configurations, experiments and your results. For a more complete presentation, see my [seminar](https://davebulaval.github.io/gestion-configuration-resultats/).
 
 Of course, many other improvements can make your projects more reproducible. For example, managing dataset versioning (see [DVC](https://dvc.org/)), managing your training flow (see [Poutyne](https://poutyne.org/) and [Neuraxle](https://www.neuraxle.org/)) and maximizing reusability (see [Docker](https://www.docker.com/)). 
 
