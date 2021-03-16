@@ -2,13 +2,14 @@
 title:  Toolkit for (More) Reproducible Machine Learning Projects
 author: David Beauchemin
 date: '2021-03-17'
-slug: reproducibility-machine-learning
+slug: tools-reproducibility-machine-learning
 type: post
 categories: ['tools', 'machine learning', 'reproducibility', 'ml']
 tags: []
 description: 'A deep-in the tools to use for building a more reproducible ML project'
 featured: 'nic_chalet_2019.jpg'
 featuredpath: 'img/headers/'
+aliases: ['/blog/2020-11-16-reproducibility-in-ml-my-tools/tools-reproducibility-machine-learning/']
 ---
 
 Over the past years, I've worked on various machine learning projects (mostly research ones), and I've faced numerous problems along the way that impacted the reproducibility of my results. I had to regularly (not without hating myself) take a lot of time to resolve which experiment was the best and which settings were associated with those results. Even worse, finding where the heck were my results was painful. All these situations made my work difficult to reproduce and also challenging to share with colleagues. To solve that, I tried different approaches, but rapidly I faced the hard truth: I only have 24 hours in a day, and these problems are time-consuming and (way) more complex than I thought.
