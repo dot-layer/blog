@@ -46,7 +46,7 @@ We need to solve both the problem of managing results and experiments is a datab
 ![](mlflow-ui.png)
 Figure 1: [A snapshot of the visual interface of MLflow](https://databricks.com/blog/2018/06/05/introducing-mlflow-an-open-source-machine-learning-platform.html).
 
-MLflow is the solution I use right now. It is minimal, easy to use and needs relatively low code (a couple of lines depending on the training framework you are using). 
+MLflow is the solution I use right now. It is minimal, easy to use and needs relatively few code lines (a couple of lines depending on the training framework you are using). 
 
 It can also do other things such as deploying and providing a central storage space for models, but those solutions are priced.
 
