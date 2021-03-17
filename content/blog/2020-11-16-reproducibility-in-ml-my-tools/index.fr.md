@@ -1,7 +1,7 @@
 ---
 title: Outils pour des projets d'apprentissage automatique (davantage) reproductibles
 author: David Beauchemin
-date: '2021-03-16'
+date: '2021-03-17'
 slug: outils-reproductibilite-ml
 type: post
 categories: ['reproductibilité']
