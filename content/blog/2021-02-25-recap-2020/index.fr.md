@@ -38,7 +38,7 @@ On rappelle que le blogue est lieu de publication (en français ou en anglais) p
 - [Kobenhavn](https://www.dotlayer.org/blog/2020-06-09/copenhagen/)
 - [Comment proposer un article](https://www.dotlayer.org/blog/2020-03-19-howto/howto-fr/)
 - [Boosting Trees avec Julia](https://www.dotlayer.org/blog/2020-01-04-julia-boosting-trees/julia-boosting-trees/)
-- [What's wrong with scikit-learn](https://www.dotlayer.org/neat-machine-learning-pipelines/)
+- [What's wrong with scikit-learn](https://www.dotlayer.org/blog/2020-03-04-what-is-wrong-with-sklearn/neat-machine-learning-pipelines/)
 - [Recap 2019](https://www.dotlayer.org/blog/2019-12-19-recap-2019/recap-2019/)
 - [Argparse: un outil méconnu](https://www.dotlayer.org/blog/2019-05-21-argparse-package/optparse-package/)
 
