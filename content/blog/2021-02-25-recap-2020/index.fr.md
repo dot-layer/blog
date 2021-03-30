@@ -32,13 +32,13 @@ Le comité blogue a connu une bonne première année d'existence. Ils ont superv
 
 On rappelle que le blogue est lieu de publication (en français ou en anglais) pour des articles portant sur des sujets variés : vulgarisation de concepts (apprentissage machine, programmation, science des données, statistiques, etc.), expérience personnelle, présentation d’un projet, _name it_! Ne soyez pas timide. En parlant de ces fameux articles, en voici la liste :
 
-- [Training a Recurrent Neural Network (RNN) using PyTorch](https://www.dotlayer.org/en/blog/2020-08-19-train-a-sequence-model-with-poutyne/machine-learning/)
+- [Training a Recurrent Neural Network (RNN) using PyTorch](https://www.dotlayer.org/blog/2020-08-19-train-a-sequence-model-with-poutyne/machine-learning/)
 - [Reproductibilité en apprentissage automatique](https://www.dotlayer.org/blog/2020-10-30-reproducibility-in-ml-a-talk/machine-learning/)
 - [OpenLayer, 1 an plus tard](https://www.dotlayer.org/blog/2020-07-29-openlayer-one-year/podcast/)
 - [Kobenhavn](https://www.dotlayer.org/blog/2020-06-09/copenhagen/)
 - [Comment proposer un article](https://www.dotlayer.org/blog/2020-03-19-howto/howto-fr/)
 - [Boosting Trees avec Julia](https://www.dotlayer.org/blog/2020-01-04-julia-boosting-trees/julia-boosting-trees/)
-- [What's wrong with scikit-learn](https://www.dotlayer.org/en/neat-machine-learning-pipelines/)
+- [What's wrong with scikit-learn](https://www.dotlayer.org/neat-machine-learning-pipelines/)
 - [Recap 2019](https://www.dotlayer.org/blog/2019-12-19-recap-2019/recap-2019/)
 - [Argparse: un outil méconnu](https://www.dotlayer.org/blog/2019-05-21-argparse-package/optparse-package/)
 
