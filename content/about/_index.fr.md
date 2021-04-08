@@ -22,7 +22,7 @@ Un malheureux accident de moustiquaire plus tard (comme on en voit trop souvent)
 On parlait déjà de créer un organisme sans but lucratif (OSBL) pour assurer la gestion de nos activités.
 
 L'année 2019 marqua la naissance "officielle" de l'OSBL avec un premier conseil d'administration et la créations de différents comités.
-Au moment de la deuxième édition du mythique "chalet", un [blog](dotlayer.org) était fonctionnel, [Meeting Machine Learning Québec](https://www.facebook.com/MeetupMLQuebec/) (conférences, ateliers, hackothon) faisait déjà partie intégrante de l'éco-système et les premiers épisode du [podcast OpenLayer](https://www.youtube.com/channel/UCB3tYpZ1ojiqAroyDN05Cyw) venaient tout juste d'être diffusés. Le reste de l'Histoire est à écrire. On t'attend, n'hésite pas à nous contacter si tu souhaites t'impliquer!
+Au moment de la deuxième édition du mythique "chalet", un [blog](dotlayer.org) était fonctionnel, [Meeting Machine Learning Québec](https://www.facebook.com/MeetupMLQuebec/) (conférences, ateliers, hackathon) faisait déjà partie intégrante de l'éco-système et les premiers épisode du [podcast OpenLayer](https://www.youtube.com/channel/UCB3tYpZ1ojiqAroyDN05Cyw) venaient tout juste d'être diffusés. Le reste de l'Histoire est à écrire. On t'attend, n'hésite pas à nous contacter si tu souhaites t'impliquer!
 
 Pour discuter avec nous --> [Slack](https://dotlayerorg.slack.com)
 
