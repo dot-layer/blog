@@ -22,7 +22,7 @@ An unfortunate patio screen accident later (as we see too often), .Layer had his
 We were already talking about creating a non-profit organization (NPO) to manage our activities.
 
 2019 marked the "official" birth of the NPO with a first board of directors and the creation of different committees.
-At the time of the second edition of the legendary "chalet", a [blog](dotlayer.org) was operational, [Meetup Machine Learning Québec](https://www.facebook.com/MeetupMLQuebec/) (conferences, workshops, hackothon) was already an integral part of the ecosystem and the first episodes of the [OpenLayer podcast](https://www.youtube.com/channel/UCB3tYpZ1ojiqAroyDN05Cyw) had just been broadcast. The rest of the story is to be written. We are waiting for you, don't hesitate to contact us if you want to get involved!
+At the time of the second edition of the legendary "chalet", a [blog](dotlayer.org) was operational, [Meetup Machine Learning Québec](https://www.facebook.com/MeetupMLQuebec/) (conferences, workshops, hackathon) was already an integral part of the ecosystem and the first episodes of the [OpenLayer podcast](https://www.youtube.com/channel/UCB3tYpZ1ojiqAroyDN05Cyw) had just been broadcast. The rest of the story is to be written. We are waiting for you, don't hesitate to contact us if you want to get involved!
 
 To chat with us --> [Slack](https://dotlayerorg.slack.com)
 
