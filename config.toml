@@ -15,6 +15,7 @@ enableEmoji   = true
 
 [permalinks]
     blog = "/:slug/"
+    bookshelf = "/:slug/"
 
 
 [params]

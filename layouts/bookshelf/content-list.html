@@ -1,0 +1,17 @@
+<article class="post">
+	{{ .Render "header" }} 
+  {{ .Render "featured" }}
+  {{ .Summary }}
+
+  <div style="margin-top: 20px;">
+    {{ $.Scratch.Set "ranking" ((delimit (findRE "<p.*?>(.|\n)*?</p>" .Content 1) "") | truncate (default 500) (default "&hellip;" .Site.Params.text.truncated ) | replaceRE "&amp;" "&" | safeHTML) }}
+    {{ $.Scratch.Get "ranking" }}
+  </div>
+
+	<footer>
+		<ul class="actions">
+			<li><a href="{{ .RelPermalink }}" class="button big">{{ i18n "read_more" }}</a></li>
+		</ul>
+		{{ partial "footer-category" . }}
+	</footer>
+</article>
