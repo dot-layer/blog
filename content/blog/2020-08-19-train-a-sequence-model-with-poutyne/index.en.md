@@ -18,6 +18,8 @@ aliases: ['/blog/2020-08-19-train-a-sequence-model-with-poutyne/machine-learning
 > Also, the article is available in a [Jupyter Notebook](https://github.com/dot-layer/blog/blob/master/content/blog/2020-08-19-train-a-sequence-model-with-poutyne/article_notebook.ipynb) or in a [Google Colab Jupyter notebook](https://colab.research.google.com/github/dot-layer/blog/blob/master/content/blog/2020-08-19-train-a-sequence-model-with-poutyne/article_notebook_colab.ipynb).
 >
 > Before starting this article, we would like to disclaim that this tutorial is greatly inspired by an online tutorial David created for the Poutyne framework. Also, the content is based on a recent [article](https://arxiv.org/abs/2006.16152) we wrote about address tagging. However, there are differences between the present work and the two others, as this one is specifically designed for the less technical reader.
+>
+> Update 2022: Code was improve to better handle packed sequence in forward loop.
 
 Sequential data, such as addresses, are pieces of information that are deliberately given in a specific order. In other words, they are sequences with a particular structure; and knowing this structure is crucial for predicting the missing entries of a given truncated sequence. For example,
 when writing an address, we know, in Canada, that after the civic number (e.g. 420), we have the street name (e.g. du Lac).
@@ -83,7 +85,7 @@ from torch.nn.functional import cross_entropy
 from torch.nn.utils.rnn import pad_packed_sequence, pack_padded_sequence, pad_sequence
 from torch.utils.data import DataLoader
 
-from poutyne import set_seeds
+from poutyne import set_seeds # You need the dev version since we need a not-release feature as of January 28, 2022. Will remove comments when the feature is released.
 from poutyne.framework import Experiment
 ```
 
@@ -323,12 +325,11 @@ def pad_collate_fn(batch):
         label.
 
     Returns:
-        A tuple (x, y). The element x is a tuple containing (1) a tensor of padded
-        word vectors and (2) their respective original sequence lengths. The element
-        y is a tensor of padded tag indices. The word vectors are padded with vectors
-        of 0s and the tag indices are padded with -100s. Padding with -100 is done
-        because of the cross-entropy loss and the accuracy metric ignores
-        the targets with values -100.
+        A tuple (x, y). The element x is a tensor of packed sequence .
+        The element y is a tensor of padded tag indices. The word vectors are 
+        padded with vectors of 0s and the tag indices are padded with -100s. 
+        Padding with -100 is done because of the cross-entropy loss and the 
+        accuracy metric ignores the targets with values -100.
     """
 
     # This gets us two lists of tensors and a list of integer.
@@ -342,11 +343,18 @@ def pad_collate_fn(batch):
 
     lengths = torch.LongTensor(lengths)
 
-    padded_sequences_vectors = pad_sequence(sequences_vectors, batch_first=True, padding_value=0)
+    padded_sequences_vectors = pad_sequence(
+        sequences_vectors, batch_first=True, padding_value=0
+    )
+    pack_padded_sequences_vectors = pack_padded_sequence(
+        padded_sequences_vectors, lengths.cpu(), batch_first=True
+    )  # We pack the padded sequence to improve the computational speed during training
 
-    padded_sequences_labels = pad_sequence(sequences_labels, batch_first=True, padding_value=-100)
+    padded_sequences_labels = pad_sequence(
+        sequences_labels, batch_first=True, padding_value=-100
+    )
 
-    return (padded_sequences_vectors, lengths), padded_sequences_labels
+    return pack_padded_sequences_vectors, padded_sequences_labels
 ```
 
 ```python
@@ -370,23 +378,19 @@ class RecurrentNet(nn.Module):
         self.lstm_network = lstm_network
         self.fully_connected_network = fully_connected_network
 
-    def forward(self, padded_sequences_vectors, lengths):
+    def forward(self, padded_sequences_vectors):
         """
             Defines the computation performed at every call.
 
             Shapes:
-                padded_sequences_vectors: batch_size * longest_sequence_length (padding), 300
-                lengths: batch_size
+                packed_sequence_vectors: batch_size * longest_sequence_length (padding), 300
 
         """
-        total_length = padded_sequences_vectors.shape[1]
-        pack_padded_sequences_vectors = pack_padded_sequence(padded_sequences_vectors, lengths.cpu(), batch_first=True)
+        lstm_out, self.hidden_state = self.lstm_network(packed_sequences_vectors)
+        lstm_out, _ = pad_packed_sequence(lstm_out, batch_first=True)
 
-        lstm_out, self.hidden_state = self.lstm_network(pack_padded_sequences_vectors)
-        lstm_out, _ = pad_packed_sequence(lstm_out, batch_first=True, total_length=total_length)
-
-        tag_space = self.fully_connected_network(lstm_out) # shape: batch_size * longest_sequence_length, 8 (tag space)
-        return tag_space.transpose(-1, 1) # we need to transpose since it's a sequence # shape: batch_size * 8, longest_sequence_length
+        tag_space = self.fully_connected_network(lstm_out)
+        return tag_space.transpose(-1, 1)  # We need to transpose since it's a sequence
 
 full_network = RecurrentNet(lstm_network, fully_connected_network)
 ```
