@@ -86,8 +86,7 @@ import torch.optim as optim
 from poutyne import set_seeds
 from poutyne.framework import Experiment
 from torch.nn.functional import cross_entropy
-from torch.nn.utils.rnn import (pack_padded_sequence, pad_packed_sequence,
-                                pad_sequence)
+from torch.nn.utils.rnn import pack_padded_sequence, pad_packed_sequence, pad_sequence
 from torch.utils.data import DataLoader
 ```
 
@@ -101,11 +100,13 @@ dimension = 300
 num_layer = 1
 bidirectional = False
 
-lstm_network = nn.LSTM(input_size=dimension,
-                       hidden_size=dimension,
-                       num_layers=num_layer,
-                       bidirectional=bidirectional,
-                       batch_first=True)
+lstm_network = nn.LSTM(
+    input_size=dimension,
+    hidden_size=dimension,
+    num_layers=num_layer,
+    bidirectional=bidirectional,
+    batch_first=True,
+)
 ```
 
 ## Fully-connected Layer
@@ -174,12 +175,12 @@ def download_data(saving_dir, data_type):
     r = requests.get(url)
     os.makedirs(saving_dir, exist_ok=True)
 
-    open(os.path.join(saving_dir, f"{data_type}.p"), 'wb').write(r.content)
+    open(os.path.join(saving_dir, f"{data_type}.p"), "wb").write(r.content)
 
 
-download_data('./data/', "train")
-download_data('./data/', "valid")
-download_data('./data/', "test")
+download_data("./data/", "train")
+download_data("./data/", "valid")
+download_data("./data/", "test")
 ```
 
 Now let's load the data in memory.
@@ -214,12 +215,12 @@ Since we used word embeddings as the encoded representations of the words in the
 class LookForProgress(TextIOBase):
     def __init__(self, stdout):
         self.stdout = stdout
-        self.regex = re.compile(r'([0-9]+(\.[0-9]+)?%)', re.IGNORECASE)
+        self.regex = re.compile(r"([0-9]+(\.[0-9]+)?%)", re.IGNORECASE)
 
     def write(self, o):
         res = self.regex.findall(o)
         if len(res) != 0:
-            print(f"\r{res[-1][0]}", end='', file=self.stdout)
+            print(f"\r{res[-1][0]}", end="", file=self.stdout)
 
 
 class EmbeddingVectorizer:
@@ -230,7 +231,7 @@ class EmbeddingVectorizer:
         with contextlib.redirect_stdout(LookForProgress(sys.stdout)):
             # We use a context manager redirect to handle the broken download in
             # Jupyter notebook
-            fasttext.util.download_model('fr', if_exists='ignore')
+            fasttext.util.download_model("fr", if_exists="ignore")
         self.embedding_model = fasttext.load_model("./cc.fr.300.bin")
 
     def __call__(self, address):
@@ -266,7 +267,7 @@ class DatasetBucket:
             "Province": 4,
             "PostalCode": 5,
             "Orientation": 6,
-            "GeneralDelivery": 7
+            "GeneralDelivery": 7,
         }
 
     def __len__(self):
@@ -333,9 +334,9 @@ def pad_collate_fn(batch):
 
     Returns:
         A tuple (x, y). The element x is a tensor of packed sequence .
-        The element y is a tensor of padded tag indices. The word vectors are 
-        padded with vectors of 0s and the tag indices are padded with -100s. 
-        Padding with -100 is done because of the cross-entropy loss and the 
+        The element y is a tensor of padded tag indices. The word vectors are
+        padded with vectors of 0s and the tag indices are padded with -100s.
+        Padding with -100 is done because of the cross-entropy loss and the
         accuracy metric ignores the targets with values -100.
     """
 
@@ -343,10 +344,14 @@ def pad_collate_fn(batch):
     # Each tensor in the first list is a sequence of word vectors.
     # Each tensor in the second list is a sequence of tag indices.
     # The list of integer consist of the lengths of the sequences in order.
-    sequences_vectors, sequences_labels, lengths = zip(*[
-        (torch.FloatTensor(seq_vectors), torch.LongTensor(labels), len(seq_vectors))
-        for (seq_vectors, labels) in sorted(batch, key=lambda x: len(x[0]), reverse=True)
-    ])
+    sequences_vectors, sequences_labels, lengths = zip(
+        *[
+            (torch.FloatTensor(seq_vectors), torch.LongTensor(labels), len(seq_vectors))
+            for (seq_vectors, labels) in sorted(
+                batch, key=lambda x: len(x[0]), reverse=True
+            )
+        ]
+    )
 
     lengths = torch.LongTensor(lengths)
 
@@ -365,10 +370,25 @@ def pad_collate_fn(batch):
 ```
 
 ```python
-train_loader = DataLoader(train_dataset_vectorizer, batch_size=batch_size, shuffle=True, collate_fn=pad_collate_fn,
-                          num_workers=4)
-valid_loader = DataLoader(valid_dataset_vectorizer, batch_size=batch_size, collate_fn=pad_collate_fn, num_workers=4)
-test_loader = DataLoader(test_dataset_vectorizer, batch_size=batch_size, collate_fn=pad_collate_fn, num_workers=2)
+train_loader = DataLoader(
+    train_dataset_vectorizer,
+    batch_size=batch_size,
+    shuffle=True,
+    collate_fn=pad_collate_fn,
+    num_workers=4,
+)
+valid_loader = DataLoader(
+    valid_dataset_vectorizer,
+    batch_size=batch_size,
+    collate_fn=pad_collate_fn,
+    num_workers=4,
+)
+test_loader = DataLoader(
+    test_dataset_vectorizer,
+    batch_size=batch_size,
+    collate_fn=pad_collate_fn,
+    num_workers=2,
+)
 ```
 
 ## Full Network
@@ -388,10 +408,10 @@ class RecurrentNet(nn.Module):
 
     def forward(self, padded_sequences_vectors):
         """
-            Defines the computation performed at every call.
+        Defines the computation performed at every call.
 
-            Shapes:
-                packed_sequence_vectors: batch_size * longest_sequence_length (padding), 300
+        Shapes:
+            packed_sequence_vectors: batch_size * longest_sequence_length (padding), 300
 
         """
         lstm_out, self.hidden_state = self.lstm_network(packed_sequences_vectors)
@@ -399,6 +419,7 @@ class RecurrentNet(nn.Module):
 
         tag_space = self.fully_connected_network(lstm_out)
         return tag_space.transpose(-1, 1)  # We need to transpose since it's a sequence
+
 
 full_network = RecurrentNet(lstm_network, fully_connected_network)
 ```
@@ -428,8 +449,14 @@ Let's create our experiment using Poutyne for automated logging in the project r
 the loss function and a batch metric (accuracy) to monitor the training. The accuracy is computed on the word-tag level, meaning that every correct tag prediction is a good prediction. For example, the accuracy of the prediction `StreetNumber, StreetName` with the ground truth `StreetNumber, StreetName` is 1 and the accuracy of the prediction `StreetNumber, StreetNumber` with the ground truth `StreetNumber, StreetName` is 0.5.
 
 ```python
-exp = Experiment("./", full_network, device=device, optimizer=optimizer,
-                 loss_function=cross_entropy, batch_metrics=["acc"])
+exp = Experiment(
+    "./",
+    full_network,
+    device=device,
+    optimizer=optimizer,
+    loss_function=cross_entropy,
+    batch_metrics=["acc"],
+)
 ```
 
 Using our experiment, we can now launch the training as simply as
@@ -464,11 +491,13 @@ dimension = 300
 num_layer = 2
 bidirectional = True
 
-lstm_network = nn.LSTM(input_size=dimension,
-                       hidden_size=dimension,
-                       num_layers=num_layer,
-                       bidirectional=bidirectional,
-                       batch_first=True)
+lstm_network = nn.LSTM(
+    input_size=dimension,
+    hidden_size=dimension,
+    num_layers=num_layer,
+    bidirectional=bidirectional,
+    batch_first=True,
+)
 
 input_dim = dimension * 2  # since bidirectional
 
@@ -480,8 +509,14 @@ full_network_bi_lstm = RecurrentNet(lstm_network, fully_connected_network)
 ### Training
 
 ```python
-exp_bi_lstm = Experiment("./", full_network_bi_lstm, device=device, optimizer=optimizer,
-                         loss_function=cross_entropy, batch_metrics=["acc"])
+exp_bi_lstm = Experiment(
+    "./",
+    full_network_bi_lstm,
+    device=device,
+    optimizer=optimizer,
+    loss_function=cross_entropy,
+    batch_metrics=["acc"],
+)
 exp_bi_lstm.train(train_loader, valid_generator=valid_loader, epochs=epoch_number)
 ```
 
@@ -533,10 +568,10 @@ a test phase, meaning no training step.
 First, let's download and vectorize all the needed datasets.
 
 ```python
-download_data('./data/', "us")
-download_data('./data/', "gb")
-download_data('./data/', "ru")
-download_data('./data/', "mx")
+download_data("./data/", "us")
+download_data("./data/", "gb")
+download_data("./data/", "ru")
+download_data("./data/", "mx")
 
 us_data = pickle.load(open("./data/us.p", "rb"))  # 100,000 examples
 gb_data = pickle.load(open("./data/gb.p", "rb"))  # 100,000 examples
