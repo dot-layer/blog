@@ -67,11 +67,13 @@ For the present purpose, we will use the
 Let us first import all the necessary packages.
 
 ```python
+import contextlib
 import gzip
 import os
 import pickle
 import re
 import shutil
+import sys
 import warnings
 from io import TextIOBase
 
@@ -114,7 +116,7 @@ Finally, since we want to predict the most probable tokens, we will apply the so
 (see [here](https://en.wikipedia.org/wiki/Softmax_function) if softmax does not ring a bell).
 
 ```python
-input_dim = dimension #the output of the LSTM
+input_dim = dimension  # the output of the LSTM
 tag_dimension = 8
 
 fully_connected_network = nn.Linear(input_dim, tag_dimension)
@@ -189,10 +191,11 @@ valid_data = pickle.load(open("./data/valid.p", "rb"))  # 182,198 examples
 test_data = pickle.load(open("./data/test.p", "rb"))  # 100,000 examples
 ```
 
-As explained before, the (train) dataset is a list of `728,789` tuples where the first element is the full address, and the second is a list of tags (the ground truth).
+As explained before, the (train) dataset is a list of `728,789` tuples where the first element is the full address, and
+the second is a list of tags (the ground truth).
 
 ```python
-train_data[:2] # The first two train items
+train_data[:2]  # The first two train items
 ```
 
 > (the output)
@@ -218,12 +221,16 @@ class LookForProgress(TextIOBase):
         if len(res) != 0:
             print(f"\r{res[-1][0]}", end='', file=self.stdout)
 
+
 class EmbeddingVectorizer:
     def __init__(self):
         """
         Embedding vectorizer
         """
-        fasttext.util.download_model('fr', if_exists='ignore')
+        with contextlib.redirect_stdout(LookForProgress(sys.stdout)):
+            # We use a context manager redirect to handle the broken download in
+            # Jupyter notebook
+            fasttext.util.download_model('fr', if_exists='ignore')
         self.embedding_model = fasttext.load_model("./cc.fr.300.bin")
 
     def __call__(self, address):
@@ -236,6 +243,7 @@ class EmbeddingVectorizer:
         for word in address.split():
             embeddings.append(self.embedding_model[word])
         return embeddings
+
 
 embedding_vectorizer = EmbeddingVectorizer()
 ```
@@ -284,7 +292,6 @@ class DatasetBucket:
         return idx_tags
 
 
-
 train_dataset_vectorizer = DatasetBucket(train_data, embedding_vectorizer)
 valid_dataset_vectorizer = DatasetBucket(valid_data, embedding_vectorizer)
 test_dataset_vectorizer = DatasetBucket(test_data, embedding_vectorizer)
@@ -293,7 +300,7 @@ test_dataset_vectorizer = DatasetBucket(test_data, embedding_vectorizer)
 > Here is a example of the vectorizing process.
 
 ```python
-address, tag = train_dataset_vectorizer[0] # Unpack the first tuple
+address, tag = train_dataset_vectorizer[0]  # Unpack the first tuple
 print(f"The vectorized address is now a list of vectors {address}")
 ```
 
@@ -358,7 +365,8 @@ def pad_collate_fn(batch):
 ```
 
 ```python
-train_loader = DataLoader(train_dataset_vectorizer, batch_size=batch_size, shuffle=True, collate_fn=pad_collate_fn, num_workers=4)
+train_loader = DataLoader(train_dataset_vectorizer, batch_size=batch_size, shuffle=True, collate_fn=pad_collate_fn,
+                          num_workers=4)
 valid_loader = DataLoader(valid_dataset_vectorizer, batch_size=batch_size, collate_fn=pad_collate_fn, num_workers=4)
 test_loader = DataLoader(test_dataset_vectorizer, batch_size=batch_size, collate_fn=pad_collate_fn, num_workers=2)
 ```
@@ -462,7 +470,7 @@ lstm_network = nn.LSTM(input_size=dimension,
                        bidirectional=bidirectional,
                        batch_first=True)
 
-input_dim = dimension * 2 #since bidirectional
+input_dim = dimension * 2  # since bidirectional
 
 fully_connected_network = nn.Linear(input_dim, tag_dimension)
 
