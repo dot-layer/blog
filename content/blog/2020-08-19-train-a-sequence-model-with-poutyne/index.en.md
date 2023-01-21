@@ -22,7 +22,7 @@ aliases: ['/blog/2020-08-19-train-a-sequence-model-with-poutyne/machine-learning
 > Update 2022: Code was improved to handle better-packed sequences in the forward loop, and improvements have been made to the comment about the LookForProgress class uses.
 
 Sequential data, such as addresses, are pieces of information that are deliberately given in a specific order. In other words, they are sequences with a particular structure; and knowing this structure is crucial for predicting the missing entries of a given truncated sequence. For example,
-when writing an address, we know, in Canada, that after the civic number (e.g. 420), we have the street name (e.g. du Lac).
+when writing an address, we know, in Canada, that after the civic number (e.g. `'420'`), we have the street name (e.g. `'du Lac'`).
 Hence, if one is asked to complete an address containing only a number, he can reasonably assume that the next information that should be added to the sequence is a street name. Various modelling approaches have been proposed to make predictions over sequential data. Still, more recently, deep learning models known as Recurrent Neural Network (RNN) have been introduced for this type of data.
 
 The main purpose of this article is to introduce the various tricks (e.g., padding and packing) that are required for training an RNN. Before we do that, let us define our "address" problem more formally and elaborate on what RNNs (and LSTMs) actually are.
@@ -410,7 +410,7 @@ class RecurrentNet(nn.Module):
         self.lstm_network = lstm_network
         self.fully_connected_network = fully_connected_network
 
-    def forward(self, padded_sequences_vectors):
+    def forward(self, packed_sequences_vectors):
         """
         Defines the computation performed at every call.
 
