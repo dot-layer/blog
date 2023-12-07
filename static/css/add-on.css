@@ -129,7 +129,6 @@ h1, h2, h3, h4, h5, h6 {
 	-webkit-justify-content: space-between;
 	-ms-justify-content: space-between;
 	justify-content: space-between;
-  margin-top: 2em;
 }
 
 .stats .post_category {
